@@ -1,0 +1,35 @@
+timated the final roundoff error. It was Wilkinson who found the right way to answer the question, and his books are now classics.
+
+Two simple examples will illustrate three important points about roundoff error. The examples are
+
+\[\mbox{\bf Ill-conditioned}\quad A=\begin{bmatrix}1.&1.\\ 1.&1.0001\end{bmatrix}\qquad\mbox{\bf Well-conditioned}\quad B=\begin{bmatrix}.0001&1. \\ 1.&1.\end{bmatrix}.\]
+
+\(A\) is nearly singular whereas \(B\) is far from singular. If we slightly change the last entry of \(A\) to \(a_{22}=1\), it _is_ singular. Consider two very close right-hand sides \(b\):
+
+\[\begin{array}{ccccccc}u&+&v&=&2\\ u&+&1.0001v&=&2\end{array}\qquad\mbox{and}\qquad\begin{array}{ccccccc}u&+&v&=& 2\\ u&+&1.0001v&=&2.0001\end{array}\]
+
+The solution to the first is \(u=2\), \(v=0\). The solution to the second is \(u=v=1\). _A change in the fifth digit of \(b\) was amplified to a change in the first digit of the solution. No numerical method can avoid this sensitivity to small perturbations_. The ill-conditioning can be shifted from one place to another, but it cannot be removed. The true solution is very sensitive, and the computed solution cannot be less so.
+
+The second point is as follows.
+
+## 10 Even a well-conditioned matrix like \(B\) can be ruined by a poor algorithm.
+
+We regret to say that for the matrix \(B\), direct Gaussian elimination is a poor algorithm. Suppose \(.0001\) is accepted as the first pivot. Then 10,000 times the first row is subtracted from the second. The lower right entry becomes \(-9999\), but roundoff to three places would give \(-10\),000. Every trace of the entry 1 would disappear:
+
+\[\begin{array}{ccccccc}\mbox{\bf Elimination on }B&.0001u+v&=&1\\ \mbox{\bf with small pivot}&u+v&=&2\end{array}\longrightarrow\begin{array}{ ccc}.0001u+v&=&1\\ -9999v&=&-9998.\end{array}\]
+
+Roundoff will produce \(-10,000v=-10,000\), or \(v=1\). This is correct to three decimal places. Back-substitution with the right \(v=.9999\) would leave \(u=1\):
+
+\[\mbox{\bf Correct result}\qquad.0001u+.9999=1,\quad\mbox{or}\quad u=1.\]
+
+Instead, accepting \(v=1\), which is wrong only in the fourth place, we obtain \(u=0\):
+
+\[\mbox{\bf Wrong result}\qquad.0001u+1=1,\quad\mbox{or}\quad u=0.\]
+
+The computed \(u\) is completely mistaken. \(B\) is well-conditioned but elimination is violently unstable. \(L\), \(D\), and \(U\) are completely out of scale with \(B\):
+
+\[B=\begin{bmatrix}1&0\\ 10,000&1\end{bmatrix}\begin{bmatrix}.0001&0\\ 0&-9999\end{bmatrix}\begin{bmatrix}1&10,000\\ 0&1\end{bmatrix}.\]
+
+The small pivot \(.0001\) brought instability, and the remedy is clear--_exchange rows_.
+
+ 

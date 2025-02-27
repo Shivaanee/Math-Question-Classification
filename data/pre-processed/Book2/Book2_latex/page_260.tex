@@ -1,0 +1,25 @@
+\(x^{(1)},\ldots,x^{(N)}\), this matrix has linearly independent columns. The parameters in the optimal straight-line fit to the data are given by
+
+\[\left[\begin{array}{c}\theta_{1}\\ \theta_{2}\end{array}\right]=(A^{T}A)^{-1}A^{T}y^{\mathrm{d}}.\]
+
+This expression is simple enough for us to work it out explicitly, although there is no computational advantage to doing so. The Gram matrix is
+
+\[A^{T}A=\left[\begin{array}{cc}N&\mathbf{1}^{T}x^{\mathrm{d}}\\ \mathbf{1}^{T}x^{\mathrm{d}}&(x^{\mathrm{d}})^{T}x^{\mathrm{d}}\end{array} \right].\]
+
+The 2-vector \(A^{T}y^{\mathrm{d}}\) is
+
+\[A^{T}y=\left[\begin{array}{c}\mathbf{1}^{T}y^{\mathrm{d}}\\ (x^{\mathrm{d}})^{T}y^{\mathrm{d}}\end{array}\right],\]
+
+so we have (using the formula for the inverse of a \(2\times 2\) matrix)
+
+\[\left[\begin{array}{c}\hat{\theta}_{1}\\ \hat{\theta}_{2}\end{array}\right]=\frac{1}{N(x^{\mathrm{d}})^{T}x^{\mathrm{d} }-(\mathbf{1}^{T}x^{\mathrm{d}})^{2}}\left[\begin{array}{cc}(x^{\mathrm{d}}) ^{T}x^{\mathrm{d}}&-\mathbf{1}^{T}x^{\mathrm{d}}\\ -\mathbf{1}^{T}x^{\mathrm{d}}&N\end{array}\right]\left[\begin{array}{c} \mathbf{1}^{T}y^{\mathrm{d}}\\ (x^{\mathrm{d}})^{T}y^{\mathrm{d}}\end{array}\right].\]
+
+Multiplying the scalar term by \(N^{2}\), and dividing the matrix and vector terms by \(N\), we can express this as
+
+\[\left[\begin{array}{c}\hat{\theta}_{1}\\ \hat{\theta}_{2}\end{array}\right]=\frac{1}{\mathbf{rms}(x^{\mathrm{d}})^{2}- \mathbf{avg}(x^{\mathrm{d}})^{2}}\left[\begin{array}{cc}\mathbf{rms}(x^{ \mathrm{d}})^{2}&-\mathbf{avg}(x^{\mathrm{d}})\\ -\mathbf{avg}(x^{\mathrm{d}})&1\end{array}\right]\left[\begin{array}{c} \mathbf{avg}(y^{\mathrm{d}})\\ (x^{\mathrm{d}})^{T}y^{\mathrm{d}}/N\end{array}\right].\]
+
+The optimal slope \(\hat{\theta}_{2}\) of the straight line fit can be expressed more simply in terms of the correlation coefficient \(\rho\) between the data vectors \(x^{\mathrm{d}}\) and \(y^{\mathrm{d}}\), and their standard
+
+Figure 13.2: Straight-line fit to 50 points \((x^{(i)},y^{(i)})\) in a plane.
+
+ 

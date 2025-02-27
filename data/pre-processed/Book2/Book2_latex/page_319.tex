@@ -1,0 +1,19 @@
+
+
+## Chapter 15 Multi-objective least squares
+
+In this chapter we consider the problem of choosing a vector that achieves a compromise in making two or more norm squared objectives small. The idea is widely used in data fitting, image reconstruction, control, and other applications.
+
+### 15.1 Multi-objective least squares
+
+In the basic least squares problem (12.1), we seek the vector \(\hat{x}\) that minimizes the single objective function \(\|Ax-b\|^{2}\). In some applications we have _multiple_ objectives, all of which we would like to be small:
+
+\[J_{1}=\|A_{1}x-b_{1}\|^{2},\quad\ldots,\quad J_{k}=\|A_{k}x-b_{k}\|^{2}.\]
+
+Here \(A_{i}\) is an \(m_{i}\times n\) matrix, and \(b_{i}\) is an \(m_{i}\)-vector. We can use least squares to find the \(x\) that makes any one of these objectives as small as possible (provided the associated matrix has linearly independent columns). This will give us (in general) \(k\) different least squares approximate solutions. But we seek a _single_\(\hat{x}\) that gives a compromise, and makes them all small, to the extent possible. We call this the _multi-objective_ (or _multi-criterion_) least squares problem, and refer to \(J_{1},\ldots,J_{k}\) as the \(k\) objectives.
+
+Multi-objective least squares via weighted sum.A standard method for finding a value of \(x\) that gives a compromise in making all the objectives small is to choose \(x\) to minimize a _weighted sum objective:_
+
+\[J=\lambda_{1}J_{1}+\cdots+\lambda_{k}J_{k}=\lambda_{1}\|A_{1}x-b_{1}\|^{2}+ \cdots+\lambda_{k}\|A_{k}x-b_{k}\|^{2},\] (15.1)
+
+where \(\lambda_{1},\ldots,\lambda_{k}\) are positive _weights_, that express our relative desire for the terms to be small. If we choose all \(\lambda_{i}\) to be one, the weighted sum objective is the sum of the objective terms; we give each of them equal weight. If \(\lambda_{2}\) is twice as large as \(\lambda_{1}\), it means that we attach twice as much weight to the objective \(J_{2}\) as to \(J_{1}\). Roughly speaking, we care twice as strongly that \(J_{2}\) should be small, compared

@@ -1,0 +1,35 @@
+Thus \(A^{-1}Ax=x\). The matrix \(A^{-1}\) times \(A\) is the identity matrix. _Not all matrices have inverses. An inverse is impossible when \(Ax\) is zero and \(x\) is nonzero_. Then \(A^{-1}\) would have to get back from \(Ax=0\) to \(x\). No matrix can multiply that zero vector \(Ax\) and produce a nonzero vector \(x\).
+
+Our goals are to define the inverse matrix and compute it and use it, when \(A^{-1}\) exists--and then to understand which matrices don't have inverses.
+
+**1K** The **inverse** of \(A\) is a matrix \(B\) such that \(BA=I\) and \(AB=I\). There is at most one such \(B\), and it is denoted by \(A^{-1}\):
+
+\[A^{-1}A=I\quad\text{and}\quad AA^{-1}=I.\] (1)
+
+_Note 1_.: _The inverse exists if and only if elimination produces \(n\) pivots_ (row exchanges allowed). Elimination solves \(Ax=b\) without explicitly finding \(A^{-1}\)._
+
+_Note 2_.: The matrix \(A\) cannot have two different inverses, Suppose \(BA=I\) and also \(AC=I\). Then \(B=C\), according to this "proof by parentheses":
+
+\[B(AC)=(BA)C\quad\text{gives}\quad BI=IC\quad\text{which is}\quad B=C.\] (2)
+
+This shows that a _left-inverse_\(B\) (multiplying from the left) and a _right-inverse_\(C\) (multiplying \(A\) from the right to give \(AC=I\)) must be the _same matrix_.
+
+_Note 3_.: If \(A\) is invertible, the one and only solution to \(Ax=b\) is \(x=A^{-1}b\):
+
+_Multiply_\(Ax=b\) _by_\(A^{-1}\). _Then_\(x=A^{-1}Ax=A^{-1}b\)._
+
+_Note 4_.: (Important) _Suppose there is a nonzero vector \(x\) such that \(Ax=0\). Then \(A\) cannot have an inverse_. To repeat: No matrix can bring \(0\) back to \(x\).
+
+If \(A\) is invertible, then \(Ax=0\) can only have the zero solution \(x=0\).
+
+_Note 5_.: A 2 by 2 matrix is invertible if and only if \(ad-bc\) is not zero:
+
+\[\textbf{2 by 2 inverse}\qquad\begin{bmatrix}a&b\\ c&d\end{bmatrix}^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\ -c&a\end{bmatrix}.\] (3)
+
+This number \(ad-bc\) is the _determinant_ of \(A\). A matrix is invertible if its determinant is not zero (Chapter 4). In MATLAB, the invertibility test is _to find \(n\) nonzero pivots_. Elimination produces those pivots before the determinant appears.
+
+_Note 6_.: A diagonal matrix has an inverse provided no diagonal entries are zero:
+
+\[\text{If}\quad A=\begin{bmatrix}d_{1}&&\\ &\ddots&\\ &&d_{n}\end{bmatrix}\quad\text{then}\quad A^{-1}=\begin{bmatrix}1/d_{1}&&\\ &\ddots&\\ &&1/d_{n}\end{bmatrix}\quad\text{and}\quad AA^{-1}=I.\]
+
+When two matrices are involved, not much can be done about the inverse of \(A+B\). The sum might or might not be invertible. Instead, it is the inverse of their _product_ 

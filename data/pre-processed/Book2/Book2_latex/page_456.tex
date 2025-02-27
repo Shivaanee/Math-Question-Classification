@@ -1,0 +1,29 @@
+
+
+#### Vector-valued function of a vector
+
+Suppose \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\) is a vector-valued function of a vector. The \(n\)-vector \(x\) is the argument; the \(m\)-vector \(f(x)\) is the value of the function \(f\) at \(x\). We can write out the \(m\) components of \(f\) as
+
+\[f(x)=\left[\begin{array}{c}f_{1}(x)\\ \vdots\\ f_{m}(x)\end{array}\right],\]
+
+where \(f_{i}\) is a scalar-valued function of \(x=(x_{1},\ldots,x_{n})\).
+
+Jacobian.The partial derivatives of the components of \(f(x)\) with respect to the components of \(x\), evaluated at \(z\), are arranged into an \(m\times n\) matrix denoted \(Df(z)\), called the _derivative matrix_ or _Jacobian_ of \(f\) at \(z\). (In the notation \(Df(z)\), the \(D\) and \(f\) go together; \(Df\) does not represent, say, a matrix-vector product.) The derivative matrix is defined by
+
+\[Df(z)_{ij}=\frac{\partial f_{i}}{\partial x_{j}}(z),\quad i=1,\ldots,m,\quad j =1,\ldots,n.\]
+
+The rows of the Jacobian are \(\nabla f_{i}(z)^{T}\), for \(i=1,\ldots,m\). For \(m=1\), _i.e._, when \(f\) is a scalar-valued function, the derivative matrix is a row vector of size \(n\), the transpose of the gradient of the function. The derivative matrix of a vector-valued function of a vector is a generalization of the derivative of a scalar-valued function of a scalar.
+
+Taylor approximation.The (first-order) Taylor approximation of \(f\) near \(z\) is given by
+
+\[\hat{f}(x)_{i} = f_{i}(z)+\frac{\partial f_{i}}{\partial x_{1}}(z)(x_{1}-z_{1})+ \cdots+\frac{\partial f_{i}}{\partial x_{n}}(z)(x_{n}-z_{n})\] \[= f_{i}(z)+\nabla f_{i}(z)^{T}(x-z),\]
+
+for \(i=1,\ldots,m\). We can express this approximation in compact notation as
+
+\[\hat{f}(x)=f(z)+Df(z)(x-z).\]
+
+For \(x\) near \(z\), \(\hat{f}(x)\) is a very good approximation of \(f(x)\). As in the scalar case, the Taylor approximation is sometimes written with a second argument as \(\hat{f}(x;z)\) to show the point \(z\) around which the approximation is made. The Taylor approximation \(\hat{f}\) is an affine function of \(x\), sometimes called a linear approximation of \(f\), even though it is not, in general, a linear function.
+
+Finding Jacobians.We can always find the derivative matrix by calculating partial derivatives of the entries of \(f\) with respect to the components of the argument vector. In many cases the result simplifies using matrix-vector notation. As an example, let us find the derivative of the (scalar-valued) function
+
+\[h(x)=\|f(x)\|^{2}=f_{1}(x)^{2}+\cdots+f_{m}(x)^{2},\]

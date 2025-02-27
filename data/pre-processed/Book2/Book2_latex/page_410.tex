@@ -1,0 +1,15 @@
+with four parameters \(\theta_{1},\theta_{2},\theta_{3},\theta_{4}\). (This model is an affine function of \(\theta_{1}\), but it is not an affine function of \(\theta_{2}\), \(\theta_{3}\), or \(\theta_{4}\).) We fit the model to \(N=60\) points \((x^{(i)},y^{(i)})\) by minimizing the sum of the squared residuals (18.4) over the four parameters.
+
+Orthogonal distance regression.Consider the linear in the parameters model
+
+\[\hat{f}(x;\theta)=\theta_{1}f_{1}(x)+\cdots+\theta_{p}f_{p}(x),\]
+
+with basis functions \(f_{i}:\mathbf{R}^{n}\to\mathbf{R}\), and a data set of \(N\) pairs \((x^{(i)},y^{(i)})\). The usual objective is the sum of squares of the difference between the model prediction \(\hat{f}(x^{(i)})\) and the observed value \(y^{(i)}\), which leads to a linear least squares problem. In _orthogonal distance regression_ we use another objective, the sum of the squared distances of \(N\) points \((x^{(i)},y^{(i)})\) to the graph of \(\hat{f}\), _i.e._, the set of points of the form \((u,\hat{f}(u))\). This model can be found by solving the nonlinear least squares problem
+
+\[\text{minimize}\quad\sum_{i=1}^{N}(\hat{f}(u^{(i)};\theta)-y^{(i)})^{2}+\sum_ {i=1}^{N}\|u^{(i)}-x^{(i)}\|^{2}\]
+
+with variables \(\theta_{1},\ldots,\theta_{p}\), and \(u^{(1)},\ldots,u^{(N)}\). In orthogonal distance regression, we are allowed to choose the parameters in the model, and also, to modify the feature vectors from \(x^{(i)}\) from \(u^{(i)}\) to obtain a better fit. (Orthogonal distance regression is an example of an _error-in-variables model_, since it takes into account errors in the regressors or independent variables.) Figure 18.14 shows a cubic polynomial fit to 25 points using this method. The open circles are the points \((x^{(i)},y^{(i)})\). The small circles on the graph of the polynomial are the points \((u^{(i)},\hat{f}(u^{(i)};\theta))\). Roughly speaking, we fit a curve that passes near all the data points, as measured by the (minimum) distance from the data points to the curve. In contrast, ordinary least squares regression finds a curve that minimizes the sum of squares of the vertical errors between the curve and the data points.
+
+Figure 18.14: The solid line minimizes the sum of the squares of the orthogonal distances of points to the graph of the polynomial.
+
+ 

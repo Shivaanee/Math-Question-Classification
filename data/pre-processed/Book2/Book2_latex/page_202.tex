@@ -1,0 +1,17 @@
+
+
+**10.10**: _Converting from purchase quantity matrix to purchase dollar matrix_. An \(n\times N\) matrix \(Q\) gives the purchase history of a set of \(n\) products by \(N\) customers, over some period, with \(Q_{ij}\) being the quantity of product \(i\) bought by customer \(j\). The \(n\)-vector \(p\) gives the product prices. A data analyst needs the \(n\times N\) matrix \(D\), where \(D_{ij}\) is the total dollar value that customer \(j\) spent on product \(i\). Express \(D\) in terms of \(Q\) and \(p\), using compact matrix/vector notation. You can use any notation or ideas we have encountered, _e.g._, stacking, slicing, block matrices, transpose, matrix-vector product, matrix-matrix product, inner product, norm, correlation, \(\mathbf{diag}()\), and so on.
+**10.11**: _Trace of matrix-matrix product_. The sum of the diagonal entries of a square matrix is called the _trace_ of the matrix, denoted \(\mathbf{tr}(A)\).
+
+1. Suppose \(A\) and \(B\) are \(m\times n\) matrices. Show that \[\mathbf{tr}(A^{T}B)=\sum_{i=1}^{m}\sum_{j=1}^{n}A_{ij}B_{ij}.\] What is the complexity of calculating \(\mathbf{tr}(A^{T}B)\)?
+2. The number \(\mathbf{tr}(A^{T}B)\) is sometimes referred to as the inner product of the matrices \(A\) and \(B\). (This allows us to extend concepts like angle to matrices.) Show that \(\mathbf{tr}(A^{T}B)=\mathbf{tr}(B^{T}A)\).
+3. Show that \(\mathbf{tr}(A^{T}A)=\left\|A\right\|^{2}\). In other words, the square of the norm of a matrix is the trace of its Gram matrix.
+4. Show that \(\mathbf{tr}(A^{T}B)=\mathbf{tr}(BA^{T})\), even though in general \(A^{T}B\) and \(BA^{T}\) can have different dimensions, and even when they have the same dimensions, they need not be equal.
+**10.12**: _Norm of matrix product._ Suppose \(A\) is an \(m\times p\) matrix and \(B\) is a \(p\times n\) matrix. Show that \(\left\|AB\right\|\leq\left\|A\right\|\left\|B\right\|\), _i.e._, the (matrix) norm of the matrix product is no more than the product of the norms of the matrices. _Hint._ Let \(a_{1}^{T},\ldots,a_{m}^{T}\) be the rows of \(A\), and \(b_{1},\ldots,b_{n}\) be the columns of \(B\). Then \[\left\|AB\right\|^{2}=\sum_{i=1}^{m}\sum_{j=1}^{n}(a_{i}^{T}b_{j})^{2}.\] Now use the Cauchy-Schwarz inequality.
+**10.13**: _Laplacian matrix of a graph._ Let \(A\) be the incidence matrix of a directed graph with \(n\) nodes and \(m\) edges (see SS7.3). The _Laplacian matrix_ associated with the graph is defined as \(L=AA^{T}\), which is the Gram matrix of \(A^{T}\). It is named after the mathematician Pierre-Simon Laplace.
+
+1. Show that \(\mathcal{D}(v)=v^{T}Lv\), where \(\mathcal{D}(v)\) is the Dirichlet energy defined on page 135.
+2. Describe the entries of \(L\). _Hint._ The following two quantities might be useful: The _degree_ of a node, which is the number of edges that connect to the node (in either direction), and the number of edges that connect a pair of distinct nodes (in either direction).
+**10.14**: _Gram matrix._ Let \(a_{1},\ldots,a_{n}\) be the columns of the \(m\times n\) matrix \(A\). Suppose that the columns all have norm one, and for \(i\neq j\), \(\angle(a_{i},a_{j})=60^{\circ}\). What can you say about the Gram matrix \(G=A^{T}A\)? Be as specific as you can be.
+**10.15**: _Pairwise distances from Gram matrix._ Let \(A\) be an \(m\times n\) matrix with columns \(a_{1},\ldots,a_{n}\), and associated Gram matrix \(G=A^{T}A\). Express \(\left\|a_{i}-a_{j}\right\|\) in terms of \(G\), specifically \(G_{ii}\), \(G_{ij}\), and \(G_{jj}\).
+

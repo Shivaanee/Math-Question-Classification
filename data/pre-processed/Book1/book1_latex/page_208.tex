@@ -1,0 +1,25 @@
+Since \(q_{1}^{\mathrm{T}}q_{1}=1\), we have found \(x_{1}=q_{1}^{\mathrm{T}}b\). Similarly the second coefficient is \(x_{2}=q_{2}^{\mathrm{T}}b\); that term survives when we multiply by \(q_{2}^{\mathrm{T}}\). The other terms die of orthogonality. Each piece of \(b\) has a simple formula, and recombining the pieces gives back \(b\):
+
+\[\textbf{{Every vector }}b\textbf{{ is equal to }}(q_{1}^{\mathrm{T}}b)q_{1}+(q_{2}^{ \mathrm{T}}b)q_{2}+\cdots+(q_{n}^{\mathrm{T}}b)q_{n}.\] (4)
+
+I can't resist putting this orthonormal basis into a square matrix \(Q\). The vector equation \(x_{1}q_{1}+\cdots+x_{n}q_{n}=b\) is identical to \(Qx=b\). (The columns of \(Q\) multiply the components of \(x\).) Its solution is \(x=Q^{-1}b\). But since \(Q^{-1}=Q^{\mathrm{T}}\)--this is where orthonormality enters--the solution is also \(x=Q^{\mathrm{T}}b\):
+
+\[x=Q^{\mathrm{T}}b=\begin{bmatrix}\dashq&q_{1}^{\mathrm{T}}&\dashq\\ &\vdots&\\ \dashq&q_{n}^{\mathrm{T}}&\dashq\end{bmatrix}\left[b\right]=\begin{bmatrix}q_ {1}^{\mathrm{T}}b\\ \vdots\\ q_{n}^{\mathrm{T}}b\end{bmatrix}\] (5)
+
+The components of \(x\) are the inner products \(q_{i}^{\mathrm{T}}b\), as in equation (4).
+
+The matrix form also shows what happens when the columns are _not_ orthonormal. Expressing \(b\) as a combination \(x_{1}a_{1}+\cdots+x_{n}a_{n}\) is the same as solving \(Ax=b\). The basis vectors go into the columns of \(A\). In that case we need \(A^{-1}\), which takes work. In the orthonormal case we only need \(Q^{\mathrm{T}}\).
+
+_Remark 1_.: The ratio \(a^{\mathrm{T}}b/a^{\mathrm{T}}a\) appeared earlier, when we projected \(b\) onto a line. Here \(a\) is \(q_{1}\), the denominator is \(1\), and the projection is \((q_{1}^{\mathrm{T}}b)q_{1}\). Thus we have a new interpretation for formula (4): _Every vector \(b\) is the sum of its one-dimensional projections onto the lines through the \(q\)'s._
+
+Since those projections are orthogonal, Pythagoras should still be correct. The square of the hypotenuse should still be the sum of squares of the components:
+
+\[\|b\|^{2}=(q_{1}^{\mathrm{T}}b)^{2}+(q_{2}^{\mathrm{T}}b)^{2}+\cdots+(q_{n}^{ \mathrm{T}}b)^{2}\quad\text{which is}\quad\|Q^{\mathrm{T}}b\|^{2}.\] (6)
+
+_Remark 2_.: Since \(Q^{\mathrm{T}}=Q^{-1}\), we also have \(QQ^{\mathrm{T}}=I\). When \(Q\) comes before \(Q^{\mathrm{T}}\), multiplication takes the inner products of the _rows_ of \(Q\). (For \(Q^{\mathrm{T}}Q\) it was the columns.) Since the result is again the identity matrix, we come to a surprising conclusion: _The rows of a square matrix are orthonormal whenever the columns are_. The rows point in completely different directions from the columns, and I don't see geometrically why they are forced to be orthonormal--but they are.
+
+\[\textbf{{Orthonormal columns}}Q=\begin{bmatrix}1/\sqrt{3}&1/\sqrt{2}&1/\sqrt{6}\\ 1/\sqrt{3}&0&-2/\sqrt{6}\\ 1/\sqrt{3}&-1/\sqrt{2}&1/\sqrt{6}\end{bmatrix}.\]
+
+### Rectangular Matrices with Orthogonal Columns
+
+This chapter is about \(Ax=b\), when \(A\) is not necessarily square. For \(Qx=b\) we now admit the same possibility--there may be more rows than columns. The \(n\) orthonormal 

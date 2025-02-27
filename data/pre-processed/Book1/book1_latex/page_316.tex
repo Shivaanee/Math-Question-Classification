@@ -1,0 +1,11 @@
+best we can say is that the masses will come _arbitrarily close_ to \((1,0)\) and also \((0,1)\). Like a billiard ball bouncing forever on a perfectly smooth table, the total energy is fixed. Sooner or later the masses come near any state with this energy.
+
+Again we cannot leave the problem without drawing a parallel to the continuous case. As the discrete masses and springs merge into a solid rod, the "second differences" given by the \(1\), \(-2\), \(1\) matrix \(A\) turn into second derivatives. This limit is described by the celebrated _wave equation_\(\partial^{2}u/\partial t^{2}=\partial^{2}u/\partial x^{2}\).
+
+### Problem Set 5.4
+
+1. Following the first example in this section, find the eigenvalues and eigenvectors, and the exponential \(e^{At}\), for \[A=\begin{bmatrix}-1&1\\ 1&-1\end{bmatrix}.\]
+2. For the previous matrix, write the general solution to \(du/dt=Au\), and the specific solution that matches \(u(0)=(3,1)\). What is the _steady state_ as \(t\to\infty\)? (This is a continuous Markov process; \(\lambda=0\) in a differential equation corresponds to \(\lambda=1\) in a difference equation, since \(e^{0t}=1\).)
+3. Suppose the time direction is reversed to give the matrix \(-A\): \[\frac{du}{dt}=\begin{bmatrix}1&-1\\ -1&1\end{bmatrix}u\qquad\text{with}\qquad u_{0}=\begin{bmatrix}3\\ 1\end{bmatrix}.\] Find \(u(t)\) and show that it _blows up_ instead of decaying as \(t\to\infty\). (Diffusion is irreversible, and the heat equation cannot run backward.)
+4. If \(P\) is a projection matrix, show from the infinite series that \[e^{P}\approx I+1.718P.\]
+5. A diagonal matrix like \(\Lambda=\begin{bmatrix}1&0\\ 0&2\end{bmatrix}\) satisfies the usual rule \(e^{\Lambda(t+T)}=e^{\Lambda t}e^{\Lambda T}\), because the rule holds for each diagonal entry. 1. Explain why \(e^{A(t+T)}=e^{At}e^{\Lambda T}\), using the formula \(e^{At}=Se^{\Lambda t}S^{-1}\). 2. Show that \(e^{A+B}=e^{A}e^{B}\) is _not true_ for matrices, from the example \[A=\begin{bmatrix}0&0\\ 1&0\end{bmatrix}\qquad B=\begin{bmatrix}0&-1\\ 0&0\end{bmatrix}\qquad\text{(use series for $e^{A}$ and $e^{B}$).}\] 

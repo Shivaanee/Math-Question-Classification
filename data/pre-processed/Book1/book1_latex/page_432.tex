@@ -1,0 +1,24 @@
+
+
+**4.**: Show that the following problem is feasible but unbounded, so it has no optimal solution: Maximize \(x+y\), subject to \(x\geq 0\), \(y\geq 0\), \(-3x+2y\leq-1\), \(x-y\leq 2\).
+**5.**: Add a single inequality constraint to \(x\geq 0\), \(y\geq 0\) such that the feasible set contains only one point.
+**6.**: What shape is the feasible set \(x\geq 0\), \(y\geq 0\), \(z\geq 0\), \(x+y+z=1\), and what is the maximum of \(x+2y+3z\)?
+**7.**: Solve the portfolio problem at the end of the preceding section.
+**8.**: In the feasible set for the General Motors problem, the nonnegativity \(x,y,z\geq 0\) leaves an eighth of three-dimensional space (the positive octant). How is this cut by the two planes from the constraints, and what shape is the feasible set? How do its corners show that, with only these two constraints, there will be only two kinds of cars in the optimal solution?
+**9.**: (Transportation problem) Suppose Texas, California, and Alaska each produce a million barrels of oil; 800,000 barrels are needed in Chicago at a distance of 1000, 2000, and 3000 miles from the three producers, respectively; and 2,200,000 barrels are needed in New England 1500, 3000, and 3700 miles away. If shipments cost one unit for each barrel-mile, what linear program with five equality constraints must be solved to minimize the shipping cost?
+
+### The Simplex Method
+
+This section is about linear programming with \(n\) unknowns \(x\geq 0\) and \(m\) constraints \(Ax\geq b\). In the previous section we had two variables, and one constraint \(x+2y\geq 4\). The full problem is not hard to explain, and not easy to solve.
+
+The best approach is to put the problem into matrix form. We are given \(A\), \(b\), and \(c\):
+
+1. an \(m\) by \(n\) matrix \(A\).
+2. a column vector \(b\) with \(m\) components, and
+3. a row vector \(c\) (**cost vector**) with \(n\) components.
+
+To be "feasible," the vector \(x\) must satisfy \(x\geq 0\) and \(Ax\geq b\). The optimal vector \(x^{*}\) is the _feasible vector of least cost_--and the cost is \(cx=c_{1}x_{1}+\cdots+c_{n}x_{n}\).
+
+**Minimum problem** _Minimize the cost cx, subject to \(x\geq 0\) and \(Ax\geq b\)._
+
+The condition \(x\geq 0\) restricts \(x\) to the positive quadrant in \(n\)-dimensional space. In \(\mathbf{R}^{2}\) it is a quarter of the plane; it is an eighth of \(\mathbf{R}^{3}\). A random vector has one chance in \(2^{n}\) of being nonnegative. \(Ax\geq b\) produces \(m\) additional halfspaces, and the feasible

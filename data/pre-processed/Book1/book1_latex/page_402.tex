@@ -1,0 +1,25 @@
+We begin with _a change in the right-hand side_, from \(b\) to \(b+\delta b\). This error might come from experimental data or from roundoff. We may suppose that \(\delta b\) is small, but its direction is outside our control. The solution is changed from \(x\) to \(x+\delta x\):
+
+\[\text{Error equation}\qquad A(x+\delta x)=b+\delta b,\quad\text{so, by subtraction} \quad A(\delta x)=\delta b.\] (1)
+
+An error \(\delta b\) leads to \(\delta x=A^{-1}\delta b\). There will be a large change in the solution \(x\) when \(A^{-1}\) is large--\(A\) is nearly singular. The change in \(x\) is especially large when \(\delta b\) points in the direction that is amplified most by \(A^{-1}\).
+
+Suppose \(A\) is symmetric and its eigenvalues are positive: \(0<\lambda_{1}\leq\dots\leq\lambda_{n}\). Any vector \(\delta b\) is a combination of the corresponding unit eigenvectors \(x_{1},\dots,x_{n}\). The worst error \(\delta x\), coming from \(A^{-1}\), is in the direction of the first eigenvector \(x_{1}\):
+
+\[\text{Worst error}\qquad\text{If}\quad\delta b=\varepsilon x_{1},\quad\text{ then}\quad\delta x=\frac{\delta b}{\lambda_{1}}.\] (2)
+
+_The error \(\|\delta b\|\) is amplified by \(1/\lambda_{1}\), which is the largest eigenvalue of \(A^{-1}\)_. This amplification is greatest when \(\lambda_{1}\) is near zero, and \(A\) is _nearly singular_.
+
+Measuring sensitivity entirely by \(\lambda_{1}\) has a serious drawback. Suppose we multiply all the entries of \(A\) by \(1000\); then \(\lambda_{1}\) will be multiplied by \(1000\) and the matrix will look much less singular. This offends our sense of fair play; such a simple rescaling cannot make an ill-conditioned matrix well. It is true that \(\delta x\) will be \(1000\) times smaller, but so will the solution \(x=A^{-1}b\). The relative error \(\|\delta x\|/\|x\|\) will be the same. Dividing by \(\|x\|\) normalizes the problem against a trivial change of scale. At the same time there is a normalization for \(\delta b\); our problem is to compare the _relative change_\(\|\delta b\|/\|b\|\) with the _relative error_\(\|\delta x\|/\|x\|\).
+
+The worst case is when \(\|\delta x\|\) is large--with \(\delta b\) in the direction of the eigenvector \(x_{1}\)--and when \(\|x\|\) is small. The true solution \(x\) should be as small as possible compared to the true \(b\). This means that _the original problem \(Ax=b\) should be at the other extreme_, in the direction of the last eigenvector \(x_{n}\): if \(b=x_{n}\), then \(x=A^{-1}b=b/\lambda_{n}\).
+
+It is this combination, \(b=x_{n}\) and \(\delta b=\varepsilon x_{1}\), that makes the relative error as large as possible. These are the extreme cases in the following inequalities:
+
+\[\text{7A}\quad\text{For a positive definite matrix, the solution $x=A^{-1}b$ and the error $\delta x=A^{-1}\delta b$ always satisfy}\] \[\|x\|\geq\frac{\|b\|}{\lambda_{\max}}\quad\text{and}\quad\| \delta x\|\leq\frac{\|\delta b\|}{\lambda_{\min}}\quad\text{and}\quad\frac{ \|\delta x\|}{\|x\|}\leq\frac{\lambda_{\max}}{\lambda_{\min}}\frac{\|\delta b \|}{\|b\|}.\] (3)
+
+The ratio \(c=\lambda_{\max}/\lambda_{\min}\) is the _condition number_ of a positive definite matrix \(A\).
+
+**Example 1**.: The eigenvalues of \(A\) are approximately \(\lambda_{1}=10^{-4}/2\) and \(\lambda_{2}=2\):
+
+\[A=\begin{bmatrix}1&1\\ 1&1.0001\end{bmatrix}\quad\text{has condition number about}\quad c=4\cdot 10^{4}.\] 

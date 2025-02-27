@@ -1,0 +1,31 @@
+Matrix powers also come up in the analysis of a time-invariant linear dynamical system with an input. We have
+
+\[x_{t+2}=Ax_{t+1}+Bu_{t+1}=A(Ax_{t}+Bu_{t})=A^{2}x_{t}+ABu_{t}+Bu_{t+1}.\]
+
+Iterating this over \(\ell\) periods we obtain
+
+\[x_{t+\ell}=A^{\ell}x_{t}+A^{\ell-1}Bu_{t}+A^{\ell-2}Bu_{t+1}+\cdots+Bu_{t+\ell -1}.\] (10.2)
+
+(The first term agrees with the formula for \(x_{t+\ell}\) with no input.) The other terms are readily interpreted. The term \(A^{j}Bu_{t+\ell-j}\) is the contribution to the state \(x_{t+\ell}\) due to the input at time \(t+\ell-j\).
+
+### 10.4 QR factorization
+
+Matrices with orthonormal columns.As an application of Gram matrices, we can express the condition that the \(n\)-vectors \(a_{1},\ldots,a_{k}\) are orthonormal in a simple way using matrix notation:
+
+\[A^{T}A=I,\]
+
+where \(A\) is the \(n\times k\) matrix with columns \(a_{1},\ldots,a_{k}\). There is no standard term for a matrix whose columns are orthonormal: We refer to a matrix whose columns are orthonormal as 'a matrix whose columns are orthonormal'. But a _square_ matrix that satisfies \(A^{T}A=I\) is called _orthogonal_; its columns are an orthonormal basis. Orthogonal matrices have many uses, and arise in many applications.
+
+We have already encountered some orthogonal matrices, including identity matrices, 2-D reflections and rotations (page 129), and permutation matrices (page 132).
+
+Norm, inner product, and angle properties.Suppose the columns of the \(m\times n\) matrix \(A\) are orthonormal, and \(x\) and \(y\) are any \(n\)-vectors. We let \(f:\mathbf{R}^{n}\rightarrow\mathbf{R}^{m}\) be the function that maps \(z\) to \(Az\). Then we have the following:
+
+* \(\|Ax\|=\|x\|\). That is, \(f\) is _norm preserving_.
+* \((Ax)^{T}(Ay)=x^{T}y\). \(f\) preserves the inner product between vectors.
+* \(\angle(Ax,Ay)=\angle(x,y)\). \(f\) also preserves angles between vectors.
+
+Note that in each of the three equations above, the vectors appearing in the left- and right-hand sides have different dimensions, \(m\) on the left and \(n\) on the right.
+
+We can verify these properties using simple matrix properties. We start with the second statement, that multiplication by \(A\) preserves the inner product. We have
+
+\[(Ax)^{T}(Ay) = (x^{T}A^{T})(Ay)\] \[= x^{T}(A^{T}A)y\] \[= x^{T}Iy\] \[= x^{T}y.\] 

@@ -1,0 +1,27 @@
+Each sum on the right has \(m=\frac{1}{2}n\) terms. Since \(w_{n}^{2}\) is \(w_{m}\), the two sums are
+
+\[y_{j}=\sum_{k=0}^{m-1}w_{m}^{kj}c_{k}^{\prime}+w_{n}^{j}\sum_{k=0}^{m-1}w_{m}^{kj }c_{k}^{\prime\prime}=y_{j}^{\prime}+w_{n}^{j}y_{j}^{\prime\prime}.\] (15)
+
+For the second part of equation (13), \(j+m\) in place of \(j\) produces a sign change:
+
+Inside the sums, \(w_{m}^{k(j+1)}\) remains \(w_{m}^{kj}\) since \(w_{m}^{km}=1^{k}=1\).
+
+Outside, \(w_{n}^{j+m}=-w_{n}^{j}\) because \(w_{n}^{m}=e^{2\pi im/n}=e^{\pi i}=-1\).
+
+The FFT idea is easily modified to allow other prime factors of \(n\) (not only powers of 2). If \(n\) itself is a prime, a completely different algorithm is used.
+
+**Example 1**.: The steps from \(n=4\) to \(m=2\) are
+
+\[\begin{bmatrix}c_{0}\\ c_{1}\\ c_{2}\\ c_{3}\end{bmatrix}\to\begin{bmatrix}c_{0}\\ c_{2}\\ c_{1}\\ c_{3}\end{bmatrix}\to\begin{bmatrix}F_{2}c^{\prime}\\ F_{2}c^{\prime\prime}\end{bmatrix}\to\begin{bmatrix}y\\ \end{bmatrix}.\]
+
+Combined, the three steps multiply \(c\) by \(F_{4}\) to give \(y\). Since each step is linear, it must come from a matrix, and the product of those matrices must be \(F_{4}\):
+
+\[\begin{bmatrix}1&1&1&1\\ 1&i&i^{2}&i^{3}\\ 1&i^{2}&i^{4}&i^{6}\\ 1&i^{3}&i^{6}&i^{9}\end{bmatrix}=\begin{bmatrix}1&&1&&\\ &1&&i\\ 1&&-1&&\\ &1&&-i\end{bmatrix}\begin{bmatrix}1&&\\ &1&&\\ &&1&1\\ &&1&-1\end{bmatrix}\begin{bmatrix}1&&\\ &&1&\\ &&1&&\\ &&1\end{bmatrix}.\] (16)
+
+You recognize the two copies of \(F_{2}\) in the center. At the right is the permutation matrix that separates \(c\) into \(c^{\prime}\) and \(c^{\prime\prime}\). At the left is the matrix that multiplies by \(w_{n}^{j}\). If we started with \(F_{8}\), the middle matrix would contain two copies of \(F_{4}\). _Each of those would be split as above_. Thus the FFT amounts to a giant factorization of the Fourier matrix! The single matrix \(F\) with \(n^{2}\) nonzeros is a product of approximately \(\ell=\log_{2}n\) matrices (and a permutation) with a total of only \(n\ell\) nonzeros.
+
+### The Complete FFT and the Butterfly
+
+The first step of the FFT changes multiplication by \(F_{n}\) to two multiplications by \(F_{m}\). The even-numbered components \((c_{0},c_{2})\) are transformed separately from \((c_{1},c_{3})\), Figure 3.12 gives a flow graph for \(n=4\). For \(n=8\), the key idea is _to replace each \(F_{4}\) box by \(F_{2}\) boxes_. The new factor \(w_{4}=i\) is the square of the old factor \(w=w_{8}=e^{2\pi i/8}\). The flow graph shows the order that the \(c\)'s enter the FFT and the \(\log_{2}n\) stages that take them through it--and it also shows the simplicity of the logic.
+
+Every stage needs \(\frac{1}{2}n\) multiplications so the final count is \(\frac{1}{2}n\log n\). There is an amazing rule for the overall permutation of \(c\)'s before entering the FFT: Write the subscripts 

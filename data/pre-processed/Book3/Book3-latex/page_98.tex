@@ -1,0 +1,29 @@
+standard basis in \(F^{n}\), i.e., the \(i\)th vector in \(\otimes\) in the \(n\times 1\) matrix \(X_{i}\) with a \(1\) in row \(i\) and all other entries \(0\). Let \(\otimes^{\prime}\) be the corresponding ordered basis for \(W\), i.e., the \(j\)th vector in \(\otimes^{\prime}\) is the \(m\times 1\) matrix \(Y_{j}\) with a \(1\) in row \(j\) and all other entries \(0\). Then the matrix of \(T\) relative to the pair \(\otimes\), \(\otimes^{\prime}\) is the matrix \(A\) itself. This is clear because the matrix \(AX_{j}\) is the \(j\)th column of \(A\).
+
+**Example 14**: Let \(F\) be a field and let \(T\) be the operator on \(F^{2}\) defined by
+
+\[T(x_{1},x_{2})\,=\,(x_{1},0).\]
+
+It is easy to see that \(T\) is a linear operator on \(F^{2}\). Let \(\otimes\) be the standard ordered basis for \(F^{2}\), \(\otimes\,=\,\{\epsilon_{1},\,\epsilon_{2}\}\). Now
+
+\[T\epsilon_{1} =\,T(1,0)\,=\,(1,0)\,=\,1\epsilon_{1}+\,0\epsilon_{2}\] \[T\epsilon_{2} =\,T(0,1)\,=\,(0,0)\,=\,0\epsilon_{1}+\,0\epsilon_{2}\]
+
+so the matrix of \(T\) in the ordered basis \(\otimes\) is
+
+\[[T]_{\otimes}=\begin{bmatrix}1&0\\ 0&0\end{bmatrix}.\]
+
+**Example 15**: Let \(V\) be the space of all polynomial functions from \(R\) into \(R\) of the form
+
+\[f(x)\,=\,c_{0}+\,c_{1}x+\,c_{2}x^{2}+\,c_{2}x^{3}\]
+
+that is, the space of polynomial functions of degree three or less. The differentiation operator \(D\) of Example 2 maps \(V\) into \(V\), since \(D\) is 'degree decreasing.' Let \(\otimes\) be the ordered basis for \(V\) consisting of the four functions \(f_{1},f_{2},\,f_{3},f_{4}\) defined by \(f_{j}(x)\,=\,x^{j-1}\). Then
+
+\[\begin{array}{llll}(Df_{1})(x)\,=&0,&Df_{1}\,=\,0f_{1}+\,0f_{2}+0f_{3}+0f_{4 }\\ (Df_{2})(x)\,=&1,&Df_{2}\,=\,1f_{1}+0f_{2}+0f_{3}+0f_{4}\\ (Df_{3})(x)\,=&2x,&Df_{3}\,=\,0f_{1}+\,2f_{2}+0f_{3}+0f_{4}\\ (Df_{4})(x)\,=&3x^{2},&Df_{4}\,=\,0f_{1}+\,0f_{2}+3f_{3}+0f_{4}\\ \end{array}\]
+
+so that the matrix of \(D\) in the ordered basis \(\otimes\) is
+
+\[[D]_{\otimes}=\begin{bmatrix}0&1&0&0\\ 0&0&2&0\\ 0&0&0&3\\ 0&0&0&0\end{bmatrix}.\]
+
+We have seen what happens to representing matrices when transformations are added, namely, that the matrices add. We should now like to ask what happens when we compose transformations. More specifically, let \(V\), \(W\), and \(Z\) be vector spaces over the field \(F\) of respective dimensions \(n\), \(m\), and \(p\). Let \(T\) be a linear transformation from \(V\) into \(W\) and \(U\) a linear transformation from \(W\) into \(Z\). Suppose we have ordered bases
+
+\[\otimes\,=\,\{\alpha_{1},\,\ldots,\,\alpha_{n}\},\qquad\otimes^{\prime}\,=\, \{\beta_{1},\,\ldots,\,\beta_{m}\},\qquad\otimes^{\prime\prime}\,=\,\{\gamma_{1 },\,\ldots,\,\gamma_{p}\}\] 

@@ -1,0 +1,20 @@
+point \(p\) is the projection of \(b\) onto the subspace_. A perpendicular line from \(b\) to \(\mathbf{S}\) meets the subspace at \(p\). Geometrically, that gives the distance between points \(b\) and subspaces \(\mathbf{S}\). But there are two questions that need to be asked:
+
+1. Does this projection actually arise in practical applications?
+2. If we have a basis for the subspace \(\mathbf{S}\), is there a formula for the projection \(p\)?
+
+The answers are certainly yes. This is exactly the problem of the _least-squares solution to an overdetermined system_. The vector \(b\) represents the data from experiments or questionnaires, and it contains too many errors to be found in the subspace \(\mathbf{S}\). When we try to write \(b\) as a combination of the basis vectors for \(\mathbf{S}\), it cannot be done--the equations are inconsistent, and \(Ax=b\) has no solution.
+
+The least-squares method selects \(p\) as the best choice to replace \(b\). There can be no doubt of the importance of this application. In economics and statistics, least squares enters _regression analysis_. In geodesy, the U.S. mapping survey tackled 2.5 million equations in 400,000 unknowns.
+
+A formula for \(p\) is easy when the subspace is a line. We will project \(b\) onto \(a\) in several different ways, and relate the projection \(p\) to inner products and angles. Projection onto a higher dimensional subspace is by far the most important case; it corresponds to a least-squares problem with several parameters, and it is solved in Section 3.3. The formulas are even simpler when we produce an orthogonal basis for \(\mathbf{S}\).
+
+### Inner products and cosines
+
+We pick up the discussion of inner products and angles. You will soon see that it is not the angle, but _the cosine of the angle_, that is directly related to inner products. We look back to trigonometry in the two-dimensional case to find that relationship. Suppose the vectors \(a\) and \(b\) make angles \(\alpha\) and \(\beta\) with the \(x\)-axis (Figure 3.6). The length \(\|a\|\) is the hypotenuse in the triangle \(OaQ\). So the sine and cosine of \(\alpha\) are
+
+\[\sin\alpha=\frac{a_{2}}{\|a\|},\qquad\cos\alpha=\frac{a_{1}}{\|a\|}.\]
+
+Figure 3.5: The projection \(p\) is the point (on the line through \(a\)) closest to \(b\).
+
+ 

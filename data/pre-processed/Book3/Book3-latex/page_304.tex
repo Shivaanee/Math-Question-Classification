@@ -1,0 +1,23 @@
+\[B=\left[\begin{array}{ccc}-1&0&0\\ -1&0&0\\ 0&0&0\end{array}\right].\]
+
+In this case \(B\neq B^{*}\), and \(B^{*}\) is not the matrix of \(E^{*}=E\) in the basis \(\left\{\alpha_{1},\,\alpha_{2},\,\alpha_{3}\right\}.\) Applying the corollary, we conclude that \(\left\{\alpha_{1},\,\alpha_{2},\,\alpha_{3}\right\}\) is not an orthonormal basis. Of course this is quite obvious anyway.
+
+**Definition**.: _Let \(\mathrm{T}\) be a linear operator on an inner product space \(\mathrm{V}\). Then we say that \(\mathrm{T}\)_**has an adjoint on \(\mathrm{V}\) if there exists a linear operator \(\mathrm{T}^{*}\) on \(\mathrm{V}\) such that \((\mathrm{T}\alpha|\beta)=(\alpha|\mathrm{T}^{*}\beta)\) for all \(\alpha\) and \(\beta\) in \(\mathrm{V}\)._
+
+By Theorem 7 every linear operator on a finite-dimensional inner product space \(V\) has an adjoint on \(V\). In the infinite-dimensional case this is not always true. But in any case there is at most one such operator \(T^{*}\); when it exists, we call it the **adjoint** of \(T\).
+
+Two comments should be made about the finite-dimensional case.
+
+1. The adjoint of \(T\) depends not only on \(T\) but on the inner product as well.
+
+2. As shown by Example 17, in an arbitrary ordered basis \(\mathbb{O}\), the relation between \([T]_{\mathbb{O}}\) and \([T^{*}]_{\mathbb{O}}\) is more complicated than that given in the corollary above.
+
+**Example 18**.: _Let \(V\) be \(C^{*\times 1}\), the space of complex \(n\times 1\) matrices, with inner product \((X|Y)=Y^{*}X\). If \(A\) is an \(n\times n\) matrix with complex entries, the adjoint of the linear operator \(X\to AX\) is the operator \(X\to A^{*}X\). For_
+
+\[(AX|Y)=Y^{*}AX=(A^{*}Y)^{*}X=(X|A^{*}Y).\]
+
+_The reader should convince himself that this is really a special case of the last corollary._
+
+**Example 19**.: _This is similar to Example 18. Let \(V\) be \(C^{*\times n}\) with the inner product \((A|B)=\mathrm{tr}\;(B^{*}A)\). Let \(M\) be a fixed \(n\times n\) matrix over \(C\). The adjoint of left multiplication by \(M\) is left multiplication by \(M^{*}\). Of course, 'left multiplication by \(M^{*}\) is the linear operator \(L_{M}\) defined by \(L_{M}(A)=MA\)._
+
+\[\begin{array}{rl}(L_{M}(A)|B)&=\mathrm{tr}\;(B^{*}(MA))\\ &=\mathrm{tr}\;(MAB^{*})\\ &=\mathrm{tr}\;(AB^{*}M)\\ &=\mathrm{tr}\;(A\,(M^{*}B)^{*})\\ &=(A\big{|}L_{M}^{*}(B)\big{)}.\end{array}\] 

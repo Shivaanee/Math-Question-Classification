@@ -1,0 +1,15 @@
+exactly one of the \(n\) integers 0, 1, 2, . . . , \(n-1\). The equivalence classes are
+
+\[\begin{array}{l}E_{0}=\{.\ .\ .\ ,\ -2n,\ -n,\ 0,\,n,\,2n,\ .\ .\ .\ \}\\ E_{1}=\{.\ .\ .\ ,\ 1-2n,\ 1-n,\ 1+n,\ 1+2n,\ .\ .\ \}\\ \vdots=\\ E_{n-1}=\{.\ .\ .\ ,\ n-1-2n,\ n-1-n,\ n-1,\ n-1+n,\\ n-1+2n,\ .\ .\ .\ \}\end{array}\]
+
+* Suppose \(X\) and \(Y\) are sets, \(f\) is a function from \(X\) into \(Y\), and \(R\) is the equivalence relation defined by: \(x_{1}kx_{2}\) if and only if \(f(x_{1})=f(x_{2})\). The equivalence classes for \(R\) are just the largest subsets of \(X\) on which \(f\) is 'constant.' Another description of the equivalence classes is this. They are in 1:1 correspondence with the members of the range of \(f\). If \(y\) is in the range of \(f\), the set of all \(x\) in \(X\) such that \(f(x)=y\) is an equivalence class for \(R\); and this defines a 1:1 correspondence between the members of the range of \(f\) and the equivalence classes of \(R\).
+
+Let us make one more comment about equivalence relations. Given an equivalence relation \(R\) on \(X\), let \(\mathfrak{F}\) be the family of equivalence classes for \(R\). The association of the equivalence class \(E(x;R)\) with the element \(x\), defines a function \(f\) from \(X\) into \(\mathfrak{F}\) (indeed, onto \(\mathfrak{F}\)):
+
+\[f(x)=E(x;R).\]
+
+This shows that \(R\) is the equivalence relation associated with a function whose domain is \(X\), as in Example 5(e). What this tells us is that every equivalence relation on the set \(X\) is determined as follows. We have a rule (function) \(f\) which associates with each element \(x\) of \(X\) an object \(f(x)\), and \(xRy\) if and only if \(f(x)=f(y)\). Now one should think of \(f(x)\) as some property of \(x\), so that what the equivalence relation does (roughly) is to lump together all those elements of \(X\) which have this property in common. If the object \(f(x)\) is the equivalence class of \(x\), then all one has said is that the common property of the members of an equivalence class is that they belong to the same equivalence class. Obviously this doesn't say much. Generally, there are many different functions \(f\) which determine the given equivalence relation as above, and one objective in the study of equivalence relations is to find such an \(f\) which gives a meaningful and elementary description of the equivalence relation. In Section A.5 we shall see how this is accomplished for a few special equivalence relations which arise in linear algebra.
+
+### Quotient Spaces
+
+Let \(V\) be a vector space over the field \(F\), and let \(W\) be a subspace of \(V\). There are, in general, many subspaces \(W^{\prime}\) which are complementary to \(W\), i.e., subspaces with the property that \(V=W\bigoplus W^{\prime}\). If we have 

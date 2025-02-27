@@ -1,0 +1,35 @@
+\(C_{11}\) comes from erasing row 1 and column 1, which leaves the \(-1\), \(2\), \(-1\) pattern:
+
+\[C_{11}=\det A_{3}=\det\left[\begin{matrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{matrix}\right]\]
+
+For \(a_{12}=-1\) it is column 2 that gets removed, and we need its cofactor \(C_{12}\):
+
+\[C_{12}=(-1)^{1+2}\det\left[\begin{matrix}-1&-1&0\\ 0&2&-1\\ 0&-1&2\end{matrix}\right]=+\det\left[\begin{matrix}2&-1\\ -1&2\end{matrix}\right]=\det A_{2}.\]
+
+This left us with the 2 by 2 determinant. Altogether row 1 has produced \(2C_{11}-C_{12}\):
+
+\[\det A_{4}=2(\det A_{3})-\det A_{2}=2(4)-3=5\]
+
+The same idea applies to \(A_{5}\) and \(A_{6}\), and every \(A_{n}\):
+
+\[\text{\bf Recursion by cofactors}\qquad\det A_{n}=2(\det A_{n-1})-\det A_{n-2}.\] (13)
+
+This gives the determinant of increasingly bigger matrices. At every step the determinant of \(A_{n}\) is \(n+1\), from the previous determinants \(n\) and \(n-1\):
+
+\[\text{\bf$-1$, $2$, $-1$ matrix}\qquad\det A_{n}=2(n)-(n-1)=n+1.\]
+
+The answer \(n+1\) agrees with the product of pivots at the start of this section.
+
+## Problem Set 4.3
+
+**1.** For these matrices, find the only nonzero term in the big formula (6):
+
+\[A=\left[\begin{matrix}0&1&0&0\\ 1&0&1&0\\ 0&1&0&1\\ 0&0&1&0\end{matrix}\right]\qquad\text{and}\qquad B=\left[\begin{matrix}0&0&1&2 \\ 0&3&4&5\\ 6&7&8&9\\ 0&0&0&1\end{matrix}\right].\]
+
+There is only one way of choosing four nonzero entries from different rows and different columns. By deciding even or odd, compute \(\det A\) and \(\det B\).
+**2.** Expand those determinants in cofactors of the first row. Find the cofactors (they include the signs \((-1)^{i+j}\)) and the determinants of \(A\) and \(B\).
+**3.**_True or false_?
+
+1. The determinant of \(S^{-1}AS\) equals the determinant of \(A\). 2. If \(\det A=0\) then at least one of the cofactors must be zero.
+
+ 

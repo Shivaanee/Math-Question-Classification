@@ -1,0 +1,13 @@
+
+
+## Chapter Computations with Matrices
+
+### 1 Introduction
+
+One aim of this book is to explain the useful parts of matrix theory. In comparison with older texts in abstract linear algebra, the underlying theory has not been radically changed. One of the best things about the subject is that the theory is really essential for the applications. What is different is the _change in emphasis_ which comes with a new point of view. Elimination becomes more than just a way to find a basis for the row space, and the Gram-Schmidt process is not just a proof that every subspace has an orthonormal basis. Instead, we really _need_ these algorithms. And we need a convenient description, \(A=LU\) or \(A=QR\), of what they do.
+
+This chapter will take a few more steps in the same direction. I suppose these steps are governed by computational necessity, rather than by elegance, and I don't know whether to apologize for that; it makes them sound very superficial, and that is wrong. They deal with the oldest and most fundamental problems of the subject, \(Ax=b\) and \(Ax=\lambda x\), but they are continually changing and improving. In numerical analysis there is a survival of the fittest, and we want to describe some ideas that have survived so far. They fall into three groups:
+
+**1. Techniques for Solving \(Ax=b\).**  Elimination is a perfect algorithm, except when the particular problem has special properties--as almost every problem has. Section 7.4 will concentrate on the property of sparseness, when most of the entries in \(A\) are zero. We develop _iterative rather than direct methods_ for solving \(Ax=b\). An iterative method is "self-correcting," and never reaches the exact answer. The object is to get close more quickly than elimination. In some problems, that can be done; in many others, elimination is safer and faster if it takes advantage of the zeros. The competition is far from over, and we will identify the _spectral radius_ that controls the speed of convergence to \(x=A^{-1}b\).
+
+**2. Techniques for Solving \(Ax=\lambda x\).**  The eigenvalue problem is one of the out

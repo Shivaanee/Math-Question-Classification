@@ -1,0 +1,21 @@
+
+
+**Example 1**.: The problem in Figure 8.3 has constraints \(x+2y\geq 6\), \(2x+y\geq 6\), and cost \(x+y\). The new system has four unknowns (\(x\), \(y\), and two slack variables):
+
+\[A=\begin{bmatrix}1&2&-1&0\\ 2&1&0&-1\end{bmatrix}\qquad b=\begin{bmatrix}6\\ 6\end{bmatrix}\qquad c=\begin{bmatrix}1&1&0&0\end{bmatrix}.\]
+
+### The Simplex Algorithm
+
+With equality constraints, the simplex method can begin. _A corner is now a point where \(n\) components of the new vector \(x\)_ (the old \(x\) and \(w\)) _are zero_. These \(n\) components of \(x\) are the _free variables_ in \(Ax=b\). The remaining \(m\) components are the _basic variables_ or _pivot variables_. Setting the \(n\) free variables to zero, the \(m\) equations \(Ax=b\) determine the \(m\) basic variables. This "basic solution" \(x\) will be a genuine corner if its \(m\) nonzero components are _positive_. Then \(x\) belongs to the feasible set.
+
+8AThe _corners of the feasible set_ are the _basic feasible solutions_ of \(Ax=b\). A solution is _basic_ when \(n\) of its \(m+n\) components are zero, and it is _feasible_ when it satisfies \(x\geq 0\). Phase I of the simplex method finds one basic feasible solution. Phase II moves step by step to the optimal \(x^{*}\).
+
+The corner point \(P\) in Figure 8.3 is the intersection of \(x=0\) with \(2x+y-6=0\).
+
+_Which corner do we go to next?_ We want to move along an edge to an adjacent corner. Since the two corners are neighbors, \(m-1\) basic variables will remain basic. _Only one of the \(6s\) will become free_ (zero). At the same time, _one variable will move up from zero to become basic_. The other \(m-1\) basic components (in this case, the other \(6\)) will change but stay positive. The choice of edge (see Example 2 below) decides which variable leaves the basis and which one enters. The basic variables are computed by solving \(Ax=b\). The free components of \(x\) are set to zero.
+
+**Example 2**.: An entering variable and a leaving variable move us to a new corner.
+
+\[\begin{array}{ccc}\text{Minimize}&7x_{3}-x_{4}-3x_{5}&\text{ subject to}&x_{1}&+x_{3}+6x_{4}+2x_{5}=8\\ &&x_{2}+x_{3}&+3x_{5}=9.\end{array}\]
+
+Start from the corner at which \(x_{1}=8\) and \(x_{2}=9\) are the basic variables. At that corner \(x_{3}=x_{4}=x_{5}=0\). This is feasible, but the zero cost may not be minimal. It would be foolish to make \(x_{3}\) positive, because its cost coefficient is \(+7\) and we are trying to lower the cost. We choose \(x_{5}\) because it has the most negative cost coefficient \(-3\). _The entering variable will be \(x_{5}\)._

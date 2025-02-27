@@ -1,0 +1,25 @@
+the equations using algorithm 11.2 (\(3n^{3}\) versus \(2n^{3}\)), so algorithm 11.2 is the usual method of choice. While the matrix inverse appears in many formulas (such as the solution of a set of linear equations), it is _computed_ far less often.
+
+Sparse linear equations.Systems of linear equations with sparse coefficient matrix arise in many applications. By exploiting the sparsity of the coefficient matrix, these linear equations can be solved far more efficiently than by using the generic algorithm 11.2. One method is to use the same basic algorithm 11.2, replacing the QR factorization with a variant that handles sparse matrices (see page 190). The memory usage and complexity of these methods depends in a complicated way on the sparsity pattern of the coefficient matrix. In order, the memory usage is typically a modest multiple of \(\mathbf{nnz}(A)+n\), the number of scalars required to specify the problem data \(A\) and \(b\), which is typically much smaller than \(n^{2}+n\), the number of scalars required to store \(A\) and \(b\) if they are not sparse. The flop count for solving sparse linear equations is also typically closer in order to \(\mathbf{nnz}(A)\) than \(n^{3}\), the order when the matrix \(A\) is not sparse.
+
+### 11.4 Examples
+
+Polynomial interpolation.The 4-vector \(c\) gives the coefficients of a cubic polynomial,
+
+\[p(x)=c_{1}+c_{2}x+c_{3}x^{2}+c_{4}x^{3}\]
+
+(see pages 154 and 120). We seek the coefficients that satisfy
+
+\[p(-1.1)=b_{1},\qquad p(-0.4)=b_{2},\qquad p(0.2)=b_{3},\qquad p(0.8)=b_{4}.\]
+
+We can express this as the system of 4 equations in 4 variables \(Ac=b\), where
+
+\[A=\left[\begin{array}{rrrr}1&-1.1&(-1.1)^{2}&(-1.1)^{3}\\ 1&-0.4&(-0.4)^{2}&(-0.4)^{3}\\ 1&0.2&(0.2)^{2}&(0.2)^{3}\\ 1&0.8&(0.8)^{2}&(0.8)^{3}\end{array}\right],\]
+
+which is a specific Vandermonde matrix (see (6.7)). The unique solution is \(c=A^{-1}b\), where
+
+\[A^{-1}=\left[\begin{array}{rrrr}-0.5784&1.9841&-2.1368&0.7310\\ 0.3470&0.1984&-1.4957&0.9503\\ 0.1388&-1.8651&1.6239&0.1023\\ -0.0370&0.3492&0.7521&-0.0643\end{array}\right]\]
+
+(to 4 decimal places). This is illustrated in figure 11.1, which shows the two cubic polynomials that interpolate the two sets of points shown as filled circles and squares, respectively.
+
+The columns of \(A^{-1}\) are interesting: They give the coefficients of a polynomial that evaluates to 0 at three of the points, and 1 at the other 

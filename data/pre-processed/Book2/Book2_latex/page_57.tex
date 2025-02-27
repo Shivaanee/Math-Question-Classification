@@ -1,0 +1,29 @@
+To derive this formula, we start with the square of the norm of \(x+y\) and use various properties of the inner product:
+
+\[\|x+y\|^{2} = (x+y)^{T}(x+y)\] \[= x^{T}x+x^{T}y+y^{T}x+y^{T}y\] \[= \|x\|^{2}+2x^{T}y+\|y\|^{2}.\]
+
+Taking the squareroot of both sides yields the formula (3.1) above. In the first line, we use the definition of the norm. In the second line, we expand the inner product. In the fourth line we use the definition of the norm, and the fact that \(x^{T}y=y^{T}x\). Some other identities relating norms, sums, and inner products of vectors are explored in exercise 3.4.
+
+Norm of block vectors.The norm-squared of a stacked vector is the sum of the norm-squared values of its subvectors. For example, with \(d=(a,b,c)\) (where \(a\), \(b\), and \(c\) are vectors), we have
+
+\[\|d\|^{2}=d^{T}d=a^{T}a+b^{T}b+c^{T}c=\|a\|^{2}+\|b\|^{2}+\|c\|^{2}.\]
+
+This idea is often used in reverse, to express the sum of the norm-squared values of some vectors as the norm-square value of a block vector formed from them.
+
+We can write the equality above in terms of norms as
+
+\[\|(a,b,c)\|=\sqrt{\|a\|^{2}+\|b\|^{2}+\|c\|^{2}}=\|(\|a\|,\|b\|,\|c\|)\|.\]
+
+In words: The norm of a stacked vector is the norm of the vector formed from the norms of the subvectors. The right-hand side of the equation above should be carefully read. The outer norm symbols enclose a 3-vector, with (scalar) entries \(\|a\|\), \(\|b\|\), and \(\|c\|\).
+
+Chebyshev inequality.Suppose that \(x\) is an \(n\)-vector, and that \(k\) of its entries satisfy \(|x_{i}|\geq a\), where \(a>0\). Then \(k\) of its entries satisfy \(x_{i}^{2}\geq a^{2}\). It follows that
+
+\[\|x\|^{2}=x_{1}^{2}+\cdots+x_{n}^{2}\geq ka^{2},\]
+
+since \(k\) of the numbers in the sum are at least \(a^{2}\), and the other \(n-k\) numbers are nonnegative. We can conclude that \(k\leq\|x\|^{2}/a^{2}\), which is called the _Chebyshev inequality_, after the mathematician Pafnuty Chebyshev. When \(\|x\|^{2}/a^{2}\geq n\), the inequality tells us nothing, since we always have \(k\leq n\). In other cases it limits the number of entries in a vector that can be large. For \(a>\|x\|\), the inequality is \(k\leq\|x\|^{2}/a^{2}<1\), so we conclude that \(k=0\) (since \(k\) is an integer). In other words, no entry of a vector can be larger in magnitude than the norm of the vector.
+
+The Chebyshev inequality is easier to interpret in terms of the RMS value of a vector. We can write it as
+
+\[\frac{k}{n}\leq\left(\frac{\mathbf{rms}(x)}{a}\right)^{2},\] (3.2)
+
+where \(k\) is, as above, the number of entries of \(x\) with absolute value at least \(a\). The left-hand side is the fraction of entries of the vector that are at least \(a\) in absolute 

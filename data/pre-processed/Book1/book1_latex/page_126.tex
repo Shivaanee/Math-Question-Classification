@@ -1,0 +1,14 @@
+told which conditions the vectors in the space must satisfy. (_Example_: The nullspace consists of all vectors that satisfy \(Ax=0\).)
+
+The first description may include useless vectors (dependent columns). The second description may include repeated conditions (dependent rows). We can't write a basis by inspection, and a systematic procedure is necessary.
+
+The reader can guess what that procedure will be. When elimination on \(A\) produces an echelon matrix \(U\) or a reduced \(R\), we will find a basis for each of the subspaces associated with \(A\). Then we have to look at the extreme case of **full rank**:
+
+_When the rank is as large as possible_, \(r=n\) _or_\(r=m\) _or_\(r=m=n\), _the matrix has a_ **left-inverse \(B\) _or a_ right-inverse \(C\) _or a_ two-sided \(A^{-1}\)_.
+
+To organize the whole discussion, we take each of the four subspaces in turn. Two of them are familiar and two are new.
+
+1. The _column space_ of \(A\) is denoted by \(C(A)\). Its dimension is the rank \(r\).
+2. The _nullspace_ of \(A\) is denoted by \(N(A)\). Its dimension is \(n-r\).
+3. The _row space_ of \(A\) is the _column space_ of \(A^{\mathrm{T}}\). It is \(C(A^{\mathrm{T}})\), and it is spanned by the rows of \(A\). Its dimension is also \(r\).
+4. The _left nullspace_ of \(A\) is the _nullspace_ of \(A^{\mathrm{T}}\). It contains all vectors \(y\) such that \(A^{\mathrm{T}}y=0\), and it is written \(N(A^{\mathrm{T}})\). Its dimension is \(\underline{\ \ 

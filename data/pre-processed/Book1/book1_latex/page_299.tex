@@ -1,0 +1,33 @@
+
+
+**Example 1**.: This matrix \(A\) is certainly stable:
+
+\[A=\begin{bmatrix}0&4\\ 0&\frac{1}{2}\end{bmatrix}\qquad\text{ has eigenvalues 0 and }\frac{1}{2}.\]
+
+The \(\lambda\)'s are on the main diagonal because \(A\) is triangular. Starting from any \(u_{0}\), and following the rule \(u_{k+1}=Au_{k}\), the solution must eventually approach zero:
+
+\[u_{0}=\begin{bmatrix}0\\ 1\end{bmatrix},\quad u_{1}=\begin{bmatrix}4\\ \frac{1}{2}\end{bmatrix},\quad u_{2}=\begin{bmatrix}2\\ \frac{1}{4}\end{bmatrix},\quad u_{3}=\begin{bmatrix}1\\ \frac{1}{8}\end{bmatrix},\quad u_{4}=\begin{bmatrix}\frac{1}{2}\\ \frac{1}{16}\end{bmatrix},\cdots\]
+
+The larger eigenvalue \(\lambda=\frac{1}{2}\) governs the decay; after the first step every \(u_{k}\) is \(\frac{1}{2}u_{k-1}\). The real effect of the first step is to split \(u_{0}\) into the two eigenvectors of \(A\):
+
+\[u_{0}=\begin{bmatrix}8\\ 1\end{bmatrix}+\begin{bmatrix}-8\\ 0\end{bmatrix}\quad\text{and then}\quad u_{k}=\left(\frac{1}{2}\right)^{k} \begin{bmatrix}8\\ 1\end{bmatrix}+(0)^{k}\begin{bmatrix}-8\\ 0\end{bmatrix}.\]
+
+### Positive Matrices and Applications in Economics
+
+By developing the Markov ideas we can find a small gold mine (_entirely optional_) of matrix applications in economics.
+
+**Example 2** (_Leontiet's input-output matrix_).:
+
+This is one of the first great successes of mathematical economics. To illustrate it, we construct a _consumption matrix_--in which \(a_{ij}\), gives the amount of product \(j\) that is needed to create one unit of product \(i\):
+
+\[A=\begin{bmatrix}.4&0&.1\\ 0&.1&.8\\ .5&.7&.1\end{bmatrix}.\qquad\begin{array}{ll}\text{(steel)}\\ \text{(food)}\\ \text{(labor)}\end{array}\]
+
+The first question is: Can we produce \(y_{1}\) units of steel, \(y_{2}\) units of food, and \(y_{3}\) units of labor? We must start with larger amounts \(p_{1}\), \(p_{2}\), \(p_{3}\), because some part is consumed by the production itself. The amount consumed is \(Ap\), and it leaves a net production of \(p-Ap\).
+
+**Problem** _To find a vector \(p\) such that \(p-Ap=y,\quad\text{or}\quad p=(I-A)^{-1}y\)._
+
+On the surface, we are only asking if \(I-A\) is invertible. But there is a nonnegative twist to the problem. Demand and production, \(y\) and \(p\), are nonnegative. Since \(p\) is \((1-A)^{-1}y\), the real question is about the matrix that multiplies \(y\):
+
+\[\textbf{When is }(I-A)^{-1}\textbf{ a nonnegative matrix}?\]
+
+Roughly speaking, \(A\) cannot be too large. If production consumes too much, nothing is left as output. The key is in the largest eigenvalue \(\lambda_{1}\) of \(A\), which must be below 1:

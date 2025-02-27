@@ -1,0 +1,17 @@
+The 4 by 4 discrete Fourier transform uses \(w=i\) (and notice \(i^{4}=1\)). The success of the whole DFT depends on \(F\) times its complex conjugate \(\overline{F}\):
+
+\[F\overline{F}=\begin{bmatrix}1&1&1&1\\ 1&i&i^{2}&i^{3}\\ 1&i^{2}&i^{4}&i^{6}\\ 1&i^{3}&i^{6}&i^{9}\end{bmatrix}\begin{bmatrix}1&1&1&1\\ 1&(-i)&(-i)^{2}&(-i)^{3}\\ 1&(-i)^{2}&(-i)^{4}&(-i)^{6}\\ 1&(-i)^{3}&(-i)^{6}&(-i)^{9}\end{bmatrix}=4I.\] (1)
+
+Immediately \(F\overline{F}=4I\) tells us that \(F^{-1}=\overline{F}/4\). The columns of \(F\) are orthogonal (to give the zero entries in \(4I\)). The \(n\) by \(n\) matrices will have \(F\overline{F}=nI\). Then the inverse of \(F\) is just \(\overline{F}/n\). In a moment we will look at the complex number \(w=e^{2\pi i/n}\) (which equals \(i\) for \(n=4\)).
+
+It is remarkable that \(F\) is so easy to invert. If that were all (and up to 1965 it _was_ all), the discrete transform would have an important place. Now there is more. The multiplications by \(F\) and \(F^{-1}\) can be done in an extremely fast and ingenious way. Instead of \(n^{2}\) separate multiplications, coming from the \(n^{2}\) entries in the matrix, the matrix-vector products \(Fc\) and \(F^{-1}y\) require only \(\frac{1}{2}n\log n\) steps. This rearrangement of the multiplication is called the _Fast Fourier Transform_.
+
+The section begins with \(w\) and its properties, moves on to \(F^{-1}\), and ends with the **FFT**--the fast transform. The great application in signal processing is _filtering_, and the key to its success is the _convolution rule_. In matrix language, all "circulant matrices" are diagonalized by \(F\). So they reduce to two FFTs and a diagonal matrix.
+
+### Complex Roots of Unity
+
+Real equations can have complex solutions. The equation \(x^{2}+1=0\) led to the invention of \(i\) (and also to \(-i!\)). That was declared to be a solution, and the case was closed. If someone asked about \(x^{2}-i=0\), there was an answer: The square roots of a complex number are again complex numbers. You must allow combinations \(x+iy\), with a real part \(x\) and an imaginary part \(y\), but no further inventions are necessary. Every real or complex polynomial of degree \(n\) has a full set of \(n\) roots (possibly complex and possibly repeated). That is the fundamental theorem of algebra.
+
+We are interested in equations like \(x^{4}=1\). That has four solutions--the _fourth roots of unity_. The two square roots of unity are \(1\) and \(-1\). The fourth roots are the square roots of the square roots, \(1\) and \(-1\), \(i\) and \(-i\). The number \(i\) will satisfy \(i^{4}=1\) because it satisfies \(i^{2}=-1\). For the eighth roots of unity we need the square roots of \(i\), and that brings us to \(w=(1+i)/\sqrt{2}\). Squaring \(w\) produces \((1+2i+i^{2})/2\), which is \(i\)--because \(1+i^{2}\) is zero. Then \(w^{8}=i^{4}=1\). There has to be a system here.
+
+The complex numbers \(\cos\theta+i\sin\theta\) in the Fourier matrix are extremely special. The real part is plotted on the \(x\)-axis and the imaginary part on the \(y\)-axis (Figure 11). Then the number \(w\) lies on the _unit circle_; its distance from the origin is \(\cos^{2}\theta+\sin^{2}\theta=1\) 

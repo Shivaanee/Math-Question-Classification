@@ -1,0 +1,21 @@
+Now suppose that \(W\) is a finite-dimensional subspace of \(V\). Then we know, as a corollary of Theorem 3, that \(W\) has an orthogonal basis. Let \(\{\alpha_{1},\ldots,\alpha_{s}\}\) be any orthogonal basis for \(W\) and define \(\alpha\) by (8-11). Then, by the computation in the proof of Theorem 3, \(\beta-\alpha\) is orthogonal to each of the vectors \(\alpha_{k}\) (\(\beta-\alpha\) is the vector obtained at the last stage when the orthogonalization process is applied to \(\alpha_{1},\ldots,\alpha_{n}\), \(\beta\)). Thus \(\beta-\alpha\) is orthogonal to every linear combination of \(\alpha_{1},\ldots,\alpha_{n}\), i.e., to every vector in \(W\). If \(\gamma\) is in \(W\) and \(\gamma\neq\alpha\), it follows that \(||\beta-\gamma||>||\beta-\alpha||\). Therefore, \(\alpha\) is the best approximation to \(\beta\) that lies in \(W\).
+
+_Definition._ Let \(V\) be an inner product space and \(S\) any set of vectors in \(V\). _The_ **orthogonal complement** _of \(S\) is the set \(S^{\perp}\) of all vectors in \(V\) which are orthogonal to every vector in \(S\)._
+
+The orthogonal complement of \(V\) is the zero subspace, and conversely \(\{0\}^{\perp}=V\). If \(S\) is any subset of \(V\), its orthogonal complement \(S^{\perp}\) (\(S\) perp) is always a subspace of \(V\). For \(S\) is non-empty, since it contains \(0\); and whenever \(\alpha\) and \(\beta\) are in \(S^{\perp}\) and \(c\) is any scalar,
+
+\[\begin{array}{rl}(c\alpha+\beta|\gamma)&=&c(\alpha|\gamma)+(\beta|\gamma)\\ &=&c0+0\\ &=&0\end{array}\]
+
+for every \(\gamma\) in \(S\), thus \(c\alpha+\beta\) also lies in \(S\). In Theorem 4 the characteristic property of the vector \(\alpha\) is that it is the only vector in \(W\) such that \(\beta-\alpha\) belongs to \(W^{\perp}\).
+
+_Definition._ _Whenever the vector \(\alpha\) in Theorem 4 exists it is called the_ **orthogonal projection of \(\beta\) on \(W\)**_. If every vector in \(V\) has an orthogonal projection on \(W\), the mapping that assigns to each vector in \(V\) its orthogonal projection on \(W\) is called the_ **orthogonal projection of \(V\) on \(W\)**_._
+
+By Theorem 4, the orthogonal projection of an inner product space on a finite-dimensional subspace always exists. But Theorem 4 also implies the following result.
+
+_Corollary._ _Let \(V\) be an inner product space, \(W\) a finite-dimensional subspace, and \(E\) the orthogonal projection of \(V\) on \(W\). Then the mapping_
+
+\[\beta-E\beta\]
+
+_is the orthogonal projection of \(V\) on \(W^{\perp}\)._
+
+_Proof._ Let \(\beta\) be an arbitrary vector in \(V\). Then \(\beta-E\beta\) is in \(W^{\perp}\), and for any \(\gamma\) in \(W^{\perp}\), \(\beta-\gamma=E\beta+(\beta-E\beta-\gamma)\). Since \(E\beta\) is in \(W\) and \(\beta-E\beta-\gamma\) is in \(W^{\perp}\), it follows that 

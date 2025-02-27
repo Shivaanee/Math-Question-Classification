@@ -1,0 +1,29 @@
+
+
+**33.**: Using MATLAB, find the largest determinant of a 4 by 4 matrix of 0s and 1s.
+**34.**: If you know that \(\det A=6\), what is the determinant of \(B\)?
+**35.**: Suppose the 4 by 4 matrix \(M\) has four equal rows all containing \(a\), \(b\), \(c\), \(d\). We know that \(\det(M)=0\). The problem is to find \(\det(I+M)\) by any method:
+
+\[\det(I+M)=\left|\begin{array}{cccc}1+a&b&c&d\\ a&1+b&c&d\\ a&b&1+c&d\\ a&b&c&1+d\end{array}\right|.\]
+
+Partial credit if you find this determinant when \(a=b=c=d=1\). Sudden death if you say that \(\det(I+M)=\det I+\det M\).
+
+### Formulas for the Determinant
+
+The first formula has already appeared. Row operations produce the pivots in \(D\):
+
+**4A**: If \(A\) is invertible, then \(PA=LDU\) and \(\det P=\pm 1\). The product rule gives
+
+\[\det A=\pm\det L\det D\det U=\pm(\textbf{product of the pivots}).\] (1)
+
+The sign \(\pm 1\) depends on whether the number of row exchanges is even or odd. The triangular factors have \(\det L=\det U=1\) and \(\det D=d_{1}\cdots d_{n}\).
+
+In the 2 by 2 case, the standard \(LDU\) factorization is
+
+\[\begin{bmatrix}a&b\\ c&d\end{bmatrix}=\begin{bmatrix}1&0\\ c/a&1\end{bmatrix}\begin{bmatrix}a&0\\ 0&(\textbf{ad}-\textbf{bc})/\textbf{a}\end{bmatrix}\begin{bmatrix}1&b/a\\ 0&1\end{bmatrix}.\]
+
+The product of the pivots is \(ad-bc\). That is the determinant of the diagonal matrix \(D\). If the first step is a row exchange, the pivots are \(c\) and \((-\det A)/c\).
+
+**Example 1.**: The \(-1,2,-1\) second difference matrix has pivots \(2/1,3/2,\ldots\) in \(D\):
+
+\[\begin{bmatrix}2&-1\\ -1&2&-1\\ -1&2&\cdot\\ &\cdot&\cdot&-1\\ &&&-1&2\end{bmatrix}=LDU=L\begin{bmatrix}2\\ 3/2\\ &4/3\\ &&\cdot\\ &&&(n+1)/n\end{bmatrix}U.\]

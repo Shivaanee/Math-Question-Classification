@@ -1,0 +1,17 @@
+region. For \(n\) columns in \(\mathbf{R}^{m}\), the cone becomes an open-ended pyramid. Figure 8.4 has four vectors in \(\mathbf{R}^{2}\), and \(A\) is \(2\) by \(4\). If \(b\) lies in this cone, there is a nonnegative solution to \(Ax=b\); otherwise not.
+
+_What is the alternative if \(b\) lies outside the cone_? Figure 8.4 also shows a "separating hyperplane," which has the vector \(b\) on one side and the whole cone on the other side. The plane consists of all vectors perpendicular to a fixed vector \(y\). The angle between \(y\) and \(b\) is greater than \(90^{\circ}\), so \(yb<0\). The angle between \(y\) and every column of \(A\) is less than \(90^{\circ}\), so \(yA\geq 0\). This is the alternative we are looking for. This _theorem of the separating hyperplane_ is fundamental to mathematical economics.
+
+**81**\(Ax=b\) has a **nonnegative** solution _or_ there is a \(y\) with \(yA\geq 0\) and \(yb<0\).
+
+**Example 1**.: The nonnegative combinations of the columns of \(A=I\) fill the positive quadrant \(b\geq 0\). For every other \(b\), the alternative must hold for some \(y\):
+
+\[\mathbf{Not\ in\ cone}\qquad\text{If }b=\begin{bmatrix}2\\ -3\end{bmatrix},\quad\text{then }y=\begin{bmatrix}0&1\end{bmatrix} \quad\text{gives}\quad yI\geq 0\quad\text{but}\quad yb=-3.\]
+
+The \(x\)-axis, perpendicular to \(y=[0\;\;1]\), separates \(b\) from the cone \(=\) quadrant.
+
+Here is a curious pair of alternatives. It is impossible for a subspace \(S\) and its orthogonal complement \(S^{\perp}\) both to contain positive vectors. Their inner product would be positive, not zero. But \(S\) might be the \(x\)-axis and \(S^{\perp}\) the \(y\)-axis, in which case they contain the "semipositive" vectors \([1\;\;0]\) and \([0\;\;1]\). This slightly weaker alternative does work: _Either \(S\) contains a positive vector \(x>0\), or \(S^{\perp}\) contains a nonzero \(y\geq 0\)._ When \(S\) and \(S^{\perp}\) are perpendicular lines in the plane, one or the other must enter the first quadrant. I can't see this clearly in three or four dimensions.
+
+Figure 8.4: The cone of nonnegative combinations of the columns: \(b=Ax\) with \(x\geq 0\). When \(b\) is outside the cone, it is separated by a hyperplane (perpendicular to \(y\)).
+
+ 

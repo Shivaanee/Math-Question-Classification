@@ -1,0 +1,25 @@
+We are back to a first-order system. The problem can be solved two ways. In a course on differential equations, you would substitute \(y=e^{\lambda t}\) into \(y^{\prime\prime\prime}-3y^{\prime\prime}+2y^{\prime}=0\):
+
+\[(\lambda^{3}-3\lambda^{2}+2\lambda)e^{\lambda t}=0\qquad\text{or}\qquad\lambda( \lambda-1)(\lambda-2)e^{\lambda t}=0.\] (10)
+
+The three pure exponential solutions are \(y=e^{0t}\), \(y=e^{t}\), and \(y=e^{2t}\). No eigenvectors are involved. In a linear algebra course, we find the eigenvalues of \(A\):
+
+\[\det(A-\lambda I)=\begin{bmatrix}-\lambda&1&0\\ 0&-\lambda&I\\ 0&-2&3-\lambda\end{bmatrix}=-\lambda^{3}+3\lambda^{2}-2\lambda=0.\] (11)
+
+Equations (10) and (11) are the same! The same three exponents appear: \(\lambda=0\), \(\lambda=1\), and \(\lambda=2\). This is a general rule which makes the two methods consistent; the growth rates of the solutions stay fixed when the equations change form. It seems to us that solving the third-order equation is quicker.
+
+The physical significance of \(du/dt=\left[\begin{smallmatrix}-2&1\\ 1&-2\end{smallmatrix}\right]u\) is easy to explain and at the same time genuinely important. This differential equation describes a process of _diffusion_. Divide an infinite pipe into four segments (Figure 5.1). At time \(t=0\), the middle segments contain concentrations \(v(0)\) and \(w(0)\) of a chemical. _At each time \(t\), the diffusion rate between two adjacent segments is the difference in concentrations_. Within each segment, the concentration remains uniform (zero in the infinite segments). The process is continuous in time but discrete in space; the unknowns are \(v(t)\) and \(w(t)\) in the two inner segments \(S_{1}\) and \(S_{2}\).
+
+The concentration \(v(t)\) in \(S_{1}\) is changing in two ways. There is diffusion into \(S_{0}\), and into or out of \(S_{2}\). The net rate of change is \(dv/dt\), and \(dw/dt\) is similar:
+
+\[\textbf{Flow rate into }S_{1}\qquad\frac{dv}{dt}=(w-v)+(0-v)\] \[\textbf{Flow rate into }S_{2}\qquad\frac{dw}{dt}=(0-w)+(v-w).\]
+
+This law of diffusion exactly matches our example \(du/dt=Au\):
+
+\[u=\begin{bmatrix}v\\ w\end{bmatrix}\qquad\text{and}\qquad\frac{du}{dt}=\begin{bmatrix}-2v+w\\ v-2w\end{bmatrix}=\begin{bmatrix}-2&1\\ 1&-2\end{bmatrix}u.\]
+
+The eigenvalues \(-1\) and \(-3\) will govern the solution. They give the rate at which the concentrations decay, and \(\lambda_{1}\) is the more important because only an exceptional set of
+
+Figure 5.1: A model of diffusion between four segments.
+
+ 

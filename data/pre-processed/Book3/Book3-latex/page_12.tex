@@ -1,0 +1,19 @@
+\(-1\). With the usual operations of addition and multiplication, the set of integers satisfies all of the conditions (1)-(9) except condition (8).
+
+**Example 3**: _The set of rational numbers, that is, numbers of the form \(p/q\), where \(p\) and \(q\) are integers and \(q\neq 0\), is a subfield of the field of complex numbers. The division which is not possible within the set of integers is possible within the set of rational numbers. The interested reader should verify that any subfield of \(C\) must contain every rational number._
+
+**Example 4**: _The set of all complex numbers of the form \(x+y^{\sqrt{2}}\), where \(x\) and \(y\) are rational, is a subfield of \(C\). We leave it to the reader to verify this._
+
+In the examples and exercises of this book, the reader should assume that the field involved is a subfield of the complex numbers, unless it is expressly stated that the field is more general. We do not want to dwell on this point; however, we should indicate why we adopt such a convention. If \(F\) is a field, it may be possible to add the unit \(1\) to itself a finite number of times and obtain \(0\) (see Exercise 5 following Section 1.2):
+
+\[1+1+\cdots+1=0.\]
+
+That does not happen in the complex number field (or in any subfield thereof). If it does happen in \(F\), then the least \(n\) such that the sum of \(n\)\(1\)'s is \(0\) is called the **characteristic** of the field \(F\). If it does not happen in \(F\), then (for some strange reason) \(F\) is called a field of **characteristic zero.** Often, when we assume \(F\) is a subfield of \(C\), what we want to guarantee is that \(F\) is a field of characteristic zero; but, in a first exposure to linear algebra, it is usually better not to worry too much about characteristics of fields.
+
+### Systems of Linear Equations
+
+Suppose \(F\) is a field. We consider the problem of finding \(n\) scalars (elements of \(F\)) \(x_{1},\ldots,x_{n}\) which satisfy the conditions
+
+\[\begin{array}{c}A_{1n}x_{1}+A_{12}x_{2}+\cdots+A_{1n}x_{n}=y_{1}\\ A_{21}x_{1}+A_{2n}x_{2}+\cdots+A_{2n}x_{n}=y_{2}\\ \vdots\vdots\vdots\vdots\vdots\\ A_{n1}x_{1}+A_{n2}x_{2}+\cdots+A_{nn}x_{n}=y_{m}\end{array}\] (1-1)
+
+where \(y_{1},\ldots,y_{m}\) and \(A_{ij},\ 1\leq i\leq m,\ 1\leq j\leq n\), are given elements of \(F\). We call (1-1) a **system of \(m\) linear equations in \(n\) unknowns.** Any \(n\)-tuple \((x_{1},\ldots,x_{n})\) of elements of \(F\) which satisfies each of the 

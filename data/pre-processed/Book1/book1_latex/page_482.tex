@@ -1,0 +1,20 @@
+
+
+### Problem Set B
+
+**1.**: Find the Jordan forms (in three steps!) of
+
+\[A=\begin{bmatrix}1&1\\ 1&1\end{bmatrix}\qquad\text{and}\qquad B=\begin{bmatrix}0&1&2\\ 0&0&0\\ 0&0&0\end{bmatrix}.\]
+**2.**: Show that the special solution \(u_{2}\) in equation (17) does satisfy \(du/dt=Au\), exactly because of the string \(Ax_{1}=8x_{1}\), \(Ax_{7}=8x_{7}+x_{1}\).
+**3.**: For the matrix \(B\) in Problem 1, use \(Me^{It}M^{-1}\) to compute the exponential \(e^{Bt}\), and compare it with the power series \(I+Bt+(Bt)^{2}/2!+\cdots\).
+**4.**: Show that each Jordan block \(J_{i}\) is similar to its transpose, \(J_{i}^{\rm T}=P^{-1}J_{i}P\), using the permutation matrix \(P\) with \(1\)s along the cross-diagonal (lower left to upper right). Deduce that every matrix is similar to its transpose.
+**5.**: Find "by inspection" the Jordan forms of
+
+\[A=\begin{bmatrix}1&2&3\\ 0&4&5\\ 0&0&6\end{bmatrix}\qquad\text{and}\qquad B=\begin{bmatrix}1&1\\ -1&-1\end{bmatrix}.\]
+**6.**: Find the Jordan form \(J\) and the matrix \(M\) for \(A\) and \(B\) (\(B\) has eigenvalues \(1\), \(1\), \(1\), \(-1\)). What is the solution to \(du/dt=Au\), and what is \(e^{At}\)?
+
+\[A=\begin{bmatrix}0&0&1&0&0\\ 0&0&0&1&0\\ 0&0&0&0&1\\ 0&0&0&0&0\\ 0&0&0&0&0\end{bmatrix}\qquad\text{and}\qquad B=\begin{bmatrix}1&-1&0&-1\\ 0&2&0&1\\ -2&1&-1&1\\ 2&-1&2&0\end{bmatrix}.\]
+**7.**: Suppose that \(A^{2}=A\). Show that its Jordan form \(J=M^{-1}AM\) satisfies \(J^{2}=J\). Since the diagonal blocks stay separate, this means \(J_{i}^{2}=J_{i}\) for each block; show by direct computation that \(J_{i}\) can only be a \(1\) by \(1\) block, \(J_{i}=[0]\) or \(J_{i}=[1]\). Thus, \(A\) is similar to a diagonal matrix of \(0\)s and \(1\)s.
+
+_Note_. This is a typical case of our closing theorem: _The matrix \(A\) can be diagonalized if and only if the product \((A-\lambda_{1}I)(A-\lambda_{2}I)\cdots(A-\lambda_{p}I)\), without including any repetitions of the \(\lambda\)'s, is zero_. One extreme case is a matrix with distinct eigenvalues; the Cayley-Hamilton theorem says that with \(n\) factors \(A-\lambda I\) we always get zero. The other extreme is the identity matrix, also diagonalizable (\(p=1\) and \(A-I=0\)). The nondiagonalizable matrix \(A=\begin{bmatrix}1&1\\ 0&1\end{bmatrix}\) satisfies not \((A-I)=0\) but only \((A-I)^{2}=0\)--an equation with a repeated root.
+

@@ -1,0 +1,23 @@
+and the \(j\)th column of \(B\). The reader should verify that the \(j\)th column of \(AB\) is \(AB_{j}\):
+
+\[AB=[AB_{1},\ldots,AB_{p}].\]
+
+In spite of the fact that a product of matrices depends upon the order in which the factors are written, it is independent of the way in which they are associated, as the next theorem shows.
+
+If A, B, C are matrices over the field F such that the products BC and A(BC) are defined, then so are the products AB, (AB)C and
+
+\[\text{A(BC)}=(\text{AB})\text{C}.\]
+
+Suppose \(B\) is an \(n\times p\) matrix. Since \(BC\) is defined, \(C\) is a matrix with \(p\) rows, and \(BC\) has \(n\) rows. Because \(A(BC)\) is defined we may assume \(A\) is an \(m\times n\) matrix. Thus the product \(AB\) exists and is an \(m\times p\) matrix, from which it follows that the product \((AB)C\) exists. To show that \(A(BC)=(AB)C\) means to show that
+
+\[[A(BC)]_{ij}=[(AB)C]_{ij}\]
+
+for each \(i,j\). By definition
+
+\[[A(BC)]_{ij} =\underset{r}{\Sigma}A_{ir}(BC)_{rj}\] \[=\underset{r}{\Sigma}A_{ir}({\Sigma}A_{ir}B_{n}C_{aj}\] \[=\underset{r}{\Sigma}\underset{s}{\Sigma}A_{ir}B_{n}C_{aj}\] \[=\underset{s}{\Sigma}\underset{r}{\Sigma}A_{ir}B_{n}C_{aj}\] \[=\underset{s}{\Sigma}(AB)_{i}C_{aj}\] \[=[(AB)C]_{ij}.\qed\]
+
+When \(A\) is an \(n\times n\) (square) matrix, the product \(AA\) is defined. We shall denote this matrix by \(A^{2}\). By Theorem 3.1, \((AA)A=A(AA)\) or \(A^{2}A=AA^{2}\), so that the product \(AAA\) is unambiguously defined. This product we denote by \(A^{3}\). In general, the product \(AA\)\(\cdots A\) (\(k\) times) is unambiguously defined, and we shall denote this product by \(A^{k}\).
+
+Note that the relation \(A(BC)=(AB)C\) implies among other things that linear combinations of linear combinations of the rows of \(C\) are again linear combinations of the rows of \(C\).
+
+If \(B\) is a given matrix and \(C\) is obtained from \(B\) by means of an elementary row operation, then each row of \(C\) is a linear combination of the rows of \(B\), and hence there is a matrix \(A\) such that \(AB=C\). In general there are many such matrices \(A\), and among all such it is convenient and 

@@ -1,0 +1,29 @@
+This law applies equally to \(A^{\mathrm{T}}\), which has \(m\) columns. \(A^{\mathrm{T}}\) is just as good a matrix as \(A\). But the dimension of its column space is also \(r\), so
+
+\[r+\mathrm{dimension}\;\left(N(A^{\mathrm{T}})\right)=m.\] (1)
+
+The left nullspace \(N(A^{\mathrm{T}})\) has dimension \(m-r\).
+
+The \(m-r\) solutions to \(y^{\mathrm{T}}A=0\) are hiding somewhere in elimination. The rows of \(A\) combine to produce the \(m-r\)_zero rows_ of \(U\). Start from \(PA=LU\), or \(L^{-1}PA=U\). The last \(m-r\) rows of the invertible matrix \(L^{-1}P\) must be a basis of \(y\)'s in the left nullspace--because they multiply \(A\) to give the zero rows in \(U\).
+
+In our 3 by 4 example, the zero row was row \(3-2\)(row 2) \(+\) 5(row 1). Therefore the components of \(y\) are 5, \(-2\), 1. This is the same combination as in \(b_{3}-2b_{2}+5b_{1}\) on the right-hand side, leading to \(0=0\) as the final equation. That vector \(y\) is a basis for the left nullspace, which has dimension \(m-r=3-2=1\). It is the last row of \(L^{-1}P\), and produces the zero row in \(U\)--and we can often see it without computing \(L^{-1}\). When desperate, it is always possible just to solve \(A^{\mathrm{T}}y=0\).
+
+I realize that so far in this book we have given no reason to care about \(N(A^{\mathrm{T}})\). It is correct but not convincing if I write in italics that _the left nullspace is also important_. The next section does better by finding a physical meaning for \(y\) from Kirchhoff's Current Law.
+
+Now we know the dimensions of the four spaces. We can summarize them in a table, and it even seems fair to advertise them as the
+
+**Fundamental Theorem of Linear Algebra, Part I**
+
+**1.**: \(C(A)=\) column space of \(A\); dimension \(r\).
+**2.**: \(N(A)=\) nullspace of \(A\); dimension \(n-r\).
+**3.**: \(C(A^{\mathrm{T}})=\) row space of \(A\); dimension \(r\).
+**4.**: \(N(A^{\mathrm{T}})=\) left nullspace of \(A\); dimension \(m-r\).
+
+**Example 1**.: \(A=\begin{bmatrix}1&2\\ 3&6\end{bmatrix}\) has \(m=n=2\), and rank \(r=1\).
+
+1. The _column space_ contains all multiples of \(\begin{bmatrix}1\\ 3\end{bmatrix}\). The second column is in the same direction and contributes nothing new.
+2. The _nullspace_ contains all multiples of \(\begin{bmatrix}-2\\ 1\end{bmatrix}\). This vector satisfies \(Ax=0\).
+3. The _row space_ contains all multiples of \(\begin{bmatrix}1\\ 2\end{bmatrix}\). I write it as a column vector, since strictly speaking it is in the column space of \(A^{\mathrm{T}}\).
+4. The _left nullspace_ contains all multiples of \(y=\begin{bmatrix}-3\\ 1\end{bmatrix}\). The rows of \(A\) with coefficients \(-3\) and 1 add to zero, so \(A^{\mathrm{T}}y=0\).
+
+ 

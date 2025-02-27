@@ -1,0 +1,18 @@
+
+
+## 10 Exercises
+
+* _Scalar-row-vector multiplication_. Suppose \(a\) is a number and \(x=[x_{1}\ \cdots\ x_{n}]\) is an \(n\)-row-vector. The scalar-row-vector product \(ax\) is the \(n\)-row-vector \([ax_{1}\ \cdots\ ax_{n}]\). Is this a special case of matrix-matrix multiplication? That is, can you interpret scalar-row-vector multiplication as matrix multiplication? (Recall that scalar-vector multiplication, with the scalar on the left, is _not_ a special case of matrix-matrix multiplication; see page 10.)
+* _Ones matrix_. There is no special notation for an \(m\times n\) matrix all of whose entries are one. Give a simple expression for this matrix in terms of matrix multiplication, transpose, and the ones vectors \(\mathbf{1}_{m}\), \(\mathbf{1}_{n}\) (where the subscripts denote the dimension).
+* _Matrix sizes_. Suppose \(A\), \(B\), and \(C\) are matrices that satisfy \(A+BB^{T}=C\). Determine which of the following statements are necessarily true. (There may be more than one true statement.)
+* \(A\) is square.
+* \(A\) and \(B\) have the same dimensions.
+* \(A\), \(B\), and \(C\) have the same number of rows.
+* \(B\) is a tall matrix.
+* _Block matrix notation_. Consider the block matrix \[A=\left[\begin{array}{ccc}I&B&0\\ B^{T}&0&0\\ 0&0&BB^{T}\end{array}\right],\] where \(B\) is \(10\times 5\). What are the dimensions of the four zero matrices and the identity matrix in the definition of \(A\)? What are the dimensions of \(A\)?
+* _When is the outer product symmetric?_ Let \(a\) and \(b\) be \(n\)-vectors. The inner product is symmetric, _i.e._, we have \(a^{T}b=b^{T}a\). The outer product of the two vectors is generally _not_ symmetric; that is, we generally have \(ab^{T}\neq ba^{T}\). What are the conditions on \(a\) and \(b\) under which \(ab=ba^{T}\)? You can assume that all the entries of \(a\) and \(b\) are nonzero. (The conclusion you come to will hold even when some entries of \(a\) or \(b\) are zero.) _Hint_. Show that \(ab^{T}=ba^{T}\) implies that \(a_{i}/b_{i}\) is a constant (_i.e._, independent of \(i\)).
+* _Product of rotation matrices_. Let \(A\) be the \(2\times 2\) matrix that corresponds to rotation by \(\theta\) radians, defined in (7.1), and let \(B\) be the \(2\times 2\) matrix that corresponds to rotation by \(\omega\) radians. Show that \(AB\) is also a rotation matrix, and give the angle by which it rotates vectors. Verify that \(AB=BA\) in this case, and give a simple English explanation.
+* _Two rotations_. Two 3-vectors \(x\) and \(y\) are related as follows. First, the vector \(x\) is rotated \(40^{\circ}\) around the \(e_{3}\) axis, counterclockwise (from \(e_{1}\) toward \(e_{2}\)), to obtain the 3-vector \(z\). Then, \(z\) is rotated \(20^{\circ}\) around the \(e_{1}\) axis, counterclockwise (from \(e_{2}\) toward \(e_{3}\)), to form \(y\). Find the \(3\times 3\) matrix \(A\) for which \(y=Ax\). Verify that \(A\) is an orthogonal matrix. _Hint_. Express \(A\) as a product of two matrices, which carry out the two rotations described above.
+* _Entries of matrix triple product_. (See page 10.) Suppose \(A\) has dimensions \(m\times n\), \(B\) has dimensions \(n\times p\), \(C\) has dimensions \(p\times q\), and let \(D=ABC\). Show that \[D_{ij}=\sum_{k=1}^{n}\sum_{l=1}^{p}A_{ik}B_{kl}C_{lj}.\] This is the formula analogous to (10.1) for the product of two matrices.
+* _Multiplication by a diagonal matrix_. Suppose that \(A\) is an \(m\times n\) matrix, \(D\) is a diagonal matrix, and \(B=DA\). Describe \(B\) in terms of \(A\) and the entries of \(D\). You can refer to the rows or columns or entries of \(A\).
+

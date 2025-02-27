@@ -1,0 +1,22 @@
+
+
+**20.**: Find the eigenvalues of the "periodic" \(-1\), \(2\), \(-1\) matrix \(C\). The \(-1\)s in the corners of \(C\) make it periodic (**a circulant matrix**):
+
+\[C=\begin{bmatrix}2&-1&0&-1\\ -1&2&-1&0\\ 0&-1&2&-1\\ -1&0&-1&2\end{bmatrix}\quad\text{has}\quad c_{0}=2,\;c_{1}=-1,\;c_{2}=0,\;c_{3 }=-1.\]
+**21.**: To multiply \(C\) times \(x\), when \(C=FEF^{-1}\), we can multiply \(F(E(F^{-1}x))\) instead. The direct \(Cx\) uses \(n^{2}\) separate multiplications. Knowing \(E\) and \(F\), the second way uses only \(n\log_{2}n+n\) multiplications. How many of those come from \(E\), how many from \(F\), and how many from \(F^{-1}\)?
+**22.**: How could you quickly compute these four components of \(Fc\) starting from \(c_{0}+c_{2}\), \(c_{0}-c_{2}\), \(c_{1}+c_{3}\), \(c_{1}-c_{3}\)? You are finding the Fast Fourier Transform!
+
+\[Fc=\begin{bmatrix}c_{0}+c_{1}+c_{2}+c_{3}\\ c_{0}+ic_{1}+i^{2}c_{2}+i^{3}c_{3}\\ c_{0}+i^{2}c_{1}+i^{4}c_{2}+i^{6}c_{3}\\ c_{0}+i^{3}c_{1}+i^{6}c_{2}+i^{9}c_{3}\end{bmatrix}.\]
+
+### Review Exercises
+
+**3.1**: Find the length of \(a=(2,-2,1)\), and write two independent vectors that are perpendicular to \(a\).
+**3.2**: Find all vectors that are perpendicular to \((1,3,1)\) and \((2,7,2)\), by making those the rows of \(A\) and solving \(Ax=0\).
+**3.3**: What is the angle between \(a=(2,-2,1)\) and \(b=(1,2,2)\)?
+**3.4**: What is the projection \(p\) of \(b=(1,2,2)\) onto \(a=(2,-2,1)\)?
+**3.5**: Find the cosine of the angle between the vectors \((3,4)\) and \((4,3)\),
+**3.6**: Where is the projection of \(b=(1,1,1)\) onto the plane spanned by \((1,0,0)\) and \((1,1,0)\)?
+**3.7**: The system \(Ax=b\) has a solution if and only if \(b\) is orthogonal to which of the four fundamental subspaces?
+**3.8**: Which straight line gives the best fit to the following data: \(b=0\) at \(t=0\), \(b=0\) at \(t=1\), \(b=12\) at \(t=3\)?
+**3.9**: Construct the projection matrix \(P\) onto the space spanned by \((1,1,1)\) and \((0,1,3)\).
+

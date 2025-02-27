@@ -1,0 +1,15 @@
+A good classifier will have small (near zero) error rate and false positive rate, and high (near one) true positive rate, true negative rate, and precision. Which of these metrics is more important depends on the particular application.
+
+An example confusion matrix is given in table 14.2 for the performance of a spam detector on a data set of \(N=1266\) examples (emails) of which \(127\) are spam (\(y=+1\)) and the remaining \(1139\) are not spam (\(y=-1\)). On the data set, this classifier has \(95\) true positives, \(1120\) true negatives, \(19\) false positives, and \(32\) false negatives. Its error rate is \((19+32)/1266=4.03\%\). Its true positive rate is \(95/127=74.8\%\) (meaning it is detecting around \(75\%\) of the spam in the data set), and its false positive rate is \(19/1139=1.67\%\) (meaning it incorrectly labeled around \(1.7\%\) of the non-spam messages as spam).
+
+Validation in classification problems.In classification problems we are concerned with the error, true positive, and false positive rates. So out-of-sample validation and cross-validation are carried out using the performance metric or metrics that we care about, _i.e._, the error rate or some combination of true positive and false negative rates. We may care more about one of these metrics than the others.
+
+### 14.2 Least squares classifier
+
+Many sophisticated methods have been developed for constructing a Boolean model or classifier from a data set. _Logistic regression_ and _support vector machine_ are two methods that are widely used, but beyond the scope of this book. Here we discuss a very simple method, based on least squares, that can work quite well, though not as well as the more sophisticated methods.
+
+We first carry out ordinary real-valued least squares fitting of the outcome, ignoring for the moment that the outcome \(y\) takes on only the values \(-1\) and \(+1\). We choose basis functions \(f_{1},\ldots,f_{p}\), and then choose the parameters \(\theta_{1},\ldots,\theta_{p}\) so as to minimize the sum squared error
+
+\[(y^{(1)}-\tilde{f}(x^{(1)}))^{2}+\cdots+(y^{(N)}-\tilde{f}(x^{(N)}))^{2},\]
+
+where \(\tilde{f}(x)=\theta_{1}f_{1}(x)+\cdots+\theta_{p}f_{p 

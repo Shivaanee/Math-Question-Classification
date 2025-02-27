@@ -1,0 +1,17 @@
+(find \(x\) that minimizes \(\|Ax-b\|^{2}\)). Indeed each of these problems can be considered a special case of the constrained least squares problem (16.1).
+
+The constrained least squares problem can also be thought of as a limit of a bi-objective least squares problem, with primary objective \(\|Ax-b\|^{2}\) and secondary objective \(\|Cx-d\|^{2}\). Roughly speaking, we put infinite weight on the second objective, so that any nonzero value is unacceptable (which forces \(x\) to satisfy \(Cx=d\)). So we would expect (and it can be verified) that minimizing the weighted objective
+
+\[\|Ax-b\|^{2}+\lambda\|Cx-d\|^{2},\]
+
+for a very large value of \(\lambda\) yields a vector close to a solution of the constrained least squares problem (16.1). We will encounter this idea again in chapter 19, when we consider the nonlinear constrained least squares problem.
+
+Example.In figure 16.1 we fit a _piecewise-polynomial_ function \(\hat{f}(x)\) to a set of \(N=140\) points \((x_{i},y_{i})\) in the plane. The function \(\hat{f}(x)\) is defined as
+
+\[\hat{f}(x)=\left\{\begin{array}{ll}p(x)&x\leq a\\ q(x)&x>a,\end{array}\right.\]
+
+with \(a\) given, and \(p(x)\) and \(q(x)\) polynomials of degree three or less,
+
+\[p(x)=\theta_{1}+\theta_{2}x+\theta_{3}x^{2}+\theta_{4}x^{3},\qquad q(x)=\theta _{5}+\theta_{6}x+\theta_{7}x^{2}+\theta_{8}x^{3}.\]
+
+We also impose the condition that \(p(a)=q(a)\) and \(p^{\prime}(a)=q^{\prime}(a)\), so that \(\hat{f}(x 

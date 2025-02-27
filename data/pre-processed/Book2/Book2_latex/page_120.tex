@@ -1,0 +1,25 @@
+This submatrix has size \((q-p+1)\times(s-r+1)\) and is obtained by extracting from \(A\) the elements in rows \(p\) through \(q\) and columns \(r\) through \(s\).
+
+For the specific matrix \(A\) in (6.1), we have
+
+\[A_{2:3,3:4}=\left[\begin{array}{cc}1&4\\ 5&4\end{array}\right].\]
+
+Column and row representation of a matrix.Using block matrix notation we can write an \(m\times n\) matrix \(A\) as a block matrix with one block row and \(n\) block columns,
+
+\[A=\left[\begin{array}{cccc}a_{1}&a_{2}&\cdots&a_{n}\end{array}\right],\]
+
+where \(a_{j}\), which is an \(m\)-vector, is the \(j\)th column of \(A\). Thus, an \(m\times n\) matrix can be viewed as its \(n\) columns, concatenated.
+
+Similarly, an \(m\times n\) matrix \(A\) can be written as a block matrix with one block column and \(m\) block rows:
+
+\[A=\left[\begin{array}{c}b_{1}\\ b_{2}\\ \vdots\\ b_{m}\end{array}\right],\]
+
+where \(b_{i}\), which is a row \(n\)-vector, is the \(i\)th row of \(A\). In this notation, the matrix \(A\) is interpreted as its \(m\) rows, stacked.
+
+## Examples
+
+Table interpretation.The most direct interpretation of a matrix is as a table of numbers that depend on two indices, \(i\) and \(j\). (A vector is a list of numbers that depend on only one index.) In this case the rows and columns of the matrix usually have some simple interpretation. Some examples are given below.
+
+* _Images._ A black and white image with \(M\times N\) pixels is naturally represented as an \(M\times N\) matrix. The row index \(i\) gives the vertical position of the pixel, the column index \(j\) gives the horizontal position of the pixel, and the \(i,j\) entry gives the pixel value.
+* _Rainfall data._ An \(m\times n\) matrix \(A\) gives the rainfall at \(m\) different locations on \(n\) consecutive days, so \(A_{42}\) (which is a number) is the rainfall at location 4 on day 2. The \(j\)th column of \(A\), which is an \(m\)-vector, gives the rainfall at the \(m\) locations on day \(j\). The \(i\)th row of \(A\), which is an \(n\)-row-vector, is the time series of rainfall at location \(i\).
+* _Asset returns._ A \(T\times n\) matrix \(R\) gives the returns of a collection of \(n\) assets (called the _universe_ of assets) over \(T\) periods, with \(R_{ij}\) giving the return of asset \(j\) in period \(i\). So \(R_{12,7}=-0.03\) means that asset 7 had a 3% loss in period 12. The 4th column of \(R\) is a \(T\)-vector that is the return time series 

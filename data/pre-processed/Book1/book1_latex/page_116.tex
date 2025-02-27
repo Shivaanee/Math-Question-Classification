@@ -1,0 +1,33 @@
+Most sets of four vectors in \(\mathbf{R}^{4}\) are independent. Those \(e\)'s might be the safest.
+
+To check any set of vectors \(v_{1},\ldots,v_{n}\) for independence, put them in the columns of \(A\). Then solve the system \(Ac=0\); the vectors are dependent if there is a solution other than \(c=0\). With no free variables (_rank_\(n\)), there is no nullspace except \(c=0\); the vectors are independent. If the rank is less than \(n\), at least one free variable can be nonzero and the columns are dependent.
+
+One case has special importance. Let the \(n\) vectors have \(m\) components, so that \(A\) is an \(m\) by \(n\) matrix. Suppose now that \(n>m\). There are too many columns to be independents There cannot be \(n\) pivots, since there are not enough rows to hold them. The rank will be less than \(n\). Every system \(Ac=0\) with more unknowns than equations has solutions \(c\neq 0\).
+
+### 2G
+
+A set of n vectors in \(\mathbf{R}^{m}\) must be linearly dependent if \(n>m\).
+
+The reader will recognize this as a disguised form of 2C: Every \(m\) by \(n\) system \(Ax=0\) has nonzero solutions if \(n>m\).
+
+**Example 5**.: These three columns in \(\mathbf{R}^{2}\) cannot be independent:
+
+\[A=\begin{bmatrix}1&2&1\\ 1&3&2\end{bmatrix}.\]
+
+To find the combination of the columns producing zero we solve \(Ac=0\):
+
+\[A\to U=\begin{bmatrix}1&2&1\\ 0&1&1\end{bmatrix}.\]
+
+If we give the value 1 to the free variable \(c_{3}\), then back-substitution in \(Uc=0\) gives \(c_{2}=-1\), \(c_{1}=1\). With these three weights, the first column minus the second plus the third equals zero: Dependence.
+
+### Spanning a Subspace
+
+Now we define what it means for a set of vectors to _span a space_. The column space of \(A\) is _spanned_ by the columns. **Their combinations produce the whole space**:
+
+**2H** If a vector space \(\mathbf{V}\) consists of all linear combinations of \(w_{1},\ldots,w_{\ell}\), then these vectors _span_ the space. Every vector \(v\) in \(\mathbf{V}\) is some combination of the \(w\)'s:
+
+**Every \(v\) comes from \(w\)'s**\(v=c_{1}w_{1}+\cdots+c_{\ell}w_{\ell}\) for some coefficients \(c_{i}\).
+
+It is permitted that a different combination of \(w\)'s could give the same vector \(v\). The \(c\)'s need not be unique, because the spanning set might be excessively large--it could include the zero vector, or even all vectors.
+
+ 

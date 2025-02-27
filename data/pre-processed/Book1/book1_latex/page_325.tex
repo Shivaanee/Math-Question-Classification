@@ -1,0 +1,33 @@
+If we take the inner product of \(x=(1+3i,3i)\) with itself, we are back to \(\|x\|^{2}\):
+
+\[\text{\bf Length squared}\qquad\overline{x}^{\text{T}}x=\overline{(1+i)}(1+i)+ \overline{(3i)}(3i)=2+9\quad\text{and}\quad\|x\|^{2}=11.\]
+
+Note that \(\overline{y}^{\text{T}}x\) is different from \(\overline{x}^{\text{T}}y\); we have to watch the order of the vectors.
+
+This leaves only one more change in notation, condensing two symbols into one. Instead of a bar for the conjugate and a T for the transpose, those are combined into the _conjugate transpose_. For vectors and matrices, a superscript H (or a star) combines both operations. This matrix \(\overline{A}^{\text{T}}=A^{\text{H}}=A^{*}\) is called "\(A\) Hermitian":
+
+\[\text{\bf``A Hermitian''}\qquad A^{\text{H}}=\overline{A}^{\text{T}}\quad\text{ has entries}\quad(A^{\text{H}})_{ij}=\overline{A_{ji}}.\] (6)
+
+You have to listen closely to distinguish that name from the phrase "\(A\) is Hermitian," which means that \(A\)_equals_\(A^{\text{H}}\). If \(A\) is an \(m\) by \(n\) matrix, then \(A^{\text{H}}\) is \(n\) by \(m\):
+
+\[\begin{array}{l}\text{\bf Conjugate}\\ \text{\bf transpose}\end{array}\qquad\begin{bmatrix}2+i&3i\\ 4-i&5\\ 0&0\end{bmatrix}^{\text{H}}=\begin{bmatrix}2-i&4+i&0\\ -3i&5&0\end{bmatrix}.\]
+
+This symbol \(A^{\text{H}}\) gives official recognition to the fact that, with complex entries, it is very seldom that we want only the transpose of \(A\). It is the _conjugate_ transpose \(A^{\text{H}}\) that becomes appropriate, and \(x^{\text{H}}\) is the row vector \([\overline{x}_{1}&\cdots&\overline{x}_{n}]\).
+
+**5N**
+
+1. The inner product of \(x\) and \(y\) is \(x^{\text{H}}y\). Orthogonal vectors have \(x^{\text{H}}y=0\).
+2. The squared length of \(x\) is \(\|x\|^{2}=x^{\text{H}}x=|x_{1}|^{2}+\cdots+|x_{n}|^{2}\).
+3. Conjugating \((AB)^{\text{T}}=B^{\text{T}}A^{\text{T}}\) produces \((AB)^{\text{H}}=B^{\text{H}}A^{\text{H}}\).
+
+### Hermitian Matrices
+
+We spoke in earlier chapters about symmetric matrices: \(A=A^{\text{T}}\). With complex entries, this idea of symmetry has to be extended. The right generalization is not to matrices that equal their transpose, but to _matrices that equal their conjugate transpose_. These are the Hermitian matrices, and a typical example is \(A\):
+
+\[\text{\bf Hermitian matrix}\qquad A=\begin{bmatrix}2&3-3i\\ 3+3i&5\end{bmatrix}=A^{\text{H}}.\] (7)
+
+_The diagonal entries must be real_; they are unchanged by conjugation. Each off-diagonal entry is matched with its mirror image across the main diagonal, and \(3-3i\) is the conjugate of \(3+3i\). _In every case, \(a_{ij}=\overline{a_{ji}}\)_.
+
+Our main goal is to establish three basic properties of Hermitian matrices. These properties apply equally well to symmetric matrices. _A real symmetric matrix is certainly Hermitian_. (For real matrices there is no difference between \(A^{\text{T}}\) and \(A^{\text{H}}\).) **The eigenvalues of \(A\) are real**--as we now prove.
+
+ 

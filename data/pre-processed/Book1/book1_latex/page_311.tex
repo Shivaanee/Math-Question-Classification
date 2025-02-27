@@ -1,0 +1,33 @@
+This decays for \(a<0\), it is constant for \(a=0\), and it explodes for \(a>0\). The imaginary part is producing oscillations, but the amplitude comes from the real part.
+
+**5M** The differential equation \(du/dt=Au\) is
+
+_stable_ and \(e^{At}\to 0\) whenever all \(\mathrm{Re}\lambda_{i}<0\),
+
+_neutrally stable_ when all \(\mathrm{Re}\lambda_{i}\leq 0\) and \(\mathrm{Re}\lambda_{1}=0\), and
+
+_unstable_ and \(e^{At}\) is unbounded if any eigenvalue has \(\mathrm{Re}\lambda_{i}>0\).
+
+In some texts the condition \(\mathrm{Re}\lambda<0\) is called _asymptotic_ stability, because it guarantees decay for large times \(t\). Our argument depended on having \(n\) pure exponential solutions, but even if \(A\) is not diagonalizable (and there are terms like \(te^{\lambda t}\)) the result is still true:
+
+_All solutions approach zero if and only if all eigenvalues have \(\mathrm{Re}\lambda<0\)._
+
+Stability is especially easy to decide for a 2 by 2 system (which is very common in applications). The equation is
+
+\[\frac{du}{dt}=\begin{bmatrix}a&b\\ c&d\end{bmatrix}u.\]
+
+and we need to know when both eigenvalues of that matrix have negative real parts. (Note again that the eigenvalues can be complex numbers.) The stability tests are
+
+\begin{tabular}{|l l|} \hline Re\(\lambda_{1}<0\) & _The trace \(a+d\) must be negative._ \\ Re\(\lambda_{2}<0\) & _The determinant \(ad-bc\) must be positive._ \\ \hline \end{tabular} When the eigenvalues are real, those tests guarantee them to be negative. Their product is the determinant; it is positive when the eigenvalues have the same sign. Their sum is the trace; it is negative when both eigenvalues are negative.
+
+When the eigenvalues are a complex pair \(x\pm iy\), the tests still succeed. The trace is their sum \(2x\) (which is \(<0\)) and the determinant is \((x+iy)(x-iy)=x^{2}+y^{2}>0\). Figure 5.2 shows the one stable quadrant, trace \(<0\) and determinant \(>0\). It also shows the parabolic boundary line between real and complex eigenvalues. The reason for the parabola is in the quadratic equation for the eigenvalues:
+
+\[\det\begin{bmatrix}a-\lambda&b\\ c&d-\lambda\end{bmatrix}=\lambda^{2}-(\mathrm{trace})\lambda+(\mathrm{det})=0.\] (13)
+
+The quadratic formula for \(\lambda\) leads to the parabola \((\mathrm{trace})^{2}=4(\mathrm{det})\):
+
+\[\lambda_{1}\text{ and }\lambda_{2}=\frac{1}{2}\left[\mathrm{trace}\pm\sqrt{( \mathrm{trace})^{2}-4(\mathrm{det})}\right].\] (14)
+
+Above the parabola, the number under the square root is negative--so \(\lambda\) is not real. On the parabola, the square root is zero and \(\lambda\) is repeated. Below the parabola the square roots are real. _Every symmetric matrix has real eigenvalues_, since if \(b=c\), then
+
+\[(\mathrm{trace})^{2}-4(\mathrm{det})=(a+d)^{2}-4(ad-b^{2})=(a-d)^{2}+4b^{2} \geq 0.\] 

@@ -1,0 +1,19 @@
+
+7. \(C=\begin{bmatrix}1&-i\\ -i&0\\ 0&1\end{bmatrix}\begin{bmatrix}1&i&0\\ i&0&1\end{bmatrix}=\begin{bmatrix}2&i&-i\\ -i&1&0\\ i&0&1\end{bmatrix}\), \(C^{\rm H}=C\) because \((A^{\rm H}A)^{\rm H}=A^{\rm H}A\).
+9. 1. \(\det A^{\rm T}=\det A\) but \(\det A^{\rm H}=\overline{\det A}\). 2. \(A^{\rm H}=A\) gives \(\overline{\det A}=\det A=\text{real}\).
+10. \(P:\lambda_{1}=0\), \(\lambda_{2}=1\), \(x_{1}=\begin{bmatrix}1/\sqrt{2}\\ -1/\sqrt{2}\end{bmatrix}\), \(x_{2}=\begin{bmatrix}1/\sqrt{2}\\ 1/\sqrt{2}\end{bmatrix}\); \(Q:\lambda_{1}=1\), \(\lambda_{2}=-1\), \(x_{1}=\begin{bmatrix}1/\sqrt{2}\\ 1/\sqrt{2}\end{bmatrix}\), \(x_{2}=\begin{bmatrix}1/\sqrt{2}\\ -1/\sqrt{2}\end{bmatrix}\); \(R:\lambda_{1}=5\), \(\lambda_{2}=-5\), \(x_{1}=\begin{bmatrix}2/\sqrt{5}\\ 1/\sqrt{5}\end{bmatrix}\), \(x_{2}=\begin{bmatrix}1/\sqrt{5}\\ -2/\sqrt{5}\end{bmatrix}\).
+11. \(u,v,w\) are orthogonal to each other. 2. The nullspace is spanned by \(u\); the left nullspace is the same as the nullspace; the row space is spanned by \(v\) and \(w\); the column space is the same as the'row space. 3. \(x=v+\frac{1}{2}w\); not unique, we can add any multiple of \(u\) to \(x\). 4. Need \(b^{\rm T}u=0\). 5. \(S^{-1}=S^{\rm T}\); \(S^{-1}AS=\text{diag}(0,1,2)\).
+12. The dimension of \(S\) is \(n(n+1)/2\), not \(n\). Every symmetric matrix \(A\) is a combination of \(n\) projections, but the projections change as \(A\) changes. There is no basis of \(n\) fixed projection matrices, in the space \(\mathbf{S}\) of symmetric matrices.
+13. \((UV)^{\rm H}(UV)=V^{\rm H}U^{\rm H}UV=V^{\rm H}I\,V=I\). So \(UV\) is unitary.
+14. The third column of \(U\) can be \((1,-2,i)/\sqrt{6}\), multiplied by any number \(e^{i\theta}\).
+15. \(A\) has \(+1\) or \(-1\) in each diagonal entry; eight possibilities.
+16. Columns of Fourier matrix \(U\) are eigenvectors of \(P\) because \(PU=\text{diag}(1,\,w,\,w^{2},\,w^{3})U\) (and \(w=i\)).
+17. \(n^{2}\) steps for direct \(C\) times \(x\); only \(n\log n\) steps for \(F\) and \(F^{-1}\) by FFT (and \(n\) for \(\Lambda\)).
+18. \(A^{\rm H}A=\begin{bmatrix}2&\cdot&0&1+i\\ 0&2&1+i\\ 1-i&1-i&2\end{bmatrix}\) and \(AA^{\rm H}=\begin{bmatrix}3&1\\ 1&3\end{bmatrix}\) are _Hermitian_ matrices. \((A^{\rm H}A)^{\rm H}=A^{\rm H}A^{\rm HH}=A^{\rm H}A\) again.
+19. \(cA\) is still Hermitian for real \(c\); \((iA)^{\rm H}=-i\,A^{\rm H}=-i\,A\) is skew-Hermitian.
+20. \(P^{2}=\begin{bmatrix}0&0&1\\ 1&0&0\\ 0&1&0\end{bmatrix}\), \(P^{3}=I\), \(P^{100}=P^{99}P=P\); \(\lambda=\text{cube roots of }1=1\), \(e^{2\pi i/3}\), \(e^{4\pi i/3}\).
+21. \(C=\begin{bmatrix}2&5&4\\ 4&2&5\\ 5&4&2\end{bmatrix}=2+5P+4P^{2}\) has \(\lambda(C)=\begin{cases}2+5+4\\ 2+5e^{2\pi i/3}+4e^{4\pi i/3}\\ 2+5e^{4\pi i/3}+4e^{8\pi i/3}\end{cases}\).
+
+[MISSING_PAGE_POST]
+
+ 

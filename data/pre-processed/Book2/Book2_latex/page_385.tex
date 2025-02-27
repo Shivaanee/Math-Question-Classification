@@ -1,0 +1,19 @@
+This is a very simple model of motion of a mass moving in 2-D. The first two components of \(x_{t}\) represent the position coordinates; components 3 and 4 represent the velocity coordinates. The input \(w_{t}\) acts like a force on the mass, since it adds to the velocity. We think of the 2-vector \(Cx_{t}\) as the exact or true position of the mass at period \(t\). The measurement \(y_{t}=Cx_{t}+v_{t}\) is a noisy measurement of the mass position. We will estimate the state trajectory over \(t=1,\ldots,T\), with \(T=100\).
+
+In figure 17.8 the 100 measured positions \(y_{t}\) are shown as circles in 2-D. The solid black lines show \(Cx_{t}\), _i.e._, the actual position of the mass. We solve the least squares state estimation problem (17.11) for a range of values of \(\lambda\). The estimated trajectories \(C\hat{x}_{t}\) for three values of \(\lambda\) are shown as blue lines. We can see that \(\lambda=1\) is too small for this example: The estimated state places too much trust in the measurements, and is following measurement noise. We can also see that \(\lambda=10^{5}\) is too large: The estimated state is very smooth (since the estimated process noise is small), but the imputed noise measurements are too high. In this example the choice of \(\lambda\) is simple, since we have the true position trajectory. We will see later how \(\lambda\) can be chosen using validation in the general case.
+
+#### Variations
+
+Known initial state.There are several interesting variations on the state estimation problem. For example, we might know the initial state \(x_{1}\). In this case we simply add an equality constraint \(x_{1}=x_{1}^{\text{known}}\).
+
+Missing measurements.Another useful variation on the least squares state estimation problem allows for _missing measurements_, _i.e._, we only know \(y_{t}\) for \(t\in\mathcal{T}\), where \(\mathcal{T}\) is the set of times for which we have a measurement. We can handle this variation two (equivalent) ways: We can either replace \(\sum_{t=1}^{T}\|v_{t}\|^{2}\) with \(\sum_{t\in\mathcal{T}}\|v_{t}\|^{2}\), or we can consider \(y_{t}\) for \(t\not\in\mathcal{T}\) to be optimization variables as well. (Both lead to the same state sequence estimate.) When there are missing measurements, we can estimate what the missing measurements might have been, by taking
+
+\[\hat{y}_{t}=C_{t}\hat{x}_{t},\quad t\not\in\mathcal{T}.\]
+
+(Here we assume that \(v_{t}=0\).)
+
+#### Validation
+
+The technique of estimating what a missing measurement might have been directly gives us a method to validate a quadratic state estimation method, and in particular, to choose \(\lambda\). To do this, we remove some of the measurements (say, 20%), and carry out least squares state estimation pretending that those measurements are missing. Our state estimate produces predicted values for the missing (really, held back) measurements, which we can compare to the actual measurements. We choose a value of \(\lambda\) which approximately minimizes this (test) prediction error.
+
+ 

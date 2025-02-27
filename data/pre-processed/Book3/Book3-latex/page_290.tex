@@ -1,0 +1,19 @@
+Sec. 8.2 Therefore \(\{\alpha_{1},\ldots,\alpha_{m+1}\}\) is an orthogonal set consisting of \(m+1\) non-zero vectors in the subspace spanned by \(\beta_{1},\ldots,\beta_{m+1}\). By Theorem 2, it is a basis for this subspace. Thus the vectors \(\alpha_{1},\ldots,\alpha_{n}\) may be constructed one after the other in accordance with (8-9). In particular, when \(n=4\), we have
+
+\[\alpha_{1} = \beta_{1}\] \[\alpha_{2} = \beta_{2}-\frac{\langle\beta_{2}|\alpha_{1}\rangle}{||\alpha_{1} ||^{2}}\,\alpha_{1}\] (8-10) \[\alpha_{3} = \beta_{3}-\frac{\langle\beta_{3}|\alpha_{1}\rangle}{||\alpha_{1} ||^{2}}\,\alpha_{1}-\frac{\langle\beta_{3}|\alpha_{2}\rangle}{||\alpha_{2}||^{ 2}}\,\alpha_{2}\] \[\alpha_{4} = \beta_{4}-\frac{\langle\beta_{4}|\alpha_{1}\rangle}{||\alpha_{1} ||^{2}}\,\alpha_{1}-\frac{\langle\beta_{4}|\alpha_{2}\rangle}{||\alpha_{2}||^{ 2}}\,\alpha_{2}-\frac{\langle\beta_{4}|\alpha_{3}\rangle}{||\alpha_{3}||^{2}} \,\alpha_{3}.\quad\hbox{\vrule width 0.4pt height 6.0pt depth 0.0pt\vrule width 0.4pt height 6.0pt depth 0.0pt}\]
+
+_Corollary. Every finite-dimensional inner product space has an orthonormal basis._
+
+Proof.: Let \(V\) be a finite-dimensional inner product space and \(\{\beta_{1},\ldots,\beta_{n}\}\) a basis for \(V\). Apply the Gram-Schmidt process to construct an orthogonal basis \(\{\alpha_{1},\ldots,\alpha_{n}\}\). Then to obtain an orthonormal basis, simply replace each vector \(\alpha_{k}\) by \(\alpha_{k}/||\alpha_{k}||\). 
+
+One of the main advantages which orthonormal bases have over arbitrary bases is that computations involving coordinates are simpler. To indicate in general terms why this is true, suppose that \(V\) is a finite-dimensional inner product space. Then, as in the last section, we may use Equation (8-5) to associate a matrix \(G\) with every ordered basis \(\otimes=\{\alpha_{1},\ldots,\alpha_{n}\}\) of \(V\). Using this matrix
+
+\[G_{jk}=(\alpha_{k}|\alpha_{j}),\]
+
+we may compute inner products in terms of coordinates. If \(\otimes\) is an orthonormal basis, then \(G\) is the identity matrix, and for any scalars \(x_{j}\) and \(y_{k}\)
+
+\[(\Sigma_{j}\,x_{j}\alpha_{i}[\Sigma_{k}\,y_{k}\alpha_{k})\,=\,\Sigma_{j}\,x_{ j}\vec{y}_{j}.\]
+
+Thus in terms of an orthonormal basis, the inner product in \(V\) looks like the standard inner product in \(F^{*}\).
+
+Although it is of limited practical use for computations, it is interesting to note that the Gram-Schmidt process may also be used to test for linear dependence. For suppose \(\beta_{1},\ldots,\beta_{n}\) are linearly dependent vectors in an inner product space \(V\). To exclude a trivial case, assume that \(\beta_{1}\neq 0\). Let \(m\) be the largest integer for which \(\beta_{1},\ldots,\beta_{m}\) are independent. Then \(1\leq m<n\). Let \(\alpha_{1},\ldots,\alpha_{m}\) be the vectors obtained by applying the orthogonalization process to \(\beta_{1},\ldots,\beta_{m}\). Then the vector \(\alpha_{m+1}\) given by (8-9) is necessarily \(0\). For \(\alpha_{m+1}\) is in the subspace spanned 

@@ -1,0 +1,27 @@
+
+
+**26.**: The matrix \(B_{n}\) is the \(-1\), \(2\), \(-1\) matrix \(A_{n}\) except that \(b_{11}=1\) instead of \(a_{11}=2\). Using cofactors of the _last_ row of \(B_{4}\), show that \(|B_{4}|=2|B_{3}|-|B_{2}|=1\):
+
+\[B_{4}=\begin{bmatrix}1&-1&&\\ -1&2&-1&\\ &-1&2&-1\\ &&-1&2\end{bmatrix}\qquad B_{3}=\begin{bmatrix}1&-1&\\ -1&2&-1\\ &-1&2\end{bmatrix}.\]
+
+The recursion \(|B_{n}|=2|B_{n-1}|-|B_{n-2}|\) is the same as for the \(A\)'s. The difference is in the starting values \(1\), \(1\), \(1\) for \(n=1,2,3\). _What are the pivots_?
+**27.**: \(B_{n}\) is still the same as \(A_{n}\) except for \(b_{11}=1\). So use linearity in the first row, where \([1\ -1\ \ 0]\) equals \([2\ -1\ \ 0]\) minus \([1\ \ 0\ \ 0]\):
+
+\[|B_{n}|=\begin{vmatrix}1&-1&&0\\ -1&&&\\ &&A_{n-1}&\\ 0&&&\end{vmatrix}=\begin{vmatrix}2&-1&&0\\ -1&&&\\ &A_{n-1}&\\ 0&&&\end{vmatrix}-\begin{vmatrix}1&0&&0\\ -1&&&\\ &A_{n-1}&\\ 0&&&\end{vmatrix}.\]
+
+Linearity in row 1 gives \(|B_{n}|=|A_{n}|-|A_{n-1}|=\underline{\phantom{\rule{0.0pt}{10.0pt}}\rule{10.0pt} {10.0pt}}\).
+**28.**: The \(n\) by \(n\) determinant \(C_{n}\) has 1s above and below the main diagonal:
+
+\[C_{1}=\begin{vmatrix}0\end{vmatrix}\qquad C_{2}=\begin{vmatrix}0&1\\ 1&0\end{vmatrix}\qquad C_{3}=\begin{vmatrix}0&1&0\\ 1&0&1\\ 0&1&0\end{vmatrix}\qquad C_{4}=\begin{vmatrix}0&1&0&0\\ 1&0&1&0\\ 0&1&0&1\\ 0&0&1&0\end{vmatrix}.\]
+
+1. What are the determinants of \(C_{1}\), \(C_{2}\), \(C_{3}\), \(C_{4}\)?
+2. By cofactors find the relation between \(C_{n}\) and \(C_{n-1}\) and \(C_{n-2}\). Find \(C_{10}\).
+**29.**: Problem 28 has 1s just above and below the main diagonal. Going down the matrix, which order of columns (if any) gives all 1s? Explain why that permutation is _even_ for \(n=4,8,12,\ldots\) and _odd_ for \(n=2,6,10,\ldots\)
+
+\[C_{n}=0\ (\text{odd}\ n)\qquad C_{n}=1\ (n=4,8,\ldots)\qquad C_{n}=-1\ (n=2,6,\ldots).\]
+**30.**: Explain why this Vandermonde determinant contains \(x^{3}\) but not \(x^{4}\) or \(x^{5}\):
+
+\[V_{4}=\det\begin{bmatrix}1&a&a^{2}&a^{3}\\ 1&b&b^{2}&b^{3}\\ 1&c&c^{2}&c^{3}\\ 1&x&x^{2}&x^{3}\end{bmatrix}.\]
+
+The determinant is zero at \(x=\underline{\phantom{\rule{0.0pt}{10.0pt}}\rule{10.0pt}{10.0pt}}\), and \(\underline{\phantom{\rule{0.0pt}{10.0pt}}\rule{10.0pt}{10.0pt}}\). The cofactor of \(x^{3}\) is \(V_{3}=(b-a)(c-a)(c-b)\). Then \(V_{4}=(x-a)(x-b)(x-c)V_{3}\).
+

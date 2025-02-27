@@ -1,0 +1,25 @@
+If \(A\) is symmetric positive definite, then \(P(x)=\frac{1}{2}x^{\mathrm{T}}Ax-x^{\mathrm{T}}b\) reaches its minimum at the point where \(Ax=b\). At that point \(P_{\min}=-\frac{1}{2}b^{\mathrm{T}}A^{-1}b\).
+
+Proof.: Suppose \(Ax=b\). For any vector \(y\), we show that \(P(y)\geq P(x)\):
+
+\[\begin{split} P(y)-P(x)&=\frac{1}{2}y^{\mathrm{T}} Ay-y^{\mathrm{T}}b-\frac{1}{2}x^{\mathrm{T}}Ax+x^{\mathrm{T}}b\\ &=\frac{1}{2}y^{\mathrm{T}}Ay-y^{\mathrm{T}}Ax+\frac{1}{2}x^{ \mathrm{T}}Ax\quad(\text{set }b=Ax)\\ &=\frac{1}{2}(y-x)^{\mathrm{T}}A(y-x).\end{split}\] (1)
+
+This can't be negative since \(A\) is positive definite--and it is zero only if \(y-x=0\). At all other points \(P(y)\) is larger than \(P(x)\), so the minimum occurs at \(x\). 
+
+**Example 1**.: Minimize \(P(x)=x_{1}^{2}-x_{1}x_{2}+x_{2}^{2}-b_{1}x_{1}-b_{2}x_{2}\). The usual approach, by calculus, is to set the partial derivatives to zero. This gives \(Ax=b\):
+
+\[\begin{split}\partial P/\partial x_{1}&=2x_{1}-x_{ 2}-b_{1}=0\\ \partial P/\partial x_{2}&=-x_{1}+2x_{2}-b_{2}=0 \end{split}\qquad\text{means}\quad\begin{bmatrix}2&-1\\ -1&2\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\end{bmatrix}.\end{split}\] (2)
+
+Linear algebra recognizes this \(P(x)\) as \(\frac{1}{2}x^{\mathrm{T}}Ax-x^{\mathrm{T}}b\), and knows immediately that \(Ax=b\) gives the minimum. Substitute \(x=A^{-1}b\) into \(P(x)\):
+
+\[\text{\bf Minimum value}\qquad P_{\min}=\frac{1}{2}(A^{-1}b)^{\mathrm{T}}A(A^ {-1}b)-(A^{-1}b)^{\mathrm{T}}b=-\frac{1}{2}b^{\mathrm{T}}A^{-1}b.\] (3)
+
+In applications, \(\frac{1}{2}x^{\mathrm{T}}Ax\) is the internal energy and \(-x^{\mathrm{T}}b\) is the external work. The system automatically goes to \(x=A^{-1}b\), where the total energy \(P(x)\) is a minimum.
+
+### Minimizing with Constraints
+
+Many applications add extra equations \(Cx=d\) on top of the minimization problem. These equations are **constraints**. We minimize \(P(x)\) subject to the extra requirement \(Cx=d\). Usually \(x\) can't satisfy \(n\) equations \(Ax=b\) and also \(\ell\) extra constraints \(Cx=d\). We have too many equations and we need \(\ell\) more unknowns.
+
+Figure 6.4: The graph of a positive quadratic \(P(x)\) is a parabolic bowl.
+
+ 

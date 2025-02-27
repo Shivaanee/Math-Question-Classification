@@ -1,0 +1,25 @@
+Finally, the string \(w_{1}\), \(w_{2}\), \(y\) goes into the matrix \(M\):
+
+\[M=\begin{bmatrix}1&2&0\\ 0&1&0\\ 0&0&1\end{bmatrix},\qquad\text{and}\qquad M^{-1}AM=\begin{bmatrix}0&1&0\\ 0&0&1\\ 0&0&0\end{bmatrix}=J.\]
+
+### Application to \(du/dt=Au\)
+
+As always, we simplify the problem by uncoupling the unknowns. This uncoupling is complete only when there is a full set of eigenvectors, and \(u=Sv\); the best change of variables in the present case is \(u=Mv\). This produces the new equation \(Mdv/dt=AMv\), or \(dv/dt=Jv\), which is as simple as the circumstances allow. It is coupled only by the off-diagonal 1s within each Jordan block. In the preceding example, which has a single block, \(du/dt=Au\) becomes
+
+\[\frac{dv}{dt}=\begin{bmatrix}0&1&0\\ 0&0&1\\ 0&0&0\end{bmatrix}v\qquad\text{or}\qquad\begin{array}{c}da/dt=b\\ db/dt=c\\ dc/dt=0\end{array}\qquad\text{or}\qquad\begin{array}{c}a=a_{0}+b_{0}t+c_{0}t^ {2}/2\\ b=b_{0}+c_{0}t\\ c=c_{0}.\end{array}\]
+
+The system is solved by working upward from the last equation, and a new power of \(t\) enters at every step. (An \(\ell\) by \(\ell\) block has powers as high as \(t^{\ell-1}\).) The exponentials of \(J\), in this case and in the earlier 5 by 5 example, are
+
+\[e^{Jt}=\begin{bmatrix}1&t&t^{2}/2\\ 0&1&t\\ 0&0&1\end{bmatrix}\qquad\text{and}\qquad\begin{bmatrix}e^{8t}&te^{8t}&0&0&0\\ 0&e^{8t}&0&0&0\\ 0&0&1&t&0\\ 0&0&0&1&0\\ 0&0&0&0&1\end{bmatrix}.\]
+
+You can see how the coefficients of \(a\), \(b\), and \(c\) appear in the first exponential. And in the second example, you can identify all five of the "special solutions" to \(du/dt=Au\). Three of them are the pure exponentials \(u_{1}=e^{8t}x_{1}\), \(u_{3}=e^{0t}x_{3}\), and \(u_{5}=e^{0t}x_{5}\), formed as usual from the three eigenvectors of \(A\). The other two involve the generalized eigenvectors \(x_{2}\) and \(x_{4}\):
+
+\[u_{2}=e^{8t}(tx_{1}+x_{2})\qquad\text{and}\qquad u_{4}=e^{0t}(tx_{3}+x_{4}).\] (8)
+
+The most general solution to \(du/dt=Au\) is a combination \(c_{1}u_{1}+\cdots+c_{5}u_{5}\), and the combination that matches \(u_{0}\) at time \(t=0\) is again
+
+\[u_{0}=c_{1}x_{1}+\cdots+c_{5}x_{5},\qquad\text{or}\qquad u_{0}=Mc,\qquad\text {or}\qquad c=M^{-1}u_{0}.\]
+
+This only means that \(u=Me^{Jt}M^{-1}u_{0}\), and that the \(S\) and \(\Lambda\) in the old formula \(Se^{\Lambda t}S^{-1}u_{0}\) have been replaced by \(M\) and \(J\).
+
+ 

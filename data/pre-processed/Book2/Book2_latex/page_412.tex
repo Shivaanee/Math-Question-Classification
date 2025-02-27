@@ -1,0 +1,12 @@
+
+Loss function interpretation.We can interpret the objective functions (18.14), (18.15), and (18.17) in terms of _loss functions_ that depend on the continuous prediction \(\tilde{f}(x^{(i)})\) and the outcome \(y^{(i)}\). Each of the three objectives has the form
+
+\[\sum_{i=1}^{N}\ell(\tilde{f}(x^{(i)}),y^{(i)}),\]
+
+where \(\ell\) is a loss function. The first argument of the loss function is a real number, and the second argument is Boolean, with values \(-1\) or \(+1\). For the linear least squares objective (18.14), the loss function is \(\ell(u,y)=(u-y)^{2}\). For the nonlinear least squares objective with the sign function (18.15), the loss function is \(\ell(u,y)=(\mathbf{sign}(u)-y)^{2}\). For the differentiable nonlinear least squares objective (18.15), the loss function is \(\ell(u,y)=(\phi(u)-y)^{2}\). Roughly speaking, the loss function \(\ell(u,y)\) tells us how bad it is to have \(\tilde{f}(x^{(i)})=u\) when \(y=y^{(i)}\).
+
+Since the outcome \(y\) takes on only two values, \(-1\) and \(+1\), we can plot the loss functions as functions of \(u\) for these two values of \(y\). Figure 18.16 shows these three functions, with the value for \(y=-1\) in the left column and the value for \(y=+1\) in the right column. We can see that all three loss functions discourage prediction errors, since their values are higher for \(\mathbf{sign}(u)\neq y\) than when \(\mathbf{sign}(u)=y\). The loss function for nonlinear least squares classification with the sign function (shown in the middle row) assesses a cost of \(0\) for a correct prediction and \(4\) for an incorrect prediction. The loss function for nonlinear least squares classification with the sigmoid function (shown in the bottom row) is a smooth approximation of this.
+
+Figure 18.15: The sigmoid function \(\phi\).
+
+ 

@@ -1,0 +1,17 @@
+Example.The 10-vector \(f\) represents a series of forces applied, each for one second, to a unit mass on a surface with no friction. The mass starts with zero velocity and position. By Newton's laws, its final velocity and position are given by
+
+\[v^{\rm fin} = f_{1}+f_{2}+\cdots+f_{10}\] \[p^{\rm fin} = (19/2)f_{1}+(17/2)f_{2}+\cdots+(1/2)f_{10}.\]
+
+(See exercise 2.3.)
+
+Now suppose we want to choose a force sequence that results in \(v^{\rm fin}=0\), \(p^{\rm fin}=1\), _i.e._, a force sequence that moves the mass to a resting position one meter to the right. There are many such force sequences; for example \(f^{\rm bb}=(1,-1,0,\ldots,0)\). This force sequence accelerates the mass to velocity 0.5 after one second, then decelerates it over the next second, so it arrives after two seconds with velocity 0, at the destination position 1. After that it applies zero force, so the mass stays where it is, at rest at position 1. The superscript 'bb' refers to _bang-bang_, which means that a large force is applied to get the mass moving (the first 'bang') and another large force (the second 'bang') is then applied to slow it to zero velocity. The force and position versus time for this choice of \(f\) are shown in figure 16.3.
+
+Now we ask, what is the smallest force sequence that can achieve \(v^{\rm fin}=0\), \(p^{\rm fin}=1\), where smallest is measured by the sum of squares of the applied forces, \(\|f\|^{2}=f_{1}^{2}+\cdots+f_{10}^{2}\)? This problem can be posed as a least norm problem,
+
+\[\begin{array}{ll}\mbox{minimize}&\|f\|^{2}\\ \mbox{subject to}&\left[\begin{array}{ccccc}1&1&\cdots&1&1\\ 19/2&17/2&\cdots&3/2&1/2\end{array}\right]f=\left[\begin{array}{c}0\\ 1\end{array}\right],\end{array}\]
+
+with variable \(f\). The solution \(f^{\rm ln}\), and the resulting position, are shown in figure 16.4. The norm square of the least norm solution \(f^{\rm ln}\) is 0.0121; in contrast, the norm square of the bang-bang force sequence is 2, a factor of 165 times larger. (Note the very different vertical axis scales in figures 16.4 and 16.3.)
+
+Figure 16.3: _Left:_ A force sequence \(f^{\rm bb}=(1,-1,0,\ldots,0)\) that transfers the mass over a unit distance in 10 seconds. _Right:_ The resulting position of the mass \(p(t)\).
+
+ 

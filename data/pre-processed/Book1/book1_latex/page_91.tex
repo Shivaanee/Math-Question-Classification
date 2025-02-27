@@ -1,0 +1,21 @@
+only combination of the columns is \(b=0\). At the other extreme, suppose \(A\) is the 5 by 5 identity matrix. Then \(\bm{C}(I)\) is the whole of \(\mathbf{R}^{5}\); the five columns of \(I\) can combine to produce any five-dimensional vector \(b\). This is not at all special to the identity matrix. _Any 5 by 5 matrix that is nonsingular will have the whole of \(\mathbf{R}^{5}\) as its column space_. For such a matrix we can solve \(Ax=b\) by Gaussian elimination; there are five pivots. Therefore every \(b\) is in \(\bm{C}(A)\) for a nonsingular matrix.
+
+You can see how Chapter 1 is contained in this chapter. There we studied \(n\) by \(n\) matrices whose column space is \(\mathbf{R}^{n}\). Now we allow singular matrices, and rectangular matrices of any shape. Then \(C(A)\) can be somewhere between the zero space and the whole space \(\mathbf{R}^{m}\). Together with its perpendicular space, it gives one of our two approaches to understanding \(Ax=b\).
+
+### The Nullspace of \(A\)
+
+The second approach to \(Ax=b\) is "dual" to the first. We are concerned not only with attainable right-hand sides \(b\), but also with the solutions \(x\) that attain them. The right-hand side \(b=0\) always allows the solution \(x=0\), but there may be infinitely many other solutions. (There always are, if there are more unknowns than equations, \(n>m\).) _The **solutions to \(Ax=0\) form a vector space--the nullspace of \(A\)_**.
+
+The _nullspace_ of a matrix consists of all vectors \(x\) such that \(Ax=0\). It is denoted by \(\bm{N}(A)\). It is a subspace of \(\mathbf{R}^{n}\), just as the column space was a subspace of \(\mathbf{R}^{m}\).
+
+Requirement (i) holds: If \(Ax=0\) and \(Ax^{\prime}=0\), then \(A(x+x^{\prime})=0\). Requirement (ii) also holds: If \(Ax=0\) then \(A(cx)=0\). Both requirements fail if the right-hand side is not zero! Only the solutions to a _homogeneous_ equation (\(b=0\)) form a subspace. The nullspace is easy to find for the example given above; it is as small as possible:
+
+\[\begin{bmatrix}1&0\\ 5&4\\ 2&4\end{bmatrix}\begin{bmatrix}u\\ v\end{bmatrix}=\begin{bmatrix}0\\ 0\\ 0\end{bmatrix}.\]
+
+The first equation gives \(u=0\), and the second equation then forces \(v=0\). The nullspace contains only the vector \((0,0)\). This matrix has "independent columns"--a key idea that comes soon.
+
+The situation is changed when a third column is a combination of the first two:
+
+\[\text{\bf Larger nullspace}\qquad B=\begin{bmatrix}1&0&1\\ 5&4&9\\ 2&4&6\end{bmatrix}.\]
+
+\(B\) has the same column space as \(A\). The new column lies in the plane of Figure 2.1; it is the sum of the two column vectors we started with. But the nullspace of \(B\) contains the 

@@ -1,0 +1,19 @@
+
+
+**29.**: Second assumption behind least squares: The \(m\) errors \(e_{i}\) are independent with variance \(\sigma^{2}\), so the average of \((b-Ax)(b-Ax)^{\mathrm{T}}\) is \(\sigma^{2}I\). Multiply on the left by \((A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}\) and on the right by \(A(A^{\mathrm{T}}A)^{-1}\) to show that the average of \((\widehat{x}-x)(\widehat{x}-x)^{\mathrm{T}}\) is \(\sigma^{2}(A^{\mathrm{T}}A)^{-1}\). This is the all-important _covariance matrix_ for the error in \(\widehat{x}\).
+**30.**: A doctor takes four readings of your heart rate. The best solution to \(x=b_{1},\ldots,x=b_{4}\) is the average \(\widehat{x}\) of \(b_{1},\ldots,b_{4}\). The matrix \(A\) is a column of 1s. Problem 29 gives the expected error \((\widehat{x}-x)^{2}\) as \(\sigma^{2}(A^{\mathrm{T}}A)^{-1}=\). By averaging, the variance drops from \(\sigma^{2}\) to \(\sigma^{2}/4\).
+**31.**: If you know the average \(\widehat{x}_{9}\) of 9 numbers \(b_{1},\ldots,b_{9}\), how can you quickly find the average \(\widehat{x}_{10}\) with one more number \(b_{10}\)? The idea of _recursive_ least squares is to avoid adding 10 numbers. What coefficient of \(\widehat{x}_{9}\) correctly gives \(\widehat{x}_{10}\)?
+
+\[\widehat{x}_{10}=\tfrac{1}{10}\widehat{b}_{10}+\cancel{\widehat{x}_{9}= \tfrac{1}{10}(b_{1}+\cdots+b_{10}).}\]
+**Problems 32-37 use four points \(b=(0,8,8,20)\) to bring out more ideas.**
+**32.**: With \(b=0,8,8,20\) at \(t=0,1,3,4\), set up and solve the normal equations \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\). For the best straight line as in Figure 3.9a, find its four heights \(p_{i}\) and four errors \(e_{i}\). What is the minimum value \(E^{2}=e_{1}^{2}+e_{2}^{2}+e_{3}^{2}+e_{4}^{2}\)?
+**33.**: (Line \(C+Dt\) does go through \(p\)'s) With \(b=0,8,8,20\) at times \(t=0,1,3,4\), write the four equations \(Ax=b\) (unsolvable). Change the measurements to \(p=1,5,13,17\) and find an exact solution to \(A\widehat{x}=p\).
+**34.**: Check that \(e=b-p=(-1,3,-5,3)\) is perpendicular to both columns of \(A\). What is the shortest distance \(\|e\|\) from \(b\) to the column space of \(A\)?
+**35.**: For the closest parabola \(b=C+Dt+Et^{2}\) to the same four points, write the unsolvable equations \(Ax=b\) in three unknowns \(x=(C,D,E)\). Set up the three normal equations \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\) (solution not required). You are now fitting a parabola to four points--what is happening in Figure 3.9b?
+**36.**: For the closest cubic \(b=C+Dt+Et^{2}+Ft^{3}\) to the same four points, write the four equations \(Ax=b\). Solve them by elimination, This cubic now goes exactly through the points. What are \(p\) and \(e\)?
+**37.**: The average of the four times is \(\widehat{t}=\tfrac{1}{4}(0+1+3+4)=2\). The average of the four \(b\)'s is \(\widehat{b}=\tfrac{1}{4}(0+8+8+20)=9\).
+
+1. Verify that the best line goes _through the center point_\((\widehat{t},\widehat{b})=(2,9)\).
+2. Explain why \(C+D\widehat{t}=\widehat{b}\) comes from the first equation in \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\).
+**38.**: What happens to the weighted average \(\widehat{x}_{W}=(w_{1}^{2}b_{1}+w_{2}^{2}b_{2})/(w_{1}^{2}+w_{2}^{2})\) if the first weight \(w_{1}\) approaches zero? The measurement \(b_{1}\) is totally unreliable.
+

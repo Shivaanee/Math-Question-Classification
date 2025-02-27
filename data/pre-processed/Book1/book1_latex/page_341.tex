@@ -1,0 +1,29 @@
+_Remark 2_.: \(A\) is the limit of symmetric matrices with _distinct_ eigenvalues. As the limit approaches, the eigenvectors stay perpendicular. This can fail if \(A\neq A^{\mathrm{T}}\):
+
+\[A(\theta)=\begin{bmatrix}0&\cos\theta\\ 0&\sin\theta\end{bmatrix}\quad\text{has eigenvectors}\quad\begin{bmatrix}1\\ 0\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}\cos\theta\\ \sin\theta\end{bmatrix}.\]
+
+As \(\theta\to 0\), the _only_ eigenvector of the nondiagonalizable matrix \(\begin{bmatrix}0&1\\ 0&0\end{bmatrix}\) is \(\begin{bmatrix}1\\ 0\end{bmatrix}\).
+
+**Example 3**.: The spectral theorem says that this \(A=A^{\mathrm{T}}\) can be diagonalized:
+
+\[A=\begin{bmatrix}0&1&0\\ 1&0&0\\ 0&0&1\end{bmatrix}\quad\text{with repeated eigenvalues}\quad\lambda_{1}= \lambda_{2}=1\text{ and }\lambda_{3}=-1.\]
+
+\(\lambda=1\) has a plane of eigenvectors, and we pick an orthonormal pair \(x_{1}\) and \(x_{2}\):
+
+\[x_{1}=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\ 1\\ 0\end{bmatrix}\quad\text{and}\quad x_{2}=\begin{bmatrix}0\\ 0\\ 1\end{bmatrix}\quad\text{and}\quad x_{3}=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\ -1\\ 0\end{bmatrix}\quad\text{for }\lambda_{3}=-1.\]
+
+These are the columns of \(Q\). Splitting \(A=Q\Lambda Q^{\mathrm{T}}\) into 3 columns times 3 rows gives
+
+\[A=\begin{bmatrix}0&1&0\\ 1&0&0\\ 0&0&1\end{bmatrix}=\lambda_{1}\begin{bmatrix}\frac{1}{2}&\frac{1}{2}&0\\ \frac{1}{2}&\frac{1}{2}&0\\ 0&0&0\end{bmatrix}+\lambda_{2}\begin{bmatrix}0&0&0\\ 0&0&0\\ 0&0&1\end{bmatrix}+\lambda_{3}\begin{bmatrix}\frac{1}{2}&-\frac{1}{2}&0\\ -\frac{1}{2}&\frac{1}{2}&0\\ 0&0&0\end{bmatrix}.\]
+
+Since \(\lambda_{1}=\lambda_{2}\), those first two projections \(x_{1}x_{1}^{\mathrm{T}}\) and \(x_{2}x_{2}^{\mathrm{T}}\) (each of rank 1) combine to give a projection \(P_{1}\) of rank 2 (onto the plane of eigenvectors). Then \(A\) is
+
+\[\begin{bmatrix}0&1&0\\ 1&0&0\\ 0&0&1\end{bmatrix}=\lambda_{1}P_{1}+\lambda_{3}P_{3}=(+1)\begin{bmatrix} \frac{1}{2}&\frac{1}{2}&0\\ \frac{1}{2}&\frac{1}{2}&0\\ 0&0&1\end{bmatrix}+(-1)\begin{bmatrix}\frac{1}{2}&-\frac{1}{2}&0\\ -\frac{1}{2}&\frac{1}{2}&0\\ 0&0&0\end{bmatrix}.\] (5)
+
+_Every Hermitian matrix with \(k\) different eigenvalues has a **spectral decomposition** into \(A=\lambda_{1}P_{1}+\cdots+\lambda_{k}P_{k}\), where \(P_{i}\) is the projection onto the eigenspace for \(\lambda_{i}\)._ Since there is a full set of eigenvectors, the projections add up to the identity. And since the eigenspace are orthogonal, two projections produce zero: \(P_{j}P_{i}=0\).
+
+We are very close to answering an important question, so we keep going: **For which matrices is \(T=\Lambda\)?** Symmetric, skew-symmetric, and orthogonal \(T\)'s are all diagonal! Hermitian, skew-Hermitian, and unitary matrices are also in this class. They correspond to numbers on the _real axis_, the _imaginary axis_, and the _unit circle_. Now we want the whole class, corresponding to all complex numbers. The matrices are called "normal".
+
+**5T** The matrix \(N\) is _normal_ if it commutes with \(N^{\mathrm{H}}\): \(NN^{\mathrm{H}}=N^{\mathrm{H}}N\). For such matrices, and no others, the triangular \(T=U^{-1}NU\) is the diagonal \(\Lambda\). Normal matrices are exactly those that have a _complete set of orthonormal eigenvectors_.
+
+ 

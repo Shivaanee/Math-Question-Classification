@@ -1,0 +1,15 @@
+side of the equation). These equations can be written succinctly in matrix notation as
+
+\[Ax=b.\] (8.5)
+
+In this context, the \(m\times n\) matrix \(A\) is called the _coefficient matrix_, and the \(m\)-vector \(b\) is called the _right-hand side_. An \(n\)-vector \(x\) is called a _solution_ of the linear equations if \(Ax=b\) holds. A set of linear equations can have no solutions, one solution, or multiple solutions.
+
+Examples.
+* The set of linear equations \[x_{1}+x_{2}=1,\quad x_{1}=-1,\quad x_{1}-x_{2}=0\] is written as \(Ax=b\) with \[A=\left[\begin{array}{cc}1&1\\ 1&0\\ 1&-1\end{array}\right],\qquad b=\left[\begin{array}{c}1\\ -1\\ 0\end{array}\right].\] It has no solutions.
+* The set of linear equations \[x_{1}+x_{2}=1,\quad x_{2}+x_{3}=2\] is written as \(Ax=b\) with \[A=\left[\begin{array}{cc}1&1&0\\ 0&1&1\end{array}\right],\qquad b=\left[\begin{array}{c}1\\ 2\end{array}\right].\] It has multiple solutions, including \(x=(1,0,2)\) and \(x=(0,1,1)\).
+
+Over-determined and under-determined systems of linear equations.The set of linear equations is called _over-determined_ if \(m>n\), _under-determined_ if \(m<n\), and _square_ if \(m=n\); these correspond to the coefficient matrix being tall, wide, and square, respectively. When the system of linear equations is over-determined, there are more equations than variables or unknowns. When the system of linear equations is under-determined, there are more unknowns than equations. When the system of linear equations is square, the numbers of unknowns and equations is the same. A set of equations with zero right-hand side, \(Ax=0\), is called a _homogeneous_ set of equations. Any homogeneous set of equations has \(x=0\) as a solution.
+
+In chapter 11 we will address the question of how to determine if a system of linear equations has a solution, and how to find one when it does. For now, we give a few interesting examples.
+
+ 

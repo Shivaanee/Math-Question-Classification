@@ -1,0 +1,20 @@
+Stepping criteria.The algorithm is stopped before the maximum number of iterations \(k^{\max}\) if either of the following two conditions hold.
+
+* _Small residual_: \(\|f(x^{(k+1)})\|^{2}\) is small enough. This means we have (almost) solved the equations \(f(x)=0\), and therefore (almost) minimized \(\|f(x)\|^{2}\).
+* _Small optimality condition residual_: \(\|2Df(\hat{x})^{T}f(\hat{x})\|\) is small enough, _i.e._, the optimality condition (18.3) almost holds.
+
+When the algorithm terminates with small optimality condition residual, we can say very little for sure about the point \(x^{(k+1)}\) computed. This point found may be a minimizer of \(\|f(x)\|^{2}\), or perhaps not. Since the algorithm does not always find a minimizer of \(\|f(x)\|^{2}\), it is a heuristic. Like the \(k\)-means algorithm, which is also a heuristic, the Levenberg-Marquardt algorithm is widely used in many applications, even when we cannot be sure that it has found a point that gives the smallest possible residual norm.
+
+Warm start.In many applications a sequence of similar or related nonlinear least squares problems are solved. In these cases it is common to start the Levenberg-Marquardt algorithm at the solution of the previously solved problem. If the problem to be solved is not much different from the previous problem, this can greatly reduce the number of iterations required to converge. This technique is called _warm starting_. It is commonly used in nonlinear model fitting, when multiple models are fit as we vary a regularization parameter.
+
+Multiple runs.It is common to run the Levenberg-Marquardt algorithm from several different starting points \(x^{(1)}\). If the final points found by running the algorithm from these different starting points are the same, or very close, it increases our confidence that we have found a solution of the nonlinear least squares problem, but we cannot be sure. If the different runs of the algorithm produce different points, we use the best one found, _i.e._, the one with the smallest value of \(\|f(x)\|^{2}\).
+
+Complexity.Each execution of step 1 requires evaluating the derivative matrix of \(f\). The complexity of this step depends on the particular function \(f\). Each execution of step 2 requires the solution of a regularized least squares problem. Using the QR factorization of the stacked matrix this requires \(2(m+n)n^{2}\) flops (see SS15.5). When \(m\) is on the order of \(n\), or larger, this is the same order as \(mn^{2}\). When \(m\) is much smaller than \(n\), \(x^{(k+1)}\) can be computed using the kernel trick described in SS15.5, which requires \(2nm^{2}\) flops.
+
+Levenberg-Marquardt update for \(n=1\).The Newton update for solving \(f(x)=0\) when \(n=1\) is given in (18.9). The Levenberg-Marquardt update for minimizing \(f(x)^{2}\) is
+
+\[x^{(k+1)}=x^{(k)}-\frac{f^{\prime}(x^{(k)})}{\lambda^{(k)}+(f^{\prime}(x^{(k) }))^{2}}f(x^{(k)}).\] (18.13)
+
+For \(\lambda^{(k)}=0\) they agree; but when \(f^{\prime}(x^{(k)})=0\), for example, the Levenberg-Marquardt update makes sense (since \(\lambda^{(k)}>0\)), whereas the Newton update is undefined.
+
+ 

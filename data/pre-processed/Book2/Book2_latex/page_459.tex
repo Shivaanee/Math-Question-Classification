@@ -1,0 +1,33 @@
+KKT conditions.The _KKT conditions_ (named for Karush, Kuhn, and Tucker) state that if \(\hat{x}\) is a solution of the constrained optimization problem, then there is a vector \(\hat{z}\) that satisfies
+
+\[\frac{\partial L}{\partial x_{i}}(\hat{x},\hat{z})=0,\quad i=1,\ldots,n,\qquad \frac{\partial L}{\partial z_{i}}(\hat{x},\hat{z})=0,\quad i=1,\ldots,p.\]
+
+(This is provided the rows of \(Dg(\hat{x})\) are linearly independent, a technical condition we ignore.) As in the unconstrained case, there can be pairs \(x,z\) that satisfy the KKT conditions but \(\hat{x}\) is not a solution of the constrained optimization problem.
+
+The KKT conditions give us a method for solving the constrained optimization problem that is similar to the approach for the unconstrained optimization problem. We attempt to solve the KKT equations for \(\hat{x}\) and \(\hat{z}\); then we check to see if any of the points found are really solutions.
+
+We can simplify the KKT conditions, and express them compactly using matrix notation. The last \(p\) equations can be expressed as \(g_{i}(\hat{x})=0\), which we already knew. The first \(n\) can be expressed as
+
+\[\nabla_{x}L(\hat{x},\hat{z})=0,\]
+
+where \(\nabla_{x}\) denotes the gradient with respect to the \(x_{i}\) arguments. This can be written as
+
+\[\nabla h(\hat{x})+\hat{z}_{1}\nabla g_{1}(\hat{x})+\cdots+\hat{z}_{p}g_{p}( \hat{x})=\nabla h(\hat{x})+Dg(\hat{x})^{T}\hat{z}=0.\]
+
+So the KKT conditions for the constrained optimization problem are
+
+\[\nabla h(\hat{x})+Dg(\hat{x})^{T}\hat{z}=0,\qquad g(\hat{x})=0.\]
+
+This is the extension of the gradient condition for unconstrained optimization to the constrained case.
+
+Constrained nonlinear least squares.As an example, consider the constrained least squares problem
+
+\[\begin{array}{ll}\mbox{minimize}&\|f(x)\|^{2}\\ \mbox{subject to}&g(x)=0,\end{array}\]
+
+where \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\) and \(g:\mathbf{R}^{n}\to\mathbf{R}^{p}\). Define \(h(x)=\|f(x)\|^{2}\). Its gradient at \(\hat{x}\) is \(2Df(\hat{x})^{T}f(\hat{x})\) (see above) so the KKT conditions are
+
+\[2Df(\hat{x})^{T}f(\hat{x})+Dg(\hat{x})^{T}\hat{z}=0,\qquad g(\hat{x})=0.\]
+
+These conditions will hold for a solution of the problem (assuming the rows of \(Dg(\hat{x})\) are linearly independent). But there can be points that satisfy them and are not solutions.
+
+ 

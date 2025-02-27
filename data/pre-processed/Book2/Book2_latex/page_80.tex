@@ -1,0 +1,11 @@
+and check visually if the data are clustered, and if so, how many clusters there are. In almost all applications \(n\) is larger than 2 (and typically, much larger than 2), in which case this simple visual method cannot be used. The second way in which it is not typical is that the points are very well clustered. In most applications, the data are not as cleanly clustered as in this simple example; there are several or even many points that lie in between clusters. Finally, in this example, it is clear that the best choice of \(k\) is \(k=3\). In real examples, it can be less clear what the best value of \(k\) is. But even when the clustering is not as clean as in this example, and the best value of \(k\) is not clear, clustering can be very useful in practice.
+
+Examples.Before we delve more deeply into the details of clustering and clustering algorithms, we list some common applications where clustering is used.
+
+* _Topic discovery._ Suppose \(x_{i}\) are word histograms associated with \(N\) documents. A clustering algorithm partitions the documents into \(k\) groups, which typically can be interpreted as groups of documents with the same or similar topics, genre, or author. Since the clustering algorithm runs automatically and without any understanding of what the words in the dictionary mean, this is sometimes called _automatic topic discovery_.
+* _Patient clustering._ If \(x_{i}\) are feature vectors associated with \(N\) patients admitted to a hospital, a clustering algorithm clusters the patients into \(k\) groups of similar patients (at least in terms of their feature vectors).
+* _Customer market segmentation._ Suppose the vector \(x_{i}\) gives the quantities (or dollar values) of \(n\) items purchased by customer \(i\) over some period of time. A clustering algorithm will group the customers into \(k\) market segments, which are groups of customers with similar purchasing patterns.
+
+Figure 4.1: 300 points in a plane. The points can be clustered in the three groups shown on the right.
+
+ 

@@ -1,0 +1,32 @@
+
+
+## 2 The Solution of \(Ax=b\).
+
+The multiplication \(x=A^{-1}b\) is just \(C^{\mathrm{T}}b\) divided \(\mathrm{bdet}A\). There is a famous way in which to write the answer \((x_{1},\ldots,x_{n})\):
+
+**4C**: _Cramer's rule_: The \(j\)th component of \(x=A^{-1}b\) is the ratio
+
+\[x_{j}=\frac{\det B_{j}}{\det A},\quad\text{where}\quad B_{j}=\begin{bmatrix}a_ {11}&a_{12}&b_{1}&a_{1n}\\ \vdots&\vdots&\vdots&\vdots\\ a_{n1}&a_{n2}&b_{n}&a_{mn}\end{bmatrix}\text{ has $b$ in column $j$.}\] (4)
+
+Proof.: Expand \(\det B_{j}\) in cofactors of its \(j\)th column (which is \(b\)). Since the cofactors ignore that column, \(\det B_{j}\) is exactly the \(j\)th component in the product \(C^{\mathrm{T}}b\):
+
+\[\det B_{j}=b_{1}C_{1j}+b_{2}C_{2j}+\cdots+b_{n}C_{nj}.\]
+
+Dividing this by \(\det A\) gives \(x_{j}\). Each component of \(x\) is a _ratio of two determinants_. That fact might have been recognized from Gaussian elimination, but it never was. 
+
+**Example 2**.: The solution of
+
+\[\begin{array}{rclrcl}x_{1}&+&3x_{2}&=&0\\ 2x_{1}&+&4x_{2}&=&6\end{array}\]
+
+has 0 and 6 in the first column for \(x_{1}\) and in the second column for \(x_{2}\):
+
+\[x_{1}=\frac{\begin{vmatrix}0&3\\ 6&4\\ \hline 1&3\\ 2&4\end{vmatrix}}{\begin{vmatrix}0&3\\ \hline 1&3\\ 2&4\end{vmatrix}}=\frac{-18}{-2}=9,\qquad x_{2}=\frac{\begin{vmatrix}1&0\\ 2&6\\ \hline 1&3\\ 2&4\end{vmatrix}}{\begin{vmatrix}1&0\\ 2&6\\ \hline 1&3\\ 2&4\end{vmatrix}}=\frac{6}{-2}=-3.\]
+
+The denominators are always \(\det A\). For 1000 equations Cramer's Rule would need 1001 determinants. To my dismay I found in a book called _Mathematics for the Millions_ that Cramer's Rule was actually recommended (and elimination was thrown aside):
+
+To deal with a set involving the four variables \(u\), \(v\), \(w\), \(z\), we first have to eliminate one of them in each of three pairs to derive three equations in three variables and then proceed as for the three-fold left-hand set to derive values for two of them. The reader who does so as an exercise will begin to realize how formidably laborious the method of elimination becomes, when we have to deal with more than three variables. This consideration invites us to explore the possibility of a _speedier method_...
+
+## 3 The Volume of a Box.
+
+The connection between the determinant and the volume is clearest when all angles are _right angles_--the edges are perpendicular, and the box is rectangular. Then the volume is the product of the edge lengths: \(volume=\ell_{1}\ell_{2}\cdots\ell_{n}\).
+

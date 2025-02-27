@@ -1,0 +1,29 @@
+are _compatible_.) Then \(C=AB\) can be expressed as the \(m\times n\) block matrix with entries \(C_{ij}\), given by the formula (10.1). For example, we have
+
+\[\left[\begin{array}{cc}A&B\\ C&D\end{array}\right]\left[\begin{array}{cc}E&F\\ G&H\end{array}\right]=\left[\begin{array}{cc}AE+BG&AF+BH\\ CE+DG&CF+DH\end{array}\right],\]
+
+for any matrices \(A,B,\ldots,H\) for which the matrix products above make sense. This formula is the same as the formula for multiplying two \(2\times 2\) matrices (_i.e._, with scalar entries); but when the entries of the matrix are themselves matrices (as in the block matrix above), we must be careful to preserve the multiplication order.
+
+Column interpretation of matrix-matrix product.We can derive some additional insight into matrix multiplication by interpreting the operation in terms of the columns of the second matrix. Consider the matrix product of an \(m\times p\) matrix \(A\) and a \(p\times n\) matrix \(B\), and denote the columns of \(B\) by \(b_{k}\). Using block-matrix notation, we can write the product \(AB\) as
+
+\[AB=A\left[\begin{array}{cccc}b_{1}&b_{2}&\cdots&b_{n}\end{array}\right]\,= \left[\begin{array}{cccc}Ab_{1}&Ab_{2}&\cdots&Ab_{n}\end{array}\right].\]
+
+Thus, the columns of \(AB\) are the matrix-vector products of \(A\) and the columns of \(B\). The product \(AB\) can be interpreted as the matrix obtained by 'applying' \(A\) to each of the columns of \(B\).
+
+Multiple sets of linear equations.We can use the column interpretation of matrix multiplication to express a set of \(k\) linear equations with the same \(m\times n\) coefficient matrix \(A\),
+
+\[Ax_{i}=b_{i},\quad i=1,\ldots,k,\]
+
+in the compact form
+
+\[AX=B,\]
+
+where \(X=[x_{1}\;\cdots\;x_{k}]\) and \(B=[b_{1}\;\cdots\;b_{k}]\). The matrix equation \(AX=B\) is sometimes called a _linear equation with matrix right-hand side_, since it looks like \(Ax=b\), but \(X\) (the variable) and \(B\) (the right-hand side) are now \(n\times k\) matrices, instead of \(n\)-vectors (which are \(n\times 1\) matrices).
+
+Row interpretation of matrix-matrix product.We can give an analogous row interpretation of the product \(AB\), by partitioning \(A\) and \(AB\) as block matrices with row vector blocks. Let \(a_{1}^{T},\ldots,a_{m}^{T}\) be the rows of \(A\). Then we have
+
+\[AB=\left[\begin{array}{c}a_{1}^{T}\\ a_{2}^{T}\\ \vdots\\ a_{m}^{T}\end{array}\right]B=\left[\begin{array}{c}a_{1}^{T}B\\ a_{2}^{T}B\\ \vdots\\ a_{m}^{T}B\end{array}\right]=\left[\begin{array}{c}(B^{T}a_{1})^{T}\\ (B^{T}a_{2})^{T}\\ \vdots\\ (B^{T}a_{m})^{T}\end{array}\right].\]
+
+This shows that the rows of \(AB\) are obtained by applying \(B^{T}\) to the transposed row vectors \(a_{k}\) of \(A\), and transposing the result.
+
+ 

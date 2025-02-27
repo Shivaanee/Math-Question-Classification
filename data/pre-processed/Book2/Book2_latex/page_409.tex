@@ -1,0 +1,12 @@
+
+
+### 18.4 Nonlinear model fitting
+
+The Levenberg-Marquardt algorithm is widely used for _nonlinear model fitting_. As in SS13.1 we are given a set of data, \(x^{(1)},\ldots,x^{(N)}\), \(y^{(1)},\ldots,y^{(N)}\), where the \(n\)-vectors \(x^{(1)},\ldots,x^{(N)}\) are the feature vectors, and the scalars \(y^{(1)},\ldots,y^{(N)}\) are the associated outcomes. (So here the superscript indexes the given data; previously in this chapter the superscript denoted the iteration number.)
+
+In nonlinear model fitting, we fit a model of the general form \(y\approx\hat{f}(x;\theta)\) to the given data, where the \(p\)-vector \(\theta\) contains the model parameters. In linear model fitting, \(\hat{f}(x;\theta)\) is a linear function of the parameters, so it has the special form
+
+\[\hat{f}(x;\theta)=\theta_{1}f_{1}(x)+\cdots+\theta_{p}f_{p}(x),\]
+
+where \(f_{1},\ldots,f_{p}\) are scalar-valued functions, called the basis functions (See SS13.1.) In nonlinear model fitting the dependence of \(\hat{f}(x;\theta)\) on \(\theta\) is not linear (or affine), so it does not have the simple form of a linear combination of \(p\) basis functions.
+

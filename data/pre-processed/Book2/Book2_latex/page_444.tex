@@ -1,0 +1,27 @@
+
+
+## 19 Constrained nonlinear least squares
+
+### 19.1 Projection on a curve
+
+We consider a constrained nonlinear least squares problem with three variables \(x=(x_{1},x_{2},x_{3})\) and two equations:
+
+\[\begin{array}{ll}\mbox{minimize}&(x_{1}-1)^{2}+(x_{2}-1)^{2}+(x_{3}-1)^{2}\\ \mbox{subject to}&x_{1}^{2}+0.5x_{2}^{2}+x_{3}^{2}-1=0\\ &0.8x_{1}^{2}+2.5x_{2}^{2}+x_{3}^{2}+2x_{1}x_{3}-x_{1}-x_{2}-x_{3}-1=0.\end{array}\]
+
+The solution is the point closest to \((1,1,1)\) on the nonlinear curve defined by the two equations.
+
+1. Solve the problem using the augmented Lagrangian method. You can start the algorithm at \(x^{(1)}=0\), \(z^{(1)}=0\), \(\mu^{(1)}=1\), and start each run of the Levenberg-Marquardt method with \(\lambda^{(1)}=1\). Stop the augmented Lagrangian method when the feasibility residual \(\|g(x^{(k)})\|\) and the optimality condition residual \[\|2Df(x^{(k)})^{T}f(x^{(k)})+Dg(x^{(k)})^{T}z^{(k)}\|\] are less than \(10^{-5}\). Make a plot of the two residuals and of the penalty parameter \(\mu\) versus the cumulative number of Levenberg-Marquardt iterations.
+2. Solve the problem using the penalty method, started at \(x^{(1)}=0\) and \(\mu^{(1)}=1\), and with the same stopping condition. Compare the convergence and the value of the penalty parameter with the results for the augmented Lagrangian method in part (a).
+
+### 19.2 Portfolio optimization with downside risk
+
+In standard portfolio optimization (as described in SS17.1) we choose the weight vector \(w\) to achieve a given target mean return, and to minimize deviations from the target return value (_i.e._, the risk). This leads to the constrained linear least squares problem (17.2). One criticism of this formulation is that it treats portfolio returns that exceed our target value the same as returns that fall short of our target value, whereas in fact we should be delighted to have a return that exceeds our target value. To address this deficiency in the formulation, researchers have defined the _downside risk_ of a portfolio return time series \(T\)-vector \(r\), which is sensitive only to portfolio returns that fall short of our target value \(\rho^{\mbox{\tiny tar}}\). The downside risk of a portfolio return time series (\(T\)-vector) \(r\) is given by
+
+\[D=\frac{1}{T}\sum_{t=1}^{T}\left(\max\left\{\rho^{\mbox{\tiny tar}}-r_{t},0 \right\}\right)^{2}.\]
+
+The quantity \(\max\left\{\rho^{\mbox{\tiny tar}}-r_{t},0\right\}\) is the shortfall, _i.e._, the amount by which the return in period \(t\) falls short of the target; it is zero when the return exceeds the target value. The downside risk is the mean square value of the return shortfall.
+
+1. Formulate the portfolio optimization problem, using downside risk in place of the usual risk, as a constrained nonlinear least squares problem. Be sure to explain what the functions \(f\) and \(g\) are.
+2. Since the function \(g\) is affine (if you formulate the problem correctly), you can use the Levenberg-Marquardt algorithm, modified to handle linear equality constraints, to approximately solve the problem. (See page 19.1) Find an expression for \(Df(x^{(k)})\). You can ignore the fact that the function \(f\) is not differentiable at some points.
+3. Implement the Levenberg-Marquardt algorithm to find weights that minimize downside risk for a given target annualized return. A very reasonable starting point is the solution of the standard portfolio optimization problem with the same target return. Check your implementation with some simulated or real return data (available online). Compare the weights, and the risk and downside risk, for the minimum risk and the minimum downside risk portfolios.
+

@@ -1,0 +1,21 @@
+This "maximin principle" makes \(\lambda_{2}\) the _maximum over all \(v\) of the minimum_ of \(R(x)\) with \(x^{\mathrm{T}}v=0\). That offers a way to estimate \(\lambda_{2}\) without knowing \(\lambda_{1}\).
+
+**Example 3**.: _Throw away the last row and column of any symmetric matrix:_
+
+\[\begin{array}{ll}\lambda_{1}(A)=2-\sqrt{2}&\\ \lambda_{2}(A)=2&\\ \lambda_{3}(A)=2+\sqrt{2}&\end{array}\quad A=\begin{bmatrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{bmatrix}\text{ becomes }\quad B=\begin{bmatrix}2&-1\\ -1&2\end{bmatrix}\begin{array}{l}\lambda_{1}(B)=1\\ \lambda_{2}(B)=3.\end{array}\]
+
+_The second eigenvalue \(\lambda_{2}(A)=2\) is above the lowest eigenvalue \(\lambda_{1}(B)=1\). The lowest eigenvalue \(\lambda_{1}(A)=2-\sqrt{2}\) is below \(\lambda_{1}(B)\). So \(\lambda_{1}(B)\) is caught between._
+
+This example chose \(v=(0,0,1)\) so the constraint \(x^{\mathrm{T}}v=0\) knocked out the third component of \(x\) (thereby reducing \(A\) to \(B\)).
+
+The complete picture is an intertwining of eigenvalues:
+
+\[\lambda_{1}(A)\leq\lambda_{1}(B)\leq\lambda_{2}(A)\leq\lambda_{2}(B)\leq \cdots\leq\lambda_{n-1}(B)\leq\lambda_{n}(A).\] (13)
+
+This has a natural interpretation for an ellipsoid, when it is cut by a plane through the origin. The cross section is an ellipsoid of one lower dimension. The major axis Of this cross section cannot be longer than the major axis of the whole ellipsoid: \(\lambda_{1}(B)\geq\lambda_{1}(A)\). But the major axis of the cross section is _at least as long as the second axis_ of the original ellipsoid: \(\lambda_{1}(B)\leq\lambda_{2}(A)\). Similarly the minor axis of the cross section is smaller than the original second axis, and larger than the original minor axis: \(\lambda_{2}(A)\leq\lambda_{2}(B)\leq\lambda_{3}(A)\).
+
+You can see the same thing in mechanics. When springs and masses are oscillating, suppose one mass is held at equilibrium. Then the lowest frequency is increased but not above \(\lambda_{2}\). The highest frequency is decreased, but not below \(\lambda_{n-1}\).
+
+We close with three remarks, I hope your intuition says that they are correct.
+
+ 

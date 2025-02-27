@@ -1,0 +1,42 @@
+
+
+**20.** By back-substitution or by computing eigenvectors, solve
+
+\[\frac{du}{dt}=\begin{bmatrix}1&2&1\\ 0&3&6\\ 0&0&4\end{bmatrix}u\qquad\text{with}\qquad u(0)=\begin{bmatrix}1\\ 0\\ 1\end{bmatrix}.\]
+
+**21.** Find \(\lambda\)'s and \(x\)'s so that \(u=e^{\lambda t}x\) solves
+
+\[\frac{du}{dt}=\begin{bmatrix}4&3\\ 0&1\end{bmatrix}u.\]
+
+What combination \(u=c_{1}e^{\lambda_{1}t}x_{1}+c_{2}e^{\lambda_{2}t}x_{2}\) starts from \(u(0)=(5,-2)\)?
+
+**22.** Solve Problem 21 for \(u(t)=(y(t),z(t))\) by back-substitution:
+
+\[\text{First solve}\quad\frac{dz}{dt}=z,\quad\text{starting from}\quad z(0)=-2.\]
+
+Then solve \(\quad\frac{dy}{dt}=4y+3z,\quad\text{starting from}\quad y(0)=5.\)
+
+The solution for \(y\) will be a combination of \(e^{4t}\) and \(e^{t}\).
+
+**23.** Find \(A\) to change \(y^{\prime\prime}=5y^{\prime}+4y\) into a vector equation for \(u(t)=(y(t),y^{\prime}(t))\):
+
+\[\frac{du}{dt}=\begin{bmatrix}y^{\prime}\\ y^{\prime\prime}\end{bmatrix}=\begin{bmatrix}&\end{bmatrix}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}=Au.\]
+
+What are the eigenvalues of \(A\)? Find them also by substituting \(y=e^{\lambda t}\) into the scalar equation \(y^{\prime\prime}=5y^{\prime}+4y\).
+
+**24.** A door is opened between rooms that hold \(v(0)=30\) people and \(w(0)=10\) people. The movement between rooms is proportional to the difference \(v-w\):
+
+\[\frac{dv}{dt}=w-v\qquad\text{and}\qquad\frac{dw}{dt}=v-w.\]
+
+Show that the total \(v+w\) is constant (40 people). Find the matrix in \(du/dt=Au\), and its eigenvalues and eigenvectors.
+
+What are \(v\) and \(w\) at \(t=1\)?
+
+**25.** Reverse the diffusion of people in Problem 24 to \(du/dt=-Au\):
+
+\[\frac{dv}{dt}=v-w\qquad\text{and}\qquad\frac{dw}{dt}=w-v.\]
+
+The total \(v+w\) still remains constant. How are the \(\lambda\)'s changed now that \(A\) is changed to \(-A\)? But show that \(v(t)\)
+
+grows to infinity from \(v(0)=30\).
+

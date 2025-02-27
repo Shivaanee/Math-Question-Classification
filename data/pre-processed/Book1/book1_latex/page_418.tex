@@ -1,0 +1,26 @@
+a finite number of steps (\(n^{3}/3\) for a full matrix, less than that for the large matrices we actually meet), Often that number is reasonable. When it is enormous, we may have to settle for an approximate \(x\) that can be obtained more quickly--and it is no use to go part way through elimination and then stop.
+
+Our goal is to describe methods that start from any initial guess \(x_{0}\), and produce an improved approximation \(x_{k+1}\) from the previous \(x_{k}\). We can stop when we want to.
+
+An iterative method is easy to invent, by _splitting the matrix_\(A\). If \(A=S-T\), then the equation \(Ax=b\) is the same as \(Sx=Tx+b\). Therefore we can try
+
+\[\mbox{\bf Iteration from $x_{k}$ to $x_{k+1}$}\qquad Sx_{k+1}=Tx_{k}+b.\] (1)
+
+There is no guarantee that this method is any good. A successful splitting \(S-T\) satisfies two different requirements:
+
+1. The new vector \(x_{k+1}\) should be _easy to compute_. Therefore \(S\) should be a simple (and invertible!) matrix; it may be diagonal or triangular.
+2. The sequence \(x_{k}\) should _converge_ to the true solution \(x\). If we subtract the iteration in equation (1) from the true equation \(Sx=Tx+b\), the result is a formula involving only the errors \(e_{k}=x-x_{k}\): \[\mbox{\bf Error equation}\qquad Se_{k+1}=Te_{k}.\] (2) This is just a difference equation. It starts with the initial error \(e_{0}\), and after \(k\) steps it produces the new error \(e_{k}=(S^{-1}T)^{k}e_{0}\). The question of convergence is exactly the same as the question of stability: \(x_{k}\to x\) exactly when \(e_{k}\to 0\).
+
+### 7f
+
+The iterative method in equation (1) is _convergent_ if and only if every eigenvalue of \(S^{-1}T\) satisfies \(|\lambda|<1\). Its rate of convergence depends on the maximum size of \(|\lambda|\):
+
+\[\mbox{\bf Spectral radius ``rho''}\qquad\rho(S^{-1}T)=\max_{i}|\lambda_{i}|.\] (3)
+
+Remember that a typical solution to \(e_{k+1}=S^{-1}Te_{k}\) is a combination of eigenvectors:
+
+\[\mbox{\bf Error after $k$ steps}\qquad e_{k}=c_{1}\lambda_{1}^{k}x_{1}+ \cdots+c_{n}\lambda_{n}^{k}x_{n}.\] (4)
+
+The largest \(|\lambda_{i}|\) will eventually be dominant, so the spectral radius \(\rho=|\lambda_{\max}|\) will govern the rate at which \(e_{k}\) converges to zero. We certainly need \(\rho<1\).
+
+Requirements 1 and 2 above are conflicting. We could achieve immediate convergence with \(S=A\) and \(T=0\); the first and only step of the iteration would be \(Ax_{1}=b\). In that case the error matrix \(S^{-1}T\) is zero, its eigenvalues and spectral radius are zero, and the rate of convergence (usually defined as \(-\log\rho\)) is infinite. But \(Ax_{1}=b\) may be hard to solve; that was the reason for a splitting. A simple choice of \(S\) can often succeed, and we start with three possibilities: 

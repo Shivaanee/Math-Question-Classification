@@ -1,0 +1,15 @@
+control are the same; for \(t>1\), the two inputs differ. An interesting phenomenon, beyond the scope of this book, is that the state feedback gain matrix \(K\) found this way does not depend very much on \(T\), provided it is chosen large enough.
+
+Example.For the example in SS17.2.1 the state feedback gain matrix for \(\rho=1\) is
+
+\[K=\left[\begin{array}{cc}0.308&-2.659&-1.446\end{array}\right].\]
+
+In figure 17.7, we plot the trajectories with linear quadratic control (in blue) and using the simpler linear state feedback control \(u_{t}=Kx_{t}\). We can see that the input sequence found using linear quadratic control achieves \(y_{T}=0\) exactly; the input sequence found by linear state feedback control makes \(y_{T}\) small, but not zero.
+
+### 17.3 Linear quadratic state estimation
+
+The setting is a linear dynamical system of the form
+
+\[x_{t+1}=A_{t}x_{t}+B_{t}w_{t},\qquad y_{t}=C_{t}x_{t}+v_{t},\quad t=1,2,\ldots.\] (17.10)
+
+Here the \(n\)-vector \(x_{t}\) is the state of the system, the \(p\)-vector \(y_{t}\) is the measurement, the \(m\)-vector \(w_{t}\) is the input or process noise, and the \(p\)-vector \(v_{t}\) is the measurement noise or residual. The matrices \(A_{t}\), \(B_{t}\), and 

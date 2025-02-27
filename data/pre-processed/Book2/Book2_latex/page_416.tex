@@ -1,0 +1,14 @@
+
+
+#### 18.2.2 Convergence of Levenberg-Marquardt algorithm.
+
+The Levenberg-Marquardt algorithm is used to compute the parameters in the nonlinear least squares classifier. In this example the algorithm takes several tens of iterations to converge, _i.e._, until the stopping criterion for the nonlinear least squares problem is satisfied. But in this application we are more interested in the performance of the classifier, and not minimizing the objective of the nonlinear least squares problem. Figure 18.19 shows the _classification error_ of the classifier (on the training and test data sets) with parameter \(\theta^{(k)}\), the \(k\)th iterate of the Levenberg-Marquardt algorithm. We can see that the classification errors reach their final values of \(0.7\%\) after just a few iterations. This phenomenon is very typical in nonlinear data fitting problems. Well before convergence, the Levenberg-Marquardt algorithm finds model parameters that are just as good (as judged by test error) as the parameters obtained when the algorithm converges.
+
+#### 18.2.3 Feature engineering.
+
+After adding the 5000 random features used in chapter 14, we obtain the training and test classification errors shown in figure 18.20. The error on the training set is zero for small \(\lambda\). For \(\lambda=1000\), the error on the test set is \(0.24\%\), with the confusion matrix in table 18.2. The distribution of \(\tilde{f}(x^{(i)})\) on the training set in figure 18.21 shows why the training error is zero.
+
+Figure 18.22 shows the classification errors versus Levenberg-Marquardt iteration, if we start the Levenberg-Marquardt algorithm with \(\beta=0\), \(v=0\). (This implies that the values computed in the first iteration are the coefficients of the linear least squares classifier.) The error on the training set is exactly zero at iteration 5. The error on the test set is almost equal to its final value after one iteration.
+
+Figure 18.19: Training and test error versus Levenberg–Marquardt iteration for \(\lambda=100\).
+

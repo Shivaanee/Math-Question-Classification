@@ -1,0 +1,13 @@
+the steel used to construct it. This is always done during the design of a bridge. The vector \(c\) can also be _measured_ once the bridge is built, using the formula (2.3). We apply the load \(w=e_{1}\), which means that we place a one ton load at the first load position on the bridge, with no load at the other positions. We can then measure the sag, which is \(c_{1}\). We repeat this experiment, moving the one ton load to positions \(2,3,\ldots,n\), which gives us the coefficients \(c_{2},\ldots,c_{n}\). At this point we have the vector \(c\), so we can now _predict_ what the sag will be with any other loading. To check our measurements (and linearity of the sag function) we might measure the sag under other more complicated loadings, and in each case compare our prediction (_i.e._, \(c^{T}w\)) with the actual measured sag.
+
+Table 2.1 shows what the results of these experiments might look like, with each row representing an experiment (_i.e._, placing the loads and measuring the sag). In the last two rows we compare the measured sag and the predicted sag, using the linear function with coefficients found in the first three experiments.
+
+### 2.2 Taylor approximation
+
+In many applications, scalar-valued functions of \(n\) variables, or relations between \(n\) variables and a scalar one, can be _approximated_ as linear or affine functions. In these cases we sometimes refer to the linear or affine function relating the variables and the scalar variable as a _model_, to remind us that the relation is only an approximation, and not exact.
+
+Differential calculus gives us an organized way to find an approximate affine model. Suppose that \(f:\mathbf{R}^{n}\to\mathbf{R}\) is differentiable, which means that its partial derivatives exist (see SSC.1). Let \(z\) be an \(n\)-vector. The (first-order) _Taylor approximation_ of \(f\) near (or at) the point \(z\) is the function \(\hat{f}(x)\) of \(x\) defined as
+
+\[\hat{f}(x)=f(z)+\frac{\partial f}{\partial x_{1}}(z)(x_{1}-z_{1})+\cdots+\frac {\partial f}{\partial x_{n}}(z)(x_{n}-z_{n}),\]
+
+where \(\frac{\partial f}{\partial x_{i}}(z)\) denotes the partial derivative of \(f\) with respect to its \(i\)th argument, evaluated at the \(n\)-vector \(z\). The hat appearing over \(f 

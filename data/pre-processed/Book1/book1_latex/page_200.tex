@@ -1,0 +1,20 @@
+In practice, the important question is the choice of \(C\). The best answer comes from statisticians, and originally from Gauss. We may know that the average error is zero. That is the "expected value" of the error in \(b\)--although the error is not really expected to be zero! We may also know the _average of the square_ of the error; that is the _variance_. If the errors in the \(b_{i}\) are independent of each other, and their variances are \(\sigma_{i}^{2}\), then _the right weights are \(w_{i}=1/\sigma_{i}\)_. A more accurate measurement, which means a smaller variance, gets a heavier weight.
+
+In addition to unequal reliability, _the observations may not be independent_. If the errors are coupled--the polls for President are not independent of those for Senator, and certainly not of those for Vice-President--then \(W\) has off-diagonal terms. The best unbiased matrix \(C=W^{\mathrm{T}}W\) is the _inverse of the covariance matrix_--whose \(i\), \(j\) entry is the expected value of (error in \(b_{i}\)) times (error in \(b_{j}\)). Then the main diagonal of \(C^{-1}\) contains the variances \(\sigma_{i}^{2}\), which are the average of (error in \(b_{i}\))\({}^{2}\).
+
+**Example 3**.: Suppose two bridge partners both guess (after the bidding) the total number of spades they hold. For each guess, the errors \(-1\), \(0\), \(1\) might have equal probability \(\frac{1}{3}\). Then the expected error is zero and the variance is \(\frac{2}{3}\):
+
+\[\begin{array}{l}E(e)=\frac{1}{3}(-1)+\frac{1}{3}(0)+\frac{1}{3}(1)=0\\ E(e^{2})=\frac{1}{3}(-1)^{2}+\frac{1}{3}(0)^{2}+\frac{1}{3}(1)^{2}=\frac{2}{3} .\end{array}\]
+
+The two guesses are dependent, because they are based on the same bidding--but not identical, because they are looking at different hands. Say the chance that they are both too high or both too low is zero, but the chance of opposite errors is \(\frac{1}{3}\). Then \(E(e_{1}e_{2})=\frac{1}{3}(-1)\), and the inverse of the covariance matrix is \(W^{\mathrm{T}}W\):
+
+\[\begin{bmatrix}E(e_{1}^{2})&E(e_{1}e_{2})\\ E(e_{1}e_{2})&E(e_{2}^{2})\end{bmatrix}^{-1}=\begin{bmatrix}\frac{2}{3}&- \frac{1}{3}\\ -\frac{1}{3}&\frac{2}{3}\end{bmatrix}^{-1}=\begin{bmatrix}2&1\\ 1&2\end{bmatrix}=C=W^{\mathrm{T}}W.\]
+
+This matrix goes into the middle of the weighted normal equations.
+
+### Problem Set 3.3
+
+1. Find the best least-squares solution \(\widehat{x}\) to \(3x=10\), \(4x=5\). What error \(E^{2}\) is minimized? Check that the error vector \((10-3\widehat{x};5-4\widehat{x})\) is perpendicular to the column \((3,4)\).
+2. Suppose the values \(b_{1}=1\) and \(b_{2}=7\) at times \(t_{1}=1\) and \(t_{2}=2\) are fitted by a line \(b=Dt\)_through the origin_. Solve \(D=1\) and \(2D=7\) by least squares, and sketch the best line.
+
+ 

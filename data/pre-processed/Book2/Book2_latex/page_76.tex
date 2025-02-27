@@ -1,0 +1,34 @@
+
+
+**3.21**: _Dirichlet energy of a signal._ Suppose the \(T\)-vector \(x\) represents a time series or signal. The quantity
+
+\[\mathcal{D}(x)=(x_{1}-x_{2})^{2}+\cdots+(x_{T-1}-x_{T})^{2},\]
+
+the sum of the differences of adjacent values of the signal, is called the _Dirichlet energy_ of the signal, named after the mathematician Peter Gustav Lejeune Dirichlet. The Dirichlet energy is a measure of the roughness or wiggliness of the time series. It is sometimes divided by \(T-1\), to give the mean square difference of adjacent values.
+
+1. Express \(\mathcal{D}(x)\) in vector notation. (You can use vector slicing, vector addition or subtraction, inner product, norm, and angle.)
+2. How small can \(\mathcal{D}(x)\) be? What signals \(x\) have this minimum value of the Dirichlet energy?
+3. Find a signal \(x\) with entries no more than one in absolute value that has the largest possible value of \(\mathcal{D}(x)\). Give the value of the Dirichlet energy achieved.
+**3.22**: _Distance from Palo Alto to Beijing._ The surface of the earth is reasonably approximated as a sphere with radius \(R=6367.5\)km. A location on the earth's surface is traditionally given by its latitude \(\theta\) and its longitude \(\lambda\), which correspond to angular distance from the equator and prime meridian, respectively. The 3-D coordinates of the location are given by
+
+\[\left[\begin{array}{c}R\sin\lambda\cos\theta\\ R\cos\lambda\cos\theta\\ R\sin\theta\end{array}\right].\]
+
+(In this coordinate system \((0,0,0)\) is the center of the earth, \(R(0,0,1)\) is the North pole, and \(R(0,1,0)\) is the point on the equator on the prime meridian, due south of the Royal Observatory outside London.)
+
+The distance _through the earth_ between two locations (3-vectors) \(a\) and \(b\) is \(\|a-b\|\). The distance _along the surface of the earth_ between points \(a\) and \(b\) is \(R\measuredmeasuredangle(a,b)\). Find these two distances between Palo Alto and Beijing, with latitudes and longitudes given below.
+
+\begin{tabular}{l c c} \hline \hline City & Latitude \(\theta\) & Longitude \(\lambda\) \\ \hline Beijing & \(39.914^{\circ}\) & \(116.392^{\circ}\) \\ Palo Alto & \(37.429^{\circ}\) & \(-122.138^{\circ}\) \\ \hline \hline \end{tabular}
+**3.23**: _Angle between two nonnegative vectors._ Let \(x\) and \(y\) be two nonzero \(n\)-vectors with nonnegative entries, _i.e._, each \(x_{i}\geq 0\) and each \(y_{i}\geq 0\). Show that the angle between \(x\) and \(y\) lies between \(0\) and \(90^{\circ}\). Draw a picture for the case when \(n=2\), and give a short geometric explanation. When are \(x\) and \(y\) orthogonal?
+**3.24**: _Distance versus angle nearest neighbor._ Suppose \(z_{1},\ldots,z_{m}\) is a collection of \(n\)-vectors, and \(x\) is another \(n\)-vector. The vector \(z_{j}\) is the (distance) nearest neighbor of \(x\) (among the given vectors) if
+
+\[\|x-z_{j}\|\leq\|x-z_{i}\|,\quad i=1,\ldots,m,\]
+
+_i.e._, \(x\) has smallest distance to \(z_{j}\). We say that \(z_{j}\) is the _angle nearest neighbor_ of \(x\) if
+
+\[\measuredangle(x,z_{j})\leq\measuredangle(x,z_{i}),\quad i=1,\ldots,m,\]
+
+_i.e._, \(x\) has smallest angle to \(z_{j}\).
+
+1. Give a simple specific numerical example where the (distance) nearest neighbor is not the same as the angle nearest neighbor.
+2. Now suppose that the vectors \(z_{1},\ldots,z_{m}\) are normalized, which means that \(\|z_{i}\|=1\), \(i=1,\ldots,m\). Show that in this case the distance nearest neighbor and the angle nearest neighbor are always the same. _Hint._ You can use the fact that arccos is a decreasing function, _i.e._, for any \(u\) and \(v\) with \(-1\leq u<v\leq 1\), we have \(\arccos(u)>\arccos(v)\).
+

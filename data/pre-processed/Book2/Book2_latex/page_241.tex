@@ -1,0 +1,21 @@
+Orthogonality principle.The point \(A\hat{x}\) is the linear combination of the columns of \(A\) that is closest to \(b\). The optimal residual is \(\hat{r}=A\hat{x}-b\). The optimal residual satisfies a property that is sometimes called the _orthogonality principle_: It is orthogonal to the columns of \(A\), and therefore, it is orthogonal to any linear combination of the columns of \(A\). In other words, for any \(n\)-vector \(z\), we have
+
+\[(Az)\perp\hat{r}.\] (12.9)
+
+We can derive the orthogonality principle from the normal equations, which can be expressed as \(A^{T}(A\hat{x}-b)=0\). For any \(n\)-vector \(z\), we have
+
+\[(Az)^{T}\hat{r}=(Az)^{T}(A\hat{x}-b)=z^{T}A^{T}(A\hat{x}-b)=0.\]
+
+The orthogonality principle is illustrated in figure 12.2, for a least squares problem with \(m=3\) and \(n=2\). The shaded plane is the set of all linear combinations \(z_{1}a_{1}+z_{2}a_{2}\) of \(a_{1}\) and \(a_{2}\), the two columns of \(A\). The point \(A\hat{x}\) is the closest point in the plane to \(b\). The optimal residual \(\hat{r}\) is shown as the vector from \(b\) to \(A\hat{x}\). This vector is orthogonal to any point in the shaded plane.
+
+### 12.3 Solving least squares problems
+
+We can use the QR factorization to compute the least squares approximate solution (12.5). Let \(A=QR\) be the QR factorization of \(A\) (which exists by our assumption (12.2) that its columns are linearly independent). We have already seen that the pseudo-inverse \(A^{\dagger}\) can be expressed as \(A^{\dagger}=R^{-1}Q^{T}\), so we have
+
+\[\hat{x}=R^{-1}Q^{T}b.\] (12.10)
+
+To compute \(\hat{x}\) we first multiply \(b\) by \(Q^{T}\); then we compute \(R^{-1}(Q^{T}b)\) using back substitution. This is summarized in the following algorithm, which computes the least squares approximate solution \(\hat{x}\), given \(A\) and \(b\).
+
+Figure 12.2 Illustration of orthogonality principle for a least squares problem of size \(m=3\), \(n=2\). The optimal residual \(\hat{r}\) is orthogonal to any linear combination of \(a_{1}\) and \(a_{2}\), the two columns of \(A\).
+
+ 

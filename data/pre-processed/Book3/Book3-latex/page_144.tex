@@ -1,0 +1,29 @@
+of a finite number of polynomials, and in particular, provides an effective means for deciding when the polynomials are relatively prime.
+
+**Definition**: _Let \(F\) be a field. A polynomial \(f\) in \(F[x]\) is said to be_ **reducible over \(F\)** _if there exist polynomials \(g\), \(h\) in \(F[x]\) of degree \(\geq 1\) such that \(f=gh\), and if not, \(f\) is said to be_ **irreducible over \(F\)**_. A non-scalar irreducible polynomial over \(F\) is called a_ **prime polynomial over \(F\)**_, and we sometimes say it is a_ **prime in \(F[x]\)**_._
+
+**Example 10**: _The polynomial \(x^{2}+1\) is reducible over the field \(C\) of complex numbers. For_
+
+\[x^{2}+1=(x+i)(x-i)\]
+
+_and the polynomials \(x+i\), \(x-i\) belong to \(C[x]\). On the other hand, \(x^{2}+1\) is irreducible over the field \(R\) of real numbers. For if_
+
+\[x^{2}+1=(ax+b)(a^{\prime}x+b^{\prime})\]
+
+_with \(a\), \(a^{\prime}\), \(b\), \(b^{\prime}\) in \(R\), then_
+
+\[aa^{\prime}=1,\qquad ab^{\prime}+ba^{\prime}=0,\qquad bb^{\prime}=1.\]
+
+_These relations imply \(a^{2}+b^{2}=0\), which is impossible with real numbers \(a\) and \(b\), unless \(a=b=0\)._
+
+**Theorem 8**: _Let \(p\), \(f\), and \(g\) be polynomials over the field \(F\). Suppose that \(p\) is a prime polynomial and that \(p\) divides the product \(fg\). Then either \(p\) divides \(f\) or \(p\) divides \(g\)._
+
+It is no loss of generality to assume that \(p\) is a monic prime polynomial. The fact that \(p\) is prime then simply says that the only monic divisors of \(p\) are \(1\) and \(p\). Let \(\not\!a\) be the g.e.d. of \(f\) and \(p\). Then either \(d=1\) or \(d=p\), since \(d\) is a monic polynomial which divides \(p\). If \(\not\!a=p\), then \(p\) divides \(f\) and we are done. So suppose \(d=1\), i.e., suppose \(f\) and \(p\) are relatively prime. We shall prove that \(p\) divides \(g\). Since \((f,p)=1\), there are polynomials \(f_{0}\) and \(p_{0}\) such that \(1=f_{0}f+p_{0}p\). Multiplying by \(g\), we obtain
+
+\[\begin{array}{lcl}\not\!g&=&f_{0}fg+p_{0}pg\\ &=&(fg)f_{0}+p(p_{0}g).\end{array}\]
+
+Since \(p\) divides \(fg\) it divides \((fg)f_{0}\), and certainly \(p\) divides \(p(p_{0}g)\). Thus \(p\) divides \(g\).
+
+**Corollary**: _If \(p\) is a prime and divides a product \(f_{1}\cdots f_{n}\), then \(p\) divides one of the polynomials \(f_{1}\), \(\ldots,f_{n}\)._
+
+The proof is by induction. When \(n=2\), the result is simply the statement of Theorem 6. Suppose we have proved the corollary for \(n=k\), and that \(p\) divides the product \(f_{1}\cdots f_{k+1}\) of some \((k+1)\) poly 

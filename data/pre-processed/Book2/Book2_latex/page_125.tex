@@ -1,0 +1,27 @@
+A triangular \(n\times n\) matrix \(A\) has up to \(n(n+1)/2\) nonzero entries, _i.e._, around half its entries are zero. Triangular matrices are generally not considered sparse matrices, since their density is around 50%, but their special sparsity pattern will be important in the sequel.
+
+### 6.3 Transpose, addition, and norm
+
+#### Matrix transpose
+
+If \(A\) is an \(m\times n\) matrix, its _transpose_, denoted \(A^{T}\) (or sometimes \(A^{\prime}\) or \(A^{*}\)), is the \(n\times m\) matrix given by \((A^{T})_{ij}=A_{ji}\). In words, the rows and columns of \(A\) are transposed in \(A^{T}\). For example,
+
+\[\left[\begin{array}{cc}0&4\\ 7&0\\ 3&1\end{array}\right]^{T}=\left[\begin{array}{cc}0&7&3\\ 4&0&1\end{array}\right].\]
+
+If we transpose a matrix twice, we get back the original matrix: \((A^{T})^{T}=A\). (The superscript \(T\) in the transpose is the same one used to denote the inner product of two \(n\)-vectors; we will soon see how they are related.)
+
+Row and column vectors.Transposition converts row vectors into column vectors and vice versa. It is sometimes convenient to express a row vector as \(a^{T}\), where \(a\) is a column vector. For example, we might refer to the \(m\) rows of an \(m\times n\) matrix \(A\) as \(\tilde{a}_{i}^{T},\ldots,\tilde{a}_{m}^{T}\), where \(\tilde{a}_{1},\ldots,\tilde{a}_{m}\) are (column) \(n\)-vectors. As an example, the second row of the matrix
+
+\[\left[\begin{array}{ccc}0&7&3\\ 4&0&1\end{array}\right]\]
+
+can be written as (the row vector) \((4,0,1)^{T}\).
+
+It is common to extend concepts from (column) vectors to row vectors, by applying the concept to the transposed row vectors. We say that a collection of row vectors is linearly dependent (or independent) if their transposes (which are column vectors) are linearly dependent (or independent). For example, 'the rows of a matrix \(A\) are linearly independent' means that the columns of \(A^{T}\) are linearly independent. As another example, 'the rows of a matrix \(A\) are orthonormal' means that their transposes, the columns of \(A^{T}\), are orthonormal. 'Clustering the rows of a matrix \(X\)' means clustering the columns of \(X^{T}\).
+
+Transpose of block matrix.The transpose of a block matrix has the simple form (shown here for a \(2\times 2\) block matrix)
+
+\[\left[\begin{array}{cc}A&B\\ C&D\end{array}\right]^{T}=\left[\begin{array}{cc}A^{T}&C^{T}\\ B^{T}&D^{T}\end{array}\right],\]
+
+where \(A\), \(B\), \(C\), and \(D\) are matrices with compatible sizes. The transpose of a block matrix is the transposed block matrix, with each element transposed.
+
+ 

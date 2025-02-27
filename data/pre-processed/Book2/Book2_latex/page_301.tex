@@ -1,0 +1,14 @@
+The performance on the (training) data set is shown in the confusion matrix in table 14.5. The error rate is \(1.6\%\), the true positive rate is \(87.1\%\), and the false positive rate is \(0.3\%\).
+
+Figure 14.2 shows the distribution of the values of \(\tilde{f}(x^{(i)})\) for the two classes in the training set. The interval \([-2.1,2.1]\) is divided in \(100\) intervals of equal width. For each interval, the height of the blue bar is the fraction of the total number of training examples \(x^{(i)}\) from class \(+1\) (digit zero) that have a value \(\tilde{f}(x^{(i)})\) in the interval. The height of the red bar is the fraction of the total number of training examples from class \(-1\) (digits 1-9) with \(\tilde{f}(x^{(i)})\) in the interval. The vertical dashed line shows the decision boundary: For \(\tilde{f}(x^{(i)})\) to the left (_i.e._, negative) we guess that digit \(i\) is from class \(-1\), _i.e._, digits 1-9; for \(\tilde{f}(x^{(i)})\) to the right of the dashed line, we guess that digit \(i\) is from class \(+1\), _i.e._, digit 0. False positives correspond to red bars to the right of the dashed line, and false negatives correspond to blue bars to the left of the line.
+
+Figure 14.3 shows the values of the coefficients \(\beta_{k}\), displayed as an image. We can interpret this image as a map of the sensitivity of our classifier to the pixel
+
+\begin{table}
+\begin{tabular}{c c c c} \hline \hline  & \multicolumn{2}{c}{Prediction} \\ \cline{2-4} Outcome & \(\hat{y}=+1\) & \(\hat{y}=-1\) & Total \\ \hline \(y=+1\) & 5158 & 765 & 5923 \\ \(y=-1\) & 167 & 53910 & 54077 \\ All & 5325 & 54675 & 60000 \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.5: Confusion matrix for a classifier for recognizing the digit zero, on a training set of 60000 examples.
+
+Figure 14.1: Location of the pixels used as features in the handwritten digit classification example.
+
+ 

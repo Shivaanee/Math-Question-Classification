@@ -1,0 +1,25 @@
+by a 24-vector \(x\), repeated 14 times to get the full series \((x,x,\ldots,x)\). The two estimates of \(x\) in the figure were computed by minimizing
+
+\[\sum_{j=1}^{14}\sum_{i\in M_{j}}\left(x_{i}-\log(c_{24(j-1)+i})\right)^{2}+ \lambda\left(\sum_{i=1}^{23}(x_{i+1}-x_{i})^{2}+(x_{1}-x_{24})^{2}\right)\]
+
+for \(\lambda=1\) and \(\lambda=100\).
+
+#### Image de-blurring
+
+The vector \(x\) is an image, and the matrix \(A\) gives blurring, so \(y=Ax+v\) is a blurred, noisy image. Our prior information about \(x\) is that it is smooth; neighboring pixels values are not very different from each other. Estimation is the problem of guessing what \(x\) is, and is called _de-blurring_.
+
+In least squares image deblurring we form an estimate \(\hat{x}\) by minimizing a cost function of the form
+
+\[\|Ax-y\|^{2}+\lambda(\|D_{\mathrm{h}}x\|^{2}+\|D_{\mathrm{v}}x\|^{2}).\] (15.5)
+
+Here \(D_{\mathrm{v}}\) and \(D_{\mathrm{h}}\) represent vertical and horizontal differencing operations, and the role of the second term in the weighted sum is to penalize non-smoothness in the reconstructed image. Specifically, suppose the vector \(x\) has length \(MN\) and contains the pixel intensities of an \(M\times N\) image \(X\) stored column-wise. Let \(D_{h}\) be the \(M(N-1)\times MN\) matrix
+
+\[D_{\mathrm{h}}=\left[\begin{array}{cccccc}-I&I&0&\cdots&0&0&0\\ 0&-I&I&\cdots&0&0&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&\vdots\\ 0&0&0&\cdots&-I&I&0\\ 0&0&0&\cdots&0&-I&I\end{array}\right],\]
+
+where all blocks have size \(M\times M\), and let \(D_{\mathrm{v}}\) be the \((M-1)N\times MN\) matrix
+
+\[D_{\mathrm{v}}=\left[\begin{array}{ccccc}D&0&\cdots&0\\ 0&D&\cdots&0\\ \vdots&\vdots&\ddots&\vdots\\ 0&0&\cdots&D\end{array}\right],\]
+
+where each of the \(N\) diagonal blocks \(D\) is an \((M-1)\times M\) difference matrix
+
+\[D=\left[\begin{array}{cccccc}-1&1&0&\cdots&0&0&0\\ 0&-1&1&\cdots&0&0&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&\vdots\\ 0&0&0&\cdots&-1&1&0\\ 0&0&0&\cdots&0&-1&1\end{array}\right].\] 

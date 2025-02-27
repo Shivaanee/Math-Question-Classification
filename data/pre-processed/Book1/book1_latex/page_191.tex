@@ -1,0 +1,17 @@
+K The least-squares solution to a problem \(ax=b\) in one unknown is \(\widehat{x}=\frac{a^{\mathrm{T}}b}{a^{\mathrm{T}}a}\).
+
+You see that we keep coming back to the geometrical interpretation of a least-squares problem--to minimize a distance. By setting the derivative of \(E^{2}\) to zero, calculus confirms the geometry of the previous section. _The error vector \(e\) connecting \(b\) to \(p\) must be perpendicular to \(a\)_:
+
+\[\mathbf{Orthogonality\ of\ }a\mathbf{\ and\ }e\qquad a^{\mathrm{T}}(b-\widehat{x}a)=a^{ \mathrm{T}}b-\frac{a^{\mathrm{T}}b}{a^{\mathrm{T}}a}a^{\mathrm{T}}a=0.\]
+
+As a side remark, notice the degenerate case \(a=0\). All multiples of a are zero, and the line is only a point. Therefore \(p=0\) is the only candidate for the projection. But the formula for \(\widehat{x}\) becomes a meaningless \(0/0\), and correctly reflects the fact that \(\widehat{x}\) is completely undetermined. All values of \(x\) give the same error \(E=\|0x-b\|\), so \(E^{2}\) is a horizontal line instead of a parabola. The "pseudoinverse" assigns the definite value \(\widehat{x}=0\), which is a more "symmetric" choice than any other number.
+
+### Least Squares Problems with Several Variables
+
+Now we are ready for the serious step, _to project \(b\) onto a subspace_--rather than just onto a line. This problem arises from \(Ax=b\) when \(A\) is an \(m\) by \(n\) matrix. Instead of one column and one unknown \(x\), the matrix now has \(n\) columns. The number \(m\) of observations is still larger than the number \(n\) of unknowns, so it must be expected that \(Ax=b\) will be inconsistent. _Probably, there will not exist a choice of \(x\) that perfectly fits the data \(b\)_. In other words, the vector \(b\) probably will not be a combination of the columns of \(A\); it will be outside the column space.
+
+Again the problem is to choose \(\widehat{x}\) so as to minimize the error, and again this minimization will be done in the least-squares sense. The error is \(E=\|Ax-b\|\), and _this is exactly the distance from \(b\) to the point \(Ax\) in the column space_. Searching for the least-squares solution \(\widehat{x}\), which minimizes \(E\), is the same as locating the point \(p=A\widehat{x}\) that is closer to \(b\) than any other point in the column space.
+
+We may use geometry or calculus to determine \(\widehat{x}\). In \(n\) dimensions, we prefer the appeal of geometry; \(p\) must be the "projection of \(b\) onto the column space." _The error vector \(e=b-A\widehat{x}\) must be perpendicular to that space_ (Figure 3.8). Finding \(\widehat{x}\) and the projection \(p=A\widehat{x}\) is so fundamental that we do it in two ways:
+
+1. All vectors perpendicular to the column space lie in the _left nullspace_. Thus the error vector \(e=b-A\widehat{x}\) must be in the nullspace of \(A^{\mathrm{T}}\): \[A^{\mathrm{T}}(b-A\widehat{x})=0\qquad\text{or}\qquad A^{\mathrm{T}}A\widehat {x}=A^{\mathrm{T}}b.\] 

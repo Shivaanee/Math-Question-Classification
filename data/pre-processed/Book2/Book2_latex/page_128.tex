@@ -1,0 +1,27 @@
+This agrees with our definition for vectors when \(A\) is a vector, _i.e._, \(n=1\). The norm of an \(m\times n\) matrix is the norm of an \(mn\)-vector formed from the entries of the matrix (in any order). Like the vector norm, the matrix norm is a quantitative measure of the magnitude of a matrix. In some applications it is more natural to use the RMS values of the matrix entries, \(\|A\|/\sqrt{mn}\), as a measure of matrix size. The RMS value of the matrix entries tells us the typical size of the entries, independent of the matrix dimensions.
+
+The matrix norm (6.3) satisfies the properties of any norm, given on page 46. For any \(m\times n\) matrix \(A\), we have \(\|A\|\geq 0\) (_i.e._, the norm is nonnegative), and \(\|A\|=0\) only if \(A=0\) (definiteness). The matrix norm is nonnegative homogeneous: For any scalar \(\gamma\) and \(m\times n\) matrix \(A\), we have \(\|\gamma A\|=|\gamma|\|A\|\). Finally, for any two \(m\times n\) matrices \(A\) and \(B\), we have the triangle inequality,
+
+\[\|A+B\|\leq\|A\|+\|B\|.\]
+
+(The plus symbol on the left-hand side is matrix addition, and the plus symbol on the right-hand side is addition of numbers.)
+
+The matrix norm allows us to define the distance between two matrices as \(\|A-B\|\). As with vectors, we can say that one matrix is close to, or near, another one if their distance is small. (What qualifies as small depends on the application.)
+
+In this book we will only use the matrix norm (6.3). Several other norms of a matrix are commonly used, but are beyond the scope of this book. In contexts where other norms of a matrix are used, the norm (6.3) is called the _Frobenius norm_, after the mathematician Ferdinand Georg Frobenius, and is usually denoted with a subscript, as \(\|A\|_{F}\).
+
+One simple property of the matrix norm is \(\|A\|=\|A^{T}\|\), _i.e._, the norm of a matrix is the same as the norm of its transpose. Another one is
+
+\[\|A\|^{2}=\|a_{1}\|^{2}+\cdots+\|a_{n}\|^{2},\]
+
+where \(a_{1},\ldots,a_{n}\) are the columns of \(A\). In other words: The squared norm of a matrix is the sum of the squared norms of its columns.
+
+### 6.4 Matrix-vector multiplication
+
+If \(A\) is an \(m\times n\) matrix and \(x\) is an \(n\)-vector, then the _matrix-vector product_\(y=Ax\) is the \(m\)-vector \(y\) with elements
+
+\[y_{i}=\sum_{k=1}^{n}A_{ik}x_{k}=A_{i1}x_{1}+\cdots+A_{in}x_{n},\quad i=1,\ldots ,m.\] (6.4)
+
+As a simple example, we have
+
+\[\left[\begin{array}{rr}0&2&-1\\ -2&1&1\end{array}\right]\left[\begin{array}{r}2\\ 1\\ -1\end{array}\right]=\left[\begin{array}{c}(0)(2)+(2)(1)+(-1)(-1)\\ (-2)(2)+(1)(1)+(1)(-1)\end{array}\right]=\left[\begin{array}{r}3\\ -4\end{array}\right].\] 

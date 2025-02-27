@@ -1,0 +1,21 @@
+Test this pattern for \(L=\mathfrak{eye}(5)-\mathsf{diag}(1\!:\!5)\backslash\mathsf{diag}(1\!:\!4,-1)\) and \(\mathsf{inv}(L)\).
+
+### Special Matrices and Applications
+
+This section has two goals. The first is to explain one way in which large linear systems \(Ax=b\) can arise in practice. The truth is that a large and completely realistic problem in engineering or economics would lead us far afield. But there is one natural and important application that does not require a lot of preparation.
+
+The other goal is to illustrate, by this same application, the special properties that coefficient matrices frequently have. Large matrices almost always have a clear pattern--frequently a pattern of symmetry, and _very many zero entries_. Since a sparse matrix contains far fewer than \(n^{2}\) pieces of information, the computations ought to be fast. We look at _band matrices_, to see how concentration near the diagonal speeds up elimination. In fact we look at one special tridiagonal matrix.
+
+**The matrix itself can be seen in equation (6)**. It comes from changing a differential equation to a matrix equation. The continuous problem asks for \(u(x)\) at every \(x\), and a computer cannot solve it exactly. It has to be approximated by a discrete problem--the more unknowns we keep, the better will be the accuracy and the greater the expense. As a simple but still very typical continuous problem, our choice falls on the differential equation
+
+\[-\frac{d^{2}u}{dx^{2}}=f(x),\qquad 0\leq x\leq 1.\] (1)
+
+This is a linear equation for the unknown function \(u(x)\). Any combination \(C+Dx\) could be added to any solution, since the second derivative of \(C+Dx\) contributes nothing. The uncertainty left by these two arbitrary constants \(C\) and \(D\) is removed by a "_boundary condition_" at each end of the interval:
+
+\[u(0)=0,\qquad u(1)=0.\] (2)
+
+The result is a _two-point boundary-value problem_, describing not a transient but a steady-state phenomenon--the temperature distribution in a rod, for example, with ends fixed at \(0^{\circ}\mathrm{C}\) and with a heat source \(f(x)\).
+
+Remember that our goal is to produce a discrete problem--in other words, a problem in linear algebra. For that reason we can only accept a finite amount of information about \(f(x)\), say its values at \(n\) equally spaced points \(x=h,x=2h,\ldots,x=nh\). We compute approximate values \(u_{1},\ldots,u_{n}\) for the true solution \(u\) at these same points. At the ends \(x=0\) and \(x=1=(n+1)h\), the boundary values are \(u_{0}=0\) and \(u_{n+1}=0\).
+
+The first question is: How do we replace the derivative \(d^{2}u/dx^{2}\)? The first derivative can be approximated by stopping \(\Delta u/\Delta x\) at a finite stepsize, and not permitting \(h\) (or \(\Delta x\) 

@@ -1,0 +1,21 @@
+If \(U\) is another linear transformation from \(V\) into \(W\) and \(B=[B_{1},\,.\,.\,.\,.\,,\,B_{n}]\) is the matrix of \(U\) relative to the ordered bases \(\otimes\), \(\otimes^{\prime}\) then \(cA\,+\,B\) is the matrix of \(cT\,+\,U\) relative to \(\otimes\), \(\otimes^{\prime}\). That is clear because
+
+\[\begin{array}{rcl}cA_{j}+\,B_{j}&=&c[T\alpha_{j}]_{\otimes^{\prime}}+[U\alpha _{j}]_{\otimes^{\prime}}\\ &=&[cT\alpha_{j}+\,U\alpha_{j}]_{\otimes^{\prime}}\\ &=&[(cT\,+\,U)\alpha_{j}]_{\otimes^{\prime}}.\end{array}\]
+
+**Theorem 12**: _Let \(V\) be an n-dimensional vector space over the field \(F\) and let \(W\) be an m-dimensional vector space over \(F\). For each pair of ordered bases \(\otimes\), \(\otimes^{\prime}\) for \(V\) and \(W\) respectively, the function which assigns to a linear transformation \(T\) its matrix relative to \(\otimes\), \(\otimes^{\prime}\) is an isomorphism between the space \(L(V,\,W)\) and the space of all m\(\times\)n matrices over the field \(F\)._
+
+We observed above that the function in question is linear, and as stated in Theorem 11, this function is one-one and maps \(L(V,\,W)\) onto the set of m\(\times\)n matrices.
+
+We shall be particularly interested in the representation by matrices of linear transformations of a space into itself, i.e., linear operators on a space \(V\). In this case it is most convenient to use the same ordered basis in each case, that is, to take \(\otimes=\otimes^{\prime}\). We shall then call the representing matrix simply the **matrix of \(T\) relative to the ordered basis \(\otimes\)**. Since this concept will be so important to us, we shall review its definition. If \(T\) is a linear operator on the finite-dimensional vector space \(V\) and \(\otimes=\{\alpha_{1},\,.\,.\,.\,,\,\alpha_{n}\}\) is an ordered basis for \(V\), the matrix of \(T\) relative to \(\otimes\) (or, the matrix of \(T\) in the ordered basis \(\otimes\)) is the \(n\times n\) matrix \(A\) whose entries \(A_{ij}\) are defined by the equations
+
+\[T\alpha_{j}=\sum_{i=1}^{n}A_{ij}\alpha_{i},\qquad j=1,\,.\,.\,.\,,\,n.\] (11)
+
+One must always remember that this matrix representing \(T\) depends upon the ordered basis \(\otimes\), and that there is a representing matrix for \(T\) in each ordered basis for \(V\). (For transformations of one space into another the matrix depends upon two ordered bases, one for \(V\) and one for \(W\).) In order that we shall not forget this dependence, we shall use the notation
+
+\[[T]_{\otimes}\]
+
+for the matrix of the linear operator \(T\) in the ordered basis \(\otimes\). The manner in which this matrix and the ordered basis describe \(T\) is that for each \(\alpha\) in \(V\)
+
+\[[T\alpha]_{\otimes}=[T]_{\otimes}[\alpha]_{\otimes}.\]
+
+**Example 13**: _Let \(V\) be the space of \(n\times 1\) column matrices over the field \(F\); let \(W\) be the space of \(m\times 1\) matrices over \(F\); and let \(A\) be a fixed, m\(\times\)n matrix over \(F\). Let \(T\) be the linear transformation of \(V\) into \(W\) defined by \(T(X)=AX\). Let \(\otimes\) be the ordered basis for \(V\) analogous to the 

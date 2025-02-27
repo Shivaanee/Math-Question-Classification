@@ -1,0 +1,17 @@
+row \(j\) from row \(i\). This \(E_{ij}\) includes \(-\ell\) in row \(i\), column \(j\). \[I=\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&1\end{bmatrix}\text{ has }Ib=b\qquad E_{31}=\begin{bmatrix}1&0&0\\ 0&1&0\\ -\ell&0&1\end{bmatrix}\text{ has }E_{31}b=\begin{bmatrix}b_{1}\\ b_{2}\\ b_{3}-\ell b_{1}\end{bmatrix}.\] \(Ib=b\) is the matrix analogue of multiplying by \(1\). A typical elimination step multiplies by \(E_{31}\). The important question is: What happens to \(A\) on the left-hand side?
+
+To maintain equality, we must apply the same operation to both sides of \(Ax=b\). In other words, we must also multiply the vector \(Ax\) by the matrix \(E\). Our original matrix \(E\) subtracts \(2\) times the first component from the second, After this step the new and simpler system (equivalent to the old) is just \(E(Ax)=Eb\). It is simpler because of the zero that was created below the first pivot. It is equivalent because we can recover the original system (by adding \(2\) times the first equation back to the second). So the two systems have exactly the same solution \(x\).
+
+### Matrix Multiplication
+
+Now we come to the most important question: _How do we multiply two matrices_? There is a partial clue from Gaussian elimination: We know the original coefficient matrix \(A\), we know the elimination matrix \(E\), and we know the result \(EA\) after the elimination step. We hope and expect that
+
+\[E=\begin{bmatrix}1&0&0\\ -2&1&0\\ 0&0&1\end{bmatrix}\text{ times }A=\begin{bmatrix}2&1&1\\ 4&-6&0\\ -2&7&2\end{bmatrix}\text{ gives }EA=\begin{bmatrix}2&1&1\\ 0&-8&-2\\ -2&7&2\end{bmatrix}.\]
+
+_Twice the first row of \(A\) has been subtracted from the second row_. Matrix multiplication is consistent with the row operations of elimination. We can write the result either as \(E(Ax)=Eb\), applying \(E\) to both sides of our equation, or as \((EA)x=Eb\). The matrix \(EA\) is constructed exactly so that these equations agree, and we don't need parentheses:
+
+**Matrix multiplication** (\(EA\) times \(x\)) equals (\(E\) times \(Ax\)). We just write \(EAx\).
+
+This is the whole point of an "associative law" like \(2\times(3\times 4)=(2\times 3)\times 4\). The law seems so obvious that it is hard to imagine it could be false. But the same could be said of the "commutative law" \(2\times 3=3\times 2\)--and for matrices \(EA\) is not \(AE\).
+
+There is another requirement on matrix multiplication. We know how to multiply \(Ax\), a matrix and a vector. The new definition should be consistent with that one. When a matrix \(B\) contains only a single column \(x\), the matrix-matrix product \(AB\) should be identical with the matrix-vector product \(Ax\). _More than that_: When \(B\) contains several 

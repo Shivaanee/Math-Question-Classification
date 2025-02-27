@@ -1,0 +1,14 @@
+
+
+#### Variations
+
+There are many variations on the basic portfolio optimization problem (17.2). We describe a few of them here; a few others are explored in the exercises.
+
+Regularization.Just as in data fitting, our formulation of portfolio optimization can suffer from over-fit, which means that the chosen weights perform very well on past (realized) returns, but poorly on new (future) returns. Over-fit can be avoided or reduced by adding regularization, which here means to penalize investments in assets other than cash. (This is analogous to regularization in model fitting, where we penalize the size of the model coefficients, except for the coefficient associated with the constant feature.) One natural way to incorporate regularization in the portfolio optimization problem (17.2) is to add a positive multiple \(\lambda\) of the weighted sum of squares term
+
+\[\sigma_{1}^{2}w_{1}^{2}+\cdots+\sigma_{n-1}^{2}w_{n-1}^{2}\]
+
+to the objective in (17.2). Note that we do not penalize \(w_{n}\), which is the weight associated with the risk-free asset. The constants \(\sigma_{i}\) are the standard deviations of the (realized) returns, _i.e._, \(\sigma_{i}=\mathbf{std}(Re_{i})\). This regularization penalizes weights associated with risky assets more than those associated with less risky assets. A good choice of \(\lambda\) can be found by back-testing.
+
+Figure 17.3: Value over time for the five portfolios in figure 17.2 over a test period of 500 days.
+

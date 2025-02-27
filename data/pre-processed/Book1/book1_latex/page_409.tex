@@ -1,0 +1,24 @@
+
+
+**26.**: Find the \(LU\) factorization of \(A=\left[\begin{smallmatrix}\varepsilon&1\\ 1&1\end{smallmatrix}\right]\). On your computer, solve by elimination when \(\varepsilon=10^{-3},10^{-6},10^{-9},10^{-12},10^{-15}\):
+
+\[\left[\begin{matrix}\varepsilon&1\\ 1&1\end{matrix}\right]\left[\begin{matrix}x_{1}\\ x_{2}\end{matrix}\right]=\left[\begin{matrix}1+\varepsilon\\ 2\end{matrix}\right].\]
+
+The true \(x\) is \((1,1)\). Make a table to show the error for each \(\varepsilon\). Exchange the two equations and solve again--the errors should almost disappear.
+
+### Computation of Eigenvalues
+
+There is no one best way to find the eigenvalues of a matrix. But there are certainly some terrible ways which should never be tried, and also some ideas that do deserve a permanent place. We begin by describing one very rough and ready approach, the _power method_, whose convergence properties are easy to understand. We added a graphic animation (with sound) to the course page _web.mit.edu/18.06_, to show the power method in action.
+
+We move steadily toward a more sophisticated algorithm, which starts by making a symmetric matrix tridiagonal and ends by making it virtually diagonal. That second step is done by repeating Gram-Schmidt, so it is known as the _QR method_.
+
+The ordinary power method operates on the principle of a difference equation. It starts with an initial guess \(u_{0}\) and then successively forms \(u_{1}=Au_{0}\), \(u_{2}=Au_{1}\), and in general \(u_{k+1}=Au_{k}\). Each step is a matrix-vector multiplication. After \(k\) steps it produces \(u_{k}=A^{k}u_{0}\), although the matrix \(A^{k}\) will never appear. The essential thing is that multiplication by \(A\) should be easy--if the matrix is large, it had better be sparse--because convergence to the eigenvector is often very slow. Assuming \(A\) has a full set of eigenvectors \(x_{1},\ldots,x_{n}\), the vector \(u_{k}\) will be given by the usual formula:
+
+\[\text{{Eigenvectors weighted by}}\lambda^{k}\qquad u_{k}=c_{1}\lambda_{1}^{k}x_{1}+ \cdots+c_{n}\lambda_{n}^{k}x_{n}.\]
+
+Suppose the largest eigenvalue \(\lambda_{n}\) is all by itself; there is no other eigenvalue of the same magnitude, and \(|\lambda_{1}|\leq\cdots\leq|\lambda_{n-1}|<|\lambda_{n}|\). Then as long as the initial guess \(u_{0}\) contained _some_ component of the eigenvector \(x_{n}\), so that \(c_{n}\neq 0\), this component will gradually dominate in \(u_{k}\):
+
+\[\frac{u_{k}}{\lambda_{n}^{k}}=c_{1}\left(\frac{\lambda_{1}}{\lambda_{n}}\right) ^{k}x_{1}+\cdots+c_{n-1}\left(\frac{\lambda_{n-1}}{\lambda_{n}}\right)^{k}x_{ n-1}+c_{n}x_{n}.\] (1)
+
+_The vectors \(u_{k}\) point more and more accurately toward the direction of \(x_{n}\).
+

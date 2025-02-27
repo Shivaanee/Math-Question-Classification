@@ -1,0 +1,21 @@
+
+
+\begin{tabular}{l l l} DO 10 I = 1, N & DO 10 J = 1, N \\ DO 10 J = 1, N & DO 10 I = 1, N \\
+10 & B(I) = B(I) + A(I,J) * X(J) & 10 B(I) = B(I) + A(I,J) * X(J) \\ \end{tabular} The outputs \(Bx=Ax\) are the same. The second code is slightly more efficient in FORTRAN and much more efficient on a vector machine (the first changes single entries \(B(I)\), the second can update whole vectors).
+* If the entries of \(A\) are \(a_{ij}\), use subscript notation to write
+* the first pivot.
+* the multiplier \(\ell_{i1}\) of row 1 to be subtracted from row \(i\).
+* the new entry that replaces \(a_{ij}\) after that subtraction.
+* the second pivot.
+* True or false? Give a specific counterexample when false.
+* If columns 1 and 3 of \(B\) are the same, so are columns 1 and 3 of \(AB\).
+* If rows 1 and 3 of \(B\) are the same, so are rows 1 and 3 of \(AB\).
+* If rows 1 and 3 of \(A\) are the same, so are rows 1 and 3 of \(AB\).
+* The first row of \(AB\) is a linear combination of all the rows of \(B\). What are the coefficients in this combination, and what is the first row of \(AB\), if \[A=\begin{bmatrix}2&1&4\\ 0&-1&1\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}1&1\\ 0&1\\ 1&0\end{bmatrix}?\]
+* The product of two lower triangular matrices is again lower triangular (all its entries above the main diagonal are zero). Confirm this with a 3 by 3 example, and then explain how it follows from the laws of matrix multiplication.
+* By trial and error find examples of 2 by 2 matrices such that
+* \(A^{2}=-I,A\) having only real entries.
+* \(B^{2}=0\), although \(B\neq 0\).
+* \(CD=-DC\), not allowing the case \(CD=0\).
+* \(EF=0\), although no entries of \(E\) or \(F\) are zero.
+* Describe the rows of \(EA\) and the _columns_ of \(AE\) if \[E=\begin{bmatrix}1&7\\ 0&1\end{bmatrix}.\]

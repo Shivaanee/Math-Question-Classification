@@ -1,0 +1,33 @@
+\(\sigma_{2}\gamma_{1}\sigma_{1}^{-1}\) lies in \(G(r+s,\,t)\), it follows that \(\tau_{1}\) and \(\tau_{2}\) are in the same left coset of \(G(r+s,\,t)\). Therefore, \(\tau_{1}=\tau_{2}\), and \(\sigma_{1}=\sigma_{2}\gamma\). But this implies that \(\sigma_{1}\) and \(\sigma_{2}\) (regarded as elements of \(S_{r+s}\)) lie in the same coset of \(G(r,\,s)\); hence \(\sigma_{1}=\sigma_{2}\). Therefore, the products \(\tau\sigma\) corresponding to the
+
+\[\frac{(r+s+t)!}{(r+s)!t!}\frac{(r+s)!}{r!s!}\,.\]
+
+pairs \((r,\sigma)\) in \(T\times S\) are all distinct and lie in distinct cosets of \(G(r,\,s,\,t)\). Since there are exactly
+
+\[\frac{(r+s+t)!}{r!s!t!}\]
+
+left cosets of \(G(r,s,t)\) in \(S_{r+s+t}\), it follows that \((L\wedge M)\wedge N=E\). By an analogous argument, \(L\wedge(M\wedge N)=E\) as well.  
+
+**Example 13**: The exterior product is closely related to certain formulas for evaluating determinants known as the **Laplace expansions.** Let \(K\) be a commutative ring with identity and \(n\) a positive integer. Suppose that \(1\leq r<n\), and let \(L\) be the alternating \(r\)-linear form on \(K^{n}\) defined by
+
+\[L(\alpha_{1},\,.\,.\,.\,,\,\alpha_{r})=\det\begin{bmatrix}A_{11}&\cdots&A_{1n }\\ \vdots&&\vdots\\ A_{r1}&\cdots&A_{rr}\end{bmatrix}.\]
+
+If \(s=n-r\) and \(M\) is the alternating \(s\)-linear form
+
+\[M(\alpha_{1},\,.\,.\,.\,,\,\alpha_{s})=\det\begin{bmatrix}A_{1(r+1)}&\cdots&A _{1n}\\ \vdots&&\vdots\\ A_{s(r+1)}&\cdots&A_{sn}\end{bmatrix}\]
+
+then \(L\wedge M=D\), the determinant function on \(K^{n}\). This is immediate from the fact that \(L\wedge M\) is an alternating \(n\)-linear form and (as can be seen)
+
+\[(L\wedge M)(\epsilon_{1},\,.\,.\,,\,\epsilon_{n})=1.\]
+
+If we now describe \(L\wedge M\) in the correct way, we obtain one Laplace expansion for the determinant of an \(n\times n\) matrix over \(K\).
+
+In the permutation group \(S_{n}\), let \(G\) be the subgroup which permutes the sets \(\{1,\,.\,.\,,\,r\}\) and \(\{r+1,\,.\,.\,,\,n\}\) within themselves. Each left coset of \(G\) contains precisely one permutation \(\sigma\) such that \(\sigma 1<\sigma 2<\ldots<\sigma r\) and \(\sigma(r+1)<\ldots<\sigma n\). The sign of this permutation is given by
+
+\[\operatorname{sgn}\sigma\,=\,(-1)^{\sigma 1+\cdots+\sigma r+(r(r-1)/2)}.\]
+
+The wedge product \(L\wedge M\) is given by
+
+\[(L\wedge M)(\alpha_{1},\,.\,.\,.\,,\,\alpha_{n})=\boldsymbol{\Sigma}\,( \operatorname{sgn}\sigma)L(\alpha\sigma_{1},\,.\,.\,.\,,\,\alpha_{\sigma r})M (\alpha_{\sigma(r+1)},\,.\,.\,.\,,\,\alpha_{\sigma s})\]
+
+where the sum is taken over a collection of \(\sigma\)'s, one from each coset of \(G\). Therefore, 

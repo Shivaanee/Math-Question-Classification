@@ -1,0 +1,23 @@
+My class often asks about _unsymmetric_ positive definite matrices. I never use that term. One reasonable definition is that the symmetric part \(\frac{1}{2}(A+A^{\mathrm{T}})\) should be positive definite. That guarantees that _the real parts of the eigenvalues are positive_. But it is not necessary: \(A=\left[\begin{smallmatrix}1&4\\ 0&1\end{smallmatrix}\right]\) has \(\lambda>0\) but \(\frac{1}{2}(A+A^{\mathrm{T}})=\left[\begin{smallmatrix}1&2\\ 2&1\end{smallmatrix}\right]\) is indefinite.
+
+If \(Ax=\lambda x\), then \(x^{\mathrm{H}}Ax=\lambda x^{\mathrm{H}}x\) and \(x^{\mathrm{H}}A^{\mathrm{H}}x=\overline{\lambda}x^{\mathrm{H}}x\).
+
+Adding, \(\frac{1}{2}x^{\mathrm{H}}(A+A^{\mathrm{H}})x=(\mathrm{Re}\lambda)x^{\mathrm{H }}x>0\), so that \(\mathrm{Re}\lambda>0\).
+
+### Ellipsoids in \(n\) Dimensions
+
+Throughout this book, geometry has helped the matrix algebra. A linear equation produced a plane. The system \(Ax=b\) gives an intersection of planes. Least squares gives a perpendicular projection. The determinant is the volume of a box. Now, for a positive definite matrix and its \(x^{\mathrm{T}}Ax\), we finally get a figure that is curved. It is an _ellipse_ in two dimensions, and an _ellipsoid_ in \(n\) dimensions.
+
+**The equation to consider is \(x^{\mathrm{T}}Ax=1\)**. If \(A\) is the identity matrix, this simplifies to \(x_{1}^{2}+x_{2}^{2}+\cdots+x_{n}^{2}=1\). This is the equation of the "unit sphere" in \(\mathbf{R}^{n}\). If \(A=4I\), the sphere gets smaller. The equation changes to \(4x_{1}^{2}+\cdots+4x_{n}^{2}=1\). Instead of \((1,0,\ldots,0)\), it goes through \((\frac{1}{2},0,\ldots,0)\). The center is at the origin, because if \(x\) satisfies \(x^{\mathrm{T}}Ax=1\), so does the opposite vector \(-x\). The important step is to go from the identity matrix to a _diagonal matrix_:
+
+\[\mathbf{Ellipsoid}\qquad\mathrm{For}\:A=\left[\begin{matrix}4&&\\ &1&\\ &&\frac{1}{9}\end{matrix}\right],\quad\text{the equation is }x^{\mathrm{T}}Ax=4x_{1}^{2}+x_{2}^{2}+ \tfrac{1}{9}x_{3}^{2}=1.\]
+
+Since the entries are unequal (and positive!) the sphere changes to an ellipsoid.
+
+One solution is \(x=(\frac{1}{2},0,0)\) along the first axis. Another is \(x=(0,1,0)\). The major axis has the farthest point \(x=(0,0,3)\). It is like a football or a rugby ball, but not quite--those are closer to \(x_{1}^{2}+x_{2}^{2}+\frac{1}{2}x_{3}^{2}=1\). The two equal coefficients make them circular in the \(x_{1}\)-\(x_{2}\) plane, and much easier to throw!
+
+Now comes the final step, to allow nonzeros away from the diagonal of \(A\).
+
+**Example 3**.: \(A=\left[\begin{smallmatrix}5&4\\ 4&5\end{smallmatrix}\right]\) and \(x^{\mathrm{T}}Ax=5u^{2}+8uv+5v^{2}=1\). That ellipse is centered at \(u=v=0\), but the axes are not so clear. The off-diagonal 4s leave the matrix positive definite, but they rotate the ellipse--its axes no longer line up with the coordinate axes (Figure 6.2). We will show that _the axes of the ellipse point toward the eigenvector of \(A\)_. Because \(A=A^{\mathrm{T}}\), those eigenvectors and axes are orthogonal. The _major_ axis of the ellipse corresponds to the _smallest_ eigenvalue of \(A\).
+
+To locate the ellipse we compute \(\lambda_{1}=1\) and \(\lambda_{2}=9\). The unit eigenvectors are \((1,-1)/\sqrt{2}\) and \((1,1)/\sqrt{2}\). Those are at \(45^{\circ}\) angles with the \(u\)-\(v\) axes, and they are lined up with the axes of the ellipse. The way to see the ellipse properly is to _rewrite_ 

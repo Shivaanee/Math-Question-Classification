@@ -1,0 +1,25 @@
+that \(A\) must have independent columns.) In the reverse order \(A=S^{\prime}Q\), the matrix \(S^{\prime}\) is the symmetric positive definite square root of \(AA^{\mathrm{T}}\).
+
+## 4. Least Squares
+
+For a rectangular system \(Ax=b\). the least-squares solution comes from the normal equations \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\). _If \(A\) has dependent columns then \(A^{\mathrm{T}}A\) is not invertible and \(\widehat{x}\) is not determined_. Any vector in the nullspace could be added to \(\widehat{x}\). We can now complete Chapter 3, by choosing a "best" (_shortest_) \(\widehat{x}\) for every \(Ax=b\).
+
+\(Ax=b\) has two possible difficulties: _Dependent rows or dependent columns_. With dependent rows, \(Ax=b\) may have no solution. That happens when \(b\) is outside the column space of \(A\). Instead of \(Ax=b\). we solve \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\). But if \(A\) has _dependent columns_, this \(\widehat{x}\) will not be unique. We have to choose a particular solution of \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\), and we choose the shortest.
+
+_The optimal solution of \(Ax=b\) is the minimum length solution of \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\)._
+
+That minimum length solution will be called \(x^{+}\). It is our preferred choice as the best solution to \(Ax=b\) (which had no solution), and also to \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\) (which had too many). We start with a diagonal example.
+
+**Example 5**.: \(A\) is diagonal, with dependent rows and dependent columns:
+
+\[A\widehat{x}=p\quad\text{is}\quad\begin{bmatrix}\sigma_{1}&0&0&0\\ 0&\sigma_{2}&0&0\\ 0&0&0&0\end{bmatrix}\begin{bmatrix}\widehat{x}_{1}\\ \widehat{x}_{2}\\ \widehat{x}_{3}\\ \widehat{x}_{4}\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\\ 0\end{bmatrix}.\]
+
+The columns all end with zero. In the column space, the closest vector to \(b=(b_{1},b_{2},b_{3})\) is \(p=(b_{1},b_{2},0)\). The best we can do with \(Ax=b\) is to solve the first two equations, since the third equation is \(0=b_{3}\). That error cannot be reduced, but the errors in the first two equations will be zero. Then
+
+\[\widehat{x}_{1}=b_{1}/\sigma_{1}\qquad\text{and}\qquad\widehat{x}_{2}=b_{2}/ \sigma_{2}.\]
+
+Now we face the second difficulty. To make \(\widehat{x}\) as short as possible, we choose the totally arbitrary \(\widehat{x}_{3}\) and \(\widehat{x}_{4}\) to be zero. _The minimum length solution is \(x^{+}\)_:
+
+\[\begin{array}{l}A^{+}\text{ is pseudoinverse}\\ x^{+}=A^{+}b\text{ is shortest}\end{array}\qquad x^{+}=\begin{bmatrix}b_{1}/ \sigma_{1}\\ b_{2}/\sigma_{2}\\ 0\\ 0\end{bmatrix}=\begin{bmatrix}1/\sigma_{1}&0&0\\ 0&1/\sigma_{2}&0\\ 0&0&0\\ 0&0&0\end{bmatrix}\begin{bmatrix}b_{1}\\ b_{2}\\ b_{3}\end{bmatrix}.\] (5)
+
+This equation finds \(x^{+}\), and it also displays _the matrix that produces \(x^{+}\) from \(b\)_. That matrix is the _pseudoinverse_\(A^{+}\) of our diagonal \(A\). Based on this example, we know 

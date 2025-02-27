@@ -1,0 +1,23 @@
+\(-\omega^{2}=\lambda\). Every special solution \(e^{\lambda t}x\) of the first-order equation leads to _two_ special solutions \(e^{i\omega t}x\) of the second-order equation. and the two exponents are \(\omega=\pm\sqrt{-\lambda}\). This breaks down only when \(\lambda=0\), which has just one square root; if the eigenvector is \(x\), the two special solutions are \(x\) and \(tx\).
+
+For a genuine diffusion matrix, the eigenvalues \(\lambda\) are all negative and the frequencies \(\omega\) are all real: _Pure diffusion is converted into pure oscillation_. The factors \(e^{i\omega t}\) produce neutral stability, the solution neither grows or decays, and the total energy stays precisely constant. It just keeps passing around the system. The general solution to \(d^{2}u/dt^{2}=Au\), if \(A\) has negative eigenvalues \(\lambda_{1},\ldots,\lambda_{n}\) and if \(\omega_{j}=\sqrt{-\lambda_{j}}\), is
+
+\[u(t)=\left(c_{1}e^{i\omega_{1}t}+d_{1}e^{-\omega_{1}t}\right)x_{1}+cdots+\left( c_{n}e^{i\omega_{n}t}+d_{n}e^{-\omega_{n}t}\right)x_{n}.\] (18)
+
+As always, the constants are found from the initial conditions. This is easier to do (at the expense of one extra formula) by switching from oscillating exponentials to the more familiar sine and cosine:
+
+\[u(t)=(a_{1}\cos\omega_{1}t+b_{1}\sin\omega_{1}t)x_{1}+\cdots+(a_{n}\cos\omega_ {n}t+b_{n}\sin\omega_{n}t)x_{n}.\] (19)
+
+The initial displacement \(u(0)\) is easy to keep separate: \(t=0\) means that \(\sin\omega t=0\) and \(\cos\omega t=1\), leaving only
+
+\[u(0)=a_{1}x_{1}+\cdots+a_{n}x_{n},\quad\text{or}\quad u(0)=Sa,\quad\text{or} \quad a=S^{-1}u(0).\]
+
+Then differentiating \(u(t)\) and setting \(t=0\). the \(b\)'s are determined by the initial velocity: \(u^{\prime}(0)=b_{1}\omega_{1}x_{1}+\cdots+b_{n}\omega_{n}x_{n}\). Substituting the \(a\)'s and \(b\)'s into the formula for \(u(t)\), the equation is solved.
+
+The matrix \(A=\left[\begin{smallmatrix}-2&1\\ 1&-2\end{smallmatrix}\right]\) has \(\lambda_{1}=-1\) and \(\lambda_{2}=-3\). The frequencies are \(\omega_{1}=1\) and \(\omega_{2}=\sqrt{3}\). If the system starts from rest, \(u^{\prime}(0)=0\), the terms in \(b\sin\omega t\) will disappear:
+
+\[\text{{Solution from }}u(0)=\begin{bmatrix}1\\ 0\end{bmatrix}\qquad u(t)=\frac{1}{2}\cos t\begin{bmatrix}1\\ 1\end{bmatrix}+\frac{1}{2}\cos\sqrt{3}t\begin{bmatrix}1\\ -1\end{bmatrix}.\]
+
+Physically, two masses are connected to each other and to stationary walls by three identical springs (Figure 5.3). The first mass is held at \(v(0)=1\), the second mass is held at \(w(0)=0\), and at \(t=0\) we let go. Their motion \(u(t)\) becomes an average of two pure oscillations, corresponding to the two eigenvectors. In the first mode \(x_{1}=(1,1)\), the masses move together and the spring in the middle is never stretched (Figure 5.3a). The frequency \(\omega_{1}=1\) is the same as for a single spring and a single mass. In the faster mode \(x_{2}=(1,-1)\) with frequency \(\sqrt{3}\), the masses move oppositely but with equal speeds. The general solution is a combination of these two normal modes. Our particular solution is half of each.
+
+As time goes on, the motion is "almost periodic." If the ratio \(\omega_{1}/\omega_{2}\) had been a fraction like 2/3, the masses would eventually return to \(u(0)=(1,0)\) and begin again. A combination of \(\sin 2t\) and \(\sin 3t\) would have a period of \(2\pi\). But \(\sqrt{3}\) is irrational. The 

@@ -1,0 +1,26 @@
+
+
+**48.** Block multiplication says that elimination on column 1 produces
+
+\[EA=\begin{bmatrix}1&\textbf{0}\\ -c/a&I\end{bmatrix}\begin{bmatrix}a&\textbf{b}\\ c&D\end{bmatrix}=\begin{bmatrix}a&\textbf{b}\\ \textbf{0}&\scalebox{0.7}{\includegraphics[]{fig/d0.png}}\end{bmatrix}.\]
+**49.** _Elimination for a \(2\) by \(2\) block matrix_: When \(A^{-1}A=I\), multiply the first block row by \(CA^{-1}\) and subtract from the second row, to find the "_Schur complement_" \(S\):
+
+\[\begin{bmatrix}I&0\\ -CA^{-1}&I\end{bmatrix}\begin{bmatrix}A&B\\ C&D\end{bmatrix}=\begin{bmatrix}A&B\\ 0&S\end{bmatrix}.\]
+**50.** With \(i^{2}=-1\), the product \((A+iB)(x+iy)\) is \(Ax+iBx+iAy-By\). Use blocks to separate the real part from the imaginary part that multiplies \(i\):
+
+\[\begin{bmatrix}A&-B\\ ?&?\end{bmatrix}\begin{bmatrix}x\\ y\end{bmatrix}=\begin{bmatrix}Ax-By\\ ?\end{bmatrix}\quad\text{ real part}\]
+
+**51.** Suppose you solve \(Ax=b\) for three special right-hand sides \(b\):
+
+\[Ax_{1}=\begin{bmatrix}1\\ 0\\ 0\end{bmatrix}\quad\text{and}\quad Ax_{2}=\begin{bmatrix}0\\ 1\\ 0\end{bmatrix}\quad\text{and}\quad Ax_{3}=\begin{bmatrix}0\\ 0\\ 1\end{bmatrix}.\]
+
+If the solutions \(x_{1}\), \(x_{2}\), \(x_{3}\) are the columns of a matrix \(X\), what is \(AX\)?
+**52.** If the three solutions in Question 51 are \(x_{1}=(1,1,1)\) and \(x_{2}=(0,1,1)\) and \(x_{3}=(0,0,1)\), solve \(Ax=b\) when \(b=(3,5,8)\). Challenge problem: What is \(A\)?
+**53.** Find all matrices
+
+\[A=\begin{bmatrix}a&b\\ c&d\end{bmatrix}\quad\text{that satisfy}\quad A\begin{bmatrix}1&1\\ 1&1\end{bmatrix}=\begin{bmatrix}1&1\\ 1&1\end{bmatrix}A.\]
+**54.** If you multiply a _northwest matrix_\(A\) and a _southeast matrix_\(B\), what type of matrices are \(AB\) and \(BA\)? "Northwest" and "southeast" mean zeros below and above the antidiagonal going from \((1,n)\) to \((n,1)\).
+**55.** Write \(2x+3y+z+5t=8\) as a matrix \(A\) (how many rows?) multiplying the column vector \((x,y,z,t)\) to produce \(b\). The solutions fill a plane in four-dimensional space. _The plane is three-dimensional with no_ 4D _volume_.
+**56.** What 2 by 2 matrix \(P_{1}\) projects the vector \((x,y)\) onto the \(x\) axis to produce \((x,0)\)? What matrix \(P_{2}\) projects onto the \(y\) axis to produce \((0,y)\)? If you multiply \((5,7)\) by \(P_{1}\) and then multiply by \(P_{2}\), you get ( ) and ( ).
+**57.** Write the inner product of \((1,4,5)\) and \((x,y,z)\) as a matrix multiplication \(Ax\). \(A\) has one row. The solutions to \(Ax=0\) lie on a \(\begin{array}{c}\text{ perpendicular to the vector }
+

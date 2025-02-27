@@ -1,0 +1,23 @@
+All we can do is to _go on to the next column_, where the pivot entry is 3. Subtracting twice the second row from the third, we arrive at \(U\):
+
+\[\text{{Echelon matrix}}\ U\qquad U=\begin{bmatrix}\mathbf{1}&3&3&2\\ 0&0&\mathbf{3}&3\\ 0&0&0&0\end{bmatrix}.\]
+
+Strictly speaking, we proceed to the fourth column. A zero is in the third pivot position, and nothing can be done. \(U\) is upper triangular, but its pivots are not on the main diagonal. The nonzero entries of \(U\) have a "staircase pattern," or _echelon form_. For the 5 by 8 case in Figure 2.3, the starred entries may or may not be zero.
+
+We can always reach this echelon form \(U\), with zeros below the pivots:
+
+1. The pivots are the first nonzero entries in their rows.
+2. Below each pivot is a column of zeros, obtained by elimination.
+3. Each pivot lies to the right of the pivot in the row above. This produces the staircase pattern, and zero rows come last.
+
+Since we started with \(A\) and ended with \(U\), the reader is certain to ask: Do we have \(A=LU\) as before? There is no reason why not, since the elimination steps have not changed. Each step still subtracts a multiple of one row from a row beneath it. The inverse of each step adds back the multiple that was subtracted. These inverses come in the right order to put the multipliers directly into \(L\):
+
+\[\text{{Lower triangular}}\qquad L=\begin{bmatrix}1&0&0\\ 2&1&0\\ -1&2&1\end{bmatrix}\quad\text{and}\quad A=LU.\]
+
+Note that \(L\) is square. It has the same number of rows as \(A\) and \(U\).
+
+The only operation not required by our example, but needed in general, is row exchange by a permutation matrix \(P\). Since we keep going to the next column when no pivots are available, there is no need to assume that \(A\) is nonsingular. Here is \(PA=LU\) for all matrices:
+
+Figure 2.3: The entries of a 5 by 8 echelon matrix \(U\) and its reduced form \(R\).
+
+ 

@@ -1,0 +1,19 @@
+
+
+**3.**: In Example 3, suppose the cost is . With rearrangement, the cost vector is . Show that and, therefore, that corner is optimal.
+**4.**: Suppose the cost function in Example 3 is , so that after rearrangement at the corner . Compute and decide which column should enter the basis. Then compute and show from its sign that you will never meet another corner. We are climbing the -axis in Figure 8.3, and goes to .
+**5.**: Again in Example 3, change the cost to . Verify that the simplex method takes you from to to , and that the corner is optimal.
+**6.**: _Phase I finds a basic feasible solution to (a corner). After changing signs to make , consider the auxiliary problem of minimizing , subject to , , . Whenever has a nonnegative solution, the minimum cost in this problem will be zero--with ._
+
+1. Show that, for this new problem, the corner , is both basic and feasible. Therefore Phase I is already set, and the simplex method can proceed to find the optimal pair , . If , then is the required corner in the original problem.
+2. With and , write out the auxiliary problem, its Phase I vector , and its optimal vector. Find the corner of the feasible set , , and draw a picture of this set.
+**7.**: If we wanted to maximize instead of minimize the cost (with and ), what would be the stopping test on , and what rules would choose the column of to make basic and the column of to make free?
+**8.**: Minimize , subject to , , , .
+**9.**: Verify the inverse in equation (5), and show that has in its column. Then is the correct basis matrix for the next stop, is its inverse, and updates the basis matrix correctly.
+**10.**: Suppose we want to minimize , subject to
+
+Starting from , should  or be increased from its current value of zero? How far can it be increased until the equations force or down to zero? At that point, what is the new ?
+**11.**: For the matrix , show that if is in the nullspace of , then . The nullspace stays unchanged under this projection.
+**12.**:
+1. Minimize the cost on the plane , by testing the vertices , , where the triangle is cut off by the requirement .
+

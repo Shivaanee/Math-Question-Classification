@@ -1,0 +1,33 @@
+axis of the airplane. For an airplane in level flight, heading due South, we have
+
+\[Q=\left[\begin{array}{rrr}0&1&0\\ -1&0&0\\ 0&0&1\end{array}\right].\]
+
+### 7.2 Selectors
+
+An \(m\times n\)_selector matrix_\(A\) is one in which each row is a unit vector (transposed):
+
+\[A=\left[\begin{array}{c}e_{k_{1}}^{T}\\ \vdots\\ e_{k_{m}}^{T}\end{array}\right],\]
+
+where \(k_{1},\ldots,k_{m}\) are integers in the range \(1,\ldots,n\). When it multiplies a vector, it simply copies the \(k_{i}\)th entry of \(x\) into the \(i\)th entry of \(y=Ax\):
+
+\[y=(x_{k_{1}},x_{k_{2}},\ldots,x_{k_{m}}).\]
+
+In words, each entry of \(Ax\) is a selection of an entry of \(x\).
+
+The identity matrix, and the _reverser matrix_
+
+\[A=\left[\begin{array}{c}e_{n}^{T}\\ \vdots\\ e_{1}^{T}\end{array}\right]=\left[\begin{array}{ccccc}0&0&\cdots&0&1\\ 0&0&\cdots&1&0\\ \vdots&\vdots&\iddots&\vdots&\vdots\\ 0&1&\cdots&0&0\\ 1&0&\cdots&0&0\end{array}\right]\]
+
+are special cases of selector matrices. (The reverser matrix reverses the order of the entries of a vector: \(Ax=(x_{n},x_{n-1},\ldots,x_{2},x_{1})\).) Another one is the _\(r\!:\!s\) slicing matrix_, which can be described as the block matrix
+
+\[A=\left[\begin{array}{cc}0_{m\times(r-1)}&I_{m\times m}&0_{m\times(n-s)}\end{array} \right],\]
+
+where \(m=s-r+1\). (We show the dimensions of the blocks for clarity.) We have \(Ax=x_{r\!:\!s}\), _i.e._, multiplying by \(A\) gives the \(r\!:\!s\) slice of a vector.
+
+Down-sampling.Another example is the \((n/2)\times n\) matrix (with \(n\) even)
+
+\[A=\left[\begin{array}{cccccccccc}1&0&0&0&0&0&\cdots&0&0&0&0\\ 0&0&1&0&0&0&\cdots&0&0&0&0\\ 0&0&0&0&1&0&\cdots&0&0&0&0\\ \vdots&\vdots&\vdots&\vdots&\vdots&\vdots&&\vdots&\vdots&\vdots&\vdots\\ 0&0&0&0&0&0&\cdots&1&0&0&0\\ 0&0&0&0&0&0&\cdots&0&0&1&0\end{array}\right].\]
+
+If \(y=Ax\), we have \(y=(x_{1},x_{3},x_{5},\ldots,x_{n-3},x_{n-1})\). When \(x\) is a time series, \(y\) is called the \(2\times\)_down-sampled_ version of \(x\). If \(x\) is a quantity sampled every hour, then \(y\) is the same quantity, sampled every \(2\) hours.
+
+ 

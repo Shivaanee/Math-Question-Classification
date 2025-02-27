@@ -1,0 +1,17 @@
+
+
+## Shadow Prices
+
+In calculus, everybody knows the condition for a maximum or a minimum: _The first derivatives are zero_. But this is completely changed by constraints. The simplest example is the line \(y=x\). Its derivative is never zero, calculus looks useless, and the largest \(y\) is certain to occur at the end of the interval. That is exactly the situation in linear programming! There are more variables, and an interval is replaced by a feasible set, but still the maximum is always found at a corner of the feasible set (with only \(m\) nonzero components).
+
+The problem in linear programming is to locate that cornet For this, calculus is not completely helpless. Far from it, because "Lagrange multipliers" will bring back zero derivatives at the maximum and minimum. _The dual variables \(y\) are exactly the Lagrange multipliers_. And they answer the key question: **How does the minimum cost \(cx^{*}=y^{*}b\) change, if we change \(b\) or \(c\)**?
+
+This is a question in _sensitivity analysis_. It allows us to squeeze extra information out of the dual problem. For an economist or an executive, these questions about _marginal cost_ are the most important.
+
+If we allow large changes in \(b\) or \(c\), the solution behaves in a very jumpy way. As the price of eggs increases, there will be a point at which they disappear from the diet. The variable \(x_{\rm egg}\) will jump from basic to free. To follow it properly, we would have to introduce "parametric" programming. But if the changes are small, _the corner that was optimal remains optimal_. The choice of basic variables does not change; \(B\) and \(N\) stay the same. Geometrically, we shifted the feasible set a little (by changing \(b\)), and we tilted the planes that come up to meet it (by changing \(c\)). When these changes are small, contact occurs at the same (slightly moved) corner.
+
+At the end of the simplex method, when the right basic variables are known, the corresponding \(m\) columns of \(A\) make up the basis matrix \(B\). At that corner, a shift of size \(\Delta b\) changes the minimum cost by \(y^{*}\Delta b\). _The dual solution \(y^{*}\) gives the rate of change of minimum cost_ (its derivative) _with respect to changes in \(b\)_. The components of \(y^{*}\) are the _shadow prices_. If the requirement for a vitamin goes up by \(\Delta\), and the druggist's price is \(y^{*}_{1}\), then the diet cost (from druggist or grocer) will go up by \(y^{*}_{1}\Delta\). In the case that \(y^{*}_{1}\) is zero, that vitamin is a _free good_ and the small change has no effect. The diet already contained more than \(b_{1}\).
+
+We now ask a different question. Suppose we insist that the diet contain some _small_ edible amount of egg. The condition \(x_{\rm egg}\geq 0\) is changed to \(x_{\rm egg}\geq\delta\). How does this change the cost?
+
+If eggs were in the diet \(x^{*}\), there is no change. But if \(x^{*}_{\rm egg}=0\), it will cost extra to add in the amount \(\delta\). The increase will not be the full price \(c_{\rm egg}\delta\), since we can cut down on other foods. The _reduced cost_ of eggs is their own price, _minus_ the price we are paying for the equivalent in cheaper foods. To compute it we return to equation (2) of Section

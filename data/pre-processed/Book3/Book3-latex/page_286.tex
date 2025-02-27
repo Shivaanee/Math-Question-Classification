@@ -1,0 +1,32 @@
+See 8.2
+
+**17.**: Let \(V\) be a complex vector space, \(J\) a conjugation on \(V\), \(W\) the set of \(\alpha\) in \(V\) such that \(J\alpha=\alpha\), and \(f\) an inner product on \(W\). Show that:
+
+(a) There is a unique inner product \(g\) on \(V\) such that \(g(\alpha,\,\beta)=f(\alpha,\,\beta)\) for all \(\alpha\), \(\beta\) in \(W\),
+
+(b) \(g(J\alpha,J\beta)=g(\beta,\,\alpha)\) for all \(\alpha\), \(\beta\) in \(V\).
+
+What does part (a) say about the relation between the standard inner products on \(R^{1}\) and \(C^{1}\), or on \(R^{*}\) and \(C^{*}\)?
+
+### Inner Product Spaces
+
+Now that we have some idea of what an inner product is, we shall turn our attention to what can be said about the combination of a vector space and some particular inner product on it. Specifically, we shall establish the basic properties of the concepts of 'length' and 'orthogonality' which are imposed on the space by the inner product.
+
+**Definition**.: _An inner product space is a real or complex vector space, together with a specified inner product on that space._
+
+A finite-dimensional real inner product space is often called a **Euclidean space.** A complex inner product space is often referred to as a **unitary space.**
+
+**Theorem 1**.: _If \(V\) is an inner product space, then for any vectors \(\alpha\), \(\beta\) in \(V\) and any scalar \(c\)_
+
+1. \(||c\alpha||=|c|\ ||\alpha||\)_;_
+2. \(||\alpha||>0\) _for_ \(\alpha\neq 0\)_;_
+3. \(|(\alpha|\beta)|\leq||\alpha||\ ||\beta||\)_;_
+4. \(||\alpha+\beta||\leq||\alpha||\ +||\beta||\)_._
+
+Proof.: Statements (i) and (ii) follow almost immediately from the various definitions involved. The inequality in (iii) is clearly valid when \(\alpha=0\). If \(\alpha\neq 0\), put
+
+\[\gamma=\beta-\frac{(\beta|\alpha)}{||\alpha||^{2}}\alpha.\]
+
+Then \((\gamma|\alpha)=0\) and
+
+\[0\leq||\gamma||^{2} = \left(\beta-\frac{(\beta|\alpha)}{||\alpha||^{2}}\alpha\,\right| \beta-\frac{(\beta|\alpha)}{||\alpha||^{2}}\alpha\right)\] \[= \ (\beta|\beta)-\frac{(\beta|\alpha)(\alpha|\beta)}{||\alpha||^{ 2}}\] \[= \ ||\beta||^{2}-\frac{|(\alpha|\beta)|^{2}}{||\alpha||^{2}}.\] 

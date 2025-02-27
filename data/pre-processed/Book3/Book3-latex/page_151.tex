@@ -1,0 +1,23 @@
+matrix; its value is \(0\) on any matrix having two equal rows; and its value on the \(n\times n\) identity matrix is \(1\). We shall prove that such a function exists, and then that it is unique, i.e., that there is precisely one such function. As we prove the uniqueness, an explicit formula for the determinant will be obtained, along with many of its useful properties.
+
+This section will be devoted to the definition of 'determinant function' and to the proof that at least one such function exists.
+
+_Definition._ Let \(K\) be a commutative ring with identity, \(n\) a positive integer, and let \(D\) be a function which assigns to each \(n\times n\) matrix \(A\) over \(K\) a scalar \(D(A)\) in \(K\). We say that \(D\) is \(n\)**-linear** if for each \(i,\ 1\leq i\leq n\), \(D\) is a linear function \(j\) the \(i\)th row when the other \((n\,-\,1)\) rows are held fixed.
+
+This definition requires some clarification. If \(D\) is a function from \(K^{n\times n}\) into \(K\), and if \(\alpha_{i},\,\ldots,\,\alpha_{n}\) are the rows of the matrix \(A\), let us also write
+
+\[D(A)\,=\,D(\alpha_{i},\,\ldots,\,\alpha_{n})\]
+
+that is, let us also think of \(D\) as the function of the rows of \(A\). The statement that \(D\) is \(n\)-linear then means
+
+\[D(\alpha_{i},\,\ldots,\,c\alpha_{i}+\alpha_{i}^{\prime},\,\ldots,\, \alpha_{n}) =\,cD(\alpha_{i},\,\ldots,\,\alpha_{i},\,\ldots,\,\alpha_{n})\] \[+D(\alpha_{i},\,\ldots,\,\alpha_{i}^{\prime},\,\ldots,\,\alpha_ {n}).\]
+
+If we fix all rows except row \(i\) and regard \(D\) as a function of the \(i\)th row, it is often convenient to write \(D(\alpha_{i})\) for \(D(A)\). Thus, we may abbreviate (5-1) to
+
+\[D(c\alpha_{i}+a_{i}^{\prime})\,=\,cD(\alpha_{i})\,+\,D(\alpha_{i}^{\prime})\]
+
+so long as it is clear what the meaning is.
+
+**Example 1**: Let \(k_{1},\,\ldots,\,k_{n}\) be positive integers, \(1\leq k_{i}\leq n\), and let \(a\) be an element of \(K\). For each \(n\times n\) matrix \(A\) over \(K\), define
+
+\[D(A)\,=\,aA(1,\,k_{i})\,\cdots\,A(n, 

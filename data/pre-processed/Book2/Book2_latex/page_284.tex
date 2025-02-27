@@ -1,0 +1,31 @@
+
+
+#### Summary
+
+The discussion above makes it clear that there is much art in choosing features to use in a model. But it is important to keep several things in mind when creating new features:
+
+* _Try simple models first._ Start with a constant, then a simple regression model, and so on. You can compare more sophisticated models against these.
+* _Compare competing candidate models using validation._ Adding new features will always reduce the RMS error on the training data, but the important question is whether or not it substantially reduces the RMS error on the test or validation data sets. (We add the qualifier 'substantially' here because a small reduction in test set error is not meaningful.)
+* _Adding new features can easily lead to over-fit._ (This will show up when validating the model.) The most straightforward way to avoid over-fit is to keep the model simple. We mention here that another approach to avoiding over-fit, called _regularization_ (covered in chapter 15), can be very effective when combined with feature engineering.
+
+#### House price prediction
+
+In this section we use feature engineering to develop a more complicated regression model for the house sales data, illustrating some of the methods described above. As mentioned in SS2.3, the data set contains records of 774 house sales in the Sacramento area. For our more complex model we will use four base attributes or original features:
+
+* \(x_{1}\) is the area of the house (in 1000 square feet),
+* \(x_{2}\) is the number of bedrooms,
+* \(x_{3}\) is equal to one if the property is a condominium, and zero otherwise,
+* \(x_{4}\) is the five-digit ZIP code.
+
+Only the first two attributes were used in the simple regression model
+
+\[\hat{y}=\beta_{1}x_{1}+\beta_{2}x_{2}+v\]
+
+given in SS2.3. In that model, we do not carry out any feature engineering or modification.
+
+Feature engineering.Here we examine a more complicated model, with 8 basis functions,
+
+\[\hat{y}=\sum_{i=1}^{8}\theta_{i}f_{i}(x).\]
+
+These basis functions are described below.
+

@@ -1,0 +1,31 @@
+We want to say a bit more about the special alternating \(r\)-linear forms \(D_{J}\), which we associated with a basis \(\langle f_{1},\ldots,f_{n}\rangle\) for \(V^{*}\) in (5-39). It is important to understand that \(D_{J}(\alpha_{1},\ldots,\alpha_{r})\) is the determinant of a certain \(r\times r\) matrix. If
+
+\[A_{ij}=f_{j}(\alpha_{i}),\qquad 1\leq i\leq r,\,1\leq j\leq n,\]
+
+that is, if
+
+\[\alpha_{i}=A_{\alpha 1}\beta_{1}+\cdots+A_{\,in\beta_{n}}\qquad 1\leq i\leq r\]
+
+and \(J\) is the \(r\)-shuffle \(\langle j_{1},\ldots,j_{r}\rangle\), then
+
+\[D_{J}(\alpha_{1},\ldots,\alpha_{r}) =\sum_{\sigma}\,\left(\mbox{sgn }\sigma\right)\,A\,(1,j_{\sigma 1})\,\cdots\,A\,(n,j_{\sigma n})\] \[=\,\det\begin{bmatrix}A\,(1,j_{1})\,\cdots\,A\,(1,j_{r})\\ \vdots\\ A\,(r,j_{1})\,\cdots\,A\,(r,j_{r})\end{bmatrix}\]
+
+Thus \(D_{J}(\alpha_{1},\ldots,\alpha_{r})\) is the determinant of the \(r\times r\) matrix formed from columns \(j_{1},\ldots,j_{r}\) of the \(r\times n\) matrix which has (the coordinate \(n\)-tuples of) \(\alpha_{1},\ldots,\alpha_{r}\) as its rows. Another notation which is sometimes used for this determinant is
+
+\[D_{J}(\alpha_{1},\ldots,\alpha_{r})=\frac{\partial(\alpha_{1},\ldots,\alpha_{ r})}{\partial(\beta_{j_{1}},\ldots,\beta_{j_{r}})}.\]
+
+In this notation, the proof of Theorem 7 shows that every alternating \(r\)-linear form \(L\) can be expressed relative to a basis \(\langle\beta_{1},\ldots,\beta_{n}\rangle\) by the equation
+
+\[L(\alpha_{1},\ldots,\alpha_{r})=\sum_{j_{1}<\cdots<j_{r}}\frac{\partial( \alpha_{1},\ldots,\alpha_{r})}{\partial(\beta_{j_{1}},\ldots,\beta_{j_{r}})} \,L(\beta_{j_{1}},\ldots,\beta_{j_{r}}).\]
+
+### The Grassman Ring
+
+Many of the important properties of determinants and alternating multilinear forms are best described in terms of a multiplication operation on forms, called the exterior product. If \(L\) and \(M\) are, respectively, alternating \(r\) and \(s\)-linear forms on the module \(V\), we have an associated product of \(L\) and \(M\), the tensor product \(L\bigotimes M\). This is not an alternating form unless \(L=0\) or \(M=0\); however, we have a natural way of projecting it into \(\Lambda^{r+s}(V)\). It appears that
+
+\[L\,\cdot\,M=\,\pi_{r+s}(L\bigotimes M)\]
+
+should be the 'natural' multiplication of alternating forms. But, is it?
+
+Let us take a specific example. Suppose that \(V\) is the module \(K^{n}\) and \(f_{1},\ldots,f_{n}\) are the standard coordinate functions on \(K^{n}\). If \(i\neq j\), then
+
+\[f_{i}\cdot f_{j}=\pi_{2}(f_{i}\bigotimes f_{j})\] 

@@ -1,0 +1,19 @@
+If there is an edge between every pair of nodes (a complete graph), how many edges are there? The graph has \(n\) nodes, and edges from a node to itself are not allowed.
+**17.**: For both graphs drawn below, verify _Euler's formula_:
+
+\[\textbf{(\# of nodes)}-\textbf{(\# of edges)}+\textbf{(\# of loops)}=\textbf{1}.\]
+**18.**: Multiply matrices to find \(A^{\mathrm{T}}A\), and guess how its entries come from the graph:
+
+1. The diagonal of \(A^{\mathrm{T}}A\) tells how many into each node.
+2. The off-diagonals \(-1\) or \(0\) tell which pairs of nodes are .
+**19.**: Why does the nullspace of \(A^{\mathrm{T}}A\) contain \((1,1,1,1)\)? What is its rank?
+**20.**: Why does a complete graph with \(n=6\) nodes have \(m=15\) edges? A spanning tree connecting all six nodes has edges. There are \(n^{n-2}=6^{4}\) spanning trees!
+**21.**: The _adjacency matrix_ of a graph has \(M_{ij}=1\) if nodes \(i\) and \(j\) are connected by an edge (otherwise \(M_{ij}=0\)). For the graph in Problem 6 with 6 nodes and 4 edges, write down \(M\) and also \(M^{2}\). Why does \((M^{2})_{ij}\) count the number of 2-_step paths_ from node \(i\) to node \(j\)?
+
+### 2.6 Linear Transformations
+
+We know how a matrix moves subspaces around when we multiply by \(A\). The nullspace goes into the zero vector. All vectors go into the column space, since \(Ax\) is always a combination of the columns. You will soon see something beautiful--that \(A\) takes its row space into its column space, and on those spaces of dimension \(r\) it is 100 percent invertible. That is the real action of \(A\). It is partly hidden by nullspaces and left nullspaces, which lie at right angles and go their own way (toward zero).
+
+What matters now is what happens _inside_ the space--which means inside \(n\)-dimensional space, if \(A\) is \(n\) by \(n\). That demands a closer look.
+
+Suppose \(x\) is an \(n\)-dimensional vector. When \(A\) multiplies \(x\), it _transforms_ that vector into a new vector \(Ax\). This happens at every point \(x\) of the \(n\)-dimensional space \(\textbf{R}^{n}\). The whole space is transformed, or "mapped into itself," by the matrix \(A\). Figure 2.9 illustrates four transformations that come from matrices: 

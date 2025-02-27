@@ -1,0 +1,27 @@
+airplane, as a function of the 3-vector \(x\), where \(x_{1}\) is the angle of attack of the airplane (_i.e._, the angle between the airplane body and its direction of motion), \(x_{2}\) is its air speed, and \(x_{3}\) is the air density.
+
+The inner product function.Suppose \(a\) is an \(n\)-vector. We can define a scalar-valued function \(f\) of \(n\)-vectors, given by
+
+\[f(x)=a^{T}x=a_{1}x_{1}+a_{2}x_{2}+\cdots+a_{n}x_{n}\] (2.1)
+
+for any \(n\)-vector \(x\). This function gives the inner product of its \(n\)-vector argument \(x\) with some (fixed) \(n\)-vector \(a\). We can also think of \(f\) as forming a weighted sum of the elements of \(x\); the elements of \(a\) give the weights used in forming the weighted sum.
+
+Superposition and linearity.The inner product function \(f\) defined in (2.1) satisfies the property
+
+\[f(\alpha x+\beta y) = a^{T}(\alpha x+\beta y)\] \[= a^{T}(\alpha x)+a^{T}(\beta y)\] \[= \alpha(a^{T}x)+\beta(a^{T}y)\] \[= \alpha f(x)+\beta f(y)\]
+
+for all \(n\)-vectors \(x\), \(y\), and all scalars \(\alpha\), \(\beta\). This property is called _superposition_. A function that satisfies the superposition property is called _linear_. We have just shown that the inner product with a fixed vector is a linear function.
+
+The superposition equality
+
+\[f(\alpha x+\beta y)=\alpha f(x)+\beta f(y)\] (2.2)
+
+looks deceptively simple; it is easy to read it as just a re-arrangement of the parentheses and the order of a few terms. But in fact it says a lot. On the left-hand side, the term \(\alpha x+\beta y\) involves _scalar-vector_ multiplication and _vector addition_. On the right-hand side, \(\alpha f(x)+\beta f(y)\) involves ordinary _scalar multiplication_ and _scalar addition_.
+
+If a function \(f\) is linear, superposition extends to linear combinations of any number of vectors, and not just linear combinations of two vectors: We have
+
+\[f(\alpha_{1}x_{1}+\cdots+\alpha_{k}x_{k})=\alpha_{1}f(x_{1})+\cdots+\alpha_{k }f(x_{k}),\]
+
+for any \(n\) vectors \(x_{1},\ldots,x_{k}\), and any scalars \(\alpha_{1},\ldots,\alpha_{k}\). (This more general \(k\)-term form of superposition reduces to the two-term form given above when \(k=2\).) To see this, we note that
+
+\[f(\alpha_{1}x_{1}+\cdots+\alpha_{k}x_{k}) = \alpha_{1}f(x_{1})+f(\alpha_{2}x_{2}+\cdots+\alpha_{k}x_{k})\] \[= \alpha_{1}f(x_{1})+\alpha_{2}f(x_{2})+f(\alpha_{3}x_{3}+\cdots+ \alpha_{k}x_{k})\] \[\vdots\] \[= \alpha_{1}f(x_{1})+\cdots+\alpha_{k 

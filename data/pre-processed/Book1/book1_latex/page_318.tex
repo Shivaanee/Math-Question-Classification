@@ -1,0 +1,31 @@
+
+
+**12.**: Find the eigenvalues and eigenvectors for
+
+\[\frac{du}{dt}=Au=\begin{bmatrix}0&3&0\\ -3&0&4\\ 0&-4&0\end{bmatrix}u.\]
+
+Why do you know, without computing, that \(e^{At}\) will be an orthogonal matrix and \(\|u(t)\|^{2}=u_{1}^{2}+u_{2}^{2}+u_{3}^{2}\) will be constant?
+**13.**: For the skew-symmetric equation
+
+\[\frac{du}{dt}=Au=\begin{bmatrix}0&c&-b\\ -c&0&a\\ b&-a&0\end{bmatrix}\begin{bmatrix}u_{1}\\ u_{2}\\ u_{3}\end{bmatrix},\]
+
+1. write out \(u_{1}^{\prime}\), \(u_{2}^{\prime}\), \(u_{3}^{\prime}\) and confirm that \(u_{1}^{\prime}u_{1}+u_{2}^{\prime}u_{2}+u_{3}^{\prime}u_{3}=0\).
+2. deduce that the length \(u_{1}^{2}+u_{2}^{2}+u_{3}^{2}\) is a constant.
+3. find the eigenvalues of \(A\).
+
+The solution will rotate around the axis \(w=(a,b,c)\), because \(Au\) is the "cross product" \(u\times w\)--which is perpendicular to \(u\) and \(w\).
+**14.**: What are the eigenvalues \(\lambda\) and frequencies \(\omega\), and the general solution, of the following equation?
+
+\[\frac{d^{2}u}{dt^{2}}=\begin{bmatrix}-5&4\\ 4&-5\end{bmatrix}u.\]
+**15.**: Solve the second-order equation
+
+\[\frac{d^{2}u}{dt^{2}}=\begin{bmatrix}-5&-1\\ -1&-5\end{bmatrix}u\quad\text{with}\quad u(0)=\begin{bmatrix}1\\ 0\end{bmatrix}\quad\text{and}\quad u^{\prime}(0)=\begin{bmatrix}0\\ 0\end{bmatrix}.\]
+**16.**: In most applications the second-order equation looks like \(Mu^{\prime\prime}+Ku=0\), with a _mass matrix_ multiplying the second derivatives. Substitute the pure exponential \(u=e^{i\omega t}x\) and find the "generalized eigenvalue problem" that must be solved for the frequency \(\omega\) and the vector \(x\).
+**17.**: With a friction matrix \(F\) in the equation \(u^{\prime\prime}+Fu^{\prime}-Au=0\), substitute a pure exponential \(u=e^{\lambda t}x\) and find a quadratic eigenvalue problem for \(\lambda\).
+**18.**: For equation (16) in the text, with \(\omega=1\) and \(\sqrt{3}\), find the motion if the first mass is hit at \(t=0\); \(u(0)=(0,0)\) and \(u^{\prime}(0)=(1,0)\).
+**19.**: Every 2 by 2 matrix with trace zero can be written as
+
+\[A=\begin{bmatrix}a&b+c\\ b-c&-a\end{bmatrix}.\]
+
+Show that its eigenvalues are real exactly when \(a^{2}+b^{2}\geq c^{2}\).
+

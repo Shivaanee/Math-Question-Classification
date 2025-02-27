@@ -1,0 +1,31 @@
+At the last step, an eigenvector of the 2 by 2 matrix in the lower right-hand corner goes into a unitary \(M_{3}\), which is put into the corner of \(U_{3}\):
+
+\[\textbf{Triangular}\qquad U_{3}^{-1}\left(U_{2}^{-1}U_{1}^{-1}AU_{1}U_{2} \right)U_{3}=\begin{bmatrix}\lambda_{1}&*&*&*\\ 0&\lambda_{2}&*&*\\ 0&0&\lambda_{3}&*\\ 0&0&0&*\end{bmatrix}=T.\]
+
+The product \(U=U_{1}U_{2}U_{3}\) is still a unitary matrix, and \(U^{-1}AU=T\). 
+
+This lemma applies to all matrices, with no assumption that \(A\) is diagoalizable. We could use it to prove that _the powers \(A^{k}\) approach zero when all \(|\lambda_{i}|<1\), and the exponentials \(e^{At}\) approach zero when all_ Re\(\lambda_{i}<0\)--even without the full set of eigenvectors which was assumed in Sections 5.3 and 5.4.
+
+**Example 2**.: \(A=\begin{bmatrix}2&-1\\ 1&0\end{bmatrix}\) has the eigenvalue \(\lambda=1\) (twice).
+
+The only line of eigenvectors goes through \((1,1)\). After dividing by \(\sqrt{2}\), this is the first column of \(U\), and the triangular \(U^{-1}AU=T\) has the eigenvalues on its diagonal:
+
+\[U^{-1}AU=\begin{bmatrix}1/\sqrt{2}&1/\sqrt{2}\\ 1/\sqrt{2}&-1/\sqrt{2}\end{bmatrix}\begin{bmatrix}2&-1\\ 1&0\end{bmatrix}\begin{bmatrix}1/\sqrt{2}&1/\sqrt{2}\\ 1/\sqrt{2}&-1/\sqrt{2}\end{bmatrix}=\begin{bmatrix}1&2\\ 0&1\end{bmatrix}=T.\] (4)
+
+### Diagonalizing Symmetric and Hermitian Matrices
+
+This triangular form will show that any symmetric or Hermitian matrix--whether its eigenvalues are _distinct or not_--has a complete set of orthonormal eigenvectors. We need a unitary matrix such that \(U^{-1}AU\) is _diagonal_. Schur's lemma has just found it. This triangular \(T\) must be diagonal, because it is also Hermitian when \(A=A^{\mathrm{H}}\):
+
+\[T=T^{\mathrm{H}}\qquad(U^{-1}AU)^{\mathrm{H}}=U^{\mathrm{H}}A^{\mathrm{H}}(U^ {-1})^{\mathrm{H}}=U^{-1}AU.\]
+
+The diagonal matrix \(U^{-1}AU\) represents a key theorem in linear algebra.
+
+**5S** (**Spectral Theorem**) Every real symmetric \(A\) can be diagonalized by an orthogonal matrix \(Q\). Every Hermitian matrix can be diagonalized by a unitary \(U\):
+
+\[(\textbf{real}) Q^{-1}AQ=\Lambda\quad\text{or}\quad A=Q\Lambda Q^{\mathrm{T}}\] \[(\textbf{complex}) U^{-1}AU=\Lambda\quad\text{or}\quad A=U\Lambda U^{\mathrm{H}}\]
+
+The columns of \(Q\) (or \(U\)) contain orthonormal eigenvectors of \(A\).
+
+_Remark 1_.: In the real symmetric case, the eigenvalues and eigenvectors are real at every step. That produces a _real_ unitary \(U\)--an orthogonal matrix.
+
+ 

@@ -1,0 +1,29 @@
+\(Q\) rotates every vector through the angle \(\theta\), and \(Q^{\mathrm{T}}\) rotates it back through \(-\theta\). The columns are clearly orthogonal, and they are orthonormal because \(sin^{2}\theta+cos^{2}\theta=1\). The matrix \(Q^{\mathrm{T}}\) is just as much an orthogonal matrix as \(Q\).
+
+**Example 2**.: Any permutation matrix \(P\) is an orthogonal matrix. The columns are certainly unit vectors and certainly orthogonal--because the 1 appears in a different place in each column: The transpose is the inverse.
+
+\[\mathrm{If}\quad P=\begin{bmatrix}0&1&0\\ 0&0&1\\ 1&0&0\end{bmatrix}\quad\mathrm{then}\quad P^{-1}=P^{\mathrm{T}}=\begin{bmatrix} 0&0&1\\ 1&0&0\\ 0&1&0\end{bmatrix}.\]
+
+An anti-diagonal \(P\), with \(P_{13}=P_{22}=P_{31}=I\), takes the \(x\)-\(y\)-\(z\) axes into the \(z\)-\(y\)-\(x\) axes--a "right-handed" system into a "left-handed" system. So we were wrong if we suggested that every orthogonal \(Q\) represents a rotation. _A reflection is also allowed_. \(P=\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\) reflects every point \((x,y)\) into \((y,x)\), its mirror image across the \(45^{\circ}\) line. Geometrically, an orthogonal \(Q\) is the product of a rotation and a reflection.
+
+There does remain one property that is shared by rotations and reflections, and in fact by every orthogonal matrix. It is not shared by projections, which are not orthogonal or even invertible. Projections reduce the length of a vector, whereas orthogonal matrices have a property that is the most important and most characteristic of all:
+
+**3R** Multiplication by any \(Q\) preserves lengths:
+
+\[\mathbf{Lengths unchanged}\qquad\|Qx\|=\|x\|\quad\mathrm{for\ every\ vector}\ x.\] (2)
+
+It also preserves inner products and angles, since \((Qx)^{\mathrm{T}}(Qy)=x^{\mathrm{T}}Q^{\mathrm{T}}Qy=x^{\mathrm{T}}y\).
+
+The preservation of lengths comes directly from \(Q^{\mathrm{T}}Q=I\):
+
+\[\|Qx\|^{2}=\|x\|^{2}\quad\mathrm{because}\quad(Qx)^{\mathrm{T}}(Qx)=x^{ \mathrm{T}}Q^{\mathrm{T}}Qx=x^{\mathrm{T}}x.\] (3)
+
+All inner products and lengths are preserved, when the space is rotated or reflected.
+
+We come now to the calculation that uses the special property \(Q^{\mathrm{T}}=Q^{-1}\). If we have a basis, then any vector is a combination of the basis vectors. This is exceptionally simple for an orthonormal basis, which will be a key idea behind Fourier series. The problem is _to find the coefficients of the basis vectors_:
+
+\[\boxed{Write\ b\ as\ a\ combination\ \ b=x_{1}q_{1}+x_{2}q_{2}+\cdots+x_{n}q_{n}.}\]
+
+To compute \(x_{1}\) there is a neat trick. _Multiply both sides of the equation by \(q_{1}^{\mathrm{T}}\)_. On the left-hand side is \(q_{1}^{\mathrm{T}}b\). On the right-hand side all terms disappear (because \(q_{1}^{\mathrm{T}}q_{j}=0\)) except the first term. We are left with
+
+\[q_{1}^{\mathrm{T}}b=x_{1}q_{1}^{\mathrm{T}}q_{1}.\] 

@@ -1,0 +1,18 @@
+
+
+#### Advanced feature generation methods
+
+Custom mappings.In many applications custom mappings of the raw data are used as additional features, in addition to the original features given. For example in a model meant to predict an asset's future price using prior prices, we might also use the highest and lowest prices over the last week. Another well known example in financial models is the price-to-earnings ratio, constructed from the price and (last) earnings features.
+
+In document analysis applications word count features are typically replaced with _term frequency inverse document frequency_ (TFIDF) values, which scale the raw count values by a function of the frequency with which the word appears across the given set of documents, usually in such a way that uncommon words are given more weight. (There are many variations on the particular scaling function to use. Which one to use in a given application can be determined by out-of-sample or cross-validation.)
+
+Predictions from other models.In many applications there are existing models for the data. A common trick is to use the predictions of these models as features in your model. In this case you can describe your model as one that combines or blends the raw data available with predictions made from one or more existing models to create a new prediction.
+
+Distance to cluster representatives.We can build new features from a clustering of the data into \(k\) groups. One simple method uses the cluster representatives \(z_{1},\ldots,z_{k}\), and gives \(k\) new features, given by \(f(x)=e^{-\|x-z_{i}\|^{2}/\sigma^{2}}\), where \(\sigma\) is a parameter.
+
+Random features.The new features are given by a nonlinear function of a _random_ linear combination of the original features. To add \(K\) new features of this type, we first generate a random \(K\times n\) matrix \(R\). We then generate new features as \((Rx)_{+}\) or \(|Rx|\), where \((\cdot)_{+}\) and \(|\cdot|\) are applied elementwise to the vector \(Rx\). (Other nonlinear functions can be used as well.)
+
+This approach to generating new features is quite counter-intuitive, since you would imagine that feature engineering should be done using detailed knowledge of, and intuition about, the particular application. Nevertheless this method can be very effective in some applications.
+
+Neural network features.A _neural network_ computes transformed features using compositions of linear transformations interspersed with nonlinear mappings such as the absolute value. This architecture was originally inspired by biology, as a crude model of how human and animal brains work. The ideas behind neural networks are very old, but their use has accelerated over the last few years due to a combination of new techniques, greatly increased computing power, and access to large amounts of data. Neural networks can find good feature mappings directly from the data, provided there is a very large amount of data available.
+

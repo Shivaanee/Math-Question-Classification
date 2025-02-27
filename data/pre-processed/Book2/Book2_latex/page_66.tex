@@ -1,0 +1,24 @@
+
+
+#### Standardization.
+
+For any vector \(x\), we refer to \(\tilde{x}=x-\mathbf{avg}(x)\mathbf{1}\) as the de-meaned version of \(x\), since it has average or mean value zero. If we then divide by the RMS value of \(\tilde{x}\) (which is the standard deviation of \(x\)), we obtain the vector
+
+\[z=\frac{1}{\mathbf{std}(x)}(x-\mathbf{avg}(x)\mathbf{1}).\]
+
+This vector is called the _standardized_ version of \(x\). It has mean zero, and standard deviation one. Its entries are sometimes called the _\(z\)-scores_ associated with the original entries of \(x\). For example, \(z_{4}=1.4\) means that \(x_{4}\) is 1.4 standard deviations above the mean of the entries of \(x\). Figure 3.5 shows an example.
+
+The standardized values for a vector give a simple way to interpret the original values in the vectors. For example, if an \(n\)-vector \(x\) gives the values of some medical test of \(n\) patients admitted to a hospital, the standardized values or \(z\)-scores tell us how high or low, compared to the population, that patient's value is. A value \(z_{6}=-3.2\), for example, means that patient 6 has a very low value of the measurement; whereas \(z_{22}=0.3\) says that patient 22's value is quite close to the average value.
+
+### 3.4 Angle
+
+Cauchy-Schwarz inequality.An important inequality that relates norms and inner products is the _Cauchy-Schwarz inequality_:
+
+\[|a^{T}b|\leq\left\|a\right\|\left\|b\right\|\]
+
+for any \(n\)-vectors \(a\) and \(b\). Written out in terms of the entries, this is
+
+\[|a_{1}b_{1}+\cdots+a_{n}b_{n}|\leq\left(a_{1}^{2}+\cdots+a_{n}^{2}\right)^{1/ 2}\left(b_{1}^{2}+\cdots+b_{n}^{2}\right)^{1/2},\]
+
+Figure 3.5: A 10-vector \(x\), the de-meaned vector \(\tilde{x}=x-\mathbf{avg}(x)\mathbf{1}\), and the standardized vector \(z=(1/\,\mathbf{std}(x))\tilde{x}\). The horizontal dashed lines indicate the mean and the standard deviation of each vector. The middle line is the mean; the distance between the middle line and the other two is the standard deviation.
+

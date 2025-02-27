@@ -1,0 +1,17 @@
+
+
+## Chapter 4 Clustering
+
+In this chapter we consider the task of clustering a collection of vectors into groups or clusters of vectors that are close to each other, as measured by the distance between pairs of them. We describe a famous clustering method, called the _\(k\)-means algorithm_, and give some typical applications.
+
+The material in this chapter will not be used in the sequel. But the ideas, and the \(k\)-means algorithm in particular, are widely used in practical applications, and rely only on the ideas developed in the previous three chapters. So this chapter can be considered an interlude that covers useful material that builds on the ideas developed so far.
+
+### 4.1 Clustering
+
+Suppose we have \(N\)\(n\)-vectors, \(x_{1},\ldots,x_{N}\). The goal of _clustering_ is to group or partition the vectors (if possible) into \(k\) groups or clusters, with the vectors in each group close to each other. Clustering is very widely used in many application areas, typically (but not always) when the vectors represent features of objects.
+
+Normally we have \(k\) much smaller than \(N\), _i.e._, there are many more vectors than groups. Typical applications use values of \(k\) that range from a handful to a few hundred or more, with values of \(N\) that range from hundreds to billions. Part of the task of clustering a collection of vectors is to determine whether or not the vectors can be divided into \(k\) groups, with vectors in each group near each other. Of course this depends on \(k\), the number of clusters, and the particular data, _i.e._, the vectors \(x_{1},\ldots,x_{N}\).
+
+Figure 4.1 shows a simple example, with \(N=300\) 2-vectors, shown as small circles. We can easily see that this collection of vectors can be divided into \(k=3\) clusters, shown on the right with the colors representing the different clusters. We could partition these data into other numbers of clusters, but we can see that \(k=3\) is a good value.
+
+This example is not typical in several ways. First, the vectors have dimension \(n=2\). Clustering any set of 2-vectors is easy: We simply scatter plot the values

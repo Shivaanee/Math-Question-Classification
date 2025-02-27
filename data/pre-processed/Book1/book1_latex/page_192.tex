@@ -1,0 +1,15 @@
+2. The error vector must be perpendicular to _each column_\(a_{1},\ldots,a_{n}\) of \(A\): \[\begin{array}{c}a_{1}^{\mathrm{T}}(b-A\widehat{x})=0\\ \vdots\\ a_{n}^{\mathrm{T}}(b-A\widehat{x})=0\end{array}\qquad\text{or}\qquad\left[ \begin{array}{c}a_{1}^{\mathrm{T}}\\ \vdots\\ a_{n}^{\mathrm{T}}\end{array}\right]\left[b-A\widehat{x}\right]=0.\]
+
+This is again \(A^{\mathrm{T}}(b-A\widehat{x})=0\) and \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\), The calculus way is to take partial derivatives of \(E^{2}=(Ax-b)^{\mathrm{T}}(Ax-b)\). That gives the same \(2A^{\mathrm{T}}Ax-2A^{\mathrm{T}}b=0\). The fastest way is just _to multiply the unsolvable equation_\(Ax=b\)_by_\(A^{\mathrm{T}}\). All these equivalent methods produce a square coefficient matrix \(A^{\mathrm{T}}A\). It is symmetric (its transpose is not \(AA^{\mathrm{T}}\)!) and it is the fundamental matrix of this chapter.
+
+The equations \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\) are known in statistics as the _normal equations_.
+
+**3l**. When \(Ax=b\) is inconsistent, its least-squares solution minimizes \(\|Ax-b\|^{2}\): \[\text{\bf Normal equations}\qquad A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b.\] (1) \(A^{\mathrm{T}}A\) is invertible exactly when the columns of \(A\) are linearly independent! Then, \[\text{\bf Best estimate}\ \widehat{x}\qquad\widehat{x}=(A^{\mathrm{T}}A)^{-1}A^{ \mathrm{T}}b.\] (2) The projection of \(b\) onto the column space is the nearest point \(A\widehat{x}\): \[\text{\bf Projection}\qquad p=A\widehat{x}=A(A^{\mathrm{T}}A)^{-1}A^{ \mathrm{T}}b.\] (3)
+
+We choose an example in which our intuition is as good as the formulas:
+
+\[A=\begin{bmatrix}1&2\\ 1&3\\ 0&0\end{bmatrix},\qquad b=\begin{bmatrix}4\\ 5\\ 6\end{bmatrix},\qquad Ax=b\quad\text{has no solution}\\ A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\quad\text{gives the best $x$.}\]
+
+Figure 3.8: Projection onto the column space of a 3 by 2 matrix.
+
+ 

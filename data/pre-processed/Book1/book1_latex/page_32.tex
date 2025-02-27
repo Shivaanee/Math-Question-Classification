@@ -1,0 +1,23 @@
+On the right-hand side is the column vector \(b\). On the left-hand side are the unknowns \(u\), \(v\), \(w\). Also on the left-hand side are nine coefficients (one of which happens to be zero). It is natural to represent the three unknowns by a vector:
+
+\[\text{The unknown is }x=\begin{bmatrix}u\\ v\\ w\end{bmatrix}\qquad\text{The solution is }x=\begin{bmatrix}1\\ 1\\ 2\end{bmatrix}.\]
+
+The nine coefficients fall into three rows and three columns, producing a \(3\)_by_\(3\)_matrix_:
+
+\[\text{{Coefficient matrix}}\qquad A=\begin{bmatrix}2&1&1\\ 4&-6&0\\ -2&7&2\end{bmatrix}.\]
+
+\(A\) is a _square_ matrix, because the number of equations equals the number of unknowns. If there are \(n\) equations in \(n\) unknowns, we have a square \(n\) by \(n\) matrix. More generally, we might have \(m\) equations and \(n\) unknowns. Then \(A\) is _rectangular_, with \(m\) rows and \(n\) columns. It will be an "\(m\) by \(n\) matrix."
+
+Matrices are added to each other, or multiplied by numerical constants, exactly as vectors are--one entry at a time. In fact we may regard vectors as special cases of matrices; _they are matrices with only one column_. As with vectors, two matrices can be added only if they have the same shape:
+
+\[\begin{array}{c}\text{{Addition }}A+B\\ \text{{Multiplication }}2A\end{array}\qquad\begin{bmatrix}2&1\\ 3&0\\ 0&4\end{bmatrix}+\begin{bmatrix}1&2\\ -3&1\\ 1&2\end{bmatrix}=\begin{bmatrix}3&3\\ 0&1\\ 1&6\end{bmatrix}\qquad\begin{bmatrix}2&1\\ 3&0\\ 0&4\end{bmatrix}=\begin{bmatrix}4&2\\ 6&0\\ 0&8\end{bmatrix}.\]
+
+### Multiplication of a Matrix and a Vector
+
+We want to rewrite the three equations with three unknowns \(u\), \(v\), \(w\) in the simplified matrix form \(Ax=b\). Written out in full, matrix times vector equals vector:
+
+\[\text{{Matrix form }}Ax=b\qquad\begin{bmatrix}2&1&1\\ 4&-6&0\\ -2&7&2\end{bmatrix}\begin{bmatrix}u\\ v\\ w\end{bmatrix}=\begin{bmatrix}5\\ -2\\ 9\end{bmatrix}.\] (2)
+
+The right-hand side \(b\) is the column vector of "inhomogeneous terms." **The left-hand side is \(A\) times \(x\)**. This multiplication will be defined _exactly so as to reproduce the original system_. The first component of \(Ax\) comes from "multiplying" the first row of \(A\) into the column vector \(x\):
+
+\[\text{{Row times column}}\qquad\begin{bmatrix}2&1&1\end{bmatrix}\begin{bmatrix} u\\ v\\ w\end{bmatrix}=\begin{bmatrix}2u+v+w\end{bmatrix}=\begin{bmatrix}5\end{bmatrix}.\] (3) 

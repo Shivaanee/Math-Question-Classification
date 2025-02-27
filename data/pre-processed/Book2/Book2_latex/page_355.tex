@@ -1,0 +1,29 @@
+which states that \(\hat{x}\) satisfies the equality constraints \(C\hat{x}=d\) (which we already knew). The first set of equations, however, is more informative. Expanding the objective \(\|Ax-b\|^{2}\) as a sum of terms involving the entries of \(x\) (as was done on page 229) and taking the partial derivative of \(L\) with respect to \(x_{i}\) we obtain
+
+\[\frac{\partial L}{\partial x_{i}}(\hat{x},\hat{z})=2\sum_{j=1}^{n}(A^{T}A)_{ij }\hat{x}_{j}-2(A^{T}b)_{i}+\sum_{j=1}^{p}\hat{z}_{j}(c_{j})_{i}=0.\]
+
+These equations can be written in compact matrix-vector form as
+
+\[2(A^{T}A)\hat{x}-2A^{T}b+C^{T}\hat{z}=0.\]
+
+Combining this set of linear equations with the feasibility conditions \(C\hat{x}=d\), we can write the optimality conditions (16.3) as one set of \(n+p\) linear equations in the variables \((\hat{x},\hat{z})\):
+
+\[\left[\begin{array}{cc}2A^{T}A&C^{T}\\ C&0\end{array}\right]\left[\begin{array}{c}\hat{x}\\ \hat{z}\end{array}\right]=\left[\begin{array}{c}2A^{T}b\\ d\end{array}\right].\] (16.4)
+
+These equations are called the _KKT equations_ for the constrained least squares problem. (KKT are the initials of the last names of William Karush, Harold Kuhn, and Albert Tucker, the three researchers who derived the optimality conditions for a more general form of constrained optimization problem.) The KKT equations (16.4) are an extension of the normal equations (12.4) for a least squares problem with no constraints. So we have reduced the constrained least squares problem to the problem of solving a (square) set of \(n+p\) linear equations in \(n+p\) variables \((\hat{x},\hat{z})\).
+
+Invertibility of KKT matrix.The \((n+p)\times(n+p)\) coefficient matrix in (16.4) is called the _KKT matrix_. It is invertible if and only if
+
+\[C\]
+
+_has linearly independent rows, and \[\left[\begin{array}{c}A\\ C\end{array}\right]\] has linearly independent columns_. (16.5)
+
+The first condition requires that \(C\) is wide (or square), _i.e._, that there are fewer constraints than variables. The second condition depends on both \(A\) and \(C\), and it can be satisfied even when the columns of \(A\) are linearly dependent. The condition (16.5) is the generalization of our assumption (12.2) for unconstrained least squares (_i.e._, that \(A\) has linearly independent columns).
+
+Before proceeding, let us verify that the KKT matrix is invertible if and only if (16.5) holds. First suppose that the KKT matrix is not invertible. This means that there is a nonzero vector \((\bar{x},\bar{z})\) with
+
+\[\left[\begin{array}{cc}2A^{T}A&C^{T}\\ C&0\end{array}\right]\left[\begin{array}{c}\bar{x}\\ \bar{z}\end{array}\right]=0.\]
+
+Multiply the top block equation \(2A^{T}A\bar{x}+C^{T}\bar{z}=0\) on the left by \(\bar{x}^{T}\) to get
+
+\[2\|A\bar{x}\|^{2}+\bar{x}^{T}C^{T}\bar{z}=0.\] 

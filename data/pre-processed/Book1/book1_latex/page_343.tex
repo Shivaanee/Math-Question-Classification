@@ -1,0 +1,17 @@
+The same \(\lambda_{i}\) will appear in several blocks, if it has several independent eigenvectors. Two matrices are similar if and only if they share the same Jordan form \(J\).
+
+Many authors have made this theorem the climax of their linear algebra course. Frankly, I think that is a mistake. It is certainly true that not all matrices are diagonalizable, and the Jordan form is the most general case. For that very reason, its construction is both technical and extremely unstable. (A slight change in \(A\) can put back all the missing eigenvectors, and remove the off-diagonal is.) Therefore the right place for the details is in the appendix, and the best way to start on the Jordan form is to look at some specific and manageable examples.
+
+**Example 4**.: \(T=\begin{bmatrix}1&2\\ 0&1\end{bmatrix}\) and \(A=\begin{bmatrix}2&-1\\ 1&0\end{bmatrix}\) and \(B=\begin{bmatrix}1&0\\ 1&1\end{bmatrix}\) all lead to \(J=\begin{bmatrix}1&1\\ 0&1\end{bmatrix}\).
+
+These four matrices have eigenvalues \(1\) and \(1\) with only _one eigenvector_--so \(J\) consists of _one block_. We now check that. The determinants all equal \(1\). The traces (the sums down the main diagonal) are \(2\). The eigenvalues satisfy \(1\cdot 1=1\) and \(1+1=2\). For \(T\), \(B\), and \(J\), which are triangular, the eigenvalues are on the diagonal. We want to show that _these matrices are similar_--they all belong to the same family.
+
+* From \(T\) to \(J\), the job is to change \(2\) to \(1\). and a diagonal \(M\) will do it: \[M^{-1}TM=\begin{bmatrix}1&0\\ 0&2\end{bmatrix}\begin{bmatrix}1&2\\ 0&1\end{bmatrix}\begin{bmatrix}1&0\\ 0&\frac{1}{2}\end{bmatrix}=\begin{bmatrix}1&1\\ 0&1\end{bmatrix}=J.\]
+* From \(B\) to \(J\), the job is to transpose the matrix. A permutation does that: \[P^{-1}BP=\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\begin{bmatrix}1&0\\ 1&1\end{bmatrix}\begin{bmatrix}0&1\\ 1&0\end{bmatrix}=\begin{bmatrix}1&1\\ 0&1\end{bmatrix}=J.\]
+* From \(A\) to \(J\), we go first to \(T\) as in equation (4). Then change \(2\) to \(1\): \[U^{-1}AU=\begin{bmatrix}1&2\\ 0&1\end{bmatrix}=T\qquad\text{and then}\qquad M^{-1}TM=\begin{bmatrix}1&1\\ 0&1\end{bmatrix}=J.\]
+
+**Example 5**.: \(A=\begin{bmatrix}0&1&2\\ 0&0&1\\ 0&0&0\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}0&0&1\\ 0&0&0\\ 0&0&0\end{bmatrix}.\)
+
+Zero is a triple eigenvalue for \(A\) and \(B\), so it will appear in all their Jordan blocks. There can be a single \(3\) by \(3\) block, or a \(2\) by \(2\) and a \(1\) by I block, or three I by I blocks. Then \(A\) and \(B\) have three possible Jordan forms:
+
+\[J_{1}=\begin{bmatrix}\mathbf{0}&\mathbf{1}&\mathbf{0}\\ \mathbf{0}&\mathbf{0}&\mathbf{1}\\ \mathbf{0}&\mathbf{0}&\mathbf{0}\end{bmatrix},\qquad J_{2}=\begin{bmatrix} \mathbf{0}&\mathbf{1}&0\\ \mathbf{0}&\mathbf{0}&0\\ 0&0&\mathbf{0}\end{bmatrix},\qquad J_{3}=\begin{bmatrix}\mathbf{0}&0&0\\ 0&\mathbf{0}&0\\ 0&0&\mathbf{0}\end{bmatrix}.\] (8) 

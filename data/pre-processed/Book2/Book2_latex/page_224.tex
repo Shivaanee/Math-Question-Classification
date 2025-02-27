@@ -1,0 +1,22 @@
+
+
+### 11.5 Pseudo-inverse
+
+Linearly independent columns and Gram invertibility.We first show that an \(m\times n\) matrix \(A\) has linearly independent columns if and only if its \(n\times n\) Gram matrix \(A^{T}A\) is invertible.
+
+First suppose that the columns of \(A\) are linearly independent. Let \(x\) be an \(n\)-vector which satisfies \((A^{T}A)x=0\). Multiplying on the left by \(x^{T}\) we get
+
+\[0=x^{T}0=x^{T}(A^{T}Ax)=x^{T}A^{T}Ax=\|Ax\|^{2},\]
+
+which implies that \(Ax=0\). Since the columns of \(A\) are linearly independent, we conclude that \(x=0\). Since the only solution of \((A^{T}A)x=0\) is \(x=0\), we conclude that \(A^{T}A\) is invertible.
+
+Now let's show the converse. Suppose the columns of \(A\) are linearly dependent, which means there is a nonzero \(n\)-vector \(x\) which satisfies \(Ax=0\). Multiply on the left by \(A^{T}\) to get \((A^{T}A)x=0\). This shows that the Gram matrix \(A^{T}A\) is singular.
+
+Pseudo-inverse of square or tall matrix.We show here that if \(A\) has linearly independent columns (and therefore, is square or tall) then it has a left inverse. (We already have observed the converse, that a matrix with a left inverse has linearly independent columns.) Assuming \(A\) has linearly independent columns, we know that \(A^{T}A\) is invertible. We now observe that the matrix \((A^{T}A)^{-1}A^{T}\) is a left inverse of \(A\):
+
+\[\left((A^{T}A)^{-1}A^{T}\right)A=(A^{T}A)^{-1}(A^{T}A)=I.\]
+
+This particular left-inverse of \(A\) will come up in the sequel, and has a name,
+
+Figure 11.3: Temperature distribution on a \(100\times 100\) grid of nodes. Nodes in the top and bottom rows are held at zero temperature. The three sets of nodes with rectilinear shapes are held at temperature one.
+

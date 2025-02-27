@@ -1,0 +1,20 @@
+
+
+**Examples.**
+
+* The \(n\) standard unit \(n\) vectors \(e_{1},\ldots,e_{n}\) are a basis. Any \(n\)-vector \(b\) can be written as the linear combination \[b=b_{1}e_{1}+\cdots+b_{n}e_{n}.\] (This was already observed on page 17.) This expansion is unique, which means that there is no other linear combination of \(e_{1},\ldots,e_{n}\) that equals \(b\).
+* The vectors \[a_{1}=\left[\begin{array}{c}1.2\\ -2.6\end{array}\right],\qquad a_{2}=\left[\begin{array}{c}-0.3\\ -3.7\end{array}\right]\] are a basis. The vector \(b=(1,1)\) can be expressed in only one way as a linear combination of them: \[b=0.6513\,a_{1}-0.7280\,a_{2}.\] (The coefficients are given here to 4 significant digits. We will see later how these coefficients can be computed.)
+
+**Cash flows and single period loans.** As a practical example, we consider cash flows over \(n\) periods, with positive entries meaning income or cash in and negative entries meaning payments or cash out. We define the single-period loan cash flow vectors as
+
+\[l_{i}=\left[\begin{array}{c}0_{i-1}\\ 1\\ -(1+r)\\ 0_{n-i-1}\end{array}\right],\quad i=1,\ldots,n-1,\]
+
+where \(r\geq 0\) is the per-period interest rate. The cash flow \(l_{i}\) represents a loan of $1 in period \(i\), which is paid back in period \(i+1\) with interest \(r\). (The subscripts on the zero vectors above give their dimensions.) Scaling \(l_{i}\) changes the loan amount; scaling \(l_{i}\) by a negative coefficient converts it into a loan _to_ another entity (which is paid back in period \(i+1\) with interest).
+
+The vectors \(e_{1},l_{1},\ldots,l_{n-1}\) are a basis. (The first vector \(e_{1}\) represents income of $1 in period 1.) To see this, we show that they are linearly independent. Suppose that
+
+\[\beta_{1}e_{1}+\beta_{2}l_{1}+\cdots+\beta_{n}l_{n-1}=0.\]
+
+We can express this as
+
+\[\left[\begin{array}{c}\beta_{1}+\beta_{2}\\ \beta_{3}-(1+r)\beta_{2}\\ \vdots\\ \beta_{n}-(1+r

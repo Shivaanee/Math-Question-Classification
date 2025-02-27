@@ -1,0 +1,33 @@
+clearly unitary, we see that the set of all unitary operators on an inner product space is a group, under the operation of composition.
+
+If \(V\) is a finite-dimensional inner product space and \(U\) is a linear operator on \(V\), Theorem 10 tells us that \(U\) is unitary if and only if \((U\alpha|U\beta)=(\alpha|\beta)\) for each \(\alpha\), \(\beta\) in \(V\); or, if and only if for some (every) orthonormal basis \(\{\alpha_{i_{1}},\ldots,\alpha_{n}\}\) it is true that \(\{U\alpha_{i_{1}},\ldots,U\alpha_{n}\}\) is an orthonormal basis.
+
+**Theorem 12**: _Let \(U\) be a linear operator on an inner prod\({}^{\cdots\dagger}\) space \(V\). Then \(U\) is unitary if and only if the adjoint \(U^{*}\) of \(U\) exists and \(UU^{*}=U^{*}U=I\)._
+
+Suppose \(U\) is unitary. Then \(U\) is invertible and
+
+\[(U\alpha|\beta)=(U\alpha|UU^{-1}\beta)=(\alpha|U^{-1}\beta)\]
+
+for all \(\alpha\), \(\beta\). Hence \(U^{-1}\) is the adjoint of \(U\).
+
+Conversely, suppose \(U^{*}\) exists and \(UU^{*}=U^{*}U=I\). Then \(U\) is invertible, with \(U^{-1}=U^{*}\). So, we need only show that \(U\) preserves inner products. We have
+
+\[\begin{array}{rl}(U\alpha|U\beta)&=(\alpha|U^{*}U\beta)\\ &=(\alpha|I\beta)\\ &=(\alpha|\beta)\end{array}\]
+
+for all \(\alpha\), \(\beta\).
+
+Consider \(C^{n\times 1}\) with the inner product \((X|Y)=Y^{*}X\). Let \(A\) be an \(n\times n\) matrix over \(C\), and let \(U\) be the linear operator defined by \(U(X)=AX\). Then
+
+\[(UX|UY)=(AX|AY)=Y^{*}A^{*}AX\]
+
+for all \(X\), \(Y\). Hence, \(U\) is unitary if and only if \(A^{*}A=I\).
+
+**Definition**: _A complex \(n\times n\) matrix \(A\) is called_ **unitary,** _if \(A^{*}A=I\)._
+
+**Theorem 13**: _Let \(V\) be a finite-dimensional inner product space and let \(U\) be a linear operator on \(V\). Then \(U\) is unitary if and only if the matrix of \(U\) in some (or every) ordered orthonormal basis is a unitary matrix._
+
+At this point, this is not much of a theorem, and we state it largely for emphasis. If \(\otimes=\{\alpha_{1},\ldots,\alpha_{n}\}\) is an ordered orthonormal basis for \(V\) and \(A\) is the matrix of \(U\) relative to \(\otimes\), then \(A^{*}A=I\) if and only if \(U^{*}U=I\). The result now follows from Theorem 12.
+
+Let \(A\) be an \(n\times n\) matrix. The statement that \(A\) is unitary simply means
+
+\[(A^{*}A)_{jk}=\delta_{jk}\] 

@@ -1,0 +1,30 @@
+
+Line integral measurements.For simplicity we will assume that each beam is a single line, and that the received value \(y_{i}\) is the integral of the quantity over the region, plus some measurement noise. (The same method can be used when more complex beam shapes are used.) We consider the 2-D case.
+
+Let \(d(x,y)\) denote the density (say) at the position \((x,y)\) in the region. (Here \(x\) and \(y\) are the scalar 2-D coordinates, not the vectors \(x\) and \(y\) in the estimation problem.) We assume that \(d(x,y)=0\) outside the region of interest. A line through the region is defined by the set of points
+
+\[p(t)=(x_{0},y_{0})+t(\cos\theta,\sin\theta),\]
+
+where \((x_{0},y_{0})\) denotes a (base) point on the line, and \(\theta\) is the angle of the line with respect to the \(x\)-axis. The parameter \(t\) gives the distance along the line from the point \((x_{0},y_{0})\). The _line integral_ of \(d\) is given by
+
+\[\int_{-\infty}^{\infty}d(p(t))\;dt.\]
+
+We assume that \(m\) lines are specified (_e.g._, by their base points and angles), and the measurement \(y_{i}\) is the line integral of \(d\), plus some noise, which is presumed small.
+
+We divide the region of interest into \(n\) pixels (or voxels in the 3-D case), and assume that the density has the constant value \(x_{i}\) over pixel \(i\). Figure 15.7 illustrates this for a simple example with \(n=25\) pixels. (In applications the number of pixels or voxels is in the thousands or millions.) The line integral is then given by the sum of \(x_{i}\) (the density in pixel \(i\)) times the length of the intersection of the line with pixel \(i\). In figure 15.7, with the pixels numbered row-wise starting at the top left corner, with width and height one, the line integral for the line shown is
+
+\[1.06x_{16}+0.80x_{17}+0.27x_{12}+1.06x_{13}+1.06x_{14}+0.53x_{15}+0.54x_{10}.\]
+
+The coefficient of \(x_{i}\) is the length of the intersection of the line with pixel \(i\).
+
+Measurement model.We can express the vector of \(m\) line integral measurements, without the noise, as \(Ax\), where the \(m\times n\) matrix \(A\) has entries
+
+\[A_{ij}=\text{length of line $i$ in pixel $j$},\quad i=1,\ldots,m,\quad j=1,\ldots,n,\]
+
+with \(A_{ij}=0\) if line \(i\) does not intersect voxel \(j\).
+
+Tomographic reconstruction.In tomography, estimation or inversion is often called _tomographic reconstruction_ or _tomographic inversion_.
+
+The objective term \(\|Ax-y\|^{2}\) is the sum of squares of the residual between the predicted (noise-free) line integrals \(Ax\) and the actual measured line integrals \(y\). Regularization terms capture prior information or assumptions about the voxel values, for example, that they vary smoothly over the region. A simple regularizer commonly used is the Dirichlet energy (see page 135) associated with the graph that connects each voxel to its 6 neighbors (in the 3-D case) or its 4 neighbors (in the 2-D case). Using the Dirichlet energy as a regularizer is also called Laplacian regularization.
+
+ 

@@ -1,0 +1,20 @@
+on the space of continuous functions on the interval \([0,1]\). Is the space of polynomial functions invariant under \(T\)? The space of differentiable functions? The space of functions which vanish at \(x=\frac{1}{2}\)?
+* Let \(A\) be a \(3\times 3\) matrix with real entries. Prove that, if \(A\) is not similar over \(R\) to a triangular matrix, then \(A\) is similar over \(C\) to a diagonal matrix.
+* True or false? If the triangular matrix \(A\) is similar to a diagonal matrix, then \(A\) is already diagonal.
+* Let \(T\) be a linear operator on a finite-dimensional vector space over an algebraically closed field \(F\). Let \(f\) be a polynomial over \(F\). Prove that \(e\) is a characteristic value of \(f(T)\) if and only if \(e=f(t)\), where \(t\) is a characteristic value of \(T\).
+* Let \(V\) be the space of \(n\times n\) matrices over \(F\). Let \(A\) be a fixed \(n\times n\) matrix over \(F\). Let \(T\) and \(U\) be the linear operators on \(V\) defined by \[\begin{array}{l}T(B)\,=\,A\,B\\ U(B)\,=\,A\,B\,-\,BA.\end{array}\] (1) True or false? If \(A\) is diagonalizable (over \(F\)), then \(T\) is diagonalizable.
+
+### 6.5. \(Simultaneous\)\(Triangulation\);
+
+\(Simultaneous\)\(Diagonalization\)
+
+Let \(V\) be a finite-dimensional space and let \(\mathfrak{F}\) be a family of linear operators on \(V\). We ask when we can simultaneously triangulate or diagonalize the operators in \(\mathfrak{F}\), i.e., find one basis \(\mathfrak{B}\) such that all of the matrices \([T\}_{\mathfrak{A}}\), \(T\) in \(\mathfrak{F}\), are triangular (or diagonal). In the case of diagonalization, it is necessary that \(\mathfrak{F}\) be a commuting family of operators: \(UT=TU\) for all \(T\), \(U\) in \(\mathfrak{F}\). That follows from the fact that all diagonal matrices commute. Of course, it is also necessary that each operator in \(\mathfrak{F}\) be a diagonalizable operator. In order to simultaneously triangulate, each operator in \(\mathfrak{F}\) must be triangulable. It is not necessary that \(\mathfrak{F}\) be a commuting family; however, that condition is sufficient for simultaneous triangulation (if each \(T\) can be individually triangulated). These results follow from minor variations of the proofs of Theorems 5 and 6.
+
+The subspace \(W\) is **invariant under** (the family of operators) \(\mathfrak{F}\) if \(W\) is invariant under each operator in \(\mathfrak{F}\).
+
+\(Lemma\).: _Let \(\mathfrak{F}\) be a commuting family of triangulable linear operators on \(V\). Let \(W\) be a proper subspace of \(V\) which is invariant under \(\mathfrak{F}\). There exists a vector \(\alpha\) in \(V\) such that_
+
+* \(\alpha\) _is not in_ \(W\)_;_
+* _for each_ \(T\) _in_ \(\mathfrak{F}\)_, the vector_ \(T\alpha\) _is in the subspace spanned by_ \(\alpha\) _and_ \(W\)_._
+
+Proof.: It is no loss of generality to assume that \(\mathfrak{F}\) contains only a finite number of operators, because of this observation. Let \(\{T_{1},\ldots,T_{r}\}\) 

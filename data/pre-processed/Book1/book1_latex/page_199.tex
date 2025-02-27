@@ -1,0 +1,27 @@
+The optimal \(\widehat{x}\) is the average. The same conclusion comes from \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\). In fact \(A^{\mathrm{T}}A\) is a 1 by 1 matrix, and the normal equation is \(2\widehat{x}=b_{1}+b_{2}\).
+
+_Now suppose the two observations are not trusted to the same degree_. The value \(x=b_{1}\) may be obtained from a more accurate scale--or, in a statistical problem, from a larger sample--than \(x=b_{2}\). Nevertheless, if \(b_{2}\) contains some information, we are not willing to rely totally on \(b_{1}\). The simplest compromise is to attach different weights \(w_{1}^{2}\) and \(w_{2}^{2}\), and choose the \(\widehat{x}_{W}\) that minimizes the _weighted sum of squares_:
+
+\[\mbox{\bf Weighted error}\qquad E^{2}=w_{1}^{2}(x-b_{1})^{2}+w_{2}^{2}(x-b_{2}) ^{2}.\]
+
+If \(w_{1}>w_{2}\), more importance is attached to \(b_{1}\). The minimizing process (derivative \(=0\)) tries harder to make \((x-b_{1})^{2}\) small:
+
+\[\frac{dE^{2}}{dx}=2\left[w_{1}^{2}(x-b_{1})+w_{2}^{2}(x-b_{2})\right]=0\qquad \mbox{at}\qquad\widehat{x}_{W}=\frac{w_{1}^{2}b_{1}+w_{2}^{2}b_{2}}{w_{1}^{2} +w_{2}^{2}}.\] (9)
+
+Instead of the average of \(b_{1}\) and \(b_{2}\) (for \(w_{1}=w_{2}=1\)), \(\widehat{x}_{W}\) is a _weighted average_ of the data. This average is closer to \(b_{1}\) than to \(b_{2}\).
+
+The ordinary least-squares problem leading to \(\widehat{x}_{W}\) comes from changing \(Ax=b\) to the new system \(WAx=Wb\). _This changes the solution from \(\widehat{x}\) to \(\widehat{x}_{W}\)_. The matrix \(W^{\mathrm{T}}W\) turns up on both sides of the weighted normal equations:
+
+_The least squares solution to \(WAx=Wb\) is \(\widehat{x}_{W}\):_
+
+\[\mbox{\bf Weighted normal equations}\qquad(A^{\mathrm{T}}W^{\mathrm{T}}WA) \widehat{x}_{W}=A^{\mathrm{T}}W^{\mathrm{T}}Wb.\]
+
+What happens to the picture of \(b\) projected to \(A\widehat{x}\)? The projection \(A\widehat{x}_{W}\) is still the point in the column space that is closest to \(b\). But the word "closest" has a new meaning when the length involves \(W\). The _weighted length_ of \(x\) equals the ordinary length of \(Wx\). Perpendicularity no longer means \(y^{\mathrm{T}}x=0\); in the new system the test is \((Wy)^{\mathrm{T}}(Wx)=0\). The matrix \(W^{\mathrm{T}}W\) appears in the middle. In this new sense, the projection \(A\widehat{x}_{W}\) and the error \(b-A\widehat{x}_{W}\) are again perpendicular.
+
+That last paragraph describes _all inner products_: They come from invertible matrices \(W\). They involve only the symmetric combination \(C=W^{\mathrm{T}}W\). _The inner product of \(x\) and \(y\) is \(y^{\mathrm{T}}Cx\)_. For an orthogonal matrix \(W=Q\), when this combination is \(C=Q^{\mathrm{T}}Q=I\), the inner product is not new or different. Rotating the space leaves the inner product unchanged. Every other \(W\) changes the length and inner product. _For any invertible matrix \(W\), these rules define a new inner product and length_:
+
+\[\mbox{\bf Weighted by }W\qquad(x,y)_{W}=(Wy)^{\mathrm{T}}(Wx)\quad\mbox{and} \quad\|x\|_{W}=\|Wx\|.\] (10)
+
+Since \(W\) is invertible, no vector is assigned length zero (except the zero vector). All possible inner products--which depend linearly on \(x\) and \(y\) and are positive when \(x=y\neq 0\)--are found in this way, from some matrix \(C=W^{\mathrm{T}}W\).
+
+ 

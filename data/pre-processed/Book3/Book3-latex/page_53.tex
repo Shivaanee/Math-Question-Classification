@@ -1,0 +1,29 @@
+
+
+**Theorem 4**: _Let \(V\) be a vector space which is spanned by a finite set of vectors \(\beta_{1}\), \(\beta_{2}\), . . . . , \(\beta_{m}\). Then any independent set of vectors in \(V\) is finite and contains no more than \(m\) elements._
+
+Proof: To prove the theorem it suffices to show that every subset \(S\) of \(V\) which contains more than \(m\) vectors is linearly dependent. Let \(S\) be such a set. In \(S\) there are distinct vectors \(\alpha_{i}\), \(\alpha_{2}\), . . . , \(\alpha_{n}\) where \(n>m\). Since \(\beta_{1}\), . . . , \(\beta_{m}\) span \(V\), there exist scalars \(A_{ij}\) in \(F\) such that
+
+\[\alpha_{i}=\sum\limits_{i=1}^{m}A_{ij}\beta_{i}.\]
+
+For any \(n\) scalars \(x_{i}\), \(x_{2}\), . . . , \(x_{n}\) we have
+
+\[x_{1}a_{1}+\cdots+x_{n}\alpha_{n} =\sum\limits_{j=1}^{n}x_{j}\alpha_{j}\] \[=\sum\limits_{j=1}^{n}x_{j}\sum\limits_{i=1}^{m}A_{ij}\beta_{i}\] \[=\sum\limits_{j=1}^{n}\sum\limits_{i=1}^{m}(A_{ij}x_{j})\beta_{i}\] \[=\sum\limits_{i=1}^{m}\bigg{(}\sum\limits_{j=1}^{n}A_{ij}x_{j} \bigg{)}\beta_{i}.\]
+
+Since \(n>m\), Theorem 6 of Chapter 1 implies that there exist scalars \(x_{1}\), \(x_{2}\), . . . , \(x_{n}\) not all \(0\) such that
+
+\[\sum\limits_{j=1}^{n}A_{ij}x_{j}=0,\qquad 1\leq i\leq m.\]
+
+Hence \(x_{1}\alpha_{1}+x_{2}\alpha_{2}+\cdots+x_{n}\alpha_{n}=0\). This shows that \(S\) is a linearly dependent set.
+
+**Corollary 1**: _If \(V\) is a finite-dimensional vector space, then any two bases of \(V\) have the same \((\)finite\()\) number of elements._
+
+Proof: Since \(V\) is finite-dimensional, it has a finite basis
+
+\[\{\beta_{1}\), \(\beta_{2}\), . . . , \(\beta_{m}\}.\]
+
+By Theorem 4 every basis of \(V\) is finite and contains no more than \(m\) elements. Thus if \(\{\alpha_{1}\), \(\alpha_{2}\), . . . , \(\alpha_{n}\}\) is a basis, \(n\leq m\). By the same argument, \(m\leq n\). Hence \(m=n\).
+
+This corollary allows us to define the **dimension** of a finite-dimensional vector space as the number of elements in a basis for \(V\). We shall denote the dimension of a finite-dimensional space \(V\) by \(\dim\)\(V\). This allows us to reformulate Theorem 4 as follows.
+
+**Corollary 2**: _Let \(V\) be a finite-dimensional vector space and let \(n=dim\)\(V\). Then_

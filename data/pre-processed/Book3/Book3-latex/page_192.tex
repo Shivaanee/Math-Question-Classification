@@ -1,0 +1,23 @@
+formation \((T-cI)\). We call \(c\) a characteristic value of \(T\) if this subspace is different from the zero subspace, i.e., if \((T-cI)\) fails to be 1:1. If the underlying space \(V\) is finite-dimensional, \((T-cI)\) fails to be 1:1 precisely when its determinant is different from 0. Let us summarize.
+
+Theorem 1: _Let \(T\) be a linear operator on a finite-dimensional space \(V\) and let \(c\) be a scalar. The following are equivalent._
+
+1. \(c\) _is a characteristic value of_ \(T\)_._
+2. _The operator_ \((T-cI)\) _is singular_ (_not invertible_)_._
+3. _det_ \((T-cI)=0\)_._
+
+The determinant criterion (iii) is very important because it tells us where to look for the characteristic values of \(T\). Since det \((T-cI)\) is a polynomial of degree \(n\) in the variable \(c\), we will find the characteristic values as the roots of that polynomial. Let us explain carefully.
+
+If \(\otimes\) is any ordered basis for \(V\) and \(A=[T]_{\otimes}\), then \((T-cI)\) is invertible if and only if the matrix \((A-cI)\) is invertible. Accordingly, we make the following definition.
+
+Definition: If \(A\) is an \(n\times n\) matrix over the field \(F\), \(a\)**characteristic value of \(A\) in \(F\)** is a scalar \(c\) in \(F\) such that the matrix \((A-cI)\) is singular (not invertible).
+
+Since \(c\) is a characteristic value of \(A\) if and only if det \((A-cI)=0\), or equivalently if and only if det \((cI-A)=0\), we form the matrix \((xI-A)\) with polynomial entries, and consider the polynomial \(f=\det\,(xI-A)\). Clearly the characteristic values of \(A\) in \(F\) are just the scalars \(c\) in \(F\) such that \(f(c)=0\). For this reason \(f\) is called the **characteristic polynomial** of \(A\). It is important to note that \(f\) is a monic polynomial which has degree exactly \(n\). This is easily seen from the formula for the determinant of a matrix in terms of its entries.
+
+Lemma: Similar matrices have the same characteristic polynomial.
+
+Demonstration Proof: If \(B=P^{-1}AP\), then
+
+\[\begin{array}{rl}\det\,(xI-B)&=\,\det\,(xI-P^{-1}AP)\\ &=\,\det\,(P^{-1}(xI-A)P)\\ &=\,\det\,P^{-1}\cdot\,\det\,(xI-A)\,\cdot\,\det\,P\\ &=\,\det\,(xI-A).\quad\hbox{\vrule width 0.5pt height 5.0pt depth 0.0pt\vrule width 0.5pt heigh t 5.0pt depth 0.0pt\vrule width 0.5pt height 5.0pt depth 0.0pt}\end{array}\]
+
+This lemma enables us to define sensibly the characteristic polynomial of the operator \(T\) as the characteristic polynomial of any \(n\times n\) matrix which represents \(T\) in some ordered basis for \(V\). Just as for matrices, the characteristic values of \(T\) will be the roots of the characteristic polynomial for \(T\). In particular, this shows us that \(T\) cannot have more than \(n\) distinct 

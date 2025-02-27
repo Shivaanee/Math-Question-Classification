@@ -1,0 +1,15 @@
+
+
+### Rotations \(Q\), Projections \(P\), and Reflections \(H\)
+
+This section began with \(90^{\circ}\) rotations, projections onto the \(x\)-axis, and reflections through the \(45^{\circ}\) line. Their matrices were especially simple:
+
+\[Q=\begin{bmatrix}0&-1\\ 1&0\\ \text{(rotation)}\end{bmatrix}\qquad P=\begin{bmatrix}1&0\\ 0&0\\ \text{(projection)}\end{bmatrix}\qquad H=\begin{bmatrix}0&1\\ 1&0\\ \text{(reflection)}\end{bmatrix}\,.\]
+
+The underlying linear transformations of the \(x\)-\(y\) plane are also simple. But rotations through other angles, projections onto other lines, and reflections in other mirrors are almost as easy to visualize, They are still linear transformations, provided that the origin is fixed: \(A0=0\). They _must_ be represented by matrices. Using the natural basis \(\begin{bmatrix}1\\ 0\end{bmatrix}\) and \(\begin{bmatrix}0\\ 1\end{bmatrix}\), we want to discover those matrices.
+
+1. **Rotation**: Figure 2.10 shows rotation through an angle \(\theta\). It also shows the effect on the two basis vectors. The first one goes to \((\cos\theta,\sin\theta)\), whose length is still 1; it lies on the "\(\theta\)-line." The second basis vector \((0,1)\) rotates into \((-\sin\theta,\cos\theta)\). By rule (6), those numbers go into the columns of the matrix (we use \(c\) and \(s\) for \(\cos\theta\) and \(\sin\theta\)). This family of rotations \(Q_{\theta}\) is a perfect chance to test the correspondence between transformations and matrices: _Does the **inverse** of \(Q_{\theta}\) equal \(Q_{-\theta}\) (rotation backward through \(\theta\))? Yes._ \[Q_{\theta}Q_{-\theta}=\begin{bmatrix}c&-s\\ s&c\end{bmatrix}\begin{bmatrix}c&s\\ -s&c\end{bmatrix}=\begin{bmatrix}1&0\\ 0&1\end{bmatrix}.\] _Does the **square** of \(Q_{\theta}\) equal \(Q_{2\theta}\) (rotation through a double angle)? Yes._ \[Q_{\theta}^{2}=\begin{bmatrix}c&-s\\ s&c\end{bmatrix}\begin{bmatrix}c&-s\\ s&c\end{bmatrix}=\begin{bmatrix}c^{2}-s^{2}&-2cs\\ 2cs&c^{2}-s^{2}\end{bmatrix}=\begin{bmatrix}\cos 2\theta&-\sin 2\theta\\ \sin 2\theta&\cos 2\theta\end{bmatrix}.\] _Does the **product** of \(Q_{\theta}\) and \(Q_{\varphi}\) equal \(Q_{\theta+\varphi}\) (rotation through \(\theta\) then \(\varphi\))? Yes._ \[Q_{\theta}Q_{\varphi}=\begin{bmatrix}\cos\theta\cos\varphi-\sin\theta\sin \varphi&\cdots\\ \sin\theta\cos\varphi+\cos\theta\sin\varphi&\cdots\end{bmatrix}=\begin{bmatrix} \cos(\theta+\varphi)&\cdots\\ \sin(\theta+\varphi)&\cdots\end{bmatrix}.\]
+
+The last case contains the first two. The inverse appears when \(\varphi\) is \(-\theta\), and the square appears when \(\varphi\) is \(+\theta\). All three questions were decided by trigonometric identities (and they give a new way to remember those identities). It was no accident that all the answers were yes. _Matrix multiplication is defined exactly so that **the product of the matrices corresponds to the product of the transformations**_._
+
+2V Suppose \(A\) and \(B\) are linear transformations from **V** to **W** and from **U** to **V**. Their product \(AB\) starts with a vector \(u\) in **U**, goes to \(Bu\) in **V**, and

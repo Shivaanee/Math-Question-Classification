@@ -1,0 +1,30 @@
+
+
+### Example 2.
+
+\[\textbf{Fair game}\qquad A=\begin{bmatrix}0&-1&-1\\ 1&0&-1\\ 1&1&0\end{bmatrix}.\]
+
+In words, \(X\) and \(Y\) both choose a number between 1 and 3. The smaller choice wins $1. (If \(X\) chooses 2 and \(Y\) chooses 3, the payoff is \(a_{32}=\$1\); if they choose the same number, we are on the diagonal and nobody wins.) Neither player can choose a strategy involving 2 or 3. The pure strategies \(x^{*}=y^{*}=(1,0,0)\) are optimal--both players choose 1 every time. The value is \(y^{*}Ax^{*}=a_{11}=0\).
+
+The matrix that leaves all decisions unchanged has \(mn\) equal entries, say \(\alpha\). This simply means that \(X\) wins an additional amount \(\alpha\) at every turn. The value of the game is increased by \(\alpha\), but there is no reason to change \(x^{*}\) and \(y^{*}\).
+
+### The Minimax Theorem
+
+Put yourself in the place of \(X\), who chooses the mixed strategy \(x=(x_{1},\ldots,x_{n})\). \(Y\) will eventually recognize that strategy and choose \(y\) to _minimize_ the payment \(yAx\). An intelligent player \(X\) will select \(x^{*}\) to _maximize this minimum_:
+
+\[X\ \textbf{wins at least}\qquad\min_{y}yAx^{*}=\max_{x}\min_{y}yAx.\] (1)
+
+Player \(Y\) does the opposite. For any chosen strategy \(y\), \(X\) will _maximize_\(yAx\). Therefore \(Y\) will choose the mixture \(y^{*}\) that _minimizes this maximum_:
+
+\[Y\ \textbf{loses no more than}\qquad\max_{x}y^{*}Ax=\min_{y}\max_{x}yAx.\] (2)
+
+I hope you see what the key result will be, if it is true. We want the amount in equation (1) that \(X\) is guaranteed to win to equal the amount in equation (2) that \(Y\) must be satisfied to lose. Then the game will be solved: \(X\) can only lose by moving from \(x^{*}\) and \(Y\) can only lose by moving from \(y^{*}\), The existence of this saddle point was proved by von Neumann:
+
+\[\textbf{8M}\qquad\text{For any matrix $A$, the minimax over all strategies equals the maximin:}\] \[\textbf{Minimax theorem}\qquad\max_{x}\min_{y}yAx=\min_{y}\max_{x}yAx= \text{value of the game.}\] (3)
+
+If the maximum on the left is attained at \(x^{*}\), and the minimum on the right is attained at \(y^{*}\), this is a saddle point from which nobody wants to move:
+
+\[y^{*}Ax\leq y^{*}Ax^{*}\leq yAx^{*}\qquad\text{for all $x$ and $y$.}\] (4)
+
+At this saddle point, \(x^{*}\) is at least as good as any other \(x\) (since \(y^{*}Ax\leq y^{*}Ax^{*}\)). And the second player \(Y\) could only pay more by leaving \(y^{*}\).
+

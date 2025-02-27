@@ -1,0 +1,27 @@
+which will produce zeros as indicated along the first row:
+
+\[A\to H_{1}A=\begin{bmatrix}*&*&*&*\\ 0&*&*&*\\ 0&*&*&*\end{bmatrix}\to H_{1}AH^{(1)}=\begin{bmatrix}*&*&\mathbf{0}&\mathbf{0}\\ \mathbf{0}&*&*&*\\ \mathbf{0}&*&*&*\end{bmatrix}.\] (4)
+
+Then two final Householder transformations quickly achieve the bidiagonal form:
+
+\[H_{2}H_{1}AH^{(1)}=\begin{bmatrix}*&*&0&0\\ 0&*&*&*\\ 0&0&*&*\end{bmatrix}\qquad\text{and}\qquad H_{2}H_{1}AH^{(1)}H^{(2)}=\begin{bmatrix}*&*& \mathbf{0}&\mathbf{0}\\ \mathbf{0}&*&*&\mathbf{0}\\ \mathbf{0}&\mathbf{0}&*&*\end{bmatrix}.\]
+
+### The QR Algorithm for Computing Eigenvalues
+
+The algorithm is almost magically simple. It starts with \(A_{0}\), factors it by Gram-Schmidt into \(Q_{0}R_{0}\), and then _reverses the factors_: \(A_{1}=R_{0}Q_{0}\). This new matrix \(A_{1}\) is _similar_ to the original one because \(Q_{0}^{-1}A_{0}Q_{0}=Q_{0}^{-1}(Q_{0}R_{0})Q_{0}=A_{1}\). So the process continues with no change in the eigenvalues:
+
+\[\text{\bf All }A_{k}\text{\bf are similar}\qquad A_{k}=Q_{k}R_{k}\quad\text{and then}\quad A_{k+1}=R_{k}Q_{k}.\] (5)
+
+This equation describes the _unshifted QR algorithm_, and almost always \(A_{k}\) approaches a triangular form, Its diagonal entries approach its eigenvalues, which are also the eigenvalues of \(A_{0}\). If there was already some processing to obtain a tridiagonal form, then \(A_{0}\) is connected to the absolutely original \(A\) by \(Q^{-1}AQ=A_{0}\).
+
+As it stands, the \(QR\) algorithm is good but not very good. To make it special, it needs two refinements: We must allow shifts to \(A_{k}-\alpha_{k}I\), and we must ensure that the \(QR\) factorization at each step is very quick.
+
+1. The Shifted Algorithm. If the number \(\alpha_{k}\) is close to an eigenvalue, the step in equation (5) should be shifted immediately by \(\alpha_{k}\) (which changes \(Q_{k}\) and \(R_{k}\)):
+
+\[A_{k}=\alpha_{k}I=Q_{k}R_{k}\qquad\text{and then}\qquad A_{k+1}=R_{k}Q_{k}+ \alpha_{k}I.\] (6)
+
+This matrix \(A_{k+1}\) is similar to \(A_{k}\) (always the same eigenvalues):
+
+\[Q_{k}^{-1}A_{k}Q_{k}=Q_{k}^{-1}(Q_{k}R_{k}+\alpha_{k}I)Q_{k}=A_{k+1}.\]
+
+What happens in practice is that the \((n,n)\) entry of \(A_{k}\)--the one in the lower right-hand corner--is the first to approach an eigenvalue. That entry is the simplest and most popular choice for the shift \(\alpha_{k}\). Normally this produces quadratic convergence, and in the symmetric case even cubic convergence, to the smallest eigenvalue. After three or four 

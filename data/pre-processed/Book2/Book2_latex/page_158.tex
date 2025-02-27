@@ -1,0 +1,17 @@
+We can verify that superposition holds for \(f\) using properties of matrix-vector and scalar-vector multiplication:
+
+\[f(\alpha x+\beta y) = A(\alpha x+\beta y)\] \[= A(\alpha x)+A(\beta y)\] \[= \alpha(Ax)+\beta(Ay)\] \[= \alpha f(x)+\beta f(y)\]
+
+Thus we can associate with every matrix \(A\) a linear function \(f(x)=Ax\).
+
+The converse is also true. Suppose \(f\) is a function that maps \(n\)-vectors to \(m\)-vectors, and is linear, _i.e._, (8.1) holds for all \(n\)-vectors \(x\) and \(y\) and all scalars \(\alpha\) and \(\beta\). Then there exists an \(m\times n\) matrix \(A\) such that \(f(x)=Ax\) for all \(x\). This can be shown in the same way as for scalar-valued functions in SS2.1, by showing that if \(f\) is linear, then
+
+\[f(x)=x_{1}f(e_{1})+x_{2}f(e_{2})+\cdots+x_{n}f(e_{n}),\] (8.2)
+
+where \(e_{k}\) is the \(k\)th unit vector of size \(n\). The right-hand side can also be written as a matrix-vector product \(Ax\), with
+
+\[A=\left[\begin{array}{cccc}f(e_{1})&f(e_{2})&\cdots&f(e_{n})\end{array} \right].\]
+
+The expression (8.2) is the same as (2.3), but here \(f(x)\) and \(f(e_{k})\) are vectors. The implications are exactly the same: A linear vector-valued function \(f\) is completely characterized by evaluating \(f\) at the \(n\) unit vectors \(e_{1},\ldots,e_{n}\).
+
+As in SS2.1 it is easily shown that the matrix-vector representation of a linear function is unique. If \(f:{\bf R}^{n}\to{\bf R}^{m}\) is a linear 

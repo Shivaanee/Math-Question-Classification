@@ -1,0 +1,18 @@
+
+
+### One Linear System \(=\) Two Triangular Systems
+
+There is a serious practical point about \(A=LU\). It is more than just a record of elimination steps; \(L\) and \(U\) are the right matrices to solve \(Ax=b\). In fact \(A\) could be thrown away! We go from \(b\) to \(c\) by forward elimination (this uses \(L\)) and we go from \(c\) to \(x\) by back-substitution (that uses \(U\)). We can and should do it without \(A\):
+
+\[\textbf{Splitting of }Ax=b\qquad\textit{First}\quad Lc=b\quad\textit{and then}\quad Ux=c.\] (8)
+
+_Multiply the second equation by \(L\) to give \(LUx=Lc\), which is \(Ax=b\)._ Each triangular system is quickly solved. That is exactly what a good elimination code will do:
+
+1. _Factor_ (from \(A\) find its factors \(L\) and \(U\)).
+2. _Solve_ (from \(L\) and \(U\) and \(b\) find the solution \(x\)).
+
+The separation into _Factor_ and _Solve_ means that a series of \(b\)'s can be processed. The _Solve_ subroutine obeys equation (8): two triangular systems in \(n^{2}/2\) steps each. **The solution for any new right-hand side \(b\) can be found in only \(n^{2}\) operations**. That is far below the \(n^{3}/3\) steps needed to factor \(A\) on the left-hand side.
+
+**Example 6**.: This is the previous matrix \(A\) with a right-hand side \(b=(1,1,1,1)\).
+
+\[Ax=b\qquad\begin{array}{ccccccccc}&x_{1}&-&x_{2}&&&&=&1\\ &-x_{1}&+&2x_{2}&-&x_{3}&&&=&1\\ &&-&x_{2}&+&2x_{3}&-&x_{4}&=&1\\ &&&-&x_{3}&+&2x_{4}&=&1\\ &c_{1}&&&&=&1\\ &-c_{1}&+&c_{2}&&&&=&1\\ &&-&c_{2}&+&c_{3}&&&=&1\\ &&&-&c_{3}&+&c_{4}&=&1\\ &x_{1}&-&x_{2}&&&&=&1\\ &x_{2}&-&x_{3}&&&=&2\\ &&x_{3}&-&x_{4}&=&3\\ &&&&&x_{4}&=&4\end{array}\quad\begin{array}{c}\textbf{\

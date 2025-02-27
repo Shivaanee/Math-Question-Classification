@@ -1,0 +1,26 @@
+
+Motivation.To motivate regularization, consider the model
+
+\[\hat{f}(x)=\theta_{1}f_{1}(x)+\cdots+\theta_{p}f_{p}(x).\] (15.6)
+
+We can interpret \(\theta_{i}\) as the amount by which our prediction depends on \(f_{i}(x)\), so if \(\theta_{i}\) is large, our prediction will be very sensitive to changes or variations in the value of \(f_{i}(x)\), such as those we might expect in new, unseen data. This suggests that we should prefer that \(\theta_{i}\) be small, so our model is not too sensitive. There is one exception here: if \(f_{i}(x)\) is constant (for example, the number one), then we should not worry about the size of \(\theta_{i}\), since \(f_{i}(x)\) never varies. But we would like all the others to be small, if possible.
+
+This suggests the bi-criterion least squares problem with primary objective \(\|y-A\theta\|^{2}\), the sum of squares of the prediction errors, and secondary objective \(\|\theta_{2:p}\|^{2}\), assuming that \(f_{1}\) is the constant function one. Thus we should minimize
+
+\[\|y-A\theta\|^{2}+\lambda\|\theta_{2:p}\|^{2},\] (15.7)
+
+where \(\lambda>0\) is called the _regularization parameter_.
+
+For the regression model, this weighted objective can be expressed as
+
+\[\|y-X^{T}\beta-v\mathbf{1}\|^{2}+\lambda\|\beta\|^{2}.\]
+
+Here we penalize \(\beta\) being large (because this leads to sensitivity of the model), but not the offset \(v\). Choosing \(\beta\) to minimize this weighted objective is called _ridge regression_.
+
+Effect of regularization.The effect of the regularization is to accept a worse value of sum square fit (\(\|y-A\theta\|^{2}\)) in return for a smaller value of \(\|\theta_{2:p}\|^{2}\), which measures the size of the parameters (except \(\theta_{1}\), which is associated with the constant basis function). This explains the name shrinkage: The parameters are smaller than they would be without regularization, _i.e._, they are shrunk. The term de-tuned suggests that with regularization, the model is not excessively 'tuned' to the training data (which would lead to over-fit).
+
+Regularization path.We get a different model for every choice of \(\lambda\). The way the parameters change with \(\lambda\) is called the _regularization path_. When \(p\) is small enough (say, less than 15 or so) the parameter values can be plotted, with \(\lambda\) on the horizontal axis. Usually only 30 or 50 values of \(\lambda\) are considered, typically spaced logarithmically over a large range (see page 314).
+
+An appropriate value of \(\lambda\) can be chosen via out-of-sample or cross-validation. As \(\lambda\) increases, the RMS fit on the training data worsens (increases). But (as with model order) the test set RMS prediction error typically decreases as \(\lambda\) increases, and then, when \(\lambda\) gets too big, it increases. A good choice of regularization parameter is one which approximately minimizes the test set RMS prediction error. When multiple values of \(\lambda\) approximately minimize the RMS error, common practice is to take the largest value of \(\lambda\). The idea here is to use the model of minimum sensitivity, as measured by \(\|\beta\|^{2}\), among those that make good predictions on the test set.
+
+ 

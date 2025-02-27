@@ -1,0 +1,29 @@
+
+
+## Factorization and inverses
+
+In the table below, \(A\) is a tall or square \(m\times n\) matrix, \(R\) is an \(n\times n\) triangular matrix, and \(b\) is an \(n\)-vector. We assume the factorization or inverses exist; in particular in any expression involving \(A^{-1}\), \(A\) must be square.
+
+\begin{tabular}{l l} QR factorization of \(A\) & \(2mn^{2}\) \\ \(R^{-1}b\) & \(n^{2}\) \\ \(A^{-1}b\) & \(2n^{3}\) \\ \(A^{-1}\) & \(3n^{3}\) \\ \(A^{\dagger}\) & \(3mn^{2}\) \\ \end{tabular} The pseudo-inverse \(A^{\dagger}\) of a wide \(m\times n\) matrix (with linearly independent rows) can be computed in \(3m^{2}n\) flops.
+
+### Solving least squares problems
+
+In the table below, \(A\) is an \(m\times n\) matrix, \(C\) is a wide \(p\times n\) matrix, and \(b\) is an \(m\)-vector. We assume the associated independence conditions hold.
+
+\begin{tabular}{l l l} minimize \(\|Ax-b\|^{2}\) & \(2mn^{2}\) \\ minimize \(\|Ax-b\|^{2}\) subject to \(Cx=d\) & \(2(m+p)n^{2}+2np^{2}\) \\ minimize \(\|x\|^{2}\) subject to \(Cx=d\) & \(2np^{2}\) \\ \end{tabular}
+
+### Big-times-small-squared mnemonic
+
+Many of the complexities listed above that involve two dimensions can be remembered using a simple mnemonic: The cost is order
+
+\[(\text{big})\times(\text{small})^{2}\ \ \text{flops},\]
+
+where 'big' and 'small' refer to big and small problem dimensions. We list some examples below.
+
+* Computing the Gram matrix of a tall \(m\times n\) matrix requires \(mn^{2}\) flops. Here \(m\) is the big dimension and \(n\) is the small dimension.
+* In the QR factorization of an \(m\times n\) matrix, we have \(m\geq n\), so \(m\) is the big dimension and \(n\) is the small dimension. The complexity is \(2mn^{2}\) flops.
+* Computing the pseudo-inverse \(A^{\dagger}\) of an \(m\times n\) matrix \(A\) when \(A\) is tall (and has independent columns) costs \(3mn^{2}\) flops. When \(A\) is wide (and has independent rows), it is \(3nm^{2}\) flops.
+* For least squares, we have \(m\geq n\), so \(m\) is the big dimension and \(n\) is the small dimension. The cost of computing the least squares approximate solution is \(2mn^{2}\) flops.
+* For the least norm problem, we have \(p\leq n\), so \(n\) is the big dimension and \(p\) is the small dimension. The cost is \(2np^{2}\) flops.
+* The constrained least squares problem involves two matrices \(A\) and \(C\), and three dimensions that satisfy \(m+p\geq n\). The numbers \(m+p\) and \(n\) are the big and small dimensions of the stacked matrix \(\left[\begin{array}{c}A\\ C\end{array}\right]\). The cost of solving the constrained least squares problem is \(2(m+p)n^{2}+2np^{2}\) flops, which is between \(2(m+p)n^{2}\) flops and \(4(m+p)n^{2}\) flops, since \(n\leq m+p\).
+

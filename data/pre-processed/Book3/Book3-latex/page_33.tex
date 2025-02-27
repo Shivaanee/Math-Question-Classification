@@ -1,0 +1,15 @@
+equivalent to \(A\). We wish to show that \(R=I\). That amounts to showing that the last row of \(R\) is not (identically) 0. Let
+
+\[E=\begin{bmatrix}0\\ 0\\ \vdots\\ 0\\ 1\end{bmatrix}.\]
+
+If the system \(RX=E\) can be solved for \(X\), the last row of \(R\) cannot be 0. We know that \(R=PA\), where \(P\) is invertible. Thus \(RX=E\) if and only if \(AX=P^{-1}E\). According to (iii), the latter system has a solution.
+
+_Corollary_.: _A square matrix with either a left or right inverse is invertible._
+
+Proof.: Let \(A\) be an \(n\times n\) matrix. Suppose \(A\) has a left inverse, i.e., a matrix \(B\) such that \(BA=I\). Then \(AX=0\) has only the trivial solution, because \(X=IX=B(AX)\). Therefore \(A\) is invertible. On the other hand, suppose \(A\) has a right inverse, i.e., a matrix \(C\) such that \(AC=I\). Then \(C\) has a left inverse and is therefore invertible. It then follows that \(A=C^{-1}\) and so \(A\) is invertible with inverse \(C\).
+
+_Corollary_.: _Let \(\mathrm{A}=\mathrm{A}_{1}\mathrm{A}_{2}\,\cdots\,\mathrm{A}_{k}\), where \(\mathrm{A}_{1}\,\cdots\,\), \(A_{k}\) are \(n\times n\) (square) matrices. Then \(\mathrm{A}\) is invertible if and only if each \(\mathrm{A}_{i}\) is invertible._
+
+Proof.: We have already shown that the product of two invertible matrices is invertible. From this one sees easily that if each \(A_{j}\) is invertible then \(A\) is invertible.
+
+Suppose now that \(A\) is invertible. We first prove that \(A_{k}\) is invertible. Suppose \(X\) is an \(n\times 1\) matrix and \(A_{k}X=0\). Then \(AX=(A_{1}\,\cdots\,A_{k-1})A_{k}X=0\). Since \(A\) is invertible we must have \(X=0\). The system 

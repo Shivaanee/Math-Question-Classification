@@ -1,0 +1,14 @@
+values. Pixels with \(\beta_{i}=0\) are not used at all; pixels with larger positive values of \(\beta_{i}\) are locations where the larger the image pixel value, the more likely we are to guess that the image represents the digit zero.
+
+Validation.The performance of the least squares classifier on the test set is shown in the confusion matrix in table 14.6. For the test set the error rate is 1.6%, the true positive rate is 88.2%, and the false positive rate is 0.5%. These performance metrics are similar to those for the training data, which suggests that our classifier is not over-fit, and gives us some confidence in our classifier.
+
+Feature engineering.We now do some simple feature engineering (as in SS13.3) to improve our classifier. As described on page 273, we add 5000 new features to the original 494 features, as follows. We first generate a \(5000\times 494\) matrix \(R\), with randomly chosen entries \(\pm 1\). The 5000 new functions are then given by \(\max\{0,(Rx)_{j}\}\), for \(j=1,\ldots,5000\). After the addition of the 5000 new features (so
+
+\begin{table}
+\begin{tabular}{c c c c} \hline \hline  & \multicolumn{3}{c}{Prediction} \\ \cline{2-4} Outcome & \(\hat{y}=+1\) & \(\hat{y}=-1\) & Total \\ \hline \(y=+1\) & 864 & 116 & 980 \\ \(y=-1\) & 42 & 8978 & 9020 \\ All & 906 & 9094 & 10000 \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.6: Confusion matrix for the classier for recognizing the digit zero, on a test set of 10000 examples.
+
+Figure 14.3: The coefficients \(\beta_{k}\) in the least squares classifier that distinguishes the digit zero from the other nine digits.
+
+ 

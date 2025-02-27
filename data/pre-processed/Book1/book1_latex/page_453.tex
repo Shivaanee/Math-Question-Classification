@@ -1,0 +1,21 @@
+
+
+**8.**: Verify that the vectors in the previous exercise satisfy the complementary slackness conditions in equation (2), and find the one slack inequality in both the primal and the dual.
+**9.**: Suppose that \(A=\left[\begin{smallmatrix}1&0\\ 0&1\end{smallmatrix}\right]\), \(b=\left[\begin{smallmatrix}1\\ -1\end{smallmatrix}\right]\), and \(c=\left[\begin{smallmatrix}1\\ 1\end{smallmatrix}\right]\). Find the optimal \(x\) and \(y\), and verify the complementary slackness conditions (as well as \(yb=cx\)).
+**10.**: If the primal problem is constrained by equations instead of inequalities--_Minimize cx subject to \(Ax=b\) and \(x\geq 0\)_--then the requirement \(y\geq 0\) is left out of the dual: _Maximize \(yb\) subject to \(yA\leq c\)_. Show that the one-sided inequality \(yb\leq cx\) still holds. Why was \(y\geq 0\) needed in equation (1) but not here? This weak duality can be completed to full duality.
+**11.**:
+1. 1. Without the simplex method, minimize the cost \(5x_{1}+3x_{2}+4x_{3}\), subject to \(x_{1}+x_{2}+x_{3}\geq 1\), \(x_{1}\geq 0\), \(x_{2}\geq 0\), \(x_{3}\geq 0\).
+2. What is the shape of the feasible set?
+3. What is the dual problem, and what is its solution \(y\)?
+**12.**: If the primal has a unique optimal solution \(x^{*}\), and then \(c\) is changed a little, explain why \(x^{*}\) still remains the optimal solution.
+**13.**: Write the dual of the following problem: Maximize \(x_{1}+x_{2}+x_{3}\) subject to \(2x_{1}+x_{2}\leq 4\), \(x_{3}\leq 6\). What are the optimal \(x^{*}\) and \(y^{*}\) (if they exist!)?
+**14.**: If \(A=\left[\begin{smallmatrix}1&1\\ 0&1\end{smallmatrix}\right]\), describe the cone of nonnegative combinations of the columns. If \(b\) lies inside that cone, say \(b=(3,2)\), what is the feasible vector \(x\)? If \(b\) lies outside, say \(b=(0,1)\), what vector \(y\) will satisfy the alternative?
+**15.**: In three dimensions, can you find a set of six vectors whose cone of nonnegative combinations fills the whole space? What about four vectors?
+**16.**: Use 8H to show that the following equation has no solution, because the alternative holds:
+
+\[\left[\begin{matrix}2&2\\ 4&4\end{matrix}\right]x=\left[\begin{matrix}1\\ 1\end{matrix}\right].\]
+**17.**: Use 8I to show that there is no solution \(x\geq 0\) (the alternative holds):
+
+\[\left[\begin{matrix}1&3&-5\\ 1&-4&-7\end{matrix}\right]x=\left[\begin{matrix}2\\ 3\end{matrix}\right].\]
+**18.**: Show that the alternatives in 8J (\(Ax\geq b\), \(x\geq 0\), \(yA\geq 0\), \(yb<0\), \(y\leq 0\)) cannot both hold. _Hint: yAx_.
+

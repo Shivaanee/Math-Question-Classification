@@ -1,0 +1,19 @@
+
+
+### 12.4 Examples
+
+Advertising purchases.We have \(m\) demographic groups or audiences that we want to advertise to, with a target number of impressions or views for each group, which we give as a vector \(v^{\text{des}}\). (The entries are positive.) To reach these audiences, we purchase advertising in \(n\) different channels (say, different web publishers, radio, print, ...), in amounts that we give as an \(n\)-vector \(s\). (The entries of \(s\) are nonnegative, which we ignore.) The \(m\times n\) matrix \(R\) gives the number of impressions in each group per dollar spending in the channels: \(R_{ij}\) is the number of impressions in group \(i\) per dollar spent on advertising in channel \(j\). (These entries are estimated, and are nonnegative.) The \(j\)th column of \(R\) gives the effectiveness or reach (in impressions per dollar) for channel \(j\). The \(i\)th row of \(R\) shows which media demographic group \(i\) is exposed to. The total number of impressions in each demographic group is the \(m\)-vector \(v\), which is given by \(v=Rs\). The goal is to find \(s\) so that \(v=Rs\approx v^{\text{des}}\). We can do this using least squares, by choosing \(s\) to minimize \(\|Rs-v^{\text{des}}\|^{2}\). (We are not guaranteed that the resulting channel spend vector will be nonnegative.) This least squares formulation does not take into account the total cost of the advertising; we will see in chapter 16 how this can be done.
+
+We consider a simple numerical example, with \(n=3\) channels and \(m=10\) demographic groups, and matrix
+
+\[R=\left[\begin{array}{cccc}0.97&1.86&0.41\\ 1.23&2.18&0.53\\ 0.80&1.24&0.62\\ 1.29&0.98&0.51\\ 1.10&1.23&0.69\\ 0.67&0.34&0.54\\ 0.87&0.26&0.62\\ 1.10&0.16&0.48\\ 1.92&0.22&0.71\\ 1.29&0.12&0.62\\ \end{array}\right],\]
+
+with units of 1000 views per dollar. The entries of \(R\) range over an 18:1 range, so the 3 channels are quite different in terms of their audience reach; see figure 12.3.
+
+We take \(v^{\text{des}}=(10^{3})\mathbf{1}\), _i.e._, our goal is to reach one million customers in each of the 10 demographic groups. Least squares gives the advertising budget allocation
+
+\[\hat{s}=(62,100,1443),\]
+
+which achieves a views vector with RMS error 132, or 13.2% of the target values. The views vector is shown in figure 12.4.
+
+Illumination.A set of \(n\) lamps illuminates an area that we divide into \(m\) regions or pixels. We let \(l_{i}\) denote the lighting level in region \(i\), so the \(m\)-vector \(l\) gives the illumination levels across all regions. We let \(p_{i}\) denote the power at which lamp \(i\) operates, so the \(n\)-vector \(p\) gives the set of lamp powers. (The lamp powers are nonnegative and also must not exceed a maximum allowed power, but we ignore these issues here.)

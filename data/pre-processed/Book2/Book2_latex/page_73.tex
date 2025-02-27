@@ -1,0 +1,14 @@
+
+
+### 3.5 Complexity
+
+Units for heterogeneous vector entries.When the entries of vectors represent different types of quantities, the choice of units used to represent each entry affects the angle, standard deviation, and correlation between a pair of vectors. The discussion on page 3.5, about how the choice of units can affect distances between pairs of vectors, therefore applies to these quantities as well. The general rule of thumb is to choose units for different entries so the typical vector entries have similar sizes or ranges of values.
+
+### 3.5 Complexity
+
+Computing the norm of an \(n\)-vector requires \(n\) multiplications (to square each entry), \(n-1\) additions (to add the squares), and one squareroot. Even though computing the squareroot typically takes more time than computing the product or sum of two numbers, it is counted as just one flop. So computing the norm takes \(2n\) flops. The cost of computing the RMS value of an \(n\)-vector is the same, since we can ignore the two flops involved in division by \(\sqrt{n}\). Computing the distance between two vectors costs \(3n\) flops, and computing the angle between them costs \(6n\) flops. All of these operations have order \(n\).
+
+De-meaning an \(n\)-vector requires \(2n\) flops (\(n\) for forming the average and another \(n\) flops for subtracting the average from each entry). The standard deviation is the RMS value of the de-meaned vector, and this calculation takes \(4n\) flops (\(2n\) for computing the de-meaned vector and \(2n\) for computing its RMS value). Equation (3.5) suggests a slightly more efficient method with a complexity of \(3n\) flops: first compute the average (\(n\) flops) and RMS value (\(2n\) flops), and then find the standard deviation as \(\mathbf{std}(x)=(\mathbf{rms}(x)^{2}-\mathbf{avg}(x)^{2})^{1/2}\). Standardizing an \(n\)-vector costs \(5n\) flops. The correlation coefficient between two vectors costs \(10n\) flops to compute. These operations also have order \(n\).
+
+As a slightly more involved computation, suppose that we wish to determine the nearest neighbor among a collection of \(k\)\(n\)-vectors \(z_{1},\ldots,z_{k}\) to another \(n\)-vector \(x\). (This will come up in the next chapter.) The simple approach is to compute the distances \(\|x-z_{i}\|\) for \(i=1,\ldots,k\), and then find the minimum of these. (Sometimes a comparison of two numbers is also counted as a flop.) The cost of this is \(3kn\) flops to compute the distances, and \(k-1\) comparisons to find the minimum. The latter term can be ignored, so the flop count is \(3kn\). The order of finding the nearest neighbor in a collection of \(k\)\(n\)-vectors is \(kn\).
+

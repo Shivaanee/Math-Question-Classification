@@ -1,0 +1,21 @@
+and the same minimal polynomial. Suppose also that for each \(i\) the solution spaces of \((A-c_{i}I)\) and \((B-c_{i}I)\) have the same dimension. If no \(d_{i}\) is greater than \(6\), then \(A\) and \(B\) are similar.
+
+**13.** If \(N\) is a \(k\times k\) elementary nilpotent matrix, i.e., \(N^{k}=0\) but \(N^{k-1}\neq 0\), show that \(N^{t}\) is similar to \(N\). Now use the Jordan form to prove that every complex \(n\times n\) matrix is similar to its transpose.
+
+**14.** What's wrong with the following proof? If \(A\) is a complex \(n\times n\) matrix such that \(A^{t}=-A\), then \(A\) is \(0\). (_Proof:_ Let \(J\) be the Jordan form of \(A\). Since \(A^{t}=-A\), \(J^{t}=-J\). But \(J\) is triangular so that \(J^{t}=-J\) implies that every entry of \(J\) is zero. Since \(J=0\) and \(A\) is similar to \(J\), we see that \(A=0\).) (Give an example of a non-zero \(A\) such that \(A^{t}=-A\).)
+
+**15.** If \(N\) is a nilpotent \(3\times 3\) matrix over \(C\), prove that \(A=I+\frac{1}{2}N-\frac{1}{8}N^{2}\) satisfies \(A^{2}=I+N\), i.e., \(A\) is a square root of \(I+N\). Use the binomial series for \((1+t)^{1/2}\) to obtain a similar formula for a square root of \(I+N\), where \(N\) is any nilpotent \(n\times n\) matrix over \(C\).
+
+**16.** Use the result of Exercise 15 to prove that if \(c\) is a non-zero complex number and \(N\) is a nilpotent complex matrix, then \((cI+N)\) has a square root. Now use the Jordan form to prove that every non-singular complex \(n\times n\) matrix has a square root.
+
+### Computation of Invariant Factors
+
+Suppose that \(A\) is an \(n\times n\) matrix with entries in the field \(F\). We wish to find a method for computing the invariant factors \(p_{1},\ldots,p_{r}\) which define the rational form for \(A\). Let us begin with the very simple case in which \(A\) is the companion matrix (7.2) of a monic polynomial
+
+\[p=x^{n}+c_{n\!-\!1}x^{n\!-\!1}+\cdots+c_{1}x+c_{0}.\]
+
+In Section 7.1 we saw that \(p\) is both the minimal and the characteristic polynomial for the companion matrix \(A\). Now, we want to give a direct calculation which shows that \(p\) is the characteristic polynomial for \(A\). In this case,
+
+\[xI-A=\!\left[\!\!\begin{array}{cccccc}x&0&0&\cdots&0&c_{0}\\ -1&x&0&\cdots&0&c_{1}\\ 0&-1&x&\cdots&0&c_{2}\\ \vdots&\vdots&\vdots&&\vdots&\vdots\\ 0&0&0&\cdots&x&c_{n\!-\!2}\\ 0&0&0&\cdots&-1&x+c_{n\!-\!1}\end{array}\!\!\right]\!\!.\]
+
+Add \(x\) times row \(n\) to row \((n-1)\). This will remove the \(x\) in the \((n-1)\), \(n-1)\) place and it will not change the determinant. Then, add \(x\) times the new row \((n-1)\) to row \((n-2)\). Continue successively until all of the \(x\)'s on the main diagonal have been removed by that process. The result is the matrix 

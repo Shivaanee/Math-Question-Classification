@@ -1,0 +1,24 @@
+Symmetric and Hermitian matrices are certainly normal: If \(A=A^{\rm H}\), then \(AA^{\rm H}\) and \(A^{\rm H}A\) both equal \(A^{2}\). Orthogonal and unitary matrices are also normal: \(UU^{\rm H}\) and \(U^{\rm H}U\) both equal \(I\). Two steps will work for any normal matrix:
+
+1. If \(N\) is normal, then so is the triangular \(T=U^{-1}NU\): \[TT^{\rm H}=U^{-1}NUU^{\rm H}N^{\rm H}U=U^{-1}NN^{\rm H}U=U^{-1}N^{\rm H}NU=U^{ \rm H}N^{\rm H}UU^{-1}NU=T^{\rm H}T.\]
+2. A triangular \(T\) that is normal must be diagonal! (See Problems 19-20 at the end of this section.)
+
+Thus, if \(N\) is normal, the triangular \(T=U^{-1}NU\) must be diagonal. Since \(T\) has the same eigenvalues as \(N\), it must be \(\Lambda\). The eigenvectors of \(N\) are the columns of \(U\), and they are orthonormal. That is the good case. We turn now from the best possible matrices (_normal_) to the worst possible (_defective_).
+
+\[\mbox{\bf Normal}\quad N=\begin{bmatrix}2&1\\ -1&2\end{bmatrix}\qquad\qquad\mbox{\bf Defective}\quad A=\begin{bmatrix}2&1\\ 0&2\end{bmatrix}.\]
+
+### The Jordan Form
+
+This section has done its best while requiring \(M\) to be a unitary matrix \(U\). We got \(M^{-1}AM\) into a triangular form \(T\). Now we lift this restriction on \(M\). Any matrix is allowed, and the goal is to make \(M^{-1}AM\) as _nearly diagonal as possible_.
+
+The result of this supreme effort at diagonalization is the _Jordan form_\(J\). If \(A\) has a full set of eigenvectors, we take \(M=S\) and arrive at \(J=S^{-1}AS=\Lambda\). Then the Jordan form coincides with the diagonal \(\Lambda\). This is impossible for a defective (nondiagonalizable) matrix. _For every missing eigenvector, the Jordan form will have a \(1\) just above its main diagonal_. The eigenvalues appear on the diagonal because \(J\) is triangular. And distinct eigenvalues can always be decoupled.
+
+It is only a repeated \(\lambda\) that may (or may not!) require an off-diagonal \(1\) in \(J\).
+
+**5U** If \(A\) has \(s\) independent eigenvectors, it is similar to a matrix with \(s\) blocks:
+
+\[\mbox{\bf Jordan form}\qquad J=M^{-1}AM=\begin{bmatrix}J_{1}&&\\ &\ddots&\\ &&J_{s}\end{bmatrix}.\] (6)
+
+Each Jordan block \(J_{i}\) is a triangular matrix that has only a single eigenvalue \(\lambda_{i}\) and only one eigenvector:
+
+\[\mbox{\bf Jordan block}\qquad J_{i}=\begin{bmatrix}\lambda_{i}&1&&\\ &\lambda_{i}&\cdot&\\ &&\cdot&1\\ &&&\lambda_{i}\end{bmatrix}.\] (7) 

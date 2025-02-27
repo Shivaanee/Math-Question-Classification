@@ -1,0 +1,21 @@
+
+
+## Appendix B The Jordan Form
+
+Given a square matrix \(A\), we want to choose \(M\) so that \(M^{-1}AM\) is as nearly diagonal as possible. In the simplest case, \(A\) has a complete set of eigenvectors and they become the columns of \(M\)--otherwise known as \(S\). The Jordan form is \(J=M^{-1}AM=\Lambda\); it is constructed entirely from \(1\) by \(1\) blocks \(J_{i}=\lambda_{i}\), and the goal of a diagonal matrix is completely achieved. In the more general and more difficult case, some eigenvectors are missing and a diagonal form is impossible. That case is now our main concern.
+
+We repeat the theorem that is to be proved:
+
+If a matrix \(A\) has \(s\) linearly independent eigenvectors, then it is similar to a matrix \(J\) that is in _Jordan form_, with \(s\) square blocks on the diagonal:
+
+\[J=M^{-1}AM=\begin{bmatrix}J_{1}&&\\ &\ddots&\\ &&J_{s}\end{bmatrix}.\]
+
+Each block has one eigenvector, one eigenvalue, and is just above the diagonal:
+
+\[J_{i}=\begin{bmatrix}\lambda_{i}&1&&\\ &\cdot&\ddots&\\ &&\cdot&1\\ &&&\lambda_{i}\end{bmatrix}.\]
+
+An example of such a Jordan matrix is
+
+\[J=\begin{bmatrix}8&1&0&0&0\\ 0&8&0&0&0\\ 0&0&0&1&0\\ 0&0&0&0&0\\ 0&0&0&0&0\end{bmatrix}=\begin{bmatrix}\begin{bmatrix}8&1\\ 0&8\end{bmatrix}&&\\ &\begin{bmatrix}0&1\\ 0&0\end{bmatrix}&\\ &\begin{bmatrix}0\\ 0\end{bmatrix}&\\ &\begin{bmatrix}0\end{bmatrix}\end{bmatrix}=\begin{bmatrix}J_{1}&&\\ &J_{2}&\\ &&J_{3}\end{bmatrix}.\]
+
+The double eigenvalue \(\lambda=8\) has only a single eigenvector, in the first coordinate direction \(e_{1}=(1,0,0,0,0)\); as a result, \(\lambda=8\) appears only in a single block \(J_{1}\). The triple

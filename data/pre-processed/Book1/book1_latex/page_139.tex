@@ -1,0 +1,18 @@
+
+
+### Graphs and Networks
+
+I am not entirely happy with the 3 by 4 matrix in the previous section. From a theoretical point of view it was very satisfactory; the four subspaces were computable and their dimensions \(r\), \(n-r\), \(r\), \(m-r\) were nonzero. But the example was not produced by a genuine application. It did not show how fundamental those subspaces really are.
+
+This section introduces a class of rectangular matrices with two advantages. They are simple, and they are important. They are _incidence matrices of graphs_, and every entry is \(1\), \(-1\), or \(0\). What is remarkable is that the same is true of \(L\) and \(U\) and basis vectors for all four subspaces. Those subspaces play a central role in network theory. We emphasize that the word "graph" does not refer to the graph of a function (like a parabola for \(y=x^{2}\)). There is a second meaning, completely different, which is closer to computer science than to calculus--and it is easy to explain. _This section is optional_, but it gives a chance to see rectangular matrices in action--and how the square symmetric matrix \(A^{\mathrm{T}}A\) turns up in the end.
+
+A _graph_ consists of a set of vertices or _nodes_, and a set of _edges_ that connect them. The graph in Figure 2.6 has 4 nodes and 5 edges. It does not have an edge between nodes 1 and 4 (and edges from a node to itself are forbidden). This graph is _directed_, because of the arrow in each edge.
+
+The _edgenode incidence matrix_ is 5 by 4, with a row for every edge. _If the edge goes from node \(j\) to node \(k\), then that row has \(-1\) in column \(j\) and \(+1\) in column \(k\)_. The incidence matrix \(A\) is shown next to the graph (and you could recover the graph if you only had \(A\)). Row 1 shows the edge from node 1 to node 2. Row 5 comes from the fifth edge, from node 3 to node 4.
+
+Notice the columns of \(A\). Column 3 gives information about node 3--it tells which edges enter and leave. Edges 2 and 3 go in, edge 5 goes out (with the minus sign). \(A\) is sometimes called the _connectivity_ matrix, or the _topology_ matrix. When the graph has \(m\) edges and \(n\) nodes, \(A\) is \(m\) by \(n\) (and normally \(m>n\)). Its transpose is the "node-edge" incidence matrix.
+
+Each of the four fundamental subspaces has a meaning in terms of the graph. We can do linear algebra, or write about voltages and currents. We do both!
+
+Figure 2.6: A directed graph (5 edges, 4 nodes, 2 loops) and its incidence matrix \(A\).
+

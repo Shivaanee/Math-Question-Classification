@@ -1,0 +1,23 @@
+
+
+**7.**: Lucas started with \(L_{0}=2\) and \(L_{1}=1\). The rule \(L_{k+2}=L_{k+1}+L_{k}\) is the same, so \(A\) is still Fibonacci's matrix. Add its eigenvectors \(x_{1}+x_{2}\):
+
+\[\begin{bmatrix}\lambda_{1}\\ 1\end{bmatrix}+\begin{bmatrix}\lambda_{2}\\ 1\end{bmatrix}=\begin{bmatrix}\frac{1}{2}(1+\sqrt{5})\\ 1\end{bmatrix}+\begin{bmatrix}\frac{1}{2}(1-\sqrt{5})\\ 1\end{bmatrix}=\begin{bmatrix}1\\ 2\end{bmatrix}=\begin{bmatrix}L_{1}\\ L_{0}\end{bmatrix}.\]
+
+Multiplying by \(A^{k}\), the second component is \(L_{k}=\lambda_{1}^{k}+\lambda_{2}^{k}\). Compute the Lucas number \(L_{10}\) slowly by \(L_{k+2}=L_{k+1}+L_{k}\), and compute approximately by \(\lambda_{1}^{10}\).
+**8.**: Suppose there is an epidemic in which every month half of those who are well become sick, and a quarter of those who are sick become dead. Find the steady state for the corresponding Markov process
+
+\[\begin{bmatrix}d_{k+1}\\ s_{k+1}\\ w_{k+1}\end{bmatrix}=\begin{bmatrix}1&\frac{1}{4}&0\\ 0&\frac{3}{4}&\frac{1}{2}\\ 0&0&\frac{1}{2}\end{bmatrix}\begin{bmatrix}d_{k}\\ s_{k}\\ w_{k}\end{bmatrix}.\]
+**9.**: Write the 3 by 3 transition matrix for a chemistry course that is taught in two sections, if every week \(\frac{1}{4}\) of those in Section A and \(\frac{1}{3}\) of those in Section B drop the course, and \(\frac{1}{6}\) of each section transfer to the other section.
+**10.**: Find the limiting values of \(y_{k}\) and \({}_{k}\) (\(k\to\infty\)) if
+
+\[\begin{split} y_{k+1}&=.8y_{k}+.3z_{k}&\quad y_{0}=0\\ z_{k+1}&=.2y_{k}+.7z_{k}&\quad z_{0}=5.\end{split}\]
+
+Also find formulas for \(y_{k}\) and \(z_{k}\) from \(A^{k}=S\Lambda^{k}S^{-1}\).
+**11.**:
+1. (a) From the fact that column \(1+\) column \(2=2\)(column 3), so the columns are linearly dependent find one eigenvalue and one eigenvector of \(A\): \[A=\begin{bmatrix}.2&.4&.3\\ .4&.2&.3\\ .4&.4&.4\end{bmatrix}.\]
+2. Find the other eigenvalues of \(A\) (it is Markov).
+3. If \(u_{0}=(0,10,0)\), find the limit of \(A^{k}u_{0}\) as \(k\to\infty\).
+**12.**: Suppose there are three major centers for Move-It-Yourself trucks. Every month half of those in Boston and in Los Angeles go to Chicago, the other half stay here they are, and the trucks in Chicago are split equally between Boston and Los Angeles Set up the 3 by 3 transition matrix \(A\), and find the steady state \(u_{\infty}\) corresponding to the eigenvalue \(\lambda=1\).
+**13.**:
+1. In what range of \(a\) and \(b\) is the following equation a Markov process? \[u_{k+1}=Au_{k}=\begin{bmatrix}a&b\\ 1-a&1-b\end{bmatrix}u_{k},\qquad u_{0}=\begin{bmatrix}1\\ 1\end{bmatrix}.\]

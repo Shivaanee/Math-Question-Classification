@@ -1,0 +1,23 @@
+Matrix-vector multiplication, like ordinary multiplication of numbers, has higher precedence than addition, which means that when there are no parentheses to force the order of evaluation, multiplications are to be carried out before additions. This means that the right-hand side above is to be interpreted as \((Au)+(Av)\). The equation above looks innocent and natural, but must be read carefully. On the left-hand side, we first add the vectors \(u\) and \(v\), which is the addition of \(n\)-vectors. We then multiply the resulting \(n\)-vector by the matrix \(A\). On the right-hand side, we first multiply each of \(n\)-vectors by the matrix \(A\) (this is two matrix-vector multiplies); and then add the two resulting \(m\)-vectors together. The left- and right-hand sides of the equation above involve very different steps and operations, but the final result of each is the same \(m\)-vector.
+
+Matrix-vector multiplication also distributes across the matrix argument: For any \(m\times n\) matrices \(A\) and \(B\), and any \(n\)-vector \(u\), we have
+
+\[(A+B)u=Au+Bu.\]
+
+On the left-hand side the plus symbol is matrix addition; on the right-hand side it is vector addition.
+
+Another basic property is, for any \(m\times n\) matrix \(A\), any \(n\)-vector \(u\), and any scalar \(\alpha\), we have
+
+\[(\alpha A)u=\alpha(Au)\]
+
+(and so we can write this as \(\alpha Au\)). On the left-hand side, we have scalar-matrix multiplication, followed by matrix-vector multiplication; on the right-hand side, we start with matrix-vector multiplication, and then perform scalar-vector multiplication. (Note that we also have \(\alpha Au=A(\alpha u)\).)
+
+Input-output interpretation.We can interpret the relation \(y=Ax\), with \(A\) an \(m\times n\) matrix, as a mapping from the \(n\)-vector \(x\) to the \(m\)-vector \(y\). In this context we might think of \(x\) as an input, and \(y\) as the corresponding output. From equation (6.4), we can interpret \(A_{ij}\) as the factor by which \(y_{i}\) depends on \(x_{j}\). Some examples of conclusions we can draw are given below.
+
+* If \(A_{23}\) is positive and large, then \(y_{2}\) depends strongly on \(x_{3}\), and increases as \(x_{3}\) increases.
+* If \(A_{32}\) is much larger than the other entries in the third row of \(A\), then \(y_{3}\) depends much more on \(x_{2}\) than the other inputs.
+* If \(A\) is square and lower triangular, then \(y_{i}\) only depends on \(x_{1},\ldots,x_{i}\).
+
+### 6.5 Complexity
+
+Computer representation of matrices.An \(m\times n\) matrix is usually represented on a computer as an \(m\times n\) array of floating point numbers, which requires \(8mn\) bytes. In some software systems symmetric matrices are represented in a more efficient way, by only storing the upper triangular elements in the matrix, in some 

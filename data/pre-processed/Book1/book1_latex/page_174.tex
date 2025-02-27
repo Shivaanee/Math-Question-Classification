@@ -1,0 +1,27 @@
+In contrast, the other two subspaces are in \({\bf R}^{3}\). The column space is the line through \((1,2,3)\). The left nullspace must be the _perpendicular plane_\(y_{1}+2y_{2}+3y_{3}=0\). That equation is exactly the content of \(y^{\rm T}A=0\).
+
+The first two subspaces (the two lines) had dimensions \(1+1=2\) in the space \({\bf R}^{2}\). The second pair (line and plane) had dimensions \(1+2=3\) in the space \({\bf R}^{3}\). In general, _the row space and nullspace have dimensions that add to \(r+(n-r)=n\)_. The other pair adds to \(r+(m-r)=m\). Something more than orthogonality is occurring, and I have to ask your patience about that one further point: **the dimensions**.
+
+It is certainly true that the null space is perpendicular to the row space--but it is not the whole truth. \(N(A)\)_contains every vector orthogonal to the row space_. The nullspace was formed from _all_ solutions to \(Ax=0\).
+
+**Definition.** Given a subspace \({\bf V}\) of \({\bf R}^{n}\), the space of _all_ vectors orthogonal to \({\bf V}\) is called the **orthogonal complement** of \({\bf V}\). It is denoted by \({\bf V}^{\perp}=\) "\({\bf V}\) perp."
+
+Using this terminology, the nullspace is the orthogonal complement of the row space: \(N(A)=(C(A^{\rm T}))^{\perp}\). At the same time, the row space contains all vectors that are orthogonal to the nullspace. A vector \(z\) can't be orthogonal to the nullspace but outside the row space. Adding \(z\) as an extra row of \(A\) would enlarge the row space, but we know that there is a fixed formula \(r+(n-r)=n\):
+
+**Dimension formula**\(\dim({\rm row\ space})+\dim({\rm nullspace})={\rm number\ of\ columns}\).
+
+Every vector orthogonal to the nullspace is in the row space: \(C(A^{\rm T})=(N(A))^{\perp}\).
+
+The same reasoning applied to \(A^{\rm T}\) produces the dual result: _The left nullspace \(N(A^{\rm T})\) and the column space \(C(A)\) are orthogonal complements_. Their dimensions add up to \((m-r)+r=m\), This completes the second half of the fundamental theorem of linear algebra. The first half gave the dimensions of the four subspaces. including the fact that row rank \(=\) column rank. Now we know that those subspaces are perpendicular. More than that, the subspaces are orthogonal complements.
+
+**3D Fundamental Theorem of Linear Algebra, Part II**
+
+The nullspace is the _orthogonal complement_ of the row space in \({\bf R}^{n}\).
+
+The left nullspace is the _orthogonal complement_ of the column space in \({\bf R}^{m}\).
+
+To repeat, the row space contains everything orthogonal to the nullspace. The column space contains everything orthogonal to the left nullspace. That is just a sentence, hidden in the middle of the book, but _it decides exactly which equations can be solved_! Looked at directly, \(Ax=b\) requires \(b\) to be in the column space. Looked at indirectly. \(Ax=b\)_requires \(b\) to be perpendicular to the left nullspace_.
+
+**3E**\(Ax=b\) is solvable if and only if \(y^{\rm T}b=0\) whenever \(y^{\rm T}A=0\).
+
+ 

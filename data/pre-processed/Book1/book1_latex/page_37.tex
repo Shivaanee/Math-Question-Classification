@@ -1,0 +1,29 @@
+
+
+**Example 2**.: \[\mbox{Row exchange matrix}\qquad\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\begin{bmatrix}2&3\\ 7&8\end{bmatrix}=\begin{bmatrix}7&8\\ 2&3\end{bmatrix}.\]
+
+**Example 3**.: The 1s in the identity matrix \(I\) leave every matrix unchanged:
+
+\[\mbox{Identity matrix}\qquad IA=A\quad\mbox{and}\quad BI=B.\]
+
+Important: The multiplication \(AB\) can also be done _a row at a time_. In Example 1, the first row of \(AB\) uses the numbers 2 and 3 from the first row of \(A\). Those numbers give \(2[\mbox{row }1]+3[\mbox{row }2]=[17\;\;1\;\;0]\). Exactly as in elimination, where all this started, each row of \(AB\) is a _combination of the rows of \(B\)_.
+
+We summarize these three different ways to look at matrix multiplication.
+
+**1D**
+
+1. Each entry of \(AB\) is the product of a _row_ and a _column_: \[(AB)_{ij}=(\mbox{row }i\mbox{ of }A)\mbox{ times (column }j\mbox{ of }B)\]
+2. Each column of \(AB\) is the product of a matrix and a column: \[\mbox{column }j\mbox{ of }AB=A\mbox{ times (column }j\mbox{ of }B)\]
+3. Each row of \(AB\) is the product of a row and a matrix: \[\mbox{row }i\mbox{ of }AB=(\mbox{row }i\mbox{ of }A)\mbox{ times }B.\]
+
+This leads hack to a key property of matrix multiplication. Suppose the shapes of three matrices \(A\), \(B\), \(C\) (possibly rectangular) permit them to be multiplied. The rows in \(A\) and \(B\) multiply the columns in \(B\) and \(C\). Then the key property is this:
+
+**1E** Matrix multiplication is associative: \((AB)C=A(BC)\). Just write \(ABC\).
+
+\(AB\) times \(C\) equals \(A\) times \(BC\). If \(C\) happens to be just a vector (a matrix with only one column) this is the requirement \((EA)x=E(Ax)\) mentioned earlier. It is the whole basis for the laws of matrix multiplication. And if \(C\) has several columns, we have only to think of them placed side by side, and apply the same rule several times. Parentheses are not needed when we multiply several matrices.
+
+There are two more properties to mention--one property that matrix multiplication has, and another which it _does not have_. The property that it does possess is:
+
+**1F** Matrix operations are distributive:
+
+\[A(B+C)=AB+AC\quad\mbox{and}\quad(B+C)D=BD+CD.\]

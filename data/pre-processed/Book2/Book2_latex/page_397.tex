@@ -1,0 +1,33 @@
+
+
+#### Basic Gauss-Newton algorithm
+
+The idea behind the Gauss-Newton algorithm is simple: We alternate between finding an affine approximation of the function \(f\) at the current iterate, and then solving the associated linear least squares problem to find the next iterate. This combines two of the most powerful ideas in applied mathematics: _Calculus_ is used to form an affine approximation of a function near a given point, and _least squares_ is used to compute an approximate solution of the resulting affine equations.
+
+We now describe the algorithm in more detail. At each iteration \(k\), we form the affine approximation \(\hat{f}\) of \(f\) at the current iterate \(x^{(k)}\), given by the Taylor approximation
+
+\[\hat{f}(x;x^{(k)})=f(x^{(k)})+Df(x^{(k)})(x-x^{(k)}),\] (18.5)
+
+where the \(m\times n\) matrix \(Df(x^{(k)})\) is the Jacobian or derivative matrix of \(f\) (see SS8.2.1 and SSC.1). The affine function \(\hat{f}(x;x^{(k)})\) is a very good approximation of \(f(x)\) provided \(x\) is near \(x^{(k)}\), _i.e._, \(\|x-x^{(k)}\|\) is small.
+
+The next iterate \(x^{(k+1)}\) is then taken to be the minimizer of \(\|\hat{f}(x;x^{(k)})\|^{2}\), the norm squared of the affine approximation of \(f\) at \(x^{(k)}\). Assuming that the derivative matrix \(Df(x^{(k)})\) has linearly independent columns (which requires \(m\geq n\)), we have
+
+\[x^{(k+1)}=x^{(k)}-\left(Df(x^{(k)})^{T}Df(x^{(k)})\right)^{-1}Df(x^{(k)})^{T} f(x^{(k)}).\] (18.6)
+
+This iteration gives the basic Gauss-Newton algorithm.
+
+**given** a differentiable function \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\), an initial point \(x^{(1)}\).
+
+For \(k=1,2,\ldots,k^{\max}\)
+
+1. _Form affine approximation at current iterate using calculus._ Evaluate the Jacobian \(Df(x^{(k)})\) and define \[\hat{f}(x;x^{(k)})=f(x^{(k)})+Df(x^{(k)})(x-x^{(k)}).\]
+2. _Update iterate using linear least squares._ Set \(x^{(k+1)}\) as the minimizer of \(\|\hat{f}(x;x^{(k)})\|^{2}\), \[x^{(k+1)}=x^{(k)}-\left(Df(x^{(k)})^{T}Df(x^{(k)})\right)^{-1}Df(x^{(k)})^{T} f(x^{(k)}).\]
+
+The Gauss-Newton algorithm is terminated early if \(f(x)\) is very small, or \(x^{(k+1)}\approx x^{(k)}\). It terminates with an error if the columns of \(Df(x^{(k)})\) are linearly dependent.
+
+The condition \(x^{(k+1)}=x^{(k)}\) (the exact form of our stopping condition) holds when
+
+\[\left(Df(x^{(k)})^{T}Df(x^{(k)})\right)^{-1}Df(x^{(k)})^{T}f(x^{(k)})=0,\]
+
+which occurs if and only if \(Df(x^{(k)})^{T}f(x^{(k)})=0\) (since we assume that \(Df(x^{(k)})\) has linearly independent columns). So the Gauss-Newton algorithm stops only when the optimality condition (18.3) holds.
+

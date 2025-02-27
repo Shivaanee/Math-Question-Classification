@@ -1,0 +1,31 @@
+The entries \(r_{ij}=q_{i}^{\mathrm{T}}a_{j}\) appear in formula (11), when \(\|A_{j}\|q_{j}\) is substituted for \(A_{j}\):
+
+\[a_{j}=(q_{1}^{\mathrm{T}}a_{j})q_{1}+\dots+(q_{j-1}^{\mathrm{T}}a_{j})q_{j-1}+ \|A_{j}\|q_{j}=Q\text{ times column }j\text{ of }R.\] (13)
+
+**3U**: Every \(m\) by \(n\) matrix with independent columns can be factored into \(A=QR\). The columns of \(Q\) are orthonormal, and \(R\) is upper triangular and invertible. When \(m=n\) and all matrices are square, \(Q\) becomes an orthogonal matrix.
+
+I must not forget the main point of orthogonalization. It simplifies the least-squares problem \(Ax=b\). The normal equations are still correct, but \(A^{\mathrm{T}}A\) becomes easier:
+
+\[A^{\mathrm{T}}A=R^{\mathrm{T}}Q^{\mathrm{T}}QR=R^{\mathrm{T}}R.\] (14)
+
+The fundamental equation \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\) simplifies to a triangular system:
+
+\[R^{\mathrm{T}}R\widehat{x}=R^{\mathrm{T}}Q^{\mathrm{T}}b\qquad\text{or} \qquad R\widehat{x}=Q^{\mathrm{T}}b.\] (15)
+
+Instead of solving \(QRx=b\), which can't be done, we solve \(R\widehat{x}=Q^{\mathrm{T}}b\) which is just back-substitution because \(R\) is triangular. The real cost is the \(mn^{2}\) operations of Gram-Schmidt, which are needed to find \(Q\) and \(R\) in the first place.
+
+The same idea of orthogonality applies to functions, The sines and cosines are orthogonal; the powers \(1\), \(x\), \(x^{2}\) are not. When \(f(x)\) is written as a combination of sines and cosines, that is a _Fourier series_. Each term is a projection onto a line--the line in function space containing multiples of \(\cos nx\) or \(\sin nx\). It is completely parallel to the vector case, and very important. And finally we have a job for Schmidt: To orthogonalize the powers of \(x\) and produce the Legendre polynomials.
+
+### Function Spaces and Fourier Series
+
+This is a brief and optional section, but it has a number of good intentions:
+
+1. to introduce the most famous infinite-dimensional vector space (_Hilbert space_);
+2. to extend the ideas of length and inner product from vectors \(v\) to functions \(f(x)\):
+3. to recognize the Fourier series as a sum of one-dimensional projections (the orthogonal "columns" are the sines and cosines);
+4. to apply Gram-Schmidt orthogonalization to the polynomials \(1,x,x^{2},\dots\); and
+5. to find the best approximation to \(f(x)\) by a straight line.
+
+We will try to follow this outline, which opens up a range of new applications for linear algebra, in a systematic way.
+
+1. Hilbert Space.After studying \(\mathbf{R}^{n}\), it is natural to think of the space \(\mathbf{R}^{\infty}\). It contains all vectors \(v=(v_{1},v_{2},v_{3},\dots)\) with an infinite sequence of components. This space 

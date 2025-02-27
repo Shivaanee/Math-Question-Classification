@@ -1,0 +1,35 @@
+of the derivative matrix of \(f\) at \(g(z)\) and the derivative matrix of \(g\) at \(z\). This compact matrix formula generalizes the chain rule for scalar-valued functions of a single variable, _i.e._, \(h^{\prime}(z)=f^{\prime}(g(z))g^{\prime}(z)\).
+
+The first order Taylor approximation of \(h\) at \(z\) can therefore be written as
+
+\[\hat{h}(x) = h(z)+Dh(z)(x-z)\] \[= f(g(z))+Df(g(z))Dg(z)(x-z).\]
+
+The same result can be interpreted as a composition of two affine functions, the first order Taylor approximation of \(f\) at \(g(z)\),
+
+\[\hat{f}(y)=f(g(z))+Df(g(z))(y-g(z))\]
+
+and the first order Taylor approximation of \(g\) at \(z\),
+
+\[\hat{g}(x)=g(z)+Dg(z)(x-z).\]
+
+The composition of these two affine functions is
+
+\[\hat{f}(\hat{g}(x)) = \hat{f}(g(z)+Dg(z)(x-z))\] \[= f(g(z))+Df(g(z))(g(z)+Dg(z)(x-z)-g(z))\] \[= f(g(z))+Df(g(z))Dg(z)(x-z)\]
+
+which is equal to \(\hat{h}(x)\).
+
+When \(f\) is a scalar-valued function (\(m=1\)), the derivative matrices \(Dh(z)\) and \(Df(g(z))\) are the transposes of the gradients, and we write the chain rule as
+
+\[\nabla h(z)=Dg(z)^{T}\nabla f(g(z)).\]
+
+In particular, if \(g(x)=Ax+b\) is affine, then the gradient of \(h(x)=f(g(x))=f(Ax+b)\) is given by \(\nabla h(z)=A^{T}\nabla f(Ax+b)\).
+
+Linear dynamical system with state feedback.We consider a time-invariant linear dynamical system with \(n\)-vector state \(x_{t}\) and \(m\)-vector input \(u_{t}\), with dynamics
+
+\[x_{t+1}=Ax_{t}+Bu_{t},\quad t=1,2,\ldots.\]
+
+Here we think of the input \(u_{t}\) as something we can manipulate, _e.g._, the control surface deflections for an airplane or the amount of material we order or move in a supply chain. In _state feedback control_ the state \(x_{t}\) is measured, and the input \(u_{t}\) is a linear function of the state, expressed as
+
+\[u_{t}=Kx_{t},\]
+
+where \(K\) is the \(m\times n\)_state-feedback gain matrix_. The term _feedback_ refers to the idea that the state is measured, and then (after multiplying by \(K\)) fed back into the system, via the input. This leads to a loop, where the state affects the input, and the input affects the (next) state. State feedback is very widely used in many applications. (In SS17.2.3 we will see methods for choosing or designing an appropriate state feedback matrix.) 

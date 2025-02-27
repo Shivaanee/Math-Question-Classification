@@ -1,0 +1,21 @@
+and only a few hundred unknowns. The equations \(x_{h}-x_{v}=b_{i}\) go into a linear system \(Ax=b\), in which \(A\) is an _incidence matrix_. Every game has a row, with \(+1\) in column \(h\) and \(-1\) in column \(v\)--to indicate which teams are in that game.
+
+First difficulty: If \(b\) is not in the column space there is no solution. The scores must fit perfectly or exact potentials cannot be found. Second difficulty: If \(A\) has nonzero vectors in its nullspace, the potentials \(x\) are not well determined. In the first case \(x\) does not exist; in the second case \(x\) is not unique. Probably both difficulties are present.
+
+The nullspace always contains the vector of 1s, since \(A\) looks only at the _differences_\(x_{h}-x_{v}\). To determine the potentials we can arbitrarily assign zero potential to Harvard. (I am speaking mathematically, not meanly.) But if the graph is not connected, every separate piece of the graph contributes a vector to the nullspace. There is even the vector with \(x_{\mathrm{MIT}}=1\) and all other \(x_{j}=0\). We have to ground not only Harvard but one team in each piece. (There is nothing unfair in assigning zero potential; if all other potentials are below zero then the grounded team ranks first.) The dimension of the nullspace is the _number of pieces_ of the graph--and there will be no way to rank one piece against another, since they play no games.
+
+The column space looks harder to describe. Which scores fit perfectly with a set of potentials? Certainly \(Ax=b\) is unsolvable if Harvard beats Yale, Yale beats Princeton, and Princeton beats Harvard. More than that, the score differences in that loop of games _have to add to zero_:
+
+\[\text{\bf Kirchhoff's law for score differences}\qquad b_{\mathrm{HY}}+b_{\mathrm{YP}}+b_{ \mathrm{PH}}=0.\]
+
+This is also a law of linear algebra. \(Ax=b\) can be solved when \(b\) satisfies the same linear dependencies as the rows of \(A\). Then elimination leads to \(0=0\).
+
+In reality, \(b\) is almost certainly not in the column space. Football scores are not that consistent. To obtain a ranking we can use _least squares_: Make \(Ax\) as close as possible to \(b\). That is in Chapter 3, and we mention only one adjustment. The winner gets a bonus of 50 or even 100 points on top of the score difference. Otherwise winning by 1 is too close to losing by 1. This brings the computed rankings very close to the polls, and Dr. Leake (Notre Dame) gave a full analysis in _Management Science in Sports_ (1976).
+
+After writing that subsection, I found the following in the _New York Times_:
+
+In its final rankings for 1985, the computer placed Miami (10-2) in the seventh spot above Tennessee (9-1-2). A few days after publication, packages containing oranges and angry letters from disgruntled Tennessee fans began arriving at the _Times_ sports department. The irritation stems from the fact that Tennessee thumped Miami 35-7 in the Sugar Bowl. Final AP and UPI polls ranked Tennessee fourth, with Miami significantly lower.
+
+Yesterday morning nine cartons of oranges arrived at the loading dock. They were sent to Bellevue Hospital with a warning that the quality and contents of the oranges were uncertain.
+
+ 

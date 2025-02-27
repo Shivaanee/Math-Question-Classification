@@ -1,0 +1,29 @@
+of \(T\). Let \(c_{i}\), \(\ldots\), \(c_{k}\) be the distinct characteristic values of \(T\). For each \(i\), let \(W_{i}\) be the space of characteristic vectors associated with the characteristic value \(c_{i}\), and let \(\otimes_{i}\) be an ordered basis for \(W_{i}\). The lemma before Theorem 2 tells us that \(\otimes^{\prime}=\ (\otimes_{i_{1}}\ldots\), \(\otimes_{k})\) is an ordered basis for \(W\). In particular,
+
+\[\dim\ W=\dim\ W_{1}+\ \cdots\ +\ dim\ W_{k}.\]
+
+Let \(\otimes^{\prime}=\ \{\alpha_{1},\ldots,\alpha_{r}\}\) so that the first few \(\alpha\)'s form the basis \(\otimes_{1}\), the next few \(\otimes_{2}\), and so on. Then
+
+\[T\alpha_{i}=\ t_{i}\alpha_{i},\qquad i=\ 1,\ .\ .\ .\ ,\ r\]
+
+where \((t_{1},\ldots\), \(t_{r})=(c_{1},\ c_{1},\ldots\), \(c_{1},\ldots\), \(c_{k},\ c_{k},\ c_{k},\ .\ .\ .\ ,\ c_{k})\) with \(c_{i}\) repeated \(\dim\ W_{i}\) times.
+
+Now \(W\) is invariant under \(T\), since for each \(\alpha\) in \(W\) we have
+
+\[\begin{array}{r@{\ =\ }l}\alpha\ =\ &x_{1}\alpha_{1}+\ \cdots\ +\ x_{r}\alpha_{r}\\ T\alpha\ =\ &t_{1}x_{1}\alpha_{1}+\ \cdots\ +\ t_{r}x\alpha_{r}.\end{array}\]
+
+Choose any other vectors \(\alpha_{r+1}\), \(\ldots\), \(\alpha_{n}\) in \(V\) such that \(\otimes=\ \{\alpha_{1},\ldots,\alpha_{n}\}\) is a basis for \(V\). The matrix of \(T\) relative to \(\otimes\) has the block form (6-10), and the matrix of the restriction operator \(T_{W}\) relative to the basis \(\otimes^{\prime}\) is
+
+\[B=\begin{bmatrix}t_{1}&0&\cdots&0\\ 0&t_{2}&\cdots&0\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&t_{r}\end{bmatrix}.\]
+
+The characteristic polynomial of \(B\) (i.e., of \(T_{W}\)) is
+
+\[g=\ (x\ -\ c_{1})^{\epsilon_{1}}\ \cdots\ (x\ -\ c_{k})^{\epsilon_{k}}\]
+
+where \(\epsilon_{i}=\dim\ W_{i}\). Furthermore, \(g\) divides \(f\), the characteristic polynomial for \(T\). Therefore, the multiplicity of \(c_{i}\) as a root of \(f\) is at least \(\dim\ W_{i}\).
+
+All of this should make Theorem 2 transparent. It merely says that \(T\) is diagonalizable if and only if \(r=n\), if and only if \(e_{1}+\ \cdots\ +\ e_{k}=n\). It does not help us too much with the non-diagonalizable case, since we don't know the matrices \(C\) and \(D\) of (6-10).
+
+**Definition.**_Let \(W\) be an invariant subspace for_ T _and let \(\alpha\) be a vector in_ V_. The_ T-**conductor of \(\alpha\) into**\(W\) is the set \(\mathbb{S}_{\mathrm{T}}(\alpha;W)\), which consists of all polynomials \(g\) (_over the scalar field_) such that \(\mathrm{g}(T)\alpha\) is in_ W_._
+
+Since the operator \(T\) will be fixed throughout most discussions, we shall usually drop the subscript \(T\) and write \(S(\alpha;W)\). The authors usually call that collection of polynomials the 'stuffer' (_das einstopfende Ideal_). 'Conductor' is the more standard term, preferred by those who envision a less aggressive operator \(g(T)\), gently leading the vector \(\alpha\) into \(W\). In the special case \(W\) = \(\{0\}\) the conductor is called the _T-**annihilator of \(\alpha\) 

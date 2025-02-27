@@ -1,0 +1,35 @@
+_Remark 4_.: Eigenvectors of \(AA^{\rm T}\) and \(A^{\rm T}A\) must go into the columns of \(U\) and \(V\):
+
+\[AA^{\rm T}=(U\Sigma V^{\rm T})(V\Sigma^{\rm T}U^{\rm T})=U\Sigma\Sigma^{\rm T}U^{ \rm T}\quad\text{and, similarly,}\quad A^{\rm T}A=V\Sigma^{\rm T}\Sigma V^{\rm T}.\] (1)
+
+\(U\) _must be the eigenvector matrix for \(AA^{\rm T}\)._ The eigenvalue matrix in the middle is \(\Sigma\Sigma^{\rm T}\)--which is \(m\) by \(m\) with \(\sigma_{1}^{2},\ldots,\sigma_{r}^{2}\) on the diagonal.
+
+From the \(A^{\rm T}A=V\Sigma^{\rm T}\Sigma V^{\rm T}\), the \(V\) _matrix must be the eigenvector matrix for \(A^{\rm T}A\)_. The diagonal matrix \(\Sigma^{\rm T}\Sigma\) has the same \(\sigma_{1}^{2},\ldots,\sigma_{r}^{2}\), but it is \(n\) by \(n\).
+
+_Remark 5_.: Here is the reason that \(Av_{j}=\sigma_{j}u_{j}\). Start with \(A^{\rm T}Av_{j}=\sigma_{j}^{2}v_{j}\):
+
+\[\text{\bf Multiply by }A\qquad AA^{\rm T}Av_{j}=\sigma_{j}^{2}Av_{j}\] (2)
+
+This says that \(Av_{j}\) is an eigenvector of \(AA^{\rm T}\)! We just moved parentheses to \((AA^{\rm T})(Av_{j})\). The length of this eigenvector \(Av_{j}\) is \(\sigma_{j}\), because
+
+\[v^{\rm T}A^{\rm T}Av_{j}=\sigma_{j}^{2}v_{j}^{\rm T}v_{j}\qquad\text{gives} \qquad\|Av_{j}\|^{2}=\sigma_{j}^{2}.\]
+
+So the unit eigenvector is \(Av_{j}/\sigma_{j}=u_{j}\). **In other words, \(AV=U\Sigma\)**.
+
+**Example 1**.: This \(A\) has only one column: rank \(r=1\). Then \(\Sigma\) has only \(\sigma_{1}=3\):
+
+\[\text{\bf SVD}\qquad A=\begin{bmatrix}-1\\ 2\\ 2\end{bmatrix}=\begin{bmatrix}-\frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\ \frac{2}{3}&-\frac{1}{3}&\frac{2}{3}\\ \frac{2}{3}&\frac{2}{3}&-\frac{1}{3}\end{bmatrix}\begin{bmatrix}3\\ 0\\ 0\end{bmatrix}\begin{bmatrix}1\\ 1\end{bmatrix}=U_{3\times 3}\Sigma_{3\times 1}V_{1\times 1}^{\rm T}.\]
+
+\(A^{\rm T}A\) is 1 by 1, whereas \(AA^{\rm T}\) is 3 by 3. They both have eigenvalue 9 (whose square root is the 3 in \(\Sigma\)). The two zero eigenvalues of \(AA^{\rm T}\) leave some freedom for the eigenvectors in columns 2 and 3 of \(U\). We kept that matrix orthogonal.
+
+**Example 2**.: Now \(A\) has rank 2, and \(AA^{\rm T}=\begin{bmatrix}2&-1\\ -1&2\end{bmatrix}\) with \(\lambda=3\) and 1:
+
+\[\begin{bmatrix}-1&1&0\\ 0&-1&1\end{bmatrix}=U\Sigma V^{\rm T}=\frac{1}{\sqrt{2}}\begin{bmatrix}-1&1\\ 1&1\end{bmatrix}\begin{bmatrix}\sqrt{3}&0&0\\ 0&1&0\end{bmatrix}\begin{bmatrix}1&-2&1\\ -1&0&1\end{bmatrix}\begin{array}{c}/\sqrt{6}\\ /\sqrt{2}\\ 1&1&1\end{bmatrix}\begin{array}{c}/\sqrt{2}\\ /\sqrt{3}\end{array}.\]
+
+Notice \(\sqrt{3}\) and \(\sqrt{1}\). The columns of \(U\) are _left_ singular vectors (unit eigenvectors of \(AA^{\rm T}\)). The columns of \(V\) are _right_ singular vectors (unit eigenvectors of \(A^{\rm T}A\)).
+
+### Application of the SVD
+
+We will pick a few important applications, after emphasizing one key point. The SVD is terrific for numerically stable computations. because \(U\) and \(V\) are orthogonal matrices. They never change the length of a vector. Since \(\|Ux\|^{2}=x^{\rm T}U^{\rm T}Ux=\|x\|^{2}\), multiplication by \(U\) cannot destroy the scaling.
+
+ 

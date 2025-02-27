@@ -1,0 +1,29 @@
+The only eigenvector of \(A\) is \((1,0,0)\). Its Jordan form has only one block, and \(A\) must be similar to \(J_{1}\). The matrix \(B\) has the additional eigenvector \((0,1,0)\), and its Jordan form is \(J_{2}\) with two blocks, As for \(J_{3}=\)_zero matrix_, it is in a family by itself; the only matrix similar to \(J_{3}\) is \(M^{-1}0M=0\). A count of the eigenvectors will determine \(J\) when there is nothing more complicated than a triple eigenvalue.
+
+**Example 6**.: _Application to difference and differential equations_ (_powers and exponentials_). If \(A\) can be diagonalized, the powers of \(A=S\Lambda S^{-1}\) are easy: \(A^{k}=S\Lambda^{k}S^{-1}\). In every case we have Jordan's similarity \(A=MJM^{-1}\), so now we need the powers of \(J\):
+
+\[A^{k}=(MJM^{-1})(MJM^{-1})\cdots(MJM^{-1})=MJ^{k}M^{-1}.\]
+
+\(J\) is block-diagonal, and the powers of each block can be taken separately:
+
+\[(J_{i})^{k}=\begin{bmatrix}\lambda&1&0\\ 0&\lambda&1\\ 0&0&\lambda\end{bmatrix}^{k}=\begin{bmatrix}\lambda^{k}&k\lambda^{k-1}&\frac {1}{2}k(k-1)\lambda^{k-2}\\ 0&\lambda^{k}&k\lambda^{k-1}\\ 0&0&\lambda^{k}\end{bmatrix}.\] (9)
+
+This block \(J_{i}\) will enter when \(\lambda\) is a triple eigenvalue with a single eigenvector. Its exponential is in the solution to the corresponding differential equation:
+
+\[\textbf{Exponential}\qquad e^{J_{i}t}=\begin{bmatrix}e^{\lambda t}&te^{ \lambda t}&\frac{1}{2}t^{2}e^{\lambda t}\\ 0&e^{\lambda t}&te^{\lambda t}\\ 0&0&e^{\lambda t}\end{bmatrix}.\] (10)
+
+Here \(I+J_{i}t+(J_{i}t)^{2}/2!+\cdots\) produces \(1+\lambda t+\lambda^{2}t^{2}/2!+\cdots=e^{\lambda t}\) on the diagonal.
+
+The third column of this exponential comes directly from solving \(du/dt=J_{i}u\):
+
+\[\frac{d}{dt}\begin{bmatrix}u_{1}\\ u_{2}\\ u_{3}\end{bmatrix}=\begin{bmatrix}\lambda&1&0\\ 0&\lambda&1\\ 0&0&\lambda\end{bmatrix}\begin{bmatrix}u_{1}\\ u_{2}\\ u_{3}\end{bmatrix}\quad\text{starting from}\quad u_{0}=\begin{bmatrix}0\\ 0\\ 1\end{bmatrix}.\]
+
+This can be solved by back-substitution (since \(J_{i}\) is triangular). The last equation \(du_{3}/dt=\lambda u_{3}\) yields \(u_{3}=e^{\lambda t}\). The equation for \(u_{2}\) is \(du_{2}/dt=\lambda u_{2}+u_{3}\), and its solution is \(te^{\lambda t}\). The top equation is \(du_{1}/dt=\lambda u_{1}+u_{2}\), and its solution is \(\frac{1}{2}t^{2}e^{\lambda t}\). When \(\lambda\) has multiplicity \(m\) with only one eigenvector, the extra factor \(t\) appears \(m-1\) times.
+
+These powers and exponentials of \(J\) are a part of the solutions \(u_{k}\) and \(u(t)\). The other part is the \(M\) that connects the original \(A\) to the more convenient matrix \(J\):
+
+\[\begin{array}{llll}\text{if}&u_{k+1}=Au_{k}&\text{then}&u_{k}=A^{k}u_{0}=MJ^ {k}M^{-1}u_{0}\\ \text{if}&du/dt=Au&\text{then}&u(t)=e^{\lambda t}u(0)=Me^{Jt}M^{-1}u(0).\end{array}\]
+
+When \(M\) and \(J\) are \(S\) and \(\Lambda\) (the diagonalizable case) those are the formulas of Sections 5.3 and 5.4. Appendix B returns to the nondiagonalizable case, and shows how the Jordan form can be reached. I hope the following table will be a convenient summary.
+
+ 

@@ -1,0 +1,22 @@
+of the game. \(X\) and \(Y\) have billions of pure strategies. I do not see much of a role for chance. If white can find a winning strategy or if black can find a drawing strategy--neither has ever been found--that would effectively end the game of chess. You could play it like tic-tac-toe, but the excitement would go away.
+
+Bridge does contain some deception--as in a finesse. It counts as a matrix game, but \(m\) and \(n\) are again fantastically big. Perhaps separate parts of bridge could be analyzed for an optimal strategy. The same is true in baseball, where the pitcher and batter try to outguess each other on the choice of pitch. (Or the catcher tries to guess when the runner will steal. A pitchout every time will walk the batter, so there must be an optimal frequency--depending on the base runner and on the situation.) Again a small part of the game could be isolated and analyzed.
+
+On the other hand, _blackjack is not a matrix game_ (in a casino) because the house follows fixed rules. My friend Ed Thorp found a winning strategy by counting high cards--forcing more shuffling and more decks at Las Vegas. There was no element of chance, and no mixed strategy \(x^{*}\). The best-seller _Bringing Down the House_ tells how MIT students made a lot of money (while not doing their homework).
+
+There is also the _Prisoner's Dilemma_, in which two accomplices are separately offered the same deal: Confess and you are free, provided your accomplice does not confess (the accomplice then gets 10 years). If both confess, each gets 6 years. If neither confesses, only a minor crime (2 years each) can be proved. What to do? The temptation to confess is very great, although if they could depend on each other they would hold out. This is not a zero-sum game; both can lose.
+
+One example of a matrix game is _poker_. Bluffing is essential, and to be effective it has to be unpredictable. (If your opponent finds a pattern, you lose.) The probabilities for and against bluffing will depend on the cards that are seen, and on the bets. In fact, the number of alternatives again makes it impractical to find an absolutely optimal strategy \(x^{*}\). A good poker player must come pretty close to \(x^{*}\), and we can compute it exactly if we accept the following enormous simplification of the game:
+
+\begin{tabular}{l l}
+**Strategies** & (Row 1) If \(X\) bets, \(Y\) folds. \\
+**for**\(Y\) & (Row 2) If \(X\) bets, \(Y\) matches the extra \(\$2\). \\
+**Strategies** & (1) Bet the extra \(\$2\) on a king and fold on a jack. \\
+**for**\(X\) & (2) Bet the extra \(\$2\) in either case (bluffing). \\ \end{tabular}
+
+\begin{tabular}{l l}
+**Strategies** & (2) Bet the extra \(\$2\) in either case (bluffing). \\
+**for**\(X\) & (3) Fold in either case, and lose \(\$1\) (foolish). \\
+**(4) Fold on a king and bet on a jack (foolish).** \\ \end{tabular}
+
+ 

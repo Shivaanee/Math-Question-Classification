@@ -1,0 +1,15 @@
+diagonalizable, and \(D-D\) is diagonalizable. Since \(N\) and \(N^{\prime}\) are both nilpotent and they commute, the operator \((N^{\prime}-N)\) is nilpotent; for, using the fact that \(N\) and \(N^{\prime}\) commute
+
+\[(N^{\prime}-N)^{r}=\sum_{j=0}^{r}\binom{r}{j}\,(N^{\prime})^{r-i}(-N)^{j}\]
+
+and so when \(r\) is sufficiently large every term in this expression for \((N^{\prime}-N)^{r}\) will be 0. (Actually, a nilpotent operator on an \(n\)-dimensional space must have its \(n\)th power 0; if we take \(r=2n\) above, that will be large enough. It then follows that \(r=n\) is large enough, but this is not obvious from the above expression.) Now \(D-D^{\prime}\) is a diagonalizable operator which is also nilpotent. Such an operator is obviously the zero operator; for since it is nilpotent, the minimal polynomial for this operator is of the form \(x^{r}\) for some \(r\leq m\); but then since the operator is diagonalizable, the minimal polynomial cannot have a repeated root; hence \(r=1\) and the minimal polynomial is s:mply \(x\), which says the operator is 0. Thus we see that \(D=D^{\prime}\) and \(N=N^{\prime}\).
+
+**Corollary.**_Let \(\mathrm{V}\) be a finite-dimensional vector space over an algebraically closed field \(\mathrm{F}\), e.g., the field of complex numbers. Then every linear operator \(\mathrm{T}\) on \(\mathrm{V}\) can be written as the sum of a diagonalizable operator \(\mathrm{D}\) and a nilpotent operator \(\mathrm{N}\) which commute. These operators \(\mathrm{D}\) and \(\mathrm{N}\) are unique and each is a polynomial in \(\mathrm{T}\)._
+
+From these results, one sees that the study of linear operators on vector spaces over an algebraically closed field is essentially reduced to the study of nilpotent operators. For vector spaces over non-algebraically closed fields, we still need to find some substitute for characteristic values and vectors. It is a very interesting fact that these two problems can be handled simultaneously and this is what we shall do in the next chapter.
+
+In concluding this section, we should like to give an example which illustrates some of the ideas of the primary decomposition theorem. We have chosen to give it at the end of the section since it deals with differential equations and thus is not purely linear algebra.
+
+**Example 14**: In the primary decomposition theorem, it is not necessary that the vector space \(V\) be finite dimensional, nor is it necessary for parts (i) and (ii) that \(p\) be the minimal polynomial for \(T\). If \(T\) is a linear operator on an arbitrary vector space and _if_ there is a monic polynomial \(p\) such that \(p(T)=0\), then parts (i) and (ii) of Theorem 12 are valid for \(T\) with the proof which we gave.
+
+Let \(n\) be a positive integer and let \(V\) be the space of all \(n\) times continuously differentiable functions \(f\) on the real line which satisfy the differential equation 

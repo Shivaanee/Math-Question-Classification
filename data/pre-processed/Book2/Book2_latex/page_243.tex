@@ -1,0 +1,21 @@
+Another simple approach for exploiting sparsity of \(A\) is to solve the normal equations \(A^{T}A\hat{x}=A^{T}b\) by solving a larger (but sparse) system of equations,
+
+\[\left[\begin{array}{cc}0&A^{T}\\ A&I\end{array}\right]\left[\begin{array}{c}\hat{x}\\ \hat{y}\end{array}\right]=\left[\begin{array}{c}0\\ b\end{array}\right].\] (12.11)
+
+This is a square set of \(m+n\) linear equations. Its coefficient matrix is sparse when \(A\) is sparse. If \((\hat{x},\hat{y})\) satisfies these equations, it is easy to see that \(\hat{x}\) satisfies (12.11); conversely, if \(\hat{x}\) satisfies the normal equations, \((\hat{x},\hat{y})\) satisfies (12.11) with \(\hat{y}=b-A\hat{x}\). Any method for solving a sparse system of linear equations can be used to solve (12.11).
+
+Matrix least squares.A simple extension of the least squares problem is to choose the \(n\times k\)_matrix_\(X\) so as to minimize \(\|AX-B\|^{2}\). Here \(A\) is an \(m\times n\) matrix and \(B\) is an \(m\times k\) matrix, and the norm is the matrix norm. This is sometimes called the _matrix least squares problem_. When \(k=1\), \(x\) and \(b\) are vectors, and the matrix least squares problem reduces to the usual least squares problem.
+
+The matrix least squares problem is in fact nothing but a set of \(k\) ordinary least squares problems. To see this, we note that
+
+\[\|AX-B\|^{2}=\|Ax_{1}-b_{1}\|^{2}+\cdots+\|Ax_{k}-b_{k}\|^{2},\]
+
+where \(x_{j}\) is the \(j\)th column of \(X\) and \(b_{j}\) is the \(j\)th column of \(B\). (Here we use the property that the square of the matrix norm is the sum of the squared norms of the columns of the matrix.) So the objective is a sum of \(k\) terms, with each term depending on only one column of \(X\). It follows that we can choose the columns \(x_{j}\) independently, each one by minimizing its associated term \(\|Ax_{j}-b_{j}\|^{2}\). Assuming that \(A\) has linearly independent columns, the solution is \(\hat{x}_{j}=A^{\dagger}b_{j}\). The solution of the matrix least squares problem is therefore
+
+\[\hat{X} = \left[\begin{array}{cccc}\hat{x}_{1}&\cdots&\hat{x}_{k}\end{array}\right]\] (12.12) \[= \left[\begin{array}{cccc}A^{\dagger}b_{1}&\cdots&A^{\dagger}b_{ k}\end{array}\right]\] \[= A^{\dagger}\left[\begin{array}{cccc}b_{1}&\cdots&b_{k}\end{array}\right]\] \[= A^{\dagger}B.\]
+
+The very simple solution \(\hat{X}=A^{\dagger}B\) of the matrix least squares problem agrees with the solution of the ordinary least squares problem when \(k=1\) (as it must). Many software packages for linear algebra use the backslash operator \(A\backslash B\) to denote \(A^{\dagger}B\), but this is not standard mathematical notation.
+
+The matrix least squares problem can be solved efficiently by exploiting the fact that algorithm 12.1 is another example of a factor-solve algorithm. To compute \(\hat{X}=A^{\dagger}B\) we carry out the QR factorization of \(A\) once; we carry out steps 2 and 3 of algorithm 12.1 for each of the \(k\) columns of \(B\). The total cost is \(2mn^{2}+k(2mn+n^{2})\) flops. When \(k\) is small compared to \(n\) this is roughly \(2mn^{2}\) flops, the same cost as solving a single least squares problem (_i.e._, one with a vector right-hand side).
+
+ 

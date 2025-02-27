@@ -1,0 +1,29 @@
+actual value of the associated response variables, \(y^{(1)},\ldots,y^{(N)}\), then our _prediction errors_ or _residuals_ are
+
+\[r^{(i)}=y^{(i)}-\hat{y}^{(i)},\quad i=1,\ldots,N.\]
+
+(Some authors define the prediction errors as \(\hat{y}^{(i)}-y^{(i)}\).)
+
+We can express this using compact matrix-vector notation. We form the \(n\times N\) feature matrix \(X\) with columns \(x^{(1)},\ldots,x^{(N)}\). We let \(y^{\rm d}\) denote the \(N\)-vector whose entries are the actual values of the response for the \(N\) examples. (The superscript 'd' stands for 'data'.) We let \(\hat{y}^{\rm d}\) denote the \(N\)-vector of regression model predictions for the \(N\) examples, and we let \(r^{\rm d}\) denote the \(N\)-vector of residuals or prediction errors. We can then express the regression model predictions for this data set in matrix-vector form as
+
+\[\hat{y}^{\rm d}=X^{T}\beta+v{\bf 1}.\]
+
+The vector of \(N\) prediction errors for the examples is given by
+
+\[r^{\rm d}=y^{\rm d}-\hat{y}^{\rm d}=y^{\rm d}-X^{T}\beta-v{\bf 1}.\]
+
+We can include the offset \(v\) in the regression model by including an additional feature equal to one as the first entry of each feature vector:
+
+\[\hat{y}^{\rm d}=\left[\begin{array}{c}{\bf 1}^{T}\\ X\end{array}\right]^{T}\left[\begin{array}{c}v\\ \beta\end{array}\right]=\tilde{X}^{T}\tilde{\beta},\]
+
+where \(\tilde{X}\) is the new feature matrix, with a new first row of ones, and \(\tilde{\beta}=(v,\beta)\) is the vector of regression model parameters. This is often written without the tildes, as \(\hat{y}^{\rm d}=X^{T}\beta\), by simply including the feature one as the first feature.
+
+The equation above shows that the \(N\)-vector of predictions for the \(N\) examples is a linear function of the model parameters \((v,\beta)\). The \(N\)-vector of prediction errors is an affine function of the model parameters.
+
+### 8.3 Systems of linear equations
+
+Consider a set (also called a system) of \(m\) linear equations in \(n\) variables or unknowns \(x_{1},\ldots,x_{n}\):
+
+\[A_{11}x_{1}+A_{12}x_{2}+\cdots+A_{1n}x_{n} = b_{1}\] \[A_{21}x_{1}+A_{22}x_{2}+\cdots+A_{2n}x_{n} = b_{2}\] \[\vdots\] \[A_{m1}x_{1}+A_{m2}x_{2}+\cdots+A_{mn}x_{n} = b_{m}.\]
+
+The numbers \(A_{ij}\) are called the _coefficients_ in the linear equations, and the numbers \(b_{i}\) are called the _right-hand sides_ (since by tradition, they appear on the right-hand 

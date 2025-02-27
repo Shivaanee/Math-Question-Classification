@@ -1,0 +1,28 @@
+
+
+### The net current into every node is zero. Flow in \(=\) Flow out.
+
+This law can only be satisfied if the total current from outside is \(f_{1}+f_{2}+f_{3}+f_{4}=0\). With \(f=0\), the law \(A^{\mathrm{T}}y=0\) is satisfied by _a current that goes around a loop_.
+
+### Spanning Trees and Independent Rows
+
+Every component of \(y_{1}\) and \(y_{2}\) in the left nullspace is \(1\) or \(-1\) or \(0\) (from loop flows). The same is true of \(x=(1,1,1,1)\) in the nullspace, and all the entries in \(PA=LDU\)! The key point is that every elimination step has a meaning for the graph.
+
+You can see it in the first step for our matrix \(A\): _subtract row \(1\) from row \(2\)_. This replaces edge \(2\) by a new edge "\(1\) minus \(2\)": That elimination step destroys an edge and
+
+\[\begin{array}{ccccc}\mathrm{edge}\ 1&&&&\mathrm{row}\ 1&-1&1&0&0\\ \mathrm{row}\ 2&-1&0&1&0\\ \mathrm{row}\ 1&-2&\mathbf{0}&\mathbf{1}&-\mathbf{1}&\mathbf{0}\end{array}\]
+
+creates a new edge. Here the new edge "\(1-2\)" is just the old edge \(3\) in the opposite direction. The next elimination step will produce zeros in row \(3\) of the matrix. This shows that rows \(1\), \(2\), \(3\) are dependent. _Rows are dependent if the corresponding edges contain a loop_.
+
+At the end of elimination we have a full set of \(r\) independent rows. **Those \(r\) edges form a tree--a graph with no loops**. Our graph has \(r=3\), and edges \(1\), \(2\), \(4\) form one possible tree. The full name is _spanning tree_ because the tree "spans" all nodes of the graph. A spanning tree has \(n-1\) edges if the graph is connected, and including one more edge will produce a loop.
+
+In the language of linear algebra, \(n-1\) is the rank of the incidence matrix \(A\). The row space has dimension \(n-1\). The spanning tree from elimination gives a basis for that row space--each edge in the tree corresponds to a row in the basis.
+
+The fundamental theorem of linear algebra connects the dimensions of the subspaces:
+
+**Nullspace:**: dimension \(1\), contains \(x=(1,\ldots,1)\).
+**Column space:**: dimension \(r=n-1\), any \(n-1\) columns are independent.
+**Row space:**: dimension \(r=n-1\), independent rows from any spanning tree.
+**Left nullspace:**: dimension \(m-r=m-n+1\), contains \(y\)'s from the loops.
+
+Those four lines give _Euler's formula_, which in some way is the first theorem in topology. It counts zero-dimensional nodes minus one-dimensional edges plus two-dimensional

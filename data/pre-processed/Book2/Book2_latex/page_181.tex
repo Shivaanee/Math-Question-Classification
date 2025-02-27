@@ -1,0 +1,18 @@
+
+Example.As a simple example, we consider the case with \(m=1\) (kilogram), \(\eta=1\) (Newtons per meter per second), and sampling period \(h=0.01\) (seconds). The external force is
+
+\[f(\tau)=\left\{\begin{array}{rl}0.0&0.0\leq\tau<0.5\\ 1.0&0.5\leq\tau<1.0\\ -1.3&1.0\leq\tau<1.4\\ 0.0&1.4\leq\tau.\end{array}\right.\]
+
+We simulate this system for a period of 2.5 seconds, starting from initial state \(x_{1}=(0,0)\), which corresponds to the mass starting at rest (zero velocity) at position 0. The simulation involves iterating the dynamics equation from \(k=1\) to \(k=250\). Figure 9.7 shows the force, position, and velocity of the mass, with the axes labeled using continuous time \(\tau\).
+
+### 9.5 Supply chain dynamics
+
+The dynamics of a supply chain can often be modeled using a linear dynamical system. (This simple model does not include some important aspects of a real supply chain, for example limits on storage at the warehouses, or the fact that demand fluctuates.) We give a simple example here.
+
+We consider a supply chain for a single divisible commodity (say, oil or gravel, or discrete quantities so small that their quantities can be considered real numbers). The commodity is stored at \(n\) warehouses or storage locations. Each of these locations has a target (desired) level or amount of the commodity, and we let the \(n\)-vector \(x_{t}\) denote the _deviations_ of the levels of the commodities from their target levels. For example, \((x_{5})_{3}\) is the actual commodity level at location 3, in period 5, minus the target level for location 3. If this is positive it means we have more than the target level at the location; if it is negative, we have less than the target level at the location.
+
+The commodity is moved or transported in each period over a set of \(m\) transportation links between the storage locations, and also enters and exits the nodes through purchases (from suppliers) and sales (to end-users). The purchases and sales are given by the \(n\)-vectors \(p_{t}\) and \(s_{t}\), respectively. We expect these to be positive; but they can be negative if we include returns. The net effect of the purchases and sales is that we add \((p_{t}-s_{t})_{i}\) of the commodity at location \(i\). (This number is negative if we sell more than we purchase at the location.)
+
+We describe the links by the \(n\times m\) incidence matrix \(A^{\rm sc}\) (see SS7.3). The direction of each link does not indicate the direction of commodity flow; it only sets the _reference direction_ for the flow: Commodity flow in the direction of the link is considered positive and commodity flow in the opposite direction is considered negative. We describe the commodity flow in period \(t\) by the \(m\)-vector \(f_{t}\). For example, \((f_{6})_{2}=-1.4\) means that in time period 6, 1.4 units of the commodity are moved along link 2 in the direction opposite the link direction (since the flow is negative). The \(n\)-vector \(A^{\rm sc}f_{t}\) gives the net flow of the commodity into the \(n\) locations, due to the transport across the links.
+
+ 

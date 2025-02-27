@@ -1,0 +1,21 @@
+
+
+## Chapter 12 Least squares
+
+In this chapter we look at the powerful idea of finding approximate solutions of over-determined systems of linear equations by minimizing the sum of the squares of the errors in the equations. The method, and some extensions we describe in later chapters, are widely used in many application areas. It was discovered independently by the mathematicians Carl Friedrich Gauss and Adrien-Marie Legendre around the beginning of the 19th century.
+
+### 12.1 Least squares problem
+
+Suppose that the \(m\times n\) matrix \(A\) is tall, so the system of linear equations \(Ax=b\), where \(b\) is an \(m\)-vector, is over-determined, _i.e._, there are more equations (\(m\)) than variables to choose (\(n\)). These equations have a solution only if \(b\) is a linear combination of the columns of \(A\).
+
+For most choices of \(b\), however, there is no \(n\)-vector \(x\) for which \(Ax=b\). As a compromise, we seek an \(x\) for which \(r=Ax-b\), which we call the _residual_ (for the equations \(Ax=b\)), is as small as possible. This suggests that we should choose \(x\) so as to minimize the norm of the residual, \(\|Ax-b\|\). If we find an \(x\) for which the residual vector is small, we have \(Ax\approx b\), _i.e._, \(x\) almost satisfies the linear equations \(Ax=b\). (Some authors define the residual as \(b-Ax\), which will not affect us since \(\|Ax-b\|=\|b-Ax\|\).)
+
+Minimizing the norm of the residual and its square are the same, so we can just as well minimize
+
+\[\|Ax-b\|^{2}=\|r\|^{2}=r_{1}^{2}+\cdots+r_{m}^{2},\]
+
+the sum of squares of the residuals. The problem of finding an \(n\)-vector \(\hat{x}\) that minimizes \(\|Ax-b\|^{2}\), over all possible choices of \(x\), is called the _least squares problem_. It is denoted using the notation
+
+\[\mbox{minimize}\quad\|Ax-b\|^{2},\] (12.1)
+
+where we should specify that the _variable_ is \(x\) (meaning that we should choose \(x\)). The matrix \(A\) and the vector \(b\) are called the _data_ for the problem (12.1), which

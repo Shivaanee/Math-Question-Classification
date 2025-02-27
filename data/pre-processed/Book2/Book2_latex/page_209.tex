@@ -1,0 +1,19 @@
+
+
+## Chapter 11 Matrix inverses
+
+In this chapter we introduce the concept of matrix inverse. We show how matrix inverses can be used to solve linear equations, and how they can be computed using the QR factorization.
+
+### 11.1 Left and right inverses
+
+Recall that for a number \(a\), its (multiplicative) inverse is the number \(x\) for which \(xa=1\), which we usually denote as \(x=1/a\) or (less frequently) \(x=a^{-1}\). The inverse \(x\) exists provided \(a\) is nonzero. For matrices the concept of inverse is more complicated than for scalars; in the general case, we need to distinguish between left and right inverses. We start with the left inverse.
+
+Left inverse.A matrix \(X\) that satisfies
+
+\[XA=I\]
+
+is called a _left inverse_ of \(A\). The matrix \(A\) is said to be _left-invertible_ if a left inverse exists. Note that if \(A\) has size \(m\times n\), a left inverse \(X\) will have size \(n\times m\), the same dimensions as \(A^{T}\).
+
+Examples.* If \(A\) is a number (_i.e._, a \(1\times 1\) matrix), then a left inverse \(X\) is the same as the inverse of the number. In this case, \(A\) is left-invertible whenever \(A\) is nonzero, and it has only one left inverse.
+* Any nonzero \(n\)-vector \(a\), considered as an \(n\times 1\) matrix, is left-invertible. For any index \(i\) with \(a_{i}\neq 0\), the row \(n\)-vector \(x=(1/a_{i})e_{i}^{T}\) satisfies \(xa=1\).
+* The matrix

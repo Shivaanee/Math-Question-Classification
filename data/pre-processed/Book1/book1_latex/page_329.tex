@@ -1,0 +1,24 @@
+
+
+**Property 3\({}^{\prime}\)**: Eigenvectors corresponding to different eigenvalues are orthonormal.
+
+Start with \(Ux=\lambda_{1}x\) and \(Uy=\lambda_{2}y\), and take inner products by Property 1\({}^{\prime}\):
+
+\[x^{\rm H}y=(Ux)^{\rm H}(Uy)=(\lambda_{1}x)^{\rm H}(\lambda_{2}y)=\overline{ \lambda}_{1}\lambda_{2}x^{\rm H}y.\]
+
+Comparing the left to the right, \(\overline{\lambda}_{1}\lambda_{2}=1\) or \(x^{\rm H}y=0\). But Property 2\({}^{\prime}\) is \(\overline{\lambda}_{1}\lambda_{1}=1\), so we cannot also have \(\overline{\lambda}_{1}\lambda_{2}=1\). Thus \(x^{\rm H}y=0\) and the eigenvectors are orthogonal.
+
+**Example 4.**: \(U=\begin{bmatrix}\cos t&-\sin t\\ \sin t&\cos t\end{bmatrix}\) has eigenvalues \(e^{it}\) and \(e^{-it}\).
+
+The orthogonal eigenvectors are \(x=(1,-i)\) and \(y=(1,i)\). (Remember to take conjugates in \(x^{\rm H}y=1+i^{2}=0\).) After division by \(\sqrt{2}\) they are orthonormal.
+
+Here is the most important _unitary matrix_ by far.
+
+**Example 5.**: \(U=\frac{1}{\sqrt{n}}\begin{bmatrix}1&1&\cdot&1\\ 1&w&\cdot&w^{n-1}\\ .&.&.&.\\ 1&w^{n-1}&\cdot&w^{(n-1)^{2}}\end{bmatrix}=\frac{\mbox{\bf Fourier matrix}}{ \sqrt{n}}.\)__
+
+The complex number \(w\) is on the unit circle at the angle \(\theta=2\pi/n\). It equals \(e^{2\pi i/n}\). Its powers are spaced evenly around the circle. That spacing assures that the sum of all \(n\) powers of \(w\)--all the \(n\)th roots of 1--is zero. Algebraically, the sum \(1+w+\cdots+w^{n-1}\) is \((w^{n}-1)/(w-1)\). And \(w^{n}-1\) is zero!
+
+ row 1 of \(U^{\rm H}\) times column 2 of \(U\) is \(\frac{1}{n}(1+w+w^{2}+\cdots+w^{n-1})=\frac{w^{n}-1}{w-1}=0\).
+
+ row \(i\) of \(U^{\rm H}\) times column \(j\) of \(U\) is \(\frac{1}{n}(1+W+W^{2}+\cdots+W^{n-1}
+

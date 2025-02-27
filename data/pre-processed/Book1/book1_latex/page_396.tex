@@ -1,0 +1,21 @@
+3. _Solve_ \(Ay=b\) _to find_ \(U(x)=y_{1}V_{1}(x)+\cdots+y_{n}V_{n}(x)\)_._
+
+Everything depends on step 1. Unless the functions \(V_{j}(x)\) are extremely simple, the other steps will be virtually impossible. And unless some combination of the \(V_{j}\) is close to the true solution \(u(x)\), those steps will be useless. To combine both computability and accuracy, _the key idea that makes finite elements successful is the use of piecewise polynomials as the trial functions \(V(x)\)_.
+
+### Linear Finite Elements
+
+The simplest and most widely used finite element is **piecewise linear**. Place nodes at the interior points \(x_{1}=h,x_{2}=2h,\ldots,x_{n}=nh\), just as for finite differences. Then \(V_{j}\) is the "hat function" that equals 1 at the node \(x_{j}\), and zero at all the other nodes (Figure 6.7a). It is concentrated in a small interval around its node, and it is zero everywhere else (including \(x=0\) and \(x=1\)). Any combination \(y_{1}V_{1}+\cdots+y_{n}V_{n}\) must have the value \(y_{j}\) at node \(j\) (the other \(V\)'s are zero there), so its graph is easy to draw (Figure 6.7b).
+
+Step 2 computes the coefficients \(A_{ij}=\int V_{i}^{\prime}V_{j}^{\prime}dx\) in the "stiffness matrix" \(A\). The slope \(V_{j}^{\prime}\) equals \(1/h\) in the small interval to the left of \(x_{j}\), and \(-1/h\) in the interval to the right. _If these "double intervals" do not overlap, the product \(V_{i}^{\prime}V_{j}^{\prime}\) is zero and \(A_{ij}=0\)_. Each hat function overlaps itself and only two neighbors:
+
+\[\text{Diagonal}\qquad\qquad i=j\qquad\quad A_{ii}=\int V_{i}^{\prime}V_{i}^{ \prime}dx=\int\left(\frac{1}{h}\right)^{2}dx+\int\left(-\frac{1}{h}\right)^{2 }dx=\frac{2}{h}.\]
+
+\[\text{Off-diagonal}\quad i=j\pm 1\quad A_{ij}=\int V_{i}^{\prime}V_{j}^{ \prime}dx=\int\left(\frac{1}{h}\right)\left(\frac{-1}{h}\right)dx=\frac{-1}{h}.\]
+
+Then the stiffness matrix is actually tridiagonal:
+
+\[\text{Stiffness matrix}\qquad A=\frac{1}{h}\left[\begin{matrix}2&-1&&&\\ -1&2&-1&&\\ &-1&2&-1&\\ &&-1&2&-1\\ &&&-1&2\end{matrix}\right].\]
+
+Figure 6.7: Hat functions and their linear combinations.
+
+ 

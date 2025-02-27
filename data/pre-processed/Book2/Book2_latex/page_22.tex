@@ -1,0 +1,14 @@
+addition, \(a_{i}+b_{i}\). The \(i\)th entry of \(b+a\) is \(b_{i}+a_{i}\). For any two numbers we have \(a_{i}+b_{i}=b_{i}+a_{i}\), so the \(i\)th entries of the vectors \(a+b\) and \(b+a\) are the same. This is true for all of the entries, so by the definition of vector equality, we have \(a+b=b+a\).
+
+Verifying identities like the ones above, and many others we will encounter later, can be tedious. But it is important to understand that the various properties we will list can be derived using elementary arguments like the one above. We recommend that the reader select a few of the properties we will see, and attempt to derive them, just to see that it can be done. (Deriving all of them is overkill.)
+
+#### Examples.
+
+* _Displacements._ When vectors \(a\) and \(b\) represent displacements, the sum \(a+b\) is the net displacement found by first displacing by \(a\), then displacing by \(b\), as shown in figure 1.6. Note that we arrive at the same vector if we first displace by \(b\) and then \(a\). If the vector \(p\) represents a position and the vector \(a\) represents a displacement, then \(p+a\) is the position of the point \(p\), displaced by \(a\), as shown in figure 1.7.
+* _Displacements between two points._ If the vectors \(p\) and \(q\) represent the positions of two points in 2-D or 3-D space, then \(p-q\) is the displacement vector from \(q\) to \(p\), as illustrated in figure 1.8.
+* _Word counts._ If \(a\) and \(b\) are word count vectors (using the same dictionary) for two documents, the sum \(a+b\) is the word count vector of a new document created by combining the original two (in either order). The word count difference vector \(a-b\) gives the number of times more each word appears in the first document than the second.
+* _Bill of materials._ Suppose \(q_{1},\ldots,q_{N}\) are \(n\)-vectors that give the quantities of \(n\) different resources required to accomplish \(N\) tasks. Then the sum \(n\)-vector \(q_{1}+\cdots+q_{N}\) gives the bill of materials for completing all \(N\) tasks.
+
+Figure 1.6: _Left._ The lower blue arrow shows the displacement \(a\); the displacement \(b\), shown as the shorter blue arrow, starts from the head of the displacement \(a\) and ends at the sum displacement \(a+b\), shown as the red arrow. _Right._ The displacement \(b+a\).
+
+ 

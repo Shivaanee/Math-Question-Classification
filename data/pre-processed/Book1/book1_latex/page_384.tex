@@ -1,0 +1,37 @@
+
+
+### Problem Set 6.3
+
+**Problems 1-2 compute the SVD of a square singular matrix \(A\).**
+
+**1.** Compute \(A^{\rm T}A\) and its eigenvalues \(\sigma_{1}^{2}\), \(0\) and unit eigenvectors \(v_{1}\), \(v_{2}\):
+
+\[A=\begin{bmatrix}1&4\\ 2&8\end{bmatrix}.\]
+
+**2.** (a) Compute \(AA^{\rm T}\) and its eigenvalues \(\sigma_{1}^{2}\), \(0\) and unit eigenvectors \(u_{1}\), \(u_{2}\).
+
+(b) Choose signs so that \(Av_{1}=\sigma_{1}u_{1}\) and verify the SVD:
+
+\[\begin{bmatrix}1&4\\ 2&8\end{bmatrix}=\begin{bmatrix}u_{1}&u_{2}\end{bmatrix}\begin{bmatrix}\sigma _{1}\\ &0\end{bmatrix}\begin{bmatrix}v_{1}&v_{2}\end{bmatrix}^{\rm T}.\]
+
+(c) Which four vectors give orthonormal bases for \(C(A)\), \(N(A)\), \(C(A^{\rm T})\), \(N(A^{\rm T})\)?
+
+**Problems 3-5 ask for the SVD of matrices of rank 2.**
+
+**3.** Find the SVD from the eigenvectors \(v_{1}\), \(v_{2}\) of \(A^{\rm T}A\) and \(Av_{i}=\sigma_{i}u_{i}\):
+
+\[\mbox{\bf Fibonacci matrix}\qquad A=\begin{bmatrix}1&1\\ 1&0\end{bmatrix}.\]
+
+**4.** Use the SVD part of the MATLAB demo **eigshow** (or Java on the course page web.mit.edu/18.06) to find the same vectors \(v_{1}\) and \(v_{2}\) graphically.
+
+**5.** Compute \(A^{\rm T}A\) and \(AA^{\rm T}\), and their eigenvalues and unit eigenvectors, for
+
+\[A=\begin{bmatrix}1&1&0\\ 0&1&1\end{bmatrix}.\]
+
+Multiply the three matrices \(U\Sigma V^{\rm T}\) to recover \(A\).
+
+**Problems 6-13 bring out the underlying ideas of the SVD.**
+
+**6.** Suppose \(u_{1},\ldots,u_{n}\) and \(v_{1},\ldots,v_{n}\) are orthonormal bases for \({\bf R}^{n}\). Construct the matrix \(A\) that transforms each \(v_{j}\) into \(u_{j}\) to give \(Av_{1}=u_{1},\ldots,Av_{n}=u_{n}\).
+
+**7.** Construct the matrix with rank 1 that has \(Av=12u\) for \(v=\frac{1}{2}(1,1,1,1)\) and \(u=\frac{1}{3}(2,2,1)\). Its only singular value is \(\sigma_{1}=\underline{\underline{\underline{\underline{\underline{\phantom{ \underline{\phantom{\underline{\phantom{\underline{\phantom{\underline{\phantom

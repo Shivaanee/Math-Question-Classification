@@ -1,0 +1,29 @@
+If \(\lambda_{1}>1\), \((I-A)^{-1}\) fails to be nonnegative.
+
+If \(\lambda_{1}=1\), \((I-A)^{-1}\) fails to exist.
+
+If \(\lambda_{1}<1\), \((I-A)^{-1}\) is a converging sum of nonnegative matrices:
+
+\[\textbf{Geometric series}\qquad(I-A)^{-1}=I+A+A^{2}+A^{3}+\cdots.\] (7)
+
+The 3 by 3 example has \(\lambda_{1}=.9\), and output exceeds input. Production can go on.
+
+Those are easy to prove, once we know the main fact about a nonnegative matrix like
+
+\(A\): _Not only is the largest eigenvalue \(\lambda_{1}\) positive, but so is the eigenvector \(x_{1}\)_. Then \((I-A)^{-1}\) has the same eigenvector, with eigenvalue \(1/(1-\lambda_{1})\).
+
+If \(\lambda_{1}\) exceeds 1, that last number is negative. The matrix \((I-A)^{-1}\) will take the positive vector \(x_{1}\) to a negative vector \(x_{1}/(1-\lambda_{1})\). In that case \((I-A)^{-1}\) is definitely not nonnegative. If \(\lambda_{1}=1\), then \(I-A\) is singular. The productive case is \(\lambda_{1}<1\), when the powers of \(A\) go to zero (stability) and the infinite series \(I+A+A^{2}+\cdots\) converges. Multiplying this series by \(I-A\) leaves the identity matrix--all higher powers cancel--so \((I-A)^{-1}\) is a sum of nonnegative matrices, We give two examples:
+
+\[A =\begin{bmatrix}0&2\\ 2&0\end{bmatrix}\quad\text{has $\lambda_{1}=2$ and the economy is lost}\] \[A =\begin{bmatrix}.5&2\\ 0&.5\end{bmatrix}\quad\text{has $\lambda_{1}=\frac{1}{2}$ and we can produce anything.}\]
+
+The matrices \((I-A)^{-1}\) in those two cases are \(-\frac{1}{3}\begin{bmatrix}1&2\\ 2&1\end{bmatrix}\) and \(\begin{bmatrix}2&8\\ 0&2\end{bmatrix}\).
+
+Leontief's inspiration was to find a model that uses genuine data from the real economy. The table for 1958 contained 83 industries in the United States, with a "transactions table" of consumption and production for each one. The theory also reaches beyond \((I-A)^{-1}\), to decide natural prices and questions of optimization. Normally labor is in limited supply and ought to be minimized. And, of course, the economy is not always linear.
+
+**Example 3** (_The prices in a closed input-output model_ ).: The model is called "closed" when everything produced is also consumed. Nothing goes outside the system. In that case \(A\) goes back to a _Markov matrix_. _The columns add up to_ 1. We might be talking about the _value_ of steel and food and labor, instead of the number of units, The vector \(p\) represents prices instead of production levels.
+
+Suppose \(p_{0}\) is a vector of prices. Then \(Ap_{0}\) multiplies prices by amounts to give the value of each product. That is a new set of prices which the system uses for the next set of values \(A^{2}p_{0}\). The question is whether the prices approach equilibrium. Are there prices such that \(p=Ap\), and does the system take us there?
+
+You recognize \(p\) as the (nonnegative) eigenvector of the Markov matrix \(A\), with \(\lambda=1\). It is the steady state \(p_{\infty}\), and it is approached from any starting point \(p_{0}\). By repeating a transaction over and over, the price tends to equilibrium.
+
+ 

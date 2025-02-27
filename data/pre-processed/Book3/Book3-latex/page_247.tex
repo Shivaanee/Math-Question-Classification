@@ -1,0 +1,23 @@
+(7-18) \[V\,=\,V_{1}\,\bigoplus\,\cdots\,\bigoplus\,V_{k}\] and \(f_{i}\) is the minimal polynomial of the operator \(T\,_{i}\), obtained by restricting \(T\) to the (invariant) subspace \(V_{i}\). Apply part (ii) of the present theorem to the operator \(T\,_{i}\). Since its minimal polynomial is a power of the prime \(f_{i}\), the characteristic polynomial for \(T\,_{i}\) has the form \(f_{i}^{i_{i}}\), where \(d_{i}\geq r_{i}\). Obviously
+
+\[d_{i}=\frac{\dim\,\,V_{i}}{\deg f_{i}}\]
+
+and (almost by definition) \(\dim\,V_{i}=\) nullity \(f_{i}(T)^{r_{i}}\). Since \(T\) is the direct sum of the operators \(T\,_{1},\ldots,\,T\,_{k}\), the characteristic polynomial \(f\) is the product
+
+\[f=f_{1}^{d_{1}}\,\cdots\,f_{k}^{d_{k}}.\quad\hbox{\vrule width 7.499886pt height 6. 88pt depth 0.0pt\vrule width 0.0pt height 5.690551pt width 0.0pt}\]
+
+_Corollary_. \(If\)\(T\) is a nilpotent linear operator on a vector space of dimension \(n\), then the characteristic polynomial for \(T\) is \(x^{n}\).
+
+Now let us look at the matrix analogue of the cyclic decomposition theorem. If we have the operator \(T\) and the direct-sum decomposition of Theorem 3, let \(\otimes_{i}\) be the 'cyclic ordered basis'
+
+\[\{\alpha_{i},\,T\alpha_{i_{1}},\ldots,\,T^{k_{i}-1}\alpha_{i}\}\]
+
+for \(Z(\alpha_{i};\,T)\). Here \(k_{i}\) denotes the dimension of \(Z(\alpha_{i};\,T)\), that is, the degree of the annihilator \(p_{i}\). The matrix of the induced operator \(T\,_{i}\) in the ordered basis \(\otimes_{i}\) is the companion matrix of the polynomial \(p_{i}\). Thus, if we let \(\otimes\) be the ordered basis for \(V\) which is the union of the \(\otimes_{i}\) arranged in the order \(\otimes_{1}\), \(\ldots,\,\otimes_{r}\), then the matrix of \(T\) in the ordered basis \(\otimes\) will be
+
+(7-19) \[A\,=\begin{bmatrix}A_{1}&0&\cdots&0\\ 0&A_{2}&\cdots&0\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&A_{r}\end{bmatrix}\]
+
+where \(A\,_{i}\) is the \(k_{i}\times k_{i}\) companion matrix of \(p_{i}\). An \(n\times n\) matrix \(A\), which is the direct sum (7-19) of companion matrices of non-scalar monic polynomials \(p_{1},\ldots,\,p_{r}\) such that \(p_{i+1}\) divides \(p_{i}\) for \(i=1,\ldots,\,r-1\), will be said to be in **rational form.** The cyclic decomposition theorem tells us the following concerning matrices.
+
+_Theorem 5_. _Let \(F\) be a field and let \(B\) be an \(n\times n\) matrix over \(F\). Then \(B\) is similar over the field \(F\) to one and only one matrix which is in rational form._
+
+Proof.: Let \(T\) be the linear operator on \(F^{n}\) which is represented by \(B\) in the standard ordered basis. As we have just observed, there is some ordered basis for \(F^{n}\) in which \(T\) is represented by a matrix \(A\) in rational form. Then \(B\) is similar to this matrix \(A\). Suppose \(B\) is similar over \(F\) to 

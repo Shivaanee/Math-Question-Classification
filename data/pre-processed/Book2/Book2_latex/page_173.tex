@@ -1,0 +1,20 @@
+
+
+## Chapter 9 Linear dynamical systems
+
+In this chapter we consider a useful application of matrix-vector multiplication, which is used to describe many systems or phenomena that change or evolve over time.
+
+### 9.1 Linear dynamical systems
+
+Suppose \(x_{1},x_{2},\ldots\) is a sequence of \(n\)-vectors. The index (subscript) denotes time or period, and is written as \(t\); \(x_{t}\), the value of the sequence at time (or period) \(t\), is called the _state_ at time \(t\). We can think of \(x_{t}\) as a vector that changes over time, _i.e._, one that changes dynamically. In this context, the sequence \(x_{1},x_{2},\ldots\) is sometimes called a _trajectory_ or _state trajectory_. We sometimes refer to \(x_{t}\) as the _current state_ of the system (implicitly assuming the current time is \(t\)), and \(x_{t+1}\) as the _next state_, \(x_{t-1}\) as the _previous state_, and so on.
+
+The state \(x_{t}\) can represent a portfolio that changes daily, or the positions and velocities of the parts of a mechanical system, or the quarterly activity of an economy. If \(x_{t}\) represents a portfolio that changes daily, \((x_{5})_{3}\) is the amount of asset 3 held in the portfolio on (trading) day 5.
+
+A _linear dynamical system_ is a simple model for the sequence, in which each \(x_{t+1}\) is a linear function of \(x_{t}\):
+
+\[x_{t+1}=A_{t}x_{t},\quad t=1,2,\ldots.\] (9.1)
+
+Here the \(n\times n\) matrices \(A_{t}\) are called the _dynamics matrices_. The equation above is called the _dynamics_ or _update_ equation, since it gives us the next value of \(x\), _i.e._, \(x_{t+1}\), as a function of the current value \(x_{t}\). Often the dynamics matrix does not depend on \(t\), in which case the linear dynamical system is called _time-invariant_.
+
+If we know \(x_{t}\) (and \(A_{t},A_{t+1},\ldots\)) we can determine \(x_{t+1},x_{t+2},\ldots\) simply by iterating the dynamics equation (9.1). In other words: If we know the _current_ value of \(x\), we can find all _future_ values. In particular, we do not need to know the _past_ states. This is why \(x_{t}\) is called the _state_ of the system. It contains all the information needed at time \(t\) to determine the future evolution of the system.
+

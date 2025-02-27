@@ -1,0 +1,31 @@
+Thus \(A_{k}\) is positive definite. Its eigenvalues (not the same \(\lambda_{1}\)!) must be positive. Its determinant is their product, so all upper left determinants are positive.
+
+_If condition III holds, so does condition IV_: According to Section 4.4, the \(k\)th pivot \(d_{k}\) is the ratio of \(\det\!A_{k}\) to \(\det\!A_{k-1}\). If the determinants are all positive, so are the pivots.
+
+_If condition IV holds, so does condition I_: We are given positive pivots, and must deduce that \(x^{\rm T}Ax>0\). This is what we did in the 2 by 2 case, by completing the square. The pivots were the numbers outside the squares. To see how that happens for symmetric matrices of any size, we go back to _elimination on a symmetric matrix_: \(A=LDL^{\rm T}\).
+
+**Example 1**.: Positive pivots \(2\), \(\frac{3}{2}\), and \(\frac{4}{3}\):
+
+\[A=\left[\begin{matrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{matrix}\right]=\left[\begin{matrix}1&0&0\\ -\frac{1}{2}&1&0\\ 0&-\frac{2}{3}&1\end{matrix}\right]\left[\begin{matrix}2&&\\ &\frac{3}{2}&\\ &&\frac{4}{3}\end{matrix}\right]\left[\begin{matrix}1&-\frac{1}{2}&0\\ 0&1&-\frac{2}{3}\\ 0&0&1\end{matrix}\right]=LDL^{\rm T}.\]
+
+I want to split \(x^{\rm T}Ax\) into \(x^{\rm T}LDL^{\rm T}x\):
+
+\[\text{If}\quad x=\left[\begin{matrix}u\\ v\\ w\end{matrix}\right],\quad\text{then}\quad L^{\rm T}x=\left[\begin{matrix}1&- \frac{1}{2}&0\\ 0&1&-\frac{2}{3}\\ 0&0&1\end{matrix}\right]\left[\begin{matrix}u\\ v\\ w\end{matrix}\right]=\left[\begin{matrix}u-\frac{1}{2}v\\ v-\frac{2}{3}w\\ w\end{matrix}\right].\]
+
+So \(x^{\rm T}Ax\) is a sum of squares with the pivots \(2\), \(\frac{3}{2}\), and \(\frac{4}{3}\) as coefficients:
+
+\[x^{\rm T}Ax=(L^{\rm T}x)^{\rm T}D(L^{\rm T}x)=\mathbf{2}\left(u-\frac{1}{2}v \right)^{2}+\frac{\mathbf{3}}{2}\left(v-\frac{\mathbf{2}}{3}w\right)^{2}+ \frac{\mathbf{4}}{3}(w)^{2}.\]
+
+Those positive pivots in \(D\) multiply perfect squares to make \(x^{\rm T}Ax\) positive. Thus condition IV implies condition I, and the proof is complete.
+
+It is beautiful that elimination and completing the square are actually the same. Elimination removes \(x_{1}\) from all later equations. Similarly, the first square accounts for all terms in \(x^{\rm T}Ax\) involving \(x_{1}\). The sum of squares has the pivots outside. _The multipliers \(\ell_{ij}\) are inside_! You can see the numbers \(-\frac{1}{2}\) and \(-\frac{2}{3}\) inside the squares in the example.
+
+_Every diagonal entry \(a_{ii}\) must be positive_. As we know from the examples, however, it is far from sufficient to look only at the diagonal entries.
+
+The pivots \(d_{i}\) are not to be confused with the eigenvalues. For a typical positive definite matrix, they are two completely different sets of positive numbers, In our 3 by 3 example, probably the determinant test is the easiest:
+
+\[\text{\bf Determinant test}\qquad\det\!A_{1}=2,\quad\det\!A_{2}=3,\quad\det\!A_ {3}=\det\!A=4.\]
+
+The pivots are the ratios \(d_{1}=2\), \(d_{2}=\frac{3}{2}\), \(d_{3}=\frac{4}{3}\). Ordinarily the eigenvalue test is the longest computation. For this \(A\) we know the \(\lambda\)'s are all positive:
+
+\[\text{\bf Eigenvalue test}\qquad\lambda_{1}=2-\sqrt{2},\quad\lambda_{2}=2, \quad\lambda_{3}=2+\sqrt{2}.\] 

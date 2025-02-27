@@ -1,0 +1,23 @@
+Our total square estimation error is \(\|Ax-y\|^{2}\).
+
+We can minimize this objective analytically. The solution \(\hat{x}\) is found by averaging the values of \(y\) associated with the different entries in \(x\). For example, we estimate Tuesday sales by averaging all the entries in \(y\) that correspond to Tuesdays. (See exercise 15.10.) This simple averaging works well if we have many periods worth of data, _i.e._, if \(T/P\) is large.
+
+A more sophisticated estimate can be found by adding regularization for \(x\) to be smooth, based on the assumption that
+
+\[x_{1}\approx x_{2},\quad\ldots,\quad x_{P-1}\approx x_{P},\quad x_{P}\approx x _{1}.\]
+
+(Note that we include the 'wrap-around' pair \(x_{P}\) and \(x_{1}\) here.) We measure non-smoothness as \(\|D^{\mathrm{circ}}x\|^{2}\), where \(D^{\mathrm{circ}}\) is the \(P\times P\)_circular difference matrix_
+
+\[D^{\mathrm{circ}}=\left[\begin{array}{ccccccc}-1&1&0&\cdots&0&0&0\\ 0&-1&1&\cdots&0&0&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&\vdots\\ 0&0&0&\cdots&-1&1&0\\ 0&0&0&\cdots&0&-1&1\\ 1&0&0&\cdots&0&0&-1\end{array}\right].\]
+
+We estimate the periodic time series by minimizing
+
+\[\|Ax-y\|^{2}+\lambda\|D^{\mathrm{circ}}x\|^{2}.\]
+
+For \(\lambda=0\) we recover the simple averaging mentioned above; as \(\lambda\) gets bigger, the estimated signal becomes smoother, ultimately converging to a constant (which is the mean of the original time series data).
+
+The time series \(A\hat{x}\) is called the _extracted seasonal component_ of the given time series data \(y\) (assuming we are considering yearly variation). Subtracting this from the original data yields the time series \(y-A\hat{x}\), which is called the _seasonally adjusted_ time series.
+
+The parameter \(\lambda\) can be chosen using validation. This can be done by selecting a time interval over which to build the estimate, and another one to validate it. For example, with 4 years of data, we might train our model on the first 3 years of data, and test it on the last year of data.
+
+Example.In figure 15.4 we apply this method to a series of hourly ozone measurements. The top figure shows hourly measurements over a period of 14 days (July 1-14, 2014). We represent these values by a 336-vector \(c\), with \(c_{24(j-1)+i}\), \(i=1,\ldots,24\), defined as the hourly values on day \(j\), for \(j=1,\ldots,14\). As indicated by the gaps in the graph, a number of measurements are missing from the record (only 275 of the \(336=24\times 14\) measurements are available). We use the notation \(M_{j}\subseteq\{1,2,\ldots,24\}\) to denote the set containing the indices of the available measurements on day \(j\). For example, \(M_{8}=\{1,2,3,4,6,7,8,23,24\}\), because on July 8, the measurements at 4AM, and from 8AM to 9PM are missing. The middle and bottom figures show two periodic time series. The time series are parametrized 

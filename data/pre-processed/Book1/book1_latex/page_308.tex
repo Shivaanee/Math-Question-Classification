@@ -1,0 +1,27 @@
+If \(A\) can be diagonalized, \(A=S\Lambda S^{-1}\), then \(du/dt=Au\) has the solution
+
+\[u(t)=e^{At}u(0)=Se^{At}S^{-1}u(0).\] (7)
+
+The columns of \(S\) are the eigenvectors \(x_{1},\ldots,x_{n}\) of \(A\). Multiplying gives
+
+\[\begin{split} u(t)&=\begin{bmatrix}x_{1}&\cdots&x_{n} \\ x_{1}&\cdots&x_{n}\\ &&e^{\lambda_{n}t}\end{bmatrix}S^{-1}u(0)\\ &=c_{1}e^{\lambda_{1}t}x_{1}+\cdots+c_{n}e^{\lambda_{n}t}x_{n}= \text{combination of }e^{\lambda_{1}t}x.\end{split}\] (8)
+
+The constants \(c_{i}\) that match the initial conditions \(u(0)\) are \(c=S^{-1}u(0)\).
+
+This gives a complete analogy with difference equations and \(S\Lambda S^{-1}u_{0}\). In both cases we assumed that \(A\) could be diagonalized. since otherwise it has fewer than \(n\) eigenvectors and we have not found enough special solutions. The missing Solutions do exist, but they are more complicated than pure exponentials \(e^{\lambda_{1}t}x\). They involve "generalized eigenvectors" and factors like \(te^{\lambda_{1}t}\). (To compute this defective case we can use the Jordan form in Appendix B, and find \(e^{It}\).) **The formula \(u(t)=e^{At}u(0)\) remains completely correct**.
+
+The matrix \(e^{At}\) is _never singular_. One proof is to look at its eigenvalues; if \(\lambda\) is an eigenvalue of \(A\), then \(e^{\lambda_{1}t}\) is the corresponding eigenvalue of \(e^{At}\)--and \(e^{\lambda_{1}t}\) can never be zero. Another approach is to compute the determinant of the exponential:
+
+\[\det e^{At}=e^{\lambda_{1}t}e^{\lambda_{2}t}\cdots e^{\lambda_{n}t}=e^{\text{ trace}(At)}.\] (9)
+
+Quick proof that \(e^{At}\) is invertible: _Just recognize \(e^{-At}\) as its inverse_.
+
+This invertibility is fundamental for differential equations. If \(n\) solutions are linearly independent at \(t=0\), _they remain linearly independent forever_. If the initial vectors are \(v_{1},\ldots,v_{n}\), we can put the solutions \(e^{At}v\) into a matrix:
+
+\[\begin{bmatrix}e^{At}v_{1}&\cdots&e^{At}v_{n}\end{bmatrix}=e^{At}\begin{bmatrix} v_{1}&\cdots&v_{n}\end{bmatrix}.\]
+
+The determinant of the left-hand side is the _Wronskian_. It never becomes zero, because it is the product of two nonzero determinants. Both matrices on the right-hand side are invertible.
+
+_Remark_. Not all differential equations come to us as a first-order system \(du/dt=Au\). We may start from a single equation of higher order, like \(y^{\prime\prime\prime}-3y^{\prime\prime}+2y^{\prime}=0\). To convert to a 3 by 3 system, introduce \(v=y^{\prime}\) and \(w=v^{\prime}\) as additional unknowns along with \(y\) itself. Then these two equations combine with the original one to give \(u^{\prime}=Au\):
+
+\[\begin{array}{l}y^{\prime}=v\\ v^{\prime}=w\\ w^{\prime}=3w-2v\end{array}\qquad\text{or}\qquad u^{\prime}=\begin{bmatrix}0&1& 0\\ 0&0&1\\ 0&-2&3\end{bmatrix}\begin{bmatrix}y\\ v\\ w\end{bmatrix}=Au.\] 

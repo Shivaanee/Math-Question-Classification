@@ -1,0 +1,21 @@
+
+
+**Similarity Transformations**
+
+1. \(A\) is _diagonalizable_: The columns of \(S\) are eigenvectors and \(S^{-1}AS=\Lambda\).
+2. \(A\) is _arbitrary_: The columns of M include "generalized eigenvectors" of \(A\), and the Jordan form \(M^{-1}AM=J\) is _block diagonal_.
+3. \(A\) is _arbitrary_: The unitary \(U\) can be chosen so that \(U^{-1}AU=T\) is _triangular_.
+4. \(A\) is _normal_, \(AA^{\rm H}=A^{\rm H}A\): then \(U\) can be chosen so that \(U^{-1}AU=\Lambda\). _Special cases of normal matrices, all with orthonormal eigenvectors:_ 1. If \(A=A^{\rm H}\) is Hermitian, then all \(\lambda_{i}\) are real. 2. If \(A=A^{\rm T}\) is real symmetric, then \(\Lambda\) is real and \(U=Q\) is orthogonal. 3. If \(A=-A^{\rm H}\) is skew-Hermitian, then all \(\lambda_{i}\) are purely imaginary. 4. If \(A\) is orthogonal or unitary, then all \(|\lambda_{i}|=1\) are on the unit circle.
+
+**Problem Set 5.6**
+
+1. If \(B\) is similar to \(A\) and \(C\) is similar to \(B\), show that \(C\) is similar to \(A\). (Let \(B=M^{-1}AM\) and \(C=N^{-1}BN\).) Which matrices are similar to \(I\)?
+2. Describe in words all matrices that are similar to \(\left[\begin{smallmatrix}1&0\\ 0&-1\end{smallmatrix}\right]\), and find two of them.
+3. Explain why \(A\) is never similar to \(A+I\).
+4. Find a diagonal \(M\), made up of \(1\)s and \(-1\)s, to show that \[A=\begin{bmatrix}2&1&&\\ 1&2&1&\\ &1&2&1&\\ &&1&2\end{bmatrix}\qquad\text{is similar to}\qquad B=\begin{bmatrix}2&-1&&\\ -1&2&-1&\\ &-1&2&-1\\ &&-1&2\end{bmatrix}.\]
+5. Show (if \(B\) is invertible) that \(BA\) is similar to \(AB\).
+6. 1. If \(CD=-DC\) (and \(D\) is invertible), show that \(C\) is similar to \(-C\). 2. Deduce that the eigenvalues of \(C\) must come in plus-minus pairs. 3. Show directly that if \(Cx=\lambda x\), then \(C(Dx)=-\lambda(Dx)\).
+7. Consider any \(A\) and a "Givens rotation" \(M\) in the 1-2 plane: \[A=\begin{bmatrix}a&b&c\\ d&e&f\\ g&h&i\end{bmatrix},\qquad M=\begin{bmatrix}\cos\theta&-\sin\theta&0\\ \sin\theta&\cos\theta&0\\ 0&0&1\end{bmatrix}.\]
+
+Choose the rotation angle \(\theta\) to produce zero in the \((3,1)\) entry of \(M^{-1}AM\).
+

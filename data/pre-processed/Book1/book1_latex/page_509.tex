@@ -1,0 +1,21 @@
+41. With \(a_{11}=1\), the \(-1,2,-1\) matrix has \(\det=1\) and inverse \((A^{-1})_{ij}=n+1-\max(i,\,j)\).
+43. Subtracting \(1\) from the \(n,\,n\) entry subtracts its cofactor \(C_{nn}\) from the determinant. That cofactor is \(C_{nn}=1\) (smaller Pascal matrix). Subtracting \(1\) from \(1\) leaves \(0\).
+
+**Problem Set 4.4, page 225**
+
+1. \(\det A=20;\,C^{\mathrm{T}}=\begin{bmatrix}20&-10&-12\\ 0&5&0\\ 0&0&4\end{bmatrix}\); \(AC^{\mathrm{T}}=20I;\,A^{-1}=\dfrac{1}{20}\begin{bmatrix}20&-10&-12\\ 0&5&0\\ 0&0&4\end{bmatrix}\).
+3. \((x,\,y)=(d/(ad-bc),\,-c/(ad-bc))\); \((x,\,y,\,z)=(3,-1,-2)\).
+5. The area of that parallelogram is \(\det\begin{bmatrix}2&2\\ -1&3\end{bmatrix}\), so the triangle \(ABC\) has area \(\frac{1}{2}\,4=2\). (b) The triangle \(A^{\prime}B^{\prime}C^{\prime}\) has the same area; it is just moved to the origin.
+7. The pivots of \(A\) are \(2,\,3,\,6\) from determinants \(2,\,6,\,36\); the pivots of \(B\) are \(2,\,3,\,0\).
+9. (a) \(P^{2}\) takes \((1,\,2,\,3,\,4,\,5)\) to \((3,\,2,\,5,\,4,\,1)\). (b) \(P^{-1}\) takes \((1,\,2,\,3,\,4,\,5)\) to \((3,\,4,\,5,\,2,\,1)\).
+11. The powers of \(P\) are all permutation matrices, so eventually one of those matrices must be repeated. If \(P^{r}\) is the same as \(P^{s}\), then \(P^{r-s}=I\).
+13. (a) \(\det A=3,\,\,\det B_{1}=-6,\,\,\det B_{2}=3\), so \(x_{1}=-6/3=-2\) and \(x_{2}=3/3\doteq 1\). (b) \(|A|=4,\,\,|B_{1}|=3,\,\,|B_{2}|=-2,\,\,|B_{3}|=1\). So \(x_{1}=\frac{3}{4}\) and \(x_{2}=-\frac{1}{2}\) and \(x_{3}=\frac{1}{4}\).
+15. (a) \(x_{1}=\frac{3}{0}\) and \(x_{2}=\frac{-2}{0}\): no solution (b) \(x_{1}=\frac{0}{0}\) and \(x_{2}=\frac{0}{0}\): _undetermined_.
+17. If the first column in \(A\) is also the right-hand side \(b\) then \(\det A=\det B_{1}\). Both \(B_{2}\) and \(B_{3}\) are singular, since a column is repeated. Therefore \(x_{1}=|B_{1}|/|A|=1\) and \(x_{2}=x_{3}=0\).
+19. If all cofactors \(=0\) (even in a single row or column), then \(\det A=0\) (no inverse). \(A=\begin{bmatrix}1&1\\ 1&1\end{bmatrix}\) has no zero cofactors but it is not invertible.
+21. If \(\det A=1\) and we know the cofactors, then \(C^{\mathrm{T}}=A^{-1}\) and also \(\det A^{-1}=1\). Since \(A\) is the inverse of \(A^{-1}\), \(A\) must be the cofactor matrix for \(C\).
+23. Knowing \(C\), Problem 22 gives \(\det A=(\det C)^{\frac{1}{n-1}}\) with \(n=4\). So we can construct \(A^{-1}=C^{\mathrm{T}}/\det A\) using the known cofactors. Invert to find \(A\).
+25. (a) Cofactors \(C_{21}=C_{31}=C_{32}=0\). (b) \(C_{12}=C_{21}\), \(C_{31}=C_{13}\), \(C_{32}=C_{23}\) make \(S^{-1}\) symmetric.
+27. (a) Area \(\left|\begin{smallmatrix}3&2\\ 1&4\end{smallmatrix}\right|=10\). (b) Triangle area \(=5\). (c) Triangle area \(=5\).
+29. (a) Area \(\frac{1}{2}\left|\begin{smallmatrix}2&1&1\\ 3&4&1\\ 0&5&1\end{smallmatrix}\right|=5\). (b) \(5+\text{new triangle area }\frac{1}{2}\left|\begin{smallmatrix}2&1&1\\ 0&5&1\\ -1&0&1\end{smallmatrix}\right|=5+7=12\).
+31. The edges of the hypercube have length \(\sqrt{1+1+1+1}=2\). The volume \(\det H\) is \(2^{4}=16\). (\(H/2\) has orthonormal columns. Then \(\det(H/2)=1\) leads again to \(\det H=16\).) 

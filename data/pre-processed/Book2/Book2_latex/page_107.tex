@@ -1,0 +1,23 @@
+are
+
+\[\left[\begin{array}{c}0\\ 0\\ -1\end{array}\right]^{T}x=-3,\qquad\frac{1}{\sqrt{2}}\left[\begin{array}{c}1\\ 1\\ 0\end{array}\right]^{T}x=\frac{3}{\sqrt{2}},\qquad\frac{1}{\sqrt{2}}\left[ \begin{array}{c}1\\ -1\\ 0\end{array}\right]^{T}x=\frac{-1}{\sqrt{2}}.\]
+
+It can be verified that the expansion of \(x\) in this basis is
+
+\[x=(-3)\left[\begin{array}{c}0\\ 0\\ -1\end{array}\right]+\frac{3}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\left[\begin{array} []{c}1\\ 1\\ 0\end{array}\right]\right)+\frac{-1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}\left[ \begin{array}{c}1\\ -1\\ 0\end{array}\right]\right).\]
+
+### 5.4 Gram-Schmidt algorithm
+
+In this section we describe an algorithm that can be used to determine if a list of \(n\)-vectors \(a_{1},\ldots,a_{k}\) is linearly independent. In later chapters we will see that it has many other uses as well. The algorithm is named after the mathematicians Jorgen Pedersen Gram and Erhard Schmidt, although it was already known before their work.
+
+If the vectors are linearly independent, the Gram-Schmidt algorithm produces an orthonormal collection of vectors \(q_{1},\ldots,q_{k}\) with the following properties: For each \(i=1,\ldots,k\), \(a_{i}\) is a linear combination of \(q_{1},\ldots,q_{i}\), and \(q_{i}\) is a linear combination of \(a_{1},\ldots,a_{i}\). If the vectors \(a_{1},\ldots,a_{j-1}\) are linearly independent, but \(a_{1},\ldots,a_{j}\) are linearly dependent, the algorithm detects this and terminates. In other words, the Gram-Schmidt algorithm finds the first vector \(a_{j}\) that is a linear combination of previous vectors \(a_{1},\ldots,a_{j-1}\).
+
+``` given\(n\)-vectors \(a_{1},\ldots,a_{k}\) for \(i=1,\ldots,k\), 1. Orthogonalization. \(\tilde{q}_{i}=a_{i}-(q_{1}^{T}a_{i})q_{1}-\cdots-(q_{i-1}^{T}a_{i})q_{i-1}\) 2. Test for linear dependence. if \(\tilde{q}_{i}=0\), quit. 3. Normalization. \(q_{i}=\tilde{q}_{i}/\|\tilde{q}_{i}\|\) ```
+
+**Algorithm 5.1** Gram-Schmidt algorithm
+
+The orthogonalization step, with \(i=1\), reduces to \(\tilde{q}_{1}=a_{1}\). If the algorithm does not quit (in step 2), _i.e._, \(\tilde{q}_{1},\ldots,\tilde{q}_{k}\) are all nonzero, we can conclude that the original collection of vectors is linearly independent; if the algorithm does quit early, say, with \(\tilde{q}_{j}=0\), we can conclude that the original collection of vectors is linearly dependent (and indeed, that \(a_{j}\) is a linear combination of \(a_{1},\ldots,a_{j-1}\)).
+
+Figure 5.3 illustrates the Gram-Schmidt algorithm for two 2-vectors. The top row shows the original vectors; the middle and bottom rows show the first and second iterations of the loop in the Gram-Schmidt algorithm, with the left-hand side showing the orthogonalization step, and the right-hand side showing the normalization step.
+
+ 

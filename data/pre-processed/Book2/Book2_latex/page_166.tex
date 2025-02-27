@@ -1,0 +1,17 @@
+\(f_{j}\) means the quantity flows in the direction of edge \(j\), and negative \(f_{j}\) means the quantity flows in the opposite direction of edge \(j\). The flows can represent, for example, heat flow (in units of Watts) in a thermal model, electrical current (Amps) in an electrical circuit, or movement (diffusion) of mass (such as, for example, a pollutant). We also have a source (or exogenous) flow \(s_{i}\) at each node, with \(s_{i}>0\) meaning that an exogenous flow is injected into node \(i\), and \(s_{i}<0\) means that an exogenous flow is removed from node \(i\). (In some contexts, a node where flow is removed is called a _sink_.) In a thermal system, the sources represent thermal (heat) sources; in an electrical circuit, they represent electrical current sources; in a system with diffusion, they represent external injection or removal of the mass.
+
+In a diffusion system, the flows must satisfy (flow) _conservation_, which means that at each node, the total flow entering each node from adjacent edges and the exogenous source, must be zero. This is illustrated in figure 8.1, which shows three edges adjacent to node \(1\), two entering node \(1\) (flows \(1\) and \(2\)), and one (flow \(3\)) leaving node \(1\), and an exogenous flow. Flow conservation at this node is expressed as
+
+\[f_{1}+f_{2}-f_{3}+s_{1}=0.\]
+
+Flow conservation at every node can be expressed by the simple matrix-vector equation
+
+\[Af+s=0,\] (8.6)
+
+where \(A\) is the incidence matrix described in SS7.3. (This is called _Kirchhoff's current law_ in an electrical circuit, after the physicist Gustav Kirchhoff; when the flows represent movement of mass, it is called _conservation of mass_.)
+
+With node \(i\) we associate a potential \(e_{i}\); the \(n\)-vector \(e\) gives the potential at all nodes. (Note that here, \(e\) represents the \(n\)-vector of potentials; \(e_{i}\) is the scalar potential at node \(i\), and not the standard \(i\)th unit vector.) The potential might represent the node temperature in a thermal model, the electrical potential (voltage) in an electrical circuit, and the concentration in a system that involves mass diffusion.
+
+Figure 8.1: A node in a diffusion system with label \(1\), exogenous flow \(s_{1}\) and three incident edges.
+
+ 

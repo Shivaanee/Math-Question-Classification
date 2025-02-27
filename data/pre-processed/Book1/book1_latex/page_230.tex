@@ -1,0 +1,24 @@
+
+
+**10.**: For \(n=2\), write \(y_{0}\) from the first line of equation (13) and \(y_{1}\) from the second line. For \(n=4\), use the first line to find \(y_{0}\) and \(y_{1}\), and the second to find \(y_{2}\) and \(y_{3}\), all in terms of \(y^{\prime}\) and \(y^{\prime\prime}\).
+**11.**: Compute \(y=F_{4}c\) by the three steps of the Fast Fourier Transform if \(c=(1,0,1,0)\).
+**12.**: Compute \(y=F_{8}c\) by the three steps of the Fast Fourier Transform if \(c=(1,0,1,0,1,0,1,0)\). Repeat the computation with \(c=(0,1,0,1,0,1,0,1)\).
+**13.**: For the 4 by 4 matrix, write out the formulas for \(c_{0}\), \(c_{1}\), \(c_{2}\), \(c_{3}\) and verify that _if \(f\) is odd then \(c\) is odd_. The vector \(f\) is odd if \(f_{n-j}=-f_{j}\); for \(n=4\) that means \(f_{0}=0\), \(f_{3}=-f_{1}\), \(f_{2}=0\) as in \(\sin 0\), \(\sin\pi/2\), \(\sin\pi\), \(\sin 3\pi/2\). This is copied by \(c\) and it leads to a fast sine transform.
+**14.**: Multiply the three matrices in equation (16) and compare with \(F\). in which six entries do you need to know that \(i^{2}=-1\)?
+**15.**: Invert the three factors in equation (14) to find a fast factorization of \(F^{-1}\).
+**16.**: \(F\) is symmetric. So transpose equation (14) to find a new Fast Fourier Transform!
+**17.**: All entries in the factorization of \(F_{6}\) involve powers of \(w=\) sixth root of 1:
+
+\[F_{6}=\begin{bmatrix}I&D\\ I&-D\end{bmatrix}\begin{bmatrix}F_{3}\\ &F_{3}\end{bmatrix}\begin{bmatrix}P\end{bmatrix}.\]
+
+Write these factors with 1, \(w\), \(w^{2}\) in \(D\) and 1, \(w^{2}\), \(w^{4}\) in \(F_{3}\). Multiply!
+
+**Problems 18-20 introduce the idea of an eigenvector and eigenvalue, when a matrix times a vector is a multiple of that vector. This is the theme of Chapter 5.**
+**18.**: The columns of the Fourier matrix \(F\) are the _eigenvectors_ of the cyclic permutation \(P\). Multiply \(PF\) to find the eigenvalues \(\lambda_{0}\) to \(\lambda_{3}\):
+
+\[\begin{bmatrix}0&1&0&0\\ 0&0&1&0\\ 0&0&0&1\\ 1&0&0&0\end{bmatrix}\begin{bmatrix}1&1&1&1\\ 1&i&i^{2}&i^{3}\\ 1&i^{2}&i^{4}&i^{6}\\ 1&i^{3}&i^{6}&i^{9}\end{bmatrix}=\begin{bmatrix}1&1&1&1\\ 1&i&i^{2}&i^{3}\\ 1&i^{2}&i^{4}&i^{6}\\ 1&i^{3}&i^{6}&i^{9}\end{bmatrix}\begin{bmatrix}\lambda_{0}&&\\ &\lambda_{1}&&\\ &&\lambda_{2}&\\ &&\lambda_{3}\end{bmatrix}.\]
+
+This is \(PF=F\Lambda\) or \(P=F\Lambda F^{-1}\).
+**19.**: Two eigenvectors of this circulant matrix \(C\) are \((1,1,1,1)\) and \((1,i,i^{2},i^{3})\). What are the eigenvalues \(e_{0}\) and \(e_{1}\)?
+
+\[\begin{bmatrix}c_{0}&c_{1}&c_{2}&c_{3}\\ c_{3}&c_{0}&c_{1}&c_{2}\\ c_{2}&c_{3}&c_{0}c_{1}\\ c_{1}&c_{2}&c_{3}&c_{0}\\ \end{bmatrix}\begin{bmatrix}1\\ 1\\

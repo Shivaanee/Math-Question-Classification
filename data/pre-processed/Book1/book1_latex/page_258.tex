@@ -1,0 +1,33 @@
+(done by elimination). Determinants give formulas for the answers.
+
+**1. Computation of \(A^{-1}\).** The 2 by 2 case shows how cofactors go into \(A^{-1}\):
+
+\[\begin{bmatrix}a&b\\ c&d\end{bmatrix}^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\ -c&a\end{bmatrix}=\frac{1}{\det A}\begin{bmatrix}C_{11}&C_{21}\\ C_{12}&C_{22}\end{bmatrix}.\]
+
+We are dividing by the determinant, and \(A\) is invertible exactly when \(\det A\) is nonzero. The number \(C_{11}=d\) is the cofactor of \(a\). The number \(C_{12}=-c\) is the cofactor of \(b\) (note the minus sign). That number \(C_{12}\) goes in row 2, column 1!
+
+The row \(a\), \(b\) times the column \(C_{11}\), \(C_{12}\) produces \(ad-bc\). This is the cofactor expansion of \(\det A\). That is the clue we need: \(A^{-1}\)**divides the cofactors by \(\det A\)**.
+
+\[\begin{array}{l}\textbf{Cofactor matrix}\\ C\textbf{ is transposed}\end{array}\qquad A^{-1}=\frac{C^{\mathrm{T}}}{\det A} \quad\text{means}\quad(A^{-1})_{ij}=\frac{C_{ji}}{\det A}.\] (1)
+
+Our goal is to verify this formula for \(A^{-1}\). We have to see why \(AC^{\mathrm{T}}=(\det A)I\):
+
+\[\begin{bmatrix}a_{11}&\cdots&a_{1n}\\ \vdots&&\vdots\\ a_{n1}&\cdots&a_{nn}\end{bmatrix}\begin{bmatrix}C_{11}&\cdots&C_{1n}\\ \vdots&&\vdots\\ C_{n1}&\cdots&C_{nn}\end{bmatrix}=\begin{bmatrix}\det A&\cdots&0\\ \vdots&&\vdots\\ 0&\cdots&\det A\end{bmatrix}.\] (2)
+
+With cofactors \(C_{11},\ldots,C_{1n}\) in the first _column_ and not the first row, they multiply \(a_{11},\ldots,a_{1n}\) and give the diagonal entry \(\det A\). Every row of \(A\) multiplies its cofactors (_the cofactor expansion_) to give the same answer \(\det A\) on the diagonal.
+
+The critical question is: _Why do we get zeros off the diagonal_? If we combine the entries \(a_{1j}\) from row 1 with the cofactors \(C_{2j}\) for row 2, why is the result zero?
+
+\[\textbf{row 1 of }A\textbf{, row 2 of }C\qquad a_{11}C_{21}+a_{12}C_{22}+\cdots+a_{1n}C_{2n}=0.\] (3)
+
+The answer is: We are computing the determinant of a new matrix \(B\), with a new row 2. The first row of \(A\) is copied into the second row of \(B\). Then \(B\) has two equal rows, and \(\det B=0\). Equation (3) is the expansion of \(\det B\) along its row 2, where \(B\) has exactly the same cofactors as \(A\) (because the second row is thrown away to find those cofactors). The remarkable matrix multiplication (2) is correct.
+
+That multiplication \(AC^{\mathrm{T}}=(\det A)I\) immediately gives \(A^{-1}\). Remember that the cofactor from deleting row \(i\) and column \(j\) of \(A\) goes into _row \(j\) and column \(i\)_ of \(C^{\mathrm{T}}\). Dividing by the number \(\det A\) (if it is not zero!) gives \(A^{-1}=C^{\mathrm{T}}/\det A\).
+
+**Example 1**.: The inverse of a sum matrix is a difference matrix:
+
+\[A=\begin{bmatrix}1&1&1\\ 0&1&1\\ 0&0&1\end{bmatrix}\quad\text{has}\quad A^{-1}=\frac{C^{\mathrm{T}}}{\det A}= \begin{bmatrix}1&-1&0\\ 0&1&-1\\ 0&0&1\end{bmatrix}.\]
+
+The minus signs enter because cofactors always include \((-1)^{i+j}\).
+
+ 

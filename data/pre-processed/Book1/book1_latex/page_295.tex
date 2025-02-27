@@ -1,0 +1,27 @@
+But the second approach brings out the analogy with a differential equation: _The pure exponential solutions \(e^{\lambda_{i}t}x_{i}\) are now the pure powers \(\lambda_{i}^{k}x_{i}\)_. The eigenvectors \(x_{i}\) are amplified by the eigenvalues \(\lambda_{i}\). By combining these special solutions to match \(u_{0}\)--that is where \(c\) came from--we recover the correct solution \(u_{k}=S\Lambda^{k}S^{-1}u_{0}\).
+
+In any specific example like Fibonacci's, the first step is to find the eigenvalues:
+
+\[A-\lambda I=\begin{bmatrix}1-\lambda&1\\ 1&-\lambda\end{bmatrix}\quad\text{has}\quad\det(A-\lambda I)=\lambda^{2}- \lambda-1\]
+
+\[\text{\bf Two eigenvalues}\qquad\lambda_{1}=\frac{1+\sqrt{5}}{2}\quad\text{ and}\quad\lambda_{2}=\frac{1-\sqrt{5}}{2}.\]
+
+The second row of \(A-\lambda I\) is \((1,-\lambda)\). To get \((A-\lambda I)x=0\), the eigenvector is \(x=(\lambda,1)\), The first Fibonacci numbers \(F_{0}=0\) and \(F_{1}=1\) go into \(u_{0}\), and \(S^{-1}u_{0}=c\):
+
+\[S^{-1}u_{0}=\begin{bmatrix}\lambda_{1}&\lambda_{2}\\ 1&1\end{bmatrix}^{-1}\begin{bmatrix}1\\ 0\end{bmatrix}\quad\text{gives}\quad c=\begin{bmatrix}1/(\lambda_{1}-\lambda_{ 2})\\ -1/(\lambda_{1}-\lambda_{2})\end{bmatrix}=\frac{1}{\sqrt{5}}\begin{bmatrix}1\\ -1\end{bmatrix}.\]
+
+Those are the constants in \(u_{k}=c_{1}\lambda_{1}^{k}x_{1}+c_{2}\lambda_{2}^{k}x_{2}\). Both eigenvectors \(x_{1}\) and \(x_{2}\) have second component \(1\). That leaves \(F_{k}=c_{1}\lambda_{1}^{k}+c_{2}\lambda_{2}^{k}\) in the second component of \(u_{k}\):
+
+\[\begin{array}{c}\text{\bf Fibonacci}\\ \text{\bf numbers}\end{array}\qquad F_{k}=\frac{1}{\sqrt{5}}\left[\left( \frac{1+\sqrt{5}}{2}\right)^{k}-\left(\frac{1-\sqrt{5}}{2}\right)^{k}\right].\]
+
+This is the answer we wanted. The fractions and square roots look surprising because Fibonacci's rule \(F_{k+2}=F_{k+1}+F_{k}\) must produce whole numbers, Somehow that formula for \(F_{k}\) must give an integer. In fact, since the second term \([(1-\sqrt{5})/2]^{k}/\sqrt{5}\) is always less than \(\frac{1}{2}\), it must just move the first term to the nearest integer:
+
+\[F_{1000}=\text{nearest integer to }\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2} \right)^{1000}.\]
+
+This is an enormous number, and \(F_{1001}\) will be even bigger. The fractions are becoming insignificant, and the ratio \(F_{1001}/F_{1000}\) must be very close to \((1+\sqrt{5})/2\approx 1.618\). Since \(\lambda_{2}^{k}\) is insignificant compared to \(\lambda_{1}^{k}\), the ratio \(F_{k+1}/F_{k}\) approaches \(\lambda_{1}\).
+
+That is a typical difference equation, leading to the powers of \(A=\begin{bmatrix}1&1\\ 1&0\end{bmatrix}\). it involved \(\sqrt{5}\) because the eigenvalues did. If we choose a matrix with \(\lambda_{1}=1\) and \(\lambda_{2}=6\). we can focus on the simplicity of the computation--_after \(A\) has been diagonalized_:
+
+\[A=\begin{bmatrix}-4&-5\\ 10&11\end{bmatrix}\quad\text{has}\quad\lambda=1\text{ and }6,\quad\text{with}\quad x_{1}= \begin{bmatrix}1\\ -1\end{bmatrix}\quad\text{and}\quad x_{2}=\begin{bmatrix}-1\\ 2\end{bmatrix}\]
+
+\[A^{k}=S\Lambda^{k}S^{-1}\quad\text{is}\quad\begin{bmatrix}1&-1\\ -1&2\end{bmatrix}\begin{bmatrix}1^{\boldsymbol{k}}&0\\ 0&6^{k}\end{bmatrix}\begin{bmatrix}2&1\\ 1&1\end{bmatrix}=\begin{bmatrix}2-6^{k}&1-6^{k}\\ -2+2\cdot 6^{k}&-1+2\cdot 6^{k}\end{bmatrix}.\] 

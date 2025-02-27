@@ -1,0 +1,23 @@
+since the sum \(0+0\) is in this one-point space, and so are all multiples \(c0\). _This is the smallest possible vector space_: the empty set is not allowed. At the other extreme. the largest subspace is the whole of the original space. If the original space is \(\mathbf{R}^{3}\), then the possible subspaces are easy to describe: \(\mathbf{R}^{3}\) itself, any plane through the origin, any line through the origin, or the origin (the zero vector) alone.
+
+The distinction between a subset and a subspace is made clear by examples. In each case, can you add vectors and multiply by scalars, without leaving the space?
+
+**Example 1**.: Consider all vectors in \(\mathbf{R}^{2}\) whose components are positive or zero. This subset is the first quadrant of the \(x\)-\(y\) plane; the coordinates satisfy \(x\geq 0\) and \(y\geq 0\). It is _not a subspace_, even though it contains zero and addition does leave us within the subset. Rule (ii) is violated, since if the scalar is \(-1\) and the vector is \([1\ \ 1]\), the multiple \(cx=[-1\ \ -1]\) is in the third quadrant instead of the first.
+
+If we include the third quadrant along with the first, scalar multiplication is all right. Every multiple \(cx\) will stay in this subset. However, rule (i) is now violated, since adding \([1\ \ 2]+[-2\ \ -1]\) gives \([-1\ \ 1]\), which is not in either quadrant. The smallest subspace containing the first quadrant is the whole space \(\mathbf{R}^{2}\).
+
+**Example 2**.: Start from the vector space of 3 by 3 matrices. One possible subspace is the set of _lower triangular matrices_. Another is the set of _symmetric matrices_. \(A+B\) and \(cA\) are lower triangular if \(A\) and \(B\) are lower triangular, and they are symmetric if \(A\) and \(B\) are symmetric. Of course, the zero matrix is in both subspaces.
+
+### The Column Space of \(A\)
+
+We now come to the key examples, the **column space** and the **nullspace** of a matrix \(A\). _The column space contains all linear combinations of the columns of \(A\)_. It is a subspace of \(\mathbf{R}^{m}\). We illustrate by a system of \(m=3\) equations in \(n=2\) unknowns:
+
+\[\text{\bf Combination of columns equals}\ b\qquad\begin{bmatrix}1&0\\ 5&4\\ 2&4\end{bmatrix}\begin{bmatrix}u\\ v\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\\ b_{3}\end{bmatrix}.\] (1)
+
+With \(m>n\) we have more equations than unknowns--and _usually there will be no solution_. The system will be solvable only for a very "thin" subset of all possible \(b\)'s. One way of describing this thin subset is so simple that it is easy to overlook.
+
+**2A** The system \(Ax=b\) is solvable if and only if the vector \(b\) can be expressed as a combination of the columns of \(A\). Then \(b\) is in the column space.
+
+This description involves nothing more than a restatement of \(Ax=b\), _by columns_:
+
+\[\text{\bf Combination of columns}\qquad u\begin{bmatrix}1\\ 5\\ 2\end{bmatrix}+v\begin{bmatrix}0\\ 4\\ 4\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\\ b_{3}\end{bmatrix}.\] (2) 

@@ -1,0 +1,33 @@
+
+
+**8.** Let \(f\) be the bilinear form defined in Exercise 6, and let \(V_{2}\) be the subspace of \(V\) consisting of all matrices \(\Lambda\) such that trace \((\Lambda)=0\) and \(\Lambda^{*}=-\Lambda\) (\(\Lambda^{*}\) is the conjugate transpose of \(\Lambda\)). Denote by \(f_{2}\) the restriction of \(f\) to \(V_{2}\). Show that \(f_{2}\) is negative definite, i.e., that \(f_{2}(\Lambda,\,\Lambda)\,<0\) for each non-zero \(\Lambda\) in \(V_{2}\).
+
+**9.** Let \(f\) be the bilinear form defined in Exercise 6. Let \(W\) be the set of all matrices \(\Lambda\) in \(V\) such that \(f(\Lambda,\,B)=0\) for all \(B\). Show that \(W\) is a subspace of \(V\). Describe \(W\) explicitly and find its dimension.
+
+**10.** Let \(f\) be any bilinear form on a finite-dimensional vector space \(V\). Let \(W\) be the subspace of all \(\beta\) such that \(f(\alpha,\,\beta)\,=\,0\) for every \(\alpha\). Show that
+
+\[\mbox{rank}\;f=\;\dim\,V\,-\,\dim\,W.\]
+
+Use this result and the result of Exercise 9 to compute the rank of the bilinear form defined in Exercise 6.
+
+**11.** Let \(f\) be a bilinear form on a finite-dimensional vector space \(V\). Suppose \(V_{1}\) is a subspace of \(V\) with the property that the restriction of \(f\) to \(V_{1}\) is non-degenerate. Show that \(\mbox{rank}\;f\geq\;\dim\,V_{1}\).
+
+**12.** Let \(f\), \(g\) be bilinear forms on a finite-dimensional vector space \(V\). Suppose \(g\) is non-singular. Show that there exist unique linear operators \(T_{1}\), \(T_{2}\) on \(V\) such that
+
+\[f(\alpha,\,\beta)=\,g(T_{1}\alpha,\,\beta)=g(\alpha,\,T_{2}\beta)\]
+
+for all \(\alpha\), \(\beta\).
+
+**13.** Show that the result given in Exercise 12 need not be true if \(g\) is singular.
+
+**14.** Let \(f\) be a bilinear form on a finite-dimensional vector space \(V\). Show that \(f\) can be expressed as a product of two linear functionals (i.e., \(f(\alpha,\,\beta)=L_{1}(\alpha)L_{2}(\beta)\) for \(L_{1},\,L_{2}\) in \(V^{*}\)) if and only if \(f\) has rank 1.
+
+### Symmetric Bilinear Forms
+
+The main purpose of this section is to answer the following question: If \(f\) is a bilinear form on the finite-dimensional vector space \(V\), when is there an ordered basis \(\mathbb{S}\) for \(V\) in which \(f\) is represented by a diagonal matrix? We prove that this is possible if and only if \(f\) is a symmetric bilinear form, i.e., \(f(\alpha,\,\beta)=f(\beta,\,\alpha)\). The theorem is proved only when the scalar field has characteristic zero, that is, that if \(n\) is a positive integer the sum \(1+\cdots+1\) (\(n\) times) in \(F\) is not 0.
+
+_Definition._ Let \(f\) be a bilinear form on the vector space \(V\). _We say that \(f\) is_ **symmetric** _if \(f(\alpha,\,\beta)=f(\beta,\,\alpha)\) for all vectors \(\alpha\), \(\beta\) in \(V\)._
+
+If \(V\) is a finite-dimensional, the bilinear form \(f\) is symmetric if and only if its matrix \(A\) in some (or every) ordered basis is symmetric, \(A^{*}=A\). To see this, one inquires when the bilinear form
+
+\[f(X,\,Y)\,=\,X^{*}AY\]

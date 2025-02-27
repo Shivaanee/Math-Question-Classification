@@ -1,0 +1,26 @@
+of \(W\) onto \(V\); hence, when such a \(T\) exists, we shall simply say \(V\) and \(W\) are **isomorphic.** Of course, isomorphism of inner product spaces is an equivalence relation.
+
+Let V and W be finite-dimensional inner product spaces over the same field, having the same dimension. If T is a linear transformation \(from\) V into W, the following are equivalent.
+
+1. T preserves inner products.
+2. T is an \((\)inner product space\()\) isomorphism.
+3. T carries every orthonormal basis for V onto an orthonormal basis for W.
+4. T carries some orthonormal basis for V onto an orthonormal basis for W.
+
+Proof.: (i) \(\rightarrow\) (ii) If \(T\) preserves inner products, then \(\|T\alpha\|=\|\alpha\|\) for all \(\alpha\) in \(V\). Thus \(T\) is non-singular, and since dim \(V=\) dim \(W\), we know that \(T\) is a vector space isomorphism.
+
+(ii) \(\rightarrow\) (iii) Suppose \(T\) is an isomorphism. Let \(\{\alpha_{1},\ldots,\alpha_{n}\}\) be an orthonormal basis for \(V\). Since \(T\) is a vector space isomorphism and dim \(W=\) dim \(V\), it follows that \(\{T\alpha_{1},\ldots,\)\(T\alpha_{n}\}\) is a basis for \(W\). Since \(T\) also preserves inner products, \((T\alpha_{j}|T\alpha_{k})=(\alpha_{j}|\alpha_{k})=\delta_{jk}\).
+
+(iii) \(\rightarrow\) (iv) This requires no comment.
+
+(iv) \(\rightarrow\) (i) Let \(\{\alpha_{1},\ldots,\alpha_{n}\}\) be an orthonormal basis for \(V\) such that \(\{T\alpha_{1},\ldots,\)\(T\alpha_{n}\}\) is an orthonormal basis for \(W\). Then
+
+\[(T\alpha_{j}|T\alpha_{k})=(\alpha_{j}|\alpha_{k})=\delta_{jk}.\]
+
+For any \(\alpha=x_{1}\alpha_{1}+\cdots+x_{n}\alpha_{n}\) and \(\beta=y_{1}\alpha_{1}+\cdots+y_{n}\alpha_{n}\) in \(V\), we have
+
+\[(\alpha|\beta)=\sum_{j=1}^{n}x_{j}\bar{y}_{j}\]
+
+\[(T\alpha|T\beta)=(\sum_{j}x_{j}T\alpha_{j}|\sum_{k}y_{k}T\alpha_{k})\]
+
+\[=\sum_{j}\sum_{k}x_{j}\bar{y}_{k}( 

@@ -1,0 +1,23 @@
+37. \(V=\frac{1}{L}\left[\begin{matrix}1+\sqrt{3}&-1+i\\ 1+i&1+\sqrt{3}\end{matrix}\right]\left[\begin{matrix}1&0\\ 0&-1\end{matrix}\right]\frac{1}{L}\left[\begin{matrix}1+\sqrt{3}&1-i\\ -1-i&1+\sqrt{3}\end{matrix}\right]\) with \(L^{2}=6+2\sqrt{3}\). \(V=V^{\rm H}\) gives-real \(\lambda\), unitary gives \(|\lambda|=1\), then trace zero gives \(\lambda=1\), \(-1\).
+39. Don't multiply \(e^{-ix}\) times \(e^{ix}\); conjugate the first, then \(\int_{0}^{2\pi}e^{2ix}\ dx=[e^{2ix}/2i]_{0}^{2\pi}=0\).
+41. \(R+iS=(R+iS)^{\rm H}=R^{\rm T}-iS^{\rm T}\); \(R\) is symmetric but \(S\) is skew-symmetric.
+43. [1] and \([-1]\); \(\left[\begin{matrix}a&b+ic\\ b-ic&-a\end{matrix}\right]\) with \(a^{2}+b^{2}+c^{2}=1\).
+45. \((I-2uu^{\rm H})^{\rm H}=I-2uu^{\rm H}\); \((I-2uu^{\rm H})^{2}=I-4uu^{\rm H}+4u(u^{\rm H}u)u^{\rm H}=I\); the matrix \(uu^{\rm H}\) projects onto the line through \(u\).
+47. We are given \(A+i\,B=(A+i\,B)^{\rm H}=A^{\rm T}-i\,B^{\rm T}\). Then \(A=A^{\rm T}\) and \(B=-B^{\rm T}\).
+49. \(A=\left[\begin{matrix}1-i&1-i\\ -1&2\end{matrix}\right]\left[\begin{matrix}1&0\\ 0&4\end{matrix}\right]\frac{1}{6}\left[\begin{matrix}2+2i&-2\\ 1+i&2\end{matrix}\right]=S\Lambda\,S^{-1}\). Real eigenvalues \(1\) and \(4\).
+
+**Problem Set 5.6**, page 302
+
+1. \(C=N^{-1}\,BN=N^{-1}M^{-1}\,AMN=(MN)^{-1}\,A(MN)\); only \(M^{-1}\,IM=I\) is similar to \(I\).
+2. If \(\lambda_{1}\), ..., \(\lambda_{n}\) are eigenvalues of \(A\), then \(\lambda_{1}+1\), ..., \(\lambda_{n}+1\) are eigenvalues of \(A+I\). So \(A\) and \(A+I\) never have the same eigenvalues, and can't be similar.
+3. If \(B\) is invertible, then \(BA=B(AB)\,B^{-1}\) is similar to \(AB\).
+4. The (3, 1) entry of \(M^{-1}\,AM\) is \(g\cos\theta+h\sin\theta\), which is zero if \(\tan\theta=-g/h\).
+5. The coefficients are \(c_{1}=1\), \(c_{2}=2\), \(d_{1}=1\), \(d_{2}=1\); check \(Mc=d\).
+6. The reflection matrix with basis \(v_{1}\) and \(v_{2}\) is \(A=\left[\begin{matrix}0&1\\ 1&0\end{matrix}\right]\). The basis \(V_{1}\) and \(V_{2}\) (same reflection!) gives \(B=\left[\begin{matrix}1&0\\ 0&-1\end{matrix}\right]\). If \(M=\left[\begin{matrix}1&1\\ 1&-1\end{matrix}\right]\) then \(A=MB\,M^{-1}\).
+7. 1. \(D=\left[\begin{matrix}0&1&0\\ 0&0&2\\ 0&0&0\end{matrix}\right]\). \(({\rm b})\)\(D^{3}=\left[\begin{matrix}0&0&0\\ 0&0&0\\ 0&0&0\end{matrix}\right]=\) third derivative matrix. The third derivatives of \(1\), \(x\), and \(x^{2}\) are zero, so \(D^{3}=0\). \(({\rm c})\)\(\lambda=0\) (triple); only one independent eigenvector \((1,0,\,0)\).
+8. The eigenvalues are \(1\), \(1\), \(1\), \(-1\). Eigenmatrices \(\left[\begin{matrix}1&0\\ 0&0\end{matrix}\right]\), \(\left[\begin{matrix}0&1\\ 1&0\end{matrix}\right]\), \(\left[\begin{matrix}0&0\\ 0&1\end{matrix}\right]\), \(\left[\begin{matrix}0&1\\ -1&0\end{matrix}\right]\).
+9. \(T\,T^{\rm H}=U^{-1}\,AUU^{\rm H}A^{\rm H}(U^{-1})^{\rm H}=I\). \(({\rm b})\) If \(T\) is triangular and unitary, then its diagonal entries (the eigenvalues) must have absolute value \(1\). Then all off-diagonal entries are zero because the columns are to be unit vectors.
+10. The \(1\), \(1\) entries of \(T^{\rm H}T=TT^{\rm H}\) give \(|t_{11}|^{2}=|t_{11}|^{2}+|t_{12}|^{2}+|t_{13}|^{2}\) so \(t_{12}=t_{13}=0\). Comparing the \(2\), \(2\) entries of \(T^{\rm H}T=TT^{\rm H}\) gives \(t_{23}=0\). So \(T\) must be diagonal.
+11. If \(N=U\,\Lambda U^{-1}\), then \(NN^{\rm H}=U\,\Lambda U^{-1}(U^{-1})^{\rm H}\,\Lambda^{\rm H}U^{\rm H}\) is equal to \(U\,\Lambda\,\Lambda^{\rm H}U^{\rm H}\). This is the same as \(U\,\Lambda^{\rm H}\,\Lambda U^{\rm H}=(U\,\Lambda U^{-1})^{\rm H}(U\,\Lambda U^{- 1})=N^{\rm H}N\). So \(N\) is normal.
+
+ 

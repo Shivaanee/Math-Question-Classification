@@ -1,0 +1,33 @@
+factoring into \(\lambda^{2}-\lambda-2=(\lambda+1)(\lambda-2)\). That is zero if \(\lambda=-1\) or \(\lambda=2\), as the general formula confirms:
+
+\[\text{\bf Eigenvalues}\qquad\lambda=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}=\frac{1\pm \sqrt{9}}{2}=-1\text{ and }2.\]
+
+**There are two eigenvalues, because a quadratic has two roots**. Every \(2\) by \(2\) matrix \(A-\lambda I\) has \(\lambda^{2}\) (and no higher power of \(\lambda\)) in its determinant.
+
+The values \(\lambda=-1\) and \(\lambda=2\) lead to a solution of \(Ax=\lambda x\) or \((A-\lambda I)x=0\). A matrix with zero determinant is singular, so there must be nonzero vectors \(x\) in its nullspace. In fact the nullspace contains a whole _line_ of eigenvectors; it is a subspace!
+
+\[\lambda_{1}=-1:\qquad(A-\lambda_{1}I)x=\begin{bmatrix}5&-5\\ 2&-2\end{bmatrix}\begin{bmatrix}y\\ z\end{bmatrix}=\begin{bmatrix}0\\ 0\end{bmatrix}.\]
+
+The solution (the first eigenvector) is any nonzero multiple of \(x_{1}\):
+
+\[\text{\bf Eigenvector for }\lambda_{1}\qquad x_{1}=\begin{bmatrix}1\\ 1\end{bmatrix}.\]
+
+The computation for \(\lambda_{2}\) is done separately:
+
+\[\lambda_{2}=2:\qquad(A-\lambda_{2}I)x=\begin{bmatrix}2&-5\\ 2&-5\end{bmatrix}\begin{bmatrix}y\\ z\end{bmatrix}=\begin{bmatrix}0\\ 0\end{bmatrix}.\]
+
+The second eigenvector is any nonzero multiple of \(x_{2}\):
+
+\[\text{\bf Eigenvector for }\lambda_{2}\qquad x_{2}=\begin{bmatrix}5\\ 2\end{bmatrix}.\]
+
+You might notice that the columns of \(A-\lambda_{1}I\) give \(x_{2}\), and the columns of \(A-\lambda_{2}I\) are multiples of \(x_{1}\). This is special (and useful) for \(2\) by \(2\) matrices.
+
+In the \(3\) by \(3\) case, I often set a component of \(x\) equal to \(1\) and solve \((A-\lambda I)x=0\) for the other components. Of course if \(x\) is an eigenvector then so is \(7x\) and so is \(-x\). All vectors in the nullspace of \(A-\lambda I\) (which we call the _eigenspace_) will satisfy \(Ax=\lambda x\). In our example the eigenspaces are the lines through \(x_{1}=(1,1)\) and \(x_{2}=(5,2)\).
+
+Before going back to the application (the differential equation), we emphasize the steps in solving \(Ax=\lambda x\):
+
+1. _Compute the determinant of \(A-\lambda I\)_. With \(\lambda\) subtracted along the diagonal, this determinant is a polynomial of degree \(n\). It starts with \((-\lambda)^{n}\).
+2. _Find the roots of this polynomial_. The \(n\) roots are the eigenvalues of \(A\).
+3. _For each eigenvalue solve the equation \((A-\lambda I)x=0\)_. Since the determinant is zero, there are solutions other than \(x=0\). Those are the eigenvectors.
+
+ 

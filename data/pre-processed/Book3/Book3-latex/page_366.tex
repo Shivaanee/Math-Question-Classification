@@ -1,0 +1,27 @@
+Conversely, suppose there is an orthonormal basis of \(V\) and an orthonormal basis of \(V^{\prime}\) such that
+
+\[[T]_{\oplus}=[T^{\prime}]_{\oplus}.\]
+
+Suppose \(\oplus=\{\alpha_{1},\ldots,\alpha_{n}\}\) and that \(\oplus^{\prime}=\{\alpha_{1}^{\prime},\ldots,\alpha_{n}^{\prime}\}.\) Let \(U\) be the linear transformation of \(V\) into \(V^{\prime}\) such that \(U\alpha_{j}=\alpha_{j}^{\prime}\) (\(1\leq j\leq n\)). Then \(U\) is a unitary transformation of \(V\) onto \(V^{\prime}\), and
+
+\[UTU^{-1}\alpha_{j}^{\prime} = UT\alpha_{j}\] \[= U\sum_{k}A_{kj}\alpha_{k}\] \[= \sum_{k}A_{kj}\alpha_{k}^{\prime}.\]
+
+Therefore, \(UTU^{-1}\alpha_{j}^{\prime}=T^{\prime}\alpha_{j}^{\prime}\) (\(1\leq j\leq n\)), and this implies \(UTU^{-1}=T^{\prime}\).
+
+It follows immediately from the lemma that unitarily equivalent operators on finite-dimensional spaces have the same characteristic polynomial. For normal operators the converse is valid.
+
+**Theorem 21**: _Let \(V\) and \(V^{\prime}\) be finite-dimensional inner product spaces over the same field. Suppose \(T\) is a normal operator on \(V\) and that \(T^{\prime}\) is a normal operator on \(V^{\prime}\). Then \(T\) is unitarily equivalent to \(T^{\prime}\) if and only if \(T\) and \(T^{\prime}\) have the same characteristic polynomial._
+
+Suppose \(T\) and \(T^{\prime}\) have the same characteristic polynomial \(f\). Let \(W_{j}\) (\(1\leq j\leq k\)) be the primary components of \(V\) under \(T\) and \(T_{j}\) the restriction of \(T\) to \(W_{j}\). Suppose \(I_{j}\) is the identity operator on \(W_{j}\). Then
+
+\[f=\prod_{j=1}^{k}\det(xI_{j}-T_{j}).\]
+
+Let \(p_{j}\) be the minimal polynomial for \(T_{j}\). If \(p_{j}=x-c_{j}\) it is clear that
+
+\[\det(xI_{j}-T_{j})=(x-c_{j})^{s_{i}}\]
+
+where \(s_{j}\) is the dimension of \(W_{j}\). On the other hand, if \(p_{j}=(x-a_{j})^{z}+b_{j}^{2}\) with \(a_{j},b_{j}\) real and \(b_{j}\neq 0\), then it follows from Theorem 18 that
+
+\[\det(xI_{j}-T_{j})=p_{j}^{s_{j}}\]
+
+where in this case \(2s_{j}\) is the dimension of \(W_{j}\). Therefore \(f=\prod_{j}p_{j}^{s_{j}}\). Now we can also compute \(f\) by the same method using the primary components of \(V^{\prime}\) under \(T^{\prime}\). Since \(p_{1}\), \(\ldots,p_{k}\) are distinct primes, it follows from the uniqueness of the prime factorization of \(f\) that there are exactly \(k\) primary components \(W_{j}^{\prime}\) (\(1\leq j\leq k\)) of \(V^{\prime}\) under \(T^{\prime}\) and that these may be indexed in such a way that \(p_{j}\) is the minimal polynomial for the restriction \(T_{j}^{\prime}\) of \(T^{\prime}\) to \(W_{j}^{\prime}\). If \(p_{j}=x-c_{j}\), then \(T_{j}=c_{j}I_{j}\) and \(T_{j}^{\prime}=c_{j}I_{j}^{\prime}\) where \(I_{j}^{\prime}\) is the 

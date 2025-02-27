@@ -1,0 +1,25 @@
+where at least one of the integers \(e_{i}\) is positive. Choose \(j\) so that \(e_{j}>0\). Then (\(x-c_{j}\)) divides \(g\):
+
+\[g=(x-c_{j})h.\]
+
+By the definition of \(g\), the vector \(\alpha=h(T)\beta\) cannot be in \(W\). But
+
+\[\begin{array}{rl}(T-c_{j}I)\alpha&=&(T-c_{j}I)h(T)\beta\\ &=&g(T)\beta\end{array}\]
+
+is in \(W\).
+
+**Theorem 5**.: _Let \(V\) be a finite-dimensional vector space over the field \(F\) and let \(T\) be a linear operator on \(V\). Then \(T\) is triangulable if and only if the minimal polynomial for \(T\) is a product of linear polynomials over \(F\)._
+
+Proof.: Suppose that the minimal polynomial factors
+
+\[p=(x-c_{1})^{n}\cdots(x-c_{k})^{n}.\]
+
+By repeated application of the lemma above, we shall arrive at an ordered basis \(\delta=\{\alpha_{1},\ldots,\alpha_{n}\}\) in which the matrix representing \(T\) is upper-triangular:
+
+\[[T]_{\delta}=\begin{bmatrix}a_{11}&a_{12}&a_{13}&\cdots&a_{1n}\\ 0&a_{22}&a_{23}&\cdots&a_{2n}\\ 0&0&a_{38}&\cdots&a_{3n}\\ \vdots&\vdots&\vdots&&\vdots\\ 0&0&0&\cdots&a_{nn}\end{bmatrix}.\] (6-11)
+
+Now (6-11) merely says that
+
+\[Ta_{j}=a_{1j}\alpha_{1}+\cdots+a_{jj}\alpha_{j},\qquad 1\leq j\leq n\] (6-12)
+
+that is, \(Ta_{j}\) is in the subspace spanned by \(\alpha_{1}\), \(\ldots\), \(\alpha_{j}\). To find \(\alpha_{1}\), \(\ldots\), \(\alpha_{n}\), we start by applying the lemma to the subspace \(W=\{0\}\), to obtain the vector \(\alpha_{1}\). Then apply the lemma to \(W_{1}\), the space spanned by \(\alpha_{1}\) 

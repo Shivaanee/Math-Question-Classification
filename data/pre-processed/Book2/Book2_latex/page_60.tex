@@ -1,0 +1,11 @@
+
+
+#### Examples.
+
+* _Feature distance._ If \(x\) and \(y\) represent vectors of \(n\) features of two objects, the quantity \(\|x-y\|\) is called the _feature distance_, and gives a measure of how different the objects are (in terms of their feature values). Suppose for example the feature vectors are associated with patients in a hospital, with entries such as weight, age, presence of chest pain, difficulty breathing, and the results of tests. We can use feature vector distance to say that one patient case is near another one (at least in terms of their feature vectors).
+* _RMS prediction error._ Suppose that the \(n\)-vector \(y\) represents a time series of some quantity, for example, hourly temperature at some location, and \(\hat{y}\) is another \(n\)-vector that represents an estimate or prediction of the time series \(y\), based on other information. The difference \(y-\hat{y}\) is called the _prediction error_, and its RMS value \(\mathbf{rms}(y-\hat{y})\) is called the _RMS prediction error_. If this value is small (say, compared to \(\mathbf{rms}(y)\)) the prediction is good.
+* _Nearest neighbor._ Suppose \(z_{1},\ldots,z_{m}\) is a collection of \(m\)\(n\)-vectors, and that \(x\) is another \(n\)-vector. We say that \(z_{j}\) is the _nearest neighbor_ of \(x\) (among \(z_{1},\ldots,z_{m}\)) if \[\|x-z_{j}\|\leq\|x-z_{i}\|,\quad i=1,\ldots,m.\] In words: \(z_{j}\) is the closest vector to \(x\) among the vectors \(z_{1},\ldots,z_{m}\). This is illustrated in figure 3.3. The idea of nearest neighbor, and generalizations such as the \(k\)-nearest neighbors, are used in many applications.
+* _Document dissimilarity._ Suppose \(n\)-vectors \(x\) and \(y\) represent the histograms of word occurrences for two documents. Then \(\|x-y\|\) represents a measure of the dissimilarity of the two documents. We might expect the dissimilarity
+
+Figure 3.3: A point \(x\), shown as a square, and six other points \(z_{1},\ldots,z_{6}\). The point \(z_{3}\) is the nearest neighbor of \(x\) among the points \(z_{1},\ldots,z_{6}\).
+

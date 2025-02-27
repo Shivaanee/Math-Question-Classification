@@ -1,0 +1,23 @@
+* Explain why the number \(\mathcal{D}(v)\) does not depend on the choice of directions for the edges of the graph.
+* Would you guess that \(\mathcal{D}(v)\) is small or large? This is an open-ended, vague question; there is no right answer. Just make a guess as to what you might expect, and give a short English justification of your guess.
+
+**7.10**: _Circle graph._ A _circle graph_ (also called a _cycle graph_) has \(n\) vertices, with edges pointing from vertex \(1\) to vertex \(2\), from vertex \(2\) to vertex \(3\), ..., from vertex \(n-1\) to vertex \(n\), and finally, from vertex \(n\) to vertex \(1\). (This last edge completes the circle.)
+
+* Draw a diagram of a circle graph, and give its incidence matrix \(A\).
+* Suppose that \(x\) is a circulation for a circle graph. What can you say about \(x\)?
+* Suppose the \(n\)-vector \(v\) is a potential on a circle graph. What is the Dirichlet energy \(\mathcal{D}(v)=||A^{T}v||^{2}\)?
+
+_Remark_.: The circle graph arises when an \(n\)-vector \(v\) represents a periodic time series. For example, \(v_{1}\) could be the value of some quantity on Monday, \(v_{2}\) its value on Tuesday, and \(v_{7}\) its value on Sunday. The Dirichlet energy is a measure of the roughness of such an \(n\)-vector \(v\).
+
+**7.11**: _Tree._ An undirected graph is called a tree if it is connected (there is a path from every vertex to every other vertex) and contains no cycles, _i.e._, there is no path that begins and ends at the same vertex. Figure 7.9 shows a tree with six vertices. For the tree in the figure, find a numbering of the vertices and edges, and an orientation of the edges, so that the incidence matrix \(A\) of the resulting directed graph satisfies \(A_{ii}=1\) for \(i=1,\ldots,5\) and \(A_{ij}=0\) for \(i<j\). In other words, the first \(5\) rows of \(A\) form a lower triangular matrix with ones on the diagonal.
+
+**7.12**: _Some properties of convolution._ Suppose that \(a\) is an \(n\)-vector.
+
+* _Convolution with \(1\)._ What is \(1*a\)? (Here we interpret \(1\) as a \(1\)-vector.)
+* _Convolution with a unit vector._ What is \(e_{k}*a\), where \(e_{k}\) is the \(k\)th unit vector of dimension \(q\)? Describe this vector mathematically (_i.e._, give its entries), and via a brief English description. You might find vector slice notation useful.
+
+**7.13**: _Sum property of convolution._ Show that for any vectors \(a\) and \(b\), we have \(\mathbf{1}^{T}(a*b)=(\mathbf{1}^{T}a)(\mathbf{1}^{T}b)\). In words: The sum of the coefficients of the convolution of two vectors is the product of the sums of the coefficients of the vectors. _Hint._ If the vector \(a\) represents the coefficients of a polynomial \(p\), \(\mathbf{1}^{T}a=p(1)\).
+
+Figure 7.9: Tree with six vertices.
+
+ 

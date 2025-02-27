@@ -1,0 +1,25 @@
+The speed of the FFT, in the standard form presented here, depends on working with highly composite numbers like \(2^{10}=1024\). Without the fast transform, it takes \((1024)^{2}\) multiplications to produce \(F\) times \(c\) (which we want to do often). By contrast, a fast transform can do each multiplication in only \(5\cdot 1024\) steps. _It is 200 times faster_, because it replaces one factor of \(1024\) by \(5\). In general it replaces \(n^{2}\) multiplications by \(\frac{1}{2}n\ell\), when \(n\) is \(2^{\ell}\). By connecting \(F_{n}\) to two copies of \(F_{n/2}\), and then to four copies of \(F_{n/4}\), and eventually to a very small \(F\), the usual \(n^{2}\) steps are reduced to \(\frac{1}{2}n\log_{2}n\).
+
+We need to see how \(y=F_{n}c\) (a vector with \(n\) components) can be recovered from two vectors that are only half as long. The first step is to divide \(c\) itself, by separating its even-numbered components from its odd-numbered components:
+
+\[c^{\prime}=(c_{0},c_{2},\ldots,c_{n-2})\qquad\text{and}\qquad c^{\prime\prime} =(c_{1},c_{3},\ldots,c_{n-1}).\]
+
+The coefficients just go alternately into \(c^{\prime}\) and \(c^{\prime\prime}\). From those vectors, the half-size transform gives \(y^{\prime}=F_{m}c^{\prime}\) and \(y^{\prime\prime}=F_{m}c^{\prime\prime}\). _Those are the two multiplications by the smaller matrix \(F_{m}\)_. The central problem is to recover \(y\) from the half-size vectors \(y^{\prime}\) and \(y^{\prime\prime}\), and Cooley and Tukey noticed how it could be done:
+
+**3W** The first \(m\) and the last \(m\) components of the vector \(y=F_{n}c\) are
+
+\[\begin{split} y_{j}&=y^{\prime}_{j}+w^{j}_{n}y^{ \prime\prime}_{j},\qquad j=0,\ldots,m-1\\ y_{j+m}&=y^{\prime}_{j}-w^{j}_{n}y^{\prime\prime}_{ j},\qquad j=0,\ldots,m-1.\end{split}\] (13)
+
+Thus the three steps are: split \(c\) into \(c^{\prime}\) and \(c^{\prime\prime}\), transform them by \(F_{m}\) into \(y^{\prime}\) and \(y^{\prime\prime}\), and reconstruct \(y\) from equation (13).
+
+We verify in a moment that this gives the correct \(y\). (You may prefer the flow graph to the algebra.) _This idea can be repeated. We go from \(F_{1024}\) to \(F_{512}\) to \(F_{256}\)_. The final count is \(\frac{1}{2}n\ell\), when starting with the power \(n=2^{\ell}\) and going all the way to \(n=1\)--where no multiplication is needed. This number \(\frac{1}{4}n\ell\) satisfies the rule given above: _twice the count for m, plus m extra multiplications, produces the count for \(n\)_:
+
+\[2\left(\frac{1}{2}m(\ell-1)\right)+m=\frac{1}{2}n\ell.\]
+
+Another way to count: There are \(\ell\) steps from \(n=2^{\ell}\) to \(n=1\). Each step needs \(n/2\) multiplications by \(D_{n/2}\) in equation (13), which is really a factorization of \(F_{n}\):
+
+\[\text{\bf One FFT step}\qquad F_{1024}=\begin{bmatrix}I_{512}&D_{512}\\ I_{512}&-D_{512}\end{bmatrix}\begin{bmatrix}F_{512}&\\ &F_{512}\end{bmatrix}\begin{bmatrix}\text{\bf even-odd}\\ \text{\bf permutation}\end{bmatrix}.\] (14)
+
+The cost is only slightly more than linear. Fourier analysis has been completely transformed by the FFT. To verify equation (13), split \(y_{j}\) into _even_ and _odd_:
+
+\[y_{j}=\sum_{k=0}^{n-1}w^{jk}_{n}c_{k}\quad\text{is identical to}\quad\sum_{k=0}^{m-1}w^{2 kj}_{n}c_{2k}+\sum_{k=0}^{m-1}w^{(2k+1)j}_{n}c_{2k+1}.\] 

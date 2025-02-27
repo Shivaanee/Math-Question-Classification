@@ -1,0 +1,14 @@
+
+General fitting model as regression.The regression model is a special case of our general data fitting model. Conversely, we can think of our linear in the parameters model as regression, with a different set of feature vectors of dimension \(p-1\). Assuming the first basis element \(f_{1}\) is the constant function with value one, we consider the new or generated feature vectors \(\tilde{x}\) given by
+
+\[\tilde{x}=\left[\begin{array}{c}f_{2}(x)\\ \vdots\\ f_{p}(x)\end{array}\right].\]
+
+A regression model for the outcome \(y\) and the new generated or mapped features \(\tilde{x}\) has the form
+
+\[\hat{y}=\tilde{x}^{T}\beta+v,\]
+
+where \(\beta\) has dimension \(p-1\), and \(v\) is a number. Comparing this to our linear in the parameters model
+
+\[\hat{y}=\theta_{1}f_{1}(x)+\cdots+\theta_{p}f_{p}(x),\]
+
+we see that they are the same, with \(v=\theta_{1}\), \( 

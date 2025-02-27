@@ -1,0 +1,10 @@
+or \[\sum_{r=1}^{n}\overline{A_{rj}}A_{rk}=\delta_{jk}.\] In other words, it means that the columns of \(A\) form an orthonormal set of column matrices, with respect to the standard inner product \((X|Y)=Y^{*}X\). Since \(A^{*}A=I\) if and only if \(AA^{*}=I\), we see that \(A\) is unitary exactly when the rows of \(A\) comprise an orthonormal set of \(n\)-tuples in \(C_{n}\) (with the standard inner product). So, using standard inner products, \(A\) is unitary if and only if the rows and columns of \(A\) are orthonormal sets. One sees here an example of the power of the theorem which states that a one-sided inverse for a matrix is a two-sided inverse. Applying this theorem as we did above, say to real matrices, we have the following: Suppose we have a square array of real numbers such that the sum of the squares of the entries in each row is 1 and distinct rows are orthogonal. Then the sum of the squares of the entries in each column is 1 and distinct columns are orthogonal. Write down the proof of this for a \(3\times 3\) array, without using any knowledge of matrices, and you should be reasonably impressed.
+
+_Definition. A real or complex \(n\times n\) matrix \(A\) is said to be_ **orthogonal,** _if \(A^{\iota}A=I\)._
+
+A real orthogonal matrix is unitary; and, a unitary matrix is orthogonal if and only if each of its entries is real.
+
+**Example 27**: We give some examples of unitary and orthogonal matrices.
+
+1. A \(1\times 1\) matrix \([c]\) is orthogonal if and only if \(c=\pm 1\), and unitary if and only if \(\tilde{c}c=1\). The latter condition means (of course) that \(|c|=1\), or \(c=e^{i\theta}\), where \(\theta\) is real.
+2. Let \[A=\begin{bmatrix}a&b\\ c&d\end{bmatrix}.\] Then \(A\) is orthogonal if and only if \[A^{\iota}=A^{\neg 1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\ -c&a\end{bmatrix}.\] The determinant of any orthogonal matrix is easily seen to be \(\pm 1\). Thus \(A\) is orthogonal if and only if \[A=\begin{bmatrix}a&b\\ -b&a\end{bmatrix}\] or \[A=\begin{bmatrix}a&b\\ b&-a\end{bmatrix}\] 

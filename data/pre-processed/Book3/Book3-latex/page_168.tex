@@ -1,0 +1,45 @@
+called the expansion of \(\det A\) by cofactors of the \(j\)th column (or sometimes the expansion by minors of the \(j\)th column). If we set
+
+\[C_{ij}=(-1)^{i+j}\det A(i|j)\]
+
+then the above formula says that for each \(j\)
+
+\[\det A=\sum_{i=1}^{n}A_{\,ij}C_{ij}\]
+
+where the cofactor \(C_{ij}\) is \((-1)^{i+j}\) times the determinant of the \((n-1)\)\(\times\)\((n-1)\) matrix obtained by deleting the \(i\)th row and \(j\)th column of \(A\).
+
+If \(j\neq k\), then
+
+\[\sum_{i=1}^{n}A_{\,ik}C_{ij}=0.\]
+
+For, replace the \(j\)th column of \(A\) by its \(k\)th column, and call the resulting matrix \(B\). Then \(B\) has two equal columns and so \(\det B=0\). Since \(B(i|j)=A(i|j)\), we have
+
+\[0 = \det B\] \[= \sum_{i=1}^{n}(-1)^{i+j}B_{ij}\det B(i|j)\] \[= \sum_{i=1}^{n}(-1)^{i+j}A_{ik}\det A(i|j)\] \[= \sum_{i=1}^{n}A_{\,ik}C_{ij}.\]
+
+These properties of the cofactors can be summarized by
+
+\[\sum_{i=1}^{n}A_{\,ik}C_{ij}=\delta_{jk}\det A.\] (5-21)
+
+The \(n\times n\) matrix adj \(A\), which is the transpose of the matrix of cofactors of \(A\), is called the **classical adjoint** of \(A\). Thus
+
+\[(\mbox{adj}\;A)_{ij}=C_{ji}=(-1)^{i+j}\det A(j|i).\] (5-22)
+
+The formulas (5-21) can be summarized in the matrix equation
+
+\[(\mbox{adj}\;A)A\;=(\det A)I.\] (5-23)
+
+We wish to see that \(A(\mbox{adj}\;A)=(\det A)I\) also. Since \(A^{\,t}(i|j)=A(j|i)^{t}\), we have
+
+\[(-1)^{i+j}\det A^{\,t}(i|j)=(-1)^{i+i}\det A(j|i)\]
+
+which simply says that the \(i\), \(j\) cofactor of \(A^{\,t}\) is the \(j\), \(i\) cofactor of \(A\). Thus
+
+\[\mbox{adj}\;(A^{\,t})=(\mbox{adj}\;A)^{t}\] (5-24)
+
+By applying (5-23) to \(A^{\,t}\), we obtain
+
+\[(\mbox{adj}\;A^{\,t})A^{\,t}=(\det A^{\,t})I\,=(\det A)I\]
+
+and transposing
+
+\[A(\mbox{adj}\;A^{\,t})^{t}=(\det A)I.\] 

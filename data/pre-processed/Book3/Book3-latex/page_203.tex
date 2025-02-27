@@ -1,0 +1,23 @@
+From the preceding paragraph, we know that the minimal polynomial for \(T\) is
+
+\[p\,=\,(x\,-\,1)(x\,-\,2).\]
+
+The reader might find it reassuring to verify directly that
+
+\[(A\,-\,I)(A\,-\,2I)\,=\,0.\]
+
+In Example 2, the operator \(T\) also had the characteristic polynomial \(f\,=\,(x\,-\,1)(x\,-\,2)^{\sharp}\). But, this \(T\) is not diagonalizable, so we don't know that the minimal polynomial is \((x\,-\,1)\)\((x\,-\,2)\). What do we know about the minimal polynomial in this case? From Theorem 3 we know that its roots are \(1\) and \(2\), with some multiplicities allowed. Thus we search for \(p\) among polynomials of the form \((x\,-\,1)^{\sharp}(x\,-\,2)^{\sharp}\), \(k\geq\,1\), \(l\geq 1\). Try \((x\,-\,1)\)\((x\,-\,2)\):
+
+\[(A\,-\,I)(A\,-\,2I) = \begin{bmatrix}2&1&-\,1\\ 2&1&-\,1\\ 2&2&-\,1\end{bmatrix}\begin{bmatrix}1&1&-\,1\\ 2&0&-\,1\\ 2&2&-\,2\end{bmatrix}\] \[= \begin{bmatrix}2&0&-\,1\\ 2&0&-\,1\\ 4&0&-\,2\end{bmatrix}.\]
+
+Thus, the minimal polynomial has degree at least \(3\). So, next we should try either \((x\,-\,1)^{\sharp}(x\,-\,2)\) or \((x\,-\,1)(x\,-\,2)^{\sharp}\). The second, being the characteristic polynomial, would seem a less random choice. One can readily compute that \((A\,-\,I)(A\,-\,2I)^{\sharp}\,=\,0\). Thus the minimal polynomial for \(T\) is its characteristic polynomial.
+
+In Example 1 we discussed the linear operator \(T\) on \(R^{\sharp}\) which is represented in the standard basis by the matrix
+
+\[A\,=\begin{bmatrix}0&-\,1\\ 1&0\end{bmatrix}.\]
+
+The characteristic polynomial is \(x^{\sharp}+1\), which has no real roots. To determine the minimal polynomial, forget about \(T\) and concentrate on \(A\). As a complex \(2\,\times\,2\) matrix, \(A\) has the characteristic values \(i\) and \(-i\). Both roots must appear in the minimal polynomial. Thus the minimal polynomial is divisible by \(x^{\sharp}+1\). It is trivial to verify that \(A^{\sharp}+I=0\). So the minimal polynomial is \(x^{\sharp}+1\).
+
+**Theorem 4** (Cayley-Hamilton): _Let \(T\) be a linear operator on a finite dimensional vector space \(V\). If \(f\) is the characteristic polynomial for \(T\), then \(f(T)=0\); in other words, the minimal polynomial divides the characteristic polynomial for \(T\)._
+
+Later on we shall give two proofs of this result independent of the one to be given here. The present proof, although short, may be difficult to understand. Aside from brevity, it has the virtue of providing 

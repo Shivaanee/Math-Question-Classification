@@ -1,0 +1,15 @@
+value. The right-hand side is the inverse square of the ratio of \(a\) to \(\mathbf{rms}(x)\). It says, for example, that no more than \(1/25=4\%\) of the entries of a vector can exceed its RMS value by more than a factor of 5. The Chebyshev inequality partially justifies the idea that the RMS value of a vector gives an idea of the size of a typical entry: It states that not too many of the entries of a vector can be much bigger (in absolute value) than its RMS value. (A converse statement can also be made: At least one entry of a vector has absolute value as large as the RMS value of the vector; see exercise 3.8.)
+
+### 3.2 Distance
+
+Euclidean distance.We can use the norm to define the _Euclidean distance_ between two vectors \(a\) and \(b\) as the norm of their difference:
+
+\[\mathbf{dist}(a,b)=\|a-b\|.\]
+
+For one, two, and three dimensions, this distance is exactly the usual distance between points with coordinates \(a\) and \(b\), as illustrated in figure 3.1. But the Euclidean distance is defined for vectors of any dimension; we can refer to the distance between two vectors of dimension 100. Since we only use the Euclidean norm in this book, we will refer to the Euclidean distance between vectors as, simply, the distance between the vectors. If \(a\) and \(b\) are \(n\)-vectors, we refer to the RMS value of the difference, \(\|a-b\|/\sqrt{n}\), as the _RMS deviation_ between the two vectors.
+
+When the distance between two \(n\)-vectors \(x\) and \(y\) is small, we say they are 'close' or 'nearby', and when the distance \(\|x-y\|\) is large, we say they are 'far'. The particular numerical values of \(\|x-y\|\) that correspond to 'close' or 'far' depend on
+
+Figure 3.1: The norm of the displacement \(b-a\) is the distance between the points with coordinates \(a\) and \(b\).
+
+ 

@@ -1,0 +1,11 @@
+
+
+**16.15**: _Approximating each column of a matrix as a linear combination of the others._ Suppose \(A\) is an \(m\times n\) matrix with linearly independent columns \(a_{1},\ldots,a_{n}\). For each \(i\) we consider the problem of finding the linear combination of \(a_{1},\ldots,a_{i-1},a_{i+1},\ldots,a_{n}\) that is closest to \(a_{i}\). These are \(n\) standard least squares problems, which can be solved using the methods of chapter 12. In this exercise we explore a simple formula that allows us to solve these \(n\) least squares problem all at once. Let \(G=A^{T}A\) denote the Gram matrix, and \(H=G^{-1}\) its inverse, with columns \(h_{1},\ldots,h_{n}\).
+
+1. Explain why minimizing \(\|Ax^{(i)}\|^{2}\) subject to \(x^{(i)}_{i}=-1\) solves the problem of finding the linear combination of \(a_{1},\ldots,a_{i-1},a_{i+1},\ldots,a_{n}\) that is closest to \(a_{i}\). These are \(n\) constrained least squares problems.
+2. Solve the KKT equations for these constrained least squares problems, \[\left[\begin{array}{cc}2A^{T}A&e_{i}\\ e_{i}^{T}&0\end{array}\right]\left[\begin{array}{c}x^{(i)}\\ z_{i}\end{array}\right]=\left[\begin{array}{c}0\\ -1\end{array}\right],\] to conclude that \(x^{(i)}=-(1/H_{ii})h_{i}\). In words: \(x^{(i)}\) is the \(i\)th column of \((A^{T}A)^{-1}\), scaled so its \(i\)th entry is \(-1\).
+3. Each of the \(n\) original least squares problems has \(n-1\) variables, so the complexity is \(n(2m(n-1)^{2})\) flops, which we can approximate as \(2mn^{3}\) flops. Compare this to the complexity of a method based on the result of part (b): First find the QR factorization of \(A\); then compute \(H\).
+4. Let \(d_{i}\) denote the distance between \(a_{i}\) and the linear combination of the other columns that is closest to it. Show that \(d_{i}=1/\sqrt{H_{ii}}\).
+
+_Remark_.: When the matrix \(A\) is a data matrix, with \(A_{ij}\) the value of the \(j\)th feature on the \(i\)th example, the problem addressed here is the problem of predicting each of the features from the others. The numbers \(d_{i}\) tells us how well each feature can be predicted from the others.
+

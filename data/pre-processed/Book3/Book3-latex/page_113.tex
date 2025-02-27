@@ -1,0 +1,15 @@
+Therefore, the linear functionals \[\begin{array}{rcl}g_{1}(x_{1},x_{2},x_{3},x_{4})&=&x_{1}+\,2x_{3}\\ g_{2}(x_{1},x_{2},x_{3},x_{4})&=&x_{2}\\ g_{3}(x_{1},x_{2},x_{3},x_{4})&=&x_{4}\end{array}\] span the same subspace of \((R^{4})^{*}\) and annihilate the same subspace of \(R^{4}\) as do \(f_{1},f_{2},f_{3}\). The subspace annihilated consists of the vectors with \[\begin{array}{rcl}x_{1}&=&-2x_{3}\\ x_{2}&=&x_{4}=\,0.\end{array}\]
+
+**Example 24**.: Let \(W\) be the subspace of \(R^{5}\) which is spanned by the vectors
+
+\[\begin{array}{rcl}\alpha_{1}&=&(2,\,-2,\,3,\,4,\,-1),&\alpha_{1}&=&(0,\,0,\, -1,\,-2,\,3)\\ \alpha_{2}&=&(-1,\,1,\,2,\,5,\,2),&\alpha_{4}&=&(1,\,-1,\,2,\,3,\,0).\end{array}\]
+
+How does one describe \(W^{0}\), the annihilator of \(W\)? Let us form the \(4\times 5\) matrix \(A\) with row vectors \(\alpha_{1}\), \(\alpha_{2}\), \(\alpha_{3}\), \(\alpha_{4}\), and find the row-reduced echelon matrix \(R\) which is row-equivalent to \(A\) :
+
+\[A\,=\!\!\left[\begin{array}{ccccc}2&-2&3&4&-1\\ -1&1&2&5&2\\ 0&0&-1&-2&3\\ 1&-1&2&3&0\end{array}\right]\!\!\longrightarrow R\,=\!\!\left[\begin{array}[] {ccccc}1&-1&0&-1&0\\ 0&0&1&2&0\\ 0&0&0&0&1\\ 0&0&0&0&0\end{array}\right]\!\!.\]
+
+If \(f\) is a linear functional on \(R^{5}\):
+
+\[f(x_{1},\,.\,.\,.\,,\,x_{5})\,=\!\!\sum\limits_{j\,=\,1}^{5}\,c_{j}x_{j}\]
+
+then \(f\) is in \(W^{0}\) if and only if \(f(\alpha_{i})\,=\,0\), \ 

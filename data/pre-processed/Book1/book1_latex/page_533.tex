@@ -1,0 +1,25 @@
+Appendix
+$D$
+$\qquad$
+Glossary: A Dictionary for Linear Algebra
+
+Adjacency matrix of a graph Square matrix with $a_{i j}=1$ when there is an edge from node $i$ to node $j$; otherwise $a_{i j}=0 . A=A^{\mathrm{T}}$ for an undirected graph.
+
+Affine transformation $T(v)=A v+v_0=$ linear transformation plus shift.
+Associative Law $(A B) C=A(B C) \quad$ Parentheses can be removed to leave $A B C$.
+Augmented matrix $\left[\begin{array}{ll}A & b\end{array}\right] \quad A x=b$ is solvable when $b$ is in the column space of $A$; then $\left[\begin{array}{ll}A & b\end{array}\right]$ has the same rank as $A$. Elimination on $\left[\begin{array}{ll}A & b\end{array}\right]$ keeps equations correct.
+
+Back substitution Upper triangular systems are solved in reverse order $x_n$ to $x_1$.
+Basis for $\mathbf{V}$ Independent vectors $v_1, \ldots, v_d$ whose linear combinations give every $v$ in V. A vector space has many bases!
+
+Big formula for $n$ by $n$ determinants $\operatorname{det}(A)$ is a sum of $n!$ terms, one term for each permutation $P$ of the columns. That term is the product $a_{1 \alpha} \cdots a_{n \omega}$ down the diagonal of the reordered matrix, times $\operatorname{det}(P)= \pm 1$.
+
+Block matrix A matrix can be partitioned into matrix blocks, by cuts between rows and/or between columns.
+
+Block multiplication of $A B$ is allowed if the block shapes permit (the columns of $A$ and rows of $B$ must be in matching blocks).
+
+Cayley-Hamilton Theorem $\quad p(\lambda)=\operatorname{det}(A-\lambda I)$ has $p(A)=$ zero matrix.
+Change of basis matrix $M$ The old basis vectors $v_j$ are combinations $\sum m_{i j} w_i$ of the new basis vectors. The coordinates of $c_1 v_1+\cdots+c_n v_n=d_1 w_1+\cdots+d_n w_n$ are related by $d=M c$. (For $n=2$, set $v_1=m_{11} w_1+m_{21} w_2, v_2=m_{12} w_1+m_{22} w_2$.)
+
+Characteristic equation $\operatorname{det}(A-\lambda I)=0 \quad$ The $n$ roots are the eigenvalues of $A$.
+Cholesky factorization $A=C C^{\mathrm{T}}=(L \sqrt{D})(L \sqrt{D})^{\mathrm{T}}$ for positive definite $A$.

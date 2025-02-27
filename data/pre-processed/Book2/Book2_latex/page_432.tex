@@ -1,0 +1,31 @@
+\(g(x)\) to zero). When the Levenberg-Marquardt algorithm is used to minimize (19.5) for very high values of \(\mu\), it can take a large number of iterations or simply fail. The augmented Lagrangian algorithm described below gets around this drawback, and gives a much more reliable algorithm.
+
+We can connect the penalty algorithm iterates to the optimality condition (19.4). The iterate \(x^{(k+1)}\) (almost) satisfies the optimality condition for minimizing (19.5),
+
+\[2Df(x^{(k+1)})^{T}f(x^{(k+1)})+2\mu^{(k)}Dg(x^{(k+1)})^{T}g(x^{(k+1)})=0.\]
+
+Defining
+
+\[z^{(k+1)}=2\mu^{(k)}g(x^{(k+1)})\]
+
+as our estimate of a suitable Lagrange multiplier in iteration \(k+1\), we see that the optimality condition (19.4) (almost) holds for \(x^{(k+1)}\) and \(z^{(k+1)}\). (The feasibility condition \(g(x^{(k)})=0\) only holds in the limit as \(k\to\infty\).)
+
+### 19.3 Augmented Lagrangian algorithm
+
+The augmented Lagrangian algorithm is a modification of the penalty algorithm that addresses the difficulty associated with the penalty parameter \(\mu^{(k)}\) becoming very large. It was proposed by Magnus Hestenes and Michael Powell in the 1960s.
+
+Augmented Lagrangian.The _augmented Lagrangian_ for the problem (19.1), with parameter \(\mu>0\), is defined as
+
+\[L_{\mu}(x,z)=L(x,\mu)+\mu\|g(x)\|^{2}=\|f(x)\|^{2}+g(x)^{T}z+\mu\|g(x)\|^{2}.\] (19.7)
+
+This is the Lagrangian, augmented with the new term \(\mu\|g(x)\|^{2}\); alternatively, it can be interpreted as the composite objective function (19.5) used in the penalty algorithm, with the Lagrange multiplier term \(g(x)^{T}z\) added.
+
+The augmented Lagrangian (19.7) is also the ordinary Lagrangian associated with the problem
+
+\[\begin{array}{ll}\mbox{minimize}&\|f(x)\|^{2}+\mu\|g(x)\|^{2}\\ \mbox{subject to}&g(x)=0.\end{array}\]
+
+This problem is equivalent to the original constrained nonlinear least squares problem (19.1): A point \(x\) is a solution of one if and only if it is a solution of the other. (This follows since the term \(\mu\|g(x)\|^{2}\) is zero for any feasible \(x\).)
+
+Minimizing the augmented Lagrangian.In the augmented Lagrangian algorithm we minimize the augmented Lagrangian over the variable \(x\) for a sequence of values of \(\mu\) and \(z\). We show here how this can be done using the Levenberg-Marquardt algorithm. We first establish the identity
+
+\[L_{\mu}(x,z)=\|f(x)\|^{2}+\mu\|g(x)+z/(2\mu)\|^{2}-\mu\|z/(2\mu)\|^{2}.\] (19.8) 

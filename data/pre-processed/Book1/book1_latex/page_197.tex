@@ -1,0 +1,11 @@
+If those equations \(Ax=b\) could be solved, there would be no errors. They can't be solved because the points are not on a line. Therefore they are solved by least squares:
+
+\[A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\quad\text{is}\quad\begin{bmatrix}3&2 \\ 2&6\end{bmatrix}\begin{bmatrix}\widehat{C}\\ \widehat{D}\end{bmatrix}=\begin{bmatrix}5\\ 6\end{bmatrix}.\]
+
+The best solution is \(\widehat{C}=\frac{9}{7}\), \(\widehat{D}=\frac{4}{7}\) and the best line is \(\frac{9}{7}+\frac{4}{7}t\).
+
+Note the beautiful connections between the two figures. The problem is the same but the art shows it differently. In Figure 3.9b, \(b\) is not a combination of the columns \((1,1,1)\) and \((-1,1,2)\). In Figure 3.9, the three points are not on a line. Least squares replaces points \(b\) that are not on a line by points \(p\) that are! Unable to solve \(Ax=b\), we solve \(A\widehat{x}=p\).
+
+The line \(\frac{9}{7}+\frac{4}{7}t\) has heights \(\frac{5}{7}\), \(\frac{13}{7}\), \(\frac{17}{7}\) at the measurement times \(-1\), \(1\), \(2\). _Those points do lie on a line_. Therefore the vector \(p=(\frac{5}{7},\frac{13}{7},\frac{17}{7})\) is in the column space. _This vector is the projection_. Figure 3.9b is in three dimensions (or \(m\) dimensions if there are \(m\) points) and Figure 3.9a is in two dimensions (or \(n\) dimensions if there are \(n\) parameters).
+
+Subtracting \(p\) from \(b\), the errors are \(e=(\frac{2}{7},-\frac{6}{7},\frac{4}{7})\). Those are the vertical errors in Figure 3.9a, and they are the components of the dashed vector in Figure 3.9b. This error vector is orthogonal to the first column \((1,1,1)\), since \(-\frac{2}{7}-\frac{6}{7}+\frac{4}{7}=0\). It is orthogonal to the second column \((-1,1,2)\), because \(-\frac{2}{7}-\frac{6}{7}+\frac{8}{7}=0\). It is orthogonal to the column space, and it is in the left null 

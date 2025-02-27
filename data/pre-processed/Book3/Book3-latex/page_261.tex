@@ -1,0 +1,21 @@
+\[\left[\begin{array}{cccccccc}0&0&0&\cdots&0&x^{n}+\cdots+c_{1}x+c_{0}\\ -1&0&0&\cdots&0&x^{n-1}+\cdots+c_{2}x+c_{1}\\ 0&-1&0&\cdots&0&x^{n-2}+\cdots+c_{3}x+c_{2}\\ \vdots&\vdots&\vdots&&\vdots&\vdots\\ 0&0&0&\cdots&0&x^{2}+c_{n-1}x+c_{n-2}\\ 0&0&0&\cdots&-1&x+c_{n-1}\end{array}\right]\]
+
+which has the same determinant as \(xI-A\). The upper right-hand entry of this matrix is the polynomial \(p\). We clean up the last column by adding to it appropriate multiples of the other columns:
+
+\[\left[\begin{array}{cccccccc}0&0&0&\cdots&0&p\\ -1&0&0&\cdots&0&0\\ 0&-1&0&\cdots&0&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots\\ 0&0&0&\cdots&0&0\\ 0&0&0&\cdots&-1&0\end{array}\right]\]
+
+Multiply each of the first \((n-1)\) columns by \(-1\) and then perform \((n-1)\) interchanges of adjacent columns to bring the present column \(n\) to the first position. The total effect of the \(2n-2\) sign changes is to leave the determinant unaltered. We obtain the matrix
+
+\[\left[\begin{array}{cccccccc}p&0&0&\cdots&0\\ 0&1&0&\cdots&0\\ 0&0&1&\cdots&0\\ \vdots&\vdots&\vdots&&\vdots\\ 0&0&0&\cdots&1\end{array}\right].\]
+
+It is then clear that \(p=\det\,(xI-A)\).
+
+We are going to show that, for any \(n\times n\) matrix \(A\), there is a succession of row and column operations which will transform \(xI-A\) into a matrix much like (7-28), in which the invariant factors of \(A\) appear down the main diagonal. Let us be completely clear about the operations we shall use.
+
+We shall be concerned with \(F[x]^{n\times n}\), the collection of \(m\times n\) matrices with entries which are polynomials over the field \(F\). If \(M\) is such a matrix, an **elementary row operation** on \(M\) is one of the following
+
+1. multiplication of one row of \(M\) by a non-zero scalar in \(F\);
+2. replacement of the \(r\)th row of \(M\) by row \(r\) plus \(f\) times row \(s\), where \(f\) is any polynomial over \(F\) and \(r\neq s\);
+3. interchange of two rows of \(M\).
+
+The inverse operation of an elementary row operation is an elementary row operation of the same type. Notice that we could not make such an assertion if we allowed non-scalar polynomials in (1). An \(m\times m\)**ele 

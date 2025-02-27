@@ -1,0 +1,14 @@
+
+
+**3.28**: _Weighted norm._ On page 51 we discuss the importance of choosing the units or scaling for the individual entries of vectors, when they represent heterogeneous quantities. Another approach is to use a _weighted norm_ of a vector \(x\), defined as
+
+\[\|x\|_{w}=\sqrt{w_{1}x_{1}^{2}+\cdots+w_{n}x_{n}^{2}},\]
+
+where \(w_{1},\ldots,w_{n}\) are given positive _weights_, used to assign more or less importance to the different elements of the \(n\)-vector \(x\). If all the weights are one, the weighted norm reduces to the usual ('unweighted') norm. It can be shown that the weighted norm is a general norm, _i.e._, it satisfies the four norm properties listed on page 46. Following the discussion on page 51, one common rule of thumb is to choose the weight \(w_{i}\) as the inverse of the typical value of \(x_{i}^{2}\) in the application.
+
+A version of the Cauchy-Schwarz inequality holds for weighted norms: For any \(n\)-vector \(x\) and \(y\), we have
+
+\[|w_{1}x_{1}y_{1}+\cdots+w_{n}x_{n}y_{n}|\leq\|x\|_{w}\|y\|_{w}.\]
+
+(The expression inside the absolute value on the left-hand side is sometimes called the weighted inner product of \(x\) and \(y\).) Show that this inequality holds. _Hint._ Consider the vectors \(\tilde{x}=(x_{1}\sqrt{w_{1}},\ldots,x_{n}\sqrt{w_{n}})\) and \(\tilde{y}=(y_{1}\sqrt{w_{1}},\ldots,y_{n}\sqrt{w_{n}})\), and use the (standard) Cauchy-Schwarz inequality.
+

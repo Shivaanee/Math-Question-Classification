@@ -1,0 +1,27 @@
+is illustrated by the operator \(T\) on \(F^{3}\) (\(F\) any field) represented in the standard basis by
+
+\[A=\begin{bmatrix}2&0&0\\ 1&2&0\\ 0&0&-1\end{bmatrix}\]
+
+The characteristic polynomial for \(A\) is \((x-2)^{2}(x+1)\) and this is plainly also the minimal polynomial for \(A\) (or for \(T\)). Thus \(T\) is not diagonalizable. One sees that this happens because the null space of \((T-2I)\) has dimension 1 only. On the other hand, the null space of \((T+I)\) and the null space of \((T-2I)^{2}\) together span \(V\), the former being the subspace spanned by \(\epsilon_{3}\) and the latter the subspace spanned by \(\epsilon_{1}\) and \(\epsilon_{2}\).
+
+This will be more or less our general method for the second problem. If (remember this is an assumption) the minimal polynomial for \(T\) decomposes
+
+\[p=(x-c_{i})^{r_{1}}\cdots(x-c_{k})^{r_{k}}\]
+
+where \(c_{i}\), \(\ldots\), \(c_{k}\) are distinct elements of \(F\), then we shall show that the space \(V\) is the direct sum of the null spaces of \((T-c_{i}I)^{r_{i}}\), \(i=1,\ldots,k\). The hypothesis about \(p\) is equivalent to the fact that \(T\) is triangulable (Theorem 5); however, that knowledge will not help us.
+
+The theorem which we prove is more general than what we have described, since it works with the primary decomposition of the minimal polynomial, whether or not the primes which enter are all of first degree. The reader will find it helpful to think of the special case when the primes are of degree 1, and even more particularly, to think of the projection-type proof of Theorem 6, a special case of this theorem.
+
+**Theorem 12** (**Primary Decomposition Theorem**).: _Let \(T\) be a linear operator on the finite-dimensional vector space \(V\) over the field \(F\). Let \(p\) be the minimal polynomial for \(T\),_
+
+\[p=p_{1}^{r_{i}}\cdots p_{k}^{r_{k}}\]
+
+_where the \(p_{i}\) are distinct irreducible monic polynomials over \(F\) and the \(r_{i}\) are positive integers. Let \(W_{i}\) be the null space of \(p_{i}(T)^{r_{i}}\), \(i=1\), \(\ldots\), \(k\). Then_
+
+1. \(V=W_{1}\oplus\cdots\oplus W_{k}\)_;_
+2. _each_ \(W_{i}\) _is invariant under_ \(T\)_;_
+3. _if_ \(T_{i}\) _is the operator induced on_ \(W_{i}\,by\,T\)_, then the minimal polynomial for_ \(T_{i}\) _is_ \(p_{i}^{r_{i}}\)_._
+
+Proof.: The idea of the proof is this. If the direct-sum decomposition (i) is valid, how can we get hold of the projections \(E_{1}\), \(\ldots\), \(E_{k}\) associated with the decomposition? The projection \(E_{i}\) will be the identity on \(W_{i}\) and zero on the other \(W_{j}\). We shall find a polynomial \(h_{i}\) such that \(h_{i}(T)\) is the identity on \(W_{i}\) and is zero on the other \(W_{j_{i}}\) and so that \(h_{1}(T)+\cdots+h_{k}(T)=I\), etc.
+
+ 

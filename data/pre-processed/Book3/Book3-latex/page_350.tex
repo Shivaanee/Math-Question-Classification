@@ -1,0 +1,22 @@
+See 9.5 Since \(E_{j}\neq 0\), we have \(|c_{j}|^{2}=1\) or \(|c_{j}|=1\). Conversely, if \(|c_{j}|^{2}=1\) for each \(j\), it is clear that \(TT^{\star}=I\).
+
+It is important to note that this is a theorem about normal operators. If \(T\) is a general linear operator on \(V\) which has real characteristic values, it does not follow that \(T\) is self-adjoint. The theorem states that if \(T\) has real characteristic values, and _if_\(T\) is diagonalizable and normal, then \(T\) is self-adjoint. A theorem of this type serves to strengthen the analogy between the adjoint operation and the process of forming the conjugate of a complex number. A complex number \(z\) is real or of absolute value 1 according as \(z=\bar{z}\), or \(\bar{z}z=1\). An operator \(T\) is self-adjoint or unitary according as \(T=T^{\star}\) or \(T^{\star}T=I\).
+
+We are going to prove two theorems now, which are the analogues of these two statements:
+
+1. Every non-negative number has a unique non-negative square root.
+2. Every complex number is expressible in the form \(ru\), where \(r\) is non-negative and \(|u|=1\). This is the polar decomposition \(z=re^{u}\) for complex numbers.
+
+**Theorem 13**: _Let \(V\) be a finite-dimensional inner product space and \(T\) a non-negative operator on \(V\). Then \(T\) has a unique non-negative square root, that is, there is one and only one non-negative operator \(N\) on \(V\) such that \(N^{2}=T\)._
+
+Let \(T=c_{1}E_{1}+\cdots+c_{k}E_{k}\) be the spectral resolution of \(T\). By Theorem 12, each \(c_{j}\geq 0\). If \(c\) is any non-negative real number, let \(\sqrt{c}\) denote the non-negative square root of \(c\). Then according to Theorem 11 and (9-12) \(N=\sqrt{T}\) is a well-defined diagonalizable normal operator on \(V\). It is non-negative by Theorem 12, and, by an obvious computation, \(N^{2}=T\).
+
+Now let \(P\) be a non-negative operator on \(V\) such that \(P^{2}=T\). We shall prove that \(P=N\). Let
+
+\[P=d_{1}F_{1}+\cdots+d_{r}F_{r}\]
+
+be the spectral resolution of \(P\). Then \(d_{j}\geq 0\) for each \(j\), since \(P\) is non-negative. From \(P^{2}=T\) we have
+
+\[T=d_{1}^{2}F_{1}+\cdots+d_{r}^{2}F_{r}.\]
+
+Now \(F_{1},\ldots,F_{r}\) satisfy the conditions \(I=F 

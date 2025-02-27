@@ -1,0 +1,27 @@
+steady state for both is the eigenvector for \(\lambda_{\max}\). It is multiplied by \(1^{k}=1\) in difference equations and by \(e^{0t}=1\) in differential equations, and it doesn't move.
+
+In the example, the steady state has \(v=w\).
+
+**Example 6**.: In nuclear engineering, a reactor is called _critical_ when it is neutrally stable; the fission balances the decay. Slower fission makes it stable, or _subcritical_, and eventually it runs down. Unstable fission is a bomb.
+
+### Second-Order Equations
+
+The laws of diffusion led to a first-order system \(du/dt=Au\). So do a lot of other applications, in chemistry, in biology, and elsewhere, but the most important law of physics does not. It is _Newton's law_\(F=ma\), and the acceleration \(a\) is a second derivative. Inertial terms produce second-order equations (we have to solve \(d^{2}u/dt^{2}=Au\) instead of \(du/dt=Au\)), and the goal is to understand how this switch to second derivatives alters the solution5. It is optional in linear algebra, but not in physics.
+
+Footnote 5: Fourth derivatives are also possible, in the bending of beams, but nature seems to resist going higher than four.
+
+The comparison will be perfect if we keep the same \(A\):
+
+\[\frac{d^{2}u}{dt^{2}}=Au=\begin{bmatrix}-2&1\\ 1&-2\end{bmatrix}u.\] (16)
+
+Two initial conditions get the system started--the "displacement" \(u(0)\) and the "velocity" \(u^{\prime}(0)\). To match these conditions, there will be \(2n\) pure exponential solutions.
+
+Suppose we use \(\omega\) rather than \(\lambda\), and write these special solutions as \(u=e^{i\omega t}x\). Substituting this exponential into the differential equation, it must satisfy
+
+\[\frac{d^{2}}{dt^{2}}(e^{i\omega t}x)=A(e^{i\omega t}x),\qquad\text{or}\qquad- \omega^{2}x=Ax.\] (17)
+
+_The vector \(x\) must be an eigenvector of \(A\), exactly as before_. The corresponding eigenvalue is now \(-\omega^{2}\), so the frequency \(\omega\) is connected to the decay rate \(\lambda\) by the law
+
+Figure 5.3: The slow and fast modes of oscillation.
+
+ 

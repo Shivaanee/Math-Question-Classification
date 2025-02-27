@@ -1,0 +1,29 @@
+In the existence case, one possible solution is \(x=Cb\), since then \(Ax=ACb=b\). But there will be other solutions if there are other right-inverses. The number of solutions when the columns span \(\mathbf{R}^{m}\) is \(1\) or \(\infty\).
+
+In the uniqueness case, if there is a solution to \(Ax=b\), it has to be \(x=BAx=Bb\). But there may be no solution. The number of solutions is \(0\) or \(1\).
+
+There are simple formulas for the best left and right inverses, if they exist:
+
+\[\mathbf{One\text{-sided inverses}}\qquad B=(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}} \quad\text{and}\quad C=A^{\mathrm{T}}(AA^{\mathrm{T}})^{-1}.\]
+
+Certainly \(BA=I\) and \(AC=I\). What is not so certain is that \(A^{\mathrm{T}}A\) and \(AA^{\mathrm{T}}\) are actually invertible. We show in Chapter 3 that \(A^{\mathrm{T}}A\) does have an inverse if the rank is \(n\), and \(AA^{\mathrm{T}}\) has an inverse when the rank is \(m\). Thus the formulas make sense exactly when the rank is as large as possible, and the one-sided inverses are found.
+
+**Example 2**.: Consider a simple \(2\) by \(3\) matrix of rank \(2\):
+
+\[A=\begin{bmatrix}4&0&0\\ 0&5&0\end{bmatrix}.\]
+
+Since \(r=m=2\), the theorem guarantees a right-inverse \(C\):
+
+\[AC=\begin{bmatrix}4&0&0\\ 0&5&0\end{bmatrix}\begin{bmatrix}\frac{1}{4}&0\\ 0&\frac{1}{5}\\ c_{31}&c_{32}\end{bmatrix}=\begin{bmatrix}1&0\\ 0&1\end{bmatrix}.\]
+
+There are many right-inverses because the last row of \(C\) is completely arbitrary. This is a case of existence but not uniqueness. The matrix \(A\) has no left-inverse because the last column of \(BA\) is certain to be zero. The specific right-inverse \(C=A^{\mathrm{T}}(AA^{\mathrm{T}})^{-1}\) chooses \(c_{31}\) and \(c_{32}\) to be zero:
+
+\[\mathbf{Best\text{ right-inverse}}\qquad A^{\mathrm{T}}(AA^{\mathrm{T}})^{-1}= \begin{bmatrix}4&0\\ 0&5\\ 0&0\end{bmatrix}\begin{bmatrix}\frac{1}{16}&0\\ 0&\frac{1}{25}\end{bmatrix}=\begin{bmatrix}\frac{1}{4}&0\\ 0&\frac{1}{5}\\ 0&0\end{bmatrix}=C.\]
+
+This is the _pseudoinverse_--a way of choosing the best \(C\) in Section 6.3. The transpose of \(A\) yields an example with infinitely many _left_-inverses:
+
+\[BA^{\mathrm{T}}=\begin{bmatrix}\frac{1}{4}&0&b_{13}\\ 0&\frac{1}{5}&b_{23}\end{bmatrix}\begin{bmatrix}4&0\\ 0&5\\ 0&0\end{bmatrix}=\begin{bmatrix}1&0\\ 0&1\end{bmatrix}.\]
+
+Now it is the last column of \(B\) that is completely arbitrary. The best left-inverse (also the pseudoinverse) has \(b_{13}=b_{23}=0\). This is a "uniqueness case," when the rank is \(r=n\). There are no free variables, since \(n-r=0\). If there is a solution it will be the only one. You can see when this example has one solution or no solution:
+
+\[\begin{bmatrix}4&0\\ 0&5\\ 0&0\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\\ b_{3}\end{bmatrix}\qquad\text{is solvable exactly when}\quad b_{3}=0.\] 

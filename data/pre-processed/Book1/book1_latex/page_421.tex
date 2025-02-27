@@ -1,0 +1,21 @@
+The optimal \(\omega\) makes the largest eigenvalue of \(L\) (its spectral radius) as small as possible. _The whole point of overrelaxation is to discover this optimal \(\omega\)_. The product of the eigenvalues equals \(\det L=\det T/\det S\):
+
+\[\lambda_{1}\lambda_{2}=\det L=(1-\omega)^{2}.\]
+
+Always \(\det S=\det D\) because \(L\) lies below the diagonal, and \(\det T=det(1-\omega)D\) because \(U\) lies above the diagonal. Their product is \(\det L=(1-\omega)^{n}\). (This explains why we never go as far as \(\omega=2\). The product of the eigenvalues would be too large, and the iteration could not converge.) We also get a clue to the behavior of the eigenvalues: _At the optimal \(\omega\) the two eigenvalues are equal. They must both equal \(\omega-1\) so their product will match \(\det L\)._ This value of \(\omega\) is easy to compute, because the sum of the eigenvalues always agrees with the sum of the diagonal entries (the trace of \(L\)):
+
+\[\mbox{\bf Optimal }\omega\qquad\lambda_{1}+\lambda_{2}=(\omega_{\rm opt}-1)+( \omega_{\rm opt}-1)=2-2\omega_{\rm opt}+\frac{1}{4}\omega_{\rm opt}^{2}.\] (6)
+
+This quadratic equation gives \(\omega_{\rm opt}=4(2-\sqrt{3})\approx 1.07\). The two equal eigenvalues are approximately \(\omega-1=1.07\), which is a major reduction from the Gauss-Seidel value \(\lambda=\frac{1}{4}\) at \(\omega=1\). In this example, the right choice of \(\omega\) has again doubled the rate of convergence, because \((\frac{1}{4})^{2}\approx.07\). If \(\omega\) is further increased, the eigenvalues become a complex conjugate pair--both have \(|\lambda|=\omega-1\), which is now increasing with \(\omega\).
+
+The discovery that such an improvement could be produced so easily, almost as if by magic, was the starting point for 20 years of enormous activity in numerical analysis. The first problem was solved in Young's 1950 thesis--a simple formula for the optimal \(\omega\). The key step was to connect the eigenvalues \(\lambda\) of \(L\) to the eigenvalues \(\mu\) of the original Jacobi matrix \(D^{-1}(-L-U)\). That connection is expressed by
+
+\[\mbox{\bf Formula for }\omega\qquad(\lambda+\omega-1)^{2}=\lambda\omega^{2} \mu^{2}.\] (7)
+
+This is valid for a wide class of finite difference matrices, and if we take \(\omega=1\) (Gauss-Seidel) it yields \(\lambda^{2}=\lambda\mu^{2}\). Therefore \(\lambda=0\) and \(\lambda=\mu^{2}\) as in Example 2, where \(\mu=\pm\frac{1}{2}\) and \(\lambda=0\), \(\lambda=\frac{1}{4}\). All the matrices in Young's class have eigenvalues \(\mu\) that occur in plus-minus pairs, and the corresponding \(\lambda\) are \(0\) and \(\mu^{2}\). So Gauss-Seidel doubles the Jacobi rate of convergence.
+
+The important problem is to choose \(\omega\) so that \(\lambda_{\rm max}\) will be minimized. Fortunately, Young's equation (7) is exactly our 2 by 2 example! The best \(\omega\) makes the two roots \(\lambda\) both equal to \(\omega-1\):
+
+\[(\omega-1)+(\omega-1)=2-2\omega+\mu^{2}\omega^{2},\qquad\mbox{or}\qquad\omega= \frac{2(1-\sqrt{1-\mu^{2}})}{\mu^{2}}.\]
+
+For a large matrix, this pattern will be repeated for a number of different pairs \(\pm\mu_{i}\)--and we can only make a single choice of \(\omega\). The largest \(\mu\) gives the largest value of \(\omega\) and 

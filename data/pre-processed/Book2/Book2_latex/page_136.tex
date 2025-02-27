@@ -1,0 +1,18 @@
+* Let \(c\) be an \(n\)-vector whose entries gives the cost per unit for each job type. (This is the total cost of the resources required to run one unit of the job type.) Express \(c\) in terms of \(R\) and \(p\) using matrix and vector notation.
+
+_Remark_.: One example is a data center, which runs many instances of each of \(n\) types of application programs. The resources include number of cores, amount of memory, disk, and network bandwidth.
+
+* Let \(A\) and \(B\) be two \(m\times n\) matrices. Under each of the assumptions below, determine whether \(A=B\) must always hold, or whether \(A=B\) holds only sometimes.
+* Suppose \(Ax=Bx\) holds for all \(n\)-vectors \(x\).
+* Suppose \(Ax=Bx\) for some nonzero \(n\)-vector \(x\).
+* _Skew-symmetric matrices_. An \(n\times n\) matrix \(A\) is called _skew-symmetric_ if \(A^{T}=-A\), _i.e._, its transpose is its negative. (A symmetric matrix satisfies \(A^{T}=A\).)
+* Find all \(2\times 2\) skew-symmetric matrices.
+* Explain why the diagonal entries of a skew-symmetric matrix must be zero.
+* Show that for a skew-symmetric matrix \(A\), and any \(n\)-vector \(x\), \((Ax)\perp x\). This means that \(Ax\) and \(x\) are orthogonal. _Hint_. First show that for any \(n\times n\) matrix \(A\) and \(n\)-vector \(x\), \(x^{T}(Ax)=\sum_{i,j=1}^{n}A_{ij}x_{i}x_{j}\).
+* Now suppose \(A\) is any matrix for which \((Ax)\perp x\) for any \(n\)-vector \(x\). Show that \(A\) must be skew-symmetric. _Hint_. You might find the formula \[(e_{i}+e_{j})^{T}(A(e_{i}+e_{j}))=A_{ii}+A_{jj}+A_{ij}+A_{ji},\] valid for any \(n\times n\) matrix \(A\), useful. For \(i=j\), this reduces to \(e_{i}^{T}(Ae_{i})=A_{ii}\).
+* _Polynomial differentiation_. Suppose \(p\) is a polynomial of degree \(n-1\) or less, given by \(p(t)=c_{1}+c_{2}t+\cdots+c_{n}t^{n-1}\). Its derivative (with respect to \(t\)) \(p^{\prime}(t)\) is a polynomial of degree \(n-2\) or less, given by \(p^{\prime}(t)=d_{1}+d_{2}t+\cdots+d_{n-1}t^{n-2}\). Find a matrix \(D\) for which \(d=Dc\). (Give the entries of \(D\), and be sure to specify its dimensions.)
+* _Norm of matrix-vector product_. Suppose \(A\) is an \(m\times n\) matrix and \(x\) is an \(n\)-vector. A famous inequality relates \(\|x\|\), \(\|A\|\), and \(\|Ax\|\): \[\|Ax\|\leq\|A\|\|x\|.\] The left-hand side is the (vector) norm of the matrix-vector product; the right-hand side is the (scalar) product of the matrix and vector norms. Show this inequality. _Hints_. Let \(a_{i}^{T}\) be the \(i\)th row of \(A\). Use the Cauchy-Schwarz inequality to get \((a_{i}^{T}x)^{2}\leq\|a_{i}\|^{2}\|x\|^{2}\). Then add the resulting \(m\) inequalities.
+* _Distance between adjacency matrices._ Let \(A\) and \(B\) be the \(n\times n\) adjacency matrices of two directed graphs with \(n\) vertices (see page 112). The squared distance \(\|A-B\|^{2}\) can be used to express how different the two graphs are. Show that \(\|A-B\|^{2}\) is the total number of directed edges that are in one of the two graphs but not in the other.
+* _Columns of difference matrix._ Are the columns of the difference matrix \(D\), defined in (6.5), linearly independent?
+* _Stacked matrix._ Let \(A\) be an \(m\times n\) matrix, and consider the stacked matrix \(S\) defined by \[S=\left[\begin{array}{c}A\\ I\end{array}\right].\] When does \(S\) have linearly independent columns? When does \(S\) have linearly independent rows? Your answer can depend on \(m\), \(n\), or whether or not \(A\) has linearly independent columns or rows.
+ 

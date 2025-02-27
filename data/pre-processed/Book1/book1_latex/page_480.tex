@@ -1,0 +1,21 @@
+The \(Ay_{i}\) are the special \(w_{i}\) at the ends of strings corresponding to \(\lambda_{i}=0\), so they cannot appear in the first sum. (They are multiplied by zero in \(\lambda_{i}w_{i}\).) Since equation (7) is some combination of the \(w_{i}\), which were independent by the induction hypothesis--they supplied the Jordan form within the column space--we conclude that _each \(d_{i}\) must be zero_. Returning to equation (6), this leaves \(\sum c_{i}w_{i}=-\sum g_{i}z_{i}\), and the left-hand side is in the column space. Since the \(z\)'s were independent of that space, each \(g_{i}\) must be zero. Finally, \(\sum c_{i}w_{i}=0\), and the independence of the \(w_{i}\) produces \(c_{i}=0\).
+
+If the original \(A\) had not been singular, the three steps would have been applied instead to \(A^{\prime}=A-cI\). (The constant \(c\) is chosen to make \(A^{\prime}\) singular, and it can be any one of the eigenvalues of \(A\).) The algorithm puts \(A^{\prime}\) into its Jordan form \(M^{-1}A^{\prime}M=J^{\prime}\) by producing the strings \(x_{i}\) from the \(w_{i}\), \(y_{i}\) and \(z_{i}\). Then the Jordan form for \(A\) uses the same strings and the same \(M\):
+
+\[M^{-1}AM=M^{-1}A^{\prime}M+M^{-1}cM=J^{\prime}+cI=J.\]
+
+This completes the proof that every \(A\) is similar to some Jordan matrix \(J\). Except for a reordering of the blocks, _it is similar to only one such_\(J\); there is a unique Jordan form for \(A\). Thus, the set of all matrices is split into a number of families, with the following property: _All the matrices in the same family have the same Jordan form, and they are all similar to each other_ (and to \(J\)), _but no matrices in different families are similar_. In every family, \(J\) is the most beautiful--if you like matrices to be nearly diagonal. With this classification into families, we stop.
+
+**Example 1**.: \[A=\begin{bmatrix}0&1&2\\ 0&0&1\\ 0&0&0\end{bmatrix}\qquad\text{with}\quad\lambda=0,0,0.\]
+
+This matrix has rank \(r=2\) and only one eigenvector. Within the column space, there is a single string \(w_{1}\), \(w_{2}\), which happens to coincide with the last two columns:
+
+\[A\begin{bmatrix}1\\ 0\\ 0\end{bmatrix}=0\qquad\text{and}\qquad A\begin{bmatrix}2\\ 1\\ 0\end{bmatrix}=\begin{bmatrix}1\\ 0\\ 0\end{bmatrix},\]
+
+or
+
+\[Aw_{1}=0\qquad\text{and}\qquad Aw_{2}=0w_{2}+w_{1}.\]
+
+The nullspace lies entirely within the column space, and it is spanned by \(w_{1}\). Therefore \(p=1\) in step 2, and the vector \(y\) comes from the equation
+
+\[Ay=w_{2}=\begin{bmatrix}2\\ 1\\ 0\end{bmatrix},\qquad\text{where solution is}\quad y=\begin{bmatrix}0\\ 0\\ 1\end{bmatrix}.\] 

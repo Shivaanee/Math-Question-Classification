@@ -1,0 +1,27 @@
+These two eigenvectors are orthogonal:
+
+\[x^{\mathrm{H}}y=\begin{bmatrix}1&1-i\end{bmatrix}\begin{bmatrix}1-i\\ -1\end{bmatrix}=0.\]
+
+Of course any multiples \(x/\alpha\) and \(y/\beta\) are equally good as eigenvectors. MATLAB picks \(\alpha=\|x\|\) and \(\beta=\|y\|\), so that \(x/\alpha\) and \(y/\beta\) are unit vectors; the eigenvectors are normalized to have length 1. They are now _orthonormal_. If these eigenvectors are chosen to be the columns of \(S\), then we have \(S^{-1}AS=\Lambda\) as always. _The diagonalizing matrix can be chosen with orthonormal columns when \(A=A^{\mathrm{H}}\)_.
+
+In case \(A\) is real and symmetric, its eigenvalues are real by Property 2. Its unit eigenvectors are orthogonal by Property 3. Those eigenvectors are also real; they solve \((A-\lambda I)x=0\). _These orthonormal eigenvectors go into an orthogonal matrix \(Q\)_, with \(Q^{\mathrm{T}}Q=I\) and \(Q^{\mathrm{T}}=Q^{-1}\). Then \(S^{-1}AS=\Lambda\) becomes special--it is \(Q^{-1}AQ=\Lambda\) or \(A=Q\Lambda Q^{-1}=Q\Lambda Q^{\mathrm{T}}\). We can state one of the great theorems of linear algebra:
+
+**50** A real symmetric matrix can be factored into \(A=Q\Lambda Q^{\mathrm{T}}\). Its orthonormal eigenvectors are in the orthogonal matrix \(Q\) and its eigenvalues are in \(\Lambda\).
+
+In geometry or mechanics, this is the _principal axis theorem_. It gives the right choice of axes for an ellipse. Those axes are perpendicular, and they point along the eigenvectors of the corresponding matrix. (Section 6.2 connects symmetric matrices to \(n\)-dimensional ellipses.) In mechanics the eigenvectors give the principal directions, along which there is pure compression or pure tension--with no shear.
+
+In mathematics the formula \(A=Q\Lambda Q^{\mathrm{T}}\) is known as the _spectral theorem_. If we multiply columns by rows, the matrix \(A\) becomes a combination of one-dimensional projections--which are the special matrices \(xx^{\mathrm{T}}\) of rank 1, multiplied by \(\lambda\):
+
+\[\begin{split} A=Q\Lambda Q^{\mathrm{T}}&=\begin{bmatrix} \mid&&\mid\\ x_{1}&\cdots&x_{n}\\ \mid&&\mid\end{bmatrix}\begin{bmatrix}\lambda_{1}&&\\ &\ddots&\\ &\lambda_{n}\end{bmatrix}\begin{bmatrix}\multicolumn{1}{c}{\twoheadrightarrow}&x_{1}^{ \mathrm{T}}&\multicolumn{1}{c}{\twoheadrightarrow}\\ &\vdots&\\ &\mathsf{--}&x_{n}^{\mathrm{T}}&\multicolumn{1}{c}{\twoheadrightarrow} \end{bmatrix}\\ &=\lambda_{1}x_{1}x_{1}^{\mathrm{T}}+\lambda_{2}x_{2}x_{2}^{ \mathrm{T}}+\cdots+\lambda_{n}x_{n}x_{n}^{\mathrm{T}}.\end{split}\] (10)
+
+Our 2 by 2 example has eigenvalues 3 and 1:
+
+**Example 3**.: \(A=\begin{bmatrix}2&-1\\ -1&2\end{bmatrix}=3\begin{bmatrix}\frac{1}{2}&-\frac{1}{2}\\ -\frac{1}{2}&\frac{1}{2}\end{bmatrix}+\begin{bmatrix}\frac{1}{2}&\frac{1}{2}\\ \frac{1}{2}&\frac{1}{2}\end{bmatrix}=\mathbf{combination}\) **of two projections.**__The eigenvectors, with length scaled to 1, are
+
+\[x_{1}=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\ -1\end{bmatrix}\qquad\text{and}\qquad x_{2}=\frac{1}{\sqrt{2}}\begin{bmatrix} 1\\ 1\end{bmatrix}.\]
+
+Then the matrices on the right-hand side are \(x_{1}x_{1}^{\mathrm{T}}\) and \(x_{2}x_{2}^{\mathrm{T}}\)--columns times rows--and they are projections onto the line through \(x_{1}\) and the line through \(x_{2}\).
+
+All symmetric matrices are combinations of one-dimensional projections--which are symmetric matrices of rank 1.
+
+ 

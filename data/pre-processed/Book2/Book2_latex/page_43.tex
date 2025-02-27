@@ -1,0 +1,15 @@
+The converse is also true: Any scalar-valued function that satisfies the restricted superposition property is affine. An analog of the formula (2.3) is
+
+\[f(x)=f(0)+x_{1}\left(f(e_{1})-f(0)\right)+\cdots+x_{n}\left(f(e_{n})-f(0)\right),\] (2.4)
+
+which holds when \(f\) is affine, and \(x\) is any \(n\)-vector. (See exercise 2.7.) This formula shows that for an affine function, once we know the \(n+1\) numbers \(f(0)\), \(f(e_{1})\), ..., \(f(e_{n})\), we can predict (or reconstruct or evaluate) \(f(x)\) for any \(n\)-vector \(x\). It also shows how the vector \(a\) and constant \(b\) in the representation \(f(x)=a^{T}x+b\) can be found from the function \(f\): \(a_{i}=f(e_{i})-f(0)\), and \(b=f(0)\).
+
+In some contexts affine functions are called linear. For example, when \(x\) is a scalar, the function \(f\) defined as \(f(x)=\alpha x+\beta\) is sometimes referred to as a linear function of \(x\), perhaps because its graph is a line. But when \(\beta\neq 0\), \(f\) is not a linear function of \(x\), in the standard mathematical sense; it _is_ an affine function of \(x\). In this book we will distinguish between linear and affine functions. Two simple examples are shown in figure 2.1.
+
+A civil engineering example.Many scalar-valued functions that arise in science and engineering are well approximated by linear or affine functions. As a typical example, consider a steel structure like a bridge, and let \(w\) be an \(n\)-vector that gives the weight of the load on the bridge in \(n\) specific locations, in metric tons. These loads will cause the bridge to deform (move and change shape) slightly. Let \(s\) denote the distance that a specific point on the bridge sags, in millimeters, due to the load \(w\). This is shown in figure 2.2. For weights the bridge is designed to handle, the sag is very well approximated as a linear function \(s=f(x)\). This function can be expressed as an inner product, \(s=c^{T}w\), for some \(n\)-vector \(c\). From the equation \(s=c_{1}w_{1}+\cdots+c_{n}w_{n}\), we see that \(c_{1}w_{1}\) is the amount of the sag that is due to the weight \(w_{1}\), and similarly for the other weights. The coefficients \(c_{i}\), which have units of mm/ton, are called _compliances_, and give the sensitivity of the sag with respect to loads applied at the \(n\) locations.
+
+The vector \(c\) can be computed by (numerically) solving a partial differential equation, given the detailed design of the bridge and the mechanical properties of
+
+Figure 2.1: Left. The function \(f\) is linear. Right. The function \(g\) is affine, but not linear.
+
+ 

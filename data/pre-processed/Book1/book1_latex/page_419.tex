@@ -1,0 +1,33 @@
+1. \(S=\) diagonal part of \(A\) (**Jacobi's method**).
+2. \(S=\) triangular pair of \(A\) (**Gauss-Seidel method**).
+3. \(S=\) combination of 1 and 2 (**successive overrelaxation** or SOR).
+
+\(S\) is also called a _preconditioner_, and its choice is crucial in numerical analysis.
+
+**Example 1** (Jacobi).: Here \(S\) is the diagonal part of \(A\):
+
+\[A=\begin{bmatrix}2&-1\\ -1&2\end{bmatrix},\qquad S=\begin{bmatrix}2\\ &2\end{bmatrix},T=\begin{bmatrix}0&1\\ 1&0\end{bmatrix},S^{-1}T=\begin{bmatrix}0&\frac{1}{2}\\ \frac{1}{2}&0\end{bmatrix}.\]
+
+If the components of \(x\) are \(v\) and \(w\), the Jacobi step \(Sx_{k+1}=Tx_{k}+b\) is
+
+\[\begin{array}{l}2v_{k+1}=w_{k}+b_{1}\\ 2w_{k+1}=v_{k}+b_{2},\end{array}\qquad\text{or}\qquad\begin{bmatrix}v\\ w\end{bmatrix}_{k+1}=\begin{bmatrix}0&\frac{1}{2}\\ \frac{1}{2}&0\end{bmatrix}\begin{bmatrix}v\\ w\end{bmatrix}_{k}+\begin{bmatrix}b_{1}/2\\ b_{2}/2\end{bmatrix}.\]
+
+The decisive matrix \(S^{-1}T\) has eigenvalues \(\pm\frac{1}{2}\), which means that the error is cut in half (one more binary digit becomes correct) at every step. In this example, which is much too small to be typical, the convergence is fast.
+
+For a larger matrix \(A\), there is a very practical difficulty. **The Jacobi iteration requires us to keep all components of \(x_{k}\) until the calculation of \(x_{k+1}\) is complete**. A much more natural idea, which requires only half as much storage, is to start using each component of the new \(x_{k+1}\) as soon as it is computed; \(x_{k+1}\) takes the place of \(x_{k}\) a component at a time. Then \(x_{k}\) can be destroyed as fast as \(x_{k+1}\) is created, The first component remains as before:
+
+\[\textbf{New}\ x_{1}\qquad a_{11}(x_{1})_{k+1}=(-a_{12}x_{2}-a_{13}x_{3}-\cdots -a_{1n}x_{n})_{k}+b_{1}.\]
+
+The next step operates immediately with this new value of \(x_{1}\), to find \((x_{2})_{k+1}\):
+
+\[\textbf{New}\ x_{2}\qquad a_{22}(x_{2})_{k+1}=-a_{21}(x_{1})_{k+1}+(-a_{23}x_{ 3}-\cdots-a_{2n}x_{n})_{k}+b_{2}.\]
+
+And the last equation in the iteration step will use new values exclusively:
+
+\[\textbf{New}\ x_{n}\qquad a_{mn}(x_{n})_{k+1}=(-a_{n1}x_{1}-a_{n2}x_{2}-\cdots -a_{nn-1}x_{n-1})_{k+1}+b_{n}.\]
+
+This is called the _Gauss-Seidel method_, even though it was apparently unknown to Gauss and not recommended by Seidel. That is a surprising bit of history, because it is not a bad method. When the terms in \(x_{k+1}\) are moved to the left-hand side, \(S\)_is seen as the lower triangular part of \(A\)_. On the right-hand side, \(T\) is strictly upper triangular.
+
+**Example 2** (Gauss-Seidel).: Here \(S^{-1}T\) has smaller eigenvalues:
+
+\[A=\begin{bmatrix}2&-1\\ -1&2\end{bmatrix},\qquad S=\begin{bmatrix}2&0\\ -1&2\end{bmatrix},\qquad T=\begin{bmatrix}0&1\\ 0&0\end{bmatrix},\qquad S^{-1}T=\begin{bmatrix}0&\frac{1}{2}\\ 0&\frac{1}{4}\end{bmatrix}.\] 

@@ -1,0 +1,27 @@
+The stacked matrix in this case,
+
+\[\tilde{A}=\left[\begin{array}{c}A\\ \sqrt{\lambda}I\end{array}\right],\]
+
+always has linearly independent columns, without any assumption about \(A\), which can have any dimensions, and need not have linearly independent columns. To see this we note that \(\tilde{A}x=(Ax,\sqrt{\lambda}x)=0\) implies that \(\sqrt{\lambda}x=0\), which implies \(x=0\). The Gram matrix associated with \(\tilde{A}\),
+
+\[\tilde{A}^{T}\tilde{A}=A^{T}A+\lambda I,\]
+
+is therefore always invertible (provided \(\lambda>0\)). The Tikhonov regularized approximate solution is then
+
+\[\hat{x}=(A^{T}A+\lambda I)^{-1}A^{T}b.\]
+
+Equalization.The vector \(x\) represents a transmitted signal or message, consisting of \(n\) real values. The matrix \(A\) represents the mapping from the transmitted signal to what is received (called the _channel_); \(y=Ax+v\) includes noise as well as the action of the channel. Guessing what \(x\) is, given \(y\), can be thought of as un-doing the effects of the channel. In this context, estimation is called _equalization_.
+
+#### Estimating a periodic time series
+
+Suppose that the \(T\)-vector \(y\) is a (measured) time series, that we believe is a noisy version of a periodic time series, _i.e._, one that repeats itself every \(P\) periods. We might also know or assume that the periodic time series is smooth, _i.e._, its adjacent values are not too far apart.
+
+Periodicity arises in many time series. For example, we would expect a time series of hourly temperature at some location to approximately repeat itself every 24 hours, or the monthly snowfall in some region to approximately repeat itself every 12 months. (Periodicity with a 24 hour period is called _diurnal_; periodicity with a yearly period is called _seasonal_ or _annual_.) As another example, we might expect daily total sales at a restaurant to approximately repeat itself weekly. The goal is to get an estimate of Tuesday's total sales, given some historical daily sales data.
+
+The periodic time series will be represented by a \(P\)-vector \(x\), which gives its values over one period. It corresponds to the full time series
+
+\[\hat{y}=(x,x,\ldots,x)\]
+
+which just repeats \(x\), where we assume here for simplicity that \(T\) is a multiple of \(P\). (If this is not the case, the last \(x\) is replaced with a slice of the form \(x_{1:k}\).) We can express \(\hat{y}\) as \(\hat{y}=Ax\), where \(A\) is the \(T\times P\) selector matrix
+
+\[A=\left[\begin{array}{c}I\\ \vdots\\ I\end{array}\right].\] 

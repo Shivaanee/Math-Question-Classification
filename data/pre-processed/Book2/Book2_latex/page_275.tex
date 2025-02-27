@@ -1,0 +1,27 @@
+obtained by our models on the test folds, we take
+
+\[\sqrt{(\epsilon_{1}^{2}+\cdots+\epsilon_{10}^{2})/10}\] (13.4)
+
+as our guess of the RMS error our models might make on new data. In a plot like that in figure 13.11, the RMS test error over all folds is plotted, instead of the RMS test error on the single data or validation set, as in that plot. The single number (13.4) is called the _RMS cross-validation error_, or simply the _RMS test error_ (when cross-validation is used).
+
+Note that cross-validation does not check a particular model, since it creates 10 different (but hopefully not very different) models. Cross-validation checks a selection of basis functions. Once cross-validation is used to verify that a choice of basis functions produces models that predict and generalize well, there is the question of which of the 10 models one should use. The models should be not too different, so the choice really should not matter much. One reasonable choice is to use the parameters obtained by fitting a model over all the data; another option is to use the average of the model parameters from the different folds.
+
+House price regression model.As an example, we apply cross-validation to assess the generalization ability of the simple regression model of the house sales data discussed in SS2.3 and on page 258. The simple regression model described there, based on house area and number of bedrooms, has an RMS fitting error of 74.8 thousand dollars. Cross-validation will help us answer the question of how the model might do on different, unseen houses.
+
+We randomly partition the data set of 774 sales records into five folds, four of size 155 and one of size 154. Then we fit five regression models, each of the form
+
+\[\hat{y}=v+\beta_{1}x_{1}+\beta_{2}x_{2}\]
+
+to the data set after removing one of the folds. Table 13.1 summarizes the results. The model parameters for the 5 different regression models are not exactly the same, but quite similar. The training and test RMS errors are reasonably similar, which suggests that our model does not suffer from over-fit. Scanning the RMS error on the test sets, we can expect that our prediction error on new houses will
+
+\begin{table}
+\begin{tabular}{c c c c c c} \hline \hline  & \multicolumn{3}{c}{Model parameters} & \multicolumn{2}{c}{RMS error} \\ \cline{2-6} Fold & \(v\) & \(\beta_{1}\) & \(\beta_{2}\) & Train & Test \\ \hline
+1 & 60.65 & 143.36 & \(-18.00\) & 74.00 & 78.44 \\
+2 & 54.00 & 151.11 & \(-20.30\) & 75.11 & 73.89 \\
+3 & 49.06 & 157.75 & \(-21.10\) & 76.22 & 69.93 \\
+4 & 47.96 & 142.65 & \(-14.35\) & 71.16 & 88.35 \\
+5 & 60.24 & 150.13 & \(-21.11\) & 77.28 & 64.20 \\ \hline \hline \end{tabular}
+\end{table}
+Table 13.1: Five-fold cross-validation for the simple regression model of the house sales data set. The RMS cross-validation error is 75.41.
+
+ 

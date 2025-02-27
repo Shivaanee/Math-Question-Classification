@@ -1,0 +1,23 @@
+For block elimination the pivot is \(C^{-1}\), the multiplier is \(A^{\mathrm{T}}C\), and subtraction knocks out \(A^{\mathrm{T}}\) below the pivot. The result is
+
+\[\begin{bmatrix}C^{-1}&A\\ 0&-A^{\mathrm{T}}CA\end{bmatrix}\begin{bmatrix}y\\ x\end{bmatrix}=\begin{bmatrix}b\\ f-A^{\mathrm{T}}Cb\end{bmatrix}\]
+
+The equation for \(x\) alone is in the bottom row, with the symmetric matrix \(A^{\mathrm{T}}CA\):
+
+\[\textbf{Fundamental equation}\qquad A^{\mathrm{T}}CAx=A^{\mathrm{T}}Cbf.\] (7)
+
+Then back-substitution in the first equation produces y. Nothing mysterious--substitute \(y=C(b-Ax)\) into \(A^{\mathrm{T}}y=f\) to reach (7).
+
+Important RemarkOne potential must be fixed in advance: \(x_{n}=0\). The \(n\)th node is _grounded_, and the \(n\)th column of the original incidence matrix is removed. The resulting matrix is what we now mean by \(A\): its \(n-1\) columns are independent. The square matrix \(A^{\mathrm{T}}CA\), which is the key to solving equation (7) for \(x\), is an invertible matrix of order \(n-1\):
+
+\[\begin{bmatrix}A^{\mathrm{T}}\\ (n-1)\times m\end{bmatrix}\begin{bmatrix}C\\ &C\\ &m\times m\end{bmatrix}\begin{bmatrix}A\\ &\\ &m\times(n-1)\end{bmatrix}=\begin{bmatrix}A^{\mathrm{T}}CA\\ &\\ &(n-1)\times(n-1)\end{bmatrix}\]
+
+**Example 1**.: Suppose a battery \(b_{3}\) and a current source \(f_{2}\) (and five resistors) connect four nodes. Node 4 is grounded and the potential \(x_{4}=0\) is fixed. The first thing is the
+
+current law \(A^{\mathrm{T}}y=f\) at nodes 1, 2, 3:
+
+\[\begin{array}{cccccccc}-y_{1}&-&y_{3}&-&y_{5}&=&0\\ y_{1}&-&y_{2}&&=&f_{2}&&\\ y_{2}&+&y_{3}&-&y_{4}&=&0\end{array}\quad\text{and}\quad A^{\mathrm{T}}= \begin{bmatrix}-1&0&-1&0&-1\\ 1&-1&0&0&0\\ 0&1&1&-1&0\end{bmatrix}.\]
+
+No equation is written for node 4, where the current law is \(y_{4}+y_{5}+f_{2}=0\). This follows from adding the other three equations.
+
+The other equation is \(C^{-1}y+Ax=b\). The potentials \(x\) are connected to the currents \(y\) by Ohm's Law. The diagonal matrix \(C\) contains the five conductances \(c_{i}=1/R_{i}\). The 

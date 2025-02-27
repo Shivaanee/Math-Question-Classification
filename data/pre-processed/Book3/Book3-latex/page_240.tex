@@ -1,0 +1,28 @@
+
+Find the \(T\)-annihilator of the vector \((1,0,0)\). Find the \(T\)-annihilator of \((1,0,i)\).
+
+**4.** Prove that if \(T^{\natural}\) has a cyclic vector, then \(T\) has a cyclic vector. Is the converse true?
+
+**5.** Let \(V\) be an \(n\)-dimensional vector space over the field \(F\), and let \(N\) be a nilpotent linear operator on \(V\). Suppose \(N^{n-1}\neq 0\), and let \(\alpha\) be any vector in \(V\) such that \(N^{n-1}\alpha\neq 0\). Prove that \(\alpha\) is a cyclic vector for \(N\). What exactly is the matrix of \(N\) in the ordered basis \(\{\alpha,N\alpha,\ldots,N^{n-1}\alpha\}\)?
+
+**6.** Give a direct proof that if \(A\) is the companion matrix of the monic polynomial \(p\), then \(p\) is the characteristic polynomial for \(A\).
+
+**7.** Let \(V\) be an \(n\)-dimensional vector space, and let \(T\) be a linear operator on \(V\). Suppose that \(T\) is _diagonalizable_.
+
+(a) If \(T\) has a cyclic vector, show that \(T\) has \(n\) distinct characteristic values.
+
+(b) If \(T\) has \(n\) distinct characteristic values, and if \(\{\alpha_{1},\ldots,\alpha_{n}\}\) is a basis of characteristic vectors for \(T\), show that \(\alpha=\alpha_{1}+\cdots+\alpha_{n}\) is a cyclic vector for \(T\).
+
+**8.** Let \(T\) be a linear operator on the finite-dimensional vector space \(V\). Suppose \(T\) has a cyclic vector. Prove that if \(U\) is any linear operator which commutes with \(T\), then \(U\) is a polynomial in \(T\).
+
+### Cyclic Decompositions and the Rational Form
+
+The primary purpose of this section is to prove that if \(T\) is any linear operator on a finite-dimensional space \(V\), then there exist vectors \(\alpha_{1}\), \(\ldots,\alpha_{r}\) in \(V\) such that
+
+\[V=Z(\alpha_{1};T)\bigoplus\cdots\bigoplus Z(\alpha_{r};T).\]
+
+In other words, we wish to prove that \(V\) is a direct sum of \(T\)-cyclic subspaces. This will show that \(T\) is the direct sum of a finite number of linear operators, each of which has a cyclic vector. The effect of this will be to reduce many questions about the general linear operator to similar questions about an operator which has a cyclic vector. The theorem which we prove (Theorem 3) is one of the deepest results in linear algebra and has many interesting corollaries.
+
+The cyclic decomposition theorem is closely related to the following question. Which \(T\)-invariant subspaces \(W\) have the property that there exists a \(T\)-invariant subspace \(W^{\prime}\) such that \(V=W\bigoplus W^{\prime}\)? If \(W\) is any subspace of a finite-dimensional space \(V\), then there exists a subspace \(W^{\prime}\) such that \(V=W\bigoplus W^{\prime}\). Usually there are many such subspaces \(W^{\prime}\) and each of these is called **complementary** to \(W\). We are asking when a \(T\)-invariant subspace has a complementary subspace which is also invariant under \(T\).
+
+Let us suppose that \(V=W\bigoplus W^{\prime}\) where both \(W\) and \(W^{\prime}\) are invariant under \(T\) and then see what we can discover about the subspace \(W\). Each 

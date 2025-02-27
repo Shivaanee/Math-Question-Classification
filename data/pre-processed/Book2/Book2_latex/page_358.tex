@@ -1,0 +1,37 @@
+Solving constrained least squares problems via QR factorization.We now give a method for solving the constrained least squares problem that generalizes the QR factorization method for least squares problems (algorithm 12.1). We assume that \(A\) and \(C\) satisfy the conditions (16.5).
+
+We start by rewriting the KKT equations (16.4) as
+
+\[2(A^{T}A+C^{T}C)\hat{x}+C^{T}w=2A^{T}b,\qquad C\hat{x}=d\] (16.7)
+
+with a new variable \(w=\hat{z}-2d\). To obtain (16.7) we multiplied the equation \(C\hat{x}=d\) on the left by \(2C^{T}\), then added the result to the first equation of (16.4), and replaced the variable \(\hat{z}\) with \(w+2d\).
+
+Next we use the QR factorization
+
+\[\left[\begin{array}{c}A\\ C\end{array}\right]=QR=\left[\begin{array}{c}Q_{1}\\ Q_{2}\end{array}\right]R\] (16.8)
+
+to simplify (16.7). This factorization exists because the stacked matrix has linearly independent columns, by our assumption (16.5). In (16.8) we also partition \(Q\) in two blocks \(Q_{1}\) and \(Q_{2}\), of size \(m\times n\) and \(p\times n\), respectively. If we make the substitutions \(A=Q_{1}R\), \(C=Q_{2}R\), and \(A^{T}A+C^{T}C=R^{T}R\) in (16.7) we obtain
+
+\[2R^{T}R\hat{x}+R^{T}Q_{2}^{T}w=2R^{T}Q_{1}^{T}b,\qquad Q_{2}R\hat{x}=d.\]
+
+We multiply the first equation on the left by \(R^{-T}\) (which we know exists) to get
+
+\[R\hat{x}=Q_{1}^{T}b-(1/2)Q_{2}^{T}w.\] (16.9)
+
+Substituting this expression into \(Q_{2}R\hat{x}=d\) gives an equation in \(w\):
+
+\[Q_{2}Q_{2}^{T}w=2Q_{2}Q_{1}^{T}b-2d.\] (16.10)
+
+We now use the second part of the assumption (16.5) to show that the matrix \(Q_{2}^{T}=R^{-T}C^{T}\) has linearly independent columns. Suppose \(Q_{2}^{T}z=R^{-T}C^{T}z=0\). Multiplying with \(R^{T}\) gives \(C^{T}z=0\). Since \(C\) has linearly independent rows, this implies \(z=0\), and we conclude that the columns of \(Q_{2}^{T}\) are linearly independent.
+
+The matrix \(Q_{2}^{T}\) therefore has a QR factorization \(Q_{2}^{T}=\tilde{Q}\tilde{R}\). Substituting this into (16.10) gives
+
+\[\tilde{R}^{T}\tilde{R}w=2\tilde{R}^{T}\tilde{Q}^{T}Q_{1}^{T}b-2d,\]
+
+which we can write as
+
+\[\tilde{R}w=2\tilde{Q}^{T}Q_{1}^{T}b-2\tilde{R}^{-T}d.\]
+
+We can use this to compute \(w\), first by computing \(\tilde{R}^{-T}d\) (by forward substitution), then forming the right-hand side, and then solving for \(w\) using back substitution. Once we know \(w\), we can find \(\hat{x}\) from (16.9). The method is summarized in the following algorithm.
+
+ 

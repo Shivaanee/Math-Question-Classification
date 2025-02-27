@@ -1,0 +1,23 @@
+The row space of \(A\) is the column space of \(A^{+}\). Here is a formula for \(A^{+}\):
+
+\[\textbf{If }A=U\Sigma V^{\mathrm{T}}\textbf{ (the SVD), then its pseudoinverse is }A^{+}=V\Sigma^{+}U^{\mathrm{T}}.\] (7)
+
+Example 6 had \(\sigma=3\)--the square root of the eigenvalue of \(AA^{\mathrm{T}}=[9]\). Here it is again with \(\Sigma\) and \(\Sigma^{+}\):
+
+\[\begin{array}{cccc}A=\begin{bmatrix}-1&2&2\end{bmatrix}=U\Sigma V^{\mathrm{T }}=\begin{bmatrix}1\end{bmatrix}\begin{bmatrix}3&0&0\end{bmatrix}\begin{bmatrix} -\frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\ \frac{2}{3}&-\frac{1}{3}&\frac{2}{3}\\ \frac{2}{3}&\frac{2}{3}&-\frac{1}{3}\end{bmatrix}\\ \\ V\Sigma^{+}U^{\mathrm{T}}=\begin{bmatrix}-\frac{1}{3}&\frac{2}{3}&\frac{2}{3} \\ \frac{2}{3}&-\frac{1}{3}\end{bmatrix}\begin{bmatrix}\frac{1}{3}\\ 0\\ 0\end{bmatrix}\begin{bmatrix}1\end{bmatrix}=\begin{bmatrix}-\frac{1}{9}\\ \frac{2}{9}\\ \frac{2}{9}\\ \frac{2}{9}\end{bmatrix}=A^{+}.\end{array}\]
+
+_The minimum length least-squares solution is \(x^{+}=A^{+}b=V\Sigma^{+}U^{\mathrm{T}}b\)._
+
+Proof.: Multiplication by the orthogonal matrix \(U^{\mathrm{T}}\) leaves lengths unchanged:
+
+\[\|Ax-b\|=\|U\Sigma V^{\mathrm{T}}x-b\|=\|\Sigma V^{\mathrm{T}}x-U^{\mathrm{T}} b\|.\]
+
+Introduce the new unknown \(y=V^{\mathrm{T}}x=V^{-1}x\), which has the same length as \(x\). Then, minimizing \(\|Ax-b\|\) is the same as minimizing \(\|\Sigma y-U^{\mathrm{T}}b\|\). Now \(\Sigma\) is diagonal and we know the best \(y^{+}\). It is \(y^{+}=\Sigma^{+}U^{\mathrm{T}}b\) so the best \(x^{+}\) is \(Vy^{+}\):
+
+\[\textbf{Shortest solution}\qquad x^{+}=Vy^{+}=V\Sigma^{+}U^{\mathrm{T}}b=A^{+}b.\]
+
+\(Vy^{+}\) is in the row space, and \(A^{\mathrm{T}}Ax^{+}=A^{\mathrm{T}}b\) from the **SVD**.
+
+Figure 6.3: The pseudoinverse \(A^{+}\) inverts \(A\) where it can on the column space.
+
+ 

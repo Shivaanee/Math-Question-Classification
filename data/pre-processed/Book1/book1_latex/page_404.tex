@@ -1,0 +1,33 @@
+beyond symmetry, as we certainly want to do, there will have to be a major change. This is easy to see for the very unsymmetric matrices
+
+\[A=\begin{bmatrix}1&100\\ 0&1\end{bmatrix}\qquad\text{and}\qquad A^{-1}=\begin{bmatrix}1&-100\\ 0&1\end{bmatrix}.\] (4)
+
+The eigenvalues all equal one, but the proper condition number is _not_\(\lambda_{\max}/\lambda_{\min}=1\). The relative change in \(x\) is _not_ bounded by the relative change in \(b\). Compare
+
+\[x=\begin{bmatrix}0\\ 1\end{bmatrix}\quad\text{when}\quad b=\begin{bmatrix}100\\ 1\end{bmatrix};\qquad x^{\prime}=\begin{bmatrix}100\\ 0\end{bmatrix}\quad\text{when}\quad b^{\prime}=\begin{bmatrix}100\\ 0\end{bmatrix}.\]
+
+A 1% change in \(b\) has produced a hundredfold change in \(x\); the amplification factor is \(100^{2}\). Since \(c\) represents an upper bound, the condition number must be at least 10,000. The difficulty here is that a large off-diagonal entry in \(A\) means an equally large entry in \(A^{-1}\). Expecting \(A^{-1}\) to get smaller as \(A\) gets bigger is often wrong.
+
+For a proper definition of the condition number, we look back at equation (3). We were trying to make \(x\) small and \(b=Ax\) large. When \(A\) is not symmetric, _the maximum of \(\|Ax\|/\|x\|\) may be found at a vector \(x\) that is not one of the eigenvectors_. This maximum is an excellent measure of the size of \(A\). It is the _norm_ of \(A\).
+
+**7B** The _norm_ of \(A\) is the number \(\|A\|\) defined by
+
+\[\|A\|=\max_{x\neq 0}\frac{\|Ax\|}{\|x\|}.\] (5)
+
+In other words, \(\|A\|\) bounds the "amplifying power" of the matrix:
+
+\[\|Ax\|\leq\|A\|\|x\|\qquad\text{for all vectors $x$.}\] (6)
+
+The matrices \(A\) and \(A^{-1}\) in equation (4) have norms somewhere between 100 and 101. They can be calculated exactly, but first we want to complete the connection between norms and condition numbers. Because \(b=Ax\) and \(\delta x=A^{-1}\delta b\), equation (6) gives
+
+\[\|b\|\leq\|A\|\|x\|\qquad\text{and}\qquad\|\delta x\|\leq\|A^{-1}\|\|\delta b\|.\] (7)
+
+This is the replacement for equation (3), when \(A\) is not symmetric. In the symmetric case, \(\|A\|\) is the same as \(\lambda_{\max}\), and \(\|A^{-1}\|\) is the same as \(1/\lambda_{\min}\). _The correct replacement for \(\lambda_{\max}/\lambda_{\min}\) is the product \(\|A\|\|A^{-1}\|\)_--which is the condition number.
+
+**7C** The _condition number_ of \(A\) is \(c=\|A\|\|A^{-1}\|\). The relative error satisfies
+
+\[\delta x\ \text{from $\delta b$}\qquad\frac{\|\delta x\|}{\|x\|}\leq c\frac{ \|\delta b\|}{\|b\|}\quad\text{directly from equation (\ref{eq:error})}.\] (8)
+
+If we perturb the matrix \(A\) instead of the right-hand side \(b\), then
+
+\[\delta x\ \text{from $\delta A$}\qquad\frac{\|\delta x\|}{\|x+\delta x\|} \leq c\frac{\|\delta A\|}{\|A\|}\quad\text{from equation (\ref{eq:error}) below}.\] (9) 

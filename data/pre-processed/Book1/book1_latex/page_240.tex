@@ -1,0 +1,26 @@
+If \(A\) is singular, elimination leads to a zero row in \(U\). Then \(\det A=\det U=0\). If \(A\) is nonsingular, elimination puts the pivots \(d_{1},\ldots,d_{n}\) on the main diagonal. We have a "product of pivots" formula for \(\det A\)! The sign depends on whether the number of row exchanges is even or odd:
+
+\[\mbox{\bf Product of pivots}\qquad\det A=\pm\det U=\pm d_{1}d_{2}\cdots d_{n}.\] (1)
+
+The ninth property is the product rule. I would say it is the most surprising.
+
+**9.**_The determinant of AB is the product of \(\det A\) times \(\det B\)._
+
+\[\mbox{\bf Product rule}\ |A||B|=|AB|\qquad\begin{vmatrix}a&b\\ c&d\end{vmatrix}\begin{vmatrix}e&f\\ g&h\end{vmatrix}=\begin{vmatrix}ae+bg&af+bh\\ ce+dg&cf+dh\end{vmatrix}.\]
+
+A particular case of this rule gives the determinant of \(A^{-1}\). It must be \(1/\det A\):
+
+\[\det A^{-1}=\frac{1}{\det A}\quad\mbox{because}\quad(\det A)(\det A^{-1})=\det AA ^{-1}=\det I=1.\] (2)
+
+In the 2 by 2 case, the product rule could be patiently checked:
+
+\[(ad-bc)(eh-fg)=(ae+bg)(cf+dh)-(af+bh)(ce+dg).\]
+
+In the \(n\) by \(n\) case we suggest two possible proofs--since this is the least obvious rule. Both proofs assume that \(A\) and \(B\) are nonsingular; otherwise \(AB\) is singular, and the equation \(\det AB=(\det A)(\det B)\) is easily verified. By rule 8, it becomes \(0=0\).
+
+1. We prove that the ratio \(d(A)=\det AB/\det B\) has properties 1-3. Then \(d(A)\) must equal \(\det A\). For example, \(d(I)=\det B/\det B=1\); rule 1 is satisfied. If two rows of \(A\) are exchanged, so are the same two rows of \(AB\), and the sign of \(d\) changes as required by rule 2. A linear combination in the first row of \(A\) gives the same linear combination in the first row of \(AB\). Then rule 3 for the determinant of \(AB\), divided by the fixed quantity \(\det B\), leads to rule 3 for the ratio \(d(A)\). Thus \(d(A)=\det AB/\det B\)_coincides with \(\det A\)_, which is our product formula.
+2. This second proof is less elegant. For a diagonal matrix, \(\det DB=(\det D)(\det B)\) follows by factoring each \(d_{i}\) from its row. Reduce a general matrix \(A\) to \(D\) by elimination--from \(A\) to \(U\) as usual, and from \(U\) to \(D\) by upward elimination. The determinant does not change, except for a sign reversal when rows are exchanged. The same steps reduce \(AB\) to \(DB\), with precisely the same effect on the determinant. But for \(DB\) it is already confirmed that rule 9 is correct.
+
+**10.**_The transpose of \(A\) has the same determinant as \(A\) itself: \(\det A^{\rm T}=\det A\)._
+
+\[\mbox{\bf Transpose rule}\qquad\left|A\right|=\begin{vmatrix}a&b\\ c&d\end{vmatrix}=\begin{vmatrix}a&c\\ b&d\end{vmatrix}=\left|A^{\rm T}\right|.\] 

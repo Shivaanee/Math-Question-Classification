@@ -1,0 +1,32 @@
+
+
+### 18.5 Nonlinear least squares classification
+
+In this section we describe a nonlinear extension of the least squares classification method discussed in chapters 14 and 15, that typically out-performs the basic least squares classifier in practice.
+
+The Boolean classifier of chapter 14 fits a linearly parametrized function
+
+\[\tilde{f}(x)=\theta_{1}f_{1}(x)+\dots+\theta_{p}f_{p}(x)\]
+
+to the data points \((x^{(i)},y^{(i)})\), \(i=1,\dots,N\), where \(y^{(i)}\in\{-1,1\}\), using linear least squares. The parameters \(\theta_{1},\dots,\theta_{p}\) are chosen to minimize the sum squares objective
+
+\[\sum_{i=1}^{N}(\tilde{f}(x^{(i)})-y^{(i)})^{2},\] (18.14)
+
+plus, optionally, a regularization term. This (hopefully) results in \(\tilde{f}(x^{(i)})\approx y^{(i)}\), which is roughly what we want. We can think of \(\tilde{f}(x)\) as the _continuous_ prediction of the Boolean outcome \(y\). The classifier itself is given by \(\hat{f}(x)=\mathbf{sign}(\tilde{f}(x))\); this is the Boolean prediction of the outcome.
+
+Instead of the sum square prediction error for the continuous prediction, consider the sum square prediction error for the Boolean prediction,
+
+\[\sum_{i=1}^{N}(\hat{f}(x^{(i)})-y^{(i)})^{2}=\sum_{i=1}^{N}(\mathbf{sign}( \tilde{f}(x^{(i)}))-y^{(i)})^{2}.\] (18.15)
+
+This is 4 times the number of classification errors we make on the training set. To see this, we note that when \(\hat{f}(x^{(i)})=y^{(i)}\), which means that a correct prediction was made on the \(i\)th data point, we have \((\hat{f}(x^{(i)})-y^{(i)})^{2}=0\). When \(\hat{f}(x^{(i)})\neq y^{(i)}\), which means that an incorrect prediction was made on the \(i\)th data point, one of the values is \(+1\) and the other is \(-1\), so we have \((\hat{f}(x^{(i)})-y^{(i)})^{2}=4\).
+
+The objective (18.15) is what we really want; the least squares objective (18.14) is a _surrogate_ for what we want. But we cannot use the Levenberg-Marquardt algorithm to minimize the objective (18.15), since the sign function is not differentiable. To get around this, we replace the sign function with a differentiable approximation, for example the _sigmoid function_
+
+\[\phi(u)=\frac{e^{u}-e^{-u}}{e^{u}+e^{-u}},\] (18.16)
+
+shown in figure 18.15. We choose \(\theta\) by solving the nonlinear least squares problem of minimizing
+
+\[\sum_{i=1}^{N}(\phi(\tilde{f}(x^{(i)}))-y^{(i)})^{2},\] (18.17)
+
+using the Levenberg-Marquardt algorithm. (We can also add regularization to this objective.) Minimizing the nonlinear least squares objective (18.17) is a good approximation for choosing the parameter vector \(\theta\) so as to minimize the number of classification errors made on the training set.
+

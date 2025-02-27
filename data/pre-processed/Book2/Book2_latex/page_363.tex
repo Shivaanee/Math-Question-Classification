@@ -1,0 +1,26 @@
+electronics. We let the \(m\)-vector \(s\) denote the (dollar value) sector exposures to the \(m\) sectors. (See exercise 8.13.) These are given by \(s=Sh\), where \(S\) is the \(m\times n\) sector exposure matrix defined by \(S_{ij}=1\) if asset \(j\) is in sector \(i\) and \(S_{ij}=0\) if asset \(j\) is not in sector \(i\). The new portfolio must have a given sector exposure \(s^{\text{des}}\). (The given sector exposures are based on forecasts of whether companies in the different sectors will do well or poorly in the future.)
+
+Among all portfolios that have the same value as our current portfolio and achieve the desired exposures, we wish to minimize the trading cost, given by
+
+\[\sum_{i=1}^{n}\kappa_{i}(h_{i}-h_{i}^{\text{curr}})^{2},\]
+
+a weighted sum of squares of the asset trades. The weights \(\kappa_{i}\) are positive. (These depend on the daily trading volumes of assets, as well as other quantities. In general, it is cheaper to trade assets that have high trading volumes.)
+
+Explain how to find \(h\) using constrained least squares. Give the KKT equations that you would solve to find \(h\).
+**16.8**: _Minimum energy regulator._ We consider a linear dynamical system with dynamics \(x_{t+1}=Ax_{t}+Bu_{t}\), where the \(n\)-vector \(x_{t}\) is the state at time \(t\) and the \(m\)-vector \(u_{t}\) is the input at time \(t\). We assume that \(x=0\) represents the desired operating point; the goal is to find an input sequence \(u_{1},\dots,u_{T-1}\) that results in \(x_{T}=0\), given the initial state \(x_{1}\). Choosing an input sequence that takes the state to the desired operating point at time \(T\) is called _regulation_.
+
+Find an explicit formula for the sequence of inputs that yields regulation, and minimizes \(\|u_{1}\|^{2}+\dots+\|u_{T-1}\|^{2}\), in terms of \(A\), \(B\), \(T\), and \(x_{1}\). This sequence of inputs is called the _minimum energy regulator._
+
+_Hint._ Express \(x_{T}\) in terms of \(x_{1}\), \(A\), the _controllability matrix_
+
+\[C=\left[\begin{array}{cccc}A^{T-2}B&A^{T-3}B&\cdots&AB&B\end{array}\right],\]
+
+and \((u_{1},u_{2},\dots,u_{T-1})\) (which is the input sequence stacked). You may assume that \(C\) is wide and has linearly independent rows.
+**16.9**: _Smoothest force sequence to move a mass._ We consider the same setup as the example given on page 343, where the 10-vector \(f\) represents a sequence of forces applied to a unit mass over 10 1-second intervals. As in the example, we wish to find a force sequence \(f\) that achieves zero final velocity and final position one. In the example on page 343, we choose the smallest \(f\), as measured by its norm (squared). Here, though, we want the _smoothest_ force sequence, _i.e._, the one that minimizes
+
+\[f_{1}^{2}+(f_{2}-f_{1})^{2}+\dots+(f_{10}-f_{9})^{2}+f_{10}^{2}.\]
+
+(This is the sum of the squares of the differences, assuming that \(f_{0}=0\) and \(f_{11}=0\).) Explain how to find this force sequence. Plot it, and give a brief comparison with the force sequence found in the example on page 343.
+**16.10**: _Smallest force sequence to move a mass to a given position._ We consider the same setup as the example given on page 343, where the 10-vector \(f\) represents a sequence of forces applied to a unit mass over 10 1-second intervals. In that example the goal is to find the smallest force sequence (measured by \(\|f\|^{2}\)) that achieves zero final velocity and final position one. Here we ask, what is the smallest force sequence that achieves final position one? (We impose no condition on the final velocity.) Explain how to find this force sequence. Compare it to the force sequence found in the example, and give a brief intuitive explanation of the difference. _Remark._ Problems in which the final position of an object is specified, but the final velocity doesn't matter, generally arise in applications that are not socially positive, for example control of missiles.
+
+ 

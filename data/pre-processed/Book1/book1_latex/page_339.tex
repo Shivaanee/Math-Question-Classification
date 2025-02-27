@@ -1,0 +1,21 @@
+of one row from another. Such a transformation preserved the nullspace and row space of \(A\); it normally changes the eigenvalues.
+
+_Eigenvalues are actually calculated by a sequence of simple similarities_. The matrix goes gradually toward a triangular form, and the eigenvalues gradually appear on the main diagonal. (Such a sequence is described in Chapter 7.) This is much better than trying to compute \(\det(A-\lambda I)\), whose roots should be the eigenvalues. For a large matrix, it is numerically impossible to concentrate all that information into the polynomial and then get it out again.
+
+### Triangular Forms with a Unitary \(M\)
+
+Our first move beyond the eigenvector matrix \(M=S\) is a little bit crazy: Instead of a more general \(M\), we go the other way and _restrict \(M\) to be unitary_. \(M^{-1}AM\) can achieve a triangular form \(T\) under this restriction. The columns of \(M=U\) are orthonormal (in the real case, we would write \(M=Q\)). Unless the eigenvectors of \(\Lambda\) are orthogonal, a diagonal \(U^{-1}AU\) is impossible. But "Schur's lemma" in **5R** is very useful--at least to the theory. (The rest of this chapter is devoted more to theory than to applications. The Jordan form is independent of this triangular form.)
+
+### 5R
+
+There is a unitary matrix \(M=U\) such that \(U^{-1}AU=T\) is triangular.
+
+The eigenvalues of \(A\) appear along the diagonal of this similar matrix \(T\).
+
+Proof.: Every matrix, say 4 by 4, has at least one eigenvalue \(\lambda_{1}\). In the worst case, it could be repeated four times. Therefore \(A\) has at least one unit eigenvector \(x_{1}\), which we place in the _first column of_\(U\). At this stage the other three columns are impossible to determine, so we complete the matrix in any way that leaves it unitary, and call it \(U_{1}\). (The Gram-Schmidt process guarantees that this can be done.) \(Ax_{1}=\lambda_{1}x_{1}\) column 1 means that the product \(U_{1}^{-1}AU_{1}\) starts in the right form:
+
+\[AU_{1}=U_{1}\begin{bmatrix}\lambda_{1}&*&*&*\\ 0&*&*&*\\ 0&*&*&*\\ 0&*&*&*\end{bmatrix}\quad\text{leads to}\quad U_{1}^{-1}AU_{1}=\begin{bmatrix} \lambda_{1}&*&*&*\\ 0&*&*&*\\ 0&*&*&*\\ 0&*&*&*\end{bmatrix}.\]
+
+Now work with the 3 by 3 submatrix in the lower right-hand corner. It has a unit eigenvector \(x_{2}\), which becomes the first column of a unitary matrix \(M_{2}\):
+
+\[\text{If}\quad U_{2}=\begin{bmatrix}1&0&0&0\\ 0&&&\\ 0&&M_{2}&\\ 0&&&\end{bmatrix}\quad\text{then}\quad U_{2}^{-1}(U_{1}^{-1}AU_{1})U_{2}= \begin{bmatrix}\lambda_{1}&*&*&*\\ 0&\lambda_{2}&*&*\\ 0&0&*&*\\ 0&0&*&*\end{bmatrix}.\] 

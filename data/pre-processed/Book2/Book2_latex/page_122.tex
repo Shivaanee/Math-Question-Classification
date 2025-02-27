@@ -1,0 +1,23 @@
+of the data matrix \(X\) is an \(N\)-row-vector whose entries are the values of the \(i\)th feature across the examples. We can also directly interpret the entries of the data matrix: \(X_{ij}\) (which is a number) is the value of the \(i\)th feature for the \(j\)th example.
+
+As another example, a \(3\times M\) matrix can be used to represent a collection of \(M\) locations or positions in 3-D space, with its \(j\)th column giving the \(j\)th position.
+
+Matrix representation of a relation or graph.Suppose we have \(n\) objects labeled \(1,\ldots,n\). A _relation_\(\mathcal{R}\) on the set of objects \(\{1,\ldots,n\}\) is a subset of ordered pairs of objects. As an example, \(\mathcal{R}\) can represent a _preference relation_ among \(n\) possible products or choices, with \((i,j)\in\mathcal{R}\) meaning that choice \(i\) is preferred to choice \(j\).
+
+A relation can also be viewed as a _directed graph_, with nodes (or vertices) labeled \(1,\ldots,n\), and a directed edge from \(j\) to \(i\) for each \((i,j)\in\mathcal{R}\). This is typically drawn as a graph, with arrows indicating the direction of the edge, as shown in figure 6.1, for the relation on 4 objects
+
+\[\mathcal{R}=\{(1,2),\;(1,3),\;(2,1),\;(2,4),\;(3,4),\;(4,1)\}.\] (6.2)
+
+A relation \(\mathcal{R}\) on \(\{1,\ldots,n\}\) is represented by the \(n\times n\) matrix \(A\) with
+
+\[A_{ij}=\left\{\begin{array}{ll}1&(i,j)\in\mathcal{R}\\ 0&(i,j)\not\in\mathcal{R}.\end{array}\right.\]
+
+This matrix is called the _adjacency matrix_ associated with the graph. (Some authors define the adjacency matrix in the reverse sense, with \(A_{ij}=1\) meaning there is an edge from \(i\) to \(j\).) The relation (6.2), for example, is represented by the matrix
+
+\[A=\left[\begin{array}{cccc}0&1&1&0\\ 1&0&0&1\\ 0&0&0&1\\ 1&0&0&0\end{array}\right].\]
+
+This is the adjacency matrix of the associated graph, shown in figure 6.1. (We will encounter another matrix associated with a directed graph in SS7.3.)
+
+Figure 6.1: The relation (6.2) as a directed graph.
+
+ 

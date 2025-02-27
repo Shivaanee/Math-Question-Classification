@@ -1,0 +1,25 @@
+(vector) associated with the choice of the \(n\)-vector \(x\); our goal is to find \(x\) with associated residual zero.
+
+When \(f\) is an affine function, the set of equations (18.1) is a set of \(m\) linear equations in \(n\) unknowns, which can be solved (or approximately solved in a least squares sense when \(m>n\)), using the techniques covered in previous chapters. We are interested here in the case when \(f\) is not affine.
+
+We extend the ideas of under-determined, square, and over-determined equations to the nonlinear case. When \(m<n\), there are fewer equations than unknowns, and the system of equations (18.1) is called under-determined. When \(m=n\), so there are as many equations as unknowns, the system of equations is called square. When \(m>n\), there are more equations than unknowns, and the system of equations is called over-determined.
+
+#### Nonlinear least squares
+
+When we cannot find a solution of the equations (18.1), we can seek an approximate solution, by finding \(x\) that minimizes the sum of squares of the residuals,
+
+\[f_{1}(x)^{2}+\cdots+f_{m}(x)^{2}=\|f(x)\|^{2}.\]
+
+This means finding \(\hat{x}\) for which \(\|f(x)\|^{2}\geq\|f(\hat{x})\|^{2}\) holds for all \(x\). We refer to such a point as a least squares approximate solution of (18.1), or more directly, as a solution of the _nonlinear least squares problem_
+
+\[\text{minimize}\quad\|f(x)\|^{2},\] (18.2)
+
+where the \(n\)-vector \(x\) is the variable to be found. When the function \(f\) is affine, the nonlinear least squares problem (18.2) reduces to the (linear) least squares problem from chapter 12.
+
+The nonlinear least squares problem (18.2) includes the problem of solving nonlinear equations (18.1) as a special case, since any \(x\) that satisfies \(f(x)=0\) is also a solution of the nonlinear least squares problem. But as in the case of linear equations, the least squares approximate solution of a set of nonlinear equations is often very useful even when it does not solve the equations. So we will focus on the nonlinear least squares problem (18.2).
+
+#### Optimality condition
+
+Calculus gives us a necessary condition for \(\hat{x}\) to be a solution of (18.2), _i.e._, to minimize \(\|f(x)\|^{2}\). (This means that the condition must hold for a solution, but it may also hold for other points that are not solutions.) The partial derivative of \(\|f(x)\|^{2}\) with respect to each of \(x_{1},\ldots,x_{n}\) must vanish at \(\hat{x}\):
+
+\[\frac{\partial}{\partial x_{i}}\|f(\hat{x})\|^{2}=0,\quad i=1,\ldots,n,\] 

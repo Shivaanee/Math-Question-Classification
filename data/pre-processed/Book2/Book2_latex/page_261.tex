@@ -1,0 +1,31 @@
+deviations. We have
+
+\[\hat{\theta}_{2} = \frac{N(x^{\rm d})^{T}y^{\rm d}-(\mathbf{1}^{T}x^{\rm d})(\mathbf{1}^ {T}y^{\rm d})}{N(x^{\rm d})^{T}x^{\rm d}-(\mathbf{1}^{T}x^{\rm d})^{2}}\] \[= \frac{(x^{\rm d}-\mathbf{avg}(x^{\rm d})\mathbf{1})^{T}(y^{\rm d}- \mathbf{avg}(y^{\rm d})\mathbf{1})}{\|x^{\rm d}-\mathbf{avg}(x^{\rm d})\mathbf{ 1}\|^{2}}\] \[= \frac{\mathbf{std}(y^{\rm d})}{\mathbf{std}(x^{\rm d})}\rho.\]
+
+In the last step we used the definitions
+
+\[\rho=\frac{(x^{\rm d}-\mathbf{avg}(x^{\rm d})\mathbf{1})^{T}(y^{\rm d}- \mathbf{avg}(y^{\rm d})\mathbf{1})}{N\,\mathbf{std}(x^{\rm d})\,\mathbf{std}(y ^{\rm d})},\qquad\mathbf{std}(x^{\rm d})=\frac{\|x^{\rm d}-\mathbf{avg}(x^{\rm d })\mathbf{1}\|}{\sqrt{N}}\]
+
+from chapter 3. From the first of the two normal equations, \(N\theta_{1}+(\mathbf{1}^{T}x^{\rm d})\theta_{2}=\mathbf{1}^{T}y^{\rm d}\), we also obtain a simple expression for \(\hat{\theta}_{1}\):
+
+\[\hat{\theta}_{1}=\mathbf{avg}(y^{\rm d})-\hat{\theta}_{2}\,\mathbf{avg}(x^{ \rm d}).\]
+
+Putting these results together, we can write the least squares fit as
+
+\[\hat{f}(x)=\mathbf{avg}(y^{\rm d})+\rho\frac{\mathbf{std}(y^{\rm d})}{\mathbf{ std}(x^{\rm d})}(x-\mathbf{avg}(x^{\rm d})).\] (13.3)
+
+(Note that \(x\) and \(y\) are generic scalar values, while \(x^{\rm d}\) and \(y^{\rm d}\) are vectors of the observed data values.) When \(\mathbf{std}(y^{\rm d})\neq 0\), this can be expressed in the more symmetric form
+
+\[\frac{\hat{y}-\mathbf{avg}(y^{\rm d})}{\mathbf{std}(y^{\rm d})}=\rho\frac{x- \mathbf{avg}(x^{\rm d})}{\mathbf{std}(x^{\rm d})},\]
+
+which has a nice interpretation. The left-hand side is the difference between the predicted response value and the mean response value, divided by its standard deviation. The right-hand side is the correlation coefficient \(\rho\) times the same quantity, computed for the dependent variable.
+
+The least squares straight-line fit is used in many application areas.
+
+Asset \(\alpha\) and \(\beta\) in finance.In finance, the straight-line fit is used to predict the return of an individual asset from the return of the whole market. (The return of the whole market is typically taken to be a sum of the individual asset returns, weighted by their capitalizations.) The straight-line model \(\hat{f}(x)=\theta_{1}+\theta_{2}x\) predicts the asset return from the market return \(x\). The least squares straight-line fit is computed from observed market returns \(r_{1}^{\rm mkt},\ldots,r_{T}^{\rm mkt}\) and individual asset returns \(r_{1}^{\rm ind},\ldots,r_{T}^{\rm ind}\) over some period of length \(T\). We therefore take
+
+\[x^{\rm d}=(r_{1}^{\rm mkt},\ldots,r_{T}^{\rm mkt}),\qquad y^{\rm d}=(r_{1}^{ \rm ind},\ldots,r_{T}^{\rm ind})\]
+
+in (13.3). The model is typically written in the form
+
+\[\hat{f}(x)=(r^{\rm rf}+\alpha)+\beta(x-\mu^{\rm mkt}),\] 

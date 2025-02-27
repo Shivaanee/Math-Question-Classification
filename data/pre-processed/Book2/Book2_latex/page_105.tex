@@ -1,0 +1,23 @@
+Since the vectors \(a_{i}=(b_{i},\alpha_{i})\) are linearly independent, the equality (5.2) only holds when all the coefficients \(\beta_{i}\) and \(\gamma\) are all zero. This in turns implies that the vectors \(c_{1},\ldots,c_{k-1}\) are linearly independent. By the induction hypothesis \(k-1\leq n-1\), so we have established that \(k\leq n\).
+
+### 5.3 Orthonormal vectors
+
+A collection of vectors \(a_{1},\ldots,a_{k}\) is _orthogonal_ or _mutually orthogonal_ if \(a_{i}\perp a_{j}\) for any \(i\), \(j\) with \(i\neq j\), \(i,j=1,\ldots,k\). A collection of vectors \(a_{1},\ldots,a_{k}\) is _orthonormal_ if it is orthogonal and \(\|a_{i}\|=1\) for \(i=1,\ldots,k\). (A vector of norm one is called _normalized_; dividing a vector by its norm is called _normalizing_ it.) Thus, each vector in an orthonormal collection of vectors is normalized, and two different vectors from the collection are orthogonal. These two conditions can be combined into one statement about the inner products of pairs of vectors in the collection: \(a_{1},\ldots,a_{k}\) is orthonormal means that
+
+\[a_{i}^{T}a_{j}=\left\{\begin{array}{ll}1&i=j\\ 0&i\neq j.\end{array}\right.\]
+
+Orthonormality, like linear dependence and independence, is an attribute of a collection of vectors, and not an attribute of vectors individually. By convention, though, we say "The vectors \(a_{1},\ldots,a_{k}\) are orthonormal" to mean "The collection of vectors \(a_{1},\ldots,a_{k}\) is orthonormal".
+
+Examples.The standard unit \(n\)-vectors \(e_{1},\ldots,e_{n}\) are orthonormal. As another example, the 3-vectors
+
+\[\left[\begin{array}{c}0\\ 0\\ -1\end{array}\right],\qquad\frac{1}{\sqrt{2}}\left[\begin{array}{c}1\\ 1\\ 0\end{array}\right],\qquad\frac{1}{\sqrt{2}}\left[\begin{array}{c}1\\ -1\\ 0\end{array}\right],\] (5.3)
+
+are orthonormal. Figure 5.2 shows a set of two orthonormal 2-vectors.
+
+Linear independence of orthonormal vectors.Orthonormal vectors are linearly independent. To see this, suppose \(a_{1},\ldots,a_{k}\) are orthonormal, and
+
+\[\beta_{1}a_{1}+\cdots+\beta_{k}a_{k}=0.\]
+
+Figure 5.2: Orthonormal vectors in a plane.
+
+ 

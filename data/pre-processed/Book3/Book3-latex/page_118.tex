@@ -1,0 +1,30 @@
+Proof.: Let \(W\) be the subspace spanned by \(S\). Clearly \(W^{0}=S^{0}\). Therefore, what we are to prove is that \(W=W^{00}\). We have given one proof. Here is another. By Theorem 16
+
+\[\begin{array}{c}\mbox{dim }W\mbox{ + dim }W^{0}=\mbox{ dim }V\\ \mbox{dim }W^{0}\mbox{ + dim }W^{00}=\mbox{ dim }V^{*}\end{array}\]
+
+and since dim \(V=\mbox{dim }V^{*}\) we have
+
+\[\mbox{dim }W=\mbox{ dim }W^{00}.\]
+
+Since \(W\) is a subspace of \(W^{00}\), we see that \(W=W^{00}\). 
+
+The results of this section hold for arbitrary vector spaces; however, the proofs require the use of the so-called Axiom of Choice. We want to avoid becoming embroiled in a lengthy discussion of that axiom, so we shall not tackle annihilators for general vector spaces. But, there are two results about linear functionals on arbitrary vector spaces which are so fundamental that we should include them.
+
+Let \(V\) be a vector space. We want to define hyperspaces in \(V\). Unless \(V\) is finite-dimensional, we cannot do that with the dimension of the hyperspace. But, we can express the idea that a space \(N\) falls just one dimension short of filling out \(V\), in the following way :
+
+1. \(N\) is a proper subspace of \(V\);
+2. if \(W\) is a subspace of \(V\) which contains \(N\), then either \(W=N\) or \(W=V\).
+
+Conditions (1) and (2) together say that \(N\) is a proper subspace and there is no larger proper subspace, in short, \(N\) is a maximal proper subspace.
+
+_Definition._\(If\)\(V\) is a vector space, a **hyperspace** _in \(V\) is a maximal proper subspace of \(V\)._
+
+_Theorem 19._\(If\)\(f\) is a non-zero linear functional on the vector space \(V\), then the null space of \(f\) is a hyperspace in \(V\). Conversely, every hyperspace in \(V\) is the null space of a (not unique) non-zero linear functional on \(V\)._
+
+Proof.: Let \(f\) be a non-zero linear functional on \(V\) and \(N_{f}\) its null space. Let \(\alpha\) be a vector in \(V\) which is not in \(N_{f}\), i.e., a vector such that \(f(\alpha)\neq 0\). We shall show that every vector in \(V\) is in the subspace spanned by \(N_{f}\) and \(\alpha\). That subspace consists of all vectors
+
+\[\mbox{\boldmath$\gamma$}+c\alpha,\qquad\mbox{\boldmath$\gamma$}\mbox{ in }N_{f},\,c\mbox{ in }F.\]
+
+Let \(\beta\) be in \(V\). Define
+
+\[c=\frac{f(\beta)}{f(\alpha)}\] 

@@ -1,0 +1,29 @@
+476
+Appendix D Glossary: A Dictionary for Linear Algebra
+
+Circulant matrix $C$ Constant diagonals wrap around as in cyclic shift $S$. Every circulant is $c_0 I+c_1 S+\cdots+c_{n-1} S^{n-1} . C x=$ convolution $c * x$. Eigenvectors in $F$.
+
+Cofactor $C_{i j}$ Remove row $i$ and column $j$; multiply the determinant by $(-1)^{i+j}$.
+Column picture of $A x=b \quad$ The vector $b$ becomes a combination of the columns of $A$. The system is solvable only when $b$ is in the column space $C(A)$.
+
+Column space $C(A) \quad$ Space of all combinations of the columns of $A$.
+Commuting matrices $A B=B A \quad$ If diagonalizable, they share $n$ eigenvectors.
+Companion matrix Put $c_1, \ldots, c_n$ in row $n$ and put $n-11 \mathrm{~s}$ along diagonal 1. Then $\operatorname{det}(A-\lambda I)= \pm\left(c_1+c_2 \lambda+c_3 \lambda^2+\cdots\right)$.
+
+Complete solution $x=x_p+x_n$ to $A x=b \quad\left(\right.$ Particular $\left.x_p\right)+\left(x_n\right.$ in nullspace).
+Complex conjugate $\quad \bar{z}=a-i b$ for any complex number $z=a+i b$.Then $z \bar{z}=|z|^2$.
+Condition number cond $(A)=\kappa(A)=\|A\|\left\|A^{-1}\right\|=\sigma_{\max } / \sigma_{\min } \quad$ In $A x=b$, the relative change $\|\delta x\| /\|x\|$ is less than cond $(A)$ times the relative change $\|\delta b\| /\|b\|$. Condition numbers measure the sensitivity of the output to change in the input.
+
+Conjugate Gradient Method A sequence of steps to solve positive definite $A x=b$ by minimizing $\frac{1}{2} x^{\mathrm{T}} A x-x^{\mathrm{T}} b$ over growing Krylov subspaces.
+
+Covariance matrix $\Sigma \quad$ When random variables $x_i$ have mean $=$ average value $=0$, their covariances $\Sigma_{i j}$ are the averages of $x_i x_j$. With means $\bar{x}_i$, the matrix $\Sigma=$ mean of $(x-\bar{x})(x-\bar{x})^{\mathrm{T}}$ is positive (semi)definite; it is diagonal if the $x_i$ are independent.
+
+Cramer's Rule for $A x=b \quad B_j$ has $b$ replacing column $j$ of $A$, and $x_j=\left|B_j\right| /|A|$.
+Cross product $u \times v$ in $\mathbf{R}^3 \quad$ Vector perpendicular to $u$ and $v$, length $\|u\|\|v\||\sin \theta|=$ parallelogram area, computed as the "determinant" of $\left[\begin{array}{lllllllll}i & k ; & u_1 & u_2 & u_3 ; & v_1 & v_2 & v_3\end{array}\right]$.
+
+Cyclic shift $S$ Permutation with $s_{21}=1, s_{32}=1, \ldots$, finally $s_{1 n}=1$. Its eigenvalues are $n$th roots $e^{2 \pi i k / n}$ of 1 ; eigenvectors are columns of the Fourier matrix $F$.
+
+Determinant $|A|=\operatorname{det}(A) \quad$ Defined by $\operatorname{det} I=1$, sign reversal for row exchange, and linearity in each row. Then $|A|=0$ when $A$ is singular. Also $|A B|=|A||B|$, $\left|A^{-1}\right|=1 /|A|$, and $\left|A^{\mathrm{T}}\right|=|A|$. The big formula for $\operatorname{det}(A)$ has a sum of $n!$ terms, the cofactor formula uses determinants of size $n-1$, volume of box $=|\operatorname{det}(A)|$.
+
+Diagonal matrix $D \quad d_{i j}=0$ if $i \neq j$. Block-diagonal: zero outside square blocks $D_{i i}$.
+Diagonalizable matrix $A$ Must have $n$ independent eigenvectors (in the columns of $S$; automatic with $n$ different eigenvalues). Then $S^{-1} A S=\Lambda=$ eigenvalue matrix.

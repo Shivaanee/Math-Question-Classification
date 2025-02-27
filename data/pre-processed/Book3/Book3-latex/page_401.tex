@@ -1,0 +1,27 @@
+older than \(y\).' If \(X\) is a set, what does it take to determine a relation between pairs of elements of \(X\)? What it takes, evidently, is a rule for determining whether, for any two given elements \(x\) and \(y\) in \(X\), \(x\) stands in the given relationship to \(y\) or not. Such a rule \(R\), we shall call a (binary) **relation** on \(X\). If we wish to be slightly more precise, we may proceed as follows. Let \(X\bigtimes X\) denote the set of all ordered pairs \((x,y)\) of elements of \(X\). A binary relation on \(X\) is a function \(R\) from \(X\bigtimes X\) into the set \(\{0,\,1\}\). In other words, \(R\) assigns to each ordered pair \((x,y)\) either a \(1\) or a \(0\). The idea is that if \(R(x,y)\,=\,1\), then \(x\) stands in the given relationship to \(y\), and if \(R(x,y)\,=\,0\), it does not.
+
+If \(R\) is a binary relation on the set \(X\), it is convenient to write \(xRy\) when \(R(x,y)\,=\,1\). A binary relation \(R\) is called
+
+1. **reflexive,** if \(xRx\) for each \(x\) in \(X\);
+2. **symmetric,** if \(yRx\) whenever \(xRy\);
+3. **transitive,** if \(xRx\) whenever \(xRy\) and \(yRz\).
+
+An **equivalence relation** on \(X\) is a reflexive, symmetric, and transitive binary relation on \(X\).
+
+**Example 5**: (a) On any set, equality is an equivalence relation. In other words, if \(xRy\) means \(x=y\), then \(R\) is an equivalence relation. For, \(x=x\), if \(x=y\) then \(y=x\), if \(x=y\) and \(y=z\) then \(x=z\). The relation '\(x\neq y\)' is symmetric, but neither reflexive nor transitive.
+
+1. Let \(X\) be the set of real numbers, and suppose \(xRy\) means \(x<y\). Then \(R\) is not an equivalence relation. It is transitive, but it is neither reflexive nor symmetric. The relation '\(x\leq y\)' is reflexive and transitive, but not symmetric.
+
+1. Let \(E\) be the Euclidean plane, and let \(X\) be the set of all triangles in the plane \(E\). Then congruence is an equivalence relation on \(X\), that is, '\(T_{1}\cong T_{2}\)' (\(T_{1}\) is congruent to \(T_{2}\)) is an equivalence relation on the set of all triangles in a plane.
+
+1. Let \(X\) be the set of all integers: \(\ldots\) , \(-2\), \(-1\), \(0\), \(1\), \(2\), \(\ldots\) .
+
+Let \(n\) be a fixed positive integer. Define a relation \(R_{n}\) on \(X\) by: \(xR_{n}y\) if and only if \((x-y)\) is divisible by \(n\). The relation \(R_{n}\) is called **congruence modulo**\(n\). Instead of \(xR_{n}y\), one usually writes
+
+\[x\equiv y,\,\mbox{mod}\,\,n\qquad(x\mbox{ is congruent to }y\mbox{ modulo }n)\]
+
+when \((x-y)\) is divisible by \(n\). For each positive integer \(n\), congruence modulo \(n\) is an equivalence relation on the set of integers.
+
+1. Let \(X\) and \(Y\) be sets and \(f\) a function from \(X\) into \(Y\). We define a relation \(R\) on \(X\) by: \(x_{1}Rx_{2}\) if and only if \(f(x_{1})\,=\,f(x_{2})\). It is easy to verify that \(R\) is an equivalence relation on the set \(X\). As we shall see, this one example actually encompasses all equivalence relations.
+
+ 

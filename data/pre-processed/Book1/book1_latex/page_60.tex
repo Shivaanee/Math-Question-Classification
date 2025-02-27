@@ -1,0 +1,21 @@
+
+40. There are 12 "even" permutations of $(1,2,3,4)$, with an even number of exchanges. Two of them are $(1,2,3,4)$ with no exchanges and $(4,3,2,1)$ with two exchanges. List the other ten. Instead of writing each 4 by 4 matrix, use the numbers $4,3,2,1$ to give the position of the 1 in each row.
+41. How many exchanges will permute $(5,4,3,2,1)$ back to $(1,2,3,4,5)$ ? How many exchanges to change $(6,5,4,3,2,1)$ to $(1,2,3,4,5,6)$ ? One is even and the other is odd. For $(n, \ldots, 1)$ to $(1, \ldots, n)$, show that $n=100$ and 101 are even, $n=102$ and 103 are odd.
+42. If $P_1$ and $P_2$ are permutation matrices, so is $P_1 P_2$. This still has the rows of $I$ in some order. Give examples with $P_1 P_2 \neq P_2 P_1$ and $P_3 P_4=P_4 P_3$.
+43. (Try this question.) Which permutation makes $P A$ upper triangular? Which permutations make $P_1 A P_2$ lower triangular? Multiplying $A$ on the right by $P_2$ exchanges the $\qquad$ of $A$.
+$$
+A=\left[\begin{array}{lll}
+0 & 0 & 6 \\
+1 & 2 & 3 \\
+0 & 4 & 5
+\end{array}\right]
+$$
+44. Find a 3 by 3 permutation matrix with $P^3=I$ (but not $P=I$ ). Find a 4 by 4 permutation $\widehat{P}$ with $\widehat{P}^4 \neq I$.
+45. If you take powers of a permutation, why is some $P^k$ eventually equal to $I$ ? Find a 5 by 5 permutation $P$ so that the smallest power to equal $I$ is $P^6$. (This is a challenge question. Combine a 2 by 2 block with a 3 by 3 block.)
+46. The matrix $P$ that multiplies $(x, y, z)$ to give $(z, x, y)$ is also a rotation matrix. Find $P$ and $P^3$. The rotation axis $a=(1,1,1)$ doesn't move, it equals $P a$. What is the angle of rotation from $v=(2,3,-5)$ to $P v=(-5,2,3)$ ?
+47. If $P$ is any permutation matrix, find a nonzero vector $x$ so that $(I-P) x=0$. (This will mean that $I-P$ has no inverse, and has determinant zero.)
+48. If $P$ has 1 s on the antidiagonal from $(1, n)$ to $(n, 1)$, describe $P A P$.
+1.6 Inverses and Transposes
+
+The inverse of an $n$ by $n$ matrix is another $n$ by $n$ matrix. The inverse of $A$ is written $A^{-1}$ (and pronounced " $A$ inverse"). The fundamental property is simple: If you multiply by $A$ and then multiply by $A^{-1}$, you are back where you started:
+Inverse matrix If $b=A x$ then $A^{-1} b=x$.

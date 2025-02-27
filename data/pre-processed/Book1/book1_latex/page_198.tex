@@ -1,0 +1,25 @@
+The measurements \(b_{1},\ldots,b_{m}\) are given at distinct points \(t_{1},\ldots,t_{m}\). Then the straight line \(\widehat{C}+\widehat{D}t\) which minimizes \(E^{2}\) comes from least squares:
+
+\[A^{\mathrm{T}}A\begin{bmatrix}\widehat{C}\\ \widehat{D}\end{bmatrix}=A^{\mathrm{T}}b\qquad\text{or}\qquad\begin{bmatrix} m&\sum t_{i}\\ \sum t_{i}&\sum t_{i}^{2}\end{bmatrix}\begin{bmatrix}\widehat{C}\\ \widehat{D}\end{bmatrix}=\begin{bmatrix}\sum b_{i}\\ \sum t_{i}b_{i}\end{bmatrix}.\]
+
+_Remark_. The mathematics of least squares is not limited to fitting the data by straight lines. In many experiments there is no reason to expect a linear relationship, and it would be crazy to look for one. Suppose we are handed some radioactive material, The output \(b\) will be the reading on a Geiger counter at various times \(t\). We may know that we are holding a mixture of two chemicals, and we may know their half-lives (or rates of decay), but we do not know how much of each is in our hands. If these two unknown amounts are \(C\) and \(D\), then the Geiger counter readings would behave like the sum of two exponentials (and not like a straight line):
+
+\[b=Ce^{-\lambda t}+De^{-\mu t}.\] (8)
+
+In practice, the Geiger counter is not exact. Instead, we make readings \(b_{1},\ldots,b_{m}\) at times \(t_{1},\ldots,t_{m}\), and equation (8) is approximately satisfied:
+
+\[\begin{array}{ccccc}&Ce^{-\lambda t_{1}}&+&De^{-\mu t_{1}}&\approx&b_{1}\\ Ax=b\quad\text{is}&&\vdots&&\\ &Ce^{-\lambda t_{m}}&+&De^{-\mu t_{m}}&\approx&b_{m}.\end{array}\]
+
+If there are more than two readings, \(m>2\), then in all likelihood we cannot solve for \(C\) and \(D\). But the least-squares principle will give optimal values \(\widehat{C}\) and \(\widehat{D}\).
+
+The situation would be completely different if we knew the amounts \(C\) and \(D\), and were trying to discover the decay rates \(\lambda\) and \(\mu\). This is a problem in _nonlinear least squares_, and it is harder. We would still form \(E^{2}\), the sum of the squares of the errors, and minimize it. But setting its derivatives to zero will not give linear equations for the optimal \(\lambda\) and \(\mu\). In the exercises, we stay with linear least squares.
+
+### Weighted Least Squares
+
+A simple least-squares problem is the estimate \(\widehat{x}\) of a patient's weight from two observations \(x=b_{1}\) and \(x=b_{2}\). Unless \(b_{1}=b_{2}\), we are faced with an inconsistent system of two equations in one unknown:
+
+\[\begin{bmatrix}1\\ 1\end{bmatrix}\begin{bmatrix}x\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\end{bmatrix}.\]
+
+Up to now, we accepted \(b_{1}\) and \(b_{2}\) as equally reliable. We looked for the value \(\widehat{x}\) that minimized \(E^{2}=(x-b_{1})^{2}+(x-b_{2})^{2}\):
+
+\[\frac{dE^{2}}{dx}=0\qquad\text{at}\qquad\widehat{x}=\frac{b_{1}+b_{2}}{2}.\] 

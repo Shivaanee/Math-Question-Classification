@@ -1,0 +1,17 @@
+for \(k=1,\ldots,K\). Note that \(\tilde{f}_{k}(x)\) is the _real-valued prediction_ for the Boolean classifier for class \(k\) versus not class \(k\); it is not the Boolean classifier, which is \(\mathbf{sign}(\tilde{f}_{k}(x))\).
+
+As an example consider a multi-class classification problem with 3 labels. We construct 3 different least squares classifiers, for 1 versus 2 or 3, for 2 versus 1 or 3, and for 3 versus 1 or 2. Suppose for a given feature vector \(x\), we find that
+
+\[\tilde{f}_{1}(x)=-0.7,\quad\tilde{f}_{2}(x)=+0.2,\quad\tilde{f}_{3}(x)=+0.8.\]
+
+The largest of these three numbers is \(\tilde{f}_{3}(x)\), so our prediction is \(\hat{f}(x)=3\). We can interpret these numbers and our final decision. The first classifier is fairly confident that the label is not 1. According to the second classifier, the label could be 2, but it does not have high confidence in this prediction. Finally, the third classifier predicts the label is 3, and moreover has relatively high confidence in this guess. So our final guess is label 3. (This interpretation suggests that if we had to make a second guess, it should be label 2.) Of course here we are anthropomorphizing the individual label classifiers, since they do not have beliefs or levels of confidence in their predictions. But the story is helpful in understanding the motivation behind the classifier above.
+
+Skewed decisions.In a Boolean classifier we can skew the decision threshold (see SS14.2.3) to trade off the true positive and false positive rates. In a \(K\)-class classifier, an analogous method can be used to trade off the \(K\) true label \(i\) rates. We apply an offset \(\alpha_{k}\) to \(\tilde{f}_{l}(x)\) before finding the largest value. This gives the predictor
+
+\[\hat{f}(x)=\operatorname*{argmax}_{k=1,\ldots,K}\Big{(}\tilde{f}_{k}(x)- \alpha_{k}\Big{)},\]
+
+where \(\alpha_{k}\) are constants chosen to trade off the true label \(k\) rates. If we decrease \(\alpha_{k}\), we predict \(\hat{f}(x)=k\) more often, so all entries of the \(k\)th column in the confusion matrix increase. This increases our rate of true positives for label \(k\) (since \(N_{kk}\) increases), which is good. But it can decrease the true positive rates for the other labels.
+
+Complexity.In least squares multi-class classification, we solve \(K\) least squares problems, each with \(N\) rows and \(p\) variables. The naive method of computing \(\theta_{1},\ldots,\theta_{K}\), the coefficients in our one-versus-others classifiers, costs \(2KNp^{2}\) flops. But the \(K\) least squares problems we solve all involve the same matrix; only the right-hand side vector changes. This means that we can carry out the QR factorization just once, and use it for computing all \(K\) classifier coefficients. Alternatively, we can say that finding the coefficients of all the one-versus-others classifiers can be done by solving a matrix least squares problem (see page 233.) When \(K\) (the number of classes or labels) is small compared to \(p\) (the number of basis functions or coefficients in the classifier), the cost is about the same as solving just one least squares problem.
+
+Another simplification in \(K\)-class least squares classification arises due to the special form of the right-hand sides in the \(K\) least squares problems to be solved. The right-hand sides in these \(K\) problems are Boolean vectors with entries \(+1\) for 

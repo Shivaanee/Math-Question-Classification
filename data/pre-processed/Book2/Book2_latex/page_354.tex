@@ -1,0 +1,26 @@
+
+
+### 16.2 Solution
+
+Optimality conditions via Lagrange multipliers.We will use the _method of Lagrange multipliers_ (developed by the mathematician Joseph-Louis Lagrange, and summarized in SSC.3) to solve the constrained least squares problem (16.1). Later we give an independent verification, that does not rely on calculus or Lagrange multipliers, that the solution we derive is correct.
+
+We first write the constrained least squares problem with the constraints given as a list of \(p\) scalar equality constraints:
+
+\[\begin{array}{ll}\mbox{minimize}&\|Ax-b\|^{2}\\ \mbox{subject to}&c_{i}^{T}x=d_{i},\quad i=1,\ldots,p,\end{array}\]
+
+where \(c_{i}^{T}\) are the rows of \(C\). We form the _Lagrangian function_
+
+\[L(x,z)=\|Ax-b\|^{2}+z_{1}(c_{1}^{T}x-d_{1})+\cdots+z_{p}(c_{p}^{T}x-d_{p}),\]
+
+where \(z\) is the \(p\)-vector of _Lagrange multipliers_. The method of Lagrange multipliers tells us that if \(\hat{x}\) is a solution of the constrained least squares problem, then there is a set of Lagrange multipliers \(\hat{z}\) that satisfy
+
+\[\frac{\partial L}{\partial x_{i}}(\hat{x},\hat{z})=0,\quad i=1,\ldots,n,\qquad \frac{\partial L}{\partial z_{i}}(\hat{x},\hat{z})=0,\quad i=1,\ldots,p.\] (16.3)
+
+These are the _optimality conditions_ for the constrained least squares problem. Any solution of the constrained least squares problem must satisfy them. We will now see that the optimality conditions can be expressed as a set of linear equations.
+
+The second set of equations in the optimality conditions can be written as
+
+\[\frac{\partial L}{\partial z_{i}}(\hat{x},\hat{z})=c_{i}^{T}\hat{x}-d_{i}=0, \quad i=1,\ldots,p,\]
+
+Figure 16.4: The smallest force sequence \(f^{\ln}\) that transfers the mass over a unit distance in 10 steps. _Right:_ The resulting position of the mass \(p(t)\).
+

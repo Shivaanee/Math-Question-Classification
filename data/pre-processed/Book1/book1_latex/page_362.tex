@@ -1,0 +1,27 @@
+
+
+**19.**: Find the 3 by 3 matrix \(A\) and its pivots, rank, eigenvalues, and determinant:
+
+\[\begin{bmatrix}x_{1}&x_{2}&x_{3}\end{bmatrix}\begin{bmatrix}&A\\ &\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\\ x_{3}\end{bmatrix}=4(x_{1}-x_{2}+2x_{3})^{2}.\]
+**20.**: For \(F_{1}(x,y)=\frac{1}{4}x^{4}+x^{2}y+y^{2}\) and \(F_{2}(x,y)=x^{3}+xy-x\), find the second derivative matrices \(A_{1}\) and \(A_{2}\):
+
+\[A=\begin{bmatrix}\partial^{2}F/\partial x^{2}&\partial^{2}F/\partial x \partial y\\ \partial^{2}F/\partial y\partial x&\partial^{2}F/\partial y^{2}\end{bmatrix}.\]
+
+\(A_{1}\) is positive definite, so \(F_{1}\) is concave up (\(=\) convex). Find the minimum point of \(F_{1}\) and the saddle point of \(F_{2}\) (look where first derivatives are zero).
+**21.**: The graph of \(z=x^{2}+y^{2}\) is a bowl opening upward. _The graph_ of \(z=x^{2}-y^{2}\) is _a saddle_. The graph of \(z=-x^{2}-y^{2}\) is a bowl opening downward. What is a test on \(F(x,y)\) to have a saddle at \((0,0)\)?
+**22.**: Which values of \(c\) give a bowl and which give a saddle point for the graph of \(z=4x^{2}+12xy+cy^{2}\)? Describe this graph at the borderline value of \(c\).
+
+### Tests for Positive Definiteness
+
+Which symmetric matrices have the property that \(x^{\rm T}Ax>0\) for all nonzero vectors \(x\)? There are four or five different ways to answer this question, and we hope to find all of them. The previous section began with some hints about the signs of eigenvalues. but that gave place to the tests on \(a\), \(b\), \(c\):
+
+\[b=\begin{bmatrix}a&b\\ b&c\end{bmatrix}\quad\text{is positive definite when}\quad a>0\quad\text{and} \quad ac-b^{2}>0.\]
+
+From those conditions, _both eigenvalues are positive_. Their product \(\lambda_{1}\lambda_{2}\) is determinant \(ac-b^{2}>0\), so the eigenvalues are either both positive or both negative. They must be positive because their sum is the trace \(a+c>0\).
+
+Looking at \(a\) and \(ac-b^{2}\), it is even possible to spot the appearance of the _pivots_. They turned up when we decomposed \(x^{\rm T}Ax\) into a sum of squares:
+
+\[\text{{Sum of squares}}\qquad ax^{2}+2bxy+cy^{2}=a\left(x+\frac{b}{a}y\right)^ {2}+\frac{ac-b^{2}}{a}y^{2}.\] (1)
+
+Those coefficients \(a\) and \((ac-b^{2})/a\) are the pivots for a 2 by 2 matrix. For larger matrices the pivots still give a simple test for positive definiteness: \(x^{\rm T}Ax\) stays positive when \(n\) independent squares are multiplied by _positive pivots_.
+

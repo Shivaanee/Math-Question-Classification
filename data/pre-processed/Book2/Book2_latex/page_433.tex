@@ -1,0 +1,29 @@
+We expand the second term on the right-hand side to get
+
+\[\mu\|g(x)+z/(2\mu)\|^{2}\] \[= \mu\|g(x)\|^{2}+2\mu g(x)^{T}(z/(2\mu))+\mu\|z/(2\mu)\|^{2}\] \[= g(x)^{T}z+\mu\|g(x)\|^{2}+\mu\|z/(2\mu)\|^{2}.\]
+
+Substituting this into the right-hand side of (19.8) verifies the identity.
+
+When we minimize \(L_{\mu}(x,z)\) over the variable \(x\), the term \(-\mu\|z/(2\mu)\|^{2}\) in (19.8) is a constant (_i.e._, does not depend on \(x\)), and does not affect the choice of \(x\). It follows that we can minimize \(L_{\mu}(x,z)\) over \(x\) by minimizing the function
+
+\[\|f(x)\|^{2}+\mu\|g(x)+z/(2\mu)\|^{2},\] (19.9)
+
+which in turn can be expressed as
+
+\[\left\|\left[\begin{array}{c}f(x)\\ \sqrt{\mu}g(x)+z/(2\sqrt{\mu})\end{array}\right]\right\|^{2}.\] (19.10)
+
+This can be be (approximately) minimized using the Levenberg-Marquardt algorithm.
+
+Any minimizer \(\tilde{x}\) of \(L_{\mu}(x,z)\) (or equivalently, (19.9)) satisfies the optimality condition
+
+\[0 = 2Df(\tilde{x})^{T}f(\tilde{x})+2\mu Dg(\tilde{x})^{T}(g(\tilde{x })+z/(2\mu))\] \[= 2Df(\tilde{x})^{T}f(\tilde{x})+Dg(\tilde{x})^{T}(2\mu g(\tilde{x })+z).\]
+
+From this equation we can observe that if \(\tilde{x}\) minimizes the augmented Lagrangian and is also feasible (_i.e._, \(g(\tilde{x})=0\)), then it satisfies the optimality condition (19.4) with the vector \(z\) as the Lagrange multiplier. The bottom equation also suggests a good choice for updating the Lagrange multiplier vector \(z\) if \(\tilde{x}\) is not feasible. In this case the choice
+
+\[\tilde{z}=z+2\mu g(\tilde{x})\] (19.11)
+
+satisfies the optimality condition (19.4) with \(\tilde{x}\) and \(\tilde{z}\).
+
+The augmented Lagrangian algorithm alternates between minimizing the augmented Lagrangian (approximately, using the Levenberg-Marquardt algorithm), and updating the parameter \(z\) (our estimate of a suitable Lagrange multiplier) using the suggestion (19.11) above. The penalty parameter \(\mu\) is increased only when needed, when \(\|g(x)\|\) does not sufficiently decrease.
+
+ 

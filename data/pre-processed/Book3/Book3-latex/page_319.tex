@@ -1,0 +1,28 @@
+
+
+**8.**: If \(\theta\) is a real number, prove that the following matrices are unitarily equivalent
+
+\[\begin{bmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{bmatrix},\quad\quad\begin{bmatrix}e^{i\theta}&0\\ 0&e^{-i\theta}\end{bmatrix}.\]
+**9.**: Let \(V\) be a finite-dimensional inner product space and \(T\) a positive linear operator on \(V\). Let \(p_{\tau}\) be the inner product on \(V\) defined by \(p_{\tau}(\alpha,\beta)=(T\alpha|\beta)\). Let \(U\) be a linear operator on \(V\) and \(U\)* its adjoint with respect to \((\quad|\quad)\). Prove that \(U\) is unitary with respect to the inner product \(p_{\tau}\) if and only if \(T=U^{*}TU\).
+**10.**: Let \(V\) be a finite-dimensional inner product space. For each \(\alpha\), \(\beta\) in \(V\), let \(T_{\alpha,\beta}\) be the linear operator on \(V\) defined by \(T_{\alpha,\beta}(\gamma)=(\gamma|\beta)\alpha\). Show that
+
+* \(T_{\alpha,\beta}^{\bullet}=T_{\beta,\alpha}\).
+* trace \((T_{\alpha,\beta})=(\alpha|\beta)\).
+* Under what conditions is \(T_{\alpha,\beta}\) self-adjoint?
+**11.**: Let \(V\) be an \(n\)-dimensional inner product space over the field \(F\), and let \(L(V,\,V)\) be the space of linear operators on \(V\). Show that there is a unique inner product on \(L(V,\,V)\) with the property that \(||T_{\alpha,\beta}||^{2}=||\alpha||^{2}||\beta||^{2}\) for all \(\alpha\), \(\beta\) in \(V\). (\(T_{\alpha,\beta}\) is the operator defined in Exercise 10.) Find an isomorphism between \(L(V,\,V)\) with this inner product and the space of \(n\times n\) matrices over \(F\), with the inner product \((A|B)=\text{tr}\ (AB^{*})\).
+**12.**: Let \(V\) be a finite-dimensional inner product space. In Exercise 6, we showed how to construct some linear operators on \(V\) which are both self-adjoint and unitary. Now prove that there are no others, i.e., that every self-adjoint unitary operator arises from some subspace \(W\) as we described in Exercise 6.
+**13.**: Let \(V\) and \(W\) be finite-dimensional inner product spaces having the same dimension. Let \(U\) be an isomorphism of \(V\) onto \(W\). Show that:
+
+* The mapping \(T\to UTU^{-1}\) is an isomorphism of the vector space \(L(V,\,V)\) onto the vector space \(L(W,\,W)\).
+* trace \((UTU^{-1})=\text{trace}\ (T)\) for each \(T\) in \(L(V,\,V)\).
+* \(UT_{\alpha,\beta}U^{-1}=T_{\alpha,\alpha,\beta}\) (\(T_{\alpha,\beta}\) defined in Exercise 10).
+* \((UTU^{-1})^{*}=UT^{*}U^{-1}\).
+* If we equip \(L(V,\,V)\) with inner product \((T_{1}|T_{2})=\text{trace}\ (T_{1}T_{2}^{\bullet})\), and similarly for \(L(W,\,W)\), then \(T\to UTU^{-1}\) is an inner product space isomorphism.
+**14.**: If \(V\) is an inner product space, a **rigid motion** is any function \(T\) from \(V\) into \(V\) (not necessarily linear) such that \(||T\alpha-T\beta||=||\alpha-\beta||\) for all \(\alpha\), \(\beta\) in \(V\). One example of a rigid motion is a linear unitary operator. Another example is translation by a fixed vector \(\gamma\):
+
+\[T_{\gamma}(\alpha)=\alpha+\gamma\]
+
+* Let \(V\) be \(R^{\natural}\) with the standard inner product. Suppose \(T\) is a rigid motion of \(V\) and that \(T(0)=0\). Prove that \(T\) is linear and a unitary operator.
+* Use the result of part (a) to prove that every rigid motion of \(R^{\natural}\) is composed of a translation, followed by a unitary operator.
+* Now show that a rigid motion of \(R^{\natural}\) is either a translation followed by a rotation, or a translation followed by a reflection followed by a rotation.
+

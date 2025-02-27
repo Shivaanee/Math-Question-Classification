@@ -1,0 +1,17 @@
+* Construct a matrix whose column space contains \((1,1,5)\) and \((0,3.1)\) and whose nullspace contains \((1,1,2)\).
+* Construct a matrix whose column space contains \((1,1,0)\) and \((0,1,1)\) and whose nullspace contains \((1,0,1)\) and \((0,0,1)\).
+* Construct a matrix whose column space contains \((1,1,1)\) and whose nullspace is the line of multiples of \((1,1,1,1)\).
+* Construct a 2 by 2 matrix whose nullspace equals its column space.
+* Why does no 3 by 3 matrix have a nullspace that equals its column space?
+* The reduced form \(R\) of a 3 by 3 matrix with randomly chosen entries is almost sure to be . What \(R\) is virtually certain if the random \(A\) is 4 by 3?
+* Show by example that these three statements are generally false: 1. \(A\) and \(A^{\mathrm{T}}\) have the same nullspace. 2. \(A\) and \(A^{\mathrm{T}}\) have the same free variables. 3. If \(R\) is the reduced form \(\mathsf{rref}(A)\) then \(R^{\mathrm{T}}\) is \(\mathsf{rref}(A^{\mathrm{T}})\).
+* If the special solutions to \(Rx=0\) are in the columns of these \(N\), go backward to find the nonzero rows of the reduced matrices \(R\): \[N=\begin{bmatrix}2&3\\ 1&0\\ 0&1\end{bmatrix}\qquad\text{ and }\qquad N=\begin{bmatrix}0\\ 0\\ 1\end{bmatrix}\qquad\text{ and }\qquad N=\begin{bmatrix}&\\ &\end{bmatrix}\quad\text{ (empty 3 by 1).}\]
+* Explain why \(A\) and \(-A\) always have the same reduced echelon form \(R\).
+
+### Linear Independence, Basis, and Dimension
+
+By themselves, the numbers \(m\) and \(n\) give an incomplete picture of the true size of a linear system. The matrix in our example had three rows and four columns, but the third row was only a combination of the first two. After elimination it became a zero row, It had no effect on the homogeneous problem \(Ax=0\). The four columns also failed to be independent, and the column space degenerated into a two-dimensional plane.
+
+The important number that is beginning to emerge (the true size) is the _rank_\(r\). The rank was introduced as the _number of pivots_ in the elimination process. Equivalently, the final matrix \(U\) has \(r\) nonzero rows. This definition could be given to a computer. But it would be wrong to leave it there because the rank has a simple and intuitive meaning: _The rank counts the number of genuinely independent rows in the matrix \(A\)._ We want definitions that are mathematical rather than computational.
+
+The goal of this section is to explain and use four ideas: 

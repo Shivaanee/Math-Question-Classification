@@ -1,0 +1,23 @@
+
+
+**10.36**: _Quadratic form._ Suppose \(A\) is an \(n\times n\) matrix and \(x\) is an \(n\)-vector. The triple product \(x^{T}Ax\), a \(1\times 1\) matrix which we consider to be a scalar (_i.e._, number), is called a _quadratic form_ of the vector \(x\), with coefficient matrix \(A\). A quadratic form is the vector analog of a quadratic function \(\alpha u^{2}\), where \(\alpha\) and \(u\) are both numbers. Quadratic forms arise in many fields and applications.
+
+1. Show that \(x^{T}Ax=\sum_{i,j=1}^{n}A_{ij}x_{i}x_{j}\).
+2. Show that \(x^{T}(A^{T})x=x^{T}Ax\). In other words, the quadratic form with the transposed coefficient matrix has the same value for any \(x\). _Hint._ Take the transpose of the triple product \(x^{T}Ax\).
+3. Show that \(x^{T}((A+A^{T})/2)x=x^{T}Ax\). In other words, the quadratic form with coefficient matrix equal to the symmetric part of a matrix (_i.e._, \((A+A^{T})/2\)) has the same value as the original quadratic form.
+4. Express \(2x_{1}^{2}-3x_{1}x_{2}-x_{2}^{2}\) as a quadratic form, with symmetric coefficient matrix \(A\).
+**10.37**: _Orthogonal \(2\times 2\) matrices._ In this problem, you will show that every \(2\times 2\) orthogonal matrix is either a rotation or a reflection (see SS7.1).
+
+1. Let \[Q=\left[\begin{array}{cc}a&b\\ c&d\end{array}\right]\] be an orthogonal \(2\times 2\) matrix. Show that the following equations hold: \[a^{2}+c^{2}=1,\qquad b^{2}+d^{2}=1,\qquad ab+cd=0.\] 2. Define \(s=ad-bc\). Combine the three equalities in part (a) to show that \[|s|=1,\qquad b=-sc,\qquad d=sa.\] 3. Suppose \(a=\cos\theta\). Show that there are two possible matrices \(Q\): A rotation (counterclockwise over \(\theta\) radians), and a reflection (through the line that passes through the origin at an angle of \(\theta/2\) radians with respect to horizontal).
+**10.38**: _Orthogonal matrix with nonnegative entries._ Suppose the \(n\times n\) matrix \(A\) is orthogonal, and all of its entries are nonnegative, _i.e._, \(A_{ij}\geq 0\) for \(i,j=1,\ldots,n\). Show that \(A\) must be a permutation matrix, _i.e._, each entry is either \(0\) or \(1\), each row has exactly one entry with value one, and each column has exactly one entry with value one. (See page 132.)
+**10.39**: _Gram matrix and QR factorization._ Suppose the matrix \(A\) has linearly independent columns and QR factorization \(A=QR\). What is the relationship between the Gram matrix of \(A\) and the Gram matrix of \(R\)? What can you say about the angles between the columns of \(A\) and the angles between the columns of \(R\)?
+**10.40**: _QR factorization of first \(i\) columns of \(A\)._ Suppose the \(n\times k\) matrix \(A\) has QR factorization \(A=QR\). We define the \(n\times i\) matrices
+
+\[A_{i}=\left[\begin{array}{cccc}a_{1}&\cdots&a_{i}\end{array}\right],\qquad Q _{i}=\left[\begin{array}{cccc}q_{1}&\cdots&q_{i}\end{array}\right],\]
+
+for \(i=1,\ldots,k\). Define the \(i\times i\) matrix \(R_{i}\) as the submatrix of \(R\) containing its first \(i\) rows and columns, for \(i=1,\ldots,k\). Using index range notation, we have
+
+\[A_{i}=A_{1:n,1:i},\quad Q_{i}=A_{1:n,1:i},\quad R_{i}=R_{1:i,1:i}.\]
+
+Show that \(A_{i}=Q_{i}R_{i}\) is the QR factorization of \(A_{i}\). This means that when you compute the QR factorization of \(A\), you are also computing the QR factorization of all submatrices \(A_{1},\ldots,A_{k}\).
+

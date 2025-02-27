@@ -1,0 +1,35 @@
+for which we wish to find the solutions. If we let \(f_{i}\), \(i=1\), \(\ldots\), \(m\), be the linear functional on \(F^{n}\) defined by
+
+\[f_{i}(x_{1},\ldots,x_{n})\,=\,A_{\,\,\,i}x_{1}+\,\cdots\,+\,A_{\,\,\,i}x_{n}\]
+
+then we are seeking the subspace of \(F^{n}\) of all \(\alpha\) such that
+
+\[f_{i}(\alpha)\,=\,0,\qquad i\,=\,1,\ldots,m.\]
+
+In other words, we are seeking the subspace annihilated by \(f_{1},\ldots,f_{m}\). Row-reduction of the coefficient matrix provides us with a systematic method of finding this subspace. The \(n\)-tuple \((A_{\,\,\,\,i\!i},\ldots,A_{\,\,\,i\!i})\) gives the coordinates of the linear functional \(f_{i}\) relative to the basis which is dual to the standard basis for \(F^{n}\). The row space of the coefficient matrix may thus be regarded as the space of linear functionals spanned by \(f_{1},\ldots,f_{m}\). The solution space is the subspace annihilated by this space of functionals.
+
+Now one may look at the system of equations from the 'dual' point of view. That is, suppose that we are given \(m\) vectors in \(F^{n}\)
+
+\[\alpha_{i}\,=\,(A_{\,\,\,i\!i},\ldots,A_{\,\,\,i\!i})\]
+
+and we wish to find the annihilator of the subspace spanned by these vectors. Since a typical linear functional on \(F^{n}\) has the form
+
+\[f(x_{1},\ldots,x_{n})\,=\,c_{1}x_{1}+\,\cdots\,+\,c_{n}x_{n}\]
+
+the condition that \(f\) be in this annihilator is that
+
+\[\sum_{j\,=\,1}^{n}A_{\,\,\,\,i\!j}c_{j}\,=\,0,\qquad i\,=\,1,\ldots,m\]
+
+that is, that \((c_{1},\ldots,c_{n})\) be a solution of the system \(AX=0\). From this point of view, row-reduction gives us a systematic method of finding the annihilator of the subspace spanned by a given finite set of vectors in \(F^{n}\).
+
+**Example 23**: _Here are three linear functionals on \(R^{4}\):_
+
+\[\begin{array}{l}f_{1}(x_{1},x_{1},x_{3},x_{4})\,=\,x_{1}+\,2x_{2}+2x_{3}+x_{4 }\\ f_{2}(x_{1},x_{2},x_{3},x_{4})\,=\,2x_{2}+x_{4}\\ f_{3}(x_{1},x_{3},x_{4})\,=\,-2x_{1}-4x_{4}+3x_{4}.\end{array}\]
+
+_The subspace which they annihilate may be found explicitly by finding the row-reduced echelon form of the matrix_
+
+\[A\,=\!\left[\begin{array}{cccc}1&2&2&1\\ 0&2&0&1\\ -2&0&-4&3\end{array}\right]\!.\]
+
+_A short calculation, or a peek at Example 21 of Chapter 2, shows that_
+
+\[R=\!\left[\begin{array}{cccc}1&0&2&0\\ 0&1&0&0\\ 0&0&0&1\end{array}\right]\!.\] 

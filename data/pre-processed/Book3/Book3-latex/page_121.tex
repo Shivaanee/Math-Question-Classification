@@ -1,0 +1,30 @@
+transformation from \(W^{*}\) into \(V^{*}\), as follows. Suppose \(g\) is a linear functional on \(W\), and let
+
+\[f(\alpha)\,=\,g(T\alpha)\]
+
+for each \(\alpha\) in \(V\). Then (3-17) defines a function \(f\) from \(V\) into \(F\), namely, the composition of \(T\), a function from \(V\) into \(W\), with \(g\), a function from \(W\) into \(F\). Since both \(T\) and \(g\) are linear, Theorem 6 tells us that \(f\) is also linear, i.e., \(f\) is a linear functional on \(V\). Thus \(T\) provides us with a rule \(T^{\iota}\) which associates with each linear functional \(g\) on \(W\) a linear functional \(f\) = \(T^{\iota}g\) on \(V\), defined by (3-17). Note also that \(T^{\iota}\) is actually a linear transformation from \(W^{*}\) into \(V^{*}\); for, if \(g_{1}\) and \(g_{2}\) are in \(W^{*}\) and \(c\) is a scalar
+
+\[[T^{\iota}(cg_{1}\,+\,g_{2})](\alpha) = (cg_{1}+g_{2})(T\alpha)\] \[= \,cg_{1}(T\alpha)\,+\,g_{2}(T\alpha)\] \[= \,c(T^{\iota}g_{1})(\alpha)\,+\,(T^{\iota}g_{2})(\alpha)\]
+
+so that \(T^{\iota}(cg_{1}+g_{2})\) = \(cT^{\iota}g_{1}\,+\,T^{\iota}g_{2}\). Let us summarize.
+
+**Theorem 21**: _Let V and W be vector spaces over the field F. For each linear transformation T from V into W, there is a unique linear transformation T\({}^{*}\)from W\({}^{*}\) into V\({}^{*}\) such that_
+
+\[(\mathrm{T^{*}g})(\alpha)\,=\,g(\mathrm{T}\alpha)\]
+
+_for every g in W\({}^{*}\) and \(\alpha\) in V._
+
+We shall call \(T^{\iota}\) the **transpose** of \(T\). This transformation \(T^{\iota}\) is often called the adjoint of \(T\); however, we shall not use this terminology.
+
+**Theorem 22**: _Let V and W be vector spaces over the field F, and let T be a linear transformation from V into W. The null space of T\({}^{\iota}\) is the annihilator of the range of T. If V and W are finite-dimensional, then_
+
+1. _rank_ \((\mathrm{T^{*}})\) _= rank_ \((\mathrm{T})\)__
+2. _the range of T\({}^{\iota}\) is the annihilator of the null space of T._
+
+If \(g\) is in \(W^{*}\), then by definition
+
+\[(T^{\iota}g)(\alpha)\,=\,g(T\alpha)\]
+
+for each \(\alpha\) in \(V\). The statement that \(g\) is in the null space of \(T^{\iota}\) means that \(g(T\alpha)=0\) for every \(\alpha\) in \(V\). Thus the null space of \(T^{\iota}\) is precisely the annihilator of the range of \(T^{\iota}\).
+
+Suppose that \(V\) and \(W\) are finite-dimensional, say \(\dim\,V=n\) and \(\dim\,W\,=\,m\). For (i): Let \(r\) be the rank of \(T\), i.e., the dimension of the range of \(T\). By Theorem 16, the annihilator of the range of \(T\) then has dimension \((m\,-\,r)\). By the first statement of this theorem, the nullity of \(T^{\iota}\) must be \((m\,-\,r)\). But then since \(T^{\iota}\) is a linear transformation on an \(m\)-dimensional space, the rank of \(T^{\iota}\) is \(m\,-\,(m\,-\,r)\,=\,r\), and so \(T\) and \(T^{\iota}\) have the same rank. For (ii): Let \(N\) be the null space of \(T\). Every functional in the range 

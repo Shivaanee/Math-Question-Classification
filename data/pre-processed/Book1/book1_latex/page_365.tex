@@ -1,0 +1,31 @@
+Even though it is the hardest to apply to a single matrix, eigenvalues can be the most useful test for theoretical purposes. _Each test is enough by itself_.
+
+##### Positive Definite Matrices and Least Squares
+
+I hope you will allow one more test for positive definiteness. It is already close. We connected positive definite matrices to pivots (Chapter 1), determinants (Chapter 4), and eigenvalues (Chapter 5). Now we see them in the least-squares problems in Chapter 3, coming from the rectangular matrices of Chapter 2.
+
+The rectangular matrix will be \(R\) and the least-squares problem will be \(Rx=b\). It has \(m\) equations with \(m\geq n\) (square systems are included). _The least-square choice \(\widehat{x}\) is the solution of \(R^{\mathrm{T}}R\widehat{x}=R^{\mathrm{T}}b\)_. That matrix \(AR^{\mathrm{T}}R\) is not only symmetric but positive definite, as we now show--provided that the \(n\) columns of \(R\) are linearly independent:
+
+### 6.4 The symmetric matrix \(A\) is positive definite if and only if
+
+1. There is a matrix \(R\) with independent columns such that \(A=R^{\mathrm{T}}R\).
+
+_The key is to recognize \(x^{\mathrm{T}}Ax\) as \(x^{\mathrm{T}}R^{\mathrm{T}}Rx=(Rx)^{\mathrm{T}}(Rx)\)._ This squared length \(\|Rx\|^{2}\) is positive (unless \(x=0\)), because \(R\) has independent columns. (If \(x\) is nonzero then \(Rx\) is nonzero.) Thus \(x^{\mathrm{T}}R^{\mathrm{T}}Rx>0\) and \(R^{\mathrm{T}}R\) is positive definite.
+
+It remains to find an \(R\) For which \(A=R^{\mathrm{T}}R\). We have almost done this twice already:
+
+\[\text{{Elimination}}\qquad A=LDL^{\mathrm{T}}=(L\sqrt{D})(\sqrt{D}L^{\mathrm{ T}}).\quad\text{So take }R=\sqrt{D}L^{\mathrm{T}}.\]
+
+This _Cholesky decomposition_ has the pivots split evenly between \(L\) and \(L^{\mathrm{T}}\).
+
+\[\text{{Eigenvalues}}\qquad A=Q\Lambda Q^{\mathrm{T}}=(Q\sqrt{\Lambda})(\sqrt{ \Lambda}Q^{\mathrm{T}}).\quad\text{So take }R=\sqrt{\Lambda}Q^{\mathrm{T}}.\] (3)
+
+A third possibility is \(R=Q\sqrt{\Lambda}Q^{\mathrm{T}}\), the _symmetric positive definite square root_ of \(A\). There are many other choices, square or rectangular, and we can see why. If you multiply any \(R\) by _a matrix \(Q\) with orthonormal columns_, then \((QR)^{\mathrm{T}}(QR)=R^{\mathrm{T}}Q^{\mathrm{T}}QR=R^{\mathrm{T}}IR=A\). Therefore \(QR\) is another choice.
+
+Applications of positive definite matrices are developed in my earlier book _Introduction to Applied Mathematics_ and also the new _Applied Mathematics and Scientific Computing_ (see www.wellesleycambridge.com). We mention that \(Ax=\lambda Mx\) arises constantly in engineering analysis. If \(A\) and \(M\) are positive definite, this generalized problem is parallel to the familiar \(Ax=\lambda x\), and \(\lambda>0\). \(M\) is a _mass matrix_ for the _finite element method_ in Section 6.4.
+
+##### Semidefinite Matrices
+
+The tests for semidefiniteness will relax \(x^{\mathrm{T}}Ax>0\), \(\lambda>0\), \(d>0\), and \(\det>0\), to allow zeros to appear. The main point is to see the analogies with the positive definite case.
+
+ 

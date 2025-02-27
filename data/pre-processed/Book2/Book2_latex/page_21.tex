@@ -1,0 +1,24 @@
+Vector addition
+
+Vector entry labels.In applications such as the ones described above, each entry of a vector has a meaning, such as the count of a specific word in a document, the number of shares of a specific stock held in a portfolio, or the rainfall in a specific hour. It is common to keep a separate list of labels or tags that explain or annotate the meaning of the vector entries. As an example, we might associate the portfolio vector \((100,50,20)\) with the list of ticker symbols (AAPL, INTC, AMZN), so we know that assets 1, 2, and 3 are Apple, Intel, and Amazon. In some applications, such as an image, the meaning or ordering of the entries follow known conventions or standards.
+
+### 1.2 Vector addition
+
+Two vectors _of the same size_ can be added together by adding the corresponding elements, to form another vector of the same size, called the _sum_ of the vectors. Vector addition is denoted by the symbol \(+\). (Thus the symbol \(+\) is overloaded to mean scalar addition when scalars appear on its left- and right-hand sides, and vector addition when vectors appear on its left- and right-hand sides.) For example,
+
+\[\left[\begin{array}{c}0\\ 7\\ 3\end{array}\right]+\left[\begin{array}{c}1\\ 2\\ 0\end{array}\right]=\left[\begin{array}{c}1\\ 9\\ 3\end{array}\right].\]
+
+Vector subtraction is similar. As an example,
+
+\[\left[\begin{array}{c}1\\ 9\end{array}\right]-\left[\begin{array}{c}1\\ 1\end{array}\right]=\left[\begin{array}{c}0\\ 8\end{array}\right].\]
+
+The result of vector subtraction is called the _difference_ of the two vectors.
+
+Properties.Several properties of vector addition are easily verified. For any vectors \(a\), \(b\), and \(c\) of the same size we have the following.
+
+* Vector addition is _commutative_: \(a+b=b+a\).
+* Vector addition is _associative_: \((a+b)+c=a+(b+c)\). We can therefore write both as \(a+b+c\).
+* \(a+0=0+a=a\). Adding the zero vector to a vector has no effect. (This is an example where the size of the zero vector follows from the context: It must be the same as the size of \(a\).)
+* \(a-a=0\). Subtracting a vector from itself yields the zero vector. (Here too the size of \(0\) is the size of \(a\).)
+
+To show that these properties hold, we argue using the definition of vector addition and vector equality. As an example, let us show that for any \(n\)-vectors \(a\) and \(b\), we have \(a+b=b+a\). The \(i\)th entry of \(a+b\) is, by the definition of vector 

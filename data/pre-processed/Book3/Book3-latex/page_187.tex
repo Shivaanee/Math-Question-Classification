@@ -1,0 +1,43 @@
+Proof.: Although the proof of Theorem 8 does not apply here, it does suggest how to handle the general case. Let \(G(r,\,s,\,t)\) be the subgroup of \(S_{r+s+t}\) that consists of the permutations which permute the sets
+
+\[\{1,\ldots,r\},\,\{r+1,\ldots,r+s\},\,\{r+s+1,\ldots,r+s+t\}\]
+
+within themselves. Then \((\mathop{\rm sgn}\nolimits_{\mu})(L\bigcirc M\bigcirc N)_{\mu}\) is the same multilinear function for all \(\mu\) in a given left coset of \(G(r,\,s,\,t)\). Choose one element from each left coset of \(G(r,\,s,\,t)\), and let \(E\) be the sum of the corresponding terms \((\mathop{\rm sgn}\nolimits_{\mu})(L\bigcirc M\bigcirc N)_{\mu}\). Then \(E\) is independent of the way in which the representatives \(\mu\) are chosen, and
+
+\[r!s!t!\,E\,=\,\pi_{r+s+t}(L\bigcirc M\bigcirc N).\]
+
+We shall show that \((L\,\wedge\,M)\,\wedge\,N\) and \(L\,\wedge\,(M\,\wedge\,N)\) are both equal to \(E\).
+
+Let \(G(r+s,\,t)\) be the subgroup of \(S_{r+s+t}\) that permutes the sets
+
+\[\{1,\ldots,r+s\},\,\{r+s+1,\ldots,r+s+t\}\]
+
+within themselves. Let \(T\) be any set of permutations of \(\{1,\ldots,r+s+t\}\) which contains exactly one element from each left coset of \(G(r+s,\,t)\). By (5-50)
+
+\[(L\,\wedge\,M)\,\wedge\,N\,=\,\mathop{\Sigma}\limits_{r}\,(\mathop{\rm sgn} \nolimits\tau)[(L\,\wedge\,M)\bigcirc N]_{r}\]
+
+where the sum is extended over the permutations \(\tau\) in \(T\). Now let \(G(r,\,s)\) be the subgroup of \(S_{r+s}\) that permutes the sets
+
+\[\{1,\ldots,r\},\,\{r+1,\ldots,r+s\}\]
+
+within themselves. Let \(S\) be any set of permutations of \(\{1,\ldots,r+s\}\) which contains exactly one element from each left coset of \(G(r,\,s)\). From (5-50) and what we have shown above, it follows that
+
+\[(L\,\wedge\,M)\,\wedge\,N\,=\,\mathop{\Sigma}\limits_{\sigma,\tau}\,(\mathop{ \rm sgn}\nolimits\sigma)(\mathop{\rm sgn}\nolimits\tau)[(L\bigcirc M)_{\sigma }\bigcirc N]_{r}\]
+
+where the sum is extended over all pairs \(\sigma\), \(\tau\) in \(S\times T\). If we agree to identify each \(\sigma\) in \(S_{r+s}\) with the element of \(S_{r+s+t}\) which agrees with \(\sigma\) on \(\{1,\ldots,r+s\}\) and is the identity on \(\{r+s+1,\ldots,r+s+t\}\), then we may write
+
+\[(L\,\wedge\,M)\,\wedge\,N\,=\,\mathop{\Sigma}\limits_{\sigma,\tau}\,\mathop{ \rm sgn}\nolimits\,(\sigma\,\tau)[(L\bigcirc M\bigcirc N)_{\sigma}]_{r}.\]
+
+But,
+
+\[[(L\bigcirc M\bigcirc N)_{\sigma}]_{r}\,=\,(L\bigcirc M\bigcirc N)_{\sigma}.\]
+
+Therefore
+
+\[(L\,\wedge\,M)\,\wedge\,N\,=\,\mathop{\Sigma}\limits_{\sigma,\tau}\,\mathop{ \rm sgn}\nolimits\,(\tau\,\sigma)(L\bigcirc M\bigcirc N)_{\sigma}.\]
+
+Now suppose we have
+
+\[\tau_{1}\sigma_{1}=\tau_{2}\sigma_{2}\,\gamma\]
+
+with \(\sigma_{i}\) in \(S\), \(\tau_{i}\) in \(T\), and \(\gamma\) in \(G(r,\,s,\,t)\). Then \(\tau_{2}^{-1}\,\tau_{1}=\sigma_{2}\gamma\sigma_{1}^{-1}\), and since 

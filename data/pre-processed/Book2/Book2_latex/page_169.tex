@@ -1,0 +1,40 @@
+
+
+## 8 Exercises
+
+### Sum of linear functions
+
+Suppose \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\) and \(g:\mathbf{R}^{n}\to\mathbf{R}^{m}\) are linear functions. Their _sum_ is the function \(h:\mathbf{R}^{n}\to\mathbf{R}^{m}\), defined as \(h(x)=f(x)+g(x)\) for any \(n\)-vector \(x\). The sum function is often denoted as \(h=f+g\). (This is another case of overloading the \(+\) symbol, in this case to the sum of functions.) If \(f\) has matrix representation \(f(x)=Fx\), and \(g\) has matrix representation \(f(x)=Gx\), where \(F\) and \(G\) are \(m\times n\) matrices, what is the matrix representation of the sum function \(h=f+g\)? Be sure to identify any \(+\) symbols appearing in your justification.
+
+### Averages and affine functions
+
+Suppose that \(G:\mathbf{R}^{n}\to\mathbf{R}^{m}\) is an affine function. Let \(x_{1},\ldots,x_{k}\) be \(n\)-vectors, and define the \(m\)-vectors \(y_{1}=G(x_{1}),\ldots,y_{k}=G(x_{k})\). Let
+
+\[\overline{x}=(x_{1}+\cdots+x_{k})/k,\qquad\overline{y}=(y_{1}+\cdots+y_{k})/k\]
+
+be the averages of these two lists of vectors. (Here \(\overline{x}\) is an \(n\)-vector and \(\overline{y}\) is an \(m\)-vector.) Show that we always have \(\overline{y}=G(\overline{x})\). In words: The average of an affine function applied to a list of vectors is the same as the affine function applied to the average of the list of vectors.
+
+### Cross-product
+
+The cross product of two 3-vectors \(a=(a_{1},a_{2},a_{3})\) and \(x=(x_{1},x_{2},x_{3})\) is defined as the vector
+
+\[a\times x=\left[\begin{array}{c}a_{2}x_{3}-a_{3}x_{2}\\ a_{3}x_{1}-a_{1}x_{3}\\ a_{1}x_{2}-a_{2}x_{1}\end{array}\right].\]
+
+The cross product comes up in physics, for example in electricity and magnetism, and in dynamics of mechanical systems like robots or satellites. (You do not need to know this for this exercise.)
+
+Assume \(a\) is fixed. Show that the function \(f(x)=a\times x\) is a linear function of \(x\), by giving a matrix \(A\) that satisfies \(f(x)=Ax\) for all \(x\).
+
+### Linear functions of images
+
+In this problem we consider several linear functions of a monochrome image with \(N\times N\) pixels. To keep the matrices small enough to work out by hand, we will consider the case with \(N=3\) (which would hardly qualify as an image). We represent a \(3\times 3\) image as a 9-vector using the ordering of pixels shown below.
+
+\begin{tabular}{|c|c|c|} \hline
+1 & 4 & 7 \\ \hline
+2 & 5 & 8 \\ \hline
+3 & 6 & 9 \\ \hline \end{tabular} (This ordering is called _column-major_.) Each of the operations or transformations below defines a function \(y=f(x)\), where the 9-vector \(x\) represents the original image, and the 9-vector \(y\) represents the resulting or transformed image. For each of these operations, give the \(9\times 9\) matrix \(A\) for which \(y=Ax\).
+
+* Turn the original image \(x\) upside-down.
+* Rotate the original image \(x\) clockwise \(90^{\circ}\).
+* Translate the image up by 1 pixel and to the right by 1 pixel. In the translated image, assign the value \(y_{i}=0\) to the pixels in the first column and the last row.
+* Set each pixel value \(y_{i}\) to be the average of the neighbors of pixel \(i\) in the original image. By neighbors, we mean the pixels immediately above and below, and immediately to the left and right. The center pixel has 4 neighbors; corner pixels have 2 neighbors, and the remaining pixels have 3 neighbors.
+

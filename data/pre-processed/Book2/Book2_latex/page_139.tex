@@ -1,0 +1,23 @@
+
+
+## Chapter 7 Matrix examples
+
+In this chapter we describe some special matrices that occur often in applications.
+
+### 7.1 Geometric transformations
+
+Suppose the 2-vector (or 3-vector) \(x\) represents a position in 2-D (or 3-D) space. Several important geometric transformations or mappings from points to points can be expressed as matrix-vector products \(y=Ax\), with \(A\) a \(2\times 2\) (or \(3\times 3\)) matrix. In the examples below, we consider the mapping from \(x\) to \(y\), and focus on the 2-D case (for which some of the matrices are simpler to describe).
+
+Scaling.Scaling is the mapping \(y=ax\), where \(a\) is a scalar. This can be expressed as \(y=Ax\) with \(A=aI\). This mapping stretches a vector by the factor \(|a|\) (or shrinks it when \(|a|<1\)), and it flips the vector (reverses its direction) if \(a<0\).
+
+Dilation.Dilation is the mapping \(y=Dx\), where \(D\) is a diagonal matrix, \(D=\mathbf{diag}(d_{1},d_{2})\). This mapping stretches the vector \(x\) by different factors along the two different axes. (Or shrinks, if \(|d_{i}|<1\), and flips, if \(d_{i}<0\).)
+
+Rotation.Suppose that \(y\) is the vector obtained by rotating \(x\) by \(\theta\) radians counterclockwise. Then we have
+
+\[y=\left[\begin{array}{cc}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{array}\right]x.\] (7.1)
+
+This matrix is called (for obvious reasons) a _rotation matrix_.
+
+Reflection.Suppose that \(y\) is the vector obtained by reflecting \(x\) through the line that passes through the origin, inclined \(\theta\) radians with respect to horizontal. Then we have
+
+\[y=\left[\begin{array}{cc}\cos(2\theta)&\sin(2\theta)\\ \sin(2\theta)&-\cos(2\theta)\end{array}\right]x.\]

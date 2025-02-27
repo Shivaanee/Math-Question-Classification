@@ -1,0 +1,17 @@
+19. \(A^{2}=\begin{bmatrix}0&0&2\\ 0&0&0\\ 0&0&0\end{bmatrix}\) and \(A^{3}=0\). So \((I-A)^{-1}=I+A+A^{2}=\begin{bmatrix}1&1&2\\ 0&1&1\\ 0&0&1\end{bmatrix}\).
+21. If \(A\) is increased, then more goods are consumed in production and the expansion must be slower. Mathematically, \(Ax\geq tx\) remains true if \(A\) is increased; \(t_{\max}\) goes up.
+23. \(\begin{bmatrix}3&2\\ 2&3\end{bmatrix}=\frac{1}{2}\begin{bmatrix}1&-1\\ 1&1\end{bmatrix}\begin{bmatrix}5&0\\ 0&1\end{bmatrix}\begin{bmatrix}1&1\\ -1&1\end{bmatrix}\) and \(A^{k}=\frac{1}{2}\begin{bmatrix}1&-1\\ 1&1\end{bmatrix}\begin{bmatrix}5^{k}&0\\ 0&1\end{bmatrix}\begin{bmatrix}1&1\\ -1&1\end{bmatrix}\).
+25. \(R=S\sqrt{\Lambda}S^{-1}=\begin{bmatrix}2&1\\ 1&2\end{bmatrix}\) has \(R^{2}=A\). \(\sqrt{B}\) would have \(\lambda=\sqrt{9}\) and \(\lambda=\sqrt{-1}\), so its trace is not real. Note that \(\begin{bmatrix}-1&0\\ 0&-1\end{bmatrix}\) can have \(\sqrt{-1}=i\) and \(-i\), and real square root \(\begin{bmatrix}0&1\\ -1&0\end{bmatrix}\).
+27. \(A=SA_{1}S^{-1}\) and \(B=SA_{2}S^{-1}\). Diagonal matrices always give \(\Lambda_{1}\Lambda_{2}=\Lambda_{2}\Lambda_{1}\). Then \(AB=BA\), from \(SA_{1}S^{-1}SA_{2}S^{-1}=S\Lambda_{1}\Lambda_{2}S^{-1}=S\Lambda_{2}\Lambda_{1}S ^{-1}=\\ S\Lambda_{2}S^{-1}SA_{1}S^{-1}=BA\).
+29. \(B\) has \(\lambda=i\) and \(-i\), so \(B^{4}\) has \(\lambda^{4}=1\) and \(1\); \(C\) has \(\lambda=(1\pm\sqrt{3}i)/2=\exp(\pm\pi i/3)\), so \(\lambda^{3}=-1\) and \(-1\). Then \(C^{3}=-I\) and \(C^{1024}=-C\).
+
+**Problem Set 5.4**: \(\lambda_{1}=-2\) and \(\lambda_{2}=0\); \(x_{1}=(1,-1)\) and \(x_{2}=(1,1)\);
+
+\(e^{At}=\frac{1}{2}\begin{bmatrix}e^{-2t}+1&-e^{-2t}+1\\ -e^{-2t}+1&e^{-2t}+1\end{bmatrix}\).
+3. \(u(t)=\begin{bmatrix}e^{2t}+2\\ -e^{2t}+2\end{bmatrix}\); as \(t\to\infty\), \(e^{2t}\to+\infty\).
+4. \(e^{A(t+T)}_{\cdot}=Se^{A(t+T)}S^{-1}=Se^{\Lambda t}e^{\Lambda T}S^{-1}=Se^{ \Lambda t}S^{-1}Se^{\Lambda T}S^{-1}=e^{At}e^{AT}\).
+5. \(e^{A}=I+A=\begin{bmatrix}1&0\\ 1&1\end{bmatrix}\), \(e^{B}=I+B=\begin{bmatrix}1&-1\\ 0&1\end{bmatrix}\), \(A+B=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}\) gives \(e^{A+B}=\begin{bmatrix}\cos 1&-\sin 1\\ \sin 1&\cos 1\end{bmatrix}\) from Example 3 in the text, at \(t=1\). This matrix is different from \(e^{A}e^{B}\).
+7. \(e^{At}=I+At=\begin{bmatrix}1&t\\ 0&1\end{bmatrix}\); \(e^{At}u(0)=\begin{bmatrix}4t+3\\ 4\end{bmatrix}\).
+9. (a) \(\lambda_{1}=\frac{7+\sqrt{57}}{2}\), \(\lambda_{2}=\frac{7-\sqrt{57}}{2}\), \(\operatorname{Re}\lambda_{1}>0\), unstable. (b) \(\lambda_{1}=\sqrt{7}\), \(\lambda_{2}=-\sqrt{7}\), \(\operatorname{Re}\lambda_{1}>0\), unstable (c) \(\lambda_{1}=\frac{-1+\sqrt{13}}{2}\), \(\lambda_{2}=\frac{-1-\sqrt{13}}{2}\), \(\operatorname{Re}\lambda_{1}>0\), unstable (d) \(\lambda_{1}=0\), \(\lambda_{2}=-2\), neutrally stable.
+11. \(A_{1}\) is unstable for \(t<1\), neutrally stable for \(t\geq 1\). \(A_{2}\) is unstable for \(t<4\), neutrally stable at \(t=4\), stable with real \(\lambda\) for \(4<t\leq 5\), and stable with complex \(\lambda\) for \(t>5\). \(A_{3}\) is unstable for all \(t>0\), because the trace is \(2t\).
+13. (a) \(u^{\prime}_{1}=cu_{2}-bu_{3}\), \(u^{\prime}_{2}=-cu_{1}+au_{3}\), \(u^{\prime}_{3}=bu_{1}-au_{2}\) gives \(u^{\prime}_{1}u_{1}+u^{\prime}_{2}u_{2}+u^{\prime}_{3}u_{3}=0\). (b) Because \(e^{At}\) is an orthogonal matrix, \(\|u(t)\|^{2}=\|e^{At}u(0)\|^{2}=\|u(0)\|^{2}\) is 

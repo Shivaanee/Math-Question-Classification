@@ -1,0 +1,25 @@
+
+
+#### Time-varying weights.
+
+Markets do shift, so it is not uncommon to periodically update or change the allocation weights that are used. In one extreme version of this, a new allocation vector is used in every period. The allocation weight for any period is obtained by solving the portfolio optimization problem over the preceding \(M\) periods. (This scheme can be modified to include testing periods as well.) The parameter \(M\) in this method would be chosen by validation on previous realized returns, _i.e._, back-testing.
+
+When the allocation weights are changed over time, we can add a (regularization) term of the form \(\kappa\|w^{\mathrm{curr}}-w\|^{2}\) to the objective, where \(\kappa\) is a positive constant. Here \(w^{\mathrm{curr}}\) is the currently used allocation, and \(w\) is the proposed new allocation vector. The additional regularization term encourages the new allocation vector to be near the current one. (When this is not the case, the portfolio will require excessive buying and selling of assets. This is called _turnover_, which leads to trading costs not included in our simple model.) The parameter \(\kappa\) would be chosen by back-testing, taking into account an approximation of trading cost.
+
+#### Two-fund theorem
+
+We can express the solution (17.3) of the portfolio optimization problem in the form
+
+\[\left[\begin{array}{c}w\\ z_{1}\\ z_{2}\end{array}\right]=\left[\begin{array}{ccc}2R^{T}R&\mathbf{1}&\mu\\ \mathbf{1}^{T}&0&0\\ \mu^{T}&0&0\end{array}\right]^{-1}\left[\begin{array}{ccc}0\\ 1\\ 0\end{array}\right]+\rho\left[\begin{array}{ccc}2R^{T}R&\mathbf{1}&\mu\\ \mathbf{1}^{T}&0&0\\ \mu^{T}&0&0\end{array}\right]^{-1}\left[\begin{array}{c}2T\mu\\ 0\\ 1\end{array}\right].\]
+
+Taking the first \(n\) components of this, we obtain
+
+\[w=w^{0}+\rho v,\] (17.5)
+
+where \(w^{0}\) and \(v\) are the first \(n\) components of the \((n+2)\)-vectors
+
+\[\left[\begin{array}{ccc}2R^{T}R&\mathbf{1}&\mu\\ \mathbf{1}^{T}&0&0\\ \mu^{T}&0&0\end{array}\right]^{-1}\left[\begin{array}{c}0\\ 1\\ 0\end{array}\right],\qquad\left[\begin{array}{ccc}2R^{T}R&\mathbf{1}&\mu\\ \mathbf{1}^{T}&0&0\\ \mu^{T}&0&0\end{array}\right]^{-1}\left[\begin{array}{c}2T\mu\\ 0\\ 1\end{array}\right],\]
+
+respectively. The equation (17.5) shows that the Pareto optimal portfolios form a _line_ in weight space, parametrized by the required return \(\rho\). The portfolio \(w^{0}\) is a point on the line, and the vector \(v\), which satisfies \(\mathbf{1}^{T}v=0\), gives the direction of the line. This equation tells us that we do not need to solve the equation (17.3) for each value of \(\rho\). We first compute \(w^{0}\) and \(v\) (by factoring the matrix once and using two solve steps), and then form the optimal portfolio with return \(\rho\) as \(w^{0}+\rho v\).
+
+Any point on a line can be expressed as an affine combination of two different points on the line. So if we find two different Pareto optimal portfolios, then we can express a general Pareto optimal portfolio as an affine combination of them. In other words, all Pareto optimal portfolios are affine combinations of just two portfolios (indeed, any two different Pareto optimal portfolios). This is the _two-fund theorem_. (_Fund_ is another term for portfolio.)

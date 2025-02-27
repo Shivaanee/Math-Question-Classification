@@ -1,0 +1,23 @@
+(and several other sets of three marriages), but there is no way to reach four. The minimal cut on the right separates the two women at the bottom from the three men at the top. The two women have only one man left to choose--not enough. The capacity across the cut is only 3.
+
+_Whenever there is a subset of \(k\) women who among them like fewer than \(k\) men, a complete matching is impossible._
+
+That test is decisive. The same impossibility can be expressed in different ways:
+
+1. **(For Chess)** It is impossible to put four rooks on squares with 1s in \(A\), so that no rook can take any other rook.
+2. **(For Marriage Matrices)** The 1s in the matrix can be covered by three horizontal or vertical lines. That equals the maximum number of marriages.
+3. **(For Linear Algebra)** Every matrix with the same zeros as \(A\) is singular.
+
+Remember that the determinant is a sum of \(4!=24\) terms. Each term uses all four rows and columns. The zeros in \(A\) make all 24 terms zero.
+
+A block of zeros is preventing a complete matching! The 2 by 3 submatrix in rows 3, 4 and columns 1, 2, 3 of \(A\) is entirely zero. The general rule for an \(n\) by \(n\) matrix is that _a \(p\) by \(q\) block of zeros prevents a matching if \(p+q>n\)_. Here women 3, 4 could marry only the man 4. If \(p\) women can marry only \(n-q\) men and \(p>n-q\) (which is the same as a zero block with \(p+q>n\)), then a complete matching is impossible.
+
+The mathematical problem is to prove the following: _If every set of \(p\) women does like at least \(p\) men, a complete matching is possible. That is Hall's condition_. No block of zeros is too large. Each woman must like at least one man, each two women must between them like at least two men, and so on, to \(p=n\).
+
+## 81A complete matching is possible if (and only if) Hall's condition holds.
+
+The proof is simplest if the capacities are \(n\), instead of 1, on all edges across the middle. The capacities out of the source and into the sink are still 1. If the maximal flow is \(n\), all those edges from the source and into the sink are filled--and the flow produces \(n\) marriages. When a complete matching is impossible, and the maximal flow is below \(n\), some cut must be responsible.
+
+That cut will have capacity below \(n\), so no middle edges cross it. Suppose \(p\) nodes on the left and \(r\) nodes on the right are in the set \(S\) with the source. The capacity across that cut is \(n-p\) from the source to the remaining women, and \(r\) from these men to the sink. Since the cut capacity is below \(n\), _the \(p\) women like only the \(r\) men_ and no others. But the capacity \(n-p+r\) is below \(n\) exactly when \(p>r\), and Hall's condition fails.
+
+ 

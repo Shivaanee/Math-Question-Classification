@@ -1,0 +1,11 @@
+Multi-class classifier.Next we apply the nonlinear least squares method to the multi-class classification of recognizing the ten digits in the MNIST data set. For each digit \(k\), we compute a Boolean classifier \(\hat{f}_{k}(x)=x^{T}\beta_{k}+v_{k}\) by solving a regularized nonlinear least squares problem (18.18). The same value of \(\lambda\) is used in the ten nonlinear least squares problems. The Boolean classifiers are combined into a multi-class classifier
+
+\[\hat{f}(x)=\operatorname*{argmax}_{k=1,\ldots,10}{(x^{T}\beta_{k}+v_{k})}.\]
+
+Figure 18.23 shows the classification errors versus \(\lambda\). The test set confusion matrix (for \(\lambda=1\)) is given in table 18.3. The classification error on the test set is 7.6%, down from the 13.9% error we obtained for the same set of features with the least squares method of chapter 14.
+
+Feature engineering.Figure 18.24 shows the error rates when we add the 5000 randomly generated features. The training and test error rates are now 0.02% and 2%. The test set confusion matrix for \(\lambda=1000\) is given in table 18.4. This classifier has matched human performance in classifying digits correctly. Further, or more sophisticated, feature engineering can bring the test performance well below what humans can achieve.
+
+Figure 18.23: Multiclass classification error in percent versus \(\lambda\).
+
+ 

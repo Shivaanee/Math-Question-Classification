@@ -1,0 +1,29 @@
+
+
+**10.31**: _Diameter of a graph_. A directed graph with \(n\) vertices is described by its \(n\times n\) adjacency matrix \(A\) (see SS10.3).
+
+1. Derive an expression \(P_{ij}\) for the total number of paths, with length no more than \(k\), from vertex \(j\) to vertex \(i\). (We include in this total the number of paths of length zero, which go from each vertex \(j\) to itself.) _Hint_. You can derive an expression for the matrix \(P\), in terms of the matrix \(A\).
+2. The _diameter_\(D\) of a graph is the smallest number for which there is a path of length \(\leq D\) from node \(j\) to node \(i\), for every pair of vertices \(j\) and \(i\). Using part (a), explain how to compute the diameter of a graph using matrix operations (such as addition, multiplication).
+
+_Remark_.: Suppose the vertices represent all people on earth, and the graph edges represent acquaintance, _i.e._, \(A_{ij}=1\) if person \(j\) and person \(i\) are acquainted. (This graph is symmetric.) Even though \(n\) is measured in billions, the diameter of this acquaintance graph is thought to be quite small, perhaps 6 or 7. In other words, any two people on earth can be connected though a set of 6 or 7 (or fewer) acquaintances. This idea, originally conjectured in the 1920s, is sometimes called _six degrees of separation_.
+**10.32**: _Matrix exponential._ You may know that for any real number \(a\), the sequence \((1+a/k)^{k}\) converges as \(k\to\infty\) to the exponential of \(a\), denoted \(\exp a\) or \(e^{a}\). The _matrix exponential_ of a square matrix \(A\) is defined as the limit of the matrix sequence \((I+A/k)^{k}\) as \(k\to\infty\). (It can shown that this sequence always converges.) The matrix exponential arises in many applications, and is covered in more advanced courses on linear algebra.
+
+1. Find \(\exp 0\) (the zero matrix) and \(\exp I\).
+2. Find \(\exp A\), for \(A=\left[\begin{array}{cc}0&1\\ 0&0\end{array}\right]\).
+**10.33**: _Matrix equations._ Consider two \(m\times n\) matrices \(A\) and \(B\). Suppose that for \(j=1,\ldots,n\), the \(j\)th column of \(A\) is a linear combination of the first \(j\) columns of \(B\). How do we express this as a matrix equation? Choose one of the matrix equations below and justify your choice.
+
+1. \(A=GB\) for some upper triangular matrix \(G\).
+2. \(A=BH\) for some upper triangular matrix \(H\).
+3. \(A=FB\) for some lower triangular matrix \(F\).
+4. \(A=BJ\) for some lower triangular matrix \(J\).
+**10.34**: Choose one of the responses _always_, _never_, or _sometimes_ for each of the statements below. 'Always' means the statement is always true, 'never' means it is never true, and 'Sometimes' means it can be true or false, depending on the particular values of the matrix or matrices. Give a brief justification of each answer.
+
+1. An upper triangular matrix has linearly independent columns.
+2. The rows of a tall matrix are linearly dependent.
+3. The columns of \(A\) are linearly independent, and \(AB=0\) for some nonzero matrix \(B\).
+**10.35**: _Orthogonal matrices._ Let \(U\) and \(V\) be two orthogonal \(n\times n\) matrices. Show that the matrix \(UV\) and the \((2n)\times(2n)\) matrix
+
+\[\frac{1}{\sqrt{2}}\left[\begin{array}{cc}U&U\\ V&-V\end{array}\right]\]
+
+are orthogonal.
+

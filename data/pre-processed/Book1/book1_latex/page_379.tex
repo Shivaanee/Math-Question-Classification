@@ -1,0 +1,21 @@
+Of course \(\Sigma\) could multiply by a large \(\sigma\) or (more commonly) divide by a small \(\sigma\), and overflow the computer. But still \(\Sigma\)_is as good as possible_. It reveals exactly what is large and what is small. The ratio \(\sigma_{\rm max}/\sigma_{\rm min}\) is the **condition number** of an invertible \(n\) by \(n\) matrix. The availability of that information is another reason for the popularity of the SVD. We come back to this in the second application.
+
+**1. Image processing** Suppose a satellite takes a picture, and wants to send it to Earth. The picture may contain 1000 by 1000 "pixels"--a million little squares, each with a definite color. We can code the colors, and send back 1,000,000 numbers. It is better to find the _essential_ information inside the 1000 by 1000 matrix, and send only that.
+
+Suppose we know the SVD. The key is in the singular values (in \(\Sigma\)). Typically, some \(\sigma\)'s are significant and others are extremely small. If we keep 20 and throw away 980, then we send only the corresponding 20 columns of \(U\) and \(V\). The other 980 columns are multiplied in \(U\Sigma V^{\rm T}\) by the small \(\sigma\)'s that are being ignored. _We can do the matrix multiplication as columns times rows_:
+
+\[A=U\Sigma V^{\rm T}=u_{1}\sigma_{1}v_{1}^{\rm T}+u_{2}\sigma_{2}v_{2}^{\rm T}+ \cdots+u_{r}\sigma_{r}v_{r}^{\rm T}.\] (3)
+
+Any matrix is the sum of \(r\) matrices of rank 1. If only 20 terms are kept, we send 20 times 2000 numbers instead of a million (25 to 1 compression).
+
+The pictures are really striking, as more and more singular values are included. At first you see nothing, and suddenly you recognize everything. The cost is in computing the SVD--this has become much more efficient, but it is expensive for a big matrix.
+
+**2. The effective rank** The rank of a matrix is the number of independent rows, and the number of independent columns. That can be hard to decide in computations! In exact arithmetic, counting the pivots is correct. Real arithmetic can be misleading--but discarding small pivots is not the answer. Consider the following:
+
+\[\varepsilon\ \mbox{\bf is small}\qquad\begin{bmatrix}\varepsilon&2\varepsilon \\ 1&2\end{bmatrix}\quad\mbox{and}\quad\begin{bmatrix}\varepsilon&1\\ 0&0\end{bmatrix}\quad\mbox{and}\quad\begin{bmatrix}\varepsilon&1\\ \varepsilon&1+\varepsilon\end{bmatrix}.\]
+
+The first has rank 1, although roundoff error will probably produce a second pivot. Both pivots will be small; how many do we ignore? The second has one small pivot, but we cannot pretend that its row is insignificant. The third has two pivots and its rank is 2, but its "effective rank" ought to be 1.
+
+We go to a more stable measure of rank. The first step is to use \(A^{\rm T}A\) or \(AA^{\rm T}\), which are symmetric but share the same rank as \(A\). Their eigenvalues--the singular values squared--are _not_ misleading. Based on the accuracy of the data, we decide on a tolerance like \(10^{-6}\) and count the singular values above it--that is the effective rank. The examples above have effective rank 1 (when \(\varepsilon\) is very small).
+
+**3. Polar decomposition** Every nonzero complex number \(z\) is a positive number \(r\) times 

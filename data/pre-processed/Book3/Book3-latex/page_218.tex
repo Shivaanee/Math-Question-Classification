@@ -1,0 +1,23 @@
+
+
+### Direct-Sum Decompositions
+
+As we continue with our analysis of a single linear operator, we shall formulate our ideas in a slightly more sophisticated way--less in terms of matrices and more in terms of subspaes. When we began this chapter, we described our goal this way: To find an ordered basis in which the matrix of \(T\) assumes an especially simple form. Now, we shall describe our goal as follows: To decompose the underlying space \(V\) into a sum of invariant subspaces for \(T\) such that the restriction operators on those subspaces are simple.
+
+_Definition._ Let \(\mathrm{W_{i}}\), \(\ldots\), \(\mathrm{W_{k}}\) be subspaces of the vector space \(\mathrm{V}\). _We say that \(\mathrm{W_{i}}\), \(\ldots\), \(\mathrm{W_{k}}\) are **independent** if
+
+\[\alpha_{1}+\,\cdots\,+\,\alpha_{k}\,=\,0,\qquad\alpha_{i}\,\dot{m}\,\,\mathrm{ W_{i}}\]
+
+implies that each \(\alpha_{i}\) is \(0\).
+
+For \(k=2\), the meaning of independence is \(\langle 0\rangle\) intersection, i.e., \(W_{1}\) and \(W_{2}\) are independent if and only if \(W_{1}\cap W_{2}=\langle 0\rangle\). If \(k>2\), the independence of \(W_{1}\), \(\ldots\), \(W_{k}\) says much more than \(W_{1}\cap\,\cdots\,\cap\,W_{k}=\langle 0\rangle\). It says that each \(W_{j}\) intersects the sum of the other subspaces \(W_{i}\) only in the zero vector.
+
+The significance of independence is this. Let \(W=W_{1}+\,\cdots\,+\,W_{k}\) be the subspace spanned by \(W_{1}\), \(\ldots\), \(W_{k}\). Each vector \(\alpha\) in \(W\) can be expressed as a sum
+
+\[\alpha\,=\,\alpha_{1}+\,\cdots\,+\,\alpha_{k},\qquad\alpha_{i}\,\,\mathrm{ in}\,\,W_{i}.\]
+
+_If \(W_{1}\), \(\ldots\), \(W_{k}\) are independent, then that expression for \(\alpha\) is unique; for if_
+
+\[\alpha\,=\,\beta_{1}+\,\cdots\,+\,\beta_{k},\qquad\beta_{i}\,\,\mathrm{in}\, \,W_{i}\]
+
+_then \(0=(\alpha_{1}-\beta_{1})+\,\cdots\,+\,(\alpha_{k}-\beta_{k})\), hence \(\alpha_{i}-\beta_{i}=0\), \(i=1\), \(\ldots\), \(k\

@@ -1,0 +1,29 @@
+
+
+**11.12**: _Combinations of invertible matrices._ Suppose the \(n\times n\) matrices \(A\) and \(B\) are both invertible. Determine whether each of the matrices given below is invertible, without any further assumptions about \(A\) and \(B\).
+
+1. \(A+B\).
+2. \(\left[\begin{array}{cc}A&0\\ 0&B\end{array}\right]\).
+3. \(\left[\begin{array}{cc}A&A+B\\ 0&B\end{array}\right]\).
+4. \(ABA\).
+**11.13**: _Another left inverse._ Suppose the \(m\times n\) matrix \(A\) is tall and has linearly independent columns. One left inverse of \(A\) is the pseudo-inverse \(A^{\dagger}\). In this problem we explore another one. Write \(A\) as the block matrix
+
+\[A=\left[\begin{array}{c}A_{1}\\ A_{2}\end{array}\right],\]
+
+where \(A_{1}\) is \(n\times n\). We assume that \(A_{1}\) is invertible (which need not happen in general). Show that the following matrix is a left inverse of \(A\):
+
+\[\tilde{A}=\left[\begin{array}{cc}A_{1}^{-1}&0_{n\times(m-n)}\end{array} \right].\]
+**11.14**: _Middle inverse._ Suppose \(A\) is an \(n\times p\) matrix and \(B\) is a \(q\times n\) matrix. If a \(p\times q\) matrix \(X\) exists that satisfies \(AXB=I\), we call it a _middle inverse_ of the pair \(A\), \(B\). (This is not a standard concept.) Note that when \(A\) or \(B\) is an identity matrix, the middle inverse reduces to the right or left inverse, respectively.
+
+1. Describe the conditions on \(A\) and \(B\) under which a middle inverse \(X\) exists. Give your answer using only the following four concepts: Linear independence of the rows or columns of \(A\), and linear independence of the rows or columns of \(B\). You must justify your answer.
+2. Give an expression for a middle inverse, assuming the conditions in part (a) hold.
+**11.15**: _Invertibility of population dynamics matrix._ Consider the population dynamics matrix
+
+\[A=\left[\begin{array}{cccccc}b_{1}&b_{2}&\cdots&b_{99}&b_{100}\\ 1-d_{1}&0&\cdots&0&0\\ 0&1-d_{2}&\cdots&0&0\\ \vdots&\vdots&\ddots&\vdots&\vdots\\ 0&0&\cdots&1-d_{99}&0\end{array}\right],\]
+
+where \(b_{i}\geq 0\) are the birth rates and \(0\leq d_{i}\leq 1\) are death rates. What are the conditions on \(b_{i}\) and \(d_{i}\) under which \(A\) is invertible? (If the matrix is never invertible or always invertible, say so.) Justify your answer.
+**11.16**: _Inverse of running sum matrix._ Find the inverse of the \(n\times n\) running sum matrix,
+
+\[S=\left[\begin{array}{cccccc}1&0&\cdots&0&0\\ 1&1&\cdots&0&0\\ \vdots&\vdots&\ddots&\vdots&\vdots\\ 1&1&\cdots&1&0\\ 1&1&\cdots&1&1\end{array}\right].\]
+
+Does your answer make sense?

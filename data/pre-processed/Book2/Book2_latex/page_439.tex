@@ -1,0 +1,9 @@
+\(x_{1}\) is given, and the final state \(x_{N}\) is specified. Subject to these constraints, we may wish the control inputs to be small and smooth, which suggests that we minimize
+
+\[\sum_{k=1}^{N}\|u_{k}\|^{2}+\gamma\sum_{k=1}^{N-1}\|u_{k+1}-u_{k}\|^{2},\]
+
+where \(\gamma>0\) is a parameter used to trade off input size and smoothness. (In many nonlinear control problems the objective also involves the state trajectory.)
+
+We can formulate the nonlinear control problem, with a norm squared objective that involves the state and input, as a large constrained least problem, and then solve it using the augmented Lagrangian algorithm. We illustrate this with a specific example.
+
+Control of a car.Consider a car with position \(p=(p_{1},p_{2})\) and orientation (angle) \(\theta 

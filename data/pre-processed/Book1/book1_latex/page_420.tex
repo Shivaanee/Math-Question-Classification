@@ -1,0 +1,27 @@
+A single Gauss-Seidel step takes the components \(v_{k}\) and \(w_{k}\) into
+
+\[\begin{array}{l}2v_{k+1}=w_{k}+b_{1}\\ 2w_{k+1}=v_{k}+b_{2},\end{array}\qquad\text{or}\qquad\begin{bmatrix}2&0\\ -1&2\end{bmatrix}x_{k+1}=\begin{bmatrix}0&1\\ 0&0\end{bmatrix}x_{k}+b.\]
+
+The eigenvalues of \(S^{-1}T\) are \(\frac{1}{4}\) and \(0\). The error is divided by 4 every time, so _a single Gauss-Seidel step is worth two Jacobi steps_. Since both methods require the same number of operations--we just use the new value instead of the old, and actually save on storage--the Gauss-Seidel method is better.
+
+This rule holds in many applications, even though there are examples in which Jacobi converges and Gauss-Seidel fails (or conversely). The symmetric case is straightforward: When all \(a_{ii}>0\), Gauss-Seidel converges if and only if \(A\) is positive definite.
+
+It was discovered during the years of hand computation (probably by accident) that convergence is faster if we go _beyond_ the Gauss-Seidel correction \(x_{k+1}-x_{k}\). Roughly speaking, those approximations stay on the same side of the solution \(x\). An _overrelaxation factor_\(\omega\) moves us closer to the solution. With \(\omega=1\), we recover Gauss-Seidel; with \(\omega>1\), the method is known as _successive overrelaxation_ (SOR). The optimal choice of \(\omega\) never exceeds 2. It is often in the neighborhood of 1.9.
+
+To describe overrelaxation, let \(D\), \(L\), and \(U\) be the parts of \(A\) on, below, and above the diagonal, respectively. (This splitting has nothing to do with the \(A=LDU\) of elimination. In fact we now have \(A=L+D+U\).) The Jacobi method has \(S=D\) on the left-hand side and \(T=-L-U\) on the right-hand side. Gauss-Seidel chose \(S=D+L\) and \(T=-U\). To accelerate the convergence, we move to
+
+\[\text{\bf Overrelaxation}\qquad[D+\omega L]x_{k+1}=[(1-\omega)D-\omega U]x_{k}+ \omega b.\] (5)
+
+Regardless of \(\omega\), the matrix on the left is lower triangular and the one on the right is upper triangular. Therefore \(x_{k+1}\) can still replace \(x_{k}\), component by component, as soon as it is computed. A typical step is
+
+\[a_{ii}(x_{i})_{k+1}=a_{ii}(x_{i})_{k}+\omega[(-a_{i1}x_{1}-\cdots-a_{ii-1}x_{i -1})_{k+1}+(-a_{ii}x_{i}-\cdots-a_{in}x_{n})_{k}+b_{i}].\]
+
+If the old guess \(x_{k}\) happened to coincide with the true solution \(x\), then the new guess \(x_{k+1}\) would stay the same, and the quantity in brackets would vanish.
+
+**Example 3** (Sor).: For the same \(A=\left[\begin{smallmatrix}2&-1\\ -1&2\end{smallmatrix}\right]\), each overrelaxation step is
+
+\[\begin{bmatrix}2&0\\ -\omega&2\end{bmatrix}x_{k+1}=\begin{bmatrix}2(1-\omega)&\omega\\ 0&2(1-\omega)\end{bmatrix}x_{k}+\omega b.\]
+
+If we divide by \(\omega\), these two matrices are the \(S\) and \(T\) in the splitting \(AS-T\); the iteration is back to \(Sx_{k+1}=Tx_{k}+b\). The crucial matrix \(L=S^{-1}T\) is
+
+\[L=\begin{bmatrix}2&0\\ -\omega&2\end{bmatrix}^{-1}\begin{bmatrix}2(1-\omega)&\omega\\ 0&2(1-\omega)\end{bmatrix}=\begin{bmatrix}1-\omega&\frac{1}{2}\omega\\ \frac{1}{2}\omega(1-\omega)&1-\omega+\frac{1}{4}\omega^{2}\end{bmatrix}.\] 

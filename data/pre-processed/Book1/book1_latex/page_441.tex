@@ -1,0 +1,21 @@
+A newer approach uses the ordinary methods of numerical linear algebra, regarding equation (4) as three equations sharing the same matrix \(B\):
+
+\[\lambda B=c_{B},\qquad Bv=u,\qquad Bx_{B}=b.\] (6)
+
+The usual factorization \(B=LU\) (or \(PB=LU\), with row exchanges for stability) leads to the three solutions. \(L\) and \(U\) can be updated instead of recomputed.
+
+One question remains: _How many simplex steps do we have to take_? This is impossible to answer in advance. Experience shows that the method touches only about \(3m/2\) different corners, which means an operation count of about \(m^{2}n\). That is comparable to ordinary elimination for \(Ax=b\), and is the reason for the simplex method's success. But mathematics shows that the path length cannot always be bounded by any fixed multiple or power of \(m\). The worst feasible sets (Klee and Minty invented a lopsided cube) can force the simplex method to try every corner--at exponential cost.
+
+It was _Khachian's method_ that showed that linear programming could be solved in polynomial time.1 His algorithm stayed _inside_ the feasible set, and captured \(x^{*}\) in a series of shrinking ellipsoids. Linear programming is in the nice class \(P\), not in the dreaded class \(NP\) (like the traveling salesman problem). For \(NP\) problems it is believed (but not proved) that all deterministic algorithms must take exponentially long to finish, in the worst case.
+
+Footnote 1: The number of operations is bounded by powers of \(m\) and \(n\), as in elimination. For integer programming and factoring into primes, all known algorithms can take exponentially long. The celebrated conjecture “\(P\neq NP\)” says that such problems cannot have polynomial algorithms.
+
+All this time, the simplex method was doing the job--in an _average_ time that is now proved (for variants of the usual method) to be polynomial. For some reason, hidden in the geometry of many-dimensional polyhedra, bad feasible sets are rare and the simplex method is lucky.
+
+### Karmarkar's Method
+
+We come now to the most sensational event in the recent history of linear programming. Karmarkar proposed a method based on two simple ideas, and in his experiments it defeated the simplex method. The choice of problem and the details of the code are both crucial, and the debate is still going on. But Karmarkar's ideas were so natural, and fit so perfectly into the framework of applied linear algebra, that they can be explained in a few paragraphs.
+
+The first idea is to start from a point _inside the feasible set_--we will suppose it is \(x^{0}=(1,1,\ldots,1)\). Since the cost is \(cx\), the best _cost-reducing direction_ is toward \(-c\). Normally that takes us off the feasible set; moving in that direction does not maintain \(Ax=b\). If \(Ax^{0}=b\) and \(Ax^{1}=b\), then \(\Delta x=x^{1}-x^{0}\) has to satisfy \(A\Delta x=0\). _The step \(\Delta x\) must lie in the nullspace of \(A\)_. Therefore we _project \(-c\)_ onto the nullspace, to find the feasible direction closest to the best direction. This is the natural but expensive step in Karmarkar's method.
+
+ 

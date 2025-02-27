@@ -1,0 +1,13 @@
+(see exercise 13.16). For example, a residual with \(|r|=0.05\) corresponds (approximately) to a relative error in our prediction \(\hat{y}\) of \(y\) of \(5\%\). (Here we use the approximation \(e^{|r|}-1\approx|r|\) for \(r\) smaller than, say, 0.15.) So if our RMS error in predicting \(w=\log y\) across our examples is 0.05, our predictions of \(y\) are typically within \(\pm 5\%\).
+
+As an example suppose we wish to model house sale prices over an area and period that includes sale prices varying from under $100k to over $10M. Fitting the prices directly means that we care equally about absolute errors in price predictions, so, for example, a prediction error of $20k should bother us equally for a house that sells for $70k and one that sells for $6.5M. But (at least for some purposes) in the first case we have made a very poor estimate, and the second case, a remarkably good one. When we fit the logarithm of the house sale price, we are seeking low percentage prediction errors, not necessarily low absolute errors.
+
+Whether or not to use a logarithmic transform on the dependent variable (when it is positive) is a judgment call that depends on whether we seek small absolute prediction errors or small relative or percentage prediction errors.
+
+### 13.2 Validation
+
+Generalization ability.In this section we address a key point in model fitting: The goal of model fitting is typically _not_ to just achieve a good fit on the given data set, but rather to achieve a good fit on _new data that we have not yet seen._
+
+Figure 13.9: Hourly temperature at Los Angeles International Airport between 12:53AM on May 1, 2016, and 11:53PM on May 5, 2016, shown as circles. The solid line is the prediction of an auto-regressive model with eight coefficients.
+
+ 

@@ -1,0 +1,22 @@
+The step \(\Delta x\) is a multiple of the projection \(-Pc\). The longer the step, the more the cost is reduced--but we cannot go out of the feasible set. The multiple of \(-Pc\) is chosen so that \(x^{1}\) is close to, but a _little inside_, the boundary at which a component of \(x\) reaches zero.
+
+That completes the first idea--the projection that gives the _steepest feasible descent_. The second step needs a new idea. since to continue in the same direction is useless.
+
+Karmarkar's suggestion is to _transform \(x^{1}\) back to \((1,1,\ldots,1)\) at the center_. His change of variables was nonlinear, but the simplest transformation is just a _rescaling_ by a diagonal matrix \(D\). Then we have room to move. The rescaling from \(x\) to \(X=D^{-1}x\) changes the constraint and the cost:
+
+\[Ax=b\quad\mbox{becomes}\quad ADX=b\qquad c^{\rm T}x\quad\mbox{becomes}\quad c ^{\rm T}DX.\]
+
+Therefore _the matrix \(AD\) takes the place of \(A\), and the vector \(c^{\rm T}D\) takes the place of \(c^{\rm T}\)_. The second step projects the new \(c\) onto the nullspace of the new \(A\). All the work is in this projection, to solve the weighted normal equations:
+
+\[(AD^{2}A^{\rm T})y=AD^{2}c.\] (7)
+
+The normal way to compute \(y\) is by elimination. Gram-Schmidt will orthogonalize the columns of \(DA^{\rm T}\), which can be expensive (although it makes the rest of the calculation easy). The favorite for large sparse problems is the _conjugate gradient method_, which gives the exact answer \(y\) more slowly than elimination, but you can go part way and then stop. In the middle of elimination you cannot stop.
+
+Like other new ideas in scientific computing, Karmarkar's method succeeded on some problems and not on others. The underlying idea was analyzed and improved. Newer **interior point methods** (staying inside the feasible set) are a major success--mentioned in the next section. And the simplex method remains tremendously valuable. like the whole subject of linear programming--which was discovered centuries after \(Ax=b\), but shares the fundamental ideas of linear algebra. The most far-reaching of those ideas is duality, which comes next.
+
+### Problem Set 8.2
+
+1. Minimize \(x_{1}+x_{2}-x_{3}\), subject to \[2x_{1}-4x_{2}+x_{3}+x_{4} =4\] \[3x_{1}+5x_{2}+x_{3} +x_{5} =2.\] Which of \(x_{1},x_{2},x_{3}\) should enter the basis, and which of \(x_{4},x_{5}\) should leave? Compute the new pair of basic variables, and find the cost at the new corner.
+2. After the preceding simplex step, prepare for and decide on the next step.
+
+ 

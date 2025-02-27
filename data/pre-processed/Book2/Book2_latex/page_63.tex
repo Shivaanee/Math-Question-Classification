@@ -1,0 +1,23 @@
+This is the same as the RMS deviation between a vector \(x\) and the vector all of whose entries are \(\mathbf{avg}(x)\). It can be written using the inner product and norm as
+
+\[\mathbf{std}(x)=\frac{\|x-(\mathbf{1}^{T}x/n)\mathbf{1}\|}{\sqrt{n}}.\] (3.4)
+
+The standard deviation of a vector \(x\) tells us the typical amount by which its entries deviate from their average value. The standard deviation of a vector is zero only when all its entries are equal. The standard deviation of a vector is small when the entries of the vector are nearly the same.
+
+As a simple example consider the vector \(x=(1,-2,3,2)\). Its mean or average value is \(\mathbf{avg}(x)=1\), so the de-meaned vector is \(\tilde{x}=(0,-3,2,1)\). Its standard deviation is \(\mathbf{std}(x)=1.872\). We interpret this number as a 'typical' value by which the entries differ from the mean of the entries. These numbers are 0, 3, 2, and 1, so 1.872 is reasonable.
+
+We should warn the reader that another slightly different definition of the standard deviation of a vector is widely used, in which the denominator \(\sqrt{n}\) in (3.4) is replaced with \(\sqrt{n-1}\) (for \(n\geq 2\)). In this book we will only use the definition (3.4).
+
+In some applications the Greek letter \(\sigma\) (sigma) is traditionally used to denote standard deviation, while the mean is denoted \(\mu\) (mu). In this notation we have, for an \(n\)-vector \(x\),
+
+\[\mu=\mathbf{1}^{T}x/n,\qquad\sigma=\|x-\mu\mathbf{1}\|/\sqrt{n}.\]
+
+We will use the symbols \(\mathbf{avg}(x)\) and \(\mathbf{std}(x)\), switching to \(\mu\) and \(\sigma\) only with explanation, when describing an application that traditionally uses these symbols.
+
+Average, RMS value, and standard deviation.The average, RMS value, and standard deviation of a vector are related by the formula
+
+\[\mathbf{rms}(x)^{2}=\mathbf{avg}(x)^{2}+\mathbf{std}(x)^{2}.\] (3.5)
+
+This formula makes sense: \(\mathbf{rms}(x)^{2}\) is the mean square value of the entries of \(x\), which can be expressed as the square of the mean value, plus the mean square fluctuation of the entries of \(x\) around their mean value. We can derive this formula from our vector notation formula for \(\mathbf{std}(x)\) given above. We have
+
+\[\mathbf{std}(x)^{2} = (1/n)\|x-(\mathbf{1}^{T}x/n)\mathbf{1}\|^{2}\] \[= (1/n)(x^{T}x-2x^{T}(\mathbf{1}^{T}x/n)\mathbf{1}+((\mathbf{1}^{T }x/n)\mathbf{1})^{T}((\mathbf{1}^{T}x/n)\mathbf{1}))\] \[= (1/n)(x^{T}x-(2/n)(\mathbf{1}^{T}x)^{2}+n(\mathbf{1}^{T}x 

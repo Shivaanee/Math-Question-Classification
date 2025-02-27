@@ -1,0 +1,26 @@
+
+
+**17.**: (Suggested by Moler and Van Loan) Compute \(b-Ay\) and \(b-Az\) when
+
+\[b=\begin{bmatrix}.217\\ .254\end{bmatrix}\qquad A=\begin{bmatrix}.780&.563\\ .913&.659\end{bmatrix}\qquad y=\begin{bmatrix}.341\\ -.087\end{bmatrix}\qquad z=\begin{bmatrix}.999\\ -1.0\end{bmatrix}.\]
+
+Is \(y\) closer than \(z\) to solving \(Ax=b\)? Answer in two ways: Compare the _residual_\(b-Ay\) to \(b-Az\). Then compare \(y\) and \(z\) to the true \(x=(1,-1)\), Sometimes we want a small residual, sometimes a small \(\delta x\).
+
+**Problems 18-20 are about vector norms other than the usual \(\|x\|=\sqrt{x\cdot x}\).**
+
+**18.**: The "\(\ell^{1}\) norm" is \(\|x\|_{1}=|x|_{1}+\cdots+|x|_{n}\). The "\(\ell^{\infty}\) norm" is \(\|x\|_{\infty}=\max|x_{i}|\). Compute \(\|x\|\), \(\|x\|_{1}\) and \(\|x\|_{\infty}\) for the vectors
+
+\[x=(1,1,1,1,1)\qquad\text{and}\qquad x=(.1,.7,.3,.4,.5).\]
+**19.**: Prove that \(\|x\|_{\infty}\leq\|x\|\leq\|x\|_{1}\). Show from the Schwarz inequality that the ratios \(\|x\|/\|x\|_{\infty}\) and \(\|x\|_{1}/\|x\|\) are never larger than \(\sqrt{n}\). Which vector \((x_{1},\ldots,x_{n})\) gives ratios equal to \(\sqrt{n}\)?
+**20.**: All vector norms must satisfy the _triangle inequality_. Prove that
+
+\[\|x+y\|_{\infty}\leq\|x\|_{\infty}+\|y\|_{\infty}\qquad\text{and}\qquad\|x+y \|_{1}\leq\|x\|_{1}+\|y\|_{1}.\]
+**21.**: Compute the exact inverse of the Hilbert matrix \(A\) by elimination. Then compute \(A^{-1}\) again by rounding all numbers to three figures:
+
+\[\text{In }\mathsf{MATLAB}:\quad A=\mathsf{hilb(3)}=\begin{bmatrix}1&\frac{1}{2 }&\frac{1}{3}\\ \frac{1}{2}&\frac{1}{3}&\frac{1}{4}\\ \frac{1}{3}&\frac{1}{4}&\frac{1}{5}\end{bmatrix}.\]
+**22.**: For the same \(A\), compute \(b=Ax\) for \(x=(1,1,1)\) and \(x=(0,6,-3.6)\). A small change \(\Delta b\) produces a large change \(\Delta x\).
+**23.**: Compute \(\lambda_{\max}\) and \(\lambda_{\min}\) for the 8 by 8 Hilbert matrix \(a_{ij}=1/(i+j-1)\). If \(Ax=b\) with \(\|b\|=1\), how large can \(\|x\|\) be? If \(b\) has roundoff error less than \(10^{-16}\), how large an error can this cause in \(x\)?
+**24.**: If you know \(L\), \(U\), \(Q\), and \(R\), is it faster to solve \(LUx=b\) or \(QRx=b\)?
+**25.**: Choosing the largest available pivot in each column (partial pivoting), factor each \(A\) into \(PA=LU\):
+
+\[A=\begin{bmatrix}1&0\\ 2&2\end{bmatrix}\qquad\text{and}\qquad A=\begin{bmatrix}1&0&1\\ 2&2&0\\ 0&2&0\end{bmatrix}.\]

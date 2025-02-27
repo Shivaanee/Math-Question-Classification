@@ -1,0 +1,19 @@
+Simple, I admit. If you move up to 2 by 2, it's more interesting. The matrix \(\left[\begin{matrix}\mathbf{1}&\mathbf{1}\\ \mathbf{2}&\mathbf{2}\end{matrix}\right]\) is not invertible: \(y+z=b_{1}\) and \(2y+2z=b_{2}\) usually have no solution.
+
+There is _no solution_ unless \(b_{2}=2b_{1}\). The column space of \(A\) contains only those \(b\)'s, the multiples of \((1,2)\).
+
+When \(b_{2}=2b_{1}\) there are _infinitely many solutions_. A particular solution to \(y+z=2\) and \(2y+2z=4\) is \(x_{p}=(1,1)\). The nullspace of \(A\) in Figure 2 contains \((-1,1)\) and all its multiples \(x_{n}=(-c,c)\):
+
+### Echelon Form \(U\) and Row Reduced Form \(R\)
+
+We start by simplifying this 3 by 4 matrix, first to \(U\) and then further to \(R\):
+
+\[\text{Basic example}\qquad A=\begin{bmatrix}1&3&3&2\\ 2&6&9&7\\ -1&-3&3&4\end{bmatrix}.\]
+
+The pivot \(a_{11}=1\) is nonzero. The usual elementary operations will produce zeros in the first column below this pivot. The bad news appears in column 2:
+
+\[\text{No pivot in column 2}\qquad A\to\begin{bmatrix}1&3&3&2\\ 0&\mathbf{0}&3&3\\ 0&\mathbf{0}&6&6\end{bmatrix}.\]
+
+The candidate for the second pivot has become zero: _unacceptable_. We look below that zero for a nonzero entry--intending to carry out a row exchange. In this case the _entry below it is also zero_. If \(A\) were square, this would signal that the matrix was singular. With a rectangular matrix, we must expect trouble anyway, and there is no reason to stop.
+
+ 

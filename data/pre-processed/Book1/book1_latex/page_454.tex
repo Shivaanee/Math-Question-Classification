@@ -1,0 +1,20 @@
+
+
+### Network Models
+
+Some linear problems have a structure that makes their solution very quick. Band matrices have all nonzeros close to the main diagonal, and \(Ax=b\) is easy to solve. In linear programming, we are interested in the special class for which \(A\) is an _incidence matrix_. Its entries are \(-1\) or \(+1\) or (mostly) zero, and pivot steps involve only additions and subtractions. Much larger problems than usual can be solved.
+
+Networks enter all kinds of applications. Traffic through an intersection satisfies Kirchhoff's current law: flow in equals flow out. For gas and oil, network programming has designed pipeline systems that are millions of dollars cheaper than the intuitive (not optimized) designs. Scheduling pilots and crews and airplanes has become a significant problem in applied mathematics! We even solve the _marriage problem_--to maximize the number of marriages when brides have a veto. That may not be the real problem, but it is the one that network programming solves.
+
+The problem in Figure 8.5 is to _maximize the flow from the source to the sink_. The flows cannot exceed the capacities marked on the edges, and the directions given by the arrows cannot be reversed. The flow on the two edges into the sink cannot exceed \(6+1=7\). Is this total of 7 achievable? What is the _maximal flow_ from left to right?
+
+The unknowns are the flows \(x_{ij}\) from node \(i\) to node \(j\). The capacity constraints are \(x_{ij}\leq c_{ij}\). The flows are nonnegative: \(x_{ij}\geq 0\) going with the arrows. By maximizing the return flow \(x_{61}\) (dotted line), we maximize the total flow into the sink.
+
+Another constraint is still to be heard from. It is the "conservation law," that _the flow into each node equals the flow out_. That is Kirchhoff's current law:
+
+\[\mbox{{Current law}}\qquad\sum_{i}x_{ij}-\sum_{k}x_{jk}=0\quad\mbox{for}\quad j =1,2,\ldots,6.\] (12)
+
+The flows \(x_{ij}\) enter node \(j\) from earlier nodes \(i\). The flows \(x_{jk}\) leave node \(j\) to later nodes \(k\). The balance in equation (1) can be written as \(Ax=0\), where \(A\) is a _node-edge incidence matrix_ (the transpose of Section 2.5). \(A\) has a row for every node and a \(+1\)
+
+Figure 8.5: A \(6\)-node network with edge capacities: the maximal flow problem.
+

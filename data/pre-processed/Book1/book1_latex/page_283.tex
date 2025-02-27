@@ -1,0 +1,32 @@
+
+
+### Diagonalization of a Matrix
+
+We start right off with the one essential computation. It is perfectly simple and will be used in every section of this chapter. _The eigenvectors diagonalize a matrix_:
+
+**5C** Suppose the \(n\) by \(n\) matrix \(A\) has \(n\) linearly independent eigenvectors. If these eigenvectors are the columns of a matrix \(S\), then \(S^{-1}AS\) is a diagonal matrix \(\Lambda\). The eigenvalues of \(A\) are on the diagonal of \(\Lambda\):
+
+\[\text{Diagonalization}\qquad S^{-1}AS=\Lambda=\begin{bmatrix}\lambda_{1}&&\\ &\lambda_{2}&&\\ &&\ddots&\\ &&&\lambda_{n}\end{bmatrix}.\] (1)
+
+We call \(S\) the "eigenvector matrix" and \(\Lambda\) the "eigenvalue matrix"--using a capital lambda because of the small lambdas for the eigenvalues on its diagonal.
+
+Proof.: Put the eigenvectors \(x_{i}\) in the columns of \(S\), and compute \(AS\) by columns:
+
+\[AS=A\begin{bmatrix}|&|&&|\\ x_{1}&x_{2}&\cdots&x_{n}\\ |&|&&|\end{bmatrix}=\begin{bmatrix}|&|&&|\\ \lambda_{1}x_{1}&\lambda_{2}x_{2}&\cdots&\lambda_{n}x_{n}\\ |&|&&|\end{bmatrix}.\]
+
+Then the trick is to split this last matrix into a quite different product \(S\Lambda\):
+
+\[\begin{bmatrix}\lambda_{1}x_{1}&\lambda_{2}x_{2}&\cdots&\lambda_{n}x_{n}\\ \end{bmatrix}=\begin{bmatrix}x_{1}&x_{2}&\cdots&x_{n}\\ &&\\ &&&\ddots&\\ &&&\lambda_{n}\end{bmatrix}.\]
+
+It is crucial to keep these matrices in the right order. If \(\Lambda\) came before \(S\) (instead of after), then \(\lambda_{1}\) would multiply the entries in the first row. We want \(\lambda_{1}\) to appear in the first column. As it is, \(S\Lambda\) is correct. Therefore,
+
+\[AS=S\Lambda,\quad\text{or}\quad S^{-1}AS=\Lambda,\quad\text{or}\quad A=S \Lambda S^{-1}.\] (2)
+
+\(S\) is invertible, because its columns (the eigenvectors) were assumed to be independent.
+
+We add four remarks before giving any examples or applications. 
+
+_Remark 1_.: If the matrix \(A\) has no repeated eigenvalues--the numbers \(\lambda_{1},\dots,\lambda_{n}\) are distinct--then its \(n\) eigenvectors are automatically independent (see 5D below). Therefore _any matrix with distinct eigenvalues can be diagonalized_.
+
+_Remark 2_.: The diagonalizing matrix \(S\) is _not unique_. An eigenvector \(x\) can be multiplied by a constant, and remains an eigenvector. We can multiply the columns of \(S\) by any nonzero constants, and produce a new diagonalizing \(S\). Repeated eigenvalues leave even more freedom in \(S\). For the trivial example \(A=I\), any invertible \(S\) will do: \(S^{-1}IS\) is is always diagonal (\(\Lambda\) is just \(I\)). All vectors are eigenvectors of the identity.
+

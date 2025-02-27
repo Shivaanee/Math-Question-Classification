@@ -1,0 +1,25 @@
+The remedy is equally clear. _Exchange the two equations_, moving the entry 3 up into the pivot. In this example the matrix would become upper triangular:
+
+\[\textbf{Exchange rows}\qquad\qquad\qquad 3u+4v = b_{2}\] \[2v = b_{1}\]
+
+To express this in matrix terms, we need the _permutation matrix_\(P\) that produces the row exchange. It comes from exchanging the rows of \(I\):
+
+\[\textbf{Permutation}\qquad P=\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\text{ and }PA=\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\begin{bmatrix}0&2\\ 3&4\end{bmatrix}=\begin{bmatrix}3&4\\ 0&2\end{bmatrix}.\]
+
+\(P\) has the same effect on \(b\), exchanging \(b_{1}\) and \(b_{2}\). _The new system is \(PAx=Pb\)_. The unknowns \(u\) and \(v\) are _not_ reversed in a row exchange.
+
+_A permutation matrix \(P\) has the same rows as the identity_ (in some order). There is a single "1" in every row and column. The most common permutation matrix is \(P=I\) (it exchanges nothing). The product of two permutation matrices is another permutation--the rows of \(I\) get reordered twice.
+
+After \(P=I\), the simplest permutations exchange two rows. Other permutations exchange more rows. **There are \(n!=(n)(n-1)\cdots(1)\) permutations of size \(n\)**. Row 1 has \(n\) choices, then row 2 has \(n-1\) choices, and finally the last row has only one choice. We can display all 3 by 3 permutations (there are \(3!=(3)(2)(1)=6\) matrices):
+
+\[I=\begin{bmatrix}1&&\\ &1&\\ &&1\end{bmatrix}\qquad P_{21}=\begin{bmatrix}1&&\\ 1&&\\ &&1\end{bmatrix}\qquad P_{32}P_{21}=\begin{bmatrix}1&&\\ &&1\\ &&1\end{bmatrix}\] \[P_{31}=\begin{bmatrix}&&1\\ &1&\\ 1&\end{bmatrix}\qquad P_{32}=\begin{bmatrix}1&&\\ &&1\\ &&1\end{bmatrix}\qquad P_{21}P_{32}=\begin{bmatrix}&&1\\ &&1\\ &&1\end{bmatrix}.\]
+
+There will be 24 permutation matrices of order \(n=4\). There are only two permutation matrices of order 2, namely
+
+\[\begin{bmatrix}1&0\\ 0&1\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}0&1\\ 1&0\end{bmatrix}.\]
+
+When we know about inverses and transposes (the next section defines \(A^{-1}\) and \(A^{\mathrm{T}}\)), we discover an important fact: \(P^{-1}\)_is always the same as \(P^{\mathrm{T}}\)_.
+
+A zero in the pivot location raises two possibilities: _The trouble may be easy to fix, or it may be serious_. This is decided by looking _below the zero_. If there is a nonzero entry lower down in the same column, then a row exchange is carried out. The nonzero entry becomes the needed pivot, and elimination can get going again:
+
+\[A=\begin{bmatrix}0&a&b\\ 0&0&c\\ d&e&f\end{bmatrix}\qquad\begin{array}{rcl}d=0&\Longrightarrow&\text{no first pivot}\\ a=0&\Longrightarrow&\text{no second pivot}\\ c=0&\Longrightarrow&\text{no third pivot}.\end{array}\] 

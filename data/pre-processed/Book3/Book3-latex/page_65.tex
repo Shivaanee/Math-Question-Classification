@@ -1,0 +1,29 @@
+and that the row space of \(A\) is the subspace of \(F^{n}\) spanned by these vectors. The **row rank** of \(A\) is the dimension of the row space of \(A\).
+
+If \(P\) is a \(k\)\(\mathsf{X}\)\(m\) matrix over \(F\), then the product \(B=PA\) is a \(k\)\(\mathsf{X}\)\(n\) matrix whose row vectors \(\beta_{1}\), \(\ldots\), \(\beta_{k}\) are linear combinations
+
+\[\beta_{i}=P_{i0}\alpha_{1}+\ \cdots\ +P_{im}\alpha_{m}\]
+
+of the row vectors of \(A\). Thus the row space of \(B\) is a subspace of the row space of \(A\). If \(P\) is an \(m\)\(\mathsf{X}\)\(m\) invertible matrix, then \(B\) is row-equivalent to \(A\) so that the symmetry of row-equivalence, or the equation \(A\ =P^{-1}B\), implies that the row space of \(A\) is also a subspace of the row space of \(B\).
+
+**Theorem 9**: _Row-equivalent matrices have the same row space._
+
+Thus we see that to study the row space of \(A\) we may as well study the row space of a row-reduced echelon matrix which is row-equivalent to \(A\). This we proceed to do.
+
+**Theorem 10**: _Let \(\mathrm{R}\) be a non-zero row-reduced echelon matrix. Then the non-zero row vectors of \(\mathrm{R}\) form a basis for the row space of \(\mathrm{R}\)._
+
+Let \(\rho_{1}\), \(\ldots\), \(\rho_{r}\) be the non-zero row vectors of \(R\):
+
+\[\rho_{i}\ =\ (R_{i1},\ldots,R_{in}).\]
+
+Certainly these vectors span the row space of \(R\); we need only prove they are linearly independent. Since \(R\) is a row-reduced echelon matrix, there are positive integers \(k_{1}\), \(\ldots\), \(k_{r}\) such that, for \(i\leq r\)
+
+\[\begin{array}{ll}\mbox{(2-18)}&\mbox{(a)}\ R(i,j)=0\quad\mbox{if}\quad j<k_{ i}\\ \mbox{(b)}&\mbox{($k$,$ $k_{j})=\ $\delta_{ij}$}\\ \mbox{(c)}&\mbox{($k_{1}<\ $\cdots<k_{r}$.}\end{array}\]
+
+Suppose \(\beta\ =\ (b_{1}\), \(\ldots\), \(b_{n})\) is a vector in the row space of \(R\):
+
+\[\beta\ =\ e_{1}\rho_{1}+\ \cdots\ +\ c_{r}\rho_{r}.\]
+
+Then we claim that \(c_{j}\ =\ b_{k_{i}}\). For, by (2-18)
+
+\[\begin{array}{ll}\mbox{(2-20)}&\mbox{$b_{k_{i}}$}\ =\ \sum\limits_{i=1}^{r}c_{i 

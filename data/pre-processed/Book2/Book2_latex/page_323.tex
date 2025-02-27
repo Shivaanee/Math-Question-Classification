@@ -1,0 +1,11 @@
+The steep slope of the optimal trade-off curve near the left end-point means that we can achieve a substantial reduction in \(J_{2}\) with only a small increase in \(J_{1}\). The small slope of the optimal trade-off curve near the right end-point means that we can achieve a substantial reduction in \(J_{1}\) with only a small increase in \(J_{2}\). This is quite typical, and indeed, is why multi-criterion least squares is useful.
+
+Optimal trade-off surface.Above we described the case with \(k=2\) objectives. When we have more than 2 objectives, the interpretation is similar, although it is harder to plot the objectives, or the values of \(\hat{x}\), versus the weights. For example with \(k=3\) objectives, we have two weights, \(\lambda_{2}\) and \(\lambda_{3}\), which give the relative weight of \(J_{2}\) and \(J_{3}\) compared to \(J_{1}\). Any solution \(\hat{x}(\lambda)\) of the weighted least squares problem is Pareto optimal, which means that there is no point that achieves values of \(J_{1}\), \(J_{2}\), \(J_{3}\) less than or equal to those obtained by \(\hat{x}(\lambda)\), with strict inequality holding for at least one of them. As the parameters \(\lambda_{2}\) and \(\lambda_{3}\) vary over \((0,\infty)\), the values of \(J_{1}\), \(J_{2}\), \(J_{3}\) sweep out the _optimal trade-off surface_.
+
+Using multi-objective least squares.In the rest of this chapter we will see several specific applications of multi-objective least squares. Here we give some general remarks on how it is used in applications.
+
+First we identify a primary objective \(J_{1}\) that we would like to be small. The objective \(J_{1}\) is typically the one that would be used in an ordinary single-objective least squares approach, such as the mean square error of a model on some training data, or the mean square deviation from some target or goal.
+
+Figure 15.3: Optimal trade-off curve for the bi-criterion least squares problem of figures 15.1 and 15.2.
+
+ 

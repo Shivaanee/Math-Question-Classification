@@ -1,0 +1,33 @@
+
+
+**16.** Show that the trace functional on \(n\times n\) matrices is unique in the following sense. If \(W\) is the space of \(n\times n\) matrices over the field \(F\) and if \(f\) is a linear functional on \(W\) such that \(f(AB)=f(BA)\) for each \(A\) and \(B\) in \(W\), then \(f\) is a scalar multiple of the trace function. If, in addition, \(f(I)=n\), then \(f\) is the trace function.
+
+**17.** Let \(W\) be the space of \(n\times n\) matrices over the field \(F\), and let \(W_{0}\) be the subspace spanned by the matrices \(C\) of the form \(C=AB-BA\). Prove that \(W_{0}\) is exactly the subspace of matrices which have trace zero. (_Hint:_ What is the dimension of the space of matrices of trace zero? Use the matrix 'units,' i.e., matrices with exactly one non-zero entry, to construct enough linearly independent matrices of the form \(AB-BA\).)
+
+**3.6.**_The Double Dual_
+
+One question about dual bases which we did not answer in the last section was whether every basis for \(V^{\star}\) is the dual of some basis for \(V\). One way to answer that question is to consider \(V^{\star\star}\), the dual space of \(V^{\star}\).
+
+If \(\alpha\) is a vector in \(V\), then \(\alpha\) induces a linear functional \(L_{\alpha}\) on \(V^{\star}\) defined by
+
+\[L_{\alpha}(f)=f(\alpha),\ \ \ \ \ f\ \ \ \mbox{in}\ \ \ V^{\star}.\]
+
+The fact that \(L_{\alpha}\) is linear is just a reformulation of the definition of linear operations in \(V^{\star}\):
+
+\[\begin{array}{rl}L_{\alpha}(cf+g)&=\ (cf+g)(\alpha)\\ &=\ (cf)(\alpha)+g(\alpha)\\ &=\ \,cf(\alpha)+g(\alpha)\\ &=\ \,cL_{\alpha}(f)+L_{\alpha}(g).\end{array}\]
+
+If \(V\) is finite-dimensional and \(\alpha\neq 0\), then \(L_{\alpha}\neq 0\); in other words, there exists a linear functional \(f\) such that \(f(\alpha)\neq 0\). The proof is very simple and was given in Section 3.5: Choose an ordered basis \(\oplus=\{\alpha_{1},\ .\ .\ .\ ,\alpha_{n}\}\) for \(V\) such that \(\alpha_{1}=\alpha\) and let \(f\) be the linear functional which assigns to each vector in \(V\) its first coordinate in the ordered basis \(\oplus\).
+
+**Theorem 17.**_Let \(\mathrm{V}\) be a finite-dimensional vector space over the field \(\mathrm{F}\). For each vector \(\alpha\) in \(\mathrm{V}\) define_
+
+\[L_{\alpha}(f)=f(\alpha),\ \ \ \ \ \ f\ \ \ \mbox{in}\ \ \ \mathrm{V}^{\star}.\]
+
+_The mapping \(\alpha\to L_{\alpha}\) is then an isomorphism of \(\mathrm{V}\) onto \(V^{\star\star}\)._
+
+Proof.: We showed that for each \(\alpha\) the function \(L_{\alpha}\) is linear. Suppose \(\alpha\) and \(\beta\) are in \(V\) and \(c\) is in \(F\), and let \(\gamma=c\alpha+\beta\). Then for each \(f\) in \(V^{\star}\)
+
+\[\begin{array}{rl}L_{\gamma}(f)&=f(\gamma)\\ &=f(c\alpha+\beta)\\ &=\ \,cf(\alpha)+f(\beta)\\ &=\ \,cL_{\alpha}(f)+L_{\beta}(f)\end{array}\]
+
+and so
+
+\[L_{\gamma}=cL_{\alpha}+L_{\beta}.\]

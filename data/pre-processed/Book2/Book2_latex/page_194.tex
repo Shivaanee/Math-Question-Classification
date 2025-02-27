@@ -1,0 +1,33 @@
+We can interpret \(\Delta\) in terms of composition of linear functions. Multiplying an \(n\)-vector \(x\) by \(D_{n}\) yields the \((n-1)\)-vector of consecutive differences of the entries:
+
+\[D_{n}x=(x_{2}-x_{1},\ldots,x_{n}-x_{n-1}).\]
+
+Multiplying this vector by \(D_{n-1}\) gives the \((n-2)\)-vector of consecutive differences of consecutive differences (or second differences) of \(x\):
+
+\[D_{n-1}D_{n}x=(x_{1}-2x_{2}+x_{3},\,x_{2}-2x_{3}+x_{4},\,\ldots,\,x_{n-2}-2x_{ n-1}+x_{n}).\]
+
+The \((n-2)\times n\) product matrix \(\Delta=D_{n-1}D_{n}\) is the matrix associated with the second difference function.
+
+For the case \(n=5\), \(\Delta=D_{n-1}D_{n}\) has the form
+
+\[\left[\begin{array}{ccccc}1&-2&1&0&0\\ 0&1&-2&1&0\\ 0&0&1&-2&1\end{array}\right]=\left[\begin{array}{ccccc}-1&1&0&0\\ 0&-1&1&0\\ 0&0&-1&1\end{array}\right]\left[\begin{array}{ccccc}-1&1&0&0&0\\ 0&-1&1&0&0\\ 0&0&-1&1&0\\ 0&0&0&-1&1\end{array}\right].\]
+
+The left-hand matrix \(\Delta\) is associated with the second difference linear function that maps 5-vectors into 3-vectors. The middle matrix \(D_{4}\) is associated with the difference function that maps 4-vectors into 3-vectors. The right-hand matrix \(D_{5}\) is associated with the difference function that maps 5-vectors into 4-vectors.
+
+Composition of affine functions.The composition of affine functions is an affine function. Suppose \(f:{\bf R}^{p}\to{\bf R}^{m}\) is the affine function given by \(f(x)=Ax+b\), and \(g:{\bf R}^{n}\to{\bf R}^{p}\) is the affine function given by \(g(x)=Cx+d\). The composition \(h\) is given by
+
+\[h(x)=f(g(x))=A(Cx+d)+b=(AC)x+(Ad+b)=\tilde{A}x+\tilde{b},\]
+
+where \(\tilde{A}=AC\), \(\tilde{b}=Ad+b\).
+
+Chain rule of differentiation.Let \(f:{\bf R}^{p}\to{\bf R}^{m}\) and \(g:{\bf R}^{n}\to{\bf R}^{p}\) be differentiable functions. The composition of \(f\) and \(g\) is defined as the function \(h:{\bf R}^{n}\to{\bf R}^{m}\) with
+
+\[h(x)=f(g(x))=f(g_{1}(x),\ldots,g_{p}(x)).\]
+
+The function \(h\) is differentiable and its partial derivatives follow from those of \(f\) and \(g\) via the chain rule:
+
+\[\frac{\partial h_{i}}{\partial x_{j}}(z)=\frac{\partial f_{i}}{\partial y_{1} }(g(z))\frac{\partial g_{1}}{\partial x_{j}}(z)+\cdots+\frac{\partial f_{i}} {\partial y_{p}}(g(z))\frac{\partial g_{p}}{\partial x_{j}}(z)\]
+
+for \(i=1,\ldots,m\) and \(j=1,\ldots,n\). This relation can be expressed concisely as a matrix-matrix product: The derivative matrix of \(h\) at \(z\) is the product
+
+\[Dh(z)=Df(g(z))Dg(z)\] 

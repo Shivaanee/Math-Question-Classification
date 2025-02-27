@@ -1,0 +1,23 @@
+and \(x^{+}\) for any diagonal matrix \(\Sigma\):
+
+\[\Sigma=\begin{bmatrix}\sigma_{1}&&\\ &\ddots&\\ &&\sigma_{r}\\ &&&\\ \end{bmatrix}\qquad\Sigma^{+}=\begin{bmatrix}1/\sigma_{1}&&\\ &\ddots&\\ &&1/\sigma_{r}\\ &&&\\ \end{bmatrix}\qquad\Sigma^{+}b=\begin{bmatrix}b_{1}/\sigma_{1}\\ \vdots\\ b_{r}/\sigma_{r}\\ \end{bmatrix}.\]
+
+The matrix \(\Sigma\) is \(m\) by \(n\), with \(r\) nonzero entries \(\sigma_{i}\). Its pseudoinverse \(\Sigma^{+}\) is \(n\) by \(m\), with \(r\) nonzero entries \(1/\sigma_{i}\). **All the blank spaces are zeros**. Notice that \((\Sigma^{+})^{+}\) is \(\Sigma\) again. That is like \((A^{-1})^{-1}=A\), but here \(A\) is not invertible.
+
+Now we find \(x^{+}\) in the general case. We claim that _the shortest solution \(x^{+}\) is always in the row space of \(A\)_. Remember that any vector \(\widehat{x}\) can be split into a row space component \(x_{r}\) and a nullspace component: \(\widehat{x}=x_{r}+x_{n}\). There are three important points about that splitting:
+
+1. The row space component also solves \(A^{\mathrm{T}}A\widehat{x}_{r}=A^{\mathrm{T}}b\), because \(Ax_{n}=0\).
+2. The components are orthogonal, and they obey Pythagoras's law: \[\|\widehat{x}\|^{2}=\|x_{r}\|^{2}+\|x_{n}\|^{2},\quad\text{so $\widehat{x}$ is shortest when $x_{n}=0$.}\]
+3. All solutions of \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\) have the same \(x_{r}\). _That vector is \(x^{+}\)_.
+
+The fundamental theorem of linear algebra was in Figure 3.4. Every \(p\) in the column space comes from one and only one vector \(x_{r}\) in the row space. _All we are doing is to choose that vector, \(x^{+}=x_{r}\), as the best solution to \(Ax=b\)_.
+
+The pseudoinverse in Figure 6.3 starts with \(b\) and comes back to \(x^{+}\). _It inverts \(A\) where \(A\) is invertible_--between row space and column space. The pseudoinverse knocks out the left nullspace by sending it to zero, and it knocks out the nullspace by choosing \(x_{r}\) as \(x^{+}\).
+
+We have not yet shown that there is a matrix \(A^{+}\) that always gives \(x^{+}\)--but there is. It will be \(n\) by \(m\), because it takes \(b\) and \(p\) in \(\mathbf{R}^{m}\) back to \(x^{+}\) in \(\mathbf{R}^{n}\). We look at one more example before finding \(A^{+}\) in general.
+
+**Example 6**.: \(Ax=b\) is \(-x_{1}+2x_{2}+2x_{3}=18\), with a whole plane of solutions.
+
+According to our theory, the shortest solution should be in the row space of \(A=[-1\ \ 2\ \ 2]\). The multiple of that row that satisfies the equation is \(x^{+}=(-2,4,4)\). There are longer solutions like \((-2,5,3)\), \((-2,7,1)\), or \((-6,3,3)\), but they all have nonzero components from the nullspace. The matrix that produces \(x^{+}\) from \(b=[18]\) is the pseudoinverse \(A^{+}\). Whereas \(A\) was \(1\) by \(3\), this \(A^{+}\) is \(3\) by \(1\):
+
+\[A^{+}=\begin{bmatrix}-1&2&2\end{bmatrix}^{+}=\begin{bmatrix}-\frac{1}{9}\\ \frac{2}{9}\\ \frac{2}{9}\\ \frac{2}{9}\end{bmatrix}\qquad\text{and}\qquad A^{+}[18]=\begin{bmatrix}-2 \\ 4\\ 4\\ 4\end{bmatrix}.\] (6) 

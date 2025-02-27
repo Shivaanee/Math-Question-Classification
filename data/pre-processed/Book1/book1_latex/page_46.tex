@@ -1,0 +1,28 @@
+
+
+**58.**: In MATLAB notation, write the commands that define the matrix \(A\) and the column vectors \(x\) and \(b\). What command would test whether or not \(Ax=b\)?
+
+\[A=\begin{bmatrix}1&2\\ 3&4\end{bmatrix}\qquad x=\begin{bmatrix}5\\ -2\end{bmatrix}\qquad b=\begin{bmatrix}1\\ 7\end{bmatrix}\]
+**59.**: The MATLAB commands \(\mathsf{A}\) = eye(3) and \(\mathsf{v}\) = [3:5]' produce the 3 by 3 identity matrix and the column vector \((3,4,5)\). What are the outputs from \(\mathsf{A}\ast\mathsf{v}\) and \(\mathsf{v}^{\prime}\ast\mathsf{v}\)? (Computer not needed!) If you ask for \(\mathsf{v}\ast\mathsf{A}\), what happens?
+**60.**: If you multiply the 4 by 4 all-ones matrix \(\mathsf{A}\) = ones(4,4) and the column \(\mathsf{v}\) = ones(4,1), what is \(\mathsf{A}\ast\mathsf{v}\)? (Computer not needed.) If you multiply \(\mathsf{B}\) = eye(4) + ones(4,4) times \(\mathsf{w}\) = zeros(4,1) + 2 \(\ast\) ones(4,1), what is \(\mathsf{B}\ast\mathsf{w}\)?
+**61.**: Invent a 3 by 3 **magic matrix**\(M\) with entries \(1,2,\ldots,9\). All rows and columns and diagonals add to 15. The first row could be 8, 3, 4. What is \(M\) times \((1,1,1)\)? What is the row vector \(\begin{bmatrix}1&1&1\end{bmatrix}\) times \(M\)?
+
+### Triangular Factors and Row Exchanges
+
+We want to look again at elimination, to see what it means in terms of matrices. The starting point was the model system \(Ax=b\):
+
+\[Ax=\begin{bmatrix}2&1&1\\ 4&-6&0\\ -2&7&2\end{bmatrix}\begin{bmatrix}u\\ v\\ w\end{bmatrix}=\begin{bmatrix}5\\ -2\\ 9\end{bmatrix}=b.\] (1)
+
+Then there were three elimination steps, with multipliers 2, \(-1\), \(-1\):
+
+**Step 1.**: Subtract 2 times the first equation from the second;
+**Step 2.**: Subtract \(-1\) times the first equation from the third;
+**Step 3.**: Subtract \(-1\) times the second equation from the third.
+
+The result was an equivalent system \(Ux=c\), with a new coefficient matrix \(U\):
+
+\[\textbf{Upper triangular}\qquad Ux=\begin{bmatrix}2&1&1\\ 0&-8&-2\\ 0&0&1\end{bmatrix}\begin{bmatrix}u\\ v\\ w\end{bmatrix}=\begin{bmatrix}5\\ -12\\ 2\end{bmatrix}=c.\] (2)
+
+This matrix \(U\) is _upper triangular_--all entries below the diagonal are zero.
+
+The new right side \(c\) was derived from the original vector \(b\) by the same steps that took \(A\) into \(U\). _Forward elimination_ amounted to three row operations:

@@ -1,0 +1,28 @@
+
+
+### 3 Matrices and Elementary
+
+_Row Operations_
+
+One cannot fail to notice that in forming linear combinations of linear equations there is no need to continue writing the 'unknowns' \(x_{i}\), \(\ldots\), \(x_{n}\), since one actually computes only with the coefficients \(A_{ij}\) and the scalars \(y_{i}\). We shall now abbreviate the system (1-1) by
+
+\[AX=Y\]
+
+where
+
+\[A=\begin{bmatrix}A_{11}&\cdots&A_{1n}\\ \vdots&&\vdots\\ A_{m1}&\cdots&A_{mn}\end{bmatrix}\]
+
+\[X=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}\quad\text{and}\quad Y=\begin{bmatrix}y_{1}\\ \vdots\\ y_{m}\end{bmatrix}.\]
+
+We call \(A\) the **matrix of coefficients** of the system. Strictly speaking, the rectangular array displayed above is not a matrix, but is a representation of a matrix. An \(m\times n\)**matrix over the field \(F\)** is a function \(A\) from the set of pairs of integers \((i,j)\), \(1\leq i\leq m\), \(1\leq j\leq n\), into the field \(F\). The **entries** of the matrix \(A\) are the scalars \(A(i,j)=A_{ij}\), and quite often it is most convenient to describe the matrix by displaying its entries in a rectangular array having \(m\) rows and \(n\) columns, as above. Thus \(X\) (above) is, or defines, an \(n\times 1\) matrix and \(Y\) is an \(m\times 1\) matrix. For the time being, \(AX=Y\) is nothing more than a shorthand notation for our system of linear equations. Later, when we have defined a multiplication for matrices, it will mean that \(Y\) is the product of \(A\) and \(X\).
+
+We wish now to consider operations on the rows of the matrix \(A\) which correspond to forming linear combinations of the equations in the system \(AX=Y\). We restrict our attention to three **elementary row operations** on an \(m\times n\) matrix \(A\) over the field \(F\):
+
+1. multiplication of one row of \(A\) by a non-zero scalar \(c\);
+2. replacement of the \(r\)th row of \(A\) by row \(r\) plus \(c\) times row \(s\), \(c\) any scalar and \(r\neq s\);
+3. interchange of two rows of \(A\).
+
+An elementary row operation is thus a special type of function (rule) \(e\) which associated with each \(m\times n\) matrix \(A\) an \(m\times n\) matrix \(e(A)\). One can precisely describe \(e\) in the three cases as follows:
+
+1. \(e(A)_{ij}=A_{ij}\) if \(i\neq r\), \(e(A)_{rj}=cA_{rj}\).
+2. \(e(A)_{ij}=A_{ij}\) if \(i\neq r\), \(e(A)_{rj}=A_{rj}+cA_{

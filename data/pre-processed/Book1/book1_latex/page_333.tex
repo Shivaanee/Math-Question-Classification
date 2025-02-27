@@ -1,0 +1,13 @@
+1. A real symmetric matrix. 2. A stable matrix: all solutions to \(du/dt=Au\) approach zero. 3. An orthogonal matrix. 4. A Markov matrix. 5. A defective matrix (nondiagonalizable). 6. A singular matrix.
+17. Show that if \(U\) and \(V\) are unitary, so is \(UV\). Use the criterion \(U^{\rm H}U=I\).
+18. Show that a unitary matrix has \(|\det U|=1\), but possibly \(\det U\) is different from \(\det U^{\rm H}\). Describe all 2 by 2 matrices that are unitary.
+19. Find a third column so that \(U\) is unitary. How much freedom in column 3? \[U=\begin{bmatrix}1/\sqrt{3}&i/\sqrt{2}\\ 1/\sqrt{3}&0\\ i/\sqrt{3}&1/\sqrt{2}\end{bmatrix}.\]
+20. Diagonalize the 2 by 2 skew-Hermitian matrix \(K=\begin{bmatrix}i&i\\ i&i\end{bmatrix}\), whose entries are all \(\sqrt{-1}\). Compute \(e^{Kt}=Se^{\Lambda t}S^{-1}\), and verify that \(e^{Kt}\) is unitary. What is the derivative of \(e^{Kt}\) at \(t=0\)?
+21. Describe all 3 by 3 matrices that are simultaneously Hermitian, unitary, and diagonal. How many are there?
+22. Every matrix \(Z\) can be split into a Hermitian and a skew-Hermitian part, \(Z=A+K\), just as a complex number \(z\) is split into \(a+ib\), The real part of \(z\) is half of \(z+\bar{z}\), and the "real part" of \(Z\) is half of \(Z+Z^{\rm H}\). Find a similar formula for the "imaginary part" \(K\), and split these matrices into \(A+K\): \[Z=\begin{bmatrix}3+i&4+2i\\ 0&5\end{bmatrix}\qquad\text{and}\qquad Z=\begin{bmatrix}i&i\\ -i&i\end{bmatrix}.\]
+23. Show that the columns of the 4 by 4 Fourier matrix \(F\) in Example 5 are eigenvectors of the permutation matrix \(P\) in Example 6.
+24. For the permutation of Example 6, write out the _circulant matrix_\(C=c_{0}I+c_{1}P+c_{2}P^{2}+c_{3}P^{3}\). (Its eigenvector matrix is again the Fourier matrix.) Write out also the four components of the matrix-vector product \(Cx\), which is the _convolution_ of \(c=(c_{0},c_{1},c_{2},c_{3})\) and \(x=(x_{0},x_{1},x_{2},x_{3})\).
+25. For a circulant \(C=F\Lambda F^{-1}\), why is it faster to multiply by \(F^{-1}\), then \(\Lambda\), then \(F\) (the convolution rule), than to multiply directly by \(C\)?
+26. Find the lengths of \(u=(1+i,1-i,1+2i)\) and \(v=(i,i,i)\). Also find \(u^{\rm H}v\) and \(v^{\rm H}u\).
+
+ 

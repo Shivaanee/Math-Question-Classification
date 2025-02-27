@@ -1,0 +1,32 @@
+
+
+## 17 Constrained least squares applications
+
+### 17.1 A variation on the portfolio optimization formulation
+
+Consider the following variation on the linearly constrained least squares problem (17.2):
+
+\[\begin{array}{ll}\mbox{minimize}&\|Rw\|^{2}\\ \mbox{subject to}&\left[\begin{array}{c}\mathbf{1}^{T}\\ \mu^{T}\end{array}\right]w=\left[\begin{array}{c}1\\ \rho\end{array}\right],\end{array}\] (17.12)
+
+with variable \(w\). (The difference is that here we drop the term \(\rho\mathbf{1}\) that appears inside the norm square objective in (17.2).) Show that this problem is equivalent to (17.2). This means \(w\) is a solution of (17.12) if and only if it is a solution of (17.2).
+
+_Hint._ You can argue directly by expanding the objective in (17.2) or via the KKT systems of the two problems.
+
+### 17.2 A more conventional formulation of the portfolio optimization problem
+
+In this problem we derive an equivalent formulation of the portfolio optimization problem (17.2) that appears more frequently in the literature than our version. (Equivalent means that the two problems always have the same solution.) This formulation is based on the _return covariance matrix_, which we define below. (See also exercise 10.16.)
+
+The means of the columns of the asset return matrix \(R\) are the entries of the vector \(\mu\). The _de-meaned returns matrix_ is given by \(\tilde{R}=R-\mathbf{1}\mu^{T}\). (The columns of the matrix \(\tilde{R}=R-\mathbf{1}\mu^{T}\) are the de-meaned return time series for the assets.) The return covariance matrix, traditionally denoted \(\Sigma\), is its Gram matrix \(\Sigma=(1/T)\tilde{R}^{T}\tilde{R}\).
+
+1. Show that \(\sigma_{i}=\sqrt{\Sigma_{ii}}\) is the standard deviation (risk) of asset \(i\) return. (The symbol \(\sigma_{i}\) is a traditional one for the standard deviation of asset \(i\).)
+2. Show that the correlation coefficient between asset \(i\) and asset \(j\) returns is given by \(\rho_{ij}=\Sigma_{ij}/(\sigma_{i}\sigma_{j})\). (Assuming neither asset has constant return; if either one does, they are uncorrelated.)
+3. _Portfolio optimization using the return covariance matrix._ Show that the following problem is equivalent to our portfolio optimization problem (17.2): \[\begin{array}{ll}\mbox{minimize}&w^{T}\Sigma w\\ \mbox{subject to}&\left[\begin{array}{c}\mathbf{1}^{T}\\ \mu^{T}\end{array}\right]w=\left[\begin{array}{c}1\\ \rho\end{array}\right],\end{array}\] (17.13) with variable \(w\). This is the form of the portfolio optimization problem that you will find in the literature. _Hint._ Show that the objective is the same as \(\|\tilde{R}w\|^{2}\), and that this is the same as \(\|Rw-\rho\mathbf{1}\|^{2}\) for any feasible \(w\).
+
+### 17.3 A simple portfolio optimization problem
+
+1. Find an analytical solution for the portfolio optimization problem with \(n=2\) assets. You can assume that \(\mu_{1}\neq\mu_{2}\), _i.e._, the two assets have different mean returns. _Hint._ The optimal weights depend only on \(\mu\) and \(\rho\), and not (directly) on the return matrix \(R\).
+2. Find the conditions under which the optimal portfolio takes long positions in both assets, a short position in one and a long position in the other, or a short position in both assets. You can assume that \(\mu_{1}<\mu_{2}\), _i.e._, asset 2 has the higher return. _Hint._ Your answer should depend on whether \(\rho<\mu_{1}\), \(\mu_{1}<\rho<\mu_{2}\), or \(\mu_{2}<\rho\), _i.e._, how the required return compares to the two asset returns.
+
+### 17.4 Index tracking
+
+Index tracking is a variation on the portfolio optimization problem described in SS17.1. As in that problem we choose a portfolio allocation weight vector \(w\) that satisfies \(\mathbf{1}^{T}w=1\). This weight vector gives a portfolio return time series \(Rw\), which is

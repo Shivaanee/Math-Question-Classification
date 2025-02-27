@@ -1,0 +1,15 @@
+(The solution \(\hat{s}\) of this problem is not guaranteed to have nonnegative entries, as it must to make sense in this application. But we ignore this aspect of the problem here.)
+
+We consider the same problem instance as on page 234, with \(m=10\) demographic groups and \(n=3\) channels, and reach matrix \(R\) given there. The least squares method yields an RMS error of 133 (around 13.3%), with a total budget of \(\mathbf{1}^{T}s^{\mathrm{ls}}=1605\). We seek a spending plan with a budget that is 20% smaller, \(B=1284\). Solving the associated constrained least squares problem yields the spending vector \(s^{\mathrm{cls}}=(315,110,859)\), which has RMS error of 161 in the target views. We can compare this spending vector to the one obtained by simply scaling the least squares spending vector by 0.80. The RMS error for this allocation is 239. The resulting impressions for both spending plans are shown in figure 16.2.
+
+#### Least norm problem
+
+An important special case of the constrained least squares problem (16.1) is when \(A=I\) and \(b=0\):
+
+\[\begin{array}{ll}\text{minimize}&\quad\|x\|^{2}\\ \text{subject to}&\quad Cx=d.\end{array}\] (16.2)
+
+In this problem we seek the vector of smallest or least norm that satisfies the linear equations \(Cx=d\). For this reason the problem (16.2) is called the _least norm problem_ or _minimum-norm problem_.
+
+Figure 16.2: Advertising with budget constraint. The ‘optimal’ views vector is the solution of the constrained least squares problem with budget constraint. The ‘scaled’ views vector is obtained by scaling the unconstrained least squares solution so that it satisfies the budget constraint. This is a scalar multiple of the views vector of figure 12.4.
+
+ 

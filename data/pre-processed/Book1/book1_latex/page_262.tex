@@ -1,0 +1,25 @@
+_The product of the first k pivots is the determinant of \(A_{k}\)._ This is the same rule that we know already for the whole matrix. Since the determinant of \(A_{k-1}\) will be given by \(d_{1}d_{2}\cdots d_{k-1}\), we can isolate each pivot \(d_{k}\) as a _ratio of determinants_:
+
+\[\text{{Formula for pivots}}\qquad\frac{\det A_{k}}{\det A_{k-1}}=\frac{d_{1}d_{ 2}\cdots d_{k}}{d_{1}d_{2}\cdots d_{k-1}}=d_{k}.\] (5)
+
+In our example above, the second pivot was exactly this ratio \((ad-bc)/a\). It is the determinant of \(A_{2}\) divided by the determinant of \(A_{1}\). (By convention \(\det A_{0}=1\), so that the first pivot is \(a/1=a\).) Multiplying together all the individual pivots, we recover
+
+\[d_{1}d_{2}\cdots d_{n}=\frac{\det A_{1}}{\det A_{0}}\frac{\det A_{2}}{\det A_ {1}}\cdots\frac{\det A_{n}}{\det A_{n-1}}=\frac{\det A_{n}}{\det A_{0}}=\det A.\]
+
+From equation (5) we can finally read off the answer to our original question: _The pivot entries are all nonzero whenever the numbers \(\det A_{k}\) are all nonzero:_
+
+**4E** Elimination can be completed without row exchanges (so \(P=I\) and \(A=LU\)), if and only if the leading submatrices \(A_{1},A_{2},\ldots,A_{n}\) are all nonsingular.
+
+That does it for determinants, except for an optional remark on property 2--the sign reversal on row exchanges. The _determinant of a permutation matrix_\(P\) was the only questionable point in the big formula. Independent of the particular row exchanges linking \(P\) to \(I\), is the number of exchanges always even or always odd? If so, its determinant is well defined by rule 2 as either \(+1\) or \(-1\).
+
+Starting from \((3,2,1)\), a single exchange of \(3\) and \(1\) would achieve the natural order \((1,2,3)\). So would an exchange of \(3\) and \(2\), then \(3\) and \(1\), and then \(2\) and \(1\). In both sequences, the number of exchanges is odd. The assertion is that _an even number of exchanges can never produce the natural order beginning with \((3,2,1)\)_.
+
+Here is a proof. Look at each pair of numbers in the permutation, and let \(N\) count the pairs in which the larger number comes first. Certainly \(N=0\) for the natural order \((1,2,3)\). The order \((3,2,1)\) has \(N=3\) since all pairs \((3,2)\), \((3,1)\), and \((2,1)\) are wrong. We will show that _every exchange alters \(N\) by an odd number_. Then to arrive at \(N=0\) (the natural order) takes a number of exchanges having the same evenness or oddness as \(N\).
+
+When neighbors are exchanged, \(N\) changes by \(+1\) or \(-1\). _Any exchange can be achieved by an odd number of exchanges of neighbors_. This will complete the proof; an odd number of odd numbers is odd. To exchange the first and fourth entries below, which happen to be \(2\) and \(3\), we use five exchanges (an odd number) of neighbors:
+
+\[(\mathbf{2},1,4,\mathbf{3})\rightarrow(1,\mathbf{2},4,\mathbf{3})\rightarrow( 1,4,\mathbf{2},\mathbf{3})\rightarrow(1,4,\mathbf{3},\mathbf{2})\rightarrow( 1,\mathbf{3},4,\mathbf{2})\rightarrow(\mathbf{3},1,4,\mathbf{2}).\]
+
+We need \(\ell-k\) exchanges of neighbors to move the entry in place \(k\) to place \(\ell\). Then \(\ell-k-1\) exchanges move the one originally in place \(\ell\) (and now found in place \(\ell-1\)) back down to place \(k\). Since \((\ell-k)+(\ell-k-1)\) is odd, the proof is complete. The determinant not only has all the properties found earlier, it even exists.
+
+ 

@@ -1,0 +1,29 @@
+
+
+**Example 5**.: **Gram-Schmidt** Suppose the independent vectors are \(a\), \(b\), \(c\):
+
+\[a=\begin{bmatrix}1\\ 0\\ 1\end{bmatrix},\qquad b=\begin{bmatrix}1\\ 0\\ 0\end{bmatrix},\qquad c=\begin{bmatrix}2\\ 1\\ 0\end{bmatrix}.\]
+
+To find \(q_{1}\), make the first vector into a unit vector: \(q_{1}=a/\sqrt{2}\). To find \(q_{2}\), subtract from the second vector its component in the first direction:
+
+\[B=b-(q_{1}^{\mathrm{T}}b)q_{1}=\begin{bmatrix}1\\ 0\\ 0\end{bmatrix}-\frac{1}{\sqrt{2}}\begin{bmatrix}1/\sqrt{2}\\ 0\\ 1/\sqrt{2}\end{bmatrix}=\frac{1}{2}\begin{bmatrix}1\\ 0\\ -1\end{bmatrix}.\]
+
+The normalized \(q_{2}\) is \(B\) divided by its length, to produce a unit vector:
+
+\[q_{2}=\begin{bmatrix}1/\sqrt{2}\\ 0\\ -1/\sqrt{2}\end{bmatrix}.\]
+
+To find \(q_{3}\), subtract from \(c\) its components along \(q_{1}\) and \(q_{2}\):
+
+\[C =c-(q_{1}^{\mathrm{T}}c)q_{1}-(q_{2}^{\mathrm{T}}c)q_{2}\] \[=\begin{bmatrix}2\\ 1\\ 0\end{bmatrix}-\sqrt{2}\begin{bmatrix}1/\sqrt{2}\\ 0\\ 1/\sqrt{2}\end{bmatrix}-\sqrt{2}\begin{bmatrix}1/\sqrt{2}\\ 0\\ -1/\sqrt{2}\end{bmatrix}=\begin{bmatrix}0\\ 1\\ 0\end{bmatrix}.\]
+
+This is already a unit vector, so it is \(q_{3}\). I went to desperate lengths to cut down the number of square roots (the painful part of Gram-Schmidt). The result is a set of orthonormal vectors \(q_{1}\), \(q_{2}\), \(q_{3}\), which go into the columns of an orthogonal matrix \(Q\):
+
+\[\textbf{Orthonormal basis}\qquad Q=\begin{bmatrix}&&&\\ q_{1}&q_{2}&q_{3}\\ &&&\\ \end{bmatrix}=\begin{bmatrix}1/\sqrt{2}&1/\sqrt{2}&0\\ 0&0&1\\ 1/\sqrt{2}&-1/\sqrt{2}&0\end{bmatrix}.\]
+
+**3T** The Gram-Schmidt process starts with independent vectors \(a_{1},\dots,a_{n}\) and ends with orthonormal vectors \(q_{1},\dots,q_{n}\). At step \(j\) it subtracts from \(a_{j}\) its components in the directions \(q_{1},\dots,q_{j-1}\) that are already settled:
+
+\[A_{j}=a_{j}-(q_{1}^{\mathrm{T}}a_{j})q_{1}-\dots-(q_{j-1}^{\mathrm{T}}a_{j})q_ {j-1}.\] (11)
+
+Then \(q_{j}\) is the unit vector \(A_{j}/\|A_{j}\|\).
+
+_Remark on the calculations_ I think it is easier to compute the orthogonal \(a\), \(B\), \(C\), without forcing their lengths to equal one. Then square roots enter only at the end, when

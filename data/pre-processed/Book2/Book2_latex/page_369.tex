@@ -1,0 +1,11 @@
+We can express the total portfolio value in period \(t\) as
+
+\[V_{t}=V_{1}(1+r_{1})(1+r_{2})\cdots(1+r_{t-1}),\] (17.1)
+
+where \(V_{1}\) is the total amount initially invested in period \(t=1\). This total value time series is often plotted using \(V_{1}=\$10000\) as the initial investment by convention. The product in (17.1) arises from re-investing our total portfolio value (including any past gains or losses) in each period. In the simple case when the last asset is risk-free and we choose \(w=e_{n}\), the total value grows as \(V_{t}=V_{1}(1+\mu^{\mathrm{rf}})^{t-1}\). This is called _compounded interest_ at rate \(\mu^{\mathrm{rf}}\).
+
+When the returns \(r_{t}\) are small (say, a few percent), and \(T\) is not too big (say, a few hundred), we can approximate the product above using the sum or average of the returns. To do this we expand the product in (17.1) into a sum of terms, each of which involves a product of some of the returns. One term involves none of the returns, and is \(V_{1}\). There are \(t-1\) terms that involve just one return, which have the form \(V_{1}r_{s}\), for \(s=1,\ldots,t-1\). All other terms in the expanded product involve the product of at least two returns, and so can be neglected since we assume that the returns are small. This leads to the approximation
+
+\[V_{t}\approx V_{1}+V_{1}(r_{1}+\cdots+r_{t-1}),\]
+
+which for \(t 

@@ -1,0 +1,19 @@
+than some chosen threshold to their sign times the chosen threshold. Assuming, for example, that a feature entry \(x_{5}\) has already been standardized (so it represents \(z\)-scores across the examples), we replace \(x_{5}\) with its winsorized value (with threshold 3),
+
+\[\tilde{x}_{5}=\left\{\begin{array}{rl}x_{5}&|x_{5}|\leq 3\\ 3&x_{5}>3\\ -3&x_{5}<-3.\end{array}\right.\]
+
+The term winsorize is named after the statistician Charles P. Winsor.
+
+Log transform.When feature values are positive and vary over a wide range, it is common to replace them with their logarithms. If the feature value also includes the value 0 (so the logarithm is undefined) a common variation on the log transformation is to use \(\tilde{x}_{k}=\log(x_{k}+1)\). This compresses the range of values that we encounter. As an example, suppose the original features record the number of visits to websites over some time period. These can easily vary over a range of 10000:1 (or even more) for a very popular website and a less popular one; taking the logarithm of the visit counts gives a feature with less variation, which is possibly more interpretable. (The decision as to whether to use the original feature values or their logarithms can be decided by validation.)
+
+#### Creating new features
+
+Expanding categoricals.Some features take on only a few values, such as \(-1\) and 1 or 0 and 1, which might represent some value like presence or absence of some symptom. (Such features are called Boolean.) A Likert scale response (see page 71) naturally only takes on a small number of values, such as \(-2\), \(-1\), 0, 1, 2. Another example is an original feature that takes on the values \(1,2,\ldots,7\), representing the day of the week. Such features are called _categorical_ in statistics, since they specify which category the example is in, and not some real number.
+
+Expanding a categorical feature with \(l\) values means replacing it with a set of \(l-1\) new features, each of which is Boolean, and simply records whether or not the original feature has the associated value. (When all these features are zero, it means the original feature had the default value.) As an example, suppose the original feature \(x_{1}\) takes on only the values \(-1\), 0, and 1. Using the feature value 0 as the default feature value, we replace \(x_{1}\) with the two mapped features
+
+\[f_{1}(x)=\left\{\begin{array}{rl}1&x_{1}=-1\\ 0&\text{otherwise,}\end{array}\right.\qquad f_{2}(x)=\left\{\begin{array}{rl}1 &x_{1}=1\\ 0&\text{otherwise.}\end{array}\right.\]
+
+In words, \(f_{1}(x)\) tells us if \(x_{1}\) has the value \(-1\), and \(f_{2}(x)\) tells us if \(x_{1}\) has the value 1. (We do not need a new feature for the default value \(x_{1}=0\); this corresponds to \(f_{1}(x)=f_{2}(x)=0\).) This feature mapping is shown in table 13.3.
+
+Expanding a categorical feature with \(l\) values into \(l-1\) features that encode whether the feature has one of the (non-default) values is sometimes called _one-hot encoding_, because for any data example, only one of the new feature values is one, and the others are zero. (When the original feature has the default value, all the new features are zero.) 

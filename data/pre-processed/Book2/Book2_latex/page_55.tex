@@ -1,0 +1,21 @@
+
+
+## Chapter 3 Norm and distance
+
+In this chapter we focus on the norm of a vector, a measure of its magnitude, and on related concepts like distance, angle, standard deviation, and correlation.
+
+### 3.1 Norm
+
+The _Euclidean norm_ of an \(n\)-vector \(x\) (named after the Greek mathematician Euclid), denoted \(\|x\|\), is the squareroot of the sum of the squares of its elements,
+
+\[\|x\|=\sqrt{x_{1}^{2}+x_{2}^{2}+\cdots+x_{n}^{2}}.\]
+
+The Euclidean norm can also be expressed as the squareroot of the inner product of the vector with itself, _i.e._, \(\|x\|=\sqrt{x^{T}x}\).
+
+The Euclidean norm is sometimes written with a subscript 2, as \(\|x\|_{2}\). (The subscript 2 indicates that the entries of \(x\) are raised to the second power.) Other less widely used terms for the Euclidean norm of a vector are the _magnitude_, or _length_, of a vector. (The term _length_ should be avoided, since it is also often used to refer to the dimension of the vector.) We use the same notation for the norms of vectors of different dimensions.
+
+As simple examples, we have
+
+\[\left\|\left[\begin{array}{c}2\\ -1\\ 2\end{array}\right]\right\|=\sqrt{9}=3,\qquad\left\|\left[\begin{array}{c}0 \\ -1\end{array}\right]\right\|=1.\]
+
+When \(x\) is a scalar, _i.e._, a 1-vector, the Euclidean norm is the same as the absolute value of \(x\). Indeed, the Euclidean norm can be considered a generalization or extension of the absolute value or magnitude, that applies to vectors. The double bar notation is meant to suggest this. Like the absolute value of a number, the norm of a vector is a (numerical) measure of its magnitude. We say a vector is _small_ if its norm is a small number, and we say it is _large_ if its norm is a large number. (The numerical values of the norm that qualify for small or large depend on the particular application and context.)

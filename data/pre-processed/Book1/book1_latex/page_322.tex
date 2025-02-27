@@ -1,0 +1,24 @@
+
+
+### Complex Matrices
+
+It is no longer possible to work only with real vectors and real matrices In the first half of this book, when the basic problem was \(Ax-b\), the solution was real when \(A\) and \(b\) were real. Complex numbers could have been permitted. but would have contributed nothing new. Now we cannot avoid them. A real matrix has real coefficients in \(\det(A-\lambda I)\), but the eigenvalues (as in rotations) may be complex.
+
+We now introduce the space \(\mathbf{C}^{n}\) of vectors with \(n\)_complex_ components. Addition and matrix multiplication follow the same rules as before. _Length is computed differently_. The old way, the vector in \(\mathbf{C}^{2}\) with components \((1,i)\) would have zero length: \(1^{2}+i^{2}=0\), not good. The correct length squared is \(1^{2}+|i|^{2}=2\).
+
+This change to \(\|x\|^{2}=|x_{1}|^{2}+\cdots+|x_{n}|^{2}\) forces a whole series of other changes. The inner product, the transpose, the definitions of symmetric and orthogonal matrices, all need to be modified for complex numbers. The new definitions coincide with the old when the vectors and matrices are real. We have listed these changes in a table at the end of the section. and we explain them as we go.
+
+That table virtually amounts to a dictionary for translating real into complex. We hope it will be useful to the reader. We particularly want to find out about _symmetric matrices_ and _Hermitian matrices_: _Where are their eigenvalues, and what is special about their eigenvectors_? For practical purposes, those are the most important questions in the theory of eigenvalues. We call attention in advance to the answers:
+
+1. _Every symmetric matrix (and Hermitian matrix) has real eigenvalues._
+2. _Its eigenvectors can be chosen to be orthonormal._
+
+Strangely, to prove that the eigenvalues are real we begin with the opposite possibility--and that takes us to complex numbers, complex vectors, and complex matrices.
+
+### Complex Numbers and Their Conjugates
+
+Probably the reader has already met complex numbers; a review is easy to give. The important ideas are the _complex conjugate_\(\bar{x}\) and the _absolute value_\(|x|\). Everyone knows that whatever \(i\) is, it satisfies the equation \(i^{2}=-1\). It is a pure imaginary number, and so are its multiples \(ib\); \(b\) is real. The sum \(a+ib\) is a complex number, and it is plotted in a natural way on the complex plane (Figure 5.4).
+
+The real numbers \(a\) and the imaginary numbers \(ib\) are special cases of complex numbers; they lie on the axes. Two complex numbers are easy to add:
+
+\[\mbox{\bf Complex addition}\qquad(a+ib)+(c+id)=(a+c)+i(b+d).\]

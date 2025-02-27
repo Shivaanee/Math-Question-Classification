@@ -1,0 +1,33 @@
+
+
+### Forms on Inner Product Spaces
+
+If \(T\) is a linear operator on a finite-dimensional inner product space \(V\) the function \(f\) defined on \(V\times V\) by
+
+\[f(\alpha,\beta)=(T\alpha|\beta)\]
+
+may be regarded as a kind of substitute for \(T\). Many questions about \(T\) are equivalent to questions concerning \(f\). In fact, it is easy to see that \(f\) determines \(T\). For if \(\mathfrak{G}=\{\alpha_{i},\,.\,.\,.\,,\,\alpha_{n}\}\) is an orthonormal basis for \(V\), then the entries of the matrix of \(T\) in \(\mathfrak{G}\) are given by
+
+\[A_{jk}=f(\alpha_{k},\,\alpha_{j}).\]
+
+It is important to understand why \(f\) determines \(T\) from a more abstract point of view. The crucial properties of \(f\) are described in the following definition.
+
+_Definition._ \(A\) (**sesqui-linear**) **form** _on a real or complex vector space \(V\) is a function \(f\) on \(V\times V\) with values in the field of scalars such that_
+
+(a) \(f(c\alpha+\beta,\,\gamma)=cf(\alpha,\,\gamma)+f(\beta,\,\gamma)\)
+
+(b) \(f(\alpha,\,c\beta+\,\gamma)=\bar{c}f(\alpha,\,\beta)+f(\alpha,\,\gamma)\)
+
+_for all \(\alpha,\,\beta,\,\gamma\) in \(V\) and all scalars \(c\)._
+
+Thus, a sesqui-linear form is a function on \(V\times V\) such that \(f(\alpha,\,\beta)\) is a linear function of \(\alpha\) for fixed \(\beta\) and a conjugate-linear function of \(\beta\) for fixed \(\alpha\). In the real case, \(f(\alpha,\,\beta)\) is linear as a function of each argument; in other words, \(f\) is a **bilinear form.** In the complex case, the sesqui-linear form \(f\) is not bilinear unless \(f=0\). In the remainder of this chapter, we shall omit the adjective 'sesqui-linear' unless it seems important to include it.
+
+If \(f\) and \(g\) are forms on \(V\) and \(c\) is a scalar, it is easy to check that \(cf+g\) is also a form. From this it follows that any linear combination of forms on \(V\) is again a form. Thus the set of all forms on \(V\) is a subspace of the vector space of all scalar-valued functions on \(V\times V\).
+
+_Theorem 1._ _Let \(V\) be a finite-dimensional inner product space and \(f\) a form on \(V\). Then there is a unique linear operator \(T\) on \(V\) such that_
+
+\[f(\alpha,\beta)=(T\alpha|\beta)\]
+
+_for all \(\alpha,\,\beta\) in \(V\), and the map \(f\to T\) is an isomorphism of the space of forms onto \(L(V,\,V)\)._
+
+_Proof._ Fix a vector \(\beta\) in \(V\). Then \(\alpha\to f(\alpha,\,\beta)\) is a linear function on \(V\). By Theorem 6 there is a unique vector \(\beta^{\prime}\) in \(V\) such that \(f(\alpha,\beta)=(\alpha|\beta^{\prime})\) for every \(\alpha\). We define a function \(U\) from \(V\) into \(V\) by setting \(U\beta=\beta^{\prime}\). Then

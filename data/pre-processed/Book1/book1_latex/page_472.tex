@@ -1,0 +1,21 @@
+Basis for the Tensor Product.When \(\mathbf{V}\) is \(\mathbf{R}^{2}\) and \(\mathbf{W}\) is \(\mathbf{R}^{3}\), we have a standard basis for all 2 by 3 matrices (a six-dimensional space):
+
+\[\mathbf{Basis}\qquad\begin{bmatrix}1&0&0\\ 0&0&0\end{bmatrix}\begin{bmatrix}0&1&0\\ 0&0&0\end{bmatrix}\begin{bmatrix}0&0&1\\ 0&0&0\end{bmatrix}\begin{bmatrix}0&0&0\\ 1&0&0\end{bmatrix}\begin{bmatrix}0&0&0\\ 0&1&0\end{bmatrix}\begin{bmatrix}0&0&0\\ 0&0&1\end{bmatrix}.\]
+
+That basis for \(\mathbf{R}^{2}\otimes\mathbf{R}^{3}\) was constructed in a natural way. I started with the standard basis \(v_{1}=(1,0)\) and \(v_{2}=(0,1)\) for \(\mathbf{R}^{2}\). Those were combined with the basis vectors \(w_{1}=(1,0,0)\), \(w_{2}=(0,1,0)\), and \(w_{3}=(0,0,1)\) in \(\mathbf{R}^{3}\). Each pair \(v_{i}\otimes w_{j}\) corresponds to one of the six basis vectors (2 by 3 matrices above) in the tensor product \(\mathbf{V}\otimes\mathbf{W}\). This construction succeeds for subspaces too:
+
+\[\mathbf{Basis}:\quad\text{Suppose $\mathbf{V}$ and $\mathbf{W}$ are subspaces of $\mathbf{R}^{m}$ and $\mathbf{R}^{p}$ with bases $v_{1},\ldots,v_{n}$}\] \[\quad\text{and $w_{1},\ldots,w_{q}$. Then the $nq$ rank-1 matrices $v_{i}w_{j}^{\mathrm{T}}$ are a basis for $\mathbf{V}\otimes\mathbf{W}$.}\]
+
+\(\mathbf{V}\otimes\mathbf{W}\) is an \(nq\)-dimensional subspace of \(m\) by \(p\) matrices, An algebraist would match this matrix construction to the abstract definition of \(\mathbf{V}\otimes\mathbf{W}\). Then tensor products can go beyond the specific case of column vectors.
+
+### The Kronecker Product \(A\otimes B\) of Two Matrices
+
+An \(m\) by \(n\) matrix \(A\) transforms any vector \(v\) in \(\mathbf{R}^{n}\) to a vector \(Av\) in \(\mathbf{R}^{m}\), Similarly, a \(p\) by \(q\) matrix \(B\) transforms \(w\) to \(Bw\). The two matrices together transform \(vw^{\mathrm{T}}\) to \(Avw^{\mathrm{T}}B^{\mathrm{T}}\). This is a linear transformation (of tensor products) and it must come from a matrix.
+
+What is the size of that matrix \(A\otimes B\)? It takes the \(nq\)-dimensional space \(\mathbf{R}^{n}\otimes\mathbf{R}^{q}\) to the \(mp\)-dimensional space \(\mathbf{R}^{m}\otimes\mathbf{R}^{p}\). Therefore the matrix has shape \(mp\) by \(nq\). We will write this Kronecker product (also called tensor product) as a block matrix:
+
+\[\begin{array}{ccccc}\mathbf{Kronecker\ product}\\ mp\ \mathbf{rows},nq\ \mathbf{columns}\end{array}\qquad A\otimes B=\begin{bmatrix}a_{11}B&a_{ 12}B&\cdots&a_{1n}B\\ a_{21}B&a_{22}B&\cdots&a_{2n}B\\ .&.&\cdots&.\\ a_{m1}B&a_{m2}B&\cdots&a_{mn}B\end{bmatrix}.\] (4)
+
+Notice the special structure of this matrix! A lot of important block matrices have that Kronecker form. They often come from two-dimensional applications, where \(A\) is a "matrix in the \(x\)-direction" and \(B\) is acting in the \(y\)-direction (examples below). If \(A\) and \(B\) are square, so \(m=n\) and \(p=q\), then the big matrix \(A\otimes B\) is also square.
+
+**Example 8**.: (Finite differences in the \(x\) and \(y\) directions) Laplace's partial differential equation \(-\partial^{2}u/\partial x^{2}-\partial^{2}u/\partial y^{2}=0\) is replaced by finite differences, to find values for \(u\) on a two-dimensional grid. Differences in the \(x\)-direction add to differences in the \(y\)-direction, connecting five neighboring values of \(u\): 

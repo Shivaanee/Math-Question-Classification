@@ -1,0 +1,23 @@
+Setting \(P_{\texttt{k}}=1\) and \(P_{\texttt{j}}=0\) for \(j>k\), we then have an \(n\times n\) upper-triangular matrix \(P\) with \(P_{\texttt{k}}=1\) and
+
+\[\beta_{k}=\sum\limits_{j=1}^{k}P_{\texttt{j}}\alpha_{\texttt{j}}\]
+
+for \(k=1,\ldots,n\). Suppose \(1\leq i<k\). Then \(\beta_{i}\) is in \(W_{i}\) and \(W_{i}\subset W_{\texttt{k}-1}\). Since \(\beta_{k}\) belongs to \(W^{\prime}_{\texttt{k}-1}\), it follows that \(f(\beta_{i},\beta_{k})=0\). Let \(B\) denote the matrix of \(f\) in the ordered basis \(\{\beta_{1},\ldots,\beta_{n}\}\). Then
+
+\[B_{\texttt{k}i}=f(\beta_{i},\beta_{k})\]
+
+so \(B_{\texttt{k}i}=0\) when \(k>i\). Thus \(B\) is upper-triangular. On the other hand,
+
+\[B=P^{\texttt{*}}AP.\]
+
+Conversely, suppose \(P\) is an upper-triangular matrix with \(P_{\texttt{k}}=1\) such that \(P^{\texttt{*}}AP\) is upper-triangular. Set
+
+\[\beta_{k}=\sum\limits_{j}P_{\texttt{j}}\alpha_{\texttt{j}},\qquad(1\leq k\leq n).\]
+
+Then \(\{\beta_{1},\ldots,\beta_{k}\}\) is evidently a basis for \(W_{\texttt{k}}\). Suppose \(k>1\). Then \(\{\beta_{1},\ldots,\beta_{k-1}\}\) is a basis for \(W_{\texttt{k}-1}\), and since \(f(\beta_{i},\beta_{k})=0\) when \(i<k\), we see that \(\beta_{k}\) is a vector in \(W^{\prime}_{\texttt{k}-1}\). The equation defining \(\beta_{k}\) implies
+
+\[\alpha_{k}=-\left(\sum\limits_{j=1}^{k-1}P_{\texttt{j}}\alpha_{\texttt{j}} \right)+\beta_{k}.\]
+
+Now \(\sum\limits_{j=1}^{k-1}P_{\texttt{j}}\alpha_{\texttt{j}}\) belongs to \(W_{\texttt{k}-1}\) and \(\beta_{k}\) is in \(W^{\prime}_{\texttt{k}-1}\). Therefore, \(P_{\texttt{j}\texttt{k}},\ldots,P_{\texttt{k}-1\texttt{k}}\) are the unique scalars such that
+
+\[E_{\texttt{k}-1}\alpha_{ 

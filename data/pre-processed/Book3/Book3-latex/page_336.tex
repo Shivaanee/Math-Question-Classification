@@ -1,0 +1,32 @@
+_._
+
+1. _There is an upper-triangular matrix_ \(P\) _with_ \(P_{kk}=1\)__\((1\leq k\leq n)\) _such that the matrix_ \(B=AP\) _is lower-triangular._
+2. _The principal minors of_ \(A\) _are all different from_ \(0\)_._
+
+Proof.: Let \(P\) be any \(n\times n\) matrix and set \(B=AP\). Then
+
+\[B_{jk}=\sum_{r}A_{ir}P_{rk}.\]
+
+If \(P\) is upper-triangular and \(P_{kk}=1\) for every \(k\), then
+
+\[\sum_{r=1}^{k-1}A_{ir}P_{rk}=B_{jk}-A_{kk},\qquad k>1.\]
+
+Now \(B\) is lower-triangular provided \(B_{jk}=0\) for \(j<k\). Thus \(B\) will be lower-triangular if and only if
+
+\[\sum_{r=1}^{k-1}A_{ir}P_{rk}=-A_{kk},\qquad 1\leq j\leq k-1\] \[2\leq k\leq n.\]
+
+So, we see that statement (a) in the lemma is equivalent to the statement that there exist scalars \(P_{rk}\), \(1\leq r\leq k\), \(1\leq k\leq n\), which satisfy (9-5) and \(P_{kk}=1\), \(1\leq k\leq n\).
+
+In (9-5), for each \(k>1\) we have a system of \(k-1\) linear equations for the unknowns \(P_{1k}\), \(P_{kk}\), \(\ldots\), \(P_{k-1,k}\). The coefficient matrix of that system is
+
+\[\begin{bmatrix}A_{11}&\ldots&A_{1,k-1}\\ \vdots&&\vdots\\ A_{k-1}&\ldots&A_{k-1,k-1}\end{bmatrix}\]
+
+and its determinant is the principal minor \(\Delta_{k-1}(A)\). If each \(\Delta_{k-1}(A)\neq 0\), the systems (9-5) have unique solutions. We have shown that statement (b) implies statement (a) and that the matrix \(P\) is unique.
+
+Now suppose that (a) holds. Then, as we shall see,
+
+\[\Delta_{k}(A)=\Delta_{k}(B)\] \[=B_{11}B_{22}\,\cdots\,B_{kk},\qquad k=1,\,\ldots\,,\,n.\]
+
+To verify (9-6), let \(A_{1}\), \(\ldots\), \(A_{n}\) and \(B_{1}\), \(\ldots\), \(B_{n}\) be the columns of \(A\) and \(B\), respectively. Then
+
+\[B_{1}=A_{1}\] (9-7) \[B_{r}=\sum_{j=1}^{r-1}P_{jr}A_{j}+A 

@@ -1,0 +1,11 @@
+an AR model are computed using the \((24)(24)-8=568\) samples in the training set. The RMS error on the training set is \(1.03^{\circ}\)F. The RMS prediction error on the test set is \(0.98^{\circ}\)F, which is similar to the RMS prediction error on the training set, giving us confidence that the AR model is not over-fit. (The fact that the test RMS error is very slightly smaller than the training RMS error has no significance.) Figure 13 shows the prediction on the first five days of the test set. The predictions look very similar to those shown in figure 13.9.
+
+Limitations of out-of-sample and cross-validation.Here we mention a few limitations of out-of-sample and cross-validation. First, the basic assumption that the test data and future data are similar can (and does) fail in some applications. For example, a model that predicts consumer demand, trained and validated on this year's data, can make much poorer predictions next year, simply because consumer tastes shift. In finance, patterns of asset returns periodically shift, so models that predict well on test data from this year need not predict well next year.
+
+Another limitation arises when the data set is small, which makes it harder to interpret out-of-sample and cross-validation results. In this case the out-of-sample test RMS error might be small due to good luck, or large due to bad luck, in the selection of the test set. In cross-validation the test results can vary considerably, due to luck of which data points fall into the different folds. Here too concepts from statistics can make this idea more precise, but we leave it as an informal idea: With small data sets, we can expect to see more variation in test RMS prediction error than with larger data sets.
+
+Despite these limitations, out-of-sample and cross-validation are powerful and useful tools for assessing the generalization ability of a model.
+
+Figure 13: 13 Hourly temperature at Los Angeles International Airport between 12:53AM on May 25, 2016, and 11:53PM on May 29, 2016, shown as circles. The solid line is the prediction of an auto-regressive model with eight coefficients, developed using training data from May 1 to May 24.
+
+ 

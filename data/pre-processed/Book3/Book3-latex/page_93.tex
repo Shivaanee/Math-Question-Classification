@@ -1,0 +1,18 @@
+
+
+**7.**: Find two linear operators \(T\) and \(U\) on \(R^{2}\) such that \(TU=0\) but \(UT\not\simeq 0\).
+**8.**: Let \(V\) be a vector space over the field \(F\) and \(T\) a linear operator on \(V\). If \(T^{2}=0\), what can you say about the relation of the range of \(T\) to the null space of \(T\)? Give an example of a linear operator \(T\) on \(R^{2}\) such that \(T^{2}=0\) but \(T\not\simeq 0\).
+**9.**: Let \(T\) be a linear operator on the finite-dimensional space \(V\). Suppose there is a linear operator \(U\) on \(V\) such that \(TU=I\). Prove that \(T\) is invertible and \(U=T^{-1}\). Give an example which shows that this is false when \(V\) is not finite-dimensional. (_Hint:_ Let \(T=D\), the differentiation operator on the space of polynomial functions.)
+**10.**: Let \(A\) be an \(m\times n\) matrix with entries in \(F\) and let \(T\) be the linear transformation from \(F^{n\times 1}\) into \(F^{m\times 1}\) defined by \(T(X)=AX\). Show that if \(m<n\) it may happen that \(T\) is onto without being non-singular. Similarly, show that if \(m>n\) we may have \(T\) non-singular but not onto.
+**11.**: Let \(V\) be a finite-dimensional vector space and let \(T\) be a linear operator on \(V\). Suppose that rank \((T^{2})=\) rank \((T)\). Prove that the range and null space of \(T\) are disjoint, i.e., have only the zero vector in common.
+**12.**: Let \(p\), \(m\), and \(n\) be positive integers and \(F\) a field. Let \(V\) be the space of \(m\times n\) matrices over \(F\) and \(W\) the space of \(p\times n\) matrices over \(F\). Let \(B\) be a fixed \(p\times m\) matrix and let \(T\) be the linear transformation from \(V\) into \(W\) defined by \(T(A)=BA\). Prove that \(T\) is invertible if and only if \(p=m\) and \(B\) is an invertible \(m\times m\) matrix.
+
+### Isomorphism
+
+If \(V\) and \(W\) are vector spaces over the field \(F\), any one-one linear transformation \(T\) of \(V\) onto \(W\) is called an **isomorphism of \(V\) onto \(W\)**. If there exists an isomorphism of \(V\) onto \(W\), we say that \(V\) is **isomorphic** to \(W\).
+
+Note that \(V\) is trivially isomorphic to \(V\), the identity operator being an isomorphism of \(V\) onto \(V\). Also, if \(V\) is isomorphic to \(W\) via an isomorphism \(T\), then \(W\) is isomorphic to \(V\), because \(T^{-1}\) is an isomorphism of \(W\) onto \(V\). The reader should find it easy to verify that if \(V\) is isomorphic to \(W\) and \(W\) is isomorphic to \(Z\), then \(V\) is isomorphic to \(Z\). Briefly, isomorphism is an equivalence relation on the class of vector spaces. If there exists an isomorphism of \(V\) onto \(W\), we may sometimes say that \(V\) and \(W\) are isomorphic, rather than \(V\) is isomorphic to \(W\). This will cause no confusion because \(V\) is isomorphic to \(W\) if and only if \(W\) is isomorphic to \(V\).
+
+**Theorem 10.**: _Every \(n\)-dimensional vector space over the field \(F\) is isomorphic to the space \(F^{n}\)._
+
+Proof.: Let \(V\) be an \(n\)-dimensional space over the field \(F\) and let \(B=\{\alpha_{1},\ldots,\alpha_{n}\}\) be an ordered basis for \(V\). We define a function

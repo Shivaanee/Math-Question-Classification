@@ -1,0 +1,24 @@
+
+
+## Spanning Trees and the Greedy Algorithm
+
+A fundamental network model is the _shortest path problem_--in which the edges have _lengths_ instead of capacities. We want the shortest path from source to sink. If the edges are telephone lines and the lengths are delay times, we are finding the quickest route for a call, If the nodes are computers, we are looking for the perfect message-passing protocol.
+
+A closely related problem finds the _shortest spanning tree_--a set of \(n-1\) edges connecting all the nodes of the network. Instead of getting quickly between a source and a sink, we are now minimizing the cost of connecting _all_ the nodes. There are no loops, because the cost to close a loop is unnecessary. _A spanning tree connects the nodes without loops_, and we want the shortest one. Here is one possible algorithm:
+
+1. _Start from any node \(s\) and repeat the following step:_ _Add the shortest edge that connects the current tree to a new node._
+
+In Figure 8.7, the edge lengths would come in the order 1, 2, 7, 4, 3, 6. The last step skips the edge of length 5, which closes a loop. The total length is 23--but is it minimal? We accepted the edge of length 7 very early, and the second algorithm holds out longer.
+
+2. _Accept edges in increasing order of length, rejecting edges that complete a loop._
+
+Now the edges come in the order 1, 2, 3, 4, 6 (again rejecting 5), and 7. They are the same edges--although that will not always happen. Their total length is the same--and that _does_ always happen. _The spanning tree problem is exceptional, because it can be solved in one pass_.
+
+In the language of linear programming, we are finding the optimal corner first. The spanning tree problem is being solved like back-substitution, with _no false steps_. This general approach is called the _greedy algorithm_. Here is another greedy idea:
+
+1. _Build trees from all \(n\) nodes, by repeating the following step:_ _Select any tree and add the minimum-length edge going out from that tree._
+
+The steps depend on the selection order of the trees. To stay with the same tree is algorithm 1. To take the lengths in order is algorithm 2. To sweep through all the trees
+
+Figure 8.7: A network and a shortest spanning tree of length 23.
+

@@ -1,0 +1,32 @@
+House price regression model.As a simple example of a regression model, suppose that \(y\) is the selling price of a house in some neighborhood, over some time period, and the 2-vector \(x\) contains attributes of the house:
+
+* \(x_{1}\) is the house area (in 1000 square feet),
+* \(x_{2}\) is the number of bedrooms.
+
+If \(y\) represents the selling price of the house, in thousands of dollars, the regression model
+
+\[\hat{y}=x^{T}\beta+v=\beta_{1}x_{1}+\beta_{2}x_{2}+v\]
+
+predicts the price in terms of the attributes or features. This regression model is not meant to describe an exact relationship between the house attributes and its selling price; it is a model or approximation. Indeed, we would expect such a model to give, at best, only a crude approximation of selling price.
+
+As a specific numerical example, consider the regression model parameters
+
+\[\beta=(148.73,-18.85),\qquad v=54.40.\] (2.9)
+
+These parameter values were found using the methods we will see in chapter 13, based on records of sales for 774 houses in the Sacramento area. Table 2.3 shows the feature vectors \(x\) for five houses that sold during the period, the actual sale price \(y\), and the predicted price \(\hat{y}\) from the regression model above. Figure 2.4 shows the predicted and actual sale prices for 774 houses, including the five houses in the table, on a scatter plot, with actual price on the horizontal axis and predicted price on the vertical axis.
+
+We can see that this particular regression model gives reasonable, but not very accurate, predictions of the actual sale price. (Regression models for house prices that are used in practice use many more than two regressors, and are much more accurate.)
+
+The model parameters in (2.9) are readily interpreted. The parameter \(\beta_{1}=148.73\) is the amount the regression model price prediction increases (in thousands of dollars) when the house area increases by 1000 square feet (with the same number of bedrooms). The parameter \(\beta_{2}=-18.85\) is the price prediction increase with the addition of one bedroom, with the total house area held constant, in units of
+
+\begin{table}
+\begin{tabular}{c c c c c} \hline \hline House & \(x_{1}\) (area) & \(x_{2}\) (beds) & \(y\) (price) & \(\hat{y}\) (prediction) \\ \hline
+1 & 0.846 & 1 & 115.00 & 161.37 \\
+2 & 1.324 & 2 & 234.50 & 213.61 \\
+3 & 1.150 & 3 & 198.00 & 168.88 \\
+4 & 3.037 & 4 & 528.00 & 430.67 \\
+5 & 3.984 & 5 & 572.50 & 552.66 \\ \hline \hline \end{tabular}
+\end{table}
+Table 2.3: Five houses with associated feature vectors shown in the second and third columns. The fourth and fifth column give the actual price, and the price predicted by the regression model.
+
+ 

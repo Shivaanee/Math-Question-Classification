@@ -1,0 +1,25 @@
+Then \(C^{\rm T}AC\) must have one positive and one negative eigenvalue, like \(A\).
+
+**Example 6**.: This application is the important one:
+
+**6G**: For any symmetric matrix \(A\), _the signs of the pivots agree with the signs of the eigenvalues_. The eigenvalue matrix \(\Lambda\) and the pivot matrix \(D\) have the same number of positive entries, negative entries, and zero entries.
+
+We will assume that \(A\) allows the symmetric factorization \(A=LDL^{\rm T}\) (without row exchanges). By the law of inertia, \(A\) has the same number of positive eigenvalues as \(D\). But the eigenvalues of \(D\) are just its diagonal entries (the pivots). Thus the number of positive pivots matches the number of positive eigenvalues of \(A\).
+
+That is both beautiful and practical. It is beautiful because it brings together (for symmetric matrices) two parts of this book that were previously separate: _pivots_ and _eigenvalues_. It is also practical, because the pivots can locate the eigenvalues:
+
+\[\begin{array}{l}A\ \textbf{has positive pivots}\\ A-2I\ \textbf{has a negative pivot}\end{array}\qquad A=\begin{bmatrix}3&3&0\\ 3&10&7\\ 0&7&8\end{bmatrix}\qquad A-2I=\begin{bmatrix}1&3&0\\ 3&8&7\\ 0&7&6\end{bmatrix}.\]
+
+\(A\) has positive eigenvalues, by our test. But we know that \(\lambda_{\min}\)_is smaller than_ 2, because subtracting 2 dropped it below zero. The next step looks at \(A-I\), to see if \(\lambda_{\min}<1\). (It is, because \(A-I\) has a negative pivot.) That interval containing \(\lambda\) is cut in half at every step by checking the signs of the pivots.
+
+This was almost the first practical method of computing eigenvalues. It was dominant about 1960, after one important improvement--to make \(A\) tridiagonal first. Then the pivots are computed in \(2n\) steps instead of \(\frac{1}{6}n^{3}\). Elimination becomes fast, and the search for eigenvalues (by halving the intervals) becomes simple. The current favorite is the \(QR\) method in Chapter 7.
+
+### The Generalized Eigenvalue Problem
+
+Physics, engineering, and statistics are usually kind enough to produce symmetric matrices in their eigenvalue problems. _But sometimes \(Ax=\lambda x\) is replaced by \(Ax=\lambda Mx\). There are two matrices rather than one_.
+
+An example is the motion of two unequal masses in a line of springs:
+
+\[\begin{array}{l}m_{1}\frac{d^{2}v}{dt^{2}}+2v-w=0\\ m_{2}\frac{d^{2}w}{dt^{2}}-v+2w=0\end{array}\quad\text{or}\quad\begin{bmatrix} m_{1}&0\\ 0&m_{2}\end{bmatrix}\frac{d^{2}u}{dt^{2}}+\begin{bmatrix}2&-1\\ -1&2\end{bmatrix}u=0.\] (7)
+
+When the masses were equal, \(m_{1}=m_{2}=1\), this was the old system \(u^{\prime\prime}+Au=0\). Now it is \(Mu^{\prime\prime}+Au=0\), with a _mass matrix_\(M\). The eigenvalue problem arises when we look 

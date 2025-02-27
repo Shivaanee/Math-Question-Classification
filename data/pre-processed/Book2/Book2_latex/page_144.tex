@@ -1,0 +1,19 @@
+representing intersections and the edges representing road segments (one for each direction).
+
+For a network described by the directed graph example above, the vector
+
+\[x=(1,-1,1,0,1)\]
+
+is a circulation, since \(Ax=0\). This flow corresponds to a unit clockwise flow on the outer edges (1, 3, 5, and 2) and no flow on the diagonal edge (4). (Visualizing this explains why such vectors are called circulations.)
+
+Sources.In many applications it is useful to include additional flows called _source flows_ or _exogenous flows_, that enter or leave the network at the nodes, but not along the edges, as shown in figure 7.3. We denote these flows with an \(n\)-vector \(s\). We can think of \(s_{i}\) as a flow that enters the network at node \(i\) from outside, _i.e._, not from any edge. When \(s_{i}>0\) the exogenous flow is called a _source_, since it is injecting the quantity into the network at the node. When \(s_{i}<0\) the exogenous flow is called a _sink_, since it is removing the quantity from the network at the node.
+
+Flow conservation with sources.The equation \(Ax+s=0\) means that the flow is conserved at each node, counting the source flow: The total of all incoming flow, from the incoming edges and exogenous source, minus the total outgoing flow from outgoing edges and exogenous sinks, is zero.
+
+As an example, flow conservation with sources can be used as an approximate model of a power grid (ignoring losses), with \(x\) being the vector of power flows along the transmission lines, \(s_{i}>0\) representing a generator injecting power into the grid at node \(i\), \(s_{i}<0\) representing a load that consumes power at node \(i\), and \(s_{i}=0\) representing a substation where power is exchanged among transmission lines, with no generation or load attached.
+
+For the example above, consider the source vector \(s=(1,0,-1,0)\), which corresponds to an injection of one unit of flow into node 1, and the removal of one unit of flow at node 3. In other words, node 1 is a source, node 3 is a sink, and
+
+Figure 7.3: Network with four nodes and five edges, with source flows shown.
+
+ 

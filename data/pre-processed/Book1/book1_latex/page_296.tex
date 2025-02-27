@@ -1,0 +1,32 @@
+The powers \(6^{k}\) and \(1^{k}\) appear in that last matrix \(A^{k}\), mixed in by the eigenvectors.
+
+For the difference equation \(u_{k+1}=Au_{k}\), we emphasize the main point. Every eigenvector \(x\) produces a "pure solution" with powers of \(\lambda\):
+
+\[\boxed{One solution is}\qquad u_{0}=x,\quad u_{1}=\lambda x,\quad u_{2}=\lambda^{2}x,\ldots\]
+
+When the initial \(u_{0}\) is an eigenvector \(x\), this is _the_ solution: \(u_{k}=\lambda^{k}x\). In general \(u_{0}\) is not an eigenvector. But if \(u_{0}\) is a _combination_ of eigenvectors, the solution \(u_{k}\) is the same combination of these special solutions.
+
+\(5\)HIf \(u_{0}=c_{1}x_{1}+\cdots+c_{n}x_{n}\), then after \(k\) steps \(u_{k}=c_{1}\lambda_{1}^{k}x_{1}+\cdots+c_{n}\lambda_{n}^{k}x_{n}\).
+
+Choose the \(c\)'s to match the starting vector \(u_{0}\):
+
+\[u_{0}=\begin{bmatrix}x_{1}&\cdots&x_{n}\\ &&\\ \end{bmatrix}\begin{bmatrix}c_{1}\\ \vdots\\ c_{n}\end{bmatrix}=Sc\qquad\text{and}\qquad c=S^{-1}u_{0}.\] (6)
+
+### Markov Matrices
+
+There was an exercise in Chapter 1, about moving in and out of California, that is worth another look. These were the rules:
+
+_Each year \(\frac{1}{10}\) of the people outside California move in, and \(\frac{2}{10}\) of the people inside California move out. We start with \(y_{0}\) people outside and \(z_{0}\) inside._
+
+At the end of the first year the numbers outside and inside are \(y_{1}\) and \(z_{1}\):
+
+\[\begin{array}{ll}\textbf{Difference}&y_{1}=.9y_{0}+.2z_{0}\\ \textbf{equation}&z_{1}=.1y_{0}+.8z_{0}\end{array}\quad\text{or}\quad\begin{bmatrix} y_{1}\\ z_{1}\end{bmatrix}=\begin{bmatrix}.9&.2\\ .1&.8\end{bmatrix}\begin{bmatrix}y_{0}\\ z_{0}\end{bmatrix}.\]
+
+This problem and its matrix have the two essential properties of a _Markov process_:
+
+1. The total number of people stays fixed: _Each column of the Markov matrix adds up to_ 1. Nobody is gained or lost.
+2. The numbers outside and inside can never become negative: _The matrix has no negative entries_. The powers \(A^{k}\) are all nonnegative.3 Footnote 3: Furthermore, history is completely disregarded; each new \(u_{k+1}\) depends only on the current \(u_{k}\). Perhaps even our lives are examples of Markov processes, but I hope not.
+
+We solve this Markov difference equation using \(u_{k}=S\Lambda^{k}S^{-1}u_{0}\). Then we show that the population approaches a "steady state." First \(A\) has to be diagonalized:
+
+\[A-\lambda I=\begin{bmatrix}.9-\lambda&.2\\ .1&.8-\lambda\end{bmatrix}\quad\text{has}\quad\det(A-\lambda I)=\lambda^{2}- 1.7\lambda+.7\] 

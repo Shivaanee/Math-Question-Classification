@@ -1,0 +1,22 @@
+
+
+**21.**: Take \(A=\begin{bmatrix}1&1\\ 0&0\end{bmatrix}\) and \(B=\begin{bmatrix}0&0\\ 1&1\end{bmatrix}\). Then \(AB=\begin{bmatrix}1&1\\ 0&0\end{bmatrix}\). From \(C^{+}\) in Problem 15 we have \(A^{+}=\begin{bmatrix}\frac{1}{2}&0\\ \frac{1}{2}&0\end{bmatrix}\), \(B^{+}=\begin{bmatrix}0&\frac{1}{2}\\ 0&\frac{1}{2}\end{bmatrix}=(AB)^{+}\), and \((AB)^{+}\neq B^{+}A^{+}\).
+**23.**: \(A=Q_{1}\Sigma\,Q_{2}^{\mathbb{T}}\Rightarrow A^{+}=Q_{2}\Sigma^{+}\mathcal{Q} _{1}^{\mathbb{T}}\Rightarrow AA^{+}=Q_{1}\Sigma\,\Sigma^{+}Q_{1}^{\mathbb{T}}\). Squaring gives \((AA^{+})^{2}=Q_{1}\Sigma\,\Sigma^{+}\Sigma\,\Sigma^{+}Q_{1}^{\mathbb{T}}=Q_{1} \Sigma\,\Sigma^{+}Q_{1}^{\mathbb{T}}\). So we have projections: \((AA^{+})^{2}=AA^{+}=(AA^{+})^{\mathbb{T}}\) and similarly for \(A^{+}A\). \(AA^{+}\) and \(A^{+}A\) project onto the column space and row space of \(A\).
+
+**Problem Set 6.4, page 344**
+
+**1.**: \(P(x)=\begin{pmatrix}x_{1}^{2}-x_{1}x_{2}x_{2}-x_{2}x_{3}+\begin{pmatrix}x_{3}^ {2}-4x_{1}-4x_{3}\end{pmatrix}\) has \(\partial P/\partial x_{1}=2x_{1}-x_{2}-4\), \(\partial P/\partial x_{2}=\begin{pmatrix}x_{1}^{2}+2x_{2}-x_{3}\end{pmatrix}\) and \(\partial P/\partial x_{3}=-x_{2}+2x_{3}-4\).
+**3.**: \(\partial P_{1}/\partial x=x+y=0\) and \(\partial P_{1}/\partial y=x+2y-3=0\) give \(x=-3\) and \(y=3\). \(P_{2}\) has no minimum (let \(y\to\infty\)). It is associated with the semidefinite matrix \(\begin{bmatrix}1&0\\ 0&0\end{bmatrix}\).
+**5.**: Put \(x=(1,\,\ldots,\,1)\) in Rayleigh's quotient (the denominator becomes \(n\)). Since \(R(x)\) is always between \(\lambda_{1}\) and \(\lambda_{n}\), we get \(n\lambda_{1}\leq x^{\mathbb{T}}Ax=sum\)_of all \(a_{ij}\leq n\lambda_{n}\).
+**7.**: Since \(x^{\mathbb{T}}_{\cdot}Bx>0\) for all nonzero vectors \(x\), \(x^{\mathbb{T}}(A+B)x\) will be larger than \(x^{\mathbb{T}}Ax\). So the Rayleigh quotient is larger for \(A+B\) (in fact all \(n\) eigenvalues are increased).
+**9.**: Since \(x^{\mathbb{T}}Bx>0\), the Rayleigh quotient for \(A+B\) is larger than the quotient for \(A\).
+**11.**: The smallest eigenvalues in \(Ax=\lambda x\) and \(Ax=\lambda Mx\) are \(\frac{1}{2}\) and \((3-\sqrt{3})/4\).
+**13.**: (a) \(\lambda_{j}=\min_{S_{j}}[\max_{x\,\text{in}\,\,S_{j}}R(x)]>0\) means that every \(S_{j}\) contains a vector \(x\) with \(R(x)>0\). (b) \(y=C^{-1}x\) gives quotient \(\overline{R}(y)=\dfrac{y^{\mathbb{T}}C^{\mathbb{T}}ACy}{y^{\mathbb{T}}y}=\dfrac {x^{\mathbb{T}}Ax}{x^{\mathbb{T}}x}=R(x)>0\).
+**15.**: The extreme subspace \(S_{2}\) is spanned by the eigenvectors \(x_{1}\) and \(x_{2}\).
+**17.**: If \(Cx=C(A^{-1}b)\) equals \(d\) then \(CA^{-1}b-d\) is zero in the correction term in equation (5).
+
+**Problem Set 6.5, page 350**
+
+**1.**: \(Ay=b\) is \(4\begin{bmatrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{bmatrix}\begin{bmatrix}3/16\\ 4/16\\ 3/16\end{bmatrix}=b=\begin{bmatrix}1/2\\ 1/2\\ 1/2\end{bmatrix}\). The linear finite element \(U=\frac{3}{16}V_{1}+\frac{4}{16}V_{2}+\frac{3}{16}V_{3}\) equals the exact \(u=\frac{3}{16}\), \(\frac{4}{16}\), \(\frac{3}{16}\) at the nodes \(x=\frac{1}{4}\), \(\frac{1}{2}\), \(\frac{3}{4}\).
+**3.**: \(A_{33}=3\), \(b_{3}=\frac{1}{3}\). Then \(A=3\begin{bmatrix}2&-1&0\\ -1&2&-1\\ 0&-1&1\end{bmatrix}\), \(b=\frac{1}{3}\begin{bmatrix}2\\ 2\\ 1\end{bmatrix}\), \(Ay=b\) gives \(y=\frac{1}{9}\begin{bmatrix}5\\ 8\\ 9\end{bmatrix}\).
+

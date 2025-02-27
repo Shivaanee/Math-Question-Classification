@@ -1,0 +1,31 @@
+\(m\) equations, where \(m\) is the number of different atoms appearing in the chemical reaction. We define the \(m\times p\) matrix \(R\) by
+
+\[R_{ij}=\mbox{number of atoms of type $i$ in $R_{j}$},\quad i=1,\ldots,m,\quad j=1, \ldots,p.\]
+
+(The entries of \(R\) are nonnegative integers.) The matrix \(R\) is interesting; for example, its \(j\)th column gives the chemical formula for reactant \(R_{j}\). We let \(a\) denote the \(p\)-vector with entries \(a_{1},\ldots,a_{p}\). Then, the \(m\)-vector \(Ra\) gives the total number of atoms of each type appearing in the reactants. We define an \(m\times q\) matrix \(P\) in a similar way, so the \(m\)-vector \(Pb\) gives the total number of atoms of each type that appears in the products.
+
+We write the balance condition using vectors and matrices as \(Ra=Pb\). We can express this as
+
+\[\left[\begin{array}{cc}R&-P\end{array}\right]\left[\begin{array}{c}a\\ b\end{array}\right]=0,\]
+
+which is a set of \(m\) homogeneous linear equations.
+
+A simple solution of these equations is \(a=0\), \(b=0\). But we seek a nonzero solution. We can set one of the coefficients, say \(a_{1}\), to be one. (This might cause the other quantities to be fractional-valued.) We can add the condition that \(a_{1}=1\) to our system of linear equations as
+
+\[\left[\begin{array}{cc}R&-P\\ e_{1}^{T}&0\end{array}\right]\left[\begin{array}{c}a\\ b\end{array}\right]=e_{m+1}.\]
+
+Finally, we have a set of \(m+1\) equations in \(p+q\) variables that expresses the requirement that the chemical reaction balances. Finding a solution of this set of equations is called _balancing_ the chemical reaction.
+
+For the example of electrolysis of water described above, we have \(p=1\) reactant (water) and \(q=2\) products (molecular hydrogen and oxygen). The reaction involves \(m=2\) atoms, hydrogen and oxygen. The reactant and product matrices are
+
+\[R=\left[\begin{array}{c}2\\ 1\end{array}\right],\qquad P=\left[\begin{array}{cc}2&0\\ 0&2\end{array}\right].\]
+
+The balancing equations are then
+
+\[\left[\begin{array}{ccc}2&-2&0\\ 1&0&-2\\ 1&0&0\end{array}\right]\left[\begin{array}{c}a_{1}\\ b_{1}\\ b_{2}\end{array}\right]=\left[\begin{array}{c}0\\ 0\\ 1\end{array}\right].\]
+
+These equations are easily solved, and have the solution \((1,1,1/2)\). (Multiplying these coefficients by \(2\) gives the reaction given above.)
+
+Diffusion systems.A _diffusion system_ is a common model that arises in many areas of physics to describe _flows_ and _potentials_. We start with a directed graph with \(n\) nodes and \(m\) edges. (See SS6.1.) Some quantity (like electricity, heat, energy, or mass) can flow across the edges, from one node to another.
+
+With edge \(j\) we associate a flow (rate) \(f_{j}\), which is a scalar; the vector of all \(m\) flows is the flow \(m\)-vector \(f\). The flows \(f_{j}\) can be positive or negative: Positive 

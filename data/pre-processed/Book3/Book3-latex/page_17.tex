@@ -1,0 +1,17 @@
+So suppose that \(B\) is obtained from \(A\) by a single elementary row operation. No matter which of the three types the operation is, (1), (2), or (3), each equation in the system \(BX=0\) will be a linear combination of the equations in the system \(AX=0\). Since the inverse of an elementary row operation is an elementary row operation, each equation in \(AX=0\) will also be a linear combination of the equations in \(BX=0\). Hence these two systems are equivalent, and by Theorem 1 they have the same solutions.
+
+**Example 5**: _Suppose \(F\) is the field of rational numbers, and_
+
+\[A=\begin{bmatrix}2&-1&3&2\\ 1&4&0&-1\\ 2&6&-1&5\end{bmatrix}.\]
+
+_We shall perform a finite sequence of elementary row operations on \(A\), indicating by numbers in parentheses the type of operation performed._
+
+\[\begin{bmatrix}2&-1&3&2\\ 1&4&0&-1\\ 2&6&-1&5\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{\longrightarrow}} \begin{bmatrix}0&-9&3&4\\ 1&4&0&-1\\ 2&6&-1&5\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{\longrightarrow}} \begin{bmatrix}2\\ 2\\ 2\end{bmatrix}\] \[\begin{bmatrix}0&-9&3&4\\ 1&4&0&-1\\ 0&-2&-1&7\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{\longrightarrow }}\begin{bmatrix}0&-9&3&4\\ 1&4&0&-1\\ 0&1&\frac{1}{2}&-\frac{7}{2}\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{ \longrightarrow}}\] \[\begin{bmatrix}0&-9&3&4\\ 1&0&-2&13\\ 0&1&\frac{1}{2}&-\frac{7}{2}\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{ \longrightarrow}}\begin{bmatrix}0&0&\frac{1}{3}&-\frac{5}{2}\\ 1&0&-2&13\\ 0&1&\frac{1}{2}&-\frac{7}{2}\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{ \longrightarrow}}\] \[\begin{bmatrix}0&0&1&-\frac{1}{3}\\ 1&0&-2&13\\ 0&1&\frac{1}{2}&-\frac{7}{2}\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{ \longrightarrow}}\begin{bmatrix}0&0&1&-\frac{1}{3}\\ 1&0&0&\frac{1}{3}\\ 0&1&\frac{1}{2}&-\frac{7}{2}\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{ \longrightarrow}}\] \[\begin{bmatrix}0&0&1&-\frac{1}{3}\\ 1&0&0&\frac{1}{3}\\ 0&1&0&-\frac{5}{3}\end{bmatrix}\stackrel{{\eqref{eq:BX}}}{{ \longrightarrow}}\]
+
+_The row-equivalence of \(A\) with the final matrix in the above sequence tells us in particular that the solutions of_
+
+\[\begin{array}{ccccc}2x_{1}\rightarrow&x_{2}+3x_{3}+2x_{4}=0\\ x_{1}+4x_{2}&-&x_{4}=0\\ 2x_{1}+6x_{2}-&x_{3}+5x_{4}=0\end{array}\]
+
+_and_
+
+\[\begin{array}{ccccc}x_{1}&x_{2}&-\frac{1}{3}x_{4}=0\\ x_{1}&&+\frac{1}{3}.x_{4}=0\\ x_{2}&-&\hat{\hat{\hat{\hat{\hat{\hat{\hat{\hat{\hat{\hat{\ 

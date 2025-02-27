@@ -1,0 +1,23 @@
+
+
+## Chapter 16 Constrained least squares
+
+In this chapter we discuss a useful extension of the least squares problem that includes linear equality constraints. Like least squares, the constrained least squares problem can be reduced to a set of linear equations, which can be solved using the QR factorization.
+
+### 16.1 Constrained least squares problem
+
+In the basic least squares problem, we seek \(x\) that minimizes the objective function \(\|Ax-b\|^{2}\). We now add _constraints_ to this problem, by insisting that \(x\) satisfy the linear equations \(Cx=d\), where the matrix \(C\) and the vector \(d\) are given. The _linearly constrained least squares problem_ (or just constrained least squares problem) is written as
+
+\[\begin{array}{ll}\mbox{minimize}&\|Ax-b\|^{2}\\ \mbox{subject to}&Cx=d.\end{array}\] (16.1)
+
+Here \(x\), the variable to be found, is an \(n\)-vector. The problem data (which are given) are the \(m\times n\) matrix \(A\), the \(m\)-vector \(b\), the \(p\times n\) matrix \(C\), and the \(p\)-vector \(d\).
+
+We refer to the function \(\|Ax-b\|^{2}\) as the _objective_ of the problem, and the set of \(p\) linear equality constraints \(Cx=d\) as the _constraints_ of the problem. They can be written out as \(p\) scalar constraints (equations)
+
+\[c_{i}^{T}x=d_{i},\quad i=1,\ldots,p,\]
+
+where \(c_{i}^{T}\) is the \(i\)th row of \(C\).
+
+An \(n\)-vector \(x\) is called _feasible_ (for the problem (16.1)) if it satisfies the constraints, _i.e._, \(Cx=d\). An \(n\)-vector \(\hat{x}\) is called an _optimal point_ or _solution_ of the optimization problem (16.1) if it is feasible, and if \(\|A\hat{x}-b\|^{2}\leq\|Ax-b\|^{2}\) holds for any feasible \(x\). In other words, \(\hat{x}\) solves the problem (16.1) if it is feasible and has the smallest possible value of the objective function among all feasible vectors.
+
+The constrained least squares problem combines the problems of solving a set of linear equations (find \(x\) that satisfies \(Cx=d\)) with the least squares problem

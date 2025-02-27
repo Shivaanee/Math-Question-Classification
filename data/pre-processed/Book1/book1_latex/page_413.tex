@@ -1,0 +1,16 @@
+
+
+**Example 2**.: (to change \(a_{13}=a_{31}\) to zero)
+
+\[A=\begin{bmatrix}1&0&1\\ 0&1&1\\ 1&1&0\end{bmatrix},\qquad x=\begin{bmatrix}0\\ 1\end{bmatrix},\qquad v=\begin{bmatrix}1\\ 1\end{bmatrix},\qquad H=\begin{bmatrix}0&-1\\ -1&0\end{bmatrix}.\]
+
+Embedding \(H\) into \(Q\), the result \(Q^{-1}AQ\) is tridiagonal:
+
+\[Q=\begin{bmatrix}1&0&0\\ 0&0&-1\\ 0&-1&0\end{bmatrix},\qquad Q^{-1}AQ=\begin{bmatrix}1&-1&\mathbf{0}\\ -1&0&1\\ \mathbf{0}&1&1\end{bmatrix}.\]
+
+\(Q^{-1}AQ\) is a matrix that is ready to reveal its eigenvalues--the \(QR\) algorithm is ready to begin--but we digress for a moment to mention two other applications of these same Householder matrices \(H\).
+
+1. _The Gram-Schmidt factorization_\(A=QR\). Remember that \(R\) is to be upper triangular. We no longer have to accept an extra nonzero diagonal below the main one, since no matrices are multiplying on the right to spoil the zeros. The first step in constructing \(Q\) is to work with the whole first column of \(A\): \[x=\begin{bmatrix}a_{11}\\ a_{21}\\ \vdots\\ a_{n1}\end{bmatrix},\qquad z=\begin{bmatrix}1\\ 0\\ \vdots\\ 0\end{bmatrix},\qquad v=x+\|x\|z,\qquad H_{1}=I-2\frac{v^{\mathrm{T}}}{\|v\| ^{2}}.\] The first column of \(H_{1}A\) equals \(-\|x\|z\). It is zero below the main diagonal, and it is the first column of \(R\). The second step works with the second column of \(H_{1}A\), from the pivot on down, and produces an \(H_{2}H_{1}A\) which is zero below that pivot. (The whole algorithm is like elimination, but slightly slower.) The result of \(n-1\) steps is an upper triangular \(R\), but the matrix that records the steps is not a lower triangular \(L\). Instead it is the product \(Q=H_{1}H_{2}\cdots H_{n-1}\), which can be stored in this factored form (keep only the \(v\)'s) and never computed explicitly. That completes Gram-Schmidt.
+2. _The singular value decomposition_\(U^{\mathrm{T}}AV=\Sigma\). The diagonal matrix \(\Sigma\) has the same shape as \(A\), and its entries (the singular values) are the square roots of the eigenvalues of \(A^{\mathrm{T}}A\). Since Householder transformations can only _prepare_ for the eigenvalue problem, we cannot expect them to produce \(\Sigma\). Instead, they stably produce a _bidiagonal matrix_, with zeros everywhere except along the main diagonal and the one above.
+
+The first step toward the SVD is exactly as in \(QR\) above: \(x\) is the first column of \(A\), and \(H_{1}x\) is zero below the pivot. The next step is to multiply on the right by an

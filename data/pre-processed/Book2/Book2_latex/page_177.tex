@@ -1,0 +1,17 @@
+where \(A\) is given by
+
+\[A=\left[\begin{array}{cccccccc}b_{1}&b_{2}&b_{3}&\cdots&b_{98}&b_{99}&b_{100}\\ 1-d_{1}&0&0&\cdots&0&0&0\\ 0&1-d_{2}&0&\cdots&0&0&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&\vdots\\ 0&0&0&\cdots&1-d_{98}&0&0\\ 0&0&0&\cdots&0&1-d_{99}&0\end{array}\right].\]
+
+We can use this model to predict the total population in 10 years (not including immigration), or to predict the number of school age children, or retirement age adults. Figure 9.4 shows the predicted age distribution in 2020, computed by iterating the model \(x_{t+1}=Ax_{t}\) for \(t=1,\ldots,10\), with initial value \(x_{1}\) given by the 2010 age distribution of figure 9.1. Note that the distribution is based on an approximate model, since we neglect the effect of immigration, and assume that the death and birth rates remain constant and equal to the values shown in figures 9.2 and 9.3.
+
+Population dynamics models are used to carry out projections of the future age distribution, which in turn is used to predict how many retirees there will be in some future year. They are also used to carry out various 'what if' analyses, to predict the effect of changes in birth or death rates on the future age distribution.
+
+It is easy to include the effects of immigration and emigration in the population dynamics model (9.4), by simply adding a 100-vector \(u_{t}\):
+
+\[x_{t+1}=Ax_{t}+u_{t},\]
+
+which is a time-invariant linear dynamical system of the form (9.2), with input \(u_{t}\) and \(B=I\). The vector \(u_{t}\) gives the net immigration in year \(t\) over all ages; \((u_{t})_{i}\) is the number of immigrants in year \(t\) of age \(i-1\). (Negative entries mean net emigration.)
+
+Figure 9.4: Predicted age distribution in the US in 2020.
+
+ 

@@ -1,0 +1,19 @@
+I either to find one genuine corner or to establish that the feasible set is empty. We continue on the assumption that a corner has been found.
+
+Suppose one of the \(n\) intersecting planes is removed. **The points that satisfy the remaining \(n-1\) equations form an edge that comes out of the corner**. This edge is the intersection of the \(n-1\) planes. To stay in the feasible set, only one direction is allowed along each edge. But we do have a choice of \(n\) different edges, and Phase II must make that choice.
+
+To describe this phase, rewrite \(Ax\geq b\) in a form completely parallel to the \(n\) simple constraints \(x_{j}\geq 0\). This is the role of the _slack variables_\(w=Ax-b\). The constraints \(Ax\geq b\) are translated into \(w_{1}\geq 0,\ldots,w_{m}\geq 0\), with one slack variable for every row of \(A\). The equation \(w=Ax-b\), or \(Ax-w=b\), goes into matrix form:
+
+\[\text{{Slack variables give $m$ equations}}\qquad\begin{bmatrix}A&-I \end{bmatrix}\begin{bmatrix}x\\ w\end{bmatrix}=b.\]
+
+The feasible set is governed by these \(m\) equations and the \(n+m\) simple inequalities \(x\geq 0\), \(w\geq 0\). We now have _equality constraints and nonnegativity_.
+
+The simplex method notices no difference between \(x\) and \(w\), so we simplify:
+
+\[\begin{bmatrix}A&-I\end{bmatrix}\text{ is renamed }A\qquad\begin{bmatrix}x \\ w\end{bmatrix}\text{ is renamed }x\qquad\begin{bmatrix}c&0\end{bmatrix}\text{ is renamed }c.\]
+
+The equality constraints are now \(Ax=b\). The \(n+m\) inequalities become just \(x\geq 0\). The only trace left of the slack variable \(w\) is in the fact that the new matrix \(A\) is \(m\) by \(n+m\), and the new \(x\) has \(n+m\) components. We keep this much of the original notation leaving \(m\) and \(n\) unchanged as a reminder of what happened. The problem has become: _Minimize cx, subject to \(x\geq 0\) and \(Ax=b\)_.
+
+Figure 8.3: The corners \(P\), \(Q\), \(R\), and the edges of the feasible set.
+
+ 

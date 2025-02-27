@@ -1,0 +1,35 @@
+A linear operator \(T\) on \(R^{4}\) which preserves this particular bilinear (or quadratic) form is called a **Lorentz transformation,** and the group preserving \(f\) is called the **Lorentz group.** We should like to give one method of describing some Lorentz transformations.
+
+Let \(H\) be the real vector space of all \(2\times 2\) complex matrices \(A\) which are Hermitian, \(A\,=\,A^{*}\). It is easy to verify that
+
+\[\Phi(x,y,z,t)=\left[\begin{array}{cc}t+x&y+iz\\ y-iz&t-x\end{array}\right]\]
+
+defines an isomorphism \(\Phi\) of \(R^{4}\) onto the space \(H\). Under this isomorphism, the quadratic form \(q\) is carried onto the determinant function, that is
+
+\[q(x,y,z,t)=\det\left[\begin{array}{cc}t+x&y+iz\\ y-iz&t-x\end{array}\right]\]
+
+or
+
+\[q(\alpha)=\det\Phi(\alpha).\]
+
+This suggests that we might study Lorentz transformations on \(R^{4}\) by studying linear operators on \(H\) which preserve determinants.
+
+Let \(M\) be any complex \(2\times 2\) matrix and for a Hermitian matrix \(A\) define
+
+\[U_{M}(A)\,=\,MAM^{*}.\]
+
+Now \(MAM^{*}\) is also Hermitian. From this it is easy to see that \(U_{M}\) is a (real) linear operator on \(H\). Let us ask when it is true that \(U_{M}\) 'preserves' determinants, i.e., \(\det\,[U_{M}(A)]=\det A\) for each \(A\) in \(H\). Since the determinant of \(M^{*}\) is the complex conjugate of the determinant of \(M\), we see that
+
+\[\det\,[U_{M}(A)]\,=\,|\det M|^{2}\det A.\]
+
+Thus \(U_{M}\) preserves determinants exactly when \(\det M\) has absolute value \(1\).
+
+So now let us select any \(2\times 2\) complex matrix \(M\) for which \(|\det M|=1\). Then \(U_{M}\) is a linear operator on \(H\) which preserves determinants. Define
+
+\[T_{M}=\Phi^{-1}U_{M}\Phi.\]
+
+Since \(\Phi\) is an isomorphism, \(T_{M}\) is a linear operator on \(R^{4}\). Also, \(T_{M}\) is a Lorentz transformation; for
+
+\[\begin{array}{rl}q(T_{M}\alpha)&=\,q(\Phi^{-1}U_{M}\Phi\alpha)\\ &=\,\det\,(\Phi\Phi^{-1}U_{M}\Phi\alpha)\\ &=\,\det\,(U_{M}\Phi\alpha)\\ &=\,\det\,(\Phi\alpha)\\ &=\,q(\alpha)\end{array}\]
+
+and so \(T_{M}\ 

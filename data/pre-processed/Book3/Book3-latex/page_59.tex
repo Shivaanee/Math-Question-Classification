@@ -1,0 +1,39 @@
+because we have a 'natural' ordering of the vectors in the standard basis, that is, we have a rule for determining which is the 'first' vector in the basis, which is the 'second,' and so on. If \(\otimes\) is an arbitrary basis of the \(n\)-dimensional space \(V\), we shall probably have no natural ordering of the vectors in \(\otimes\), and it will therefore be necessary for us to impose some order on these vectors before we can define 'the \(i\)th coordinate of \(\alpha\) relative to \(\otimes\).' To put it another way, coordinates will be defined relative to sequences of vectors rather than sets of vectors.
+
+_Definition. If \(V\) is a finite-dimensional vector space, an_ **ordered basis** _for \(V\) is a finite sequence of vectors which is linearly independent and spans \(V\)._
+
+If the sequence \(\alpha_{1},\ldots,\alpha_{n}\) is an ordered basis for \(V\), then the set \(\{\alpha_{1},\ldots,\alpha_{n}\}\) is a basis for \(V\). The ordered basis is the set, together with the specified ordering. We shall engage in a slight abuse of notation and describe all that by saying that
+
+\[\otimes=\{\alpha_{1},\ldots,\alpha_{n}\}\]
+
+is an ordered basis for \(V\).
+
+Now suppose \(V\) is a finite-dimensional vector space over the field \(F\) and that
+
+\[\otimes=\{\alpha_{1},\ldots,\alpha_{n}\}\]
+
+is an ordered basis for \(V\). Given \(\alpha\) in \(V\), there is a unique \(n\)-tuple \((x_{1},\ldots,x_{n})\) of scalars such that
+
+\[\alpha=\sum_{i=1}^{n}x_{i}\alpha_{i}.\]
+
+The \(n\)-tuple is unique, because if we also have
+
+\[\alpha=\sum_{i=1}^{n}z_{i}\alpha_{i}\]
+
+then
+
+\[\sum_{i=1}^{n}(x_{i}-z_{i})\alpha_{i}=0\]
+
+and the linear independence of the \(\alpha_{i}\) tells us that \(x_{i}-z_{i}=0\) for each \(i\). We shall call \(x_{i}\) the \(i\)th **coordinate of \(\alpha\) relative to the ordered basis**
+
+\[\otimes=\{\alpha_{1},\ldots,\alpha_{n}\}.\]
+
+If
+
+\[\beta=\sum_{i=1}^{n}y_{i}\alpha_{i}\]
+
+then
+
+\[\alpha+\beta=\sum_{i=1}^{n}(x_{i}+y_{i})\alpha_{i}\]
+
+so that the \(i\)th coordinate of \((\alpha+\beta)\) in this ordered basis is \((x_{i}+y_{i})\) 

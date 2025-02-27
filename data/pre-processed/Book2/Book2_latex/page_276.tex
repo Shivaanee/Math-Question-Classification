@@ -1,0 +1,23 @@
+be around 70-80 (thousand dollars) RMS. The RMS cross-validation error (13.4) is 75.41. We can also see that the model parameters change a bit, but not drastically, in each of the folds. This gives us more confidence that, for example, \(\beta_{2}\) being negative is not a fluke of the data.
+
+For comparison, table 13.2 shows the RMS errors for the constant model \(\hat{y}=v\), where \(v\) is the mean price of the training set. The results suggest that the constant model can predict house prices with a prediction error around 105-120 (thousand dollars). The RMS cross-validation error for the constant model is 119.93.
+
+Figure 13.12 shows the scatter plots of actual and regression model predicted prices for each of the five training and test sets. The results for training and test sets are reasonably similar in each case, which gives us confidence that the regression model will have similar performance on new, unseen houses.
+
+Validating time series predictions.When the original data are unordered, for example, patient records or customer purchase histories, the division of the data into training and test sets is typically done randomly. This same method can be used to validate a time series prediction model, such as an AR model, but it does not give the best emulation of how the model will ultimately be used. In practice, the model will be trained on past data and then used to make predictions on future data. When the training data in a time series prediction model are randomly chosen, the model is being built with some knowledge of the future, a phenomenon called _look-ahead_ or _peek-ahead_. Look-ahead can make a model look better than it really is at making predictions.
+
+To avoid look-ahead, the training set for a time series prediction model is typically taken to be the data examples up to some point in time, and the test data are chosen as points that are past that time (and sometimes, at least \(M\) samples past that time, taking into account the memory of the predictor). In this way we can say that the model is being tested by making predictions on data it has never seen. As an example, we might train an AR model for some daily quantity using data from the years 2006 through 2008, and then test the resulting AR model on the data from year 2009.
+
+As an example, we return to the AR model of hourly temperatures at Los Angeles International Airport described on page 259. We divide the one month of data into a training set (May 1-24) and a test set (May 25-31). The coefficients in
+
+\begin{table}
+\begin{tabular}{c c c c} \hline \hline Fold & \(v\) & RMS error (train) & RMS error (test) \\ \hline
+1 & 230.11 & 110.93 & 119.91 \\
+2 & 230.25 & 113.49 & 109.96 \\
+3 & 228.04 & 114.47 & 105.79 \\
+4 & 225.23 & 110.35 & 122.27 \\
+5 & 230.23 & 114.51 & 105.59 \\ \hline \hline \end{tabular}
+\end{table}
+Table 13.2: Five-fold cross-validation for the constant model of the house sales data set. The RMS cross-validation error is 119.93.
+
+ 

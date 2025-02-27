@@ -1,0 +1,63 @@
+
+
+19. Which numbers $a, b, c$ lead to row exchanges? Which make the matrix singular?
+$$
+A=\left[\begin{array}{lll}
+1 & 2 & 0 \\
+a & 8 & 3 \\
+0 & b & 5
+\end{array}\right] \quad \text { and } \quad A=\left[\begin{array}{ll}
+c & 2 \\
+6 & 4
+\end{array}\right] .
+$$
+
+Problems 20-31 compute the factorization $A=L U$ (and also $A=L D U$ ).
+20. Forward elimination changes $\left[\begin{array}{ll}1 & 1 \\ 1 & 2\end{array}\right] x=b$ to a triangular $\left[\begin{array}{ll}1 & 1 \\ 0 & 1\end{array}\right] x=c$ :
+$$
+\begin{aligned}
+& x+y=5 \\
+& x+2 y=7
+\end{aligned} \rightarrow \begin{array}{r}
+x+y=5 \\
+y=2
+\end{array} \quad\left[\begin{array}{lll}
+1 & 1 & 5 \\
+1 & 2 & 7
+\end{array}\right] \rightarrow\left[\begin{array}{lll}
+1 & 1 & 5 \\
+0 & 1 & 2
+\end{array}\right] .
+$$
+
+That step subtracted $\ell_{21}=$ $\qquad$ times row 1 from row 2 . The reverse step adds $\ell_{21}$ times row 1 to row 2 . The matrix for that reverse step is $L=$ $\qquad$ . Multiply this $L$ times the triangular system $\left[\begin{array}{ll}1 & 1 \\ 0 & 1\end{array}\right] x=\left[\begin{array}{l}5 \\ 2\end{array}\right]$ to get $\qquad$ $=$ $\qquad$ . In letters, $L$ multiplies $U x=c$ to give . $\qquad$
+21. (Move to 3 by 3) Forward elimination changes $A x=b$ to a triangular $U x=c$ :
+$$
+\begin{array}{rlrlrl}
+x+y+z & =5 & x+y+z & =5 & x+y+z & =5 \\
+x+2 y+3 z & =7 & y+2 z & =2 & y+2 z & =2 \\
+x+3 y+6 z & =11 & 2 y+5 z & =6 & z & =2 .
+\end{array}
+$$
+
+The equation $z=2$ in $U x=c$ comes from the original $x+3 y+6 z=11$ in $A x=b$ by subtracting $\ell_{31}=$ $\qquad$ times equation 1 and $\ell_{32}=$ $\qquad$ times the final equation 2 . and $\left[\begin{array}{llll}0 & 0 & 1 & 2\end{array}\right]$ in $\left[\begin{array}{ll}U & c\end{array}\right]$ :
+Row 3 of $\left[\begin{array}{ll}A & b\end{array}\right]=\left(\ell_{31}\right.$ Row $1+\ell_{32}$ Row $2+1$ Row 3$)$ of $\left[\begin{array}{ll}U & c\end{array}\right]$.
+
+In matrix notation this is multiplication by $L$. So $A=L U$ and $b=L c$.
+22. What are the 3 by 3 triangular systems $L c=b$ and $U x=c$ from Problem 21? Check that $c=(5,2,2)$ solves the first one. Which $x$ solves the second one?
+23. What two elimination matrices $E_{21}$ and $E_{32}$ put $A$ into upper triangular form $E_{32} E_{21} A=$ $U$ ? Multiply by $E_{31}^{-1}$ and $E_{21}^{-1}$ to factor $A$ into $L U=E_{21}^{-1} E_{32}^{-1} U$ :
+$$
+A=\left[\begin{array}{lll}
+1 & 1 & 1 \\
+2 & 4 & 5 \\
+0 & 4 & 0
+\end{array}\right] .
+$$
+24. What three elimination matrices $E_{21}, E_{31}, E_{32}$ put $A$ into upper triangular form $E_{32} E_{31} E_{21} A=U$ ? Multiply by $E_{32}^{-1}, E_{31}^{-1}$ and $E_{21}^{-1}$ to factor $A$ into $L U$ where $L=$ $E_{21}^{-1} E_{31}^{-1} E_{32}^{-1}$. Find $L$ and $U$ :
+$$
+A=\left[\begin{array}{lll}
+1 & 0 & 1 \\
+2 & 2 & 2 \\
+3 & 4 & 5
+\end{array}\right] .
+$$

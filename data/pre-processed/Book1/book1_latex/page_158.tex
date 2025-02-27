@@ -1,0 +1,10 @@
+Of course \(c^{2}+s^{2}=\cos^{2}\theta+\sin^{2}\theta=1\). _A projection matrix equals its own square_.
+3. **Reflection** Figure 2.11 shows the reflection of \((1,0)\) in the \(\theta\)-line. The length of the reflection equals the length of the original, as it did after rotation--but here the \(\theta\)-line stays where it is. The perpendicular line reverses direction; all points go straight through the mirror, Linearity decides the rest. \[\mbox{\bf Reflection matrix}\qquad H=\begin{bmatrix}2c^{2}-1&2cs\\ 2cs&2s^{2}-1\end{bmatrix}.\] This matrix \(H\) has the remarkable property \(H^{2}=I\). _Two reflections bring back the original_. A reflection is its own inverse, \(H=H^{-1}\), which is clear from the geometry but less clear from the matrix. One approach is through the relationship of reflections to projections: \(H=2P-I\). This means that \(Hx+x=2Px\)--the image plus the original equals twice the projection. It also confirms that \(H^{2}=I\): \[H^{2}=(2P-I)^{2}=4P^{2}-4P+I=I,\qquad\mbox{since}\quad P^{2}=P.\]
+
+Other transformations \(Ax\) can increase the length of \(x\); stretching and shearing are in the exercises. Each example has a matrix to represent it--which is the main point of this section. But there is also the question of choosing a basis, and we emphasize that _the matrix depends on the choice of basis_. Suppose the first basis vector is _on the \(\theta\)-line_ and the second basis vector is _perpendicular_:
+
+1. The projection matrix is back to \(P=\begin{bmatrix}1&0\\ 0&0\end{bmatrix}\). This matrix is constructed as always: its first column comes from the first basis vector (projected to itself). The second column comes from the basis vector that is projected to zero.
+
+Figure 2.11: Reflection through the \(\theta\)-line: the geometry and the matrix.
+
+ 

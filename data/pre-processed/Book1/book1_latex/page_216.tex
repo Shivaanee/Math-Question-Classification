@@ -1,0 +1,27 @@
+
+
+**3.** The _Fourier series_ of a function is an expansion into sines and cosines:
+
+\[f(x)=a_{0}+a_{1}\cos x+b_{1}\sin x+a_{2}\cos 2x+b_{2}\sin 2x+\cdots.\]
+
+To compute a coefficient like \(b_{1}\), _multiply_ both sides by the corresponding function \(\sin x\) and _integrate_ from \(0\) to \(2\pi\). (The function \(f(x)\) is given on that interval.) In other words, take the inner product of both sides with \(\sin x\):
+
+\[\int_{0}^{2\pi}f(x)\sin xdx=a_{0}\int_{0}^{2\pi}\sin xdx+a_{1}\int_{0}^{2\pi} \cos x\sin xdx+b_{1}\int_{0}^{2\pi}(\sin x)^{2}dx+\cdots.\]
+
+On the right-hand side, every integral is zero except one--the one in which \(\sin x\) multiplies itself. _The sines and cosines are mutually orthogonal_ as in equation (18) Therefore \(b_{1}\) is the left-hand side divided by that one nonzero integral:
+
+\[b_{1}=\frac{\int_{0}^{2\pi}f(x)\sin xdx}{\int_{0}^{2\pi}(\sin x)^{2}dx}=\frac {(f,\sin x)}{(\sin x,\sin x)}.\]
+
+The Fourier coefficient \(a_{1}\) would have \(\cos x\) in place of \(\sin x\), and \(a_{2}\) would use \(\cos 2x\).
+
+The whole point is to see the analogy with projections. The component of the vector \(b\) along the line spanned by \(a\) is \(b^{\mathrm{T}}a/a^{\mathrm{T}}a\). A _Fourier series is projecting \(f(x)\) onto \(\sin x\)_. Its component \(p\) in this direction is exactly \(b_{1}\sin x\).
+
+The coefficient \(b_{1}\) is the least squares solution of the inconsistent equation \(b_{1}\sin x=f(x)\). This brings \(b_{1}\sin x\) as close as possible to \(f(x)\). All the terms in the series are projections onto a sine or cosine. Since the sines and cosines are orthogonal, _the Fourier series gives the coordinates of the "vector" \(f(x)\) with respect to a set of_ (infinitely many) _perpendicular axes_.
+
+**4.** **Gram-Schmidt for Functions.** There are plenty of useful functions other than sines and cosines, and they are not always orthogonal. The simplest are the powers of \(x\), and unfortunately there is no interval on which even \(1\) and \(x^{2}\) are perpendicular. (Their inner product is always positive, because it is the integral of \(x^{2}\).) Therefore the closest parabola to \(f(x)\) is _not_ the sum of its projections onto \(1\), \(x\), and \(x^{2}\). There will be a matrix like \((A^{\mathrm{T}}A)^{-1}\), and this coupling is given by the ill-conditioned **Hilbert matrix**. On the interval \(0\leq x\leq 1\),
+
+\[A^{\mathrm{T}}A=\begin{bmatrix}(1,1)&(1,x)&(1,x^{2})\\ (x,1)&(x,x)&(x,x^{2})\\ (x^{2},1)&(x^{2},x)&(x^{2},x^{2})\end{bmatrix}=\begin{bmatrix}\int 1&\int x& \int x^{2}\\ \int x&\int x^{2}&\int x^{3}\\ \int x^{2}&\int x^{3}&\int x^{4}\end{bmatrix}=\begin{bmatrix}1&\frac{1}{2}& \frac{1}{3}\\ \frac{1}{2}&\frac{1}{3}&\frac{1}{4}\\ \frac{1}{3}&\frac{1}{4}&\frac{1}{5}\end{bmatrix}.\]
+
+This matrix has a large inverse, because the axes \(1,x,x^{2}\) are far from perpendicular. The situation becomes impossible if we add a few more axes. _It is virtually hopeless to solve \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\) for the closest polynomial of degree ten_.
+
+More precisely, it is hopeless to solve this by Gaussian elimination; every roundoff error would be amplified by more than \(10^{13}\). On the other hand, we cannot just give

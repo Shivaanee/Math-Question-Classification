@@ -1,0 +1,19 @@
+is already in its Jordan form. We may assume that the construction is achieved for all matrices of order less than \(n\)--this is the "induction hypothesis"--and then explain the steps for a matrix of order \(n\). There are three steps, and after a general description we apply them to a specific example.
+
+**Step 1.**: If we assume \(A\) is singular, then its column space has dimension \(r<n\). Looking only within this smaller space, the induction hypothesis guarantees that a Jordan form is possible--there must be \(r\) independent vectors \(w_{i}\) in the column space such that
+
+\[\text{either}\qquad Aw_{i}=\lambda_{i}w_{i}\qquad\text{or}\qquad Aw_{i}= \lambda_{i}w_{i}+w_{i-1}.\] (4)
+**Step 2.**: Suppose the nullspace and the column space of \(A\) have an intersection of dimension \(p\). Of course, every vector in the nullspace is an eigenvector corresponding to \(\lambda=0\). Therefore, there must have been \(p\) strings in step 1 that started from this eigenvalue, and we are interested in the vectors \(w_{i}\) that come at the end of these strings. Each of these \(p\) vectors is in the column space, so each one is a combination of the columns of \(A\): \(w_{i}=Ay_{i}\) for some \(y_{i}\).
+**Step 3.**: The nullspace always has dimension \(n-r\). Therefore, independent from its \(p\)-dimensional intersection with the column space, it must contain \(n-r-p\) additional basis vectors \(z_{i}\) lying _outside_ that intersection.
+
+Now we put these steps together to give Jordan's theorem:
+
+The \(r\) vectors \(w_{i}\), the \(p\) vectors \(y_{i}\), and the \(n-r-p\) vectors \(z_{i}\) form Jordan strings for the matrix \(A\), and these vectors are linearly independent. They go into the columns of \(M\), and \(J=M^{-1}AM\) is in Jordan form.
+
+If we want to renumber these vectors as \(x_{1},\ldots,x_{n}\), and match them to equation (3), then each \(y_{i}\) should be inserted immediately after the \(w_{i}\) it came from; it completes a string in which \(\lambda_{i}=0\). The \(z\)'s come at the very end, each one alone in its own string; again the eigenvalue is zero, since the \(z\)'s lie in the nullspace. The blocks with nonzero eigenvalues are already finished at step 1, the blocks with zero eigenvalues grow by one row and column at step 2, and step 3 contributes any 1 by 1 blocks \(J_{i}=[0]\).
+
+Now we try an example, and to stay close to the previous pages we take the eigenvalues to be 8, 8, 0, 0, 0:
+
+\[A=\begin{bmatrix}8&0&0&8&8\\ 0&0&0&8&8\\ 0&0&0&0&0\\ 0&0&0&0&8\end{bmatrix}.\]
+
+**Step 1.**: The column space has dimension \(r=3\), and is spanned by the coordinate vectors \(e_{1},e_{2},e_{5}\). To look within this space we ignore the third and fourth rows and 

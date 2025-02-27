@@ -1,0 +1,11 @@
+\(A_{i}x=0\) for \(i=1,\ldots,k\). This implies that if just _one_ of the matrices \(A_{1},\ldots,A_{k}\) has linearly independent columns, then \(\tilde{A}\) does.
+
+The stacked matrix \(\tilde{A}\) can have linearly independent columns even when none of the matrices \(A_{1},\ldots,A_{k}\) do. This can happen when \(m_{i}<n\) for all \(i\), _i.e._, all \(A_{i}\) are wide. However, we must have \(m_{1}+\cdots+m_{k}\geq n\), since \(\tilde{A}\) must be tall or square for the linearly independent columns assumption to hold.
+
+Optimal trade-off curve.We start with the special case of two objectives (also called the _bi-criterion problem_), and write the weighted sum objective as
+
+\[J=J_{1}+\lambda J_{2}=\|A_{1}x-b_{1}\|^{2}+\lambda\|A_{2}x-b_{2}\|^{2},\]
+
+where \(\lambda>0\) is the relative weight put on the second objective, compared to the first. For small \(\lambda\), we care much more about \(J_{1}\) being small than \(J_{2}\) being small; for large \(\lambda\), we care much less about \(J_{1}\) being small than \(J_{2}\) being small.
+
+Let \(\hat{x}(\lambda)\) denote the weighted sum least squares solution \( 

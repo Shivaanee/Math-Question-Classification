@@ -1,0 +1,25 @@
+
+
+#### Handwritten digit classification
+
+We illustrate the least squares multi-class classification method by applying it to the MNIST data set. For each of the ten digits \(0,\ldots,9\) (which we encode as \(k=1,\ldots,10\)) we compute a least squares Boolean classifier
+
+\[\hat{f}_{k}(x)=\mathbf{sign}(x^{T}\beta_{k}+v_{k}),\]
+
+to distinguish digit \(k\) from the other digits. The ten Boolean classifiers are combined into a multi-class classifier
+
+\[\hat{f}(x)=\operatorname*{argmax}_{k=1,\ldots,10}(x^{T}\beta_{k}+v_{k}).\]
+
+The \(10\times 10\) confusion matrix for the data set and the test set are given in tables 14.11 and 14.12.
+
+The error rate on the training set is \(14.5\%\); on the test set it is \(13.9\%\). The true label rates on the test set range from \(73.5\%\) for digit \(5\) to \(97.5\%\) for digit \(1\). Many of the entries of the confusion matrix make sense. From the first row of the matrix, we see a handwritten \(0\) was rarely mistakenly classified as a \(1\), \(2\), or \(9\); presumably these digits look different enough that they are easily distinguished. The most common error (80) corresponds to \(y=9\), \(\hat{y}=4\), _i.e._, mistakenly identifying a handwritten \(9\) as a \(4\). This makes sense since these two digits can look very similar.
+
+Feature engineering.After adding the \(5000\) randomly generated new features (as described on page 293), the training set error is reduced to about \(1.5\%\), and the test set error to \(2.6\%\). The confusion matrices are given in tables 14.13 and 14.14. Since we have (substantially) reduced the error in the test set, we conclude that adding these \(5000\) new features was a successful exercise in feature engineering.
+
+You could reasonably wonder how much performance improvement is possible for this example, using feature engineering. For the handwritten digit data set, humans have an error rate around \(2\%\) (with the true digits verified by checking actual addresses, ZIP codes, and so on). Further feature engineering (_i.e._, introducing even more additional random features, or using neural network features) brings the error rate down well below \(2\%\), _i.e._, _well below human ability_. This should give you some idea of how powerful the ideas in this book are.
+
+\begin{table}
+\begin{tabular}{l c c c c} \hline \hline  & \multicolumn{4}{c}{Prediction} \\ \cline{2-5} Class & Setosa & Versicolour & Virginica & Total \\ \hline Setosa & 10 & 0 & 0 & 10 \\ Versicolour & 0 & 6 & 4 & 10 \\ Virginica & 0 & 0 & 10 & 10 \\ All & 10 & 6 & 14 & 30 \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.10: Confusion matrix for a \(3\)-class classifier of the Iris data set, on a test set of \(30\) examples.
+

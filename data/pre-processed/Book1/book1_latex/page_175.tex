@@ -1,0 +1,20 @@
+The direct approach was "\(b\) must be a combination of the columns." The indirect approach is "\(b\) must be orthogonal to every vector that is orthogonal to the columns." That doesn't sound like an improvement (to put it mildly). But if only one or two vectors are orthogonal to the columns. it is much easier to check those one or two conditions \(y^{\mathrm{T}}b=0\). A good example is Kirchhoff's Voltage Law in Section 2.5. Testing for zero around loops is much easier than recognizing combinations of the columns.
+
+_When the left-hand sides of \(Ax=b\) add to zero, the right-hand sides must, too:_
+
+\[x_{1}-x_{2} =b_{1}\] \[x_{2}-x_{3} =b_{2}\quad\text{is solvable if and only if }b_{1}+b_{2}+b_{3}=0. \quad\text{Here}\quad A=\begin{bmatrix}1&-1&0\\ 0&1&-1\\ -1&0&1\end{bmatrix}.\] \[x_{3}-x_{1} =b_{3}\]
+
+This test \(b_{1}+b_{2}+b_{3}=0\) makes \(b\) orthogonal to \(y=(1,1,1)\) in the left nullspace. By the Fundamental Theorem, \(b\) is a combination of the columns!
+
+### The Matrix and the Subspaces
+
+We emphasize that \(\mathbf{V}\) and \(\mathbf{W}\) can be orthogonal without being complements. Their dimensions can be too small. The line \(\mathbf{V}\) spanned by \((0,1,0)\) is orthogonal to the line \(\mathbf{W}\) spanned by \((0,0,1)\), but \(\mathbf{V}\) is not \(\mathbf{W}^{\perp}\). The orthogonal complement of \(\mathbf{W}\) is a two-dimensional plane, and the line is only part of \(\mathbf{W}^{\perp}\). When the dimensions are right, orthogonal subspaces _are_ necessarily orthogonal complements:
+
+\[\text{If}\quad\mathbf{W}=\mathbf{V}^{\perp}\quad\text{then}\quad\mathbf{V}= \mathbf{W}^{\perp}\quad\text{and}\quad\text{dim}\mathbf{V}+\text{dim}\mathbf{ W}=n.\]
+
+In other words \(\mathbf{V}^{\perp\perp}=\mathbf{V}\). The dimensions of \(\mathbf{V}\) and \(\mathbf{W}\) are right, and the whole space \(\mathbf{R}^{n}\) is being decomposed into two perpendicular parts (Figure 3.3).
+
+Splitting \(\mathbf{R}^{n}\) into orthogonal parts will split every vector into \(x=v+w\). The vector \(v\) is the projection onto the subspace \(\mathbf{V}\). The orthogonal component \(w\) is the projection of \(x\) onto \(\mathbf{W}\). The next sections show how to find those projections of \(x\). They lead to what is probably the most important figure in the book (Figure 3.4).
+
+Figure 3.4 summarizes the fundamental theorem of linear algebra. It illustrates the true effect of a matrix--what is happening inside the multiplication \(Ax\). The nullspace
+

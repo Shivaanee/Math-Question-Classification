@@ -1,0 +1,21 @@
+
+
+**Example 2**: The space of all linear operators on a vector space, with composition as the product, is a linear algebra with identity. It is commutative if and only if the space is one-dimensional.
+
+The reader may have had some experience with the dot product and cross product of vectors in \(R^{\ast}\). If so, he should observe that neither of these products is of the type described in the definition of a linear algebra. The dot product is a 'scalar product,' that is, it associates with a pair of vectors a scalar, and thus it is certainly not the type of product we are presently discussing. The cross product does associate a vector with each pair of vectors in \(R^{\ast}\); however, this is not an associative multiplication.
+
+The rest of this section will be devoted to the construction of an algebra which is significantly different from the algebras in either of the preceding examples. Let \(F\) be a field and \(S\) the set of non-negative integers. By Example 3 of Chapter 2, the set of all functions from \(S\) into \(F\) is a vector space over \(F\). We shall denote this vector space by \(F^{\ast}\). The vectors in \(F^{\ast}\) are therefore infinite sequences \(f=(f_{0},f_{1},f_{2},\ldots)\) of scalars \(f_{i}\) in \(F\). If \(g=(g_{0},g_{1},g_{2},\ldots)\), \(g_{i}\) in \(F\), and \(a\), \(b\) are scalars in \(F\), \(af+bg\) is the infinite sequence given by
+
+\[af+bg=(af_{0}+bg_{0},af_{1}+bg_{1},af_{2}+bg_{2},\ldots).\] (4.1)
+
+We define a product in \(F^{\ast}\) by associating with each pair of vectors \(f\) and \(g\) in \(F^{\ast}\) the vector \(fg\) which is given by
+
+\[(fg)_{n}=\sum_{i=0}^{n}f_{i}g_{n-i}\qquad n=0,1,2,\ldots.\] (4.2)
+
+Thus
+
+\[fg=(f_{0}g_{0},f_{0}g_{1}+f_{1}g_{0},f_{0}g_{2}+f_{1}g_{1}+f_{2}g_{0},\ldots)\]
+
+and as
+
+\[(gf)_{n}=\sum_{i=0}^{n}g_{i}f_{n-i}=\sum_{i=0}^{n}f_{i}g_{n-i}=(fg)_

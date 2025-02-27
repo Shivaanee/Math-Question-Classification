@@ -1,0 +1,31 @@
+
+
+**29.**: The powers \(A^{k}\) approach zero if all \(|\lambda_{i}|<1\), and they blow up if any \(|\lambda_{i}|>1\). Peter Lax gives four striking examples in his book _Linear Algebra_.
+
+\[A=\begin{bmatrix}3&2\\ 1&4\end{bmatrix}\qquad B=\begin{bmatrix}3&2\\ -5&-3\end{bmatrix}\qquad C=\begin{bmatrix}5&7\\ -3&-4\end{bmatrix}\qquad D=\begin{bmatrix}5&6.9\\ -3&-4\end{bmatrix}\]
+
+\[\|A^{1024}\|>10^{700}\qquad B^{1024}=I\qquad C^{1024}=-C\qquad\|D^{1024}\|<10^{ -78}\]
+
+Find the eigenvalues \(\lambda=e^{i\theta}\) of \(B\) and \(C\) to show that \(B^{4}=I\) and \(C^{3}=-I\).
+
+### Differential Equations and \(e^{At}\)
+
+Wherever you find a system of equations, rather than a single equation, matrix theory has a part to play. For difference equations, the solution \(u_{k}=A^{k}u_{0}\) depended on the own of \(A\). For differential equations, the solution \(u(t)=e^{At}u(0)\) depends on the _exponential_ of \(A\). To define this exponential. and to understand it, we turn right away to an example:
+
+\[\textbf{Differential equation}\qquad\frac{du}{dt}=Au=\begin{bmatrix}-2&1\\ 1&-2\end{bmatrix}u.\] (1)
+
+The first step is always to find the eigenvalues (\(11\) and \(-3\)) and the eigenvectors:
+
+\[A\begin{bmatrix}1\\ 1\end{bmatrix}=(-1)\begin{bmatrix}1\\ 1\end{bmatrix}\qquad\text{and}\qquad A\begin{bmatrix}1\\ -1\end{bmatrix}=(-3)\begin{bmatrix}1\\ -1\end{bmatrix}.\]
+
+Then several approaches lead to \(u(t)\). Probably the best is to match the general solution to the initial vector \(u(0)\) at \(t=0\).
+
+The general solution is a combination of pure exponential solutions. These are solutions of the special form \(ce^{\lambda t}x\), where \(\lambda\) is an eigenvalue of \(A\) and \(x\) is its eigenvector. These pure solutions satisfy the differential equation, since \(d/dt(ce^{\lambda t}x)=A(ce^{\lambda t}x)\). (They were our introduction to eigenvalues at the start of the chapter.) In this 2 by 2 example, there are two pure exponentials to be combined:
+
+\[\textbf{Solution}\qquad u(t)=c_{1}e^{\lambda_{1}t}x_{1}+c_{2}e^{\lambda_{2}t}x _{2}\quad\text{or}\quad u=\begin{bmatrix}1&1\\ 1&-1\end{bmatrix}\begin{bmatrix}e^{-t}&&\\ &e^{-3t}\end{bmatrix}\begin{bmatrix}c_{1}\\ c_{2}\end{bmatrix}.\] (2)
+
+At time zero, when the exponentials are \(e^{0}=1\), \(u(0)\) determines \(c_{1}\) and \(c_{2}\):
+
+\[\textbf{Initial condition}\qquad u(0)=c_{1}x_{1}+c_{2}x_{2}=\begin{bmatrix}1&1 \\ 1&-1\end{bmatrix}\begin{bmatrix}c_{1}\\ c_{2}\end{bmatrix}=Sc.\]
+
+You recognize \(S\), the matrix of eigenvectors. The constants \(c=S^{-1}u(0)\) are the same as they were for difference equations. Substituting them back into equation (2), the solution

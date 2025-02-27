@@ -1,0 +1,34 @@
+
+
+### 6.2 Zero and identity matrices
+
+Zero matrix.A zero matrix is a matrix with all elements equal to zero. The zero matrix of size \(m\times n\) is sometimes written as \(0_{m\times n}\), but usually a zero matrix is denoted just 0, the same symbol used to denote the number 0 or zero vectors. In this case the size of the zero matrix must be determined from the context.
+
+Identity matrix.An identity matrix is another common matrix. It is always square. Its _diagonal_ elements, _i.e._, those with equal row and column indices, are all equal to one, and its off-diagonal elements (those with unequal row and column indices) are zero. Identity matrices are denoted by the letter \(I\). Formally, the identity matrix of size \(n\) is defined by
+
+\[I_{ij}=\left\{\begin{array}{ll}1&i=j\\ 0&i\neq j,\end{array}\right.\]
+
+for \(i,j=1,\ldots,n\). For example,
+
+\[\left[\begin{array}{cc}1&0\\ 0&1\end{array}\right],\qquad\left[\begin{array}{cccc}1&0&0&0\\ 0&1&0&0\\ 0&0&1&0\\ 0&0&0&1\end{array}\right]\]
+
+are the \(2\times 2\) and \(4\times 4\) identity matrices.
+
+The column vectors of the \(n\times n\) identity matrix are the unit vectors of size \(n\). Using block matrix notation, we can write
+
+\[I=\left[\begin{array}{cccc}e_{1}&e_{2}&\cdots&e_{n}\end{array}\right],\]
+
+where \(e_{k}\) is the \(k\)th unit vector of size \(n\).
+
+Sometimes a subscript is used to denote the size of an identity matrix, as in \(I_{4}\) or \(I_{2\times 2}\). But more often the size is omitted and follows from the context. For example, if
+
+\[A=\left[\begin{array}{cccc}1&2&3\\ 4&5&6\end{array}\right],\]
+
+then
+
+\[\left[\begin{array}{cc}I&A\\ 0&I\end{array}\right]=\left[\begin{array}{cccc}1&0&1&2&3\\ 0&1&4&5&6\\ 0&0&1&0&0\\ 0&0&0&1&0\\ 0&0&0&0&1\end{array}\right].\]
+
+The dimensions of the two identity matrices follow from the size of \(A\). The identity matrix in the 1,1 position must be \(2\times 2\), and the identity matrix in the 2,2 position must be \(3\times 3\). This also determines the size of the zero matrix in the 2,1 position.
+
+The importance of the identity matrix will become clear later, in SS10.1.
+

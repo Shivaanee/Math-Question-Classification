@@ -1,0 +1,34 @@
+
+Least squares model fitting.A very common method for choosing the model parameters \(\theta_{1},\ldots,\theta_{p}\) is to minimize the RMS prediction error on the given data set, which is the same as minimizing the sum of squares of the prediction errors, \(\|r^{\mathrm{d}}\|^{2}\). We now show that this is a least squares problem.
+
+Expressing \(\hat{y}^{(i)}=\hat{f}(x^{(i)})\) in terms of the model parameters, we have
+
+\[\hat{y}^{(i)}=A_{i1}\theta_{1}+\cdots+A_{ip}\theta_{p},\quad i=1,\ldots,N,\]
+
+where we define the \(N\times p\) matrix \(A\) as
+
+\[A_{ij}=\hat{f}_{j}(x^{(i)}),\quad i=1,\ldots,N,\quad j=1,\ldots,p,\] (13.1)
+
+and the \(p\)-vector \(\theta\) as \(\theta=(\theta_{1},\ldots,\theta_{p})\). The \(j\)th column of \(A\) is the \(j\)th basis function, evaluated at each of the data points \(x^{(1)},\ldots,x^{(N)}\). Its \(i\)th row gives the values of the \(p\) basis functions on the \(i\)th data point \(x^{(i)}\). In matrix-vector notation we have
+
+\[\hat{y}^{\mathrm{d}}=A\theta.\]
+
+This simple equation shows how our choice of model parameters maps into the vector of predicted values of the outcomes in the \(N\) different experiments. We know the matrix \(A\) from the given data points, and choice of basis functions; our goal is to choose the \(p\)-vector of model coefficients \(\theta\).
+
+The sum of squares of the residuals is then
+
+\[\|r^{\mathrm{d}}\|^{2}=\|y^{\mathrm{d}}-\hat{y}^{\mathrm{d}}\|^{2}=\|y^{ \mathrm{d}}-A\theta\|^{2}=\|A\theta-y^{\mathrm{d}}\|^{2}.\]
+
+(In the last step we use the fact that the norm of a vector is the same as the norm of its negative.) Choosing \(\theta\) to minimize this is evidently a least squares problem, of the same form as (12.1). Provided the columns of \(A\) are linearly independent, we can solve this least squares problem to find \(\hat{\theta}\), the model parameter values that minimize the norm of the prediction error on our data set, as
+
+\[\hat{\theta}=(A^{T}A)^{-1}A^{T}y^{\mathrm{d}}=A^{\dagger}y^{\mathrm{d}}.\] (13.2)
+
+We say that the model parameter values \(\hat{\theta}\) are obtained by _least squares fitting on the data set_.
+
+We can interpret each term in \(\|y^{\mathrm{d}}-A\theta\|^{2}\). The term \(\hat{y}^{\mathrm{d}}=A\theta\) is the \(N\)-vector of measurements or outcomes that is predicted by our model, with the parameter vector \(\theta\). The term \(y^{\mathrm{d}}\) is the \(N\)-vector of actual observed or measured outcomes. The difference \(y^{\mathrm{d}}-A\theta\) is the \(N\)-vector of prediction errors. Finally, \(\|y^{\mathrm{d}}-A\theta\|^{2}\) is the sum of squares of the prediction errors, also called the residual sum of squares (RSS). This is minimized by the least squares fit \(\theta=\hat{\theta}\).
+
+The number \(\|y^{\mathrm{d}}-A\hat{\theta}\|^{2}\) is called the minimum sum square error (for the given model basis and data set). The number \(\|y^{\mathrm{d}}-A\hat{\theta}\|^{2}/N\) is called the _minimum mean square error_ (MMSE) (of our model, on the data set). Its squareroot is the minimum RMS fitting error. The model performance on the data set can be visualized by plotting \(\hat{y}^{(i)}\) versus \(y^{(i)}\) on a scatter plot, with a dashed line showing \(\hat{y}=y\) for reference.
+
+Since \(\|y^{\mathrm{d}}-A\theta\|^{2}=\|A\theta-y^{\mathrm{d}}\|^{2}\), the same least squares model parameter is obtained when the residual or prediction error is defined as \(\hat{y}^{\mathrm{d}}-y^{\mathrm{d}}\) instead of (our definition) \(y^{\mathrm{d}}-\hat{y}^{\mathrm{d}}\). The residual sum of squares, minimum mean square error, and RMS fitting error also agree using this alternate definition of prediction error.
+
+ 

@@ -1,0 +1,24 @@
+
+
+**39.**: From \(m\) independent measurements \(b_{1},\ldots,b_{m}\) of your pulse rate, weighted by \(w_{1},\ldots,w_{m}\), what is the weighted average that replaces equation (9)? It is the best estimate when the statistical variances are \(\sigma_{i}^{2}\equiv 1/w_{i}^{2}\).
+**40.**: If \(W=\left[\begin{smallmatrix}2&0\\ 0&1\end{smallmatrix}\right]\), find the \(W\)-inner product of \(x=(2,3)\) and \(y=(1,1)\), and the \(W\)-length of \(x\). What line of vectors is \(W\)-perpendicular to \(y\)?
+**41.**: Find the weighted least-squares solution \(\widehat{x}_{W}\) to \(Ax=b\):
+
+\[A=\begin{bmatrix}1&0\\ 1&1\\ 1&2\end{bmatrix}\qquad b=\begin{bmatrix}0\\ 1\\ 1\end{bmatrix}\qquad W=\begin{bmatrix}2&0&0\\ 0&1&0\\ 0&0&1\end{bmatrix}.\]
+
+Check that the projection \(A\widehat{x}_{W}\) is still perpendicular (in the \(W\)-inner product!) to the error \(b-A\widehat{x}_{W}\).
+**42.**:
+* Suppose you guess your professor's age, making errors \(e=-2,-1,5\) with probabilities \(\frac{1}{2},\frac{1}{4},\frac{1}{4}\). Check that the expected error \(E(e)\) is zero and find the variance \(E(e^{2})\).
+* If the professor guesses too (or tries to remember), making errors \(-1\), \(0\), \(1\) with probabilities \(\frac{1}{8},\frac{6}{8},\frac{1}{8}\), what weights \(w_{1}\) and \(w_{2}\) give the reliability of your guess and the professor's guess?
+
+### Orthogonal Bases and Gram-Schmidt
+
+In an orthogonal basis, every vector is perpendicular to every other vector. The coordinate axes are mutually orthogonal. That is just about optimal, and the one possible improvement is easy: Divide each vector by its length, to make it a _unit vector_. That changes an _orthogonal_ basis into an _orthonormal_ basis of \(q\)'s:
+
+**3P**: The vectors \(q_{1},\ldots,q_{n}\) are _orthonormal_ if
+
+\[q_{i}^{\mathrm{T}}q_{j}=\begin{cases}0&\text{whenever $i\neq j$},\qquad \text{giving the orthogonality;}\\ 1&\text{whenever $i=j$},\qquad\text{giving the normalization.}\end{cases}\]
+
+_A matrix with orthonormal columns will be called Q._
+
+The most important example is the _standard basis_. For the \(x\)-\(y\) plane, the best-known axes \(e_{1}=(1,0)\) and \(e_{2}=(0,1)\) are not only perpendicular but horizontal and vertical. \(Q\) is the 2 by 2 identity matrix. In \(n\) dimensions the standard basis \(e_{1},\ldots,e_{n}\) again consists

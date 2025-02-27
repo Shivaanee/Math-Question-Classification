@@ -1,0 +1,31 @@
+Start with \(A\) and \(b\);
+
+Apply steps 1, 2, 3 in that order;
+
+End with \(U\) and \(c\).
+
+\(Ux=c\) is solved by back-substitution. Here we concentrate on connecting \(A\) to \(U\).
+
+The matrices \(E\) for step 1, \(F\) for step 2, and \(G\) for step 3 were introduced in the previous section. They are called _elementary matrices_, and it is easy to see how they work. To subtract a multiple \(\ell\) of equation \(j\) from equation \(i\), _put the number \(-\ell\) into the \((i,j)\) position_. Otherwise keep the identity matrix, with 1s on the diagonal and 0s elsewhere. Then matrix multiplication executes the row operation.
+
+**The result of all three steps is \(GFEA=U\)**. Note that \(E\) is the first to multiply \(A\), then \(F\), then \(G\). We could multiply \(GFE\) together to find the single matrix that takes \(A\) to \(U\) (and also takes \(b\) to \(c\)). It is lower triangular (zeros are omitted):
+
+\[\textbf{From }A\textbf{ to }U\qquad GFE=\begin{bmatrix}1&&\\ &1&\\ &1&1\end{bmatrix}\begin{bmatrix}1&&\\ &1&\\ 1&&1\end{bmatrix}\begin{bmatrix}1&&\\ -2&1&\\ &&1\end{bmatrix}=\begin{bmatrix}1&&\\ -2&1&\\ -1&1&1\end{bmatrix}.\] (3)
+
+This is good, but the most important question is exactly the opposite: How would we get from \(U\) back to \(A\)? _How can we undo the steps of Gaussian elimination?_
+
+To undo step 1 is not hard. Instead of subtracting, we _add_ twice the first row to the second. (Not twice the second row to the first!) The result of doing both the subtraction and the addition is to bring back the identity matrix:
+
+\[\begin{array}{ll}\textbf{Inverse of}&\\ \textbf{subtraction}&\\ \textbf{is addition}&\end{array}\qquad\begin{bmatrix}1&0&0\\ 2&1&0\\ 0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\ -2&1&0\\ 0&0&1\end{bmatrix}=\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&1\end{bmatrix}.\] (4)
+
+One operation cancels the other. In matrix terms, one matrix is the _inverse_ of the other. If the elementary matrix \(E\) has the number \(-\ell\) in the \((i,j)\) position, then its inverse \(E^{-1}\) has \(+\ell\) in that position. Thus \(E^{-1}E=I\), which is equation (4).
+
+We can invert each step of elimination, by using \(E^{-1}\) and \(F^{-1}\) and \(G^{-1}\). I think it's not bad to see these inverses now, before the next section. The final problem is to undo the whole process at once, and see what matrix takes \(U\) back to \(A\).
+
+_Since step 3 was last in going from \(A\) to \(U\), its matrix \(G\) must be the first to be inverted in the reverse direction_. Inverses come in the opposite order! The second reverse step is \(F^{-1}\) and the last is \(E^{-1}\):
+
+\[\textbf{From }U\textbf{ back to }A\qquad E^{-1}F^{-1}G^{-1}U=A\text{ is }LU=A.\] (5)
+
+You can substitute \(GFEA\) for \(U\), to see how the inverses knock out the original steps.
+
+Now we recognize the matrix \(L\) that takes \(U\) back to \(A\). It is called \(L\), because it is _lower triangular_. And it has a special property that can be seen only by multiplying the 

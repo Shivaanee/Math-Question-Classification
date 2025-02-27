@@ -1,0 +1,23 @@
+
+
+## Chapter Eigenvalues and Eigenvectors
+
+### 1 Introduction
+
+This chapter begins the "second half" of linear algebra. The first half was about \(Ax=b\). The new problem \(Ax=\lambda x\) will still be solved by simplifying a matrix--making it diagonal if possible. _The basic step is no longer to subtract a multiple of one row from another_: Elimination changes the eigenvalues, which we don't want.
+
+Determinants give a transition from \(Ax=b\) to \(Ax=\lambda x\). In both cases the determinant leads to a "formal solution": to Cramer's rule for \(x=A^{-1}b\), and to the polynomial \(\det(A-\lambda I)\), whose roots will be the eigenvalues. (All matrices are now square; the eigenvalues of a rectangular matrix make no more sense than its determinant.) The determinant can actually be used if \(n=2\) or \(3\). For large \(n\), computing \(\lambda\) is more difficult than solving \(Ax=b\).
+
+The first step is to understand how eigenvalues can be useful, One of their applications is to ordinary differential equations. We shall not assume that the reader is an expert on differential equations! If you can differentiate \(x^{n}\), \(\sin x\), and \(e^{x}\), you know enough. As a specific example, consider the coupled pair of equations
+
+\[\begin{split}\frac{dv}{dt}&=4v-5w,\quad v=8\quad \text{at}\quad t=0,\\ \frac{dw}{dt}&=2v-3w,\quad w=5\quad\text{at}\quad t =0.\end{split}\] (1)
+
+This is an _initial-value problem_. The unknown is specified at time \(t=0\) by the given initial values \(8\) and \(5\). The problem is to find \(v(t)\) and \(w(t)\) for later times \(t>0\).
+
+It is easy to write the system in matrix form. Let the unknown vector be \(u(t)\), with initial value \(u(0)\). The coefficient matrix is \(A\):
+
+\[\text{Vector unknown}\qquad u(t)=\begin{bmatrix}v(t)\\ w(t)\end{bmatrix},\quad u(0)=\begin{bmatrix}8\\ 5\end{bmatrix},\quad A=\begin{bmatrix}4&-5\\ 2&-3\end{bmatrix}.\]
+
+The two coupled equations become the vector equation we want:
+
+\[\text{Matrix form}\qquad\frac{du}{dt}=Au\quad\text{with}\quad u=u(0)\;\;\text{ at}\;\;t=0.\] (2)

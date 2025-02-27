@@ -1,0 +1,19 @@
+where \(r^{\rm rf}\) is the risk-free interest rate over the period and \(\mu^{\rm mkt}={\bf avg}(x^{\rm d})\) is the average market return. Comparing this formula to the straight-line model \(\hat{f}(x)=\theta_{1}+\theta_{2}x\), we find that \(\theta_{2}=\beta\), and \(\theta_{1}=r^{\rm rf}+\alpha-\beta\mu^{\rm mkt}\).
+
+The prediction of asset return \(\hat{f}(x)\) has two components: A constant \(r^{\rm rf}+\alpha\), and one that is proportional to the de-meaned market performance, \(\beta(x-\mu^{\rm mkt})\). The second component, which has average value zero, relates market return fluctuations to the asset return fluctuations, and is related to the correlation of the asset and market returns; see exercise 13.4. The parameter \(\alpha\) is the average asset return, over and above the risk-free interest rate. This model of asset return in terms of the market return is so common that the terms 'Alpha' and 'Beta' are widely used in finance. (Though not always with exactly the same meaning, since there are a few variations on how the parameters are defined.)
+
+Time series trend.Suppose the data represents a series of samples of a quantity \(y\) at time (epoch) \(x^{(i)}=i\). The straight-line fit to the time series data,
+
+\[\hat{y}^{(i)}=\theta_{1}+\theta_{2}i,\quad i=1,\ldots,N,\]
+
+is called the _trend line_. Its slope, which is \(\theta_{2}\), is interpreted as the _trend_ in the quantity over time. Subtracting the trend line from the original time series we get the _de-trended time series_, \(y^{\rm d}-\hat{y}^{\rm d}\). The de-trended time series shows how the time series compares with its straight-line fit: When it is positive, it means the time series is above its straight-line fit, and when it is negative, it is below the straight-line fit.
+
+An example is shown in figures 13.3 and 13.4. Figure 13.3 shows world petroleum consumption versus year, along with the straight-line fit. Figure 13.4 shows the de-trended world petroleum consumption.
+
+Estimation of trend and seasonal component.In the previous example, we used least squares to approximate a time series \(y^{\rm d}=(y^{(1)},\ldots,y^{(N)})\) of length \(N\) by a sum of two components: \(y^{\rm d}\approx\hat{y}^{\rm d}=\hat{y}^{\rm const}+\hat{y}^{\rm lin}\) where
+
+\[\hat{y}^{\rm const}=\theta_{1}{\bf 1},\qquad\hat{y}^{\rm lin}=\theta_{2} \left[\begin{array}{c}1\\ 2\\ \vdots\\ N\end{array}\right].\]
+
+In many applications, the de-trended time series has a clear periodic component, _i.e._, a component that repeats itself periodically. As an example, figure 13.5 shows an estimate of the road traffic (total number of miles traveled in vehicles) in the US, for each month between January 2000 and December 2014. The most striking aspect of the time series is the pattern that is (approximately) repeated every year, with a peak in the summer and a minimum in the winter. In addition there is a slowly increasing long term trend. The bottom figure shows the least squares fit of a sum of two components
+
+\[y^{\rm d}\approx\hat{y}^{\rm d}=\hat{y}^{\rm lin}+\hat{y}^{\rm seas},\] 

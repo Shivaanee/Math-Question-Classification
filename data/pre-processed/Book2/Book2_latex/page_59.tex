@@ -1,0 +1,27 @@
+As an example, consider the 4-vectors
+
+\[u=\left[\begin{array}{c}1.8\\ 2.0\\ -3.7\\ 4.7\end{array}\right],\qquad v=\left[\begin{array}{c}0.6\\ 2.1\\ 1.9\\ -1.4\end{array}\right],\qquad w=\left[\begin{array}{c}2.0\\ 1.9\\ -4.0\\ 4.6\end{array}\right].\]
+
+The distances between pairs of them are
+
+\[\|u-v\|=8.368,\qquad\|u-w\|=0.387,\qquad\|v-w\|=8.533,\]
+
+so we can say that \(u\) is much nearer (or closer) to \(w\) than it is to \(v\). We can also say that \(w\) is much nearer to \(u\) than it is to \(v\).
+
+Triangle inequality.We can now explain where the triangle inequality gets its name. Consider a triangle in two or three dimensions, whose vertices have coordinates \(a\), \(b\), and \(c\). The lengths of the sides are the distances between the vertices,
+
+\[\mathbf{dist}(a,b)=\|a-b\|,\qquad\mathbf{dist}(b,c)=\|b-c\|,\qquad\mathbf{dist }(a,c)=\|a-c\|.\]
+
+Geometric intuition tells us that the length of any side of a triangle cannot exceed the sum of the lengths of the other two sides. For example, we have
+
+\[\|a-c\|\leq\|a-b\|+\|b-c\|.\] (3.3)
+
+This follows from the triangle inequality, since
+
+\[\|a-c\|=\|(a-b)+(b-c)\|\leq\|a-b\|+\|b-c\|.\]
+
+This is illustrated in figure 3.2.
+
+Figure 3.2: Triangle inequality.
+
+ 

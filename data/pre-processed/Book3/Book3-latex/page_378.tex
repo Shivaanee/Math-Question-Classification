@@ -1,0 +1,17 @@
+proof, the reader should find it helpful to think of the special case in which \(V\) is a real vector space and \(f\) is an inner product on \(V\).
+
+**Theorem 3**: _Let \(V\) be a finite-dimensional vector space over a field of characteristic zero, and let \(f\) be a symmetric bilinear form on \(V\). Then there is an ordered basis for \(V\) in which \(I\) is represented by a diagonal matrix._
+
+What we must find is an ordered basis
+
+\[\mathfrak{G}\,=\,\{\alpha_{i},\,.\,.\,.\,,\,\alpha_{n}\}\]
+
+such that \(f(\alpha_{i}\;\alpha_{j})=0\) for \(i\neq j\). If \(f=0\) or \(n=I\), the theorem is obviously true. Thus we may suppose \(f\neq 0\) and \(n>I\). If \(f(\alpha,\,\alpha)=0\) for every \(\alpha\) in \(V\), the associated quadratic form \(\mathfrak{g}\) is identically \(0\), and the polarization identity (10-5) shows that \(f=0\). Thus there is a vector \(\alpha\) in \(V\) such that \(f(\alpha,\,\alpha)=q(\alpha)\neq 0\). Let \(W\) be the one-dimensional subspace of \(V\) which is spanned by \(\alpha\), and let \(W^{\perp}\) be the set of all vectors \(\beta\) in \(V\) such that \(f(\alpha,\,\beta)=0\). Now we claim that \(V=W\bigoplus W^{\perp}\). Certainly the subspaces \(W\) and \(W^{\perp}\) are independent. A typical vector in \(W\) is \(c\alpha\), where \(c\) is a scalar. If \(\alpha\) is also in \(W^{\perp}\), then \(f(c\alpha,\,c\alpha)\,=\,c^{2}f(\alpha,\,\alpha)\,=\,0\). But \(f(\alpha,\,\alpha)\neq 0\), thus \(c=0\). Also, each vector in \(V\) is the sum of a vector in \(W\) and a vector in \(W^{\perp}\). For, let \(\gamma\) be any vector in \(V\), and put
+
+\[\beta\,=\,\gamma\,-\frac{f(\gamma,\,\alpha)}{f(\alpha,\,\alpha)}\,\alpha.\]
+
+Then
+
+\[f(\alpha,\,\beta)\,=\,f(\alpha,\,\gamma)\,-\frac{f(\gamma,\,\alpha)}{f(\alpha ,\,\alpha)}f(\alpha,\,\alpha)\]
+
+and since \(f\) is symmetric, \(f(\alpha,\,\beta)=0\). Thus \(\beta\) is in the subspace \(W^{ 

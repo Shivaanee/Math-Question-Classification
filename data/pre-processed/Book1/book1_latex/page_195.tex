@@ -1,0 +1,30 @@
+Proof.: It is easy to see why \(P^{2}=P\). If we start with any \(b\), then \(Pb\) lies in the subspace we are projecting onto. _When we project again nothing is changed_. The vector \(Pb\) is already in the subspace, and \(P(Pb)\) is still \(Pb\). In other words \(P^{2}=P\). Two or three or fifty projections give the same point \(p\) as the first projection:
+
+\[P^{2}=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T }}=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}=P.\]
+
+To prove that \(P\) is also symmetric, take its transpose. Multiply the transposes in reverse order, and use symmetry of \((A^{\mathrm{T}}A)^{-1}\), to come back to \(P\):
+
+\[P^{\mathrm{T}}=(A^{\mathrm{T}})^{\mathrm{T}}\left((A^{\mathrm{T}}A)^{-1} \right)^{\mathrm{T}}A^{\mathrm{T}}=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}=P.\]
+
+For the converse, we have to deduce from \(P^{2}=P\) and \(P^{\mathrm{T}}=P\) that \(Pb\)**is the projection of \(b\) onto the column space of \(P\)**. The error vector \(b-Pb\) is _orthogonal to the space_. For any vector \(Pc\) in the space, the inner product is zero:
+
+\[(b-Pb)^{\mathrm{T}}Pc=b^{\mathrm{T}}(I-P)^{\mathrm{T}}Pc=b^{\mathrm{T}}(P-P^{ 2})c=0.\]
+
+Thus \(b-Pb\) is orthogonal to the space, and \(Pb\) is the projection onto the column space. 
+
+**Example 1**.: Suppose \(A\) is actually invertible. If it is 4 by 4, then its four columns are independent and its column space is all of \(\mathbf{R}^{4}\). What is the projection _onto the whole space_? It is the identity matrix.
+
+\[P=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}=AA^{-1}(A^{\mathrm{T}})^{-1}A^{\mathrm{ T}}=I.\] (5)
+
+The identity matrix is symmetric, \(I^{2}=I\), and the error \(b-Ib\) is zero.
+
+The point of all other examples is that what happened in equation (5) is _not allowed_. To repeat: We cannot invert the separate parts \(A^{\mathrm{T}}\) and \(A\) when those matrices are rectangular. It is the square matrix \(A^{\mathrm{T}}A\) that is invertible.
+
+### Least-Squares Fitting of Data
+
+Suppose we do a series of experiments, and expect the output \(b\) to be a linear function of the input \(t\). We look for a _straight line_\(b=C+Dt\). For example:
+
+1. At different times we measure the distance to a satellite on its way to Mars. In this case \(t\) is the time and \(b\) is the distance. Unless the motor was left on or gravity is strong, the satellite should move with nearly constant velocity \(v\): \(b=b_{0}+vt\).
+2. We vary the load on a structure, and measure the movement it produces. In this experiment \(t\) is the load and \(b\) is the reading from the strain gauge. Unless the load is so great that the material becomes plastic, a linear relation \(b=C+Dt\) is normal in the theory of elasticity.
+
+ 

@@ -1,0 +1,23 @@
+for the respective spaces \(V\), \(W\), and \(Z\). Let \(A\) be the matrix of \(T\) relative to the pair \(\otimes\), \(\otimes^{\prime}\) and let \(B\) be the matrix of \(U\) relative to the pair \(\otimes^{\prime}\), \(\otimes^{\prime\prime}\). It is then easy to see that the matrix \(C\) of the transformation \(UT\) relative to the pair \(\otimes\), \(\otimes^{\prime\prime}\) is the product of \(B\) and \(A\); for, if \(\alpha\) is any vector in \(V\)
+
+\[\begin{array}{c}[T\alpha]_{\otimes^{\prime}}=A[\alpha]_{\otimes}\\ [U(T\alpha)]_{\otimes^{\prime\prime}}=B[T\alpha]_{\otimes^{\prime}}\end{array}\]
+
+and so
+
+\[[(UT)(\alpha)]_{\otimes^{\prime\prime}}=BA[\alpha]_{\otimes}\]
+
+and hence, by the definition and uniqueness of the representing matrix, we must have \(C=BA\). One can also see this by carrying out the computation
+
+\[\begin{array}{c}(UT)(\alpha_{j})=U(T\alpha_{j})\\ =U\left(\sum\limits_{k=1}^{m}A_{kj}\beta_{k}\right)\\ =\sum\limits_{k=1}^{m}A_{kj}(U\beta_{k})\\ =\sum\limits_{k=1}^{m}A_{kj}\sum\limits_{i=1}^{p}B_{ik}\gamma_{i}\\ =\sum\limits_{i=1}^{p}\left(\sum\limits_{k=1}^{m}B_{ik}A_{kj}\right)\gamma_{i} \end{array}\]
+
+so that we must have
+
+\[C_{ij}=\sum\limits_{k=1}^{m}B_{ik}A_{kj}.\] (3-6)
+
+We motivated the definition (3-6) of matrix multiplication via operations on the rows of a matrix. One sees here that a very strong motivation for the definition is to be found in composing linear transformations. Let us summarize formally.
+
+**Theorem 13**: _Let \(V\), \(W\), and \(Z\) be finite-dimensional vector spaces over the field \(F\); let \(T\) be a linear transformation from \(V\) into \(W\) and \(U\) a linear transformation from \(W\) into \(Z\). If \(\otimes\), \(\otimes^{\prime}\), and \(\otimes^{\prime\prime}\) are ordered bases for the spaces \(V\), \(W\), and \(Z\), respectively, if \(A\) is the matrix of \(T\) relative to the pair \(\otimes\), \(\otimes^{\prime}\), and \(B\) is the matrix of \(U\) relative to the pair \(\otimes^{\prime}\), \(\otimes^{\prime\prime}\), then the matrix of the composition \(UT\) relative to the pair \(\otimes\), \(\otimes^{\prime\prime}\) is the product matrix \(C=BA\)._
+
+We remark that Theorem 13 gives a proof that matrix multiplication is associative--a proof which requires no calculations and is independent of the proof we gave in Chapter 1. We should also point out that we proved a special case of Theorem 13 in Example 12.
+
+It is important to note that if \(T\) and \(U\) are linear operators on a space \(V\) and we are representing by a single ordered basis \(\otimes\), then Theorem 13 assumes the simple form \([UT]_{\otimes}=[U]_{\otimes}[T]_{\otimes}\). Thus in this case, the 

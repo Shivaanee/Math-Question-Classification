@@ -1,0 +1,19 @@
+In a diffusion system _the flow on an edge is proportional to the potential difference across its adjacent nodes_. This is typically written as \(r_{j}f_{j}=e_{k}-e_{l}\), where edge \(j\) goes from node \(k\) to node \(l\), and \(r_{j}\) (which is typically positive) is called the _resistance_ of edge \(j\). In a thermal model, \(r_{j}\) is called the thermal resistance of the edge; in an electrical circuit, it is called the electrical resistance. This is illustrated in figure 8.2, which shows edge 8, connecting node 2 and node 3, corresponding to an edge flow equation
+
+\[r_{8}f_{8}=e_{2}-e_{3}.\]
+
+We can write the edge flow equations in a compact way as
+
+\[Rf=-A^{T}e,\] (8.7)
+
+where \(R=\mathbf{diag}(r)\) is called the _resistance matrix_.
+
+The diffusion model can be expressed as one set of block linear equations in the variables \(f\), \(s\), and \(e\):
+
+\[\left[\begin{array}{ccc}A&I&0\\ R&0&A^{T}\end{array}\right]\left[\begin{array}{c}f\\ s\\ e\end{array}\right]=0.\]
+
+This is a set of \(n+m\) homogeneous equations in \(m+2n\) variables. To these under-determined equations we can add others, for example, by specifying some of the entries of \(f\), \(s\), and \(e\).
+
+Leontief input-output model.We consider an economy with \(n\) different industrial sectors. We let \(x_{i}\) be the economic activity level, or total production output, of sector \(i\), for \(i=1,\ldots,n\), measured in a common unit, such as (billions of) dollars. The output of each sector flows to other sectors, to support their production, and also to consumers. We denote the total consumer demand for sector \(i\) as \(d_{i}\), for \(i=1,\ldots,n\).
+
+Supporting the output level \(x_{j}\) for sector \(j\) requires \(A_{ij}x_{j}\) output for sector \(i\). We refer to \(A_{ij}x_{j}\) as the sector \(i\)_input_ that flows to sector \(j\). (We can have \(A_{ii}\neq 0\); for example, it requires some energy to support the production of energy.) Thus, \(A_{i1}x_{1}+\cdots+A_{in}x_{n}\) is the total sector \(i\) output required by, or flowing into, the \(n\) industrial sectors. The matrix \(A\) is called the _input-output matrix_ of the economy, since it describes the flows of sector outputs to the inputs of itself and other sectors. The vector \(Ax\) gives the sector outputs required to support the production levels given by \(x\). (This sounds circular, but isn't.) 

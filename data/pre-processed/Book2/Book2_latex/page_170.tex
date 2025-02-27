@@ -1,0 +1,28 @@
+
+
+**8.5**: _Symmetric and anti-symmetric part._ An \(n\)-vector \(x\) is _symmetric_ if \(x_{k}=x_{n-k+1}\) for \(k=1,\ldots,n\). It is _anti-symmetric_ if \(x_{k}=-x_{n-k+1}\) for \(k=1,\ldots,n\).
+
+1. Show that every vector \(x\) can be decomposed in a unique way as a sum \(x=x_{\rm s}+x_{\rm a}\) of a symmetric vector \(x_{\rm s}\) and an anti-symmetric vector \(x_{\rm a}\).
+2. Show that the symmetric and anti-symmetric parts \(x_{\rm s}\) and \(x_{\rm a}\) are linear functions of \(x\). Give matrices \(A_{\rm s}\) and \(A_{\rm a}\) such that \(x_{\rm s}=A_{\rm s}x\) and \(x_{\rm a}=A_{\rm a}x\) for all \(x\).
+**8.6**: _Linear functions._ For each description of \(y\) below, express it as \(y=Ax\) for some \(A\). (You should specify \(A\).)
+
+1. \(y_{i}\) is the difference between \(x_{i}\) and the average of \(x_{1},\ldots,x_{i-1}\). (We take \(y_{1}=x_{1}\).)
+2. \(y_{i}\) is the difference between \(x_{i}\) and the average value of all other \(x_{j}\)s, _i.e._, the average of \(x_{1},\ldots,x_{i-1},x_{i+1},\ldots,x_{n}\).
+**8.7**: _Interpolation of polynomial values and derivatives._ The 5-vector \(c\) represents the coefficients of a quartic polynomial \(p(x)=c_{1}+c_{2}x+c_{3}x^{2}+c_{4}x^{3}+c_{5}x^{4}\). Express the conditions \[p(0)=0,\quad p^{\prime}(0)=0,\quad p(1)=1,\quad p^{\prime}(1)=0,\] as a set of linear equations of the form \(Ac=b\). Is the system of equations underdetermined, over-determined, or square?
+**8.8**: _Interpolation of rational functions._ A _rational function_ of degree two has the form
+
+\[f(t)=\frac{c_{1}+c_{2}t+c_{3}t^{2}}{1+d_{1}t+d_{2}t^{2}},\]
+
+where \(c_{1},c_{2},c_{3},d_{1},d_{2}\) are coefficients. ('Rational' refers to the fact that \(f\) is a ratio of polynomials. Another name for \(f\) is _bi-quadratic_.) Consider the interpolation conditions
+
+\[f(t_{i})=y_{i},\quad i=1,\ldots,K,\]
+
+where \(t_{i}\) and \(y_{i}\) are given numbers. Express the interpolation conditions as a set of linear equations in the vector of coefficients \(\theta=(c_{1},c_{2},c_{3},d_{1},d_{2})\), as \(A\theta=b\). Give \(A\) and \(b\), and their dimensions.
+**8.9**: _Required nutrients._ We consider a set of \(n\) basic foods (such as rice, beans, apples) and a set of \(m\) nutrients or components (such as protein, fat, sugar, vitamin C). Food \(j\) has a cost given by \(c_{j}\) (say, in dollars per gram), and contains an amount \(N_{ij}\) of nutrient \(i\) (per gram). (The nutrients are given in some appropriate units, which can depend on the particular nutrient.) A daily diet is represented by an \(n\)-vector \(d\), with \(d_{i}\) the daily intake (in grams) of food \(i\). Express the condition that a diet \(d\) contains the total nutrient amounts given by the \(m\)-vector \(n^{\rm des}\), and has a total cost \(B\) (the budget) as a set of linear equations in the variables \(d_{1},\ldots,d_{n}\). (The entries of \(d\) must be nonnegative, but we ignore this issue here.)
+**8.10**: _Blending crude oil._ A set of \(K\) different types of crude oil are blended (mixed) together in proportions \(\theta_{1},\ldots,\theta_{K}\). These numbers sum to one; they must also be nonnegative, but we will ignore that requirement here. Associated with crude oil type \(k\) is an \(n\)-vector \(c_{k}\) that gives its concentration of \(n\) different constituents, such as specific hydrocarbons. Find a set of linear equations on the blending coefficients, \(A\theta=b\), that expresses the requirement that the blended crude oil achieves a target set of constituent concentrations, given by the \(n\)-vector \(c^{\rm tsr}\). (Include the condition that \(\theta_{1}+\cdots+\theta_{K}=1\) in your equations.)
+**8.11**: _Location from range measurements._ The 3-vector \(x\) represents a location in 3-D. We measure the distances (also called the range) of \(x\) to four points at known locations \(a_{1}\), \(a_{2}\), \(a_{3}\), \(a_{4}\):
+
+\[\rho_{1}=\|x-a_{1}\|,\qquad\rho_{2}=\|x-a_{2}\|,\qquad\rho_{3}=\|x-a_{3}\|, \qquad\rho_{4}=\|x-a_{4}\|.\]
+
+Express these distance conditions as a set of three linear equations in the vector \(x\). _Hint._ Square the distance equations, and subtract one from the others.
+

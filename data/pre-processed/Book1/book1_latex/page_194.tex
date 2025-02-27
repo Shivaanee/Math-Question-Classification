@@ -1,0 +1,21 @@
+\(A^{\mathrm{T}}A\) **has the same nullspace as \(A\).**
+
+Certainly if \(Ax=0\) then \(A^{\mathrm{T}}Ax=0\). Vectors \(x\) in the nullspace of \(A\) are also in the nullspace of \(A^{\mathrm{T}}A\). To go in the other direction, start by supposing that \(A^{\mathrm{T}}Ax=0\), and take the inner product with \(x\) to show that \(Ax=0\):
+
+\[x^{\mathrm{T}}A^{\mathrm{T}}Ax=0,\quad\text{or}\quad\|Ax\|^{2}=0,\quad\text{or }\quad Ax=0.\]
+
+The two nullspaces are identical. In particular, if \(A\) has independent columns (and only \(x=0\) is in its nullspace), then the same is true for \(A^{\mathrm{T}}A\):
+
+**3M** If \(A\) has independent columns, then \(A^{\mathrm{T}}A\) is _square, symmetric_, and _invertible_.
+
+We show later that \(A^{\mathrm{T}}A\) is also positive definite (all pivots and eigenvalues are positive).
+
+This case is by far the most common and most important. Independence is not so hard in \(m\)-dimensional space if \(m>n\). We assume it in what follows.
+
+### Projection Matrices
+
+We have shown that the closest point to \(b\) is \(p=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}b\). _This formula expresses in matrix terms the construction of a perpendicular line from \(b\) to the column space of \(A\)._ The matrix that gives \(p\) is a projection matrix, denoted by \(P\):
+
+\[\text{{Projection matrix}}\qquad P=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}.\] (4)
+
+This matrix projects any vector \(\mathsf{b}\) 

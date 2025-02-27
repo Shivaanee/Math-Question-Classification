@@ -1,0 +1,20 @@
+
+
+## Chapter 19 Constrained nonlinear least squares
+
+In this chapter we consider an extension of the nonlinear least squares problem that includes nonlinear constraints. Like the problem of solving a set of nonlinear equations, or finding a least squares approximate solution to a set of nonlinear equations, the constrained nonlinear least squares problem is in general hard to solve exactly. We describe a heuristic algorithm that often works well in practice.
+
+### 19.1 Constrained nonlinear least squares
+
+In this section we consider an extension of the nonlinear least squares problem (18.2) that includes equality constraints:
+
+\[\begin{array}{ll}\mbox{minimize}&\|f(x)\|^{2}\\ \mbox{subject to}&g(x)=0,\end{array}\] (19.1)
+
+where the \(n\)-vector \(x\) is the variable to be found. Here \(f(x)\) is an \(m\)-vector, and \(g(x)\) is a \(p\)-vector. We sometimes write out the components of \(f(x)\) and \(g(x)\), to express the problem as
+
+\[\begin{array}{ll}\mbox{minimize}&f_{1}(x)^{2}+\cdots+f_{m}(x)^{2}\\ \mbox{subject to}&g_{i}(x)=0,\quad i=1,\ldots,p.\end{array}\]
+
+We refer to \(f_{i}(x)\) as the \(i\)th (scalar) residual, and \(g_{i}(x)=0\) as the \(i\)th (scalar) equality constraint. When the functions \(f\) and \(g\) are affine, the equality constrained nonlinear least squares problem (19.1) reduces to the (linear) least squares problem with equality constraints from chapter 16.
+
+We say that a point \(x\) is feasible for the problem (19.1) if it satisfies \(g(x)=0\). A point \(\hat{x}\) is a solution of the problem (19.1) if it is feasible and has the smallest objective among all feasible points, _i.e._, if whenever \(g(x)=0\), we have \(\|f(x)\|^{2}\geq\|f(\hat{x})\|^{2}\).
+

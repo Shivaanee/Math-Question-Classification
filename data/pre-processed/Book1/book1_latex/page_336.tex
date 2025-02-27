@@ -1,0 +1,37 @@
+or matrix powers or eigenvalues--just as elimination steps were natural for \(Ax=b\). Elimination multiplied \(A\) on the left by \(L^{-1}\), but not on the right by \(L\). So \(U\) is not similar to \(A\), and the pivots are _not_ the eigenvalues.
+
+A whole family of matrices \(M^{-1}AM\) is similar to \(A\), and there are two questions:
+
+1. What do these similar matrices \(M^{-1}AM\) have in common?
+2. With a special choice of \(M\), what special form can be achieved by \(M^{-1}AM\)?
+
+The final answer is given by the _Jordan form_, with which the chapter ends.
+
+These combinations \(M^{-1}AM\) arise in a differential or difference equation, when a "change of variables" \(u=Mv\) introduces the new unknown \(v\):
+
+\[\frac{du}{dt}=Au\quad\text{becomes}\quad M\frac{dv}{dt}=AMv,\quad\text{or} \quad\frac{dv}{dt}=M^{-1}AMv\]
+
+\[u_{n+1}=Au_{n}\quad\text{becomes}\quad Mv_{n+1}=AMv_{n},\quad\text{or}\quad v _{n+1}=M^{-1}AMv_{n}.\]
+
+The new matrix in the equation is \(M^{-1}AM\). In the special case \(M=S\), the system is uncoupled because \(\Lambda=S^{-1}AS\) is diagonal. The eigenvectors evolve independently. This is the maximum simplification, but other \(M\)'s are also useful. We try to make \(M^{-1}AM\) easier to work with than \(A\).
+
+The family of matrices \(M^{-1}AM\) includes \(A\) itself, by choosing \(M=I\). Any of these similar matrices can appear in the differential and difference equations, by the change \(u=Mv\), so they ought to have something in common, and they do: _Similar matrices share the same eigenvalues_.
+
+**5P** Suppose that \(B=M^{-1}AM\). Then \(A\) and \(B\) have the **same eigenvalues**.
+
+**Every eigenvector \(x\) of \(A\) corresponds to an eigenvector \(M^{-1}x\) of \(B\)**.
+
+Start from \(Ax=\lambda x\) and substitute \(A=MBM^{-1}\):
+
+\[\text{\bf Same eigenvalue}\qquad MBM^{-1}x=\lambda x\quad\text{which is} \quad B(M^{-1}x)=\lambda(M^{-1}x).\] (1)
+
+The eigenvalue of \(B\) is still \(\lambda\). The eigenvector has changed from \(x\) to \(M^{-1}x\).
+
+We can also check that \(A-\lambda I\) and \(B-\lambda I\) have the same determinant:
+
+**Product of matrices** \[B-\lambda I=M^{-1}AM-\lambda I=M^{-1}(A-\lambda I)M\]
+**Product rule** \[\det(B-\lambda I)=\det M^{-1}\det(A-\lambda I)\det M=\det(A-\lambda I).\]
+
+The polynomials \(\det(A-\lambda I)\) and \(\det(B-\lambda I)\) are equal. Their roots--the eigenvalues of \(A\) and \(B\)--are the same. Here are matrices \(B\) similar to \(A\).
+
+ 

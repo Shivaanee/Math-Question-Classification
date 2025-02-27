@@ -1,0 +1,19 @@
+23. The eigenvalues of \(A(A-I)(A-2I)\) are \(0\), \(0\), \(0\).
+25. Always \(\begin{bmatrix}a^{2}+bc&ab+bd\\ ac+cd&bc+d^{2}\end{bmatrix}-(a+d)\begin{bmatrix}a&b\\ c&d\end{bmatrix}+(ad-bc)\begin{bmatrix}1&0\\ 0&1\end{bmatrix}=\begin{bmatrix}0&0\\ 0&0\end{bmatrix}\);
+27. \(M^{-1}J_{3}M=0\), so the last two inequalities are easy. Trying for \(MJ_{1}=J_{2}M\) forces the first column of \(M\) to be zero, so \(M\) cannot be invertible. Cannot have \(J_{1}=M^{-1}J_{2}M\).
+29. \(A^{10}=2^{10}\begin{bmatrix}61&45\\ -80&-59\end{bmatrix}\); \(e^{A}=e^{2}\begin{bmatrix}13&9\\ -16&-11\end{bmatrix}\).
+31. \(\begin{bmatrix}1&1\\ 0&0\end{bmatrix}\); \(\begin{bmatrix}0&0\\ 1&1\end{bmatrix}\); \(\begin{bmatrix}1&0\\ 1&0\end{bmatrix}\); \(\begin{bmatrix}0&1\\ 0&1\end{bmatrix}\) are similar; \(\begin{bmatrix}1&0\\ 0&1\end{bmatrix}\) by itself and \(\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\) by itself.
+33. (a) \((M^{-1}AM)(M^{-1}x)=M^{-1}(Ax)=M^{-1}0=0\). (b) The nullspaces of \(A\) and of \(M^{-1}AM\) have the same _dimension_. Different vectors and different bases.
+35. \(J^{2}=\begin{bmatrix}c^{2}&2c\\ 0&c^{2}\end{bmatrix}\), \(J^{3}=\begin{bmatrix}c^{3}&3c^{2}\\ 0&c^{3}\end{bmatrix}\), \(J^{k}=\begin{bmatrix}c^{k}&kc^{k-1}\\ 0&c^{k}\end{bmatrix}\); \(J^{0}=I\), \(J^{-1}=\begin{bmatrix}c^{-1}&-c^{-2}\\ 0&c^{-1}\end{bmatrix}\).
+37. \(w(t)=\big{(}w(0)+tx(0)+\frac{1}{2}t^{2}y(0)+\frac{1}{6}t^{3}z(0)\big{)}e^{5t}\).
+39. (a) Choose \(M_{i}=\) reverse diagonal matrix to get \(M_{i}^{-1}J_{i}M_{i}=M_{i}^{\mathsf{T}}\) in each block (b) \(M_{0}\) has those blocks \(M_{i}\) on its diagonal to get \(M_{0}^{-1}JM_{0}=J^{\mathsf{T}}\). (c) \(A^{\mathsf{T}}=(M^{-1})^{\mathsf{T}}J^{\mathsf{T}}M^{\mathsf{T}}\) is \((M^{-1})^{\mathsf{T}}M_{0}^{-1}J\,M_{0}M^{\mathsf{T}}=(MM_{0}M^{\mathsf{T}})^ {-1}A(MM_{0}M^{\mathsf{T}})\), and \(A^{\mathsf{T}}\) is similar to \(A\).
+41. (a) True: One has \(\lambda=0\), the other doesn't. (b) False. Diagonalize a nonsymmetric matrix and \(\Lambda\) is symmetric. (c) False: \(\begin{bmatrix}0&1\\ -1&0\end{bmatrix}\) and \(\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}\) are similar. (d) True: All eigenvalues of \(A+I\) are increased by \(1\), thus different from the eigenvalues of \(A\).
+43. Diagonals 6 by 6 and 4 by 4; \(AB\) has all the same eigenvalues as \(BA\) plus \(6-4\) zeros.
+
+#### Problem Set 6.1, page 316
+
+1. \(ac-b^{2}=2-4=-2<0\); \(x^{2}+4xy+2y^{2}=(x+2y)^{2}-2y^{2}\) (difference of squares).
+3. \(\det\,(A-\lambda I)=\lambda^{2}-(a+c)\lambda+ac-b^{2}=0\) gives \(\lambda_{1}=((a+c)+\sqrt{(a-c)^{2}+b^{2}})/2\) and \(\lambda_{2}=((a+c)-\sqrt{(a-c)^{2}+4b^{2}})/2\)); \(\lambda_{1}>0\) is a sum of positive numbers; \(\lambda_{2}>0\) because \((a+c)^{2}>(a-c)^{2}+4b^{2}\) reduces to \(ac>b^{2}\). Better way: product \(\lambda_{1}\lambda_{2}=ac-b^{2}\).
+4. (a) Positive definite when \(-3<b<3\). (b) \(\begin{bmatrix}1&b\\ b&9\end{bmatrix}=\begin{bmatrix}1&0\\ b&1\end{bmatrix}\begin{bmatrix}1&0\\ 0&9-b^{2}\end{bmatrix}\begin{bmatrix}1&b\\ 0&1\end{bmatrix}\). (c) The minimum is \(-\frac{1}{2(9-b^{2})}\) when \(\begin{bmatrix}1&b\\ b&9\end{bmatrix}\begin{bmatrix}x\\ y\end{bmatrix}=\begin{bmatrix}0\\ 1\end{bmatrix}\), which is \(\begin{bmatrix}x\\ y\end{bmatrix}=\frac{1}{9-b^{2}}\begin{bmatrix}-b\\ 1\end{bmatrix}\). (d) No minimum, let \(y\to\infty\), \(x=-3y\), then \(x-y\) approaches \(-\infty\).
+
+ 

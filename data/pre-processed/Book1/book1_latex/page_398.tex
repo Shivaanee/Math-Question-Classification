@@ -1,0 +1,19 @@
+That function \(\sin\pi x\) minimizes the Rayleigh quotient \(v^{\rm T}Av/v^{\rm T}v\):
+
+\[\mbox{\bf Rayleigh quotient}\qquad R(v)=\frac{\int_{0}^{1}v(x)(-v^{\prime\prime}(x ))dx}{\int_{0}^{1}(v(x))^{2}dx}=\frac{\int_{0}^{1}(v^{\prime}(x))^{2}dx}{\int_ {0}^{1}(v(x))^{2}dx}.\]
+
+This is a ratio of potential to kinetic energy, and they are in balance at the eigenvector. Normally this eigenvector would be unknown, and to approximate it we admit only the trial candidates \(V=y_{1}V_{1}+\cdots+y_{n}V_{n}\):
+
+\[R(V)=\frac{\int_{0}^{1}(y_{1}V_{1}^{\prime}+\cdots+y_{n}V_{n}^{\prime})^{2}dx} {\int_{0}^{1}(y_{1}V_{1}+\cdots+y_{n}V_{n})^{2}dx}=\frac{y^{\rm T}Ay}{y^{\rm T} My}.\]
+
+Now we face a matrix problem: Minimize \(y^{\rm T}Ay/y^{\rm T}My\). With \(M=I\), this leads to the standard eigenvalue problem \(Ay=\lambda y\). But our matrix \(M\) will be tridiagonal, because neighboring hat functions overlap. It is exactly this situation that brings in the _generalized eigenvalue problem_. **The minimum value \(\Lambda_{1}\) will be the smallest eigenvalue of \(Ay=\lambda My\)**. That \(\Lambda_{1}\) will be close to (and above) \(\pi^{2}\). The eigenvector \(y\) will give the approximation \(U=y_{1}V_{1}+\cdots+y_{n}V_{n}\) to the eigenfunction.
+
+As in the static problem. The method can be summarized in three steps: (1) choose the \(V_{j}\), (2) compute \(A\) and \(M\), and (3) solve \(Ay=\lambda My\). I don't know why that costs a billion dollars.
+
+### Problem Set 6.5
+
+1. Use three hat functions, with \(h=\frac{1}{4}\), to solve \(-u^{\prime\prime}=2\) with \(u(0)=u(1)=0\). Verify that the approximation \(U\) matches \(u=x-x^{2}\) at the nodes.
+2. Solve \(-u^{\prime\prime}=x\) with \(u(0)=u(1)=0\). Then solve approximately with two hat functions and \(h=\frac{1}{3}\). Where is the largest error?
+3. Suppose \(-u^{\prime\prime}=2\), with the boundary condition \(u(1)=0\) changed to \(u^{\prime}(1)=0\). This "natural" condition on \(u^{\prime}\) need not be imposed on the trial functions \(V\). With \(h=\frac{1}{3}\), there is an extra _half-hat_\(V_{3}\), which goes from 0 to 1 between \(x=\frac{2}{3}\) and \(x=1\). Compute \(A_{33}=\int(V_{3}^{\prime})^{2}dx\) and \(f_{3}=\int 2V_{3}dx\). Solve \(Ay=f\) for the finite element solution \(y_{1}V_{1}+y_{2}V_{2}+y_{3}V_{3}\).
+4. Solve \(-u^{\prime\prime}=2\) with a single hat function, but place its node at \(x=\frac{1}{4}\) instead of \(x=\frac{1}{2}\). (Sketch this function \(V_{1}\).) With boundary conditions \(u(0)=u(1)=0\), compare the finite element approximation with the true \(u=x-x^{2}\).
+5. _Galerkin's method_ starts with the differential equation (say \(-u^{\prime\prime}=f(x)\)) instead of the energy \(P\). The trial solution is still \(u=y_{1}V_{1}+y_{2}V_{2}+\cdots+y_{n}V_{n}\), and the \(y\)'s are chosen to make the difference between \(-u^{\prime\prime}\) and \(f\) orthogonal to every \(V_{j}\): \[\mbox{\bf Galerkin}\qquad\int(-y_{1}V_{1}^{\prime\prime}-y_{2}V_{2}^{\prime \prime}-\cdots-y_{n}V_{n}^{\prime\prime})V_{j}dx=\int f(x)V_{j}(x)dx.\] 

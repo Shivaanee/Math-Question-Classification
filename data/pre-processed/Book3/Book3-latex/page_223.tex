@@ -1,0 +1,25 @@
+If \(\alpha\) is a vector in \(V\), we have unique vectors \(\alpha_{i}\), \(\ldots\), \(\alpha_{k}\) with \(\alpha_{i}\) in \(W\), such that
+
+\[\alpha\,=\,\alpha_{1}+\,\cdots\,+\,\alpha_{k}\]
+
+and then
+
+\[T_{\alpha}\,=\,T_{1}\alpha_{1}+\,\cdots\,+\,T_{k}\alpha_{k}.\]
+
+We shall describe this situation by saying that \(T\) is the **direct sum** of the operators \(T_{1}\), \(\ldots\), \(T_{k}\). It must be remembered in using this terminology that the \(T_{i}\) are not linear operators on the space \(V\) but on the various subspaces \(W_{i}\). The fact that \(V\,=\,W_{1}\,\oplus\,\cdots\,\oplus\,W_{k}\) enables us to associate with each \(\alpha\) in \(V\) a unique \(k\)-tuple \((\alpha_{i}\), \(\ldots\), \(\alpha_{i})\) of vectors \(\alpha_{i}\) in \(W\), (by \(\alpha\,=\,\alpha_{1}+\,\cdots\,+\alpha_{k}\)) in such a way that we can carry out the linear operations in \(V\) by working in the individual subspaces \(W_{i}\). The fact that each \(W_{i}\) is invariant under \(T\) enables us to view the action of \(T\) as the independent action of the operators \(T_{i}\) on the subspaces \(W_{i}\). Our purpose is to study \(T\) by finding invariant direct-sum decompositions in which the \(T_{i}\) are operators of an elementary nature.
+
+Before looking at an example, let us note the matrix analogue of this situation. Suppose we select an ordered basis \(\clubsuit_{i}\) for each \(W_{i}\) and let \(\clubsuit\) be the ordered basis for \(V\) consisting of the union of the \(\clubsuit_{i}\) arranged in the order \(\clubsuit_{i}\), \(\ldots\), \(\clubsuit_{k}\), so that \(\clubsuit\) is a basis for \(V\). From our discussion concerning the matrix analogue for a single invariant subspace, it is easy to see that if \(A\,=\,[T]_{\clubsuit}\) and \(A\,_{i}\,=\,[T_{i}]_{\clubsuit,i}\), then \(A\) has the block form
+
+\[A\,=\,\begin{bmatrix}A_{1}&0&\cdots&0\\ 0&A_{2}&\cdots&0\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&A_{k}\end{bmatrix}.\] (6-14)
+
+In (6-14), \(A\,_{i}\) is a \(d_{i}\,\mathsf{\times}\,d_{i}\) matrix (\(d_{i}\,=\,\dim\,W_{i}\)), and the \(0^{\prime}\)s are symbols for rectangular blocks of scalar \(0^{\prime}\)s of various sizes. It also seems appropriate to describe (6-14) by saying that \(A\) is the **direct sum** of the matrices \(A_{1}\), \(\ldots\), \(A_{k}\).
+
+Most often, we shall describe the subspace \(W_{i}\) by means of the associated projections \(E_{i}\) (Theorem 9). Therefore, we need to be able to phrase the invariance of the subspaces \(W_{i}\) in terms of the \(E_{i}\).
+
+**Theorem 10**: _Let \(T\) be a linear operator on the space \(V\), and let \(W_{b}\), \(\ldots\), \(W_{k}\) and \(E_{i}\), \(\ldots\), \(E_{k}\) be as in Theorem 9. Then a necessary and sufficient condition that each subspace \(W_{i}\) be invariant under \(T\) is that \(T\) commute with each of the projections \(E_{i}\), i.e.,_
+
+\[T\,E_{i}\,=\,E_{i}T,\qquad i\,=\,1,\ldots\,,\,k.\]
+
+Suppose \(T\) commutes with each \(E_{i}\). Let \(\alpha\) be in \(W_{j}\). Then \(E_{j}\alpha\,=\,a\), and
+
+\[\begin{array}{rl}T\alpha&=\,T(E_{j}\alpha)\\ &=\,E_{j}(T\alpha)\end{array}\] 

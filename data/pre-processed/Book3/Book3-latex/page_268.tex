@@ -1,0 +1,23 @@
+In (7-36), the polynomial \(g\) may or may not divide every entry of \(S\). If it does not, find the first column which has an entry not divisible by \(g\) and add that column to column 1. The new first column contains both \(g\) and an entry \(gh\)\(+\)\(r\) where \(r\neq 0\) and \(\deg\)\(r<\deg\)\(g\). Apply process P7-36 and the result will be another matrix of the form (7-36), where the degree of the corresponding \(g\) has decreased.
+
+It should now be obvious that in a finite number of steps we will obtain (7-35), i.e., we will reach a matrix of the form (7-36) where the degree of \(g\) cannot be further reduced.
+
+We want to show that the normal form associated with a matrix \(M\) is unique. Two things we have seen provide clues as to how the polynomials \(f_{1},\ldots,f_{1}\) in Theorem 3.1 are uniquely determined by \(M\). First, elementary row and column operations do not change the determinant of a square matrix by more than a non-zero scalar factor. Second, elementary row and column operations do not change the greatest common divisor of the entries of a matrix.
+
+**Definition**.: _Let \(M\) be an \(m\times n\) matrix with entries in \(F[x]\). If \(1\leq k\leq min\ (m,n)\), we define \(\delta_{k}(M)\) to be the greatest common divisor of the determinants of all \(k\times k\) submatrices of \(M\)._
+
+Recall that a \(k\times k\) submatrix of \(M\) is one obtained by deleting some \(m-k\) rows and some \(n-k\) columns of \(M\). In other words, we select certain \(k\)-tuples
+
+\[\begin{array}{l}I\,\equiv\,(i_{1},\ldots,i_{k}),\qquad 1\leq i_{1}<\,\cdots \,<i_{k}\leq m\\ J\,=\,(j_{1},\ldots,j_{k}),\qquad 1\leq j_{1}<\,\cdots\,<j_{k}\leq n\end{array}\]
+
+and look at the matrix formed using those rows and columns of \(M\). We are interested in the determinants
+
+\[D_{I,J}(M)\,=\,\det\!\left[\begin{matrix}M_{i\!/\!i_{1}}&\cdots&M_{i\!/\!i_{k }}\\ \vdots&&\vdots\\ M_{i\!/\!i_{k}}&\cdots&M_{i\!/\!i_{k}}\end{matrix}\right].\] (7-39)
+
+The polynomial \(\delta_{k}(M)\) is the greatest common divisor of the polynomials \(D_{I,J}(M)\), as \(I\) and \(J\) range over the possible \(k\)-tuples.
+
+**Theorem 3.1**.: _If \(M\) and \(N\) are equivalent \(m\times n\) matrices with entries in \(F[x]\), then_
+
+\[\delta_{k}(M)\,=\,\delta_{k}(N),\qquad 1\leq k\leq min\ (m,\,n).\] (7-40)
+
+Proof.: It will suffice to show that a single elementary row operation \(e\) does not change \(\delta_{k}\). Since the inverse of \(e\) is also an elementary row operation, it will suffice to show this: If a polynomial \(f\) divides every \(D_{I,J}(M)\), then \(f\) divides \(D_{I 

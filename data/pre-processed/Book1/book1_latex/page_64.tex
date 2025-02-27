@@ -1,0 +1,23 @@
+It would be a waste of time, since we only need back-substitution for \(x\) (and forward substitution produced \(c\)).
+
+A similar remark applies to \(A^{-1}\); the multiplication \(A^{-1}b\) would still take \(n^{2}\) steps. _It is the solution that we want, and not all the entries in the inverse_.
+
+_Remark 2_.: Purely out of curiosity, we might count the number of operations required to find \(A^{-1}\). The normal count for each new right-hand side is \(n^{2}\), half in the forward direction and half in back-substitution. With \(n\) right-hand sides \(e_{1},\ldots,e_{n}\) this makes \(n^{3}\). After including the \(n^{3}/3\) operations on \(A\) itself, the total seems to be \(4n^{3}/3\).
+
+This result is a little too high because of the zeros in the \(e_{j}\). Forward elimination changes only the zeros below the \(1\). This part has only \(n-j\) components, so the count for \(e_{j}\) is effectively changed to \((n-j)^{2}/2\). Summing over all \(j\), the total for forward elimination is \(n^{3}/6\). This is to be combined with the usual \(n^{3}/3\) operations that are applied to \(A\), and the \(n(n^{2}/2)\) back-substitution steps that finally produce the columns \(x_{j}\) of \(A^{-1}\). _The final count of multiplications for computing \(A^{-1}\) is \(n^{3}\)_:
+
+\[\text{Operation count}\qquad\frac{n^{3}}{6}+\frac{n^{3}}{3}+n\left(\frac{n^{2}}{ 2}\right)=n^{3}.\]
+
+This count is remarkably low. Since matrix multiplication already takes \(n^{3}\) steps, it requires as many operations to compute \(A^{2}\) as it does to compute \(A^{-1}\)! That fact seems almost unbelievable (and computing \(A^{3}\) requires twice as many, as far as we can see). Nevertheless, if \(A^{-1}\) is not needed, it should not be computed.
+
+_Remark 3_.: In the Gauss-Jordan calculation we went all the way forward to \(U\), before starting backward to produce zeros above the pivots. That is like Gaussian elimination, but other orders are possible. We could have used the second pivot when we were there earlier, to create a zero above it as well as below it. This is not smart. At that time the second row is virtually full, whereas near the end it has zeros from the upward row operations that have already taken place.
+
+### Invertible \(=\) Nonsingular (\(n\) pivots)
+
+Ultimately we want to know which matrices are invertible and which are not. This question is so important that it has many answers. _See the last page of the book!_
+
+Each of the first five chapters will give a different (but equivalent) test for invertibility. Sometimes the tests extend to rectangular matrices and one-sided inverses: Chapter 2 looks for independent rows and independent columns, Chapter 3 inverts \(AA^{\text{T}}\) or \(A^{\text{T}}A\). The other chapters look for _nonzero determinants_ or _nonzero eigenvalues_ or _nonzero pivots_. This last test is the one we meet through Gaussian elimination. We want to show (in a few theoretical paragraphs) that the pivot test succeeds.
+
+Suppose \(A\) has a full set of \(n\) pivots. \(AA^{-1}=I\) gives \(n\) separate systems \(Ax_{i}=e_{i}\) for the columns of \(A^{-1}\). They can be solved by elimination or by Gauss-Jordan. Row exchanges may be needed, but the columns of \(A^{-1}\) are determined.
+
+ 

@@ -1,0 +1,13 @@
+
+
+**19.3**: _Boolean least squares._ The _Boolean least squares problem_ is a special case of the constrained nonlinear least squares problem (19.1), with the form
+
+\[\begin{array}{ll}\mbox{minimize}&\|Ax-b\|^{2}\\ \mbox{subject to}&x_{i}^{2}=1,\quad i=1,\ldots,n,\end{array}\]
+
+where the \(n\)-vector \(x\) is the variable to be chosen, and the \(m\times n\) matrix \(A\) and the \(m\)-vector \(b\) are the (given) problem data. The constraints require that each entry of \(x\) is either \(-1\) or \(+1\), _i.e._, \(x\) is a Boolean vector. Since each entry can take one of two values, there are \(2^{n}\) feasible values for the vector \(x\). The Boolean least squares problem arises in many applications.
+
+One simple method for solving the Boolean least squares problem, sometimes called the _brute force method_, is to evaluate the objective function \(\|Ax-b\|^{2}\) for each of the \(2^{n}\) possible values, and choose one that has the least value. This method is not practical for \(n\) larger than 30 or so. There are many heuristic methods that are much faster to carry out than the brute force method, and approximately solve it, _i.e._, find an \(x\) for which the objective is small, if not the smallest possible value over all \(2^{n}\) feasible values of \(x\). One such heuristic is the augmented Lagrangian algorithm 19.2.
+
+1. Work out the details of the update step in the Levenberg-Marquardt algorithm used in each iteration of the augmented Lagrangian algorithm, for the Boolean least squares problem.
+2. Implement the augmented Lagrangian algorithm for the Boolean least squares problem. You can choose the starting point \(x^{(1)}\) as the minimizer of \(\|Ax-b\|^{2}\). At each iteration, you can obtain a feasible point \(\tilde{x}^{(k)}\) by rounding the entries of \(x^{(k)}\) to the values \(\pm 1\), _i.e._, \(\tilde{x}^{(k)}=\mbox{\bf sign}(x^{(k)})\). You should evaluate and plot the objective value of these feasible points, _i.e._, \(\|A\tilde{x}^{(k)}-b\|^{2}\). Your implementation can return the best rounded value found during the iterations. Try your method on some small problems, with \(n=m=10\) (say), for which you can find the actual solution by the brute force method. Try it on much larger problems, with \(n=m=500\) (say), for which the brute force method is not practical.
+

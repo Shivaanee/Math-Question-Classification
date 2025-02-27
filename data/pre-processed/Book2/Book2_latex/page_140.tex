@@ -1,0 +1,20 @@
+
+Projection onto a line.The projection of the point \(x\) onto a set is the point in the set that is closest to \(x\). Suppose \(y\) is the projection of \(x\) onto the line that passes through the origin, inclined \(\theta\) radians with respect to horizontal. Then we have
+
+\[y=\left[\begin{array}{cc}(1/2)(1+\cos(2\theta))&(1/2)\sin(2\theta)\\ (1/2)\sin(2\theta)&(1/2)(1-\cos(2\theta))\end{array}\right]x.\]
+
+Some of these geometric transformations are illustrated in figure 7.1.
+
+Finding the matrix.When a geometric transformation is represented by matrix-vector multiplication (as in the examples above), a simple method to find the matrix is to find its columns. The \(i\)th column is the vector obtained by applying the transformation to \(e_{i}\). As a simple example consider clockwise rotation by \(90^{\circ}\) in 2-D. Rotating the vector \(e_{1}=(1,0)\) by \(90^{\circ}\) gives \((0,-1)\); rotating \(e_{2}=(0,1)\) by \(90^{\circ}\) gives \((1,0)\). So rotation by \(90^{\circ}\) is given by
+
+\[y=\left[\begin{array}{cc}0&1\\ -1&0\end{array}\right]x.\]
+
+Change of coordinates.In many applications multiple coordinate systems are used to describe locations or positions in 2-D or 3-D. For example in aerospace engineering we can describe a position using _earth-fixed_ coordinates or _body-fixed_ coordinates, where the body refers to an aircraft. Earth-fixed coordinates are with respect to a specific origin, with the three axes pointing East, North, and straight up, respectively. The origin of the body-fixed coordinates is a specific location on the aircraft (typically the center of gravity), and the three axes point forward (along the aircraft body), left (with respect to the aircraft body), and up (with respect to the aircraft body). Suppose the 3-vector \(x^{\text{body}}\) describes a location using the body coordinates, and \(x^{\text{earth}}\) describes the same location in earth-fixed coordinates. These are related by
+
+\[x^{\text{earth}}=p+Qx^{\text{body}},\]
+
+where \(p\) is the location of the airplane center (in earth-fixed coordinates) and \(Q\) is a \(3\times 3\) matrix. The \(i\)th column of \(Q\) gives the earth-fixed coordinates for the \(i\)th
+
+Figure 7.1: From left to right: A dilation with \(A=\mathbf{diag}(2,2/3)\), a counterclockwise rotation by \(\pi/6\) radians, and a reflection through a line that makes an angle of \(\pi/4\) radians with the horizontal line.
+
+ 

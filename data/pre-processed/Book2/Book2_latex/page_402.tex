@@ -1,0 +1,21 @@
+and therefore \[x^{(k+1)}=x^{(k)}-\left(Df(x^{(k)})^{T}Df(x^{(k)})+\lambda^{(k)}I\right)^{-1}Df(x^ {(k)})^{T}f(x^{(k)}).\] (18.12) The matrix inverse here always exists. From (18.12), we see that \(x^{(k+1)}=x^{(k)}\) only if \(2Df(x^{(k)})^{T}f(x^{(k)})=0\), _i.e._, only when the optimality condition (18.3) holds for \(x^{(k)}\). So like the Gauss-Newton algorithm, the Levenberg-Marquardt algorithm stops (or more accurately, repeats itself with \(x^{(k+1)}=x^{(k)}\)) only when the optimality condition (18.3) holds.
+
+Updating the trust parameter.The final issue is how to choose the trust parameter \(\lambda^{(k)}\). When \(\lambda^{(k)}\) is too small, \(x^{(k+1)}\) can be far enough away from \(x^{(k)}\) that \(\|f(x^{(k+1)})\|^{2}>\|f(x^{(k)}\|^{2}\) can hold, _i.e._, our true objective function increases, which is not what we want. When \(\lambda^{(k)}\) is too large, \(x^{(k+1)}-x^{(k)}\) is small, so the affine approximation is good, and the objective decreases (which is good). But in this case we have \(x^{(k+1)}\) very near \(x^{(k)}\), so the decrease in objective is small, and it will take many iterations to make progress. We want \(\lambda^{(k)}\) in between these two cases, big enough that the approximation holds well enough to get a decrease in objective, but not much bigger, which slows convergence.
+
+Several algorithms can be used to adjust \(\lambda\). One simple method forms \(x^{(k+1)}\) using the current value of \(\lambda\) and checks if the objective has decreased. If it has, we accept the new point and decrease \(\lambda\) a bit for the next iteration. If the objective has not decreased, which means \(\lambda\) is too small, we do not update the point \(x^{(k+1)}\), and increase the trust parameter \(\lambda\) substantially.
+
+Levenberg-Marquardt algorithm.The ideas above can be formalized as the algorithm given below.
+
+**Algorithm 18.3**: Levenberg-Marquardt algorithm for nonlinear least squares
+
+**given** a differentiable function \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\), an initial point \(x^{(1)}\), an initial trust parameter \(\lambda^{(1)}>0\).
+
+For \(k=1,2,\ldots,k^{\max}\)
+
+1. _Form affine approximation at current iterate._ Evaluate the Jacobian \(Df(x^{(k)})\) and define \[\hat{f}(x;x^{(k)})=f(x^{(k)})+Df(x^{(k)})(x-x^{(k)}).\]
+2. _Compute tentative iterate._ Set \(x^{(k+1)}\) as minimizer of \[\|\hat{f}(x;x^{(k)})\|^{2}+\lambda^{(k)}\|x-x^{(k)}\|^{2}.\]
+3. _Check tentative iterate._ If \(\|f(x^{(k+1)})\|^{2}<\|f(x^{(k)})\|^{2}\), accept iterate and reduce \(\lambda\): \(\lambda^{(k+1)}=0.8\lambda^{(k)}\).
+
+Otherwise, increase \(\lambda\) and do not update \(x\): \(\lambda^{(k+1)}=2\lambda^{(k)}\) and \(x^{(k+1)}=x^{(k)}\).
+
+ 

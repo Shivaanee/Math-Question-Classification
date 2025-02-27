@@ -1,0 +1,21 @@
+A 5-point equation is centered at each of the nine meshpoints. The 9 by 9 matrix (call it \(A_{\text{2D}}\)) is constructed from the 3 by 3 "1D" matrix for differences along a line:
+
+\[\begin{array}{ll}\text{\bf Difference matrix}\\ \text{\bf in one direction}\end{array}\qquad A=\begin{bmatrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{bmatrix}\qquad\begin{array}{ll}\text{\bf Identity matrix}\\ \text{\bf in other direction}\end{array}\qquad I=\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&1\end{bmatrix}.\]
+
+Kronecker products produce three 1D differences along three lines, up or across:
+
+\[\begin{array}{ll}\text{\bf One direction}&A\otimes I=\begin{bmatrix}2I&-I&0\\ -I&2I&-I\\ 0&-I&2I\end{bmatrix}.\end{array}\]
+
+\[\begin{array}{ll}\text{\bf Other direction}&I\otimes A=\begin{bmatrix}A&0&0\\ 0&A&0\\ 0&0&A\end{bmatrix}.\end{array}\]
+
+\[\begin{array}{ll}\text{\bf Both directions}&A_{\text{2D}}=(A\otimes I)+(I \otimes A)=\begin{bmatrix}A+2I&-I&0\\ -I&A+2I&-I\\ 0&-I&A+2I\end{bmatrix}.\end{array}\]
+
+The sum \((A\otimes I)+(I\otimes A)\) is the 9 by 9 matrix for Laplace's five-point difference equation (Section 1.7 was for 1D and Section 7.4 mentioned 2D). The middle row of this 9 by 9 matrix shows all five nonzeros from the five-point molecule:
+
+\[\begin{array}{ll}\text{\bf Away from boundary}&\text{Row 5 of }A_{\text{2D}}=\begin{bmatrix}0&-1&0&-1&4&-1&0&-1&0\end{bmatrix}.\end{array}\]
+
+**Example 9**.: **(The Fourier matrix in 2D)** The one-dimensional Fourier matrix \(F\) is the most important complex matrix in the world. The Fast Fourier Transform in Section 3.5 is a quick way to multiply by that matrix \(F\). So the FFT transforms "time domain to frequency domain" for a 1D audio signal. **For images we need the 2D transform**:
+
+\[\begin{array}{ll}\text{\bf Fourier matrix in 2D}&F_{\text{2D}}=F\otimes F= \begin{array}{ll}\text{\bf Transform along each row,}\\ \text{\bf then down each column}\end{array}\]
+
+The image is a two-dimensional array of pixel values. It is transformed by \(F_{\text{2D}}\) into a two-dimensional array of Fourier coefficients. That array can be compressed and transmitted 

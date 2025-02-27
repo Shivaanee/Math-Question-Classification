@@ -1,0 +1,28 @@
+
+
+**6.**: The higher order equation \(y^{\prime\prime}+y=0\) can be written as a first-order system by introducing the velocity \(y^{\prime}\) as another unknown:
+
+\[\frac{d}{dt}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}=\begin{bmatrix}y^{\prime}\\ y^{\prime\prime}\end{bmatrix}=\begin{bmatrix}y^{\prime}\\ -y\end{bmatrix}.\]
+
+If this is \(du/dt=Au\), what is the 2 by 2 matrix \(A\)? Find its eigenvalues and eigenvectors, and compute the solution that starts from \(y(0)=2\), \(y^{\prime}(0)=0\).
+**7.**: Convert \(y^{\prime\prime}=0\) to a first-order system \(du/dt=Au\):
+
+\[\frac{d}{dt}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}=\begin{bmatrix}y^{\prime}\\ 0\end{bmatrix}=\begin{bmatrix}0&1\\ 0&0\end{bmatrix}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}.\]
+
+This 2 by 2 matrix \(A\) has only one eigenvector and cannot be diagonalized. Compute \(e^{At}\) from the series \(I+At+\cdots\) and write the solution \(e^{At}u(0)\) starting from \(y(0)=3\), \(y^{\prime}(0)=4\). Check that your \((y,y^{\prime})\) satisfies \(y^{\prime\prime}=0\).
+**8.**: Suppose the rabbit population \(r\) and the wolf population \(w\) are governed by
+
+\[\frac{dr}{dt} =4r-2w\] \[\frac{dw}{dt} =r+w.\]
+
+1. Is this system stable, neutrally stable, or unstable?
+2. If initially \(r=300\) and \(w=200\), what are the populations at time \(t\)?
+3. After a long time, what is the proportion of rabbits to wolves?
+**9.**: Decide the stability of \(u^{\prime}=Au\) for the following matrices:
+
+\[\text{(a)}\quad A=\begin{bmatrix}2&3\\ 4&5\end{bmatrix}.\qquad\qquad\qquad\text{(b)}\quad A=\begin{bmatrix}1&2\\ 3&-1\end{bmatrix}.\]
+
+\[\text{(c)}\quad A=\begin{bmatrix}1&1\\ 1&-2\end{bmatrix}.\qquad\qquad\qquad\text{(d)}\quad A=\begin{bmatrix}-1&-1\\ -1&-1\end{bmatrix}.\]
+**10.**: Decide on the stability or instability of \(dv/dt=w\), \(dw/dt=v\). Is there a solution that decays?
+**11.**: From their trace and determinant, at what time \(t\) do the following matrices change between stable with real eigenvalues, stable with complex eigenvalues, and unstable?
+
+\[A_{1}=\begin{bmatrix}1&-1\\ t&-1\end{bmatrix},\qquad A_{2}=\begin{bmatrix}0&4-t\\ 1&-2\end{bmatrix},\qquad A_{3}=\begin{bmatrix}t&-1\\ 1&t\end{bmatrix}.\]

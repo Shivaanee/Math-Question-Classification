@@ -1,0 +1,26 @@
+
+
+## Appendix A Intersection, Sum, and Product of Spaces
+
+### The Intersection of Two Vector Spaces
+
+New questions arise from considering two subspaces \(\mathbf{V}\) and \(\mathbf{W}\), not just one. We look first at the vectors that belong to _both_ subspaces. This "intersection" \(\mathbf{V}\cap\mathbf{W}\) is a subspace of those subspaces:
+
+If \(\mathbf{V}\) and \(\mathbf{W}\) are subspaces of one vector space, so is their _intersection_\(\mathbf{V}\cap\mathbf{W}\).
+
+**The vectors belonging to both \(\mathbf{V}\) and \(\mathbf{W}\) form a subspace**.
+
+Suppose \(x\) and \(y\) are vectors in \(\mathbf{V}\) and also in \(\mathbf{W}\). Because \(\mathbf{V}\) and \(\mathbf{W}\) are vector spaces in their own right, \(x+y\) and \(cx\) are in \(\mathbf{V}\) and in \(\mathbf{W}\). _The results of addition and scalar multiplication stay within the intersection_.
+
+Two planes through the origin (or two "hyperplanes" in \(\mathbf{R}^{n}\)) meet in a subspace. The intersection of several subspaces, or infinitely many, is again a subspace.
+
+**Example 1**.: The intersection of two orthogonal subspaces \(\mathbf{V}\) and \(\mathbf{W}\) is the one-point subspace \(\mathbf{V}\cap\mathbf{W}=\{0\}\). Only the zero vector is orthogonal to itself.
+
+**Example 2**.: Suppose \(\mathbf{V}\) and \(\mathbf{W}\) are the spaces of \(n\) by \(n\) upper and lower triangular matrices. The intersection \(\mathbf{V}\cap\mathbf{W}\) is the set of _diagonal matrices_--belonging to both triangular subspaces. Adding diagonal matrices, or multiplying by \(c\), leaves a diagonal matrix.
+
+**Example 3**.: Suppose \(\mathbf{V}\) is the nullspace of \(A\), and \(\mathbf{W}\) is the null space of \(B\). Then \(\mathbf{V}\cap\mathbf{W}\) is the smaller nullspace of the larger matrix \(C\):
+
+\[\text{{Intersection of nullspaces}}\qquad\mathbf{N}(A)\cap\mathbf{N}(B)\text{ is the nullspace of }C=\begin{bmatrix}A\\ B\end{bmatrix}\text{.}\]
+
+\(Cx=0\) requires both \(Ax=0\) and \(Bx=0\). So \(x\) has to be in both nullspaces.
+

@@ -1,0 +1,21 @@
+We want to obtain the same \(\ell_{1}\ell_{2}\cdots\ell_{n}\) from \(\det A\), _when the edges of that box are the rows of \(A\)_. With right angles, these rows are orthogonal and \(AA^{\mathrm{T}}\) is diagonal:
+
+\[\begin{array}{ll}\textbf{Right-angled box}\\ \textbf{Orthogonal rows}\end{array}\qquad AA^{\mathrm{T}}=\begin{bmatrix}\text{ row 1}\\ \vdots\\ \text{row }n\end{bmatrix}\begin{bmatrix}\text{r}&&\text{r}\\ \text{o}&\text{o}\\ \text{w }&\cdots&\text{w}\\ 1&&n\end{bmatrix}=\begin{bmatrix}\ell_{1}^{2}&&0\\ &\ddots&\\ 0&&\ell_{n}^{2}\end{bmatrix}.\]
+
+The \(\ell_{i}\) are the lengths of the rows (the edges). and the zeros off the diagonal come because the rows are orthogonal. Using the product and transposing rules,
+
+\[\begin{array}{ll}\textbf{Rightangle case}&\ell_{1}^{2}\ell_{2}^{2}\cdots\ell_ {n}^{2}=\det(AA^{\mathrm{T}})=(\det A)(\det A^{\mathrm{T}})=(\det A)^{2}.\end{array}\]
+
+The square root of this equation says that _the determinant equals the volume_. The _sign_ of \(\det A\) will indicate whether the edges form a "right-handed" set of coordinates, as in the usual \(x\)-\(y\)-\(z\) system, or a left-handed system like \(y\)-\(x\)-\(z\).
+
+If the angles are not 90deg, the volume is not the product of the lengths. In the plane (Figure 4.2), the "volume" of a parallelogram equals the base \(\ell\) times the height \(h\), The vector \(b-p\) of length \(h\) is the second row \(b=(a_{21},a_{22})\), minus its projection \(p\) onto the first row. The key point is this: By rule 5, \(\det A\) is unchanged when a multiple of row 1 is subtracted from row 2. _We can change the parallelogram to a rectangle_, where it is already proved that volume \(=\) determinant.
+
+In \(n\) dimensions, it takes longer to make each box rectangular, but the idea is the same. The volume and determinant are unchanged if we subtract from each row its projection onto the space spanned by the preceding rows--leaving a perpendicular "height vector" like \(pb\). This Gram-Schmidt process produces orthogonal rows, with volume \(=\) determinant. So the same equality must have held for the original rows.
+
+This completes the link between volumes and determinants, but it is worth coming back one more time to the simplest case. We know that
+
+\[\det\begin{bmatrix}1&0\\ 0&1\end{bmatrix}=1,\qquad\det\begin{bmatrix}1&0\\ c&1\end{bmatrix}=1.\]
+
+Figure 4.2: Volume (area) of the parallelogram \(=\ell\) times \(h=|\det A|\).
+
+ 

@@ -1,0 +1,23 @@
+is 0. On the diagonal of \(A\) occur the \(k\) distinct characteristic values \(c_{1}\), \(\ldots\), \(c_{k}\) of \(T\). Also, \(c_{i}\) is repeated \(d_{i}\) times, where \(d_{i}\) is the multiplicity of \(c_{i}\) as a root of the characteristic polynomial, i.e., \(d_{i}=\dim\,W_{i}\).
+
+(2) For each \(i\), the matrix \(A_{i}\) is the direct sum of \(n_{i}\) elementary Jordan matrices \(J_{j}^{(t)}\) with characteristic value \(c_{i}\). The number \(n_{i}\) is precisely the dimension of the space of characteristic vectors associated with the characteristic value \(c_{i}\). For, \(n_{i}\) is the number of elementary nilpotent blocks in the rational form for \((T_{i}-c_{i}I)\), and is thus equal to the dimension of the null space of \((T-c_{i}I)\). In particular notice that \(T\) is diagonalizable if and only if \(n_{i}=d_{i}\) for each \(i\).
+
+(3) For each \(i\), the first block \(J_{1}^{(t)}\) in the matrix \(A_{i}\) is an \(r_{i}\times r_{i}\) matrix, where \(r_{i}\) is the multiplicity of \(c_{i}\) as a root of the _minimal_ polynomial for \(T\). This follows from the fact that the minimal polynomial for the nilpotent operator \((T_{i}=c_{i}I)\) is \(x^{r_{i}}\).
+
+Of course we have as usual the straight matrix result. If \(B\) is an \(n\times n\) matrix over the field \(F\) and if the characteristic polynomial for \(B\) factors completely over \(F\), then \(B\) is similar over \(F\) to an \(n\times n\) matrix \(A\) in Jordan form, and \(A\) is unique up to a rearrangement of the order of its characteristic values. We call \(A\) the **Jordan form** of \(B\).
+
+Also, note that if \(F\) is an algebraically closed field, then the above remarks apply to every linear operator on a finite-dimensional space over \(F\), or to every \(n\times n\) matrix over \(F\). Thus, for example, every \(n\times n\) matrix over the field of complex numbers is similar to an essentially unique matrix in Jordan form.
+
+**Example 5**: _Suppose \(T\) is a linear operator on \(C^{2}\). The characteristic polynomial for \(T\) is either \((x-c_{1})(x-c_{2})\) where \(c_{1}\) and \(c_{2}\) are distinct complex numbers, or is \((x-c)^{2}\). In the former case, \(T\) is diagonalizable and is represented in some ordered basis by_
+
+\[\begin{bmatrix}c_{1}&0\\ 0&c_{2}\end{bmatrix}.\]
+
+_In the latter case, the minimal polynomial for \(T\) may be \((x-c)\), in which case \(T=cI\), or may be \((x-c)^{2}\), in which case \(T\) is represented in some ordered basis by the matrix_
+
+\[\begin{bmatrix}c&0\\ 1&c\end{bmatrix}.\]
+
+_Thus every \(2\times 2\) matrix over the field of complex numbers is similar to a matrix of one of the two types displayed above, possibly with \(c_{1}=c_{2}\)._
+
+**Example 6**: _Let \(A\) be the complex \(3\times 3\) matrix_
+
+\[A\,=\!\!\begin{bmatrix}2&0&0\\ a&2&0\\ b&c&-1\end{bmatrix}.\] 

@@ -1,0 +1,25 @@
+is actually too big when there is no control on the size of components \(v_{j}\). A much better idea is to keep the familiar definition of length, using a sum of squares, and _to include only those vectors that have a finite length_:
+
+\[\mbox{Length squared}\qquad\|v\|^{2}=v_{1}^{2}+v_{2}^{2}+v_{3}^{2}+\cdots\] (16)
+
+The infinite series must converge to a finite sum. This leaves \((1,\frac{1}{2},\frac{1}{3},\ldots)\) but not \((1,1,1,\ldots)\). Vectors with finite length can be added (\(\|v+w\|\leq\|v\|+\|w\|\)) and multiplied by scalars, so they form a vector space. It is the celebrated _Hilbert space_.
+
+Hilbert space is the natural way to let the number of dimensions become infinite, and at the same time to keep the geometry of ordinary Euclidean space. Ellipses become infinite-dimensional ellipsoids, and perpendicular lines are recognized exactly as before. The vectors \(v\) and \(w\) are orthogonal when their inner product is zero:
+
+\[\mbox{Orthogonality}\qquad v^{\rm T}w=v_{1}w_{1}+v_{2}w_{2}+v_{3}w_{3}+\cdots=0.\]
+
+This sum is guaranteed to converge, and for any two vectors it still obeys the Schwarz inequality \(|v^{\rm T}w|\leq\|v\|\|w\|\). The cosine, even in Hilbert space, is never larger than 1.
+
+There is another remarkable thing about this space: It is found under a great many different disguises. Its "vectors" can turn into functions, which is the second point.
+
+2. Lengths and Inner Products.Suppose \(f(x)=\sin x\) on the interval \(0\leq x\leq 2\pi\). This \(f\) is like a vector with a whole continuum of components, the values of \(\sin x\) along the whole interval. To find the length of such a vector, the usual rule of adding the squares of the components becomes impossible. This summation is replaced, in a natural and inevitable way, by _integration_:
+
+\[\mbox{Length}\;\|f\|\;\mbox{of function}\qquad\|f\|^{2}=\int_{0}^{2\pi}(f(x))^{2} dx=\int_{0}^{2\pi}(\sin x)^{2}dx=\pi\] (17)
+
+Our Hilbert space has become a _function space_. The vectors are functions, we have a way to measure their length, and the space contains all those functions that have a finite length--just as in equation (16). It does not contain the function \(F(x)=1/x\), because the integral of \(1/x^{2}\) is infinite.
+
+The same idea of replacing summation by integration produces the _inner product of two functions_: If \(f(x)=\sin x\) and \(g(x)=\cos x\), then their inner product is
+
+\[(f,g)=\int_{0}^{2\pi}f(x)g(x)dx=\int_{0}^{2\pi}\sin x\cos xdx=0.\] (18)
+
+This is exactly like the vector inner product \(f^{\rm T}g\). It is still related to the length by \((f,f)=\|f\|^{2}\). The Schwarz inequality is still satisfied: \(|(f,g)|\leq\|f\|\|g\|\). Of course, two functions like \(\sin x\) and \ 

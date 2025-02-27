@@ -1,0 +1,29 @@
+where \(m\) depends only upon \(\sigma\), not upon \(D\). Thus all determinant functions assign the same value to the matrix with rows \(\epsilon_{\mathsf{r1}}\), ..., \(\epsilon_{\mathsf{rn}}\), and this value is either \(1\) or \(-1\).
+
+Now a basic fact about permutations is the following. If \(\sigma\) is a permutation of degree \(n\), one can pass from the sequence \((1,2,\ldots,n)\) to the sequence \((\sigma 1,\sigma 2,\ldots,\sigma n)\) by a succession of interchanges of pairs, and this can be done in a variety of ways; however, no matter how it is done, the number of interchanges used is either always even or always odd. The permutation is then called **even** or **odd,** respectively. One defines the **sign** of a permutation by
+
+\[\operatorname{sgn}\sigma=\left\{\begin{array}{cl}1,&\text{if $\sigma$ is even}\\ -1,&\text{if $\sigma$ is odd}\end{array}\right.\]
+
+the symbol '\(1\)' denoting here the integer \(1\).
+
+We shall show below that this basic property of permutations can be deduced from what we already know about determinant functions. Let us assume this for the time being. Then the integer \(m\) occurring in (5-13) is always even if \(\sigma\) is an even permutation, and is always odd if \(\sigma\) is an odd permutation. For any alternating \(n\)-linear function \(D\) we then have
+
+\[D(\epsilon_{\mathsf{r1}},\ldots,\epsilon_{\mathsf{rn}})=(\operatorname{sgn} \sigma)D(\epsilon_{\mathsf{r1}}\cdot\ldots,\epsilon_{\mathsf{rn}})\]
+
+and using (5-11)
+
+\[D(A)=\left[\sum_{\sigma}\,(\operatorname{sgn}\sigma)A\,(1,\sigma 1)\,\cdots\,A\,(n,\sigma n)\,\right]D(I).\]
+
+Of course \(I\) denotes the \(n\times n\) identity matrix.
+
+From (5-14) we see that there is precisely one determinant function on \(n\times n\) matrices over \(K\). If we denote this function by \(\det\), it is given by
+
+\[\det\,(A)=\sum_{\sigma}\,(\operatorname{sgn}\sigma)A\,(1,\sigma 1)\,\cdots\,A\,(n,\sigma n)\]
+
+the sum being extended over the distinct permutations \(\sigma\) of degree \(n\). We can formally summarize as follows.
+
+**Theorem 2**.: _Let \(K\) be a commutative ring with identity and let \(n\) be a positive integer. There is precisely one determinant function on the set of \(n\times n\) matrices over \(K\), and it is the function \(\det\) defined by (5-15). If \(D\) is any alternating \(n\)-linear function on \(K^{n\times n}\), then for each \(n\times n\) matrix \(A\)_
+
+\[D(A)=(\det\,A)D(I).\]
+
+This is the theorem we have been seeking, but we have left a gap in the proof. That gap is the proof that for a given permutation \(\sigma\), when we pass from \((1,2,\ldots,n)\) to \((\sigma 1,\sigma 2,\ldots,\sigma n)\) by interchanging pairs, the number of interchanges is always even or always odd. This basic combinatorial fact can be proved without any reference to determinants; 

@@ -1,0 +1,31 @@
+a second argument, separated by a semicolon, to denote the point \(z\) where the approximation is made. Using this notation, the left-hand side of the equation above is written \(\hat{f}(x;z)\). The Taylor approximation is sometimes called the _linearized approximation_ of \(f\) at \(z\). (Here linear uses informal mathematical language, where affine is sometimes called linear.) The Taylor approximation function \(\hat{f}\) is an affine function of \(x\), _i.e._, a linear function of \(x\) plus a constant.
+
+The Taylor approximation \(\hat{f}\) satisfies \(\hat{f}(z;z)=f(z)\), _i.e._, at the point \(z\) it agrees with the function \(f\). For \(x\) near \(z\), \(\hat{f}(x;z)\) is a very good approximation of \(f(x)\). For \(x\) not close enough to \(z\), however, the approximation can be poor.
+
+Finding derivatives.In a basic calculus course, the derivatives of many common functions are worked out. For example, with \(f(x)=x^{2}\), we have \(f^{\prime}(z)=2z\), and for \(f(x)=e^{x}\), we have \(f^{\prime}(z)=e^{z}\). Derivatives of more complex functions can be found using these known derivatives of common functions, along with a few rules for finding the derivative of various combinations of functions. For example, the _chain rule_ gives the derivative of a composition of two functions. If \(f(x)=g(h(x))\), where \(g\) and \(h\) are scalar-valued functions of a scalar variable, we have
+
+\[f^{\prime}(z)=g^{\prime}(h(z))h^{\prime}(z).\]
+
+Another useful rule is the derivative of product rule, for \(f(x)=g(x)h(x)\), which is
+
+\[f^{\prime}(z)=g^{\prime}(z)h(z)+g(z)h^{\prime}(z).\]
+
+The derivative operation is linear, which means that if \(f(x)=ag(x)+bh(x)\), where \(a\) and \(b\) are constants, we have
+
+\[f^{\prime}(z)=ag^{\prime}(z)+bh^{\prime}(z).\]
+
+Knowledge of the derivative of just a few common functions, and a few combination rules like the ones above, is enough to determine the derivatives of many functions.
+
+#### Scalar-valued function of a vector
+
+Suppose \(f:\mathbf{R}^{n}\to\mathbf{R}\) is a scalar-valued function of an \(n\)-vector argument. The number \(f(x)\) is the value of the function \(f\) at the \(n\)-vector (argument) \(x\). We sometimes write out the argument of \(f\) to show that it can be considered a function of \(n\) scalar arguments, \(x_{1},\ldots,x_{n}\):
+
+\[f(x)=f(x_{1},\ldots,x_{n}).\]
+
+Partial derivative.The _partial derivative_ of \(f\) at the point \(z\), with respect to its \(i\)th argument, is defined as
+
+\[\frac{\partial f}{\partial x_{i}}(z) = \lim_{t\to 0}\frac{f(z_{1},\ldots,z_{i-1},z_{i}+t,z_{i+1}, \ldots,z_{n})-f(z)}{t}\] \[= \lim_{t\to 0}\frac{f(z+te_{i})-f(z)}{t},\]
+
+(if the limit exists). Roughly speaking the partial derivative is the derivative with respect to the \(i\)th argument, with all other arguments fixed.
+
+ 

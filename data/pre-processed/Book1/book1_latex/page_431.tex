@@ -1,0 +1,29 @@
+
+
+### Typical Applications
+
+The next section will concentrate on solving linear programs. This is the time to describe two practical situations in which we _minimize or maximize a linear cost function subject to linear constraints_.
+
+**1. Production Planning.** Suppose General Motors makes a profit of $200 on each Chevrolet, $300 on each Buick, and $500 on each Cadillac. These get 20, 17, and 14 miles per gallon, respectively, and Congress insists that the average car must get 18. The plant can assemble a Chevrolet in 1 minute, a Buick in 2 minutes, and a Cadillac in 3 minutes. What is the maximum profit in 8 hours (480 minutes)?
+
+_Problem_ _Maximize the profit \(200x+300y+500z\) subject to_
+
+\[20x+17y+14z\geq 18(x+y+z),\qquad x+2y+3z\leq 480,\qquad x,y,z\geq 0.\]
+
+**2. Portfolio Selection.** Federal bonds pay 5%, municipals pay 6%, and junk bonds pay 9%. We can buy amounts \(x\), \(y\), \(z\) not exceeding a total of $100,000. The problem is to maximize the interest, with two constraints:
+
+1. no more than $20,000 can be invested in junk bonds, and
+2. the portfolio's average quality must be no lower than municipals, so \(x\geq z\).
+
+_Problem_ _Maximize \(5x+6y+9z\) subject to_
+
+\[x+y+z\leq 100,000,\qquad z\leq 20,000,\qquad z\leq x,\qquad x,y,z\geq 0.\]
+
+The three inequalities give three slack variables, with new equations like \(w=x-z\) and inequalities \(w\geq 0\).
+
+### Problem Set 8.1
+
+**1.** Sketch the feasible set with constraints \(x+2y\geq 6\), \(2x+y\geq 6\), \(x\geq 0\), \(y\geq 0\). What points lie at the three "corners" of this set?
+**2.** (Recommended) On the preceding feasible set, what is the minimum value of the cost function \(x+y\)? Draw the line \(x+y=\) constant that first touches the feasible set. What points minimize the cost functions \(3x+y\) and \(x-y\)?
+**3.** Show that the feasible set constrained by \(2x+5y\leq 3\), \(-3x+8y\leq-5\), \(x\geq 0\), \(y\geq 0\), is empty.
+

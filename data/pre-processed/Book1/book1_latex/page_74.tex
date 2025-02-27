@@ -1,0 +1,17 @@
+
+
+**53.**:
+1. The row vector \(x^{\rm T}\) times \(A\) times the column \(y\) produces what number? \[x^{\rm T}Ay=\begin{bmatrix}0&1\end{bmatrix}\begin{bmatrix}1&2&3\\ 4&5&6\end{bmatrix}\begin{bmatrix}0\\ 1\\ 0\end{bmatrix}=\raisebox{-15.0pt}{\includegraphics[height=15.0pt]{figures/2.eps}}.\] 2. This is the row \(x^{\rm T}A=\raisebox{-15.0pt}{\includegraphics[height=15.0pt]{figures/2.eps}}\) times the column \(y=(0,1,0)\). 3. This is the row \(x^{\rm T}=[0&1]\) times the column \(Ay=\raisebox{-15.0pt}{\includegraphics[height=15.0pt]{figures/2.eps}}\).
+**54.**: When you transpose a block matrix \(M=[^{A}_{C}\,{}^{B}_{D}]\) the result is \(M^{\rm T}=\raisebox{-15.0pt}{\includegraphics[height=15.0pt]{figures/2.eps}}\). Test it. Under what conditions on \(A\), \(B\), \(C\), \(D\) is the block matrix symmetric?
+**55.**: Explain why the inner product of x and y equals the inner product of \(Px\) and \(Py\). Then \((Px)^{\rm T}(Py)=x^{\rm T}y\) says that \(P^{\rm T}P=I\) for any permutation. With \(x=(1,2,3)\) and \(y=(1,4,2)\), choose \(P\) to show that \((Px)^{\rm T}y\) is not always equal to \(x^{\rm T}(P^{\rm T}y)\).
+**Problems 56-60 are about symmetric matrices and their factorizations.**
+**56.**: If \(A=A^{\rm T}\) and \(B=B^{\rm T}\), which of these matrices are certainly symmetric? (a) \(A^{2}-B^{2}\) (b) \((A+B)(A-B)\) (c) \(ABA\) (d) \(ABAB\).
+**57.**: If \(A=A^{\rm T}\) needs a row exchange, then it also needs a column exchange to stay symmetric. In matrix language, \(PA\) loses the symmetry of \(A\) but \(\raisebox{-15.0pt}{\includegraphics[height=15.0pt]{figures/2.eps}}\) recovers the symmetry.
+**58.**:
+1. How many entries of \(A\) can be chosen independently, if \(A=A^{\rm T}\) is 5 by 5? 2. How do \(L\) and \(D\) (5 by 5) give the same number of choices in \(LDL^{\rm T}\)?
+**59.**: Suppose \(R\) is rectangular (\(m\) by \(n\)) and \(A\) is symmetric (\(m\) by \(m\)). 1. Transpose \(R^{\rm T}AR\) to show its symmetry. What shape is this matrix? 2. Show why \(R^{\rm T}R\) has no negative numbers on its diagonal.
+**60.**: Factor these symmetric matrices into \(A=LDL^{\rm T}\). The matrix \(D\) is diagonal: \[A=\begin{bmatrix}1&3\\ 3&2\end{bmatrix}\quad\text{and}\quad A=\begin{bmatrix}1&b\\ b&c\end{bmatrix}\quad\text{and}\quad A=\begin{bmatrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{bmatrix}.\]
+**The next three problems are about applications of \((Ax)^{\rm T}y=x^{\rm T}(A^{\rm T}y)\).**
+**61.**: Wires go between Boston, Chicago, and Seattle. Those cities are at voltages \(x_{\rm B}\), \(x_{\rm C}\), \(x_{\rm S}\). With unit resistances between cities, the three currents are in \(y\):
+
+\[y=Ax\quad\text{is}\quad\begin{bmatrix}y_{\rm BC}\\ y_{\rm CS}\\ y_{\rm BS}\end{bmatrix}=\begin{bmatrix}1&-1&0\\ 0&1&-1\\ 1&0&-1\end{bmatrix}\begin{bmatrix}x_{\rm B}\\ x_{\rm C}\\ x_{\rm S}\end{bmatrix}.\]

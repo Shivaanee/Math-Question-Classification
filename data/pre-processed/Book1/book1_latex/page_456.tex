@@ -1,0 +1,20 @@
+
+
+### The Marriage Problem
+
+Suppose we have four women and four men. Some of those sixteen couples are compatible, others regrettably are not. When is it possible to find a _complete matching_, with everyone married? If linear algebra can work in 20-dimensional space, it can certainly handle the trivial problem of marriage.
+
+There are two ways to present the problem--in a matrix or on a graph. The matrix contains \(a_{ij}=0\) if the \(i\)th woman and \(j\)th man are not compatible, and \(a_{ij}=1\) if they are willing to try. Thus row \(i\) gives the choices of the \(i\)th woman, and column \(j\) corresponds to the \(j\)th man:
+
+\[\begin{array}{c}\mbox{\bf Compatibility}\\ \mbox{\bf matrix}\end{array}\qquad A=\begin{bmatrix}1&0&0&0\\ 1&1&1&0\\ 0&0&0&1\\ 0&0&0&1\end{bmatrix}\quad\mbox{has 6 compatible pairs.}\]
+
+The left graph in Figure 8.6 shows two possible marriages. Ignoring the source \(s\) and sink \(t\), it has four women on the left and four men on the right. _The edges correspond to the \(1s\) in the matrix_, and the capacities are 1 marriage. There is no edge between the first woman and fourth man, because the matrix has \(a_{14}=0\).
+
+It might seem that node \(M_{2}\) can't be reached by more flow--but that is not so! The extra flow on the right goes backward to cancel an existing marriage. This extra flow makes 3 marriages, which is maximal. The minimal cut is crossed by 3 edges.
+
+A complete matching (if it is possible) is a set of four is in the matrix. They would come from four different rows and four different columns, since bigamy is not allowed. It is like finding a _permutation matrix_ within the nonzero entries of \(A\). On the graph, this means four edges with no nodes in common. The maximal flow is less than 4 exactly when a complete matching is impossible.
+
+In our example the maximal flow is 3, not 4. The marriages 1-1, 2-2, 4-4 are allowed
+
+Figure 8.6: Two marriages on the left, three (maximum) on the right. The third is created by adding two new marriages and one divorce (backward flow).
+

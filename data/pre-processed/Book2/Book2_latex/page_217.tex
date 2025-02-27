@@ -1,0 +1,29 @@
+
+
+### 11.3 Solving linear equations
+
+Back substitution.We start with an algorithm for solving a set of linear equations, \(Rx=b\), where the \(n\times n\) matrix \(R\) is upper triangular with nonzero diagonal entries (hence, invertible). We write out the equations as
+
+\[R_{11}x_{1}+R_{12}x_{2}+\cdots+R_{1,n-1}x_{n-1}+R_{1n}x_{n} = b_{1}\] \[\vdots\] \[R_{n-2,n-2}x_{n-2}+R_{n-2,n-1}x_{n-1}+R_{n-2,n}x_{n} = b_{n-2}\] \[R_{n-1,n-1}x_{n-1}+R_{n-1,n}x_{n} = b_{n-1}\] \[R_{nn}x_{n} = b_{n}.\]
+
+From the last equation, we find that \(x_{n}=b_{n}/R_{nn}\). Now that we know \(x_{n}\), we substitute it into the second to last equation, which gives us
+
+\[x_{n-1}=(b_{n-1}-R_{n-1,n}x_{n})/R_{n-1,n-1}.\]
+
+We can continue this way to find \(x_{n-2},x_{n-3},\ldots,x_{1}\). This algorithm is known as _back substitution_, since the variables are found one at a time, starting from \(x_{n}\), and we substitute the ones that are known into the remaining equations.
+
+``` given an \(n\times n\) upper triangular matrix \(R\) with nonzero diagonal entries, and an \(n\)-vector \(b\). For \(i=n,\ldots,1\), \(x_{i}=(b_{i}-R_{i,i+1}x_{i+1}-\cdots-R_{i,n}x_{n})/R_{ii}\). ```
+
+**Algorithm 11**Back substitution
+
+(In the first step, with \(i=n\), we have \(x_{n}=b_{n}/R_{nn}\).) The back substitution algorithm computes the solution of \(Rx=b\), _i.e._, \(x=R^{-1}b\). It cannot fail since the divisions in each step are by the diagonal entries of \(R\), which are assumed to be nonzero.
+
+Lower triangular matrices with nonzero diagonal elements are also invertible; we can solve equations with lower triangular invertible matrices using _forward substitution_, the obvious analog of the algorithm given above. In forward substitution, we find \(x_{1}\) first, then \(x_{2}\), and so on.
+
+Complexity of back substitution.The first step requires \(1\) flop (division by \(R_{nn}\)). The next step requires one multiply, one subtraction, and one division, for a total of \(3\) flops. The \(k\)th step requires \(k-1\) multiplies, \(k-1\) subtractions, and one division, for a total of \(2k-1\) flops. The total number of flops for back substitution is then
+
+\[1+3+5+\cdots+(2n-1)=n^{2}\]
+
+flops.
+
+This formula can be obtained from the formula (5.7), or directly derived using a similar argument. Here is the argument for the case when \(n\) is even; a similar

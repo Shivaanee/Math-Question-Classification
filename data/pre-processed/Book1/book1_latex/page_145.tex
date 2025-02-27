@@ -1,0 +1,30 @@
+So much for that application of linear algebra.
+
+### Networks and Discrete Applied Mathematics
+
+A graph becomes a _network_ when numbers \(c_{1},\ldots,c_{m}\) are assigned to the edges. The number \(c_{i}\) can be the _length_ of edge \(i\), or its _capacity_, or its _stiffness_ (if it contains a spring), or its _conductance_ (if it contains a resistor). Those numbers go into a diagonal matrix \(C\), which is \(m\) by \(m\). \(C\) reflects "material properties," in contrast to the incidence matrix \(A\)--which gives information about the connections.
+
+Our description will be in electrical terms. On edge \(i\), the conductance is \(c_{i}\) and the resistance is \(1/c_{i}\). Ohm's Law says that the current \(y_{i}\) through the resistor is proportional to the voltage drop \(e_{i}\):
+
+\[\mbox{\bf Ohm's Law}\qquad y_{i}=c_{i}e_{i}\qquad\mbox{(current)}=\mbox{( conductance)(voltage drop).}\]
+
+This is also written \(E=IR\), voltage drop equals current times resistance. As a vector equation on all edges at once, _Ohm's Law is_\(y=Ce\).
+
+We need Kirchhoff's Voltage Law and Current Law to complete the framework:
+
+**KVL**: The voltage drops around each loop add to zero.
+**KCL**: The currents \(y_{i}\) (and \(f_{i}\)) into each node add to zero.
+
+The voltage law allows us to assign potentials \(x_{1},\ldots,x_{n}\) to the nodes. Then the differences around a loop give a sum like \((x_{2}-x1)+(x_{3}-x_{2})+(x_{1}-x_{3})=0\), in which everything cancels. The current law asks us to add the currents into each node by the multiplication \(A^{\rm T}y\). If there are no external sources of current, _Kirchhoff's Current Law is_\(A^{\rm T}y=0\).
+
+The other equation is Ohm's Law, but we need to find the voltage drop \(e\) across the resistor. The multiplication \(Ax\) gave the potential difference between the nodes. Reversing the signs, \(-Ax\) gives the _drop_ in potential. Part of that drop may be due to a _battery_ in the edge of strength \(b_{i}\). The rest of the drop is \(e=b-Ax\) across the resistor:
+
+\[\mbox{\bf Ohm's Law}\qquad y=C(b-Ax)\quad\mbox{or}\quad C^{-1}y+Ax=b.\] (4)
+
+The _fundamental equations of equilibrium_ combine Ohm and Kirchhoff into a central problem of applied mathematics. These equations appear everywhere:
+
+\[\mbox{\bf Equilibrium equations}\qquad\begin{array}{rcl}C^{-1}y&+&Ax&=&b\\ A^{\rm T}y&&=&f.\end{array}\] (5)
+
+That is a linear symmetric system, from which \(e\) has disappeared. The unknowns are the currents \(y\) and the potentials \(x\). You see the symmetric block matrix:
+
+\[\mbox{\bf Block form}\qquad\begin{bmatrix}C^{-1}&A\\ A^{\rm T}&0\end{bmatrix}\begin{bmatrix}y\\ x\end{bmatrix}=\begin{bmatrix}b\\ f\end{bmatrix}.\] (6) 

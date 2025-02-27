@@ -1,0 +1,21 @@
+At the same time, we want the price changes to be small. This suggests the secondary objective \(J_{2}=\|\delta^{\text{price}}\|^{2}\). We then minimize \(J_{1}+\lambda J_{2}\) for various values of \(\lambda\), which trades off how close we come to the target change in demand with how much we change the prices.
+
+Dynamics.The system can also be dynamic, meaning that we take into account time variation of the input and output. In the simplest case \(x\) is the time series of a scalar input, so \(x_{i}\) is the action taken in period \(i\), and \(y_{i}\) is the (scalar) output in period \(i\). In this setting, \(y^{\text{des}}\) is a desired trajectory for the output. A very common model for modeling dynamic systems, with \(x\) and \(y\) representing scalar input and output time series, is a convolution: \(y=h*x\). In this case, \(A\) is Toeplitz, and \(b\) represents a time series, which is what the output would be with \(x=0\).
+
+As a typical example in this category, the input \(x_{i}\) can represent the torque applied to the drive wheels of a locomotive (say, over one second intervals), and \(y_{i}\) is the locomotive speed.
+
+In addition to the usual secondary objective \(J_{2}=\|x\|^{2}\), it is common to have an objective that the input should be smooth, _i.e._, not vary too rapidly over time. This is achieved with the objective \(\|Dx\|^{2}\), where \(D\) is the \((n-1)\times n\) first difference matrix
+
+\[D=\left[\begin{array}{cccccc}-1&1&0&\cdots&0&0&0\\ 0&-1&1&\cdots&0&0&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots\\ 0&0&0&\cdots&-1&1&0\\ 0&0&0&\cdots&0&-1&1\end{array}\right].\] (15.4)
+
+### 15.3 Estimation and inversion
+
+In the broad application area of _estimation_ (also called _inversion_), the goal is to estimate a set of \(n\) values (also called parameters), the entries of the \(n\)-vector \(x\). We are given a set of \(m\)_measurements_, the entries of an \(m\)-vector \(y\). The parameters and measurements are related by
+
+\[y=Ax+v,\]
+
+where \(A\) is a known \(m\times n\) matrix, and \(v\) is an unknown \(m\)-vector. The matrix \(A\) describes how the measured values (_i.e._, \(y_{i}\)) depend on the unknown parameters (_i.e._, \(x_{j}\)). The \(m\)-vector \(v\) is the _measurement error_ or _measurement noise_, and is unknown but presumed to be small. The estimation problem is to make a sensible guess as to what \(x\) is, given \(y\) (and \(A\)), and prior knowledge about \(x\).
+
+If the measurement noise were zero, and \(A\) has linearly independent columns, we could recover \(x\) exactly, using \(x=A^{\dagger}y\). (This is called _exact inversion_.) Our job here is to _guess_\(x\), even when these strong assumptions do not hold. Of course we cannot expect to find \(x\) exactly, when the measurement noise is nonzero, or when \(A\) does not have linearly independent columns. This is called _approximate inversion_, or in some contexts, just _inversion_.
+
+ 

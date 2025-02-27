@@ -1,0 +1,29 @@
+If eigenvectors \(x_{1},\ldots,x_{k}\) correspond to _different eigenvalues_\(\lambda_{1},\ldots,\lambda_{k}\), then those eigenvectors are linearly independent.
+
+Suppose first that \(k=2\), and that some combination of \(x_{1}\) and \(x_{2}\) produces zero: \(c_{1}x_{1}+c_{2}x_{2}=0\). Multiplying by \(A\), we find \(c_{1}\lambda_{1}x_{1}+c_{2}\lambda_{2}x_{2}=0\). Subtracting \(\lambda_{2}\) times the previous equation, the vector \(x_{2}\) disappears:
+
+\[c_{1}(\lambda_{1}-\lambda_{2})x_{1}=0.\]
+
+Since \(\lambda_{1}\neq\lambda_{2}\) and \(x_{1}\neq 0\), we are forced into \(c_{1}=0\). Similarly \(c_{2}=0\), and the two vectors are independent; only the trivial combination gives zero.
+
+This same argument extends to any number of eigenvectors: If some combination produces zero, multiply by \(A\), subtract \(\lambda_{k}\) times the original combination, and \(x_{k}\) disappears--leaving a combination of \(x_{1},\ldots,x_{k-1}\), which produces zero. By repeating the same steps (this is really _mathematical induction_) we end up with a multiple of \(x_{1}\) that produces zero. This forces \(c_{1}=0\), and ultimately every \(c_{i}=0\). Therefore eigenvectors that come from distinct eigenvalues are automatically independent.
+
+A matrix with \(n\) distinct eigenvalues can be diagonalized. This is the typical case.
+
+### Examples of Diagonalization
+
+The main point of this section is \(S^{-1}AS=A\). The eigenvector matrix \(S\) converts \(A\) into its eigenvalue matrix \(\Lambda\) (diagonal). We see this for projections and rotations.
+
+**Example 1**.: The projection \(A=\left[\begin{array}{cc}\frac{1}{2}&\frac{1}{2}\\ \frac{1}{2}&\frac{1}{2}\end{array}\right]\) has eigenvalue matrix \(\Lambda=\left[\begin{smallmatrix}1&0\\ 0&0\end{smallmatrix}\right]\). The eigenvectors go into the columns of \(S\):
+
+\[S=\left[\begin{array}{cc}1&1\\ 1&-1\end{array}\right]\qquad\text{and}\qquad AS=S\Lambda=\left[\begin{array}[] {cc}1&0\\ 1&0\end{array}\right].\]
+
+That last equation can be verified at a glance. Therefore \(S^{-1}AS=\Lambda\).
+
+**Example 2**.: The eigenvalues themselves are not so clear for a _rotation_:
+
+\[\textbf{90}^{\circ}\ \textbf{rotation}\qquad K=\left[\begin{matrix}0&-1\\ 1&0\end{matrix}\right]\quad\text{has}\quad\det(K-\lambda I)=\lambda^{2}+1.\]
+
+_How can a vector be rotated and still have its direction unchanged?_ Apparently it can't--except for the zero vector, which is useless. But there must be eigenvalues, and we must be able to solve \(du/dt=Ku\). The characteristic polynomial \(\lambda^{2}+1\) should still have two roots--but those roots are _not real_.
+
+You see the way out. The eigenvalues of \(K\) are _imaginary numbers_, \(\lambda_{1}=i\) and \(\lambda_{2}=-i\). The eigenvectors are also not real. Somehow, in turning through \(90^{\circ}\), they are 

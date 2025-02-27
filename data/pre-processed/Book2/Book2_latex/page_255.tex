@@ -1,0 +1,20 @@
+
+
+## Chapter 13 Least squares data fitting
+
+In this chapter we introduce one of the most important applications of least squares methods, to the problem of data fitting. The goal is to find a mathematical model, or an approximate model, of some relation, given some observed data.
+
+### 13.1 Least squares data fitting
+
+Least squares is widely used as a method to construct a mathematical model from some data, experiments, or observations. Suppose we have an \(n\)-vector \(x\), and a scalar \(y\), and we believe that they are related, perhaps approximately, by some function \(f:{\bf R}^{n}\to{\bf R}\):
+
+\[y\approx f(x).\]
+
+The vector \(x\) might represent a set of \(n\) feature values, and is called the _feature vector_ or the vector of _independent variables_, depending on the context. The scalar \(y\) represents some _outcome_ (also called _response variable_) that we are interested in. Or \(x\) might represent the previous \(n\) values of a time series, and \(y\) represents the next value.
+
+Data.We don't know \(f\), although we might have some idea about its general form. But we do have some _data_, given by
+
+\[x^{(1)},\ldots,x^{(N)},\qquad y^{(1)},\ldots,y^{(N)},\]
+
+where the \(n\)-vector \(x^{(i)}\) is the feature vector and the scalar \(y^{(i)}\) is the associated value of the outcome for data sample \(i\). We sometimes refer to the pair \(x^{(i)},y^{(i)}\) as the \(i\)th _data pair_. These data are also called _observations_, _examples_, _samples_, or _measurements_, depending on the context. Here we use the superscript \((i)\) to denote the \(i\)th data point: \(x^{(i)}\) is an \(n\)-vector, the \(i\)th independent variable; the number \(x^{(i)}_{j}\) is the value of \(j\)th feature for example \(i\).
+

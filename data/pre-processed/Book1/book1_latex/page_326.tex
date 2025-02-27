@@ -1,0 +1,31 @@
+
+
+**Property 1**: If \(A=A^{\rm H}\), then for all complex vectors \(x\), the number \(x^{\rm H}Ax\) is real.
+
+Every entry of \(A\) contributes to \(x^{\rm H}Ax\). Try the 2 by 2 case with \(x=(u,v)\):
+
+\[\begin{split} x^{\rm H}Ax&=\begin{bmatrix}\overline{ u}&\overline{v}\end{bmatrix}\begin{bmatrix}2&3-3i\\ 3+3i&5\end{bmatrix}\begin{bmatrix}u\\ v\end{bmatrix}\\ &=2\overline{u}u+5\overline{v}v+(3-3i)\overline{u}v+(3+3i)u\overline{v}\\ &=\mathbf{real}+\mathbf{real}+(\mathbf{sum}\text{ of complex conjugates}).\end{split}\]
+
+For a proof in general. \((x^{\rm H}Ax)^{\rm H}\) is the conjugate of the 1 by 1 matrix \(x^{\rm H}Ax\), but we actually get the same number back again: \((x^{\rm H}Ax)^{\rm H}=x^{\rm H}A^{\rm H}x^{\rm HH}=x^{\rm H}Ax\). So that number must be real.
+
+**Property 2**: If \(A=A^{\rm H}\), every eigenvalue is real.
+
+Proof.: Suppose \(Ax=\lambda x\). _The trick is to multiply by \(x^{\rm H}\)_: \(x^{\rm H}Ax=\lambda x^{\rm H}x\). The left-hand side is real by Property 1, and the right-hand side \(x^{\rm H}x=\|x\|^{2}\) is real and positive, because \(x\neq 0\). Therefore \(\lambda=x^{\rm H}Ax/x^{\rm H}x\) must be real. Our example has \(\lambda=8\) and \(\lambda=-1\):
+
+\[\begin{split}|A-\lambda I|&=\begin{vmatrix}2-\lambda&3-3i\\ 3+3i&5-\lambda\end{vmatrix}=\lambda^{2}-7\lambda+10-|3-3i|^{2}\\ &=\lambda^{2}-7\lambda-8=(\lambda-8)(\lambda+1).\end{split}\] (8)
+
+_Note_. This proof of real eigenvalues looks correct for any real matrix:
+
+\[\begin{split}\mathbf{False}\text{ proof}\qquad Ax=\lambda x\quad \text{gives}\quad x^{\rm T}Ax=\lambda x^{\rm T}x,\quad\text{so}\quad\lambda= \frac{x^{\rm T}Ax}{x^{\rm T}x}\quad\text{is real}.\end{split}\]
+
+There must be a catch: _The eigenvector \(x\) might be complex_. It is when \(A=A^{\rm T}\) that we can be sure \(\lambda\) and \(x\) stay real. More than that, _the eigenvectors are perpendicular_: \(x^{\rm T}y=0\) in the real symmetric case and \(x^{\rm H}y=0\) in the complex Hermitian case.
+
+**Property 3**: Two eigenvectors of a real symmetric matrix or a Hermitian matrix, if they come from different eigenvalues, are orthogonal to one another.
+
+The proof starts with \(Ax=\lambda_{1}x\), \(Ay=\lambda_{1}y\), and \(A=A^{\rm H}\):
+
+\[(\lambda_{1}x)^{\rm H}y=(Ax)^{\rm H}y=x^{\rm H}Ay=x^{\rm H}(\lambda_{2}y).\] (9)
+
+The outside numbers are \(\lambda_{1}x^{\rm H}y=\lambda_{2}x^{\rm H}y\), since the \(\lambda\)'s are real. Now wc use the assumption \(\lambda_{1}\neq\lambda_{2}\), _which forces the conclusion that \(x^{\rm H}y=0\)_. In our example,
+
+\[\begin{split}(A-8I)x&=\begin{bmatrix}-6&3-i\\ 3+3i&-3\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\end{bmatrix}=\begin{bmatrix}0\\ 0\end{bmatrix},\qquad x=\begin{bmatrix}1\\ 1+i\end{bmatrix}\\ (A+I)y&=\begin{bmatrix}3&3-3i\\ 3+3i&6\end{bmatrix}\begin{bmatrix}y_{1}\\ y_{2}\end{bmatrix}=\begin{bmatrix}0\\ 0\end{bmatrix},\qquad y=\begin{bmatrix}1-i\\ -1\end{bmatrix}.\end{split}\]

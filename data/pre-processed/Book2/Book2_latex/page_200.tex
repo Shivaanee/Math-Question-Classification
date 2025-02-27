@@ -1,0 +1,27 @@
+In the first line, we use the transpose-of-product rule; in the second, we re-associate a product of 4 matrices (considering the row vector \(x^{T}\) and column vector \(x\) as matrices); in the third line, we use \(A^{T}A=I\); and in the fourth line, we use \(Iy=y\).
+
+From the second property we can derive the first one: By taking \(y=x\) we get \((Ax)^{T}(Ax)=x^{T}x\); taking the squareroot of each side gives \(\|Ax\|=\|x\|\). The third property, angle preservation, follows from the first two, since
+
+\[\angle(Ax,Ay)=\arccos\left(\frac{(Ax)^{T}(Ay)}{\|Ax\|\|Ay\|}\right)=\arccos \left(\frac{x^{T}y}{\|x\|\|y\|}\right)=\angle(x,y).\]
+
+QR factorization.We can express the result of the Gram-Schmidt algorithm described in SS5.4 in a compact form using matrices. Let \(A\) be an \(n\times k\) matrix with linearly independent columns \(a_{1},\ldots,a_{k}\). By the independence-dimension inequality, \(A\) is tall or square. Let \(Q\) be the \(n\times k\) matrix with columns \(q_{1},\ldots,q_{k}\), the orthonormal vectors produced by the Gram-Schmidt algorithm applied to the \(n\)-vectors \(a_{1},\ldots,a_{k}\). Orthonormality of \(q_{1},\ldots,q_{k}\) is expressed in matrix form as \(Q^{T}Q=I\). We express the equation relating \(a_{i}\) and \(q_{i}\),
+
+\[a_{i}=(q_{1}^{T}a_{i})q_{1}+\cdots+(q_{i-1}^{T}a_{i})q_{i-1}+\|\tilde{q}_{i}\| q_{i},\]
+
+where \(\tilde{q}_{i}\) is the vector obtained in the first step of the Gram-Schmidt algorithm, as
+
+\[a_{i}=R_{1i}q_{1}+\cdots+R_{ii}q_{i},\]
+
+where \(R_{ij}=q_{i}^{T}a_{j}\) for \(i<j\) and \(R_{ii}=\|\tilde{q}_{i}\|\). Defining \(R_{ij}=0\) for \(i>j\), we can write the equations above in compact matrix form as
+
+\[A=QR.\]
+
+This is called the _QR factorization_ of \(A\), since it expresses the matrix \(A\) as a product of two matrices, \(Q\) and \(R\). The \(n\times k\) matrix \(Q\) has orthonormal columns, and the \(k\times k\) matrix \(R\) is upper triangular, with positive diagonal elements. If \(A\) is square, with linearly independent columns, then \(Q\) is orthogonal and the QR factorization expresses \(A\) as a product of two square matrices.
+
+The attributes of the matrices \(Q\) and \(R\) in the QR factorization come directly from the Gram-Schmidt algorithm. The equation \(Q^{T}Q=I\) follows from the orthonormality of the vectors \(q_{1},\ldots,q_{k}\). The matrix \(R\) is upper triangular because each vector \(a_{i}\) is a linear combination of \(q_{1},\ldots,q_{i}\).
+
+The Gram-Schmidt algorithm is not the only algorithm for QR factorization. Several other QR factorization algorithms exist, that are more reliable in the presence of round-off errors. (These QR factorization methods may also change the _order_ in which the columns of \(A\) are processed.)
+
+Sparse QR factorization.There are algorithms for QR factorization that efficiently handle the case when the matrix \(A\) is sparse. In this case the matrix \(Q\) is stored in a special format that requires much less memory than if it were stored as a generic \(n\times k\) matrix, _i.e._, \(nk\) numbers. The flop count for these sparse QR factorizations is also much smaller than \(2nk^{2}\).
+
+ 

@@ -1,0 +1,23 @@
+an inner product on \(V\), and \(W\) is finite-dimensional, there is a particular subspace which one would probably call the 'natural' complementary subspace for \(W\). This is the orthogonal complement of \(W\). But, if \(V\) has no structure in addition to its vector space structure, there is no way of selecting a subspace \(W^{\prime}\) which one could call the natural complementary subspace for \(W\). However, one can construct from \(V\) and \(W\) a vector space \(V/W\), known as the 'quotient' of \(V\) and \(W\), which will play the role of the natural complement to \(W\). This quotient space is not a subspace of \(V\), and so it cannot actually be a subspace complementary to \(W\); but, it is a vector space defined only in terms of \(V\) and \(W\), and has the property that it is isomorphic to any subspace \(W^{\prime}\) which is complementary to \(W\).
+
+Let \(W\) be a subspace of the vector space \(V\). If \(\alpha\) and \(\beta\) are vectors in \(V\), we say that \(\alpha\) is **congruent to \(\beta\) modulo \(W\)**, if the vector \((\alpha-\beta)\) is in the subspace \(W\). If \(\alpha\) is congruent to \(\beta\) modulo \(W\), we write
+
+\[\alpha\equiv\beta,\qquad\mbox{mod }W.\]
+
+Now congruence modulo \(W\) is an equivalence relation on \(V\).
+
+1. \(\alpha\equiv\alpha\), mod \(W\), because \(\alpha-\alpha=0\) is in \(W\).
+2. If \(\alpha\equiv\beta\), mod \(W\), then \(\beta\equiv\alpha\), mod \(W\). For, since \(W\) is a subspace of \(V\), the vector \((\alpha-\beta)\) is in \(W\) if and only if \((\beta-\alpha)\) is in \(W\).
+3. If \(\alpha\equiv\beta\), mod \(W\), and \(\beta\equiv\gamma\), mod \(W\), then \(\alpha\equiv\gamma\), mod \(W\). For, if \((\alpha-\beta)\) and \((\beta-\gamma)\) are in \(W\), then \(\alpha-\gamma=(\alpha-\beta)+\beta-\gamma)\) is in \(W\).
+
+The equivalence classes for this equivalence relation are known as the **cosets** of \(W\). What is the equivalence class (coset) of a vector \(\alpha\)? It consists of all vectors \(\beta\) in \(V\) such that \((\beta-\alpha)\) is in \(W\), that is, all vectors \(\beta\) of the form \(\beta=\alpha+\gamma\), with \(\gamma\) in \(W\). For this reason, the coset of the vector \(\alpha\) is denoted by
+
+\[\alpha+W.\]
+
+It is appropriate to think of the coset of \(\alpha\) relative to \(W\) as the set of vectors obtained by translating the subspace \(W\) by the vector \(\alpha\). To picture these cosets, the reader might think of the following special case. Let \(V\) be the space \(R^{z}\), and let \(W\) be a one-dimensional subspace of \(V\). If we picture \(V\) as the Euclidean plane, \(W\) is a straight line through the origin. If \(\alpha=(x_{1},x_{2})\) is a vector in \(V\), the coset \(\alpha+W\) is the straight line which passes through the point \((x_{1},x_{2})\) and is parallel to \(W\).
+
+The collection of all cosets of \(W\) will be denoted by \(V/W\). We now define a vector addition and scalar multiplication on \(V/W\) as follows:
+
+\[\begin{array}{rcl}(\alpha+W)+(\beta+W)&=&(\alpha+\beta)+W\\ c(\alpha+W)&=&(\alpha)+W.\end{array}\]
+
+In other words, the sum of the coset of \(\alpha\) and the coset of \(\beta\) is the coset of \((\alpha+\beta)\), and the product of the scalar \(c\) and the coset of \(\alpha\) is the coset of the vector \(c\alpha\). Now many different vectors in \(V\) will have the same coset 

@@ -1,0 +1,25 @@
+When \(A\) is symmetric, a very accurate choice is the _Rayleigh quotient_:
+
+\[\text{shift by}\quad\alpha_{k}=R(w_{k})=\frac{w_{k}^{\text{T}}Aw_{k}}{w_{k}^{ \text{T}}w_{k}}.\]
+
+This quotient \(R(x)\) has a minimum at the true eigenvector \(x_{1}\). Its graph is like the bottom of a parabola, so the error \(\lambda_{1}-\alpha_{k}\) is roughly the square of the error in the eigenvector. The convergence factors \(|\lambda_{1}-\alpha_{k}|/|\lambda_{2}-\alpha_{k}|\) are themselves converging to zero. Then these Rayleigh quotient shifts give _cubic convergence_ of \(\alpha_{k}\) to \(\lambda_{1}\).2
+
+Footnote 2: Linear convergence means that every step multiplies the error by a fixed factor \(r<1\). Quadratic convergence means that the error is squared at every step, as in Newton’s method \(x_{k+1}-x_{k}=-f(x_{k})/f^{\prime}(x_{k})\) for solving \(f(x)=0\). Cubic convergence takes \(10^{-1}\) to \(10^{-9}\).
+
+### Tridiagonal and Hessenberg Forms
+
+The power method is reasonable only for a matrix that is large and sparse. When too many entries are nonzero, this method is a mistake. Therefore we ask whether there is any simple way _to create zeros_. That is the goal of the following paragraphs.
+
+It should be said that after computing a similar matrix \(Q^{-1}AQ\) with more zeros than A, we do not intend to go back to the power method. There are much more powerful variants, and the best of them seems to be the \(QR\) algorithm. (The shifted inverse power method has its place at the very end, in finding the eigenvector.) The first step is to produce quickly as many zeros as possible, using an orthogonal matrix \(Q\). If \(A\) is symmetric, then so is \(Q^{-1}AQ\). No entry can become dangerously large because \(Q\) preserves lengths.
+
+To go from \(A\) to \(Q^{-1}AQ\), there are two main possibilities: We can produce one zero at every step (as in elimination), or we can work with a whole column at once. For a single zero, it is easy to use a plane rotation as illustrated in equation (7), found near the end of this section, that has \(\cos\theta\) and \(\sin\theta\) in a 2 by 2 block. Then we could cycle through all the entries below the diagonal, choosing at each step a rotation \(\theta\) that will produce a zero; this is _Jacobi's method_. It fails to diagonalize \(A\) after a finite number of rotations, since the zeros from early steps will be destroyed when later zeros are created.
+
+To preserve the zeros and stop, we have to settle for less than a triangular form. _The Hessenberg form accepts one nonzero diagonal below the main diagonal_. If a Hessenberg matrix is symmetric, it only has three nonzero diagonals.
+
+A series of rotations in the right planes will produce the required zeros. Householder found a new way to accomplish exactly the same thing. A _Householder transformation_ is a reflection matrix determined by one vector \(v\):
+
+\[\text{Householder matrix}\qquad H=I-2\frac{vv^{\text{T}}}{\|v\|^{2}}.\]
+
+Often \(v\) is normalized to become a unit vector \(u=v/\|v\|\), and then \(H\) becomes \(I-2uu^{\text{T}}\). In either case \(H\) is both _symmetric_ and _orthogonal_:
+
+\[H^{\text{T}}H=(I-2uu^{\text{T}})(I-2uu^{\text{T}})=I-4uu^{\text{T}}+4uu^{ \text{T}}uu^{\text{T}}=I.\] 

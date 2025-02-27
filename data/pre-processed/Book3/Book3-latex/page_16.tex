@@ -1,0 +1,21 @@
+In defining \(e(A)\), it is not really important how many columns \(A\) has, but the number of rows of \(A\) is erucial. For example, one must worry a little to decide what is meant by interchanging rows 5 and 6 of a 5 \(\times\) 5 matrix. To avoid any such complications, we shall agree that an elementary row operation \(e\) is defined on the class of all \(m\times n\) matrices over \(F\), for some fixed \(m\) but any \(n\). In other words, a particular \(e\) is defined on the class of all \(m\)-rowed matrices over \(F\).
+
+One reason that we restrict ourselves to these three simple types of row operations is that, having performed such an operation \(e\) on a matrix \(A\), we can recapture \(A\) by performing a similar operation on \(e(A)\).
+
+**Theorem 2**: _To each elementary row operation \(e\) there corresponds an elementary row operation \(e_{i}\), of the same type as \(e\), such that \(e_{i}(e(A))=e(e_{i}(A))=A\) for each \(A\). In other words, the inverse operation (function) of an elementary row operation exists and is an elementary row operation of the same type._
+
+(1) Suppose \(e\) is the operation which multiplies the \(r\)th row of a matrix by the non-zero scalar \(c\). Let \(e_{i}\) be the operation which multiplies row \(r\) by \(c^{-1}\). (2) Suppose \(e\) is the operation which replaces row \(r\) by row \(r\) plus \(c\) times row \(s\), \(r\neq s\). Let \(e_{i}\) be the operation which replaces row \(r\) by row \(r\) plus \((-c)\) times row \(s\). (3) If \(e\) interchanges rows \(r\) and \(s\), let \(e_{1}=e\). In each of these three cases we clearly have \(e_{1}(e(A))=e(e_{1}(A))=A\) for each \(A\).
+
+**Definition**: If A and B are m \(\times\) n matrices over the field F, we say that B is row-equivalent to A if B can be obtained from A by a finite sequence of elementary row operations.
+
+Using Theorem 2, the reader should find it easy to verify the following. Each matrix is row-equivalent to itself; if \(B\) is row-equivalent to \(A\), then \(A\) is row-equivalent to \(B\); if \(B\) is row-equivalent to \(A\) and \(C\) is row-equivalent to \(B\), then \(C\) is row-equivalent to \(A\). In other words, row-equivalence is an equivalence relation (see Appendix).
+
+**Theorem 3**: _If A and B are row-equivalent m \(\times\) n matrices, the homogeneous systems of linear equations AX = 0 and BX = 0 have exactly the same solutions._
+
+Suppose we pass from \(A\) to \(B\) by a finite sequence of elementary row operations:
+
+\[A=A_{0}\to A_{1}\to\cdots\to A_{k}=B.\]
+
+It is enough to prove that the systems \(A_{j}X=0\) and \(A_{j+1}X=0\) have the same solutions, i.e., that one elementary row operation does not disturb the set of solutions.
+
+ 

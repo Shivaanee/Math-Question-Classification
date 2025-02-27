@@ -1,0 +1,31 @@
+for exponential solutions \(e^{i\omega t}x\):
+
+\[Mu^{\prime\prime}+Au=0\qquad\text{becomes}\qquad M(i\omega)^{2}e^{i\omega t}x+Ae^ {i\omega t}x=0.\] (8)
+
+Canceling \(e^{i\omega t}\), and writing \(\lambda\) for \(\omega^{2}\), this is an eigenvalue problem:
+
+\[\text{\bf Generalized problem}\;Ax=\lambda Mx\qquad\begin{bmatrix}2&-1\\ -1&2\end{bmatrix}x=\lambda\begin{bmatrix}m_{1}&0\\ 0&m_{2}\end{bmatrix}x.\] (9)
+
+There is a solution when \(A-\lambda M\) is singular. The special choice \(M=I\) brings back the usual \(\det(A-\lambda I)=0\). We work out \(\det(A-\lambda M)\) with \(m_{1}=1\) and \(m_{2}=2\):
+
+\[\det\begin{bmatrix}2-\lambda&-1\\ -1&2-2\lambda\end{bmatrix}=2\lambda^{2}-6\lambda+3=0\quad\text{gives}\quad \lambda=\frac{3\pm\sqrt{3}}{2}.\]
+
+For the eigenvector \(x_{1}(\sqrt{3}-1,1)\), the two masses oscillate together--but the first mass only moves as far as \(\sqrt{3}-1\approx.73\). In the fastest mode, the components of \(x_{2}=(1+\sqrt{3},-1)\) have opposite signs and the masses move in opposite directions. This time the smaller mass goes much further.
+
+The underlying theory is easier to explain if \(M\) is split into \(R^{\mathrm{T}}R\). (\(M\) is assumed to be positive definite.) Then the substitution \(y=Rx\) changes
+
+\[Ax=\lambda Mx=\lambda R^{\mathrm{T}}Rx\quad\text{into}\quad AR^{-1}y=\lambda R ^{\mathrm{T}}y.\]
+
+Writing \(C\) for \(R^{-1}\), and multiplying through by \((R^{\mathrm{T}})^{-1}=C^{\mathrm{T}}\), this becomes a standard eigenvalue problem for the _single_ symmetric matrix \(C^{\mathrm{T}}AC\):
+
+\[\text{\bf Equivalent problem}\qquad C^{\mathrm{T}}ACy=\lambda y.\] (10)
+
+The eigenvalues \(\lambda_{j}\) are the same as for the original \(Ax=\lambda Mx\). and the eigenvectors are related by \(y_{j}=Rx_{j}\). The properties of \(C^{\mathrm{T}}AC\) lead directly to thc properties of \(Ax=\lambda Mx\), when \(A=A^{\mathrm{T}}\) and \(M\) is positive definite:
+
+1. The eigenvalues for \(Ax=\lambda Mx\) are real, because \(C^{\mathrm{T}}AC\) is symmetric.
+2. The \(\lambda\)'s have the same signs as the eigenvalues of \(A\), by the law of inertia.
+3. \(C^{\mathrm{T}}AC\) has orthogonal eigenvectors \(y_{j}\). So the eigenvectors of \(Ax=\lambda Mx\) have \[\text{\bf``$M$-orthogonality''}\qquad x_{i}^{\mathrm{T}}Mx_{j}=x_{i}^{\mathrm{T} }R^{\mathrm{T}}Rx_{j}=y_{i}^{\mathrm{T}}y_{j}=0.\] (11)
+
+\(A\) and \(M\) are being _simultaneously diagonalized_. If \(S\) has the \(x_{j}\) in its columns, then \(S^{\mathrm{T}}AS=\Lambda\) and \(S^{\mathrm{T}}MS=I\). This is a _congruence_ transformation, with \(S^{\mathrm{T}}\) on the left, and not a similarity transformation with \(S^{-1}\). The main point is easy to summarize: As long as \(M\) is positive definite, the generalized eigenvalue problem \(Ax=-\lambda Mx\) behaves exactly like \(Ax=\lambda x\).
+
+ 

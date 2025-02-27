@@ -1,0 +1,27 @@
+
+
+**26.**: The solution to \(y^{\prime\prime}=0\) is a straight line \(y=C+Dt\). Convert to a matrix equation:
+
+\[\frac{d}{dt}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}=\begin{bmatrix}0&1\\ 0&0\end{bmatrix}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}\quad\text{has the solution}\quad\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}=e^{At}\begin{bmatrix}y(0)\\ y^{\prime}(0)\end{bmatrix}.\]
+
+This matrix \(A\) cannot be diagonalized. Find \(A^{2}\) and compute \(e^{At}=I+At+\frac{1}{2}A^{2}t^{2}+\cdots\). Multiply your \(e^{At}\) times \((y(0),y^{\prime}(0))\) to check the straight line \(y(t)=y(0)+y^{\prime}(0)t\).
+**27.**: Substitute \(y=e^{\lambda t}\) into \(y^{\prime\prime}=6y^{\prime}-9y\) to show that \(\lambda=3\) is a repeated root. This is trouble; we need a second solution after \(e^{3t}\). The matrix equation is
+
+\[\frac{d}{dt}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}=\begin{bmatrix}0&1\\ -9&6\end{bmatrix}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}.\]
+
+Show that this matrix has \(\lambda=3,3\) and only one line of eigenvectors. _Trouble here too_. Show that the second solution is \(y=te^{3t}\).
+**28.**: Figure out how to write \(my^{\prime\prime}+by^{\prime}+ky=0\) as a vector equation \(Mu^{\prime}=Au\).
+**29.**:
+* Find two familiar functions that solve the equation \(d^{2}y/dt^{2}=-y\). Which one starts with \(y(0)=1\) and \(y^{\prime}(0)=0\)?
+* This second-order equation \(y^{\prime\prime}=-y\) produces a vector equation \(u^{\prime}=Au\): \[u=\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}\qquad\frac{du}{dt}=\begin{bmatrix}y^{\prime}\\ y^{\prime\prime}\end{bmatrix}=\begin{bmatrix}0&1\\ -1&0\end{bmatrix}\begin{bmatrix}y\\ y^{\prime}\end{bmatrix}=Au.\] Put \(y(t)\) from part (a) into \(u(t)=(y,y^{\prime})\). This solves Problem 6 again.
+**30.**: A particular solution to \(du/dt=Au-b\) is \(u_{p}=A^{-1}b\), if \(A\) is invertible. The solutions to \(du/dt=Au\) give \(u_{n}\). Find the complete solution \(u_{p}+u_{n}\) to
+
+\[\text{(a)}\quad\frac{du}{dt}=2u-8.\qquad\qquad\text{(b)}\quad\frac{du}{dt}= \begin{bmatrix}2&0\\ 0&3\end{bmatrix}u-\begin{bmatrix}8\\ 6\end{bmatrix}.\]
+**31.**: If \(c\) is not an eigenvalue of \(A\), substitute \(u=e^{ct}v\) and find \(v\) to solve \(du/dt=Au-e^{ct}b\). This \(u=e^{ct}v\) is a particular solution. How does it break down when \(c\) is an eigenvalue?
+**32.**: Find a matrix \(A\) to illustrate each of the unstable regions in Figure 5.2:
+
+* \(\lambda_{1}<0\) and \(\lambda_{2}>0\).
+* \(\lambda_{1}>0\) and \(\lambda_{2}>0\).
+* Complex \(\lambda\)'s with real part \(a>0\).
+
+**Problems 33-41 are about the matrix exponential \(e^{At}\).**

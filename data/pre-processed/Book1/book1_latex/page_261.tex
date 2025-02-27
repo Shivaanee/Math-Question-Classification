@@ -1,0 +1,27 @@
+These determinants give the volumes--or areas, since we are in two dimensions--drawn in Figure 4.3. The parallelogram has unit base and unit height; its area is also 1.
+
+## 4. A Formula for the Pivots
+
+We can finally discover when elimination is possible without row exchanges. The key observation is that the first \(k\) pivots are completely determined by the submatrix \(A_{k}\) in the upper left corner of \(A\). _The remaining rows and columns of \(A\) have no effect on this corner of the problem_:
+
+\[\begin{array}{c}\textbf{Elimination on }A\\ \textbf{includes}\\ \textbf{elimination on }A_{2}\end{array}\qquad A=\begin{bmatrix}\textbf{a}& \textbf{b}&e\\ \textbf{c}&\textbf{d}&f\\ g&h&i\end{bmatrix}\rightarrow\begin{bmatrix}\textbf{a}&\textbf{b}&e\\ \textbf{0}&(\textbf{ad}-\textbf{bc})/\textbf{a}&(af-ec)/a\\ g&h&i\end{bmatrix}.\]
+
+Certainly the first pivot depended only on the first row and column, The second pivot \((ad-bc)/a\) depends only on the 2 by 2 corner submatrix \(A_{2}\). The rest of \(A\) does not enter until the third pivot. Actually it is not just the pivots, but the entire upper-left corners of \(L\), \(D\), and \(U\), that are determined by the upper-left corner of \(A\):
+
+\[A=LDU=\begin{bmatrix}1&&\\ c/a&1&\\ *&*&1\end{bmatrix}\begin{bmatrix}a&\\ &(ad-bc)/a&\\ &*\end{bmatrix}\begin{bmatrix}1&b/a&*\\ &1&*\\ &&1\end{bmatrix}.\]
+
+What we see in the first two rows and columns is exactly the factorization of the corner submatrix \(A_{2}\). This is a general rule if there are no row exchanges:
+
+* If \(A\) is factored into \(LDU\), the upper left corners satisfy \(A_{k}=L_{k}D_{k}U_{k}\). For every \(k\), the submatrix \(A_{k}\) is going through a Gaussian elimination of its own.
+
+The proof is to see that this corner can be settled first, before even looking at other eliminations. Or use the laws for _block multiplication_:
+
+\[LDU=\begin{bmatrix}\textbf{L}_{\textbf{k}}&0\\ B&C\end{bmatrix}\begin{bmatrix}\textbf{D}_{\textbf{k}}&0\\ 0&E\end{bmatrix}\begin{bmatrix}\textbf{U}_{\textbf{k}}&F\\ 0&G\end{bmatrix}=\begin{bmatrix}\textbf{L}_{\textbf{k}}\textbf{D}_{\textbf{k} }\textbf{U}_{\textbf{k}}&L_{k}D_{k}F\\ BD_{k}U_{k}&BD_{k}F+CEG\end{bmatrix}.\]
+
+Comparing the last matrix with \(A\), the corner \(L_{k}D_{k}U_{k}\) coincides with \(A_{k}\). Then:
+
+\[\det A_{k}=\det L_{k}\det D_{k}\det U_{k}=\det D_{k}=d_{1}d_{2}\cdots d_{k}.\]
+
+Figure 4.3: The areas of a unit square and a unit parallelogram are both 1.
+
+ 

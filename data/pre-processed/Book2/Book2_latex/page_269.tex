@@ -1,0 +1,22 @@
+
+##### Auto-regressive time series model.
+
+Suppose that \(z_{1},z_{2},\ldots\) is a time series. An _auto-regressive model_ (also called _AR model_) for the time series has the form
+
+\[\hat{z}_{t+1}=\theta_{1}z_{t}+\cdots+\theta_{M}z_{t-M+1},\quad t=M,M+1,\ldots\]
+
+where \(M\) is the _memory_ or _lag_ of the model. Here \(\hat{z}_{t+1}\) is the prediction of \(z_{t+1}\) made at time \(t\) (when \(z_{t},\ldots,z_{t-M+1}\) are known). This prediction is a linear function of the previous \(M\) values of the time series. With good choice of model parameters, the AR model can be used to predict the next value in a time series, given the current and previous \(M\) values. This has many practical uses.
+
+We can use least squares (or regression) to choose the AR model parameters, based on the observed data \(z_{1},\ldots,z_{T}\), by minimizing the sum of squares of the _prediction errors_\(z_{t}-\hat{z}_{t}\) over \(t=M+1,\ldots,T\), _i.e._,
+
+\[(z_{M+1}-\hat{z}_{M+1})^{2}+\cdots+(z_{T}-\hat{z}_{T})^{2}.\]
+
+(We must start the predictions at \(t=M+1\), since each prediction involves the previous \(M\) time series values, and we do not know \(z_{0},z_{-1},\ldots\).)
+
+The AR model can be put into the general linear in the parameters model form by taking
+
+\[y^{(i)}=z_{M+i},\quad x^{(i)}=(z_{M+i-1},\ldots,z_{i}),\quad i=1,\ldots,T-M.\]
+
+We have \(N=T-M\) examples, and \(n=M\) features.
+
+As an example 

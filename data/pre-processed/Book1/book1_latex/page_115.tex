@@ -1,0 +1,29 @@
+Look for a combination of the columns that makes zero:
+
+\[\text{Solve}\,Ac=0\qquad c_{1}\begin{bmatrix}3\\ 0\\ 0\end{bmatrix}+c_{2}\begin{bmatrix}4\\ 1\\ 0\end{bmatrix}+c_{3}\begin{bmatrix}2\\ 5\\ 2\end{bmatrix}=\begin{bmatrix}0\\ 0\\ 0\end{bmatrix}.\]
+
+_We have to show that \(c_{1}\), \(c_{2}\), \(c_{3}\) are all forced to be zero_. The last equation gives \(c_{3}=0\). Then the next equation gives \(c_{2}=0\), and substituting into the first equation forces \(c_{1}=0\). The only combination to produce the zero vector is the trivial combination. _The nullspace of \(A\) contains only the zero vector \(c_{1}=c_{2}=c_{3}=0\)._
+
+_The columns of \(A\) are independent exactly when \(N(A)=\{\text{zero vector}\}\)._
+
+A similar reasoning applies to the rows of \(A\), which are also independent. Suppose
+
+\[c_{1}(3,4,2)+c_{2}(0,1,5)+c_{3}(0,0,2)=(0,0,0).\]
+
+From the first components we find \(3c_{1}=0\) or \(c_{1}=0\). Then the second components give \(c_{2}=0\), and finally \(c_{3}=0\).
+
+The nonzero rows of any echelon matrix \(U\) must be independent. Furthermore, if we pick out _the columns that contain the pivots_, they also are linearly independent. In our earlier example, with
+
+\[\begin{array}{c}\text{\bf Two independent rows}\\ \text{\bf Two independent columns}\end{array}\qquad U=\begin{bmatrix}1&3&3&2\\ 0&0&3&1\\ 0&0&0&0\end{bmatrix},\]
+
+the pivot columns 1 and 3 are independent. No set of three columns is independent, and certainly not all four. It is true that columns 1 and 4 are also independent, but if that last 1 were changed to 0 they would be dependent. _It is the columns with pivots that are guaranteed to be independent_. The general rule is this:
+
+**2F** The \(r\) nonzero rows of an echelon matrix \(U\) and a reduced matrix \(R\) are linearly independent. So are the \(r\) columns that contain pivots.
+
+**Example 4**.: The columns of the \(n\) by \(n\) identity matrix are independent:
+
+\[I=\begin{bmatrix}1&0&\cdot&0\\ 0&1&\cdot&0\\ \cdot&\cdot&\cdot&0\\ 0&0&0&1\end{bmatrix}.\]
+
+These columns \(e_{1},\ldots,e_{n}\) represent unit vectors in the coordinate directions; in \(\mathbf{R}^{4}\),
+
+\[e_{1}=\begin{bmatrix}1\\ 0\\ 0\\ 0\end{bmatrix},\qquad e_{2}=\begin{bmatrix}0\\ 1\\ 0\\ 0\end{bmatrix},\qquad e_{3}=\begin{bmatrix}0\\ 0\\ 1\\ 0\end{bmatrix},\qquad e_{4}=\begin{bmatrix}0\\ 0\\ 0\\ 1\end{bmatrix}.\] 

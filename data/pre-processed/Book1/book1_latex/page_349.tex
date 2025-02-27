@@ -1,0 +1,30 @@
+
+
+**36.**: If \(J\) is the 5 by 5 Jordan block with \(\lambda=0\), find \(J^{2}\) and count its eigenvectors, and find its Jordan form (two blocks).
+**37.**: The text solved \(du/dt=Ju\) for a 3 by 3 Jordan block \(J\). Add a fourth equation \(dw/dt=5w+x\). Follow the pattern of solutions for \(z\), \(y\), \(x\) to find \(w\).
+**38.**: These Jordan matrices have eigenvalues 0, 0, 0, 0. They have two eigenvectors (find them). But the block sizes don't match and \(J\)_is not similar to \(K\)_:
+
+\[J=\left[\begin{array}{c|c|c}0&1&0&0\\ 0&0&0&0\\ \hline 0&0&0&1\\ 0&0&0&0\\ \hline 0&0&0&0\\ \end{array}\right]\qquad\text{and}\qquad K=\left[\begin{array}{ccc|c}0&1&0&0 \\ 0&0&1&0\\ 0&0&0&0\\ \hline 0&0&0&0\\ \end{array}\right].\]
+
+For any matrix \(M\), compare \(JM\) with \(MK\). If they are equal, show that \(M\) is not invertible. Then \(M^{-1}JM=K\) is impossible.
+**39.**: Prove in three steps that \(A^{\mathrm{T}}\)_is always similar to \(A\)_ (we know that the \(\lambda\)'s are the same, the eigenvectors are the problem):
+
+1. For \(A=\) one block, find \(M_{i}=\) permutation so that \(M_{i}^{-1}J_{i}M_{i}=J_{i}^{\mathrm{T}}\).
+2. For \(A=\) any \(J\), build \(M_{0}\) from blocks so that \(M_{0}^{-1}JM_{0}=J^{\mathrm{T}}\).
+3. For any \(A=MJM^{-1}\): Show that \(A^{\mathrm{T}}\) is similar to \(J^{\mathrm{T}}\) and so to \(J\) and to \(A\).
+**40.**: Which pairs are similar? Choose \(a\), \(b\), \(c\), \(d\) to prove that the other pairs aren't:
+
+\[\begin{bmatrix}a&b\\ c&d\end{bmatrix}\qquad\begin{bmatrix}b&a\\ d&c\end{bmatrix}\qquad\begin{bmatrix}c&d\\ a&b\end{bmatrix}\qquad\begin{bmatrix}d&c\\ b&a\end{bmatrix}.\]
+**41.**: True or false, with a good reason:
+
+1. An invertible matrix can't be similar to a singular matrix.
+2. A symmetric matrix can't be similar to a nonsymmetric matrix.
+3. \(A\) can't be similar to \(-A\) unless \(A=0\).
+4. \(A-I\) can't be similar to \(A+I\).
+**42.**: Prove that \(AB\)_has the same eigenvalues as BA_.
+**43.**: If \(A\) is 6 by 4 and B is 4 by 6, \(AB\) and \(BA\) have different sizes. Nevertheless,
+
+\[\begin{bmatrix}I&-A\\ 0&I\end{bmatrix}\begin{bmatrix}AB&0\\ B&0\end{bmatrix}\begin{bmatrix}I&A\\ 0&I\end{bmatrix}=\begin{bmatrix}0&0\\ B&BA\end{bmatrix}=G.\]
+
+1. What sizes are the blocks of \(G\)? They are the same in each matrix.
+2. This equation is \(M^{-1}FM=G\), so \(F\) and \(G\) have the same 10 eigenvalues. \(F\) has the eigenvalues of \(AB\) plus 4 zeros; \(G\) has the eigenvalues of \(BA\) plus 6 zeros. \(AB\)_has the same eigenvalues as BA plus \(

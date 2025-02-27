@@ -1,0 +1,16 @@
+
+
+**1.19**: _Auto-regressive model._ Suppose that \(z_{1},z_{2},\ldots\) is a time series, with the number \(z_{t}\) giving the value in period or time \(t\). For example \(z_{t}\) could be the gross sales at a particular store on day \(t\). An _auto-regressive_ (AR) model is used to predict \(z_{t+1}\) from the previous \(M\) values, \(z_{t},z_{t-1},\ldots,z_{t-M+1}\):
+
+\[\hat{z}_{t+1}=(z_{t},z_{t-1},\ldots,z_{t-M+1})^{T}\beta,\quad t=M,M+1,\ldots.\]
+
+Here \(\hat{z}_{t+1}\) denotes the AR model's prediction of \(z_{t+1}\), \(M\) is the memory length of the AR model, and the \(M\)-vector \(\beta\) is the AR model coefficient vector. For this problem we will assume that the time period is daily, and \(M=10\). Thus, the AR model predicts tomorrow's value, given the values over the last 10 days.
+
+For each of the following cases, give a short interpretation or description of the AR model in English, without referring to mathematical concepts like vectors, inner product, and so on. You can use words like 'vesterday' or 'today'.
+
+1. \(\beta\approx e_{1}\).
+2. \(\beta\approx 2e_{1}-e_{2}\).
+3. \(\beta\approx e_{6}\).
+4. \(\beta\approx 0.5e_{1}+0.5e_{2}\).
+
+**1.20**: How many bytes does it take to store 100 vectors of length \(10^{5}\)? How many flops does it take to form a linear combination of them (with 100 nonzero coefficients)? About how long would this take on a computer capable of carrying out 1 Gflop/s?

@@ -1,0 +1,21 @@
+of \(\lambda=\omega-1\). Since our goal is to make \(\lambda_{\max}\) as small as possible, that extremal pair specifies the best choice \(\omega_{\rm opt}\):
+
+\[\mbox{\bf Optimal $\omega$}\qquad\omega_{\rm opt}=\frac{2(1-\sqrt{1-\mu_{\max}^{ 2}})}{\mu_{\max}^{2}}\quad\mbox{and}\quad\lambda_{\max}=\omega_{\rm opt}-1.\] (8)
+
+**7G** The splittings of the \(-1\), \(2\), \(-1\) matrix of order \(n\) yield these eigenvalues of \(B\):
+
+**Jacobi** (\(S=0\), \(2\), \(0\) matrix): \[S^{-1}T\;\mbox{ has }\;|\lambda|_{\max}=\cos\frac{\pi}{n+1}\]
+
+**Gauss-Seidel** (S = \(-1\), \(2\), \(0\) matrix): \[S^{-1}T\;\mbox{ has }\;|\lambda|_{\max}=\left(\cos\frac{\pi}{n+1}\right)^{2}\]
+
+**SOR** (with the best \(\omega\)): \[|\lambda|_{\max}=\left(\cos\frac{\pi}{n+1}\right)^{2}\Bigg{/}\left(1+\sin \frac{\pi}{n+1}\right)^{2}.\]
+
+This can only be appreciated by an example. Suppose \(A\) is of order \(21\), which is very moderate. Then \(h=\frac{1}{22}\), \(\cos\pi h=.99\), and the Jacobi method is slow; \(\cos^{2}\pi h=.98\) means that even Gauss-Seidel will require a great many iterations. But since \(\sin\pi h=\sqrt{.02}=.14\), the optimal overrelaxation method will have the convergence factor
+
+\[\lambda_{\max}=\frac{.86}{1.14}=.75,\qquad\mbox{with}\qquad\omega_{\rm opt}=1 +\lambda_{\max}=1.75.\]
+
+The error is reduced by \(25\%\) at every step, and _a single SOR step is the equivalent of 30 Jacobi steps_: \((.99)^{30}=.75\).
+
+That is a striking result from such a simple idea. Its real applications are not in one-dimensional problems like \(-u_{xx}=f\). A tridiagonal system \(Ax=b\) is already easy. It is for partial differential equations that overrelaxation (and other ideas) will be important. Changing to \(-u_{xx}-u_{yy}=f\) leads to the "five-point scheme." The entries \(-1\), \(2\), \(-1\) in the \(x\) direction combine with \(-1\), \(2\), \(-1\) in the \(y\) direction to give a main diagonal of \(+4\) and four off-diagonal entries of \(-1\). _The matrix \(A\) does not have a small bandwidth!_ There is no way to number the \(N^{2}\) mesh points in a square so that each point stays close to all four of its neighbors. That is the true _curse of dimensionality_, and parallel computers will partly relieve it.
+
+If the ordering goes a row at a time, every point must wait a whole row for the neighbor above it to turn up. The "five-point matrix" has bandwidth \(N\): This matrix has had more attention, and been attacked in more different ways, than any other linear equation \(Ax=b\). The trend now is back to direct methods, based on an idea of Golub and Hockney; certain special matrices will fall apart when they are dropped the right way. (It is comparable to the Fast Fourier Transform.) Before that came the iterative methods of _alternating direction_, in which the splitting separated the tridiagonal matrix in the \(x\) direction from the one in the \(y\) direction, A recent choice is \(S=L_{0}U_{0}\), in which small 

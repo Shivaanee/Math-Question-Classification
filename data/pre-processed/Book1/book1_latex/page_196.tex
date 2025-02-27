@@ -1,0 +1,23 @@
+3. The cost of producing \(t\) books like this one is nearly linear, \(b=C+Dt\), with editing and typesetting in \(C\) and then printing and binding in \(D\). \(C\) is the set-up cost and \(D\) is the cost for each additional book.
+
+How to compute \(C\) and \(D\)? If there is no experimental error, then two measurements of \(b\) will determine the line \(b=C+Dt\). But if there is error, we must be prepared to "average" the experiments and find an optimal line. That line is not to be confused with the line through \(a\) on which \(b\) was projected in the previous section! In fact, since there are two unknowns \(C\) and \(D\) to be determined, we now project onto a _two-dimensional_ subspace. A perfect experiment would give a perfect \(C\) and \(D\):
+
+\[\begin{array}{ccccccc}C&+&Dt_{1}&=&b_{1}\\ C&+&Dt_{2}&=&b_{2}\\ &&\vdots&\\ C&+&Dt_{m}&=&b_{m}.\end{array}\] (6)
+
+This is an _overdetermined_ system, with \(m\) equations and only two unknowns. If errors are present, it will have no solution. \(A\) has two columns, and \(x=(C,D)\):
+
+\[\begin{bmatrix}1&t_{1}\\ 1&t_{2}\\ \vdots&\vdots\\ 1&t_{m}\end{bmatrix}\begin{bmatrix}C\\ D\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\\ \vdots\\ b_{m}\end{bmatrix},\qquad\text{or}\qquad Ax=b.\] (7)
+
+The best solution \((\widehat{C},\widehat{D})\) is the \(\widehat{x}\) that minimizes the squared error \(E^{2}\):
+
+\[\text{\bf Minimize}\qquad E^{2}=\|b-Ax\|^{2}=(b_{1}-C-Dt_{1})^{2}+\cdots+(b_{ m}-C-Dt_{m})^{2}.\]
+
+The vector \(p=A\widehat{x}\) is as close as possible to \(b\). Of all straight lines \(b=C+Dt\), we are choosing the one that best fits the data (Figure 3.9). On the graph, the errors are the _vertical distances_\(b-C-Dt\) to the straight line (not perpendicular distances!). It is the vertical distances that are squared, summed, and minimized.
+
+**Example 2**.: Three measurements \(b_{1}\), \(b_{2}\), \(b_{3}\) are marked on Figure 3.9a:
+
+\[b=1\quad\text{at}\quad t=-1,\qquad b=1\quad\text{at}\quad t=1,\qquad b=3\quad \text{at}\quad t=2.\]
+
+Note that the values \(t=-1,1,2\) are not required to be equally spaced. The first step is _to write the equations that **would** hold if a line could go through all three points._ Then every \(C+Dt\) would agree exactly with \(b\):
+
+\[Ax=b\quad\text{is}\quad\begin{array}{ccccccc}C&-&D&=&1\\ C&+&D&=&1\\ C&+&2D&=&3\end{array}\quad\text{or}\quad\begin{bmatrix}1&-1\\ 1&1\\ 1&2\end{bmatrix}\begin{bmatrix}C\\ D\end{bmatrix}=\begin{bmatrix}1\\ 1\\ 3\end{bmatrix}.\] 

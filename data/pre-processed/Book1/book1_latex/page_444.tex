@@ -1,0 +1,23 @@
+2. Project \(c=(5,4,8)\) onto the nullspace of \(A=[1\ \ 1\ \ 1]\), and find the maximum step \(s\) that keeps \(e-sPc\) nonnegative.
+
+### The Dual Problem
+
+Elimination can solve \(Ax=b\), but the four fundamental subspaces showed that a different and deeper understanding is possible. It is exactly the same for linear programming. The mechanics of the simplex method will solve a linear program, but duality is really at the center of the underlying theory. Introducing the dual problem is an elegant idea, and at the same time fundamental for the applications. We shall explain as much as we understand.
+
+The theory begins with the given _primal problem_:
+
+\[\textbf{Primal (P)}\qquad\text{{Minimize }cx, subject to }x\geq 0\text{ and }Ax\geq b.\]
+
+_The dual problem starts from the same \(A\), \(b\), and \(c\), and reverses everything_. In the primal, \(c\) is in the cost function and \(b\) is in the constraint, In the dual, \(b\) and \(c\) are switched, The dual unknown \(y\) is a _row vector_ with \(m\) components, and the feasible set has \(yA\leq c\) instead of \(Ax\geq b\).
+
+In short, the dual of a minimum problem is a maximum problem. Now \(y\geq 0\):
+
+\[\textbf{Dual (D)}\qquad\text{{Maximize }yb, subject to }y\geq 0\text{ and }yA\leq c.\]
+
+The dual of _this_ problem is the original minimum problem. There is complete symmetry between the primal and dual problems. The simplex method applies equally well to a maximization--anyway, both problems get solved at once.
+
+I have to give you some interpretation of all these reversals. They conceal a competition between the minimizer and the maximizer. In the diet problem, the minimizer has \(n\) foods (peanut butter and steak, in Section 8.1). They enter the diet in the (nonnegative) amounts \(x_{1},\ldots,x_{n}\). The constraints represent \(m\)_required vitamins_, in place of the one earlier constraint of sufficient protein. The entry \(a_{ij}\) measures the \(i\)th vitamin in the \(j\)th food, and the \(i\)th row of \(Ax\geq b\) forces the diet to include at least \(b_{i}\) of that vitamin. If \(c_{i}\) is the cost of the \(j\)th food, then \(c_{1}x_{1}+\cdots+c_{n}x_{n}=cx\) is the cost of the diet. That cost is to be minimized.
+
+**In the dual, the druggist is selling vitamin pills at prices \(y_{i}\geq 0\)**. Since food \(j\) contains vitamins in the amounts \(a_{ij}\), the druggist's price for the vitamin equivalent cannot exceed the grocer's price \(c_{j}\). That is the \(j\)th constraint in \(yA\leq c\). Working within this constraint on vitamin prices, the druggist can sell the required amount \(b_{i}\) of each vitamin for a total income of \(y_{1}b_{1}+\cdots+y_{m}b_{m}=yb\)--to be maximized.
+
+The feasible sets for the primal and dual problems look completely different. The first is a subset of \(\textbf{R}^{n}\), marked out by \(x\geq 0\) and \(Ax\geq b\). The second is a subset of \(\textbf{R}^{m}\) 

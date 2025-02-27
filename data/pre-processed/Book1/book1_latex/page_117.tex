@@ -1,0 +1,26 @@
+
+
+**Example 6**.: The vectors \(w_{1}=(1,0,0)\), \(w_{2}=(0,1,0)\), and \(w_{3}=(-2,0,0)\) span a plane (the \(x\)-\(y\) plane) in \(\mathbf{R}^{3}\). The first two vectors also span this plane, whereas \(w_{1}\) and \(w_{3}\) span only a line.
+
+**Example 7**.: The column space of \(A\) is exactly _the space that is spanned by its columns_. The row space is spanned by the rows. The definition is made to order. Multiplying \(A\) by any \(x\) gives a combination of the columns; it is a vector \(Ax\) in the column space.
+
+The coordinate vectors \(e_{1},\ldots,e_{n}\) coming from the identity matrix span \(\mathbf{R}^{n}\). Every vector \(b=(b_{1},\ldots,b_{n})\) is a combination of those columns. In this example the weights are the components \(b_{i}\) themselves: \(b=b_{1}e_{1}+\cdots+b_{n}e_{n}\). But the columns of other matrices also span \(\mathbf{R}^{n}\)!
+
+### Basis for a Vector Space
+
+To decide if \(b\) is a combination of the columns, we try to solve \(Ax=b\). To decide if the columns are independent, we solve \(Ax=0\). _Spanning involves the column space, and independence involves the nullspace_. The coordinate vectors \(e_{1},\ldots,e_{n}\) span \(\mathbf{R}^{n}\) and they are linearly independent. Roughly speaking, _no vectors in that set are wasted_. This leads to the crucial idea of a _basis_.
+
+**21**: A _basis_ for \(\mathbf{V}\) is a sequence of vectors having two properties at once:
+
+1. The vectors are linearly independent (not too many vectors).
+2. They span the space \(\mathbf{V}\) (not too few vectors).
+
+This combination of properties is absolutely fundamental to linear algebra. It means that every vector in the space is a combination of the basis vectors, because they span. It also means that the combination is unique: If \(v=a_{1}v_{1}+\cdots+a_{k}v_{k}\) and also \(v=b_{1}v_{1}+\cdots+b_{k}v_{k}\), then subtraction gives \(0=\sum(a_{i}-b_{i})v_{i}\). Now independence plays its part; every coefficient \(a_{i}-b_{i}\) must be zero. Therefore \(a_{i}=b_{i}\). _There is one and only one way to write \(v\) as a combination of the basis vectors_.
+
+We had better say at once that the coordinate vectors \(e_{1},\ldots,e_{n}\) are not the only basis for \(\mathbf{R}^{n}\). Some things in linear algebra are unique, but not this. A vector space has _infinitely many different bases_. Whenever a square matrix is invertible, its columns are independent--and they are a basis for \(\mathbf{R}^{n}\). The two columns of this nonsingular matrix are a basis for \(\mathbf{R}^{2}\):
+
+\[A=\begin{bmatrix}1&1\\ 2&3\end{bmatrix}\]
+
+Every two-dimensional vector is a combination of those (independent!) columns.
+
+**Example 8**.: The \(x\)-\(y\) plane in Figure 2.4 is just \(\mathbf{R}^{2}\). The vector \(v_{1}\) by itself is linearly independent, but it fails to span \(\mathbf{R}^{2}\). The three vectors \(v_{1}\), \(v_{2}\), \(v_{3}\) certainly span \(\mathbf{R}^{2}\), but are not independent. _Any two_ of these vectors, say \(v_{1}\) and \(v_{2}\), have both properties--they

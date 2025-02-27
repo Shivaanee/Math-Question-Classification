@@ -1,0 +1,23 @@
+probabilities \(y_{1}\) and \(y_{2}=1-y_{1}\). None of these probabilities should be 0 or 1; otherwise the opponent adjusts and wins. If they equal \(\frac{1}{2}\), \(Y\) would be losing $20 too often. (He would lose $20 a quarter of the time, $10 another quarter of the time, and win $10 half the time--an average loss of $2.50. This is more than necessary.) But the more \(Y\) moves toward a pure two-hand strategy, the more \(X\) will move toward one hand.
+
+The fundamental problem is _to find the best mixed strategies_. Can \(X\) choose probabilities \(x_{1}\) and \(x_{2}\) that present \(Y\) with no reason to move his own strategy (and vice versa)? Then the average payoff will have reached a _saddle point_: It is a maximum as far as \(X\) is concerned, and a minimum as far as \(Y\) is concerned. To find such a saddle point is to solve the game.
+
+\(X\) is combining the two columns with weights \(x_{1}\) and \(1-x_{1}\) to produce a new "mixed" column. Weights \(\frac{3}{5}\) and \(\frac{2}{5}\) would produce this column:
+
+\[\mathbf{Mixed\ column}\qquad\frac{3}{5}\begin{bmatrix}-10\\ 10\end{bmatrix}+\frac{2}{5}\begin{bmatrix}20\\ -10\end{bmatrix}=\begin{bmatrix}2\\ 2\end{bmatrix}.\]
+
+_Against this mixed strategy, \(Y\) will always lose_ $2. This does not mean that all strategies are optimal for \(Y\)! If \(Y\) is lazy and stays with one hand, \(X\) will change and start winning $20. Then \(Y\) will change, and then \(X\) again. Finally, since we assume they are both intelligent, they settle down to optimal mixtures. \(Y\) will combine the _rows_ with weights \(y_{1}\) and \(1-y_{1}\), trying to produce a new row which is as _small_ as possible:
+
+\[\mathbf{Mixed\ row}\qquad y_{1}\begin{bmatrix}-10&20\end{bmatrix}+(1-y_{1}) \begin{bmatrix}10&-10\end{bmatrix}=\begin{bmatrix}10-20y_{1}&-10+30y_{1}\end{bmatrix}.\]
+
+The right mixture makes the two components equal, at \(y_{1}=\frac{2}{5}\). Then both components equal 2; the mixed row becomes \([2\;\;2]\). _With this strategy \(Y\) cannot lose more than_ $2. \(Y\) has minimized the maximum loss, and that _minimax_ agrees with the _maximin_ found by \(X\). The _value of the game_ is \(\operatorname{minimax}=\operatorname{maximin}=\$2\).
+
+The optimal mixture of rows might not always have equal entries! Suppose \(X\) is allowed a third strategy of holding up three hands to win $60 when \(Y\) puts up one hand and $80 when \(Y\) puts up two. The payoff matrix becomes
+
+\[A=\begin{bmatrix}-10&20&60\\ 10&-10&80\end{bmatrix}.\]
+
+\(X\) will choose the three-hand strategy (column 3) every time, and win at least $60. At the same time, \(Y\) always chooses the first row; the maximum loss is $60. We still have \(\operatorname{maximin}=\operatorname{minimax}=\$60\), but the saddle point is over in the corner.
+
+In \(Y\)'s optimal mixture of rows, which was purely row 1, $60 appears only in the column actually used by \(X\). In \(X\)'s optimal mixture of columns, which was column 3, $60 appears in the row that enters \(Y\)'s best strategy. This rule corresponds exactly to the _complementary slackness condition_ of linear programming.
+
+ 

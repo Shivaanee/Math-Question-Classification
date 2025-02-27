@@ -1,0 +1,31 @@
+
+
+### Definite versus Indefinite: Bowl versus Saddle
+
+The problem comes down to this: For a function of two variables \(x\) and \(y\), what is the correct replacement for the condition \(\partial^{2}F/\partial x^{2}>0\)? With only one variable, the sign of the second derivative decides between a minimum or a maximum. Now we have three second derivatives: \(F_{xx}\), \(F_{xy}=F_{yx}\), and \(F_{yy}\). These three numbers (like 4, 4, 2) must determine whether or not \(F\) (as well as \(f\)) has a minimum.
+
+_What conditions on \(a\), \(b\), and \(c\) ensure that the quadratic \(f(x,y)=ax^{2}+2bxy+cy^{2}\) is positive definite_? One necessary condition is easy:
+
+1. _If_ \(ax^{2}+2bxy+cy^{2}\) _is positive definite, then necessarily_ \(a>0\)_._
+
+We look at \(x=1\), \(y=0\), where \(ax^{2}+2bxy+cy^{2}\) is equal to \(a\). This must be positive. Translating back to \(F\), that means that \(\partial^{2}F/\partial x^{2}>0\). The graph must go up in the \(x\) direction. Similarly, fix \(x=0\) and look in the \(y\) direction where \(f(0,y)=cy^{2}\):
+
+1. _If_ \(f(x,y)\) _is positive definite, then necessarily_ \(c>0\)_._
+
+Do these conditions \(a>0\) and \(c>0\) guarantee that \(f(x,y)\) is always positive? The answer is **no**. A large cross term \(2bxy\) can pull the graph below zero.
+
+**Example 1**.: \(f(x,y)=x^{2}-10xy+y^{2}\). Here \(a=1\) and \(c=1\) are both positive. But \(f\) is not positive definite, because \(f(1,1)=-8\). The conditions \(a>0\) and \(c>0\) ensure that \(f(x,y)\) is positive on the \(x\) and \(y\) axes. But this function is negative on the line \(x=y\), because \(b=-10\) overwhelms \(a\) and \(c\).
+
+**Example 2**.: In our original \(f\) the coefficient \(2b=4\) was positive. Does this ensure a minimum? Again the answer is **no**; the sign of \(b\) is of no importance! _Even though its second derivatives are positive, \(2x^{2}+4xy+y^{2}\) is not positive definite_. _Neither \(F\) nor \(f\) has a minimum at \((0,0)\) because \(f(1,-1)=2-4+1=-1\)._
+
+_It is the size of \(b\), compared to \(a\) and \(c\), that must be controlled._ We now want a necessary and sufficient condition for positive definiteness. The simplest technique is to complete the square:
+
+\[\begin{array}{l}\mbox{\bf Express $f(x,y)$}\\ \mbox{\bf using squares}\end{array}\qquad f=ax^{2}+2bxy+cy^{2}=a\left(x+\frac{b}{a}y \right)^{2}+\left(c-\frac{b^{2}}{a}\right)y^{2}.\] (2)
+
+The first term on the right is never negative, when the square is multiplied by \(a>0\). But this square can be zero, and the second term must then be positive. That term has coefficient \((ac-b^{2})/a\). The last requirement for positive definiteness is that this coefficient must be positive:
+
+1. If \(ax^{2}+2bxy+cy^{2}\) stays positive, then necessarily \(ac>b^{2}\).
+
+### Test for a minimum:
+
+The conditions \(a>0\) and \(ac>b^{2}\) are just right. They guarantee \(c>0\). The right side of (2) is positive, and we have found a minimum:

@@ -1,0 +1,33 @@
+_Remark 3_.: _Other matrices \(S\) will not produce a diagonal \(\Lambda\)._ Suppose the first column of \(S\) is \(y\). Then the first column of \(S\Lambda\) is \(\lambda_{1}y\). If this is to agree with the first column of \(AS\), which by matrix multiplication is \(Ay\), then \(y\) must be an eigenvector: \(Ay=\lambda_{1}y\). The _order_ of the eigenvectors in \(S\) and the eigenvalues in \(\Lambda\) is automatically the same.
+
+_Remark 4_.: Not all matrices possess \(n\) linearly independent eigenvectors, so _not all matrices are diagonalizable_. The standard example of a "defective matrix" is
+
+\[A=\begin{bmatrix}0&1\\ 0&0\end{bmatrix}.\]
+
+Its eigenvalues are \(\lambda_{1}=\lambda_{2}=0\), since it is triangular with zeros on the diagonal:
+
+\[\det(A-\lambda I)=\det\begin{bmatrix}-\lambda&1\\ 0&-\lambda\end{bmatrix}=\lambda^{2}.\]
+
+All eigenvectors of this \(A\) are multiples of the vector \((1,0)\):
+
+\[\begin{bmatrix}0&1\\ 0&0\end{bmatrix}x=\begin{bmatrix}0\\ 0\end{bmatrix},\qquad\text{or}\qquad x=\begin{bmatrix}c\\ 0\end{bmatrix}.\]
+
+\(\lambda=0\) is a double eigenvalue--its _algebraic multiplicity_ is 2. But the _geometric multiplicity_ is 1--there is only one independent eigenvector. We can't construct \(S\).
+
+Here is a more direct proof that this \(A\) is not diagonalizable. Since \(\lambda_{1}=\lambda_{2}=0\), \(\Lambda\) would have to be the zero matrix, But if \(\Lambda=S^{-1}AS=0\), then we premultiply by \(S\) and postmultiply by \(S^{-1}\), to deduce falsely that \(A=0\). There is no invertible \(S\).
+
+That failure of diagonalization was _not_ a result of \(\lambda=0\). It came from \(\lambda_{1}=\lambda_{2}\):
+
+\[\text{Repeated eigenvalues}\qquad A=\begin{bmatrix}3&1\\ 0&3\end{bmatrix}\quad\text{and}\quad A=\begin{bmatrix}2&-1\\ 1&0\end{bmatrix}.\]
+
+Their eigenvalues are 3, 3 and 1, 1. They are not singular! The problem is the shortage of eigenvectors--which are needed for \(S\). That needs to be emphasized:
+
+_Diagonalizability of \(A\) depends on enough eigenvectors._
+
+_Invertibility of \(A\) depends on nonzero eigenvalues._
+
+There is no connection between diagonalizability (\(n\) independent eigenvector) and invertibility (no zero eigenvalues). The only indication given by the eigenvalues is this: _Diagonalization can fail only if there are repeated eigenvalues_. Even then, it does not always fail. \(A=I\) has repeated eigenvalues \(1,1,\ldots,1\) but it is already diagonal! There is no shortage of eigenvectors in that case.
+
+The test is to check, for an eigenvalue that is repeated p times, whether there are p independent eigenvectors--in other words, whether \(A-\lambda I\) has rank \(n-p\). To complete that circle of ideas, we have to show that _distinct_ eigenvalues present no problem.
+
+ 

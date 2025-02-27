@@ -1,0 +1,31 @@
+the plane of columns 2 and 3 . Only two columns are independent.
+The vector $b=(2,5,7)$ is in that plane of the columns-it is column 1 plus column 3 -so $(1,0,1)$ is a solution. We can add an multiple of the combination $(3,-1,-2)$ that gives $b=0$. So there is a whole line of solutions-as we know from the row picture.
+
+The truth is that we knew the columns would combine to give zero, because the rows did. That is a fact of mathematics, not of computation-and it remains true in dimension $n$. If the n planes have no point in common, or infinitely many points, then the $n$ columns lie in the same plane.
+
+If the row picture breaks down, so does the column picture. That brings out the difference between Chapter 1 and Chapter 2. This chapter studies the most important problem-the nonsingular case-where there is one solution and it has to be found. Chapter 2 studies the general case, where there may be many solutions or none. In both cases we cannot continue without a decent notation (matrix notation) and a decent algorithm (elimination). After the exercises, we start with elimination.
+
+Problem Set 1.2
+1. For the equations $x+y=4,2 x-2 y=4$, draw the row picture (two intersecting lines) and the column picture (combination of two columns equal to the column vector $(4,4)$ on the right side).
+2. Solve to find a combination of the columns that equals $b$ :
+Triangular system
+$$
+\begin{aligned}
+u-v-w & =b_1 \\
+v+w & =b_2 \\
+w & =b_3 .
+\end{aligned}
+$$
+3. (Recommended) Describe the intersection of the three planes $u+v+w+z=6$ and $u+w+z=4$ and $u+w=2$ (all in four-dimensional space). Is it a line or a point or an empty set? What is the intersection if the fourth plane $u=-1$ is included? Find a fourth equation that leaves us with no solution.
+4. Sketch these three lines and decide if the equations are solvable:
+3 by 2 system
+$$
+\begin{aligned}
+x+2 y & =2 \\
+x-y & =2 \\
+y & =1 .
+\end{aligned}
+$$
+
+What happens if all right-hand sides are zero? Is there any nonzero choice of righthand sides that allows the three lines to intersect at the same point?
+5. Find two points on the line of intersection of the three planes $t=0$ and $z=0$ and $x+y+z+t=1$ in four-dimensional space.

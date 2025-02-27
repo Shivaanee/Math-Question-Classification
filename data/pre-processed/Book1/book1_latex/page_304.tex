@@ -1,0 +1,29 @@
+2. Compute \(u_{k}=SA^{k}S^{-1}u_{0}\) for any \(a\) and \(b\).
+3. Under what condition on \(a\) and \(b\) does \(u_{k}\) approach a finite limit as \(k\to\infty\), and what is the limit? Does \(A\) have to be a Markov matrix?
+
+**14.**: Multinational companies in the Americas, Asia, and Europe have assets of $4 trillion. At the start, $2 trillion are in the Americas and $2 trillion in Europe. Each year \(\frac{1}{2}\) the American money stays home, and \(\frac{1}{4}\) goes to each of Asia and Europe. For Asia and Europe, \(\frac{1}{2}\) stays home and \(\frac{1}{2}\) is sent to the Americas.
+
+1. Find the matrix that gives \[\begin{bmatrix}\text{Americas}\\ \text{Asia}\\ \text{Europe}\end{bmatrix}_{\text{year $k+1$}}=A\begin{bmatrix}\text{Americas}\\ \text{Asia}\\ \text{Europe}\end{bmatrix}_{\text{year $k$}}\] .
+2. Find the eigenvalues and eigenvectors of \(A\).
+3. Find the limiting distribution of the $4 trillion as the world ends.
+4. Find the distribution of the $4 trillion at year \(k\).
+
+**15.**: If \(A\) is a Markov matrix, show that the sum of the components of \(Ax\) equals the sum of the components of \(x\). Deduce that if \(Ax=\lambda x\) with \(\lambda\neq 1\), the components of the eigenvector add to zero.
+
+**16.**: The solution to \(du/dt=Au=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}u\) (eigenvalues \(i\) and \(-i\)) goes around in a circle: \(u=(\cos t,\sin t)\). Suppose we approximate \(du/dt\) by forward, backward, and centered differences \(\mathbf{F}\), \(\mathbf{B}\), \(\mathbf{C}\):
+
+**(F)**\(u_{n+1}-u_{n}=Au_{n}\) or \(u_{n+1}=(I+A)u_{n}\) (this is Euler's method).
+
+**(B)**\(u_{n+1}-u_{n}=Au_{n+1}\) or \(u_{n+1}=(I-A)^{-1}u_{n}\) (backward Euler).
+
+**(C)**\(u_{n+1}-u_{n}=\frac{1}{2}A(u_{n+1}+u_{n})\) or \(u_{n+1}=(I-\frac{1}{2}A)^{-1}(I+\frac{1}{2}A)u_{n}\).
+
+Find the eigenvalues of \(I+A\), \((IA)^{-1}\), and \((I-\frac{1}{2}A)^{-1}(I+\frac{1}{2}A)\). For which difference equation does the solution \(u_{n}\) stay on a circle?
+
+**17.**: What values of \(\alpha\) produce instability in \(v_{n+1}=\alpha(v_{n}+w_{n})\), \(w_{n+1}=\alpha(v_{n}+w_{n})\)?
+
+**18.**: Find the largest \(a\), \(b\), \(c\) for which these matrices are stable or neutrally stable:
+
+\[\begin{bmatrix}a&-.8\\ .8&.2\end{bmatrix},\qquad\begin{bmatrix}b&.8\\ 0&.2\end{bmatrix},\qquad\begin{bmatrix}c&.8\\ .2&c\end{bmatrix}.\]
+
+**19.**: Multiplying term by term, check that \((IA)(I+A+A^{2}+\cdots)=I\). This series represents \((IA)^{-1}\). It is nonnegative when \(A\) is nonnegative, provided it has a finite 

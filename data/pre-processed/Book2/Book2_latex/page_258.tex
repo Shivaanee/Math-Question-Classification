@@ -1,0 +1,23 @@
+Some notation differences from chapter 12.Before proceeding we note some differences in the meanings of symbols used in chapter 12 (on least squares) and in this chapter on data fitting, that the reader will need to keep in mind. In chapter 12, the symbol \(x\) denotes a generic variable, the vector that we would like to find, and \(b\) refers to the so-called right-hand side, the vector we seek to approximate. In this chapter, in the context of fitting a model to data, the symbol \(x\) generically refers to a feature vector; we want to find \(\theta\), the vector of coefficients in our model, and the vector we seek to approximate is \(y^{\mathrm{d}}\), a vector of (observed) data outcomes. When we use least squares in this chapter, we will need to transcribe the results or formulas from chapter 12 to the current context, as in the formula (13.2).
+
+Least squares fit with a constant.We start with the simplest possible fit: We take \(p=1\), with \(f_{1}(x)=1\) for all \(x\). In this case the model \(\hat{f}\) is a constant function, with \(\hat{f}(x)=\theta_{1}\) for all \(x\). Least squares fitting in this case is the same as choosing the best constant value \(\theta_{1}\) to approximate the data \(y^{(1)},\ldots,y^{(N)}\).
+
+In this simple case, the matrix \(A\) in (13.1) is the \(N\times 1\) matrix \(\mathbf{1}\), which always has linearly independent columns (since it has one column, which is nonzero). The formula (13.2) is then
+
+\[\hat{\theta}_{1}=(A^{T}A)^{-1}A^{T}y^{\mathrm{d}}=N^{-1}\mathbf{1}^{T}y^{ \mathrm{d}}=\mathbf{avg}(y^{\mathrm{d}}),\]
+
+where we use \(\mathbf{1}^{T}\mathbf{1}=N\). So the best constant fit to the data is simply its mean,
+
+\[\hat{f}(x)=\mathbf{avg}(y^{\mathrm{d}}).\]
+
+The RMS fit to the data (_i.e._, the RMS value of the optimal residual) is
+
+\[\mathbf{rms}(y^{\mathrm{d}}-\mathbf{avg}(y^{\mathrm{d}})\mathbf{1})=\mathbf{ std}(y^{\mathrm{d}}),\]
+
+the standard deviation of the data. This gives a nice interpretation of the average value and the standard deviation of the outcomes, as the best constant fit and the associated RMS error, respectively. It is common to compare the RMS fitting error for a more sophisticated model with the standard deviation of the outcomes, which is the optimal RMS fitting error for a constant model.
+
+A simple example of a constant fit is shown in figure 13.1. In this example we have \(n=1\), so the data points \(x^{(i)}\) are scalars. The green circles in the left-hand plot show the data points; the blue line shows the prediction function \(\hat{f}(x)\) (which has constant value). The right-hand plot shows a scatter plot of the data outcomes \(y^{(i)}\) versus the predicted values \(\hat{y}^{(i)}\) (all of which are the same), with a dashed line showing \(y=\hat{y}\).
+
+Independent column assumption.To use least squares fitting we assume that the columns of the matrix \(A\) in (13.1) are linearly independent. We can give an interesting interpretation of what it means when this assumption fails. If the columns of \(A\) are linearly dependent, it means that one of the columns can be expressed as a linear combination of the others. Suppose, for example, that the last column can be expressed as a linear combination of the first \(p-1\) columns. Using \(A_{ij}=f_{j}(x^{(i)})\), this means
+
+\[f_{p}(x^{(i)})=\beta_{1}f_{1}(x^{(i)})+\cdots+\beta_{p-1}f_{p-1}(x^{(i)}),\quad i =1,\ldots,N.\] 

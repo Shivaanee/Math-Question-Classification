@@ -1,0 +1,22 @@
+in turn is a new algorithm. It sounds so easy, but for a large problem the data structure becomes critical, With a thousand nodes, there might be nearly a million edges, and you don't want to go through that list a thousand times.
+
+### Further Network Models
+
+There are important problems related to matching that are almost as easy:
+
+1. The _optimal assignment problem_: \(a_{ij}\) measures the value of applicant \(i\) in job \(j\). Assign jobs to maximize the total value--the sum of the \(a_{ij}\) on assigned jobs. (If all \(a_{ij}\) are 0 or 1, this is the marriage problem.)
+2. The _transportation problem_: Given supplies at \(n\) points and demands at \(n\) markets choose shipments \(x_{ij}\) from suppliers to markets that minimize the total cost \(\sum C_{ij}x_{ij}\). (If all supplies and demands are 1, this is the optimal assignment problem--sending one person to each job.)
+3. _Minimum costflow_: Now the routes have capacities \(c_{ij}\) as well as costs \(C_{ij}\), mixing the maximal flow problem with the transportation problem. What is the cheapest flow, subject to capacity constraints?
+
+A fascinating part of this subject is the development of algorithms. Instead of a theoretical proof of duality, we use _breadth-first search or depth-first search_ to find the optimal assignment or the cheapest flow. It is like the simplex method, in starting from a feasible flow (a corner) and adding a new flow (to move to the next corner), The algorithms are special because network problems involve incidence matrices.
+
+The technique of _dynamic programming_ rests on a simple idea: If a path from source to sink is optimal, then _each part of the path must be optimal_. The solution is built backwards from the sink, with a multistage decision process. At each stage, the distance to the sink is the minimum of a new distance plus an old distance:
+
+\[\mbox{\bf Bellman equation}\qquad\mbox{\boldmath$x$-$t$ distance}=\mbox{minimum over $y$ of ($x$-$y$ +$y$-$t$ distances)}.\]
+
+I wish there were space for more about networks. They are simple but beautiful.
+
+### Problem Set 8.4
+
+1. In Figure 8.5, add 3 to every capacity. Find by inspection the maximal flow and minimal cut.
+2. Find a maximal flow and minimal cut for the following network: 

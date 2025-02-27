@@ -1,0 +1,31 @@
+Of course the shapes of these matrices must match properly--\(B\) and \(C\) have the same shape, so they can be added, and \(A\) and \(D\) are the right size for premultiplication and postmultiplication. The proof of this law is too boring for words.
+
+The property that fails to hold is a little more interesting:
+
+### Matrix multiplication is not commutative: Usually \(FE\neq EF\).
+
+**Example 4**.: Suppose \(E\) subtracts twice the first equation from the second. Suppose \(F\) is the matrix for the next step, _to add row \(1\) to row \(3\)_:
+
+\[E=\begin{bmatrix}1&0&0\\ -\mathbf{2}&1&0\\ 0&0&1\end{bmatrix}\quad\text{and}\quad F=\begin{bmatrix}1&0&0\\ 0&1&0\\ \mathbf{1}&0&1\end{bmatrix}.\]
+
+_These two matrices do commute and the product does both steps at once:_
+
+\[EF=\begin{bmatrix}1&0&0\\ -\mathbf{2}&1&0\\ \mathbf{1}&0&1\end{bmatrix}=FE.\]
+
+In either order, \(EF\) or \(FE\), this changes rows \(2\) and \(3\) using row \(1\).
+
+**Example 5**.: Suppose \(E\) is the same but \(G\)_adds row \(2\) to row \(3\)_. Now the order makes a difference. When we apply \(E\) and then \(G\), the second row is altered _before_ it affects the third. If \(E\) comes _after_\(G\), then the third equation feels no effect from the first. You will see a zero in the \((3,1)\) entry of \(EG\), where there is a \(-2\) in \(GE\):
+
+\[GE=\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&\mathbf{1}&1\end{bmatrix}\begin{bmatrix}1&0&0\\ -\mathbf{2}&1&0\\ 0&0&1\end{bmatrix}=\begin{bmatrix}1&0&0\\ -2&1&0\\ -\mathbf{2}&1&1\end{bmatrix}\quad\text{but}\quad EG=\begin{bmatrix}1&0&0\\ -2&1&0\\ \mathbf{0}&1&1\end{bmatrix}.\]
+
+Thus \(EG\neq GE\). A random example would show the same thing--most matrices don't commute. Here the matrices have meaning. There was a reason for \(EF=FE\), and a reason for \(EG\neq GE\). It is worth taking one more step, to see what happens with _all three elimination matrices at once_:
+
+\[GFE=\begin{bmatrix}1&0&0\\ -2&1&0\\ -\mathbf{1}&1&1\end{bmatrix}\quad\text{and}\quad EFG=\begin{bmatrix}1&0&0\\ -2&1&0\\ -\mathbf{1}&1&1\end{bmatrix}.\]
+
+The product \(GFE\) is the true order of elimination. _It is the matrix that takes the original \(A\) to the upper triangular \(U\)_. We will see it again in the next section.
+
+The other matrix \(EFG\) is nicer. In that order, the numbers \(-2\) from \(E\) and \(1\) from \(F\) and \(G\) were not disturbed. They went straight into the product. It is the wrong order for elimination. But fortunately _it is the right order for reversing the elimination steps_--which also comes in the next section.
+
+Notice that the product of lower triangular matrices is again lower triangular.
+
+ 

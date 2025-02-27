@@ -1,0 +1,17 @@
+vectors \(q_{i}\) in the columns of \(Q\) have \(m>n\) components. Then \(Q\) is an \(m\) by \(n\) matrix and we cannot expect to solve \(Qx=b\) exactly. _We solve it by least squares_.
+
+If there is any justice, orthonormal columns should make the problem simple. It worked for square matrices, and now it will work for rectangular matrices. The key is to notice that _we still have_\(Q^{\mathrm{T}}Q=I\). So \(Q^{\mathrm{T}}\) is still the _left-inverse_ of \(Q\).
+
+For least squares that is all we need. The normal equations came from multiplying \(Ax=b\) by the transpose matrix, to give \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\). Now the normal equations are \(Q^{\mathrm{T}}Q=Q^{\mathrm{T}}b\). But \(Q^{\mathrm{T}}Q\) is the identity matrix! Therefore \(\widehat{x}=Q^{\mathrm{T}}b\), whether \(Q\) is square and \(\widehat{x}\) is an exact solution, or \(Q\) is rectangular and we need least squares.
+
+**3S** If \(Q\) has orthonormal columns, the least-squares problem becomes easy: rectangular system with no solution for most b.
+
+\[\begin{array}{rcll}Qx&=&b&\text{rectangular system with no solution for most $b$.}\\ \mathcal{Q}^{\mathrm{T}}Q\widehat{x}&=&Q^{\mathrm{T}}b&\text{normal equation for the best $\widehat{x}$--in which $Q^{\mathrm{T}}Q=I$.}\\ \widehat{x}&=&Q^{\mathrm{T}}b&\widehat{x}_{i}\text{ is $q_{i}^{\mathrm{T}}b$.}\\ p&=&Q\widehat{x}&\text{the projection of $b$ is $(q_{1}^{\mathrm{T}}b)q_{1}+\cdots+(q_{n}^{\mathrm{T}}b)q_{n}$.}\\ p&=&QQ^{\mathrm{T}}b&\text{the projection matrix is $P=QQ^{\mathrm{T}}$.} \end{array}\]
+
+The last formulas are like \(p=A\widehat{x}\) and \(P=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}\). When the columns are orthonormal, the "cross-product matrix" \(A^{\mathrm{T}}A\) becomes \(Q^{\mathrm{T}}Q=I\). The hard part of least squares disappears when vectors are orthonormal. The projections onto the axes are uncoupled, and p is the sum \(p=(q_{1}^{\mathrm{T}}b)q_{1}+\cdots+(q_{n}^{\mathrm{T}}b)q_{n}\).
+
+We emphasize that those projections do not reconstruct \(b\). In the square case \(m=n\), they did. In the rectangular case \(m>n\), they don't. They give the projection \(p\) and not the original vector \(b\)--which is all we can expect when there are more equations than unknowns, and the \(q\)'s are no longer a basis. The projection matrix is usually \(A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}\), and here it simplifies to
+
+\[P=Q(Q^{\mathrm{T}}Q)^{-1}Q^{\mathrm{T}}\qquad\text{or}\qquad P=QQ^{\mathrm{T}}.\] (7)
+
+Notice that \(Q^{\mathrm{T}}Q\) is the \(n\) by \(n\) identity matrix, whereas \(QQ^{\mathrm{T}}\) is an \(m\) by \(m\) projection \(P\). It is the identity matrix on the columns of \(Q\) (\( 

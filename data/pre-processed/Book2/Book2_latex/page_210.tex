@@ -1,0 +1,28 @@
+has two different left inverses:
+
+\[B=\frac{1}{9}\left[\begin{array}{rrr}-11&-10&16\\ 7&8&-11\end{array}\right],\qquad C=\frac{1}{2}\left[\begin{array}{rrr}0&-1&6\\ 0&1&-4\end{array}\right].\]
+
+This can be verified by checking that \(BA=CA=I\). The example illustrates that a left-invertible matrix can have more than one left inverse. (In fact, if it has more than one left inverse, then it has infinitely many; see exercise 11.1.)
+* A matrix \(A\) with orthonormal columns satisfies \(A^{T}A=I\), so it is left-invertible; its transpose \(A^{T}\) is a left inverse.
+
+Left-invertibility and column independence.If \(A\) has a left inverse \(C\) then the columns of \(A\) are linearly independent. To see this, suppose that \(Ax=0\). Multiplying on the left by a left inverse \(C\), we get
+
+\[0=C(Ax)=(CA)x=Ix=x,\]
+
+which shows that the only linear combination of the columns of \(A\) that is \(0\) is the one with all coefficients zero.
+
+We will see below that the converse is also true; a matrix has a left inverse if and only if its columns are linearly independent. So the generalization of 'a number has an inverse if and only if it is nonzero' is 'a matrix has a left inverse if and only if its columns are linearly independent'.
+
+Dimensions of left inverses.Suppose the \(m\times n\) matrix \(A\) is wide, _i.e._, \(m<n\). By the independence-dimension inequality, its columns are linearly dependent, and therefore it is not left-invertible. Only square or tall matrices can be left-invertible.
+
+Solving linear equations with a left inverse.Suppose that \(Ax=b\), where \(A\) is an \(m\times n\) matrix and \(x\) is an \(n\)-vector. If \(C\) is a left inverse of \(A\), we have
+
+\[Cb=C(Ax)=(CA)x=Ix=x,\]
+
+which means that \(x=Cb\) is a solution of the set of linear equations. The columns of \(A\) are linearly independent (since it has a left inverse), so there is only one solution of the linear equations \(Ax=b\); in other words, \(x=Cb\) is _the_ solution of \(Ax=b\).
+
+Now suppose there is no \(x\) that satisfies the linear equations \(Ax=b\), and let \(C\) be a left inverse of \(A\). Then \(x=Cb\) does not satisfy \(Ax=b\), since no vector satisfies this equation by assumption. This gives a way to check if the linear equations \(Ax=b\) have a solution, and to find one when there is one, provided we have a left inverse of \(A\). We simply test whether \(A(Cb)=b\). If this holds, then we have found a solution of the linear equations; if it does not, then we can conclude that there is no solution of \(Ax=b\).
+
+In summary, a left inverse can be used to determine whether or not a solution of an over-determined set of linear equations exists, and when it does, find the unique solution.
+
+ 

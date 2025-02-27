@@ -1,0 +1,23 @@
+Problems 4-5 require Gershgorin's "circle theorem": _Every eigenvalue of \(A\) lies in at least one of the circles \(C_{1},\ldots,C_{n}\), where \(C_{i}\) has its center at the diagonal entry \(a_{ii}\). Its radius \(r_{i}=\sum_{i\neq j}|a_{ij}|\) is equal to the absolute sum along the rest of the row_.
+
+Proof.: Suppose \(x_{i}\) is the largest component of \(x\). Then \(Ax=\lambda x\) leads to
+
+\[(\lambda-a_{ii})x_{i}=\sum_{j\neq i}a_{ij}x_{j},\qquad\text{or}\qquad|\lambda- a_{ii}|\leq\sum_{j\neq i}|a_{ij}|\frac{|x_{j}|}{|x_{i}|}\leq\sum_{j\neq i}|a_{ ij}|=r_{i}.\]
+
+**4.**: The matrix
+
+\[A=\begin{bmatrix}3&1&1\\ 0&4&1\\ 2&2&5\end{bmatrix}\]
+
+is called _diagonally dominant_ because every \(|a_{ii}|>r_{i}\). Show that zero cannot lie in any of the circles, and conclude that \(A\) is nonsingular.
+**5.**: Write the Jacobi matrix \(J\) for the diagonally dominant \(A\) of Problem 4, and find the three Gershgorin circles for \(J\). Show that all the radii satisfy \(r_{i}<1\), and that the Jacobi iteration converges.
+**6.**: The true solution to \(Ax=b\) is slightly different from the elimination solution to \(LUx_{0}=b\); \(A-LU\) misses zero because of roundoff. One strategy is to do everything in double precision, but a better and faster way is _iterative refinement_: Compute only one vector \(r=b-Ax_{0}\) in double precision, solve \(LUy=r\), and add the correction \(y\) to \(x_{0}\). Problem: Multiply \(x_{1}=x_{0}+y\) by \(LU\), write the result as a splitting \(Sx_{1}=Tx_{0}+b\), and explain why \(T\) is extremely small. This single step brings us almost exactly to \(x\).
+**7.**: For a general 2 by 2 matrix
+
+\[A=\begin{bmatrix}a&b\\ c&d\end{bmatrix},\]
+
+find the Jacobi iteration matrix \(S^{-1}T=-D^{-1}(L+U)\) and its eigenvalues \(\mu_{i}\). Find also the Gauss-Seidel matrix \(-(D+L)^{-1}U\) and its eigenvalues \(\lambda_{i}\), and decide whether \(\lambda_{\max}=\mu_{\max}^{2}\).
+**8.**: Change \(Ax=b\) to \(x=(I-A)x+b\). What are \(S\) and \(T\) for this splitting? What matrix \(S^{-1}T\) controls the convergence of \(x_{k+1}=(1-A)x_{k}+b\)?
+**9.**: If \(\lambda\) is an eigenvalue of \(A\), then \(\underline{\phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}}}\) is an eigenvalue of \(B=I-A\). The real eigenvalues of \(B\) have absolute value less than 1 if the real eigenvalues of \(A\) lie between \(\underline{\phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}}}\) and \(\underline{\phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}}}\).
+**10.**: Show why the iteration \(x_{k+1}=(I-A)x_{k}+b\) does not converge for \(A=\begin{bmatrix}2&-1\\ -1&2\end{bmatrix}\).
+
+ 

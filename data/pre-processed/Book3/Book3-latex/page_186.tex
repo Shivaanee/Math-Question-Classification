@@ -1,0 +1,43 @@
+We have a map
+
+\[S_{r+s}\mathop{\to}\limits^{\psi}M^{r+s}(V)\]
+
+defined by
+
+\[\psi(\sigma)\,=\,(\mathop{\rm sgn}\,\sigma)(L\,\,\hbox to 0.0pt{\lower 2.15pt\hbox{ \vbox{\hrule height 0.4pt\hbox{\vrule width 0.4pt height 6.0pt\kern 6.0pt\vrule width 0.4pt}\hrule height 0.4pt}}}\,M)_{ \sigma}.\]
+
+Since \(L\) and \(M\) are alternating,
+
+\[\psi(\gamma)\,=\,L\,\,\hbox to 0.0pt{\lower 2.15pt\hbox{\vbox{\hrule height 0.4pt\hbox{ \vrule width 0.4pt height 6.0pt\kern 6.0pt\vrule width 0.4pt}\hrule height 0.4pt}}}\,M\]
+
+for every \(\gamma\) in \(G\). Therefore, since \((N\sigma)\tau\,=\,N\tau\sigma\) for any \((r+s)\)-linear form \(N\) on \(V\), we have
+
+\[\psi(\tau\gamma)\,=\,\psi(\tau),\qquad\tau\,\,\hbox{in}\,\,S_{r+s},\,\gamma\, \,\hbox{in}\,\,G.\]
+
+This says that the map \(\psi\) is constant on each (left) **coset \(\tau G\)** of the subgroup \(G\). If \(\tau_{1}\) and \(\tau_{2}\) are in \(S_{r+s}\), the cosets \(\tau_{1}G\) and \(\tau_{2}G\) are either identical or disjoint, according as \(\tau_{2}^{-1}\,\tau_{1}\) is in \(G\) or is not in \(G\). Each coset contains \(r!s!\) elements; hence, there are
+
+\[{(r+s)!\over r!s!}\]
+
+distinet cosets. If \(S_{r+s}/G\) denotes the collection of cosets then \(\psi\) defines a function on \(S_{r+s}/G\), i.e., by what we have shown, there is a function \(\tilde{\psi}\) on that set so that
+
+\[\psi(\tau)\,=\,\tilde{\psi}(\tau G)\]
+
+for every \(\tau\) in \(S_{r+s}\). If \(H\) is a left coset of \(G\), then \(\tilde{\psi}(H)\,=\,\psi(\tau)\) for every \(\tau\) in \(H\).
+
+We now define the **exterior product** of the alternating multilinear forms \(L\) and \(M\) of degrees \(r\) and \(s\) by setting
+
+\[L\,\wedge\,M\,=\,\Sigma\,\tilde{\psi}\,(H)\]
+
+where \(H\) varies over \(S_{r+s}/G\). Another way to phrase the definition of \(L\,\wedge\,M\) is the following. Let \(S\) be any set of permutations of \(\{1,\ldots,r+s\}\) which contains exactly one element from each left coset of \(G\). Then
+
+\[L\,\wedge\,M\,=\,\Sigma\,\,(\mathop{\rm sgn}\,\sigma)(L\,\,\hbox to 0.0pt{ \lower 2.15pt\hbox{\vbox{\hrule height 0.4pt\hbox{\vrule width 0.4pt height 6.0pt\kern 6.0pt\vrule width 0.4pt}\hrule height 0.4pt}}}\,M)_{ \sigma}\]
+
+where \(\sigma\) varies over \(S\). Clearly
+
+\[r!s!\,L\,\wedge\,M\,=\,\pi_{r+s}(L\,\,\hbox to 0.0pt{\lower 2.15pt\hbox{\vbox{ \hrule height 0.4pt\hbox{\vrule width 0.4pt height 6.0pt\kern 6.0pt\vrule width 0.4pt}\hrule height 0.4pt}}}\,M)\]
+
+so that the new definition is equivalent to (5-47) when \(K\) is a field of characteristic zero.
+
+_Theorem 9. Let \(K\) be a commutative ring with identity and let \(V\) be a module over \(K\). Then the exterior product is an associative operation on the alternating multilinear forms on \(V\). In other words, if \(L\), \(M\), and \(N\) are alternating multilinear forms on \(V\) of degrees \(r\), \(s\), and \(t\), respectively, then_
+
+\[(L\,\wedge\,M)\,\wedge\,N\,=\,L\,\wedge\,(M\,\wedge\,N).\] 

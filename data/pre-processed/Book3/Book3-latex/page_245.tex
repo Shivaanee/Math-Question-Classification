@@ -1,0 +1,39 @@
+which sends \(\gamma_{1}\) into \(W_{0}\), we see that \(g_{1}\) is the monic polynomial of least degree in the ideal \(S(V;W_{0})\). By the same argument, \(p_{1}\) is the generator of that ideal, so \(p_{1}=g_{1}\).
+
+If \(f\) is a polynomial and \(W\) is a subspace of \(V\), we shall employ the shorthand \(fW\) for the set of all vectors\(f\alpha\) with \(\alpha\) in \(W\). We have left to the exercises the proofs of the following three facts.
+
+1. \(fZ(\alpha;T)=Z(f\alpha;T)\).
+
+2. If \(V=V_{1}\oplus\cdots\oplus V_{k}\), where each \(V_{i}\) is invariant under \(T\), then \(fV=fV_{1}\oplus\cdots\oplus fV_{k}\).
+
+3. If \(\alpha\) and \(\gamma\) have the same \(T\)-annihilator, then \(f\alpha\) and \(f\gamma\) have the same \(T\)-annihilator and (therefore)
+
+\[\dim Z(f\alpha;T)=\dim Z(f\gamma;T).\]
+
+Now, we proceed by induction to show that \(r=s\) and \(p_{i}=g_{i}\) for \(i=2,\,.\,.\,.\,,\,r\). The argument consists of counting dimensions in the right way. We shall give the proof that if \(r\geq 2\) then \(p_{2}=g_{2}\), and from that the induction should be clear. Suppose that \(r\geq 2\). Then
+
+\[\dim W_{0}+\dim Z(\alpha_{1};T)<\dim V.\]
+
+Since we know that \(p_{1}=g_{1}\), we know that \(Z(\alpha_{1};T)\) and \(Z(\gamma_{1};T)\) have the same dimension. Therefore,
+
+\[\dim W_{0}+\dim Z(\gamma_{1};T)<\dim V\]
+
+which shows that \(s\geq 2\). Now it makes sense to ask whether or not \(p_{2}=g_{2}\). From the two decompositions of \(V\), we obtain two decompositions of the subspace \(p_{2}V\):
+
+(7-14) \[\begin{array}{rl}p_{2}V&=\,p_{2}W_{0}\oplus Z(p_{2}\alpha_{1};T)\\ p_{2}V&=\,p_{2}W_{0}\oplus Z(p_{2}\gamma_{1};T)\oplus\cdots\oplus Z(p_{2} \gamma_{s};T).\end{array}\]
+
+We have made use of facts (1) and (2) above and we have used the fact that \(p_{2}\alpha_{i}=0\), \(i\geq 2\). Since we know that \(p_{1}=g_{1}\), fact (3) above tells us that \(Z(p_{2}\alpha_{1};T)\) and \(Z(p_{2}\gamma_{1};T)\) have the same dimension. Hence, it is apparent from (7-14) that
+
+\[\dim Z(p_{2}\gamma_{i};T)=0,\qquad i\geq 2.\]
+
+We conclude that \(p_{2}\gamma_{2}=0\) and \(g_{2}\) divides \(p_{2}\). The argument can be reversed to show that \(p_{2}\) divides \(g_{2}\). Therefore \(p_{2}=g_{2}\).
+
+_Corollary_.: \(If\) T _is a linear operator on a finite-dimensional vector space, then every T-admissible subspace has a complementary subspace which is also invariant under T._
+
+Proof.: Let \(W_{0}\) be an admissible subspace of \(V\). If \(W_{0}=V\), the complement we seek is \(\{0\}\). If \(W_{0}\) is proper, apply Theorem 3 and let
+
+\[W_{\bullet}^{\prime}=Z(\alpha_{1};T)\oplus\cdots\oplus Z(\alpha_{r};T).\]
+
+Then \(W_{0}^{\prime}\) is invariant under \(T\) and \(V=W_{0}\oplus W_{\bullet}^{\prime}\).
+
+ 

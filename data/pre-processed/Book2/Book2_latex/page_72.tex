@@ -1,0 +1,35 @@
+the two time series are typically above their mean values at the same times. For example, we would expect the rainfall time series at two nearby locations to be highly correlated. As another example, we might expect the returns of two similar companies, in the same business area, to be highly correlated.
+
+Standard deviation of sum.We can derive a formula for the standard deviation of a sum from (3.6):
+
+\[\mathbf{std}(a+b)=\sqrt{\mathbf{std}(a)^{2}+2\rho\,\mathbf{std}(a)\,\mathbf{std }(b)+\mathbf{std}(b)^{2}}.\] (3.9)
+
+To derive this from (3.6) we let \(\tilde{a}\) and \(\tilde{b}\) denote the de-meaned versions of \(a\) and \(b\). Then \(\tilde{a}+\tilde{b}\) is the de-meaned version of \(a+b\), and \(\mathbf{std}(a+b)^{2}=\|\tilde{a}+\tilde{b}\|^{2}/n\). Now using (3.6) and \(\rho=\cos\angle(\tilde{a},\tilde{b})\), we get
+
+\[n\,\mathbf{std}(a+b)^{2} = \|\tilde{a}+\tilde{b}\|^{2}\] \[= \|\tilde{a}\|^{2}+2\rho\|\tilde{a}\|\|\tilde{b}\|+\|\tilde{b}\|^ {2}\] \[= n\,\mathbf{std}(a)^{2}+2\rho n\,\mathbf{std}(a)\,\mathbf{std}(b )+n\,\mathbf{std}(b)^{2}.\]
+
+Dividing by \(n\) and taking the squareroot yields the formula above.
+
+If \(\rho=1\), the standard deviation of the sum of vectors is the sum of their standard deviations, _i.e._,
+
+\[\mathbf{std}(a+b)=\mathbf{std}(a)+\mathbf{std}(b).\]
+
+As \(\rho\) decreases, the standard deviation of the sum decreases. When \(\rho=0\), _i.e._, \(a\) and \(b\) are uncorrelated, the standard deviation of the sum \(a+b\) is
+
+\[\mathbf{std}(a+b)=\sqrt{\mathbf{std}(a)^{2}+\mathbf{std}(b)^{2}},\]
+
+which is smaller than \(\mathbf{std}(a)+\mathbf{std}(b)\) (unless one of them is zero). When \(\rho=-1\), the standard deviation of the sum is as small as it can be,
+
+\[\mathbf{std}(a+b)=|\,\mathbf{std}(a)-\mathbf{std}(b)|.\]
+
+Hedging investments.Suppose that vectors \(a\) and \(b\) are time series of returns for two assets with the same return (average) \(\mu\) and risk (standard deviation) \(\sigma\), and correlation coefficient \(\rho\). (These are the traditional symbols used.) The vector \(c=(a+b)/2\) is the time series of returns for an investment with 50% in each of the assets. This blended investment has the same return as the original assets, since
+
+\[\mathbf{avg}(c)=\mathbf{avg}((a+b)/2)=(\mathbf{avg}(a)+\mathbf{avg}(b))/2=\mu.\]
+
+The risk (standard deviation) of this blended investment is
+
+\[\mathbf{std}(c)=\sqrt{2\sigma^{2}+2\rho\sigma^{2}}/2=\sigma\sqrt{(1+\rho)/2},\]
+
+using (3.9). From this we see that the risk of the blended investment is never more than the risk of the original assets, and is smaller when the correlation of the original asset returns is smaller. When the returns are uncorrelated, the risk is a factor \(1/\sqrt{2}=0.707\) smaller than the risk of the original assets. If the asset returns are strongly negatively correlated (_i.e._, \(\rho\) is near \(-1\)), the risk of the blended investment is much smaller than the risk of the original assets. Investing in two assets with uncorrelated, or negatively correlated, returns is called _hedging_ (which is short for 'hedging your bets'). Hedging reduces risk.
+
+ 

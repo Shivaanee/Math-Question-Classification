@@ -1,0 +1,47 @@
+
+
+## 3 Norm and distance
+
+### 3.1 Distance between Boolean vectors.
+
+Suppose that \(x\) and \(y\) are Boolean \(n\)-vectors, which means that each of their entries is either \(0\) or \(1\). What is their distance \(\|x-y\|\)?
+
+**3.2**: _RMS value and average of block vectors._ Let \(x\) be a block vector with two vector elements, \(x=(a,b)\), where \(a\) and \(b\) are vectors of size \(n\) and \(m\), respectively.
+
+1. Express \(\mathbf{rms}(x)\) in terms of \(\mathbf{rms}(a)\), \(\mathbf{rms}(b)\), \(m\), and \(n\).
+2. Express \(\mathbf{avg}(x)\) in terms of \(\mathbf{avg}(a)\), \(\mathbf{avg}(b)\), \(m\), and \(n\).
+
+**3.3**: _Reverse triangle inequality._ Suppose \(a\) and \(b\) are vectors of the same size. The triangle inequality states that \(\|a+b\|\leq\|a\|+\|b\|\). Show that we also have \(\|a+b\|\geq\|a\|-\|b\|\). _Hints._ Draw a picture to get the idea. To show the inequality, apply the triangle inequality to \((a+b)+(-b)\).
+
+**3.4**: _Norm identities._ Verify that the following identities hold for any two vectors \(a\) and \(b\) of the same size.
+
+1. \((a+b)^{T}(a-b)=\|a\|^{2}-\|b\|^{2}\).
+2. \(\|a+b\|^{2}+\|a-b\|^{2}=2(\|a\|^{2}+\|b\|^{2})\). This is called the _parallelogram law_.
+
+**3.5**: _General norms._ Any real-valued function \(f\) that satisfies the four properties given on page 3.1 (nonnegative homogeneity, triangle inequality, nonnegativity, and definiteness) is called a _vector norm_, and is usually written as \(f(x)=\|x\|_{\mathrm{mn}}\), where the subscript is some kind of identifier or mnemonic to identify it. The most commonly used norm is the one we use in this book, the Euclidean norm, which is sometimes written with the subscript \(2\), as \(\|x\|_{2}\). Two other common vector norms for \(n\)-vectors are the \(1\)_-norm_\(\|x\|_{1}\) and the \(\infty\)_-norm_\(\|x\|_{\infty}\), defined as
+
+\[\|x\|_{1}=|x_{1}|+\cdots+|x_{n}|,\qquad\|x\|_{\infty}=\max\{|x_{1}|,\ldots,|x_ {n}|\}.\]
+
+These norms are the sum and the maximum of the absolute values of the entries in the vector, respectively. The \(1\)-norm and the \(\infty\)-norm arise in some recent and advanced applications, but we will not encounter them in this book.
+
+Verify that the \(1\)-norm and the \(\infty\)-norm satisfy the four norm properties listed on page 3.1.
+
+### Taylor approximation of norm.
+
+Find a general formula for the Taylor approximation of the function \(f(x)=\|x\|\) near a given nonzero vector \(z\). You can express the approximation in the form \(\hat{f}(x)=a^{T}(x-z)+b\).
+
+**3.7**: _Chebyshev inequality._ Suppose \(x\) is a \(100\)-vector with \(\mathbf{rms}(x)=1\). What is the maximum number of entries of \(x\) that can satisfy \(|x_{i}|\geq 3\)? If your answer is \(k\), explain why no such vector can have \(k+1\) entries with absolute values at least \(3\), and give an example of a specific \(100\)-vector that has RMS value \(1\), with \(k\) of its entries larger than \(3\) in absolute value.
+
+### Converse Chebyshev inequality.
+
+Show that at least one entry of a vector has absolute value at least as large as the RMS value of the vector.
+
+**3.9**: _Difference of squared distances._ Determine whether the difference of the squared distances to two fixed vectors \(c\) and \(d\), defined as
+
+\[f(x)=\|x-c\|^{2}-\|x-d\|^{2},\]
+
+is linear, affine, or neither. If it is linear, give its inner product representation, _i.e._, an \(n\)-vector \(a\) for which \(f(x)=a^{T}x\) for all \(x\). If it is affine, give \(a\) and \(b\) for which \(f(x)=a^{T}x+b\) holds for all \(x\). If it is neither linear nor affine, give specific \(x\), \(y\), \(\alpha\), and \(\beta\) for which superposition fails, _i.e._,
+
+\[f(\alpha x+\beta y)\neq\alpha f(x)+\beta f(y).\]
+
+(Provided \(\alpha+\beta=1\), this shows the function is neither linear nor affine.)

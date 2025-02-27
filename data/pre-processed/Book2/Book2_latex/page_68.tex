@@ -1,0 +1,25 @@
+common point. For example, the angle between the vectors \(a=(1,2,-1)\) and \(b=(2,0,-3)\) is
+
+\[\arccos\left(\frac{5}{\sqrt{6}\,\sqrt{13}}\right)=\arccos(0.5661)=0.9690=55.52^{\circ}\]
+
+(to 4 digits). But the definition of angle is more general; we can refer to the angle between two vectors with dimension 100.
+
+The angle is a symmetric function of \(a\) and \(b\): We have \(\angle(a,b)=\angle(b,a)\). The angle is not affected by scaling each of the vectors by a positive scalar: We have, for any vectors \(a\) and \(b\), and any positive numbers \(\alpha\) and \(\beta\),
+
+\[\angle(\alpha a,\beta b)=\angle(a,b).\]
+
+Acute and obtuse angles.Angles are classified according to the sign of \(a^{T}b\). Suppose \(a\) and \(b\) are nonzero vectors of the same size.
+
+* If the angle is \(\pi/2=90^{\circ}\), _i.e._, \(a^{T}b=0\), the vectors are said to be _orthogonal_. We write \(a\perp b\) if \(a\) and \(b\) are orthogonal. (By convention, we also say that a zero vector is orthogonal to any vector.)
+* If the angle is zero, which means \(a^{T}b=\|a\|\|b\|\), the vectors are _aligned_. Each vector is a positive multiple of the other.
+* If the angle is \(\pi=180^{\circ}\), which means \(a^{T}b=-\|a\|\,\|b\|\), the vectors are _antialigned_. Each vector is a negative multiple of the other.
+* If \(\angle(a,b)<\pi/2=90^{\circ}\), the vectors are said to make an _acute angle_. This is the same as \(a^{T}b>0\), _i.e._, the vectors have positive inner product.
+* If \(\angle(a,b)>\pi/2=90^{\circ}\), the vectors are said to make an _obtuse angle_. This is the same as \(a^{T}b<0\), _i.e._, the vectors have negative inner product.
+
+These definitions are illustrated in figure 3.6.
+
+Examples.
+* _Spherical distance._ Suppose \(a\) and \(b\) are 3-vectors that represent two points that lie on a sphere of radius \(R\) (for example, locations on earth). The spherical distance between them, measured along the sphere, is given by \(R\angle(a,b)\). This is illustrated in figure 3.7.
+* _Document similarity via angles._ If \(n\)-vectors \(x\) and \(y\) represent the word counts for two documents, their angle \(\angle(x,y)\) can be used as a measure of document dissimilarity. (When using angle to measure document dissimilarity, either word counts or histograms can be used; they produce the same result.) As an example, table 3.2 gives the angles in degrees between the word histograms in the example at the end of SS3.2.
+
+ 

@@ -1,0 +1,25 @@
+become evident what the matrix \(P\) is. (The reader should refer to Example 9 where we essentially carried out this process.) In particular, if \(A\) is a square matrix, this process will make it clear whether or not \(A\) is invertible and if \(A\) is invertible what the inverse \(P\) is. Since we have already given the nucleus of one example of such a computation, we shall content ourselves with a \(2\times 2\) example.
+
+**Example 15**: _Suppose \(F\) is the field of rational numbers and_
+
+\[A\ =\begin{bmatrix}2&-1\\ 1&3\end{bmatrix}.\]
+
+_Then_
+
+\[\begin{bmatrix}2&-1&y_{1}\\ 1&3&y_{2}\end{bmatrix}\stackrel{{\text{\tiny(\ref{eq:1})}}}{{ \longrightarrow}}\begin{bmatrix}1&3&y_{2}\\ 2&-1&y_{1}\end{bmatrix}\stackrel{{\text{\tiny(\ref{eq:2})}}}{{ \longrightarrow}}\begin{bmatrix}1&3&y_{2}\\ 0&-7&y_{1}-2y_{2}\end{bmatrix}\stackrel{{\text{\tiny(\ref{eq:1})}}}{{ \longrightarrow}}\\ \\ \begin{bmatrix}1&3&y_{2}\\ 0&1&\frac{1}{4}(2y_{2}-y_{1})\end{bmatrix}\stackrel{{\text{ \tiny(\ref{eq:2})}}}{{\longrightarrow}}\begin{bmatrix}1&0&\frac{1}{4}(y_{2}+3y_ {1})\\ 0&1&\frac{1}{4}(2y_{2}-y_{1})\end{bmatrix}\]
+
+_from which it is clear that \(A\) is invertible and_
+
+\[A^{-1}=\begin{bmatrix}\frac{3}{7}&\frac{1}{7}\\ -\frac{1}{7}&\frac{2}{7}\end{bmatrix}.\]
+
+_It may seem cumbersome to continue writing the arbitrary scalars \(y_{1}\), \(y_{2}\), \(\ldots\) in the computation of inverses. Some people find it less awkward to carry along two sequences of matrices, one describing the reduction of \(A\) to the identity and the other recording the effect of the same sequence of operations starting from the identity. The reader may judge for himself which is a neater form of bookkeeping._
+
+**Example 16**: _Let us find the inverse of_
+
+\[A\ =\begin{bmatrix}1&\frac{1}{2}&\frac{1}{3}\\ \frac{1}{2}&\frac{1}{3}&\frac{1}{4}\\ \frac{1}{3}&\frac{1}{4}&\frac{1}{8}\end{bmatrix}.\]
+
+\[\begin{bmatrix}1&\frac{1}{2}&\frac{1}{3}\\ \frac{1}{2}&\frac{1}{3}&\frac{1}{4}\\ \frac{1}{3}&\frac{1}{4}&\frac{1}{5}\end{bmatrix},\quad\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&1\end{bmatrix}\]
+
+\[\begin{bmatrix}1&\frac{1}{2}&\frac{1}{3}\\ 0&\frac{1}{12}&\frac{1}{3}\\ 0&\frac{1}{12}&\frac{1}{4}\frac{1}{5}\end{bmatrix},\quad\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&1\end{bmatrix}\]
+
+\[\begin{bmatrix}1&\frac{1}{2}&\frac{1}{3}\\ 0&1&1\\ 0&0&1\end{bmatrix},\quad\begin{bmatrix}1&0&0\\ -\frac{1}{2}&1&0\\ -\frac{1}{3}&0&1\end{bmatrix}\] 

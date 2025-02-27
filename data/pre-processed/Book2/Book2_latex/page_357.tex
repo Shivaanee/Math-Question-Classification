@@ -1,0 +1,36 @@
+Now we expand the last term:
+
+\[2(Ax-A\hat{x})^{T}(A\hat{x}-b) = 2(x-\hat{x})^{T}A^{T}(A\hat{x}-b)\] \[= -(x-\hat{x})^{T}C^{T}\hat{z}\] \[= -(C(x-\hat{x}))^{T}\hat{z}\] \[= 0,\]
+
+where we use \(2A^{T}(A\hat{x}-b)=-C^{T}\hat{z}\) in the second line and \(Cx=C\hat{x}=d\) in the last line. So we have, exactly as in the case of unconstrained least squares,
+
+\[\|Ax-b\|^{2}=\|A(x-\hat{x})\|^{2}+\|A\hat{x}-b\|^{2},\]
+
+from which we conclude that \(\|Ax-b\|^{2}\geq\|A\hat{x}-b\|^{2}\). So \(\hat{x}\) minimizes \(\|Ax-b\|^{2}\) subject to \(Cx=d\).
+
+It remains to show that for \(x\neq\hat{x}\), we have the strict inequality \(\|Ax-b\|^{2}>\|A\hat{x}-b\|^{2}\), which by the equation above is equivalent to \(\|A(x-\hat{x})\|^{2}>0\). If this is not the case, then \(A(x-\hat{x})=0\). We also have \(C(x-\hat{x})=0\), and so
+
+\[\left[\begin{array}{c}A\\ C\end{array}\right](x-\hat{x})=0.\]
+
+By our assumption that the matrix on the left has linearly independent columns, we conclude that \(x=\hat{x}\).
+
+### 16.3 Solving constrained least squares problems
+
+We can compute the solution (16.6) of the constrained least squares problem by forming and solving the KKT equations (16.4).
+
+**Algorithm 16.1** Constrained least squares via KKT equations
+
+**given** an \(m\times n\) matrix \(A\) and a \(p\times n\) matrix \(C\) that satisfy (16.5), an \(m\)-vector \(b\), and a \(p\)-vector \(d\).
+
+1. _Form Gram matrix._ Compute \(A^{T}A\).
+2. _Solve KKT equations._ Solve KKT equations (16.4) by QR factorization and back substitution.
+
+**Algorithm 16.2** Constrained least squares via KKT equations
+
+The second step cannot fail, provided the assumption (16.5) holds. Let us analyze the complexity of this algorithm. The first step, forming the Gram matrix, requires \(mn^{2}\) flops (see page 16.3). The second step requires the solution of a square system of \(n+p\) equations, which costs \(2(n+p)^{3}\) flops, so the total is
+
+\[mn^{2}+2(n+p)^{3}\]
+
+flops. This grows linearly in \(m\) and cubicly in \(n\) and \(p\). The assumption (16.5) implies \(p\leq n\), so in terms of order, \((n+p)^{3}\) can be replaced with \(n^{3}\).
+
+ 

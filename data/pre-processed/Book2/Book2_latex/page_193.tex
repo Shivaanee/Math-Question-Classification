@@ -1,0 +1,23 @@
+costs \(2n^{2}\) flops. The total cost is \(3n^{2}\) flops. On the other hand if we first evaluate the inner product \(b^{T}c\), the cost is \(2n\) flops, and we only need to store one number (the result). Multiplying the vector \(a\) by this number costs \(n\) flops, so the total cost is \(3n\) flops. For \(n\) large, there is a dramatic difference between \(3n\) and \(3n^{2}\) flops. (The storage requirements are also dramatically different for the two methods of evaluating \(ab^{T}c\): one number versus \(n^{2}\) numbers.)
+
+### 10.2 Composition of linear functions
+
+Matrix-matrix products and composition.Suppose \(A\) is an \(m\times p\) matrix and \(B\) is \(p\times n\). We can associate with these matrices two linear functions \(f:{\bf R}^{p}\to{\bf R}^{m}\) and \(g:{\bf R}^{n}\to{\bf R}^{p}\), defined as \(f(x)=Ax\) and \(g(x)=Bx\). The _composition_ of the two functions is the function \(h:{\bf R}^{n}\to{\bf R}^{m}\) with
+
+\[h(x)=f(g(x))=A(Bx)=(AB)x.\]
+
+In words: To find \(h(x)\), we first apply the function \(g\), to obtain the partial result \(g(x)\) (which is a \(p\)-vector); then we apply the function \(f\) to this result, to obtain \(h(x)\) (which is an \(m\)-vector). In the formula \(h(x)=f(g(x))\), \(f\) appears to the left of \(g\); but when we evaluate \(h(x)\), we apply \(g\) first. The composition \(h\) is evidently a linear function, that can be written as \(h(x)=Cx\) with \(C=AB\).
+
+Using this interpretation of matrix multiplication as composition of linear functions, it is easy to understand why in general \(AB\neq BA\), even when the dimensions are compatible. Evaluating the function \(h(x)=ABx\) means we first evaluate \(y=Bx\), and then \(z=Ay\). Evaluating the function \(BAx\) means we first evaluate \(y=Ax\), and then \(z=By\). In general, the order matters. As an example, take the \(2\times 2\) matrices
+
+\[A=\left[\begin{array}{cc}-1&0\\ 0&1\end{array}\right],\qquad B=\left[\begin{array}{cc}0&1\\ 1&0\end{array}\right],\]
+
+for which
+
+\[AB=\left[\begin{array}{cc}0&-1\\ 1&0\end{array}\right],\qquad BA=\left[\begin{array}{cc}0&1\\ -1&0\end{array}\right].\]
+
+The mapping \(f(x)=Ax=(-x_{1},x_{2})\) changes the sign of the first element of the vector \(x\). The mapping \(g(x)=Bx=(x_{2},x_{1})\) reverses the order of two elements of \(x\). If we evaluate \(f(g(x))=ABx=(-x_{2},x_{1})\), we first reverse the order, and then change the sign of the first element. This result is obviously different from \(g(f(x))=BAx=(x_{2},-x_{1})\), obtained by changing the sign of the first element, and then reversing the order of the elements.
+
+Second difference matrix.As a more interesting example of composition of linear functions, consider the \((n-1)\times n\) difference matrix \(D_{n}\) defined in (6.5). (We use the subscript \(n\) here to denote size of \(D\).) Let \(D_{n-1}\) denote the \((n-2)\times(n-1)\) difference matrix. Their product \(D_{n-1}D_{n}\) is called the _second difference matrix_, and sometimes denoted \(\Delta\).
+
+ 

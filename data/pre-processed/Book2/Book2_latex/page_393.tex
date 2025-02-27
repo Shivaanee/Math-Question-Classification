@@ -1,0 +1,21 @@
+or, in vector form, \(\nabla\|f(\hat{x})\|^{2}=0\) (see SS.2). This gradient can be expressed as
+
+\[\nabla\|f(x)\|^{2}=\nabla\left(\sum_{i=1}^{m}f_{i}(x)^{2}\right)=2\sum_{i=1}^{m} f_{i}(x)\nabla f_{i}(x)=2Df(x)^{T}f(x),\]
+
+where the \(m\times n\) matrix \(Df(x)\) is the derivative or Jacobian matrix of the function \(f\) at the point \(x\), _i.e._, the matrix of its partial derivatives (see SS.2.1 and C.1). So if \(\hat{x}\) minimizes \(\|f(x)\|^{2}\), it must satisfy
+
+\[2Df(\hat{x})^{T}f(\hat{x})=0.\] (18.3)
+
+This _optimality condition_ must hold for any solution of the nonlinear least squares problem (18.2). But the optimality condition can also hold for other points that are not solutions of the nonlinear least squares problem. For this reason the optimality condition (18.3) is called a _necessary condition_ for optimality, because it is necessarily satisfied for any solution \(\hat{x}\). It is a not a _sufficient condition_ for optimality, since the optimality condition (18.3) is not enough (_i.e._, is not sufficient) to guarantee that the point is a solution of the nonlinear least squares problem.
+
+When the function \(f\) is affine, the optimality conditions (18.3) reduce to the normal equations (12.4), the optimality conditions for the (linear) least squares problem.
+
+#### Difficulty of solving nonlinear equations
+
+Solving a set of nonlinear equations (18.1), or solving the nonlinear least squares problem (18.2), is in general much more difficult than solving a set of linear equations or a linear least squares problem. For nonlinear equations, there can be no solution, or any number of solutions, or an infinite number of solutions. Unlike linear equations, it is a very difficult computational problem to determine which one of these cases holds for a particular set of equations; there is no analog of the QR factorization that we can use for linear equations and least squares problems. Even the simple sounding problem of determining whether or not there are any solutions to a set of nonlinear equations is very difficult computationally. There are advanced non-heuristic algorithms for exactly solving nonlinear equations, or exactly solving nonlinear least squares problems, but they are complicated and very computationally demanding, and rarely used in applications.
+
+Given the difficulty of solving a set of nonlinear equations, or solving a nonlinear least squares problem, we must lower our expectations. We can only hope for an algorithm that often finds a solution (when one exists), or produces a value of \(x\) with small residual norm, if not the smallest that is possible. Algorithms like this, that often work, or tend to produce a good if not always the best possible point, are called _heuristics_. The \(k\)-means algorithm of chapter 4 is an example of a heuristic algorithm. Solving linear equations or linear least squares problems using the QR factorization are _not_ heuristics; these algorithms _always_ work.
+
+Many heuristic algorithms for the nonlinear least squares problem, including those we describe later in this chapter, compute a point \(\hat{x}\) that satisfies the optimality condition (18.3). Unless \(f(\hat{x})=0\), however, such a point need not be a solution of the nonlinear least squares problem (18.2).
+
+ 

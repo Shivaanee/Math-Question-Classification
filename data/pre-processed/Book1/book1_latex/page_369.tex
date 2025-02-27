@@ -1,0 +1,25 @@
+
+
+### The Law of Inertia
+
+For elimination and eigenvalues, matrices become simpler by elementary operations The essential thing is to know which properties of the matrix stay unchanged. When a multiple of one row is subtracted from another, the row space, nullspace. rant and determinant all remain the same. For eigenvalues, the basic operation was a similarity transformation \(A\to S^{-1}AS\) (or \(A\to M^{-1}AM\)). The eigenvalues are unchanged (and also the Jordan form). Now we ask the same question for symmetric matrices: _What are the elementary operations and their invariants for \(x^{\mathrm{T}}Ax\)_?
+
+The basic operation on a quadratic form is to change variables. A new vector \(y\) is related to \(x\) by some nonsingular matrix, \(x=Cy\). The quadratic form becomes \(y^{\mathrm{T}}C^{\mathrm{T}}ACy\). This shows the fundamental operation on \(A\):
+
+\[\text{{\bf Congruence transformation}}\qquad A\to C^{\mathrm{T}}AC\quad\text{for some nonsingular $C$}.\] (6)
+
+The symmetry of \(A\) is preserved, since \(C^{\mathrm{T}}AC\) remains symmetric. The real question is, What other properties are shared by \(A\) and \(C^{\mathrm{T}}AC\)? The answer is given by Sylvester's _law of inertia_.
+
+\(\mathsf{6F}\quad C^{\mathrm{T}}AC\) has the same number of positive eigenvalues, negative eigenvalues, and zero eigenvalues as \(A\).
+
+The _signs_ of the eigenvalues (and not the eigenvalues themselves) are preserved by a congruence transformation. In the proof, we will suppose that \(A\) is nonsingular. Then \(C^{\mathrm{T}}AC\) is also nonsingular, and there are no zero eigenvalues to worry about. (Otherwise we can work with the nonsingular \(A+\epsilon I\) and \(A-\epsilon I\), and at the end let \(\epsilon\to 0\).)
+
+Proof.: We want to borrow a trick from topology. Suppose \(C\) is linked to an orthogonal matrix \(Q\) by a continuous chain of nonsingular matrices \(C(t)\). At \(t=0\) and \(t=1\), \(C(0)=C\) and \(C(1)=Q\). Then the eigenvalues of \(C(t)^{\mathrm{T}}AC(t)\) will change gradually, as \(t\) goes from \(0\) to \(1\), from the eigenvalues of \(C^{\mathrm{T}}AC\) to the eigenvalues of \(Q^{\mathrm{T}}AQ\). Because \(C(t)\) is never singular, _none of these eigenvalues can touch zero_ (not to mention cross over it!). Therefore the number of eigenvalues to the right of zero, and the number to the left, is the same for \(C^{\mathrm{T}}AC\) as for \(Q^{\mathrm{T}}AQ\). And \(A\) has exactly the same eigenvalues as the similar matrix \(Q^{-1}AQ=Q^{\mathrm{T}}AQ\).
+
+One good choice for \(Q\) is to apply Gram-Schmidt to the columns of \(C\). Then \(C=QR\), and the chain of matrices is \(C(t)=tQ+(1-t)QR\). The family \(C(t)\) goes slowly through Gram-Schmidt, from \(QR\) to \(Q\). It is invertible, because \(Q\) is invertible and the triangular factor \(tI+(1-t)R\) has positive diagonal. That ends the proof. 
+
+**Example 4**.: Suppose \(A=I\). Then \(C^{\mathrm{T}}AC=C^{\mathrm{T}}C\) is positive definite. Both \(I\) and \(C^{\mathrm{T}}C\) have \(n\) positive eigenvalues, confirming the law of inertia.
+
+**Example 5**.: If \(A=\left[\begin{smallmatrix}1&0\\ 0&-1\end{smallmatrix}\right]\), then \(C^{\mathrm{T}}AC\) has a negative determinant:
+
+\[\det C^{\mathrm{T}}AC=(\det C^{\mathrm{T}})(\det A)(\det C)=-(\det C)^{2}<0.\]

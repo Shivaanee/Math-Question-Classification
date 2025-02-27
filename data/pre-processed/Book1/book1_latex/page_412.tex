@@ -1,0 +1,25 @@
+Thus \(H=H^{\rm T}=H^{-1}\). Householder's plan was to produce zeros with these matrices, and its success depends on the following identity \(Hx=-\sigma z\):
+
+**7E** Suppose \(z\) is the column vector \((1,0,\ldots,0)\), \(\sigma=\|x\|\), and \(v=x+\sigma z\).
+
+Then \(Hx=-\sigma z=(-\sigma,0,\ldots,0)\). The vector \(Hx\) ends in zeros as desired.
+
+The proof is to compute \(Hx\) and reach \(-\sigma z\):
+
+\[\begin{split} Hx=x-\frac{2vv^{\rm T}x}{\|v\|^{2}}& =x-(x+\sigma z)\frac{2(x+\sigma z)^{\rm T}x}{(x+\sigma z)^{\rm T}( x+\sigma z)}\\ &=x-(x+\sigma z)\qquad\text{(because $x^{\rm T}x=\sigma^{2}$)}\\ &=-\sigma z.\end{split}\] (2)
+
+This identity can be used right away, on the first column of \(A\). The final \(Q^{-1}AQ\) is allowed one nonzero diagonal below the main diagonal (Hessenberg form). Therefore _only the entries strictly below the diagonal will be involved_:
+
+\[x=\begin{bmatrix}a_{21}\\ a_{31}\\ \vdots\\ a_{n1}\end{bmatrix},\qquad z=\begin{bmatrix}1\\ 0\\ \vdots\\ 0\end{bmatrix},\qquad Hx=\begin{bmatrix}-\sigma\\ 0\\ \vdots\\ 0\end{bmatrix}.\] (3)
+
+At this point Householder's matrix \(H\) is only of order \(n-1\), so it is embedded into the lower right-hand corner of a full-size matrix \(U_{1}\):
+
+\[U_{1}=\begin{bmatrix}1&0&0&0&0\\ 0&&&&\\ 0&&H&&\\ 0&&&&\\ 0&&&&\end{bmatrix}=U_{1}^{-1},\qquad\text{and}\qquad U_{1}^{-1}AU_{1}=\begin{bmatrix}a _{11}&*&*&*&*\\ -\sigma&*&*&*&*\\ \mathbf{0}&*&*&*&*\\ \mathbf{0}&*&*&*&*\\ \mathbf{0}&*&*&*&*\end{bmatrix}.\]
+
+The first stage is complete, and \(U_{1}^{-1}AU_{1}\) has the required first column. At the second stage, \(x\) consists of the last \(n-2\) entries in the second column (three bold stars). Then \(H_{2}\) is of order \(n-2\). When it is embedded in \(U_{2}\), it produces
+
+\[U_{2}=\begin{bmatrix}1&0&0&0&0\\ 0&1&0&0&0\\ 0&0&&&&\\ 0&0&&H_{2}&\\ 0&0&&&&\end{bmatrix}=U_{2}^{-1},\qquad U_{2}^{-1}(U_{1}^{-1}AU_{1})U_{2}= \begin{bmatrix}*&*&*&*&*\\ *&*&*&*&*\\ \mathbf{0}&*&*&*&*\\ \mathbf{0}&\mathbf{0}&*&*&*\\ \mathbf{0}&\mathbf{0}&*&*&*\end{bmatrix}.\]
+
+\(U_{3}\) will take care of the third column. For a 5 by 5 matrix, the Hessenberg form is achieved (it has six zeros). In general \(Q\) is the product of all the matrices \(U_{1}U_{2}\cdots U_{n-2}\), and the number of operations required to compute it is of order \(n^{3}\).
+
+ 

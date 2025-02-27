@@ -1,0 +1,31 @@
+Fortunately, cycling does not occur. It is so rare that commercial codes ignore it. Unfortunately, degeneracy is extremely common in applications--if you print the cost after each simplex step you see it repeat several times before the simplex method finds a good edge. Then the cost decreases again.
+
+### The Tableau
+
+Each simplex step involves decisions followed by row operations--the entering and leaving variables have to be chosen, and they have to be made to come and go. One way to organize the step is to fit \(A\), \(b\), \(c\) into a large matrix, or _tableau_:
+
+\[\textbf{Tableau is }m+1\textbf{ by }m+n+1\qquad T=\begin{bmatrix}A&b\\ c&0\end{bmatrix}.\]
+
+At the start, the basic variables may be mixed with the free variables. Renumbering if necessary, _suppose that \(x_{1},\ldots,x_{m}\) are the basic (nonzero) variables at the current corner_. The first \(m\) columns of \(A\) form a square matrix \(B\) (the _basis matrix_ for that corner). The last \(n\) columns give an \(m\) by \(n\) matrix \(N\). The cost vector \(c\) splits into \([c_{B}\;\;c_{N}]\), and the unknown \(x\) into \((x_{B},x_{N})\).
+
+At the corner, the free variables are \(x_{N}=0\). There, \(Ax=b\) turns into \(Bx_{B}=b\):
+
+\[\textbf{Tableau at corner}\qquad T=\begin{bmatrix}B&N&b\\ c_{B}&c_{N}&0\end{bmatrix}\quad x_{N}=0\quad x_{B}=B^{-1}b\quad\textbf{cost}=c _{B}B^{-1}b.\]
+
+The basic variables will stand alone when elimination multiplies by \(B^{-1}\):
+
+\[\textbf{Reduced tableau}\qquad T^{\prime}=\begin{bmatrix}I&B^{-1}N&B^{-1}b\\ c_{B}&c_{N}&0\end{bmatrix}.\]
+
+To reach the _fully reduced row echelon form_\(R=\mathsf{rref}(T)\), subtract \(c_{B}\) times the top block row from the bottom row:
+
+\[\textbf{Fully reduced}\qquad R=\begin{bmatrix}I&B^{-1}N&B^{-1}b\\ 0&c_{N}-c_{B}B^{-1}N&-c_{B}B^{-1}b\end{bmatrix}.\]
+
+Let me review the meaning of each entry in this tableau, and also call attention to Example 3 (following, with numbers). Here is the algebra:
+
+\[\textbf{Constraints}\quad x_{B}+B^{-1}Nx_{N}=B^{-1}b\qquad\textbf{Corner}\quad x _{B}=B^{-1}b,\quad x_{N}=0.\] (1)
+
+The cost \(c_{B}x_{B}+c_{N}x_{N}\) has been turned into
+
+\[\textbf{Cost}\quad cx=(c_{N}-c_{B}B^{-1}N)x_{N}+c_{B}B^{-1}b\qquad\textbf{Cost at this corner}=c_{B}B^{-1}b.\] (2)
+
+Every important quantity appears in the fully reduced tableau \(R\). We can decide whether the corner is optimal by looking at \(r=c_{N}-c_{B}B^{-1}N\) in the middle of the bottom row. **If 

@@ -1,0 +1,30 @@
+(provided the rows of \(Dg(\hat{x})\) are linearly independent). So \(\hat{x}\) and \(\hat{z}\) satisfy the optimality conditions.
+
+These optimality conditions are not sufficient, however; there can be choices of \(x\) and \(z\) that satisfy them, but \(x\) is not a solution of the constrained nonlinear least squares problem.
+
+### 19.2 Penalty algorithm
+
+We start with the observation (already made on page 19.2) that the equality constrained problem can be thought of as a limit of a bi-objective problem with objectives \(\|f(x)\|^{2}\) and \(\|g(x)\|^{2}\), as the weight on the second objective increases to infinity. Let \(\mu\) be a positive number, and consider the composite objective
+
+\[\|f(x)\|^{2}+\mu\|g(x)\|^{2}.\] (19.5)
+
+This can be (approximately) minimized using the Levenberg-Marquardt algorithm applied to
+
+\[\left\|\left[\begin{array}{c}f(x)\\ \sqrt{\mu}g(x)\end{array}\right]\right\|^{2}.\] (19.6)
+
+By minimizing the composite objective (19.5), we do not insist that \(g(x)\) is zero, but we assess a cost or _penalty_\(\mu\|g(x)\|^{2}\) on the residual. If we solve this for large enough \(\mu\), we should obtain a choice of \(x\) for which \(g(x)\) is very small, and \(\|f(x)\|^{2}\) is small, _i.e._, an approximate solution of (19.1). The second term \(\mu\|g(x)\|^{2}\) is a penalty imposed on choices of \(x\) with nonzero \(g(x)\).
+
+Minimizing the composite objective (19.5) for an increasing sequence of values of \(\mu\) is known as the _penalty algorithm_.
+
+**given** differentiable functions \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\) and \(g:\mathbf{R}^{n}\to\mathbf{R}^{p}\), and an initial point \(x^{(1)}\). Set \(\mu^{(1)}=1\).
+
+For \(k=1,2,\ldots,k^{\max}\)
+
+1. _Solve unconstrained nonlinear least squares problem._ Set \(x^{(k+1)}\) to be the (approximate) minimizer of \[\|f(x)\|^{2}+\mu^{(k)}\|g(x)\|^{2}\] using the Levenberg-Marquardt algorithm, starting from initial point \(x^{(k)}\).
+2. _Update \(\mu^{(k)}\): \(\mu^{(k+1)}=2\mu^{(k)}\)._
+
+**Algorithm 19.1** Penalty algorithm for constrained nonlinear least squares
+
+The penalty algorithm is stopped early if \(\|g(x^{(k)})\|\) is small enough, _i.e._, the equality constraint is almost satisfied.
+
+The penalty algorithm is simple and easy to implement, but has an important drawback: The parameter \(\mu^{(k)}\) rapidly increases with iterations (as it must, to drive 

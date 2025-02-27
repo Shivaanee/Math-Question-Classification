@@ -1,0 +1,20 @@
+Let \(T\) be a linear operator on an \(n\)-dimensional space \(V\). If we could find an ordered basis \(\otimes=\{\alpha_{1},\,.\,.\,.\,,\,\alpha_{n}\}\) for \(V\) in which \(T\) were represented by a diagonal matrix \(D\) (6-1), we would gain considerable information about \(T\). For instance, simple numbers associated with \(T\), such as the rank of \(T\) or the determinant of \(T\), could be determined with little more than a glance at the matrix \(D\). We could describe explicitly the range and the null space of \(T\). Since \([T]_{\otimes}=D\) if and only if
+
+\[T\alpha_{k}=c_{k}\alpha_{k},\qquad k=1,\,.\,.\,.\,,\,n\]
+
+the range would be the subspace spanned by those \(\alpha\)'s for which \(c_{k}\neq 0\) and the null space would be spanned by the remaining \(\alpha_{k}\)'s. Indeed, it seems fair to say that, if we knew a basis \(\otimes\) and a diagonal matrix \(D\) such that \([T]_{\otimes}=D\), we could answer readily any question about \(T\) which might arise.
+
+Can each linear operator \(T\) be represented by a diagonal matrix in some ordered basis? If not, for which operators \(T\) does such a basis exist? How can we find such a basis if there is one? If no such basis exists, what is the simplest type of matrix by which we can represent \(T\)? These are some of the questions which we shall attack in this (and the next) chapter. The form of our questions will become more sophisticated as we learn what some of the difficulties are.
+
+### Characteristic Values
+
+The introductory remarks of the previous section provide us with a starting point for our attempt to analyze the general linear operator \(T\). We take our cue from (6-2), which suggests that we should study vectors which are sent by \(T\) into scalar multiples of themselves.
+
+**Definition**.: _Let \(V\) be a vector space over the field \(F\) and let \(T\) be a linear operator on \(V\). \(A\)_**characteristic value** _of \(T\) is a scalar \(c\) in \(F\) such that there is a non-zero vector \(\alpha\) in \(V\) with \(T\alpha=c\alpha\). If \(c\) is a characteristic value of \(T\), then_
+
+1. _any_ \(\alpha\) _such that_ \(T\alpha=c\alpha\) _is called a_ **characteristic vector** _of_ \(T\) _associated with the characteristic value_ \(c\)_;_
+2. _the collection of all_ \(\alpha\) _such that_ \(T\alpha=c\alpha\) _is called the_ **characteristic space** _associated with_ \(c\)_._
+
+Characteristic values are often called characteristic roots, latent roots, eigenvalues, proper values, or spectral values. In this book we shall use only the name 'characteristic values.'
+
+If \(T\) is any linear operator and \(c\) is any scalar, the set of vectors \(\alpha\) such that \(T\alpha=c\alpha\) is a subspace of \(V\). It is the null space of the linear trans 

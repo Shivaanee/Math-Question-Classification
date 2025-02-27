@@ -1,0 +1,33 @@
+\[\alpha_{k}=\beta_{k}-\sum\limits_{j<k}\frac{(\beta_{k}|\alpha_{j})}{||\alpha_{j}||^ {2}}\;\alpha_{j}.\]
+
+Hence, for each \(k\) there exist unique scalars \(C_{kj}\) such that
+
+\[\alpha_{k}=\beta_{k}-\sum\limits_{j<k}C_{kj}\beta_{j}.\]
+
+Let \(U\) be the unitary matrix with rows
+
+\[\frac{\alpha_{1}}{||\alpha_{1}||},\cdot\cdot\cdot,\frac{\alpha_{n}}{||\alpha_ {n}||}\]
+
+and \(M\) the matrix defined by
+
+\[M_{kj}=\begin{cases}-\frac{1}{||\alpha_{k}||}\cdot C_{kj},&\text{if $j<k$}\\ \frac{1}{||\alpha_{k}||},&\text{if $j=k$}\\ 0,&\text{if $j>k$}.\end{cases}\]
+
+Then \(M\) is lower-triangular, in the sense that its entries above the main diagonal are \(0\). The entries \(M_{kk}\) of \(M\) on the main diagonal are all \(>0\), and
+
+\[\frac{\alpha_{k}}{||\alpha_{k}||}=\sum\limits_{j=1}^{n}M_{kj}\beta_{j},\qquad 1 \leq k\leq n.\]
+
+Now these equations simply say that
+
+\[U=MB.\]
+
+To prove the uniqueness of \(M\), let \(T^{+}(n)\) denote the set of all complex \(n\times n\) lower-triangular matrices with positive entries on the main diagonal. Suppose \(M_{1}\) and \(M_{2}\) are elements of \(T^{+}(n)\) such that \(M_{i}B\) is in \(U(n)\) for \(i=1\), \(2\). Then because \(U(n)\) is a group
+
+\[(M_{1}B)(M_{2}B)^{-1}=M_{1}M_{2}^{-1}\]
+
+lies in \(U(n)\). On the other hand, although it is not entirely obvious, \(T^{+}(n)\) is also a group under matrix multiplication. One way to see this is to consider the geometric properties of the linear transformations
+
+\[X\xrightarrow{}MX,\qquad(M\text{ in }T^{+}(n))\]
+
+on the space of column matrices. Thus \(M_{2}^{-1}\), \(M_{1}M_{2}^{-1}\), and \((M_{1}M_{2}^{-1})^{-1}\) are all in \(T^{+}(n)\). But, since \(M_{1}M_{2}^{-1}\) is in \(U(n)\), \((M_{1}M_{2}^{-1})^{-1}=(M_{1}M_{2}^{-1})^{\star}\). The transpose or conjugate transpose of any lower-triangular matrix is an upper-triangular matrix. Therefore, \(M_{1}M_{2}^{-1}\) is simultaneously upper- and lower-triangular, i.e., diagonal. A diagonal matrix is unitary if and only if each of its entries on the main diagonal has absolute value \(1\); if the diagonal entries are all positive, they must equal \(1\). Hence \(M_{1}M_{2}^{-1}=I\) and \(M_{1}=M_{2}\).
+
+ 

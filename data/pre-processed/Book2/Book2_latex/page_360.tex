@@ -1,0 +1,35 @@
+or 16.2. The simplest such methods follow these basic algorithms, replacing the QR factorizations with sparse QR factorizations (see page 190).
+
+One potential problem with forming the KKT matrix as in algorithm 16.1 is that the Gram matrix \(A^{T}A\) can be far less sparse than the matrix \(A\). This problem can be avoided using a trick analogous to the one used on page 232 to solve sparse (unconstrained) least squares problems. We form the square set of \(m+n+p\) linear equations
+
+\[\left[\begin{array}{ccc}0&A^{T}&C^{T}\\ A&-(1/2)I&0\\ C&0&0\end{array}\right]\left[\begin{array}{c}\hat{x}\\ \hat{y}\\ \hat{z}\end{array}\right]=\left[\begin{array}{c}0\\ b\\ d\end{array}\right].\] (16.11)
+
+If \((\hat{x},\hat{y},\hat{z})\) satisfies these equations, it is easy to see that \((\hat{x},\hat{z})\) satisfies the KKT equations (16.4); conversely, if \((\hat{x},\hat{z})\) satisfies the KKT equations (16.4), \((\hat{x},\hat{y},\hat{z})\) satisfies the equations above, with \(\hat{y}=2(A\hat{x}-b)\). Provided \(A\) and \(C\) are sparse, the coefficient matrix above is sparse, and any method for solving a sparse system of linear equations can be used to solve it.
+
+Solution of least norm problem.Here we specialize the solution of the general constrained least squares problem (16.1) given above to the special case of the least norm problem (16.2).
+
+We start with the conditions (16.5). The stacked matrix is in this case
+
+\[\left[\begin{array}{c}I\\ C\end{array}\right],\]
+
+which always has linearly independent columns. So the conditions (16.5) reduce to: \(C\) has linearly independent rows. We make this assumption now.
+
+For the least norm problem, the KKT equations (16.4) reduce to
+
+\[\left[\begin{array}{cc}2I&C^{T}\\ C&0\end{array}\right]\left[\begin{array}{c}\hat{x}\\ \hat{z}\end{array}\right]=\left[\begin{array}{c}0\\ d\end{array}\right].\]
+
+We can solve this using the methods for general constrained least squares, or derive the solution directly, which we do now. The first block row of this equation is \(2\hat{x}+C^{T}\hat{z}=0\), so
+
+\[\hat{x}=-(1/2)C^{T}\hat{z}.\]
+
+We substitute this into the second block equation, \(C\hat{x}=d\), to obtain
+
+\[-(1/2)CC^{T}\hat{z}=d.\]
+
+Since the rows of \(C\) are linearly independent, \(CC^{T}\) is invertible, so we have
+
+\[\hat{z}=-2(CC^{T})^{-1}d.\]
+
+Substituting this expression for \(\hat{z}\) into the formula for \(\hat{x}\) above gives
+
+\[\hat{x}=C^{T}(CC^{T})^{-1}d.\] (16.12) 

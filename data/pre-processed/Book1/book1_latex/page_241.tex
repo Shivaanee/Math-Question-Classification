@@ -1,0 +1,20 @@
+Again the singular case is separate; \(A\) is singular if and only if \(A^{\rm T}\) is singular, and we have \(0=0\). If \(A\) is nonsingular, then it allows the factorization \(PA=LDU\), and we apply rule 9 for the determinant of a product:
+
+\[\det P\det A=\det L\det D\det U.\] (3)
+
+Transposing \(PA=LDU\) gives \(A^{\rm T}P^{\rm T}=U^{\rm T}D^{\rm T}L^{\rm T}\), and again by rule 9,
+
+\[\det A^{\rm T}\det P^{\rm T}=\det U^{\rm T}\det D^{\rm T}\det L^{\rm T}.\] (4)
+
+This is simpler than it looks, because \(L\), \(U\), \(L^{\rm T}\), and \(U^{\rm T}\) are triangular with unit diagonal. By rule 7, their determinants all equal 1. Also, any diagonal matrix is the same as its transpose: \(D=D^{\rm T}\). We only have to show that \(\det P=\det P^{\rm T}\).
+
+Certainly \(\det P\) is 1 or \(-1\), because \(P\) comes from \(I\) by row exchanges. Observe also that \(PP^{\rm T}=I\). (The 1 in the first row of \(P\) matches the 1 in the first column of \(P^{\rm T}\), and misses the 1s in the other columns.) Therefore \(\det P\det P^{\rm T}=\det I=1\), and \(P\) and \(P^{\rm T}\) must have the same determinant: both 1 or both \(-1\).
+
+We conclude that the products (3) and (4) are the same, and \(\det A=\det A^{\rm T}\). This fact practically doubles our list of properties, because every rule that applied to the rows can now be applied to the columns: _The determinant changes sign when two columns are exchanged, two equal columns (or a column of zeros) produce a zero determinant, and the determinant depends linearly on each individual column._ The proof is just to transpose the matrix and work with the rows.
+
+I think it is time to stop and call the list complete. It only remains to find a definite formula for the determinant, and to put that formula to use.
+
+**Problem Set 4.2**
+
+**1.**: If a 4 by 4 matrix has \(\det A=\frac{1}{2}\), find \(\det(2A)\), \(\det(-A)\), \(\det(A^{2})\), and \(\det(A^{-1})\).
+**2.**: If a 3 by 3 matrix has \(\det A=-1\), find \(\det(\frac{1}{2}A)\), \(\det(-A)\), \(\det(A^ 

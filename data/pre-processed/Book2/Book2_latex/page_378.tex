@@ -1,0 +1,34 @@
+
+Complexity.The large constrained least squares problem (17.9) has dimensions
+
+\[\tilde{n}=Tn+(T-1)m,\quad\tilde{m}=Tp+(T-1)m,\quad\tilde{p}=(T-1)n+2n,\]
+
+so using one of the standard methods described in SS16.2 would require order
+
+\[(\tilde{p}+\tilde{m})\tilde{n}^{2}\approx T^{3}(m+p+n)(m+n)^{2},\]
+
+flops, where the symbol \(\approx\) means we have dropped terms with smaller exponents. But the matrices \(\tilde{A}\) and \(\tilde{C}\) are very sparse, and by exploiting this sparsity (see page 349), the large constrained least squares problem can be solved in order \(T(m+p+n)(m+n)^{2}\) flops, which grows only linearly in \(T\).
+
+#### Example
+
+We consider the time-invariant linear dynamical system with
+
+\[A=\left[\begin{array}{rrr}0.855&1.161&0.667\\ 0.015&1.073&0.053\\ -0.084&0.059&1.022\end{array}\right],\qquad B=\left[\begin{array}{rrr}-0.076 \\ -0.139\\ 0.342\end{array}\right],\]
+
+\[C=\left[\begin{array}{rrr}0.218&-3.597&-1.683\end{array}\right],\]
+
+with initial condition \(x^{\rm init}=(0.496,-0.745,1.394)\), target or desired final state \(x^{\rm des}=0\), and \(T=100\). In this example, both the input \(u_{t}\) and the output \(y_{t}\) have dimension one, _i.e._, are scalar. Figure 17.4 shows the output when the input is zero,
+
+\[y_{t}=CA^{t-1}x^{\rm init},\quad t=1,\ldots,T.\]
+
+which is called the open-loop output. Figure 17.5 shows the optimal trade-off curve of the objectives \(J_{\rm input}\) and \(J_{\rm output}\), found by varying the parameter \(\rho\), solving the problem (17.9), and evaluating the objectives \(J_{\rm input}\) and \(J_{\rm output}\). The points corresponding to the values \(\rho=0.05\), \(\rho=0.2\), and \(\rho=1\) are shown as circles. As always, increasing \(\rho\) has the effect of decreasing \(J_{\rm input}\), at the cost of increasing \(J_{\rm output}\).
+
+The optimal input and output trajectories for these three values of \(\rho\) are shown in figure 17.6. Here too we see that for larger \(\rho\), the input is smaller but the output is larger.
+
+#### Variations
+
+There are many variations on the basic linear quadratic control problem described above. We describe some of them here.
+
+Tracking.We replace \(y_{t}\) in \(J_{\rm output}\) with \(y_{t}-y_{t}^{\rm des}\), where \(y_{t}^{\rm des}\) is a given desired output trajectory. In this case the objective function \(J_{\rm output}\) is called the _tracking error_. Decreasing the parameter \(\rho\) leads to better output tracking, at the cost of larger input trajectory. This variation on the linear quadratic control problem can be expressed as a linearly constrained least squares problem with the same big matrices \(\tilde{A}\) and \(\tilde{C}\), the same vector \(\tilde{d}\), and a nonzero vector \(\tilde{b}\). The desired trajectory \(y_{t}^{\rm des}\) appears in the vector \(\tilde{b}\).
+
+ 

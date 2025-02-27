@@ -1,0 +1,22 @@
+
+Indexing.We should give a couple of warnings concerning the subscripted index notation \(a_{i}\). The first warning concerns the range of the index. In many computer languages, arrays of length \(n\) are indexed from \(i=0\) to \(i=n-1\). But in standard mathematical notation, \(n\)-vectors are indexed from \(i=1\) to \(i=n\), so in this book, vectors will be indexed from \(i=1\) to \(i=n\).
+
+The next warning concerns an ambiguity in the notation \(a_{i}\), used for the \(i\)th element of a vector \(a\). The same notation will occasionally refer to the \(i\)th vector in a collection or list of \(k\) vectors \(a_{1},\ldots,a_{k}\). Whether \(a_{3}\) means the third element of a vector \(a\) (in which case \(a_{3}\) is a number), or the third vector in some list of vectors (in which case \(a_{3}\) is a vector) should be clear from the context. When we need to refer to an element of a vector that is in an indexed collection of vectors, we can write \((a_{i})_{j}\) to refer to the \(j\)th entry of \(a_{i}\), the \(i\)th vector in our list.
+
+Zero vectors.A _zero vector_ is a vector with all elements equal to zero. Sometimes the zero vector of size \(n\) is written as \(0_{n}\), where the subscript denotes the size. But usually a zero vector is denoted just \(0\), the same symbol used to denote the number \(0\). In this case you have to figure out the size of the zero vector from the context. As a simple example, if \(a\) is a \(9\)-vector, and we are told that \(a=0\), the \(0\) vector on the right-hand side must be the one of size \(9\).
+
+Even though zero vectors of different sizes are different vectors, we use the same symbol \(0\) to denote them. In computer programming this is called _overloading_: The symbol \(0\) is overloaded because it can mean different things depending on the context (_e.g._, the equation it appears in).
+
+Unit vectors.A (standard) _unit vector_ is a vector with all elements equal to zero, except one element which is equal to one. The \(i\)th unit vector (of size \(n\)) is the unit vector with \(i\)th element one, and denoted \(e_{i}\). For example, the vectors
+
+\[e_{1}=\left[\begin{array}{c}1\\ 0\\ 0\end{array}\right],\qquad e_{2}=\left[\begin{array}{c}0\\ 1\\ 0\end{array}\right],\qquad e_{3}=\left[\begin{array}{c}0\\ 0\\ 1\end{array}\right]\]
+
+are the three unit vectors of size \(3\). The notation for unit vectors is an example of the ambiguity in notation noted above. Here, \(e_{i}\) denotes the \(i\)th unit vector, and not the \(i\)th element of a vector \(e\). Thus we can describe the \(i\)th unit \(n\)-vector \(e_{i}\) as
+
+\[(e_{i})_{j}=\left\{\begin{array}{ll}1&j=i\\ 0&j\neq i,\end{array}\right.\]
+
+for \(i,j=1,\ldots,n\). On the left-hand side \(e_{i}\) is an \(n\)-vector; \((e_{i})_{j}\) is a number, its \(j\)th entry. As with zero vectors, the size of \(e_{i}\) is usually determined from the context.
+
+Ones vector.We use the notation \(\mathbf{1}_{n}\) for the \(n\)-vector with all its elements equal to one. We also write \(\mathbf{1}\) if the size of the vector can be determined from the context. (Some authors use \(e\) to denote a vector of all ones, but we will not use this notation.) The vector \(\mathbf{1}\) is sometimes called the _ones vector_.
+
+ 

@@ -1,0 +1,21 @@
+symmetric bilinear forms. When \(f\) is skew-symmetric, the matrix of \(f\) in any ordered basis will have all its diagonal entries \(0\). This just corresponds to the observation that \(f(\alpha,\,\alpha)=0\) for every \(\alpha\) in \(V\), since \(f(\alpha,\,\alpha)=-f(\alpha,\,\alpha)\).
+
+Let us suppose \(f\) is a non-zero skew-symmetric bilinear form on \(V\). Since \(f\neq 0\), there are vectors \(\alpha\), \(\beta\) in \(V\) such that \(f(\alpha,\,\beta)\neq 0\). Multiplying \(\alpha\) by a suitable scalar, we may assume that\(f(\alpha,\,\beta)=1\). Let \(\gamma\) be any vector in the subspace spanned by \(\alpha\) and \(\beta\), say \(\gamma=c\alpha+d\beta\). Then
+
+\[\begin{array}{l}f(\gamma,\,\alpha)=f(c\alpha+d\beta,\,\alpha)=df(\beta,\, \alpha)=-d\\ f(\gamma,\beta)=f(c\alpha+d\beta,\,\beta)=cf(\alpha,\,\beta)=c\end{array}\]
+
+and so
+
+\[\gamma=f(\gamma,\,\beta)\alpha-f(\gamma,\,\alpha)\beta.\]
+
+In particular, note that \(\alpha\) and \(\beta\) are necessarily linearly independent; for, if \(\gamma=0\), then \(f(\gamma,\,\alpha)=f(\gamma,\,\beta)=0\).
+
+Let \(W\) be the two-dimensional subspace spanned by \(\alpha\) and \(\beta\). Let \(W^{\perp}\) be the set of all vectors \(\delta\) in \(V\) such that \(f(\delta,\,\alpha)=f(\delta,\,\beta)=0\), that is, the set of all \(\delta\) such that \(f(\delta,\,\gamma)=0\) for every \(\gamma\) in the subspace \(W\). We claim that \(V=W\oplus W^{\perp}\). For, let \(\epsilon\) be any vector in \(V\), and
+
+\[\begin{array}{l}\gamma=f(\epsilon,\,\beta)\alpha-f(\epsilon,\,\alpha)\beta \\ \delta=\epsilon-\gamma.\end{array}\]
+
+Then \(\gamma\) is in \(W\), and \(\delta\) is in \(W^{\perp}\), for
+
+\[\begin{array}{l}f(\delta,\,\alpha)=f(\epsilon-f(\epsilon,\,\beta)\alpha+f( \epsilon,\,\alpha)\beta,\,\alpha)\\ =f(\epsilon,\,\alpha)+f(\epsilon,\,\alpha)f(\beta,\,\alpha)\\ =0\end{array}\]
+
+and similarly \(f(\delta,\,\beta)=0\). Thus every \(\epsilon\) in \(V\) is of the form \(\epsilon 

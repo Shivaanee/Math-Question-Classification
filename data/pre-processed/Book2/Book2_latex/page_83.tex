@@ -1,0 +1,21 @@
+choices. For example, it is possible to use an objective that encourages more balanced groupings. But we will stick with this basic (and very common) choice of clustering objective.
+
+Optimal and suboptimal clustering.We seek a clustering, _i.e._, a choice of group assignments \(c_{1},\ldots,c_{N}\) and a choice of representatives \(z_{1},\ldots,z_{k}\), that minimize the objective \(J^{\mathrm{clust}}\). We call such a clustering _optimal_. Unfortunately, for all but the very smallest problems, it is practically impossible to find an optimal clustering. (It can be done in principle, but the amount of computation needed grows extremely rapidly with \(N\).) The good news is that the \(k\)-means algorithm described in the next section requires far less computation (and indeed, can be run for problems with \(N\) measured in billions), and often finds a very good, if not the absolute best, clustering. (Here, 'very good' means a clustering and choice of representatives that achieves a value of \(J^{\mathrm{clust}}\) near its smallest possible value.) We say that the clustering choices found by the \(k\)-means algorithm are _suboptimal_, which means that they might not give the lowest possible value of \(J^{\mathrm{clust}}\).
+
+Even though it is a hard problem to choose the best clustering and the best representatives, it turns out that we _can_ find the best clustering, if the representatives are fixed, and we can find the best representatives, if the clustering is fixed. We address these two topics now.
+
+Partitioning the vectors with the representatives fixed.Suppose that the group representatives \(z_{1},\ldots,z_{k}\) are fixed, and we seek the group assignments \(c_{1},\ldots,c_{N}\) that achieve the smallest possible value of \(J^{\mathrm{clust}}\). It turns out that this problem can be solved exactly.
+
+The objective \(J^{\mathrm{clust}}\) is a sum of \(N\) terms. The choice of \(c_{i}\) (_i.e._, the group to which we assign the vector \(x_{i}\)) only affects the \(i\)th term in \(J^{\mathrm{clust}}\), which is \((1/N)\|x_{i}-z_{c_{i}}\|^{2}\). We can choose \(c_{i}\) to minimize just this term, since \(c_{i}\) does not affect the other \(N-1\) terms in \(J^{\mathrm{clust}}\). How do we choose \(c_{i}\) to minimize this term? This is easy: We simply choose \(c_{i}\) to be the value of \(j\) that minimizes \(\|x_{i}-z_{j}\|\) over \(j\). In other words, we should assign each data vector \(x_{i}\) to its nearest neighbor among the representatives. This choice of assignment is very natural, and easily carried out.
+
+So when the group representatives are fixed, we can readily find the best group assignment (_i.e._, the one that minimizes \(J^{\mathrm{clust}}\)), by assigning each vector to its nearest representative. With this choice of group assignment, we have (by the way the assignment is made)
+
+\[\|x_{i}-z_{c_{i}}\|=\min_{j=1,\ldots,k}\|x_{i}-z_{j}\|,\]
+
+so the value of \(J^{\mathrm{clust}}\) is given by
+
+\[\left(\min_{j=1,\ldots,k}\|x_{1}-z_{j}\|^{2}+\cdots+\min_{j=1,\ldots,k}\|x_{N }-z_{j}\|^{2}\right)/N.\]
+
+This has a simple interpretation: It is the mean of the squared distance from the data vectors to their closest representative.
+
+ 

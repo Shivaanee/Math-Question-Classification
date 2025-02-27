@@ -1,0 +1,27 @@
+dividing by those lengths. The example above would have the same \(B\) and \(C\), without using square roots. Notice the \(\frac{1}{2}\) from \(a^{\mathrm{T}}b/a^{\mathrm{T}}a\) instead of \(\frac{1}{\sqrt{2}}\) from \(q^{\mathrm{T}}b\):
+
+\[B=\begin{bmatrix}1\\ 0\\ 0\end{bmatrix}-\frac{1}{2}\begin{bmatrix}1\\ 0\\ 1\end{bmatrix}\quad\text{ and then }\quad C=\begin{bmatrix}2\\ 1\\ 0\end{bmatrix}-\begin{bmatrix}1\\ 0\\ 1\end{bmatrix}-2\begin{bmatrix}\frac{1}{2}\\ 0\\ -\frac{1}{2}\end{bmatrix}.\]
+
+### The Factorization \(A=qr\)
+
+We started with a matrix \(A\), whose columns were \(a\), \(b\), \(c\). We ended with a matrix \(Q\), whose columns are \(q_{1}\), \(q_{2}\), \(q_{3}\). What is the relation between those matrices? The matrices \(A\) and \(Q\) are \(m\) by \(n\) when the \(n\) vectors are in \(m\)-dimensional space, and there has to be a third matrix that connects them.
+
+The idea is to write the \(a\)'s as combinations of the \(q\)'s. The vector \(b\) in Figure 3.10 is a combination of the orthonormal \(q_{1}\) and \(q_{2}\), and we know what combination it is:
+
+\[b=(q_{1}^{\mathrm{T}}b)q_{1}+(q_{2}^{\mathrm{T}}b)q_{2}.\]
+
+Every vector in the plane is the sum of its \(q_{1}\) and \(q_{2}\) components. Similarly \(c\) is the sum of its \(q_{1}\), \(q_{2}\), \(q_{3}\) components: \(c=(q_{1}^{\mathrm{T}}c)q_{1}+(q_{2}^{\mathrm{T}}c)q_{2}+(q_{3}^{\mathrm{T}}c)q _{3}\). If we express that in matrix form we have _the new factorization_\(A=QR\):
+
+\[QR\ \text{factors}\qquad A=\begin{bmatrix}a&b&c\\ a&b&c\end{bmatrix}=\begin{bmatrix}q_{1}&q_{2}&q_{3}\end{bmatrix}\begin{bmatrix} q_{1}^{\mathrm{T}}a&q_{1}^{\mathrm{T}}b&q_{1}^{\mathrm{T}}c\\ q_{2}^{\mathrm{T}}b&q_{2}^{\mathrm{T}}c\\ q_{3}^{\mathrm{T}}c\end{bmatrix}=QR\] (12)
+
+Notice the zeros in the last matrix! \(R\) is _upper triangular_ because of the way Gram-Schmidt was done. The first vectors \(a\) and \(q_{1}\) fell on the same line. Then \(q_{1}\), \(q_{2}\) were in the same plane as \(a\), \(b\). The third vectors \(c\) and \(q_{3}\) were not involved until step 3.
+
+The \(QR\) factorization is like \(A=LU\), except that the first factor \(Q\) has orthonormal columns. The second factor is called \(R\), because the nonzeros are to the _right_ of the diagonal (and the letter \(U\) is already taken). The off-diagonal entries of \(R\) are the numbers \(q_{1}^{\mathrm{T}}b=1/\sqrt{2}\) and \(q_{1}^{\mathrm{T}}c=q_{2}^{\mathrm{T}}c=\sqrt{2}\), found above. The whole factorization is
+
+\[A=\begin{bmatrix}1&1&2\\ 0&0&1\\ 1&0&0\end{bmatrix}=\begin{bmatrix}1/\sqrt{2}&1/\sqrt{2}&0\\ 0&0&1\\ 1/\sqrt{2}&-1/\sqrt{2}&0\end{bmatrix}\begin{bmatrix}\sqrt{2}&1/\sqrt{2}& \sqrt{2}\\ 1/\sqrt{2}&\sqrt{2}\\ &&1\end{bmatrix}=QR.\]
+
+_You see the lengths of \(a\), \(B\), \(C\) on the diagonal of \(R\)._ The orthonormal vectors \(q_{1}\), \(q_{2}\), \(q_{3}\), which are the whole object of orthogonalization, are in the first factor \(Q\).
+
+Maybe \(QR\) is not as beautiful as \(LU\) (because of the square roots). Both factorizations are vitally important to the theory of linear algebra, and absolutely central to the calculations. If \(LU\) is Hertz, then \(QR\) is Avis.
+
+ 

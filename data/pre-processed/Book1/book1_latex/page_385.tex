@@ -1,0 +1,31 @@
+
+
+**10.**: Suppose \(A\) is a \(2\) by \(2\) symmetric matrix with unit eigenvectors \(u_{1}\) and \(u_{2}\). If its eigenvalues are \(\lambda_{1}=3\) and \(\lambda_{2}=-2\), what are \(U\), \(\Sigma\), and \(V^{\mathrm{T}}\)?
+**11.**: Suppose \(A\) is invertible (with \(\sigma_{1}>\sigma_{2}>0\)). Change \(A\) by as small a matrix as possible to produce a _singular_ matrix \(A_{0}\). _Hint_: \(U\) and \(V\) do not change:
+
+\[\mathrm{Find}\,A_{0}\ \mathrm{from}\qquad A=\begin{bmatrix}u_{1}&u_{2}\end{bmatrix} \begin{bmatrix}\sigma_{1}&\\ &\sigma_{2}\end{bmatrix}\begin{bmatrix}v_{1}&v_{2}\end{bmatrix}^{\mathrm{T}}.\]
+**12.**:
+* If \(A\) changes to \(4A\), what is the change in the SVD?
+* What is the SVD for \(A^{\mathrm{T}}\) and for \(A^{-1}\)?
+**13.**: Why doesn't the SVD for \(A+I\) just use \(\Sigma+I\)?
+**14.**: Find the SVD and the pseudoinverse \(0^{+}\) of the \(m\) by \(n\)_zero matrix_.
+**15.**: Find the SVD and the pseudoinverse \(V\Sigma^{+}U^{\mathrm{T}}\) of
+
+\[A=\begin{bmatrix}1&1&1&1\end{bmatrix},\qquad B=\begin{bmatrix}0&1&0\\ 1&0&0\end{bmatrix},\quad\mathrm{and}\quad C=\begin{bmatrix}1&1\\ 0&0\end{bmatrix}.\]
+**16.**: If an \(m\) by \(n\) matrix \(Q\) has orthonormal columns, what is \(Q^{+}\)?
+**17.**: Diagonalize \(A^{\mathrm{T}}A\) to find its positive definite square root \(S=V\Sigma^{1/2}V^{\mathrm{T}}\) and its polar decomposition \(A=QS\):
+
+\[A=\frac{1}{\sqrt{10}}\begin{bmatrix}10&6\\ 0&8\end{bmatrix}.\]
+**18.**: What is the minimum-length least-squares solution \(x^{+}=A^{+}b\) to the following?
+
+\[Ax=\begin{bmatrix}1&0&0\\ 1&0&0\\ 1&1&1\end{bmatrix}\begin{bmatrix}C\\ D\\ E\end{bmatrix}=\begin{bmatrix}0\\ 2\\ 2\end{bmatrix}.\]
+
+You can compute \(A^{+}\), or find the general solution to \(A^{\mathrm{T}}A\widehat{x}=A^{\mathrm{T}}b\) and choose the solution that is in the row space of \(A\). This problem fits the best plane \(C+Dt+Ez\) to \(b=0\) and also \(b=2\) at \(t=z=0\) (and \(b=2\) at \(t=z=1\)).
+
+* If \(A\) has independent columns, its left-inverse \((A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}\) is \(A^{+}\).
+* If \(A\) has independent rows, its right-inverse \(A^{\mathrm{T}}(AA^{\mathrm{T}})^{-1}\) is \(A^{+}\).
+
+In both cases, verify that \(x^{+}=A^{+}b\) is in the row space. and \(A^{\mathrm{T}}Ax^{+}=A^{\mathrm{T}}b\).
+**19.**: Split \(A=U\Sigma V^{\mathrm{T}}\) into its reverse polar decomposition \(QS^{\prime}\).
+**20.**: Is \((AB)^{+}=B^{+}A^{+}\) always true for pseudoinverses? I believe not.
+

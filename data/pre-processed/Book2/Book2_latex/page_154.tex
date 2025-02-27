@@ -1,0 +1,27 @@
+
+
+## 7 Matrix examples
+
+### 7.1 Projection on a line
+
+Let \(P(x)\) denote the projection of the 2-D point (2-vector) \(x\) onto the line that passes through \((0,0)\) and \((1,3)\). (This means that \(P(x)\) is the point on the line that is closest to \(x\); see exercise 3.12.) Show that \(P\) is a linear function, and give the matrix \(A\) for which \(P(x)=Ax\) for any \(x\).
+
+_3-D rotation._ Let \(x\) and \(y\) be 3-vectors representing positions in 3-D. Suppose that the vector \(y\) is obtained by rotating the vector \(x\) about the vertical axis (_i.e._, \(e_{3}\)) by \(45^{\circ}\) (counterclockwise, _i.e._, from \(e_{1}\) toward \(e_{2}\)). Find the \(3\times 3\) matrix \(A\) for which \(y=Ax\). _Hint._ Determine the three columns of \(A\) by finding the result of the transformation on the unit vectors \(e_{1},e_{2},e_{3}\).
+
+_3-Trimming a vector._ Find a matrix \(A\) for which \(Ax=(x_{2},\ldots,x_{n-1})\), where \(x\) is an \(n\)-vector. (Be sure to specify the size of \(A\), and describe all its entries.)
+
+_3-Down-sampling and up-conversion._ We consider \(n\)-vectors \(x\) that represent signals, with \(x_{k}\) the value of the signal at time \(k\) for \(k=1,\ldots,n\). Below we describe two functions of \(x\) that produce new signals \(f(x)\). For each function, give a matrix \(A\) such that \(f(x)=Ax\) for all \(x\).
+
+* \(2\times\)_downsampling._ We assume \(n\) is even and define \(f(x)\) as the \(n/2\)-vector \(y\) with elements \(y_{k}=x_{2k}\). To simplify your notation you can assume that \(n=8\), _i.e._, \[f(x)=(x_{2},\,x_{4},\,x_{6},\,x_{8}).\] (On page 131 we describe a different type of down-sampling, that uses the average of pairs of original values.)
+* \(2\times\)_up-conversion with linear interpolation_. We define \(f(x)\) as the \((2n-1)\)-vector \(y\) with elements \(y_{k}=x_{(k+1)/2}\) if \(k\) is odd and \(y_{k}=(x_{k/2}+x_{k/2+1})/2\) if \(k\) is even. To simplify your notation you can assume that \(n=5\), _i.e._, \[f(x)=\left(x_{1},\,\frac{x_{1}+x_{2}}{2},\,x_{2},\,\frac{x_{2}+x_{3}}{2},\,x_ {3},\,\frac{x_{3}+x_{4}}{2},\,x_{4},\,\frac{x_{4}+x_{5}}{2},\,x_{5}\right).\]
+
+_4-T transpose of selector matrix._ Suppose the \(m\times n\) matrix \(A\) is a selector matrix. Describe the relation between the \(m\)-vector \(u\) and the \(n\)-vector \(v=A^{T}u\).
+
+_4-Rows of incidence matrix._ Show that the rows of the incidence matrix of a graph are always linearly dependent. _Hint._ Consider the sum of the rows.
+
+_4-T Incidence matrix of reversed graph._ (See exercise 6.5.) Suppose \(A\) is the incidence matrix of a graph. The reversed graph is obtained by reversing the directions of all the edges of the original graph. What is the incidence matrix of the reversed graph? (Express your answer in terms of \(A\).)
+
+_4-Flow conservation with sources._ Suppose that \(A\) is the incidence matrix of a graph, \(x\) is the vector of edge flows, and \(s\) is the external source vector, as described in SS7.3. Assuming that flow is conserved, _i.e._, \(Ax+s=0\), show that \(\mathbf{1}^{T}s=0\). This means that the total amount injected into the network by the sources (\(s_{i}>0\)) must exactly balance the total amount removed from the network at the sink nodes (\(s_{i}<0\)). For example if the network is a (lossless) electrical power grid, the total amount of electrical power generated (and injected into the grid) must exactly balance the total electrical power consumed (from the grid).
+
+_4-Social network graph._ Consider a group of \(n\) people or users, and some symmetric social relation among them. This means that some pairs of users are _connected_, or _friends_ (say). We can create a directed graph by associating a node with each user, and an edge between each pair of friends, arbitrarily choosing the direction of the edge. Now consider an \(n\)-vector \(v\), where \(v_{i}\) is some quantity for user \(i\), for example, age or education level (say, given in years). Let \(\mathcal{D}(v)\) denote the Dirichlet energy associated with the graph and \(v\), thought of as a potential on the nodes.
+

@@ -1,0 +1,36 @@
+
+Imposing the condition that \(a_{1}=1\) we obtain a square set of 6 linear equations,
+
+\[\left[\begin{array}{rrrrrr}2&0&0&-1&0&0\\ 7&0&0&0&0&-1\\ 0&1&0&0&-1&0\\ 0&0&1&0&0&-2\\ -2&2&1&-3&-3&0\\ 1&0&0&0&0&0\end{array}\right]\left[\begin{array}{c}a_{1}\\ a_{2}\\ a_{3}\\ b_{1}\\ b_{2}\\ b_{3}\end{array}\right]=\left[\begin{array}{c}0\\ 0\\ 0\\ 0\\ 1\end{array}\right].\]
+
+Solving these equations we obtain
+
+\[a_{1}=1,\quad a_{2}=6,\quad a_{3}=14,\qquad b_{1}=2,\quad b_{2}=6,\quad b_{3}=7.\]
+
+(Setting \(a_{1}=1\) could have yielded fractional values for the other coefficients, but in this case, it did not.) The balanced reaction is
+
+\[\mathrm{Cr}_{2}\mathrm{O}_{7}^{2-}+6\mathrm{Fe}^{2+}+14\mathrm{H}^{+} \longrightarrow 2\mathrm{Cr}^{3+}+6\mathrm{Fe}^{3+}+7\mathrm{H}_{2}\mathrm{O}.\]
+
+Heat diffusion.We consider a diffusion system as described on page 155. Some of the nodes have fixed potential, _i.e._, \(e_{i}\) is given; for the other nodes, the associated external source \(s_{i}\) is zero. This would model a thermal system in which some nodes are in contact with the outside world or a heat source, which maintains their temperatures (via external heat flows) at constant values; the other nodes are internal, and have no heat sources. This gives us a set of \(n\) additional equations:
+
+\[e_{i}=e_{i}^{\mathrm{fix}},\quad i\in\mathcal{P},\qquad s_{i}=0,\quad i\not \in\mathcal{P},\]
+
+where \(\mathcal{P}\) is the set of indices of nodes with fixed potential. We can write these \(n\) equations in matrix-vector form as
+
+\[Bs+Ce=d,\]
+
+where \(B\) and \(C\) are the \(n\times n\) diagonal matrices, and \(d\) is the \(n\)-vector given by
+
+\[B_{ii}=\left\{\begin{array}{ll}0&i\in\mathcal{P}\\ 1&i\not\in\mathcal{P},\end{array}\right.\qquad C_{ii}=\left\{\begin{array}{ ll}1&i\in\mathcal{P}\\ 0&i\not\in\mathcal{P},\end{array}\right.\qquad d_{i}=\left\{\begin{array}{ ll}e_{i}^{\mathrm{fix}}&i\in\mathcal{P}\\ 0&i\not\in\mathcal{P}.\end{array}\right.\]
+
+We assemble the flow conservation, edge flow, and the boundary conditions into one set of \(m+2n\) equations in \(m+2n\) variables \((f,s,e)\):
+
+\[\left[\begin{array}{ccc}A&I&0\\ R&0&A^{T}\\ 0&B&C\end{array}\right]\left[\begin{array}{c}f\\ s\\ e\end{array}\right]=\left[\begin{array}{c}0\\ 0\\ d\end{array}\right].\]
+
+(The matrix \(A\) is the incidence matrix of the graph, and \(R\) is the resistance matrix; see page 155.) Assuming the coefficient matrix is invertible, we have
+
+\[\left[\begin{array}{c}f\\ s\\ e\end{array}\right]=\left[\begin{array}{ccc}A&I&0\\ R&0&A^{T}\\ 0&B&C\end{array}\right]^{-1}\left[\begin{array}{c}0\\ 0\\ d\end{array}\right].\]
+
+This is illustrated with an example in figure 11.3. The graph is a \(100\times 100\) grid, with \(10000\) nodes, and edges connecting each node to its horizontal and vertical neighbors. The resistance on each edge is the same. The nodes at the top and bottom are held at zero temperature, and the three sets of nodes with rectilinear shapes are held at temperature one. All other nodes have zero source value.
+
+ 

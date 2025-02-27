@@ -1,0 +1,23 @@
+In case each entry of \(A\) is real, we can take \(V\) to be \(R^{*}\), with the standard inner product, and repeat the argument. In this case, \(P\) will be a unitary matrix with real entries, i.e., a real orthogonal matrix.
+
+Combining Theorem 18 with our comments at the beginning of this section, we have the following: If \(V\) is a finite-dimensional _real_ inner product space and \(T\) is a linear operator on \(V\), then \(V\) has an orthonormal basis of characteristic vectors for \(T\) if and only if \(T\) is self-adjoint. Equivalently, if \(A\) is an \(n\)\(\times\)\(n\) matrix with _real_ entries, there is a real orthogonal matrix \(P\) such that \(P^{t}AP\) is diagonal if and only if \(A\)\(\equiv\)\(A\). There is no such result for complex symmetric matrices. In other words, for complex matrices there is a significant difference between the conditions \(A\)\(=\)\(A\)' and \(A\)\(=\)\(A\)*.
+
+Having disposed of the self-adjoint case, we now return to the study of normal operators in general. We shall prove the analogue of Theorem 18 for normal operators, in the _complex_ case. There is a reason for this restriction. A normal operator on a real inner product space may not have any non-zero characteristic vectors. This is true, for example, of all but two rotations in \(R^{2}\).
+
+**Theorem 19**.: _Let \(V\) be a finite-dimensional inner product space and \(T\) a normal operator on \(V\). Suppose \(\alpha\) is a vector in \(V\). Then \(\alpha\) is a characteristic vector for \(T\) with characteristic value \(c\) if and only if \(\alpha\) is a characteristic vector for \(T\)* with characteristic value \(\overline{c}\)._
+
+Proof.: Suppose \(U\) is any normal operator on \(V\). Then \(\|U\alpha\|=\)\(\|U^{*}\alpha\|\). For using the condition \(UU^{*}\)\(=\)\(U^{*}U\) one sees that
+
+\[\begin{array}{rcl}||U\alpha||^{2}=&(U\alpha|U\alpha)&=&(\alpha|U^{*}U\alpha) \\ &=&(\alpha|UU^{*}\alpha)&=&(U^{*}\alpha|U^{*}\alpha)&=&||U^{*}\alpha||^{2}.\end{array}\]
+
+If \(c\) is any scalar, the operator \(U\)\(=\)\(T\)\(-\)\(cI\) is normal. For \((T\)\(-\)\(cI)^{*}\)\(=\)\(T^{*}\)\(-\)\(\overline{c}I\), and it is easy to check that \(UU^{*}\)\(=\)\(U^{*}U\). Thus
+
+\[||(T\)\(-\)\(cI)\alpha||=||(T^{*}\)\(-\)\(cI)\alpha||\]
+
+so that \((T\)\(-\)\(cI)\alpha\)\(=\)\(0\) if and only if \((T^{*}\)\(-\)\(\overline{c}I)\alpha\)\(=\)\(0\).
+
+**Definition**.: _A complex \(n\)\(\times\)\(n\) matrix \(A\) is called_ **normal** _if \(\Lambda A^{*}\)\(=\)\(A\)*\(A\)._
+
+It is not so easy to understand what normality of matrices or operators really means; however, in trying to develop some feeling for the concept, the reader might find it helpful to know that a triangular matrix is normal if and only if it is diagonal.
+
+**Theorem 20**.: _Let \(V\) be a finite-dimensional inner product space, \(T\) a linear operator on \(V\), and \(\otimes\) an orthonormal basis for \(V\). Suppose that the 

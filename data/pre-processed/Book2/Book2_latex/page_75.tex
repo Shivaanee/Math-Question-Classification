@@ -1,0 +1,30 @@
+
+
+**3.10**: _Nearest neighbor document._ Consider the 5 Wikipedia pages in table 3.1 on page 51. What is the nearest neighbor of (the word count histogram vector of) 'Veterans Day' among the others? Does the answer make sense?
+**3.11**: _Neighboring electronic health records._ Let \(x_{1},\ldots,x_{N}\) be \(n\)-vectors that contain \(n\) features extracted from a set of \(N\) electronic health records (EHRs), for a population of \(N\) patients. (The features might involve patient attributes and current and past symptoms, diagnoses, test results, hospitalizations, procedures, and medications.) Briefly describe in words a practical use for identifying the 10 nearest neighbors of a given EHR (as measured by their associated feature vectors), among the other EHRs.
+**3.12**: _Nearest point to a line._ Let \(a\) and \(b\) be different \(n\)-vectors. The line passing through \(a\) and \(b\) is given by the set of vectors of the form \((1-\theta)a+\theta b\), where \(\theta\) is a scalar that determines the particular point on the line. (See page 18.)
+
+Let \(x\) be any \(n\)-vector. Find a formula for the point \(p\) on the line that is closest to \(x\). The point \(p\) is called the _projection_ of \(x\) onto the line. Show that \((p-x)\perp(a-b)\), and draw a simple picture illustrating this in 2-D. _Hint._ Work with the square of the distance between a point on the line and \(x\), _i.e._, \(\|(1-\theta)a+\theta b-x\|^{2}\). Expand this, and minimize over \(\theta\).
+**3.13**: _Nearest nonnegative vector._ Let \(x\) be an \(n\)-vector and define \(y\) as the nonnegative vector (_i.e._, the vector with nonnegative entries) closest to \(x\). Give an expression for the elements of \(y\). Show that the vector \(z=y-x\) is also nonnegative and that \(z^{T}y=0\).
+**3.14**: _Nearest unit vector._ What is the nearest neighbor of the \(n\)-vector \(x\) among the unit vectors \(e_{1},\ldots,e_{n}\)?
+**3.15**: _Average, RMS value, and standard deviation._ Use the formula (3.5) to show that for any vector \(x\), the following two inequalities hold:
+
+\[|\operatorname{\mathbf{avg}}(x)|\leq\operatorname{\mathbf{rms}}(x),\qquad \operatorname{\mathbf{std}}(x)\leq\operatorname{\mathbf{rms}}(x).\]
+
+Is it possible to have equality in these inequalities? If \(|\operatorname{\mathbf{avg}}(x)|=\operatorname{\mathbf{rms}}(x)\) is possible, give the conditions on \(x\) under which it holds. Repeat for \(\operatorname{\mathbf{std}}(x)=\operatorname{\mathbf{rms}}(x)\).
+**3.16**: _Effect of scaling and offset on average and standard deviation._ Suppose \(x\) is an \(n\)-vector and \(\alpha\) and \(\beta\) are scalars.
+
+1. Show that \(\operatorname{\mathbf{avg}}(\alpha x+\beta\mathbf{1})=\alpha\operatorname{ \mathbf{avg}}(x)+\beta\).
+2. Show that \(\operatorname{\mathbf{std}}(\alpha x+\beta\mathbf{1})=|\alpha|\operatorname{ \mathbf{std}}(x)\).
+**3.17**: _Average and standard deviation of linear combination._ Let \(x_{1},\ldots,x_{k}\) be \(n\)-vectors, and \(\alpha_{1},\ldots,\alpha_{k}\) be numbers, and consider the linear combination \(z=\alpha_{1}x_{1}+\cdots+\alpha_{k}x_{k}\).
+
+1. Show that \(\operatorname{\mathbf{avg}}(z)=\alpha_{1}\operatorname{\mathbf{avg}}(x_{1})+ \cdots+\alpha_{k}\operatorname{\mathbf{avg}}(x_{k})\).
+2. Now suppose the vectors are uncorrelated, which means that for \(i\neq j\), \(x_{i}\) and \(x_{j}\) are uncorrelated. Show that \(\operatorname{\mathbf{std}}(z)=\sqrt{\alpha_{1}^{2}\operatorname{\mathbf{std} }(x_{1})^{2}+\cdots+\alpha_{k}^{2}\operatorname{\mathbf{std}}(x_{k})^{2}}\).
+**3.18**: _Triangle equality._ When does the triangle inequality hold with equality, _i.e._, what are the conditions on \(a\) and \(b\) to have \(\|a+b\|=\|a\|+\|b\|\)?
+**3.19**: _Norm of sum._ Use the formulas (3.1) and (3.6) to show the following:
+
+1. \(a\perp b\) if and only if \(\|a+b\|=\sqrt{\|a\|^{2}+\|b\|^{2}}\).
+2. Nonzero vectors \(a\) and \(b\) make an acute angle if and only if \(\|a+b\|>\sqrt{\|a\|^{2}+\|b\|^{2}}\).
+3. Nonzero vectors \(a\) and \(b\) make an obtuse angle if and only if \(\|a+b\|<\sqrt{\|a\|^{2}+\|b\|^{2}}\). Draw a picture illustrating each case in 2-D.
+**3.20**: _Regression model sensitivity._ Consider the regression model \(\hat{y}=x^{T}\beta+v\), where \(\hat{y}\) is the prediction, \(x\) is a feature vector, \(\beta\) is a coefficient vector, and \(v\) is the offset term. If \(x\) and \(\tilde{x}\) are feature vectors with corresponding predictions \(\hat{y}\) and \(\tilde{y}\), show that \(|\hat{y}-\tilde{y}|\leq\|\beta\|\|x-\tilde{x}\|\). This means that when \(\|\beta\|\) is small, the prediction is not very sensitive to a change in the feature vector.
+

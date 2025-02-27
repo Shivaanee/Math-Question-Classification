@@ -1,0 +1,22 @@
+
+
+**Document-term matrix.** Consider a corpus (collection) of \(N\) documents, with word count vectors for a dictionary with \(n\) words. The _document-term_ matrix associated with the corpus is the \(N\times n\) matrix \(A\), with \(A_{ij}\) the number of times word \(j\) appears in document \(i\). The rows of the document-term matrix are \(a_{1}^{T},\ldots,a_{N}^{T}\), where the \(n\)-vectors \(a_{1},\ldots,a_{N}\) are the word count vectors for documents \(1,\ldots,N\), respectively. The columns of the document-term matrix are also interesting. The \(j\)th column of \(A\), which is an \(N\)-vector, gives the number of times word \(j\) appears in the corpus of \(N\) documents.
+
+Data matrix.A collection of \(N\)\(n\)-vectors, for example feature \(n\)-vectors associated with \(N\) objects, can be given as an \(n\times N\) matrix whose \(N\) columns are the vectors, as described on page 111. It is also common to describe this collection of vectors using the transpose of that matrix. In this case, we give the vectors as an \(N\times n\) matrix \(X\). Its \(i\)th row is \(x_{i}^{T}\), the transpose of the \(i\)th vector. Its \(j\)th column gives the value of the \(j\)th entry (or feature) across the collection of \(N\) vectors. When an author refers to a _data matrix_ or _feature matrix_, it can usually be determined from context (for example, its dimensions) whether they mean the data matrix organized by rows or columns.
+
+Symmetric matrix.A square matrix \(A\) is _symmetric_ if \(A=A^{T}\), _i.e._, \(A_{ij}=A_{ji}\) for all \(i,j\). Symmetric matrices arise in several applications. For example, suppose that \(A\) is the adjacency matrix of a graph or relation (see page 112). The matrix \(A\) is symmetric when the relation is symmetric, _i.e._, whenever \((i,j)\in\mathcal{R}\), we also have \((j,i)\in\mathcal{R}\). An example is the _friend relation_ on a set of \(n\) people, where \((i,j)\in\mathcal{R}\) means that person \(i\) and person \(j\) are friends. (In this case the associated graph is called the 'social network graph'.)
+
+#### Matrix addition
+
+Two matrices of the same size can be added together. The result is another matrix of the same size, obtained by adding the corresponding elements of the two matrices. For example,
+
+\[\left[\begin{array}{cc}0&4\\ 7&0\\ 3&1\end{array}\right]+\left[\begin{array}{cc}1&2\\ 2&3\\ 0&4\end{array}\right]=\left[\begin{array}{cc}1&6\\ 9&3\\ 3&5\end{array}\right].\]
+
+Matrix subtraction is similar. As an example,
+
+\[\left[\begin{array}{cc}1&6\\ 9&3\end{array}\right]-I=\left[\begin{array}{cc}0&6\\ 9&2\end{array}\right].\]
+
+(This gives another example where we have to figure out the size of the identity matrix. Since we can only add or subtract matrices of the same size, \(I\) refers to a \(2\times 2\) identity matrix.)
+
+Properties of matrix addition.The following important properties of matrix addition can be verified directly from the definition. We assume here that \(A\), \(B\), and \(C\) are matrices of the same size.
+

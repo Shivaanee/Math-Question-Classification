@@ -1,0 +1,37 @@
+
+
+**10.19**: _Student group membership._ Let \(G\in{\bf R}^{m\times n}\) represent a contingency matrix of \(m\) students who are members of \(n\) groups:
+
+\[G_{ij}=\left\{\begin{array}{ll}1&\mbox{student $i$ is in group $j$}\\ 0&\mbox{student $i$ is not in group $j$.}\end{array}\right.\]
+
+(A student can be in any number of the groups.)
+
+1. What is the meaning of the 3rd column of \(G\)?
+2. What is the meaning of the 15th row of \(G\)?
+3. Give a simple formula (using matrices, vectors, etc.) for the \(n\)-vector \(M\), where \(M_{i}\) is the total membership (_i.e._, number of students) in group \(i\).
+4. Interpret \((GG^{T})_{ij}\) in simple English.
+5. Interpret \((G^{T}G)_{ij}\) in simple English.
+**10.20**: _Products, materials, and locations._\(P\) different products each require some amounts of \(M\) different materials, and are manufactured in \(L\) different locations, which have different material costs. We let \(C_{lm}\) denote the cost of material \(m\) in location \(l\), for \(l=1,\ldots,L\) and \(m=1,\ldots,M\). We let \(Q_{mp}\) denote the amount of material \(m\) required to manufacture one unit of product \(p\), for \(m=1,\ldots,M\) and \(p=1,\ldots,P\). Let \(T_{pl}\) denote the total cost to manufacture product \(p\) in location \(l\), for \(p=1,\ldots,P\) and \(l=1,\ldots,L\). Give an expression for the matrix \(T\).
+**10.21**: _Integral of product of polynomials._ Let \(p\) and \(q\) be two quadratic polynomials, given by
+
+\[p(x)=c_{1}+c_{2}x+c_{3}x^{2},\qquad q(x)=d_{1}+d_{2}x+d_{3}x^{2}.\]
+
+Express the integral \(J=\int_{0}^{1}p(x)q(x)\,dx\) in the form \(J=c^{T}Gd\), where \(G\) is a \(3\times 3\) matrix. Give the entries of \(G\) (as numbers).
+**10.22**: _Composition of linear dynamical systems._ We consider two time-invariant linear dynamical systems with outputs. The first one is given by
+
+\[x_{t+1}=Ax_{t}+Bu_{t},\qquad y_{t}=Cx_{t},\quad t=1,2,\ldots,\]
+
+with state \(x_{t}\), input \(u_{t}\), and output \(y_{t}\). The second is given by
+
+\[\tilde{x}_{t+1}=\tilde{A}\tilde{x}_{t}+\tilde{B}w_{t},\qquad v_{t}=\tilde{C} \tilde{x}_{t},\quad t=1,2,\ldots,\]
+
+with state \(\tilde{x}_{t}\), input \(w_{t}\), and output \(v_{t}\). We now connect the output of the first linear dynamical system to the input of the second one, which means we take \(w_{t}=y_{t}\). (This is called the _composition_ of the two systems.) Show that this composition can also be expressed as a linear dynamical system with state \(z_{t}=(x_{t},\tilde{x}_{t})\), input \(u_{t}\), and output \(v_{t}\). (Give the state transition matrix, input matrix, and output matrix.)
+**10.23**: Suppose \(A\) is an \(n\times n\) matrix that satisfies \(A^{2}=0\). Does this imply that \(A=0\)? (This is the case when \(n=1\).) If this is (always) true, explain why. If it is not, give a specific counterexample, _i.e._, a matrix \(A\) that is nonzero but satisfies \(A^{2}=0\).
+**10.24**: _Matrix power identity._ A student says that for any square matrix \(A\),
+
+\[(A+I)^{3}=A^{3}+3A^{2}+3A+I.\]
+
+Is she right? If she is, explain why; if she is wrong, give a specific counterexample, _i.e._, a square matrix \(A\) for which it does not hold.
+**10.25**: _Squareroots of the identity._ The number \(1\) has two squareroots (_i.e._, numbers who square is \(1\)), \(1\) and \(-1\). The \(n\times n\) identity matrix \(I_{n}\) has many more squareroots.
+
+1. Find all diagonal squareroots of \(I_{n}\). How many are there? (For \(n=1\), you should get \(2\).)

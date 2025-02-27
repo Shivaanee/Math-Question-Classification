@@ -1,0 +1,18 @@
+3. \(Ax_{k}=(2-2\cos k\pi h)x_{k}\); \(Jx_{k}=\frac{1}{2}(\sin 2k\pi h,\sin 3k\pi h+\sin k\pi h,\ldots)=\) (\(\cos k\pi h)x_{k}\). For \(h=\frac{1}{4}\), \(A\) has eigenvalues \(2-2\cos\frac{\pi}{4}=2-\sqrt{2},2-\cos\frac{\pi}{2}=2\), \(2-\cos\frac{3\pi}{4}=2+\sqrt{2}\).
+5. \(J=D^{-1}(L+U)=-\begin{bmatrix}0&\frac{1}{3}&\frac{1}{3}\\ 0&0&\frac{1}{4}\\ \frac{2}{5}&\frac{2}{5}&0\end{bmatrix}\); the three circles have radius \(r_{1}=\frac{2}{3}\), \(r_{2}=\frac{1}{4}\), \(r_{3}=\frac{4}{5}\). Their centers are at zero, so all \(|\lambda_{i}|\leq 4/5<1\).
+7. \(-D^{-1}(L+U)=\begin{bmatrix}0&-b/a\\ -c/d&0\end{bmatrix}\) has \(\mu=\pm\left(\frac{bc}{ad}\right)^{1/2};-(D+L)^{-1}U=\) \(\begin{bmatrix}0&-b/a\\ 0&bc/ad\end{bmatrix}\), \(\lambda=0\), \(bc/ad\); \(\lambda_{\max}\) does equal \(\mu_{\max}^{2}\).
+9. If \(Ax=\lambda x\), then \((I-A)x=(1-\lambda)x\). Real eigenvalues of \(B=I-A\) have \(|1-\lambda|<1\), provided that \(\lambda\) is between 0 and 2.
+11. Always \(\|AB\|\leq\|A\|\|B\|\). Choose \(A=B\) to find \(\|B^{2}\|\leq\|B\|^{2}\). Then choose \(A=B^{2}\) to find \(\|B^{3}\|\leq\|B^{2}\|\|B\|\leq\|B\|^{3}\). Continue (or use induction). Since \(\|B\|\geq\max|\lambda(B)|\), it is no surprise that \(\|B\|<1\) gives convergence.
+13. Jacobi has \(S^{-1}T=\frac{1}{3}\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\) with \(|\lambda|_{\max}=\frac{1}{3}\). Gauss-Seidel has \(S^{-1}T=\begin{bmatrix}0&\frac{1}{3}\\ 0&\frac{1}{9}\end{bmatrix}\) with \(|\lambda|_{\max}=\frac{1}{9}=(|\lambda|_{\max}\) for Jacobi\()^{2}\).
+15. Successive overrelaxation (SOR) in MATLAB.
+17. The maximum row sums give all \(|\lambda|\leq.9\) and \(|\lambda|\leq 4\). The circles around diagonal entries give tighter bounds. First \(A\): The circle \(|\lambda-.2|\leq.7\) contains the other circles \(|\lambda-.3|\leq.5\) and \(|\lambda-.1|\leq.6\) and all three eigenvalues. Second \(A\): The circle \(|\lambda-2|\leq 2\) contains the circle \(|\lambda-2|\leq 1\) and all three eigenvalues \(2+\sqrt{2}\), \(2\), and \(2-\sqrt{2}\).
+19. \(r_{1}=b-\alpha_{1}Ab=b-(b^{\mathrm{T}}b/b^{\mathrm{T}}Ab)Ab\) is orthogonal to \(r_{0}=b\): _the residuals_\(r=b-Ax\)_are orthogonal at each step_. To show that \(p_{1}\) is orthogonal to \(Ap_{0}=Ab\), simplify \(p_{1}\) to \(cP_{1}\): \(P_{1}=\|Ab\|^{2}b-(b^{\mathrm{T}}Ab)Ab\) and \(c=b^{\mathrm{T}}b/(b^{\mathrm{T}}Ab)^{2}\). Certainly \((Ab)^{\mathrm{T}}P_{1}=0\), because \(A^{\mathrm{T}}=A\). (That simplification put \(\alpha_{1}\) into \(p_{1}=b-\alpha_{1}Ab+(b^{\mathrm{T}}b-2\alpha_{1}b^{\mathrm{T}}Ab+\alpha_{1}^ {2}\|Ab\|^{2})b/b^{\mathrm{T}}b\). For a good discussion see _Numerical Linear Algebra_ by Trefethen and Bau.)
+
+### Problem Set 8.1, page 381
+
+1. The corners are at (0, 6), (2, 2), (6, 0); see Figure 8.3.
+2. The constraints give \(3(2x+5y)+2(-3x+8y)\leq 9-10\), or \(31y\leq-1\). Can't have \(y\geq 0\).
+3. \(x\geq 0\), \(y\geq 0\), with added constraint that \(x+y\leq 0\) admits only the point (0, 0).
+4. \(x\) (5% bonds) = \(z\) (9% bonds) = 20,000 and \(y\) (6% bonds) = 60,000.
+
+ 

@@ -1,0 +1,24 @@
+
+
+**Algorithm 18.2** Newton algorithm for solving nonlinear equations
+
+**given** a differentiable function \(f:\mathbf{R}^{n}\to\mathbf{R}^{n}\), an initial point \(x^{(1)}\).
+
+For \(k=1,2,\ldots,k^{\max}\)
+
+1. _Form affine approximation at current iterate_. Evaluate the Jacobian \(Df(x^{(k)})\) and define \[\hat{f}(x;x^{(k)})=f(x^{(k)})+Df(x^{(k)})(x-x^{(k)}).\]
+2. _Update iterate by solving linear equations_. Set \(x^{(k+1)}\) as the solution of \(\hat{f}(x;x^{(k)})=0\), \[x^{(k+1)}=x^{(k)}-\left(Df(x^{(k)})\right)^{-1}f(x^{(k)}).\]
+
+**Algorithm 18.2** Newton algorithm for solving nonlinear equations
+
+The basic Newton algorithm shares the same shortcomings as the basic Gauss-Newton algorithm, _i.e._, it can diverge, and the iterations terminate if the derivative matrix is not invertible.
+
+Newton algorithm for \(n=1\).The Newton algorithm is easily understood for \(n=1\). The iteration is
+
+\[x^{(k+1)}=x^{(k)}-f(x^{(k)})/f^{\prime}(x^{(k)})\] (18.9)
+
+and is illustrated in figure 18.2. To update \(x^{(k)}\) we form the Taylor approximation
+
+\[\hat{f}(x;x^{(k)})=f(x^{(k)})+f^{\prime}(x^{(k)})(x-x^{(k)})\]
+
+and set it to zero to find the next iterate

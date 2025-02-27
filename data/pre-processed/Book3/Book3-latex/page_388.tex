@@ -1,0 +1,19 @@
+and only if there exist linearly independent linear functionals \(L_{1}\), \(L_{2}\) on \(V\) such that
+
+\[f(\alpha,\beta)\,=\,L_{1}(\alpha)L_{2}(\beta)\,-\,L_{1}(\beta)L_{2}(\alpha).\]
+
+**11.** Let \(f\) be any skew-symmetric bilinear form on \(R^{3}\). Prove that there are linear functionals \(L_{1}\), \(L_{2}\) such that
+
+\[f(\alpha,\beta)\,=\,L_{1}(\alpha)L_{2}(\beta)\,-\,L_{1}(\beta)L_{2}(\alpha).\]
+
+**12.** Let \(V\) be a finite-dimensional vector space over a subfield of the complex numbers, and let \(f\), \(g\) be skew-symmetric bilinear forms on \(V\). Show that there is an _invertible_ linear operator \(T\) on \(V\) such that \(f(T\alpha,T\beta)=g(\alpha,\beta)\) for all \(\alpha\), \(\beta\) if and only if \(f\) and \(g\) have the same rank.
+
+**13.** Show that the result of Exercise 12 is valid for symmetric bilinear forms on a complex vector space, but is not valid for symmetric bilinear forms on a real vector space.
+
+### Groups Preserving Bilinear Forms
+
+Let \(f\) be a bilinear form on the vector space \(V\), and let \(T\) be a linear operator on \(V\). We say that \(T\)**preserves**\(f\) if \(f(T\alpha,T\beta)=f(\alpha,\beta)\) for all \(\alpha,\beta\) in \(V\). For any \(T\) and \(f\) the function \(g\), defined by \(g(\alpha,\beta)\,=\,f(T\alpha,T\beta)\), is easily seen to be a bilinear form on \(V\). To say that \(T\) preserves \(f\) is simply to say \(g=f\). The identity operator preserves every bilinear form. If \(S\) and \(T\) are linear operators which preserve \(f\), the product \(ST\) also preserves \(f\); for \(f(ST\alpha,ST\beta)=f(T\alpha,T\beta)=f(\alpha,\beta)\). In other words, the collection of linear operators which preserve a given bilinear form is closed under the formation of (operator) products. In general, one cannot say much more about this collection of operators; however, if \(f\) is non-degenerate, we have the following.
+
+**Theorem 7.**_Let \(f\) be a non-degenerate bilinear form on a finite-dimensional vector space \(V\). The set of all linear operators on \(V\) which preserve \(f\) is a group under the operation of composition._
+
+Let \(G\) be the set of linear operators preserving \(f\). We observed that the identity operator is in \(G\) and that whenever \(S\) and \(T\) are in \(G\) the composition \(ST\) is also in \(G\). From the fact that \(f\) is non-degenerate, we shall prove that any operator \(T\) in \(G\) is invertible, and \(T^{-1}\) is also in \(G\). Suppose \(T\) preserves \(f\). Let \(\alpha\) be a vector in the null 

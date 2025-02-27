@@ -1,0 +1,27 @@
+be exactly one such \(\alpha\). These intuitive ideas are correct for finite-dimensional subspaces and for some, but not all, infinite-dimensional subspaes. Since the precise situation is too complicated to treat here, we shall prove only the following result.
+
+Theorem 4: _Let \(\mathrm{W}\) be a subspace of an inner product space \(\mathrm{V}\) and let \(\beta\) be a vector in \(\mathrm{V}\)._
+
+* _The vector_ \(\alpha\) _in_ \(\mathrm{W}\) _is a best approximation to_ \(\beta\) _by vectors_ \(in\)__\(\mathrm{W}\) _if and only if_ \(\beta\)__\(-\)__\(\alpha\) _is orthogonal to every vector in_ \(\mathrm{W}\)_._
+* _If a best approximation to_ \(\beta\) _by vectors_ \(in\)__\(\mathrm{W}\) _exists, it is unique._
+* _If_ \(\mathrm{W}\) _is finite-dimensional and_ \(\{\alpha_{1},\,.\,.\,,\,\alpha_{n}\}\) _is any orthonormal basis for_ \(\mathrm{W}\)_, then the vector_ \[\alpha\,=\,\underset{k}{\Sigma}\,\frac{(\beta|\alpha_{k})}{||\alpha_{k}||^{2} }\,\alpha_{k}\] _is the_ (_unique_) _best approximation to_ \(\beta\) _by vectors in_ \(\mathrm{W}\)_._
+
+Proof: First note that if \(\gamma\) is any vector in \(V\), then \(\beta-\gamma=(\beta-\alpha)+(\alpha-\gamma)\), and
+
+\[||\beta-\gamma||^{2}=||\beta-\alpha||^{2}+2\ \mathrm{Re}\ (\beta-\alpha| \alpha-\gamma)+||\alpha-\gamma||^{2}.\]
+
+Now suppose \(\beta-\alpha\) is orthogonal to every vector in \(W\), that \(\gamma\) is in \(W\) and that \(\gamma\neq\alpha\). Then, since \(\alpha-\gamma\) is in \(W\), it follows that
+
+\[||\beta-\gamma||^{2}=||\beta-\alpha||^{2}+||\alpha-\gamma||^{2}\] \[>||\beta-\alpha||^{2}.\]
+
+Conversely, suppose that \(||\beta-\gamma||\geq||\beta-\alpha||\) for every \(\gamma\) in \(W\). Then from the first equation above it follows that
+
+\[2\ \mathrm{Re}\ (\beta-\alpha|\alpha-\gamma)+||\alpha-\gamma||^{2}\geq 0\]
+
+for all \(\gamma\) in \(W\). Since every vector in \(W\) may be expressed in the form \(\alpha-\gamma\) with \(\gamma\) in \(W\), we see that
+
+\[2\ \mathrm{Re}\ (\beta-\alpha|\gamma)+||\gamma||^{2}\geq 0\]
+
+for every \(\gamma\) in \(W\). In particular, if \(\gamma\) is in \(W\) and \(\gamma\neq\alpha\), we may take
+
+\[\tau=\,-\frac{(\beta- 

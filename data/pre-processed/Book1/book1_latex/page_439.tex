@@ -1,0 +1,25 @@
+columns 1 and 3 to put basic variables before free variables:
+
+\[\textbf{Tableau at }P\qquad T=\left[\begin{array}{ccccc}-1&2&1&0&6\\ 0&1&2&-1&6\\ 0&1&1&0&0\end{array}\right].\]
+
+Then, elimination multiplies the first row by \(-1\), to give a unit pivot, and uses the second row to produce zeros in the second column:
+
+\[\textbf{Fully reduced at }P\qquad R=\left[\begin{array}{ccccc}1&0&3&-2&6\\ 0&1&2&-1&6\\ 0&0&-1&1&-6\end{array}\right].\]
+
+_Look first at \(r=[-1\;\;1]\)_ in the bottom row. It has a negative entry in column 3, so the third variable will enter the basis. The current corner \(P\) and its cost \(+6\) are not optimal. The column above that negative entry is \(B^{-1}u=(3,2)\); its ratios with the last column are \(\frac{6}{3}\) and \(\frac{6}{2}\). Since the first ratio is smaller, the first unknown \(w\) (and the first column of the tableau) is pushed out of the basis. We move along the feasible set from corner \(P\) to corner \(Q\) in Figure 8.3.
+
+The new tableau exchanges columns 1 and 3, and pivoting by elimination gives
+
+\[\left[\begin{array}{ccccc}3&0&1&-2&6\\ .2&1&0&-1&6\\ -1&0&0&1&-6\end{array}\right]\rightarrow\left[\begin{array}{ccccc}1&0& \frac{1}{3}&-\frac{2}{3}&2\\ 0&1&-\frac{2}{3}&1&2\\ 0&0&\frac{1}{3}&\frac{1}{3}&-4\end{array}\right].\]
+
+In that new tableau at \(Q\), \(r=[\frac{1}{3}\;\;\frac{1}{3}]\) is positive. **The stopping test is passed**. The corner \(x=y=2\) and its cost \(+4\) are optimal.
+
+### The Organization of a Simplex Step
+
+The geometry of the simplex method is now expressed in algebra--"corners" are "basic feasible solutions." The vector \(r\) and the ratio \(\alpha\) are decisive. Their calculation is the heart of the simplex method, and it can be organized in three different ways:
+
+1. In a tableau, as above.
+2. By updating \(B^{-1}\) when column \(u\) taken from \(N\) replaces column \(k\) of \(B\).
+3. By computing \(B=LU\), and updating these \(LU\) factors instead of \(B^{-1}\).
+
+This list is really a brief history of the simplex method, In some ways, the most fascinating stage was the first--the _tableau_--which dominated the subject for so many years. For most of us it brought an aura of mystery to linear programming, chiefly because it managed to avoid matrix notation almost completely (by the skillful device of 

@@ -1,0 +1,18 @@
+to be smaller when the two documents have the same genre, topic, or author; we would expect it to be larger when they are on different topics, or have different authors. As an example we form the word count histograms for the 5 Wikipedia articles with titles 'Veterans Day', 'Memorial Day', 'Academy Awards', 'Golden Globe Awards', and 'Super Bowl', using a dictionary of 4423 words. (More detail is given in SS4.4.) The pairwise distances between the word count histograms are shown in table 3.1. We can see that pairs of related articles have smaller word count histogram distances than less related pairs of articles.
+
+Units for heterogeneous vector entries.The square of the distance between two \(n\)-vectors \(x\) and \(y\) is given by
+
+\[\|x-y\|^{2}=(x_{1}-y_{1})^{2}+\dots+(x_{n}-y_{n})^{2},\]
+
+the sum of the squares of the differences between their respective entries. Roughly speaking, the entries in the vectors all have equal status in determining the distance between them. For example, if \(x_{2}\) and \(y_{2}\) differ by one, the contribution to the square of the distance between them is the same as the contribution when \(x_{3}\) and \(y_{3}\) differ by one. This makes sense when the entries of the vectors \(x\) and \(y\) represent the same type of quantity, using the same units (say, at different times or locations), for example meters or dollars. For example if \(x\) and \(y\) are word count histograms, their entries are all word occurrence frequencies, and it makes sense to say they are close when their distance is small.
+
+When the entries of a vector represent different types of quantities, for example when the vector entries represent different types of features associated with an object, we must be careful about choosing the units used to represent the numerical values of the entries. If we want the different entries to have approximately equal status in determining distance, their numerical values should be approximately of the same magnitude. For this reason units for different entries in vectors are often chosen in such a way that their typical numerical values are similar in magnitude, so that the different entries play similar roles in determining distance.
+
+As an example suppose that the 2-vectors \(x\), \(y\), and \(z\) are the feature vectors for three houses that were sold, as in the example described on page 3.1. The first entry of each vector gives the house area and the second entry gives the number of
+
+\begin{table}
+\begin{tabular}{l c c c c c} \hline \hline  & Veterans & Memorial & Academy & Golden Globe & Super Bowl \\  & Day & Day & Awards & Awards & \\ \hline Veterans Day & 0 & 0.095 & 0.130 & 0.153 & 0.170 \\ Memorial Day & 0.095 & 0 & 0.122 & 0.147 & 0.164 \\ Academy A. & 0.130 & 0.122 & 0 & 0.108 & 0.164 \\ Golden Globe A. & 0.153 & 0.147 & 0.108 & 0 & 0.181 \\ Super Bowl & 0.170 & 0.164 & 0.164 & 0.181 & 0 \\ \hline \hline \end{tabular}
+\end{table}
+Table 3.1: Pairwise word count histogram distances between five Wikipedia articles.
+
+ 

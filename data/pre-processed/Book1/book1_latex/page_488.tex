@@ -1,0 +1,22 @@
+
+
+**29.**: \(\begin{bmatrix}a&a&a&a\\ a&b&b&b\\ a&b&c&c\\ a&b&c&d\end{bmatrix}=\begin{bmatrix}1\\ 1&1\\ 1&1&1\\ 1&1&1\end{bmatrix}\end{bmatrix}\begin{bmatrix}a&a&a\\ b-a&b-a&b-a\\ c-b&c-b\\ d-c\end{bmatrix}\)_._ Need \(\begin{bmatrix}a&a&a\\ b\neq a\\ c\neq b\\ d\neq c.\end{bmatrix}\)_
+**31.**: \(\begin{bmatrix}1&1\\ 0&1&1\\ 0&1&1\end{bmatrix}\begin{bmatrix}1&1&0\\ 1&1&1\\ 1&1\end{bmatrix}=LIU\)_;_ \(\begin{bmatrix}a&a&0\\ a&a+b&b\\ 0&b&b+c\end{bmatrix}=\text{(same $L$)}\begin{bmatrix}a&b\\ &b\\ &&c\end{bmatrix}\)_
+**33.**: \(\begin{bmatrix}1&0&0\\ 1&1&0\\ 1&1&1\end{bmatrix}c=\begin{bmatrix}4\\ 5\\ 6\end{bmatrix}\) gives \(c=\begin{bmatrix}4\\ 1\\ 1\end{bmatrix}\). \(\begin{bmatrix}1&1&1\\ 0&1&1\\ 0&0&1\end{bmatrix}x=\begin{bmatrix}4\\ 1\\ 1\end{bmatrix}\) gives \(x=\begin{bmatrix}3\\ 0\\ 1\end{bmatrix}\). \(A=LU\)_._
+**35.**: The 2 by 2 upper submatrix \(B\) has the first two pivots 2, 7. Reason: Elimination on \(A\) starts in the upper left corner with elimination on \(B\).
+**37.**: \(\begin{bmatrix}1&1&1&1\\ 1&2&3&4&5\\ 1&3&6&10&15\\ 1&4&10&20&35\\ 1&5&15&35&70\end{bmatrix}\)
+
+* \(\begin{bmatrix}1&\\ 1&1\\ 1&2&1\\ 1&3&3&1\\ 1&4&6&4&1\end{bmatrix}\)
+* \(\begin{bmatrix}1&1&1&1\\ 1&2&3&4\\ &1&3&\cdot&6\\ &&1&4&4\\ &&&1\end{bmatrix}\)
+* Each new _right-hand side_ costs only \(n^{2}\) steps compared to \(n^{3}/3\) for full elimination \(A\backslash b\).
+* \(2\) exchanges; \(3\) exchanges; \(50\) exchanges and then \(51\).
+* \(P=\begin{bmatrix}0&1&0\\ 0&0&1\\ 1&0&0\end{bmatrix}\); \(P_{1}=\begin{bmatrix}1&0&0\\ 0&0&1\\ 0&1&0\end{bmatrix}\) and \(P_{2}=\begin{bmatrix}0&0&1\\ 0&1&0\\ 1&0&0\end{bmatrix}\)
+* \((P_{2}\) gives a column exchange).
+* There are \(n!\) permutation matrices of order \(n\). Eventually two powers of \(P\)_must be the same_: If \(P^{r}=P^{s}\) then \(P^{r-s}=I\). Certainly \(r-s\leq n!\)
+* The solution is \(x=(1,1,\ldots,1)\). Then \(x=Px\).
+
+**Problem Set 1.6**, page 52
+
+1. \(A_{1}^{-1}=\begin{bmatrix}0&\frac{1}{3}\\ \frac{1}{2}&0\end{bmatrix}\); \(A_{2}^{-1}=\begin{bmatrix}\frac{1}{2}&0\\ -1&\frac{1}{2}\end{bmatrix}\); \(A_{3}^{-1}=\begin{bmatrix}\cos\theta&\sin\theta\\ -\sin\theta&\cos\theta\end{bmatrix}\).
+* \(A^{-1}=BC^{-1}\); \(A^{-1}=U^{-1}L^{-1}P\).
+

@@ -1,0 +1,22 @@
+
+Complexity of matrix multiplication.The total number of flops required for a matrix-matrix product \(C=AB\) with \(A\) of size \(m\times p\) and \(B\) of size \(p\times n\) can be found several ways. The product matrix \(C\) has size \(m\times n\), so there are \(mn\) elements to compute. The \(i,j\) element of \(C\) is the inner product of row \(i\) of \(A\) with column \(j\) of \(B\). This is an inner product of vectors of length \(p\) and requires \(2p-1\) flops. Therefore the total is \(mn(2p-1)\) flops, which we approximate as \(2mnp\) flops. The order of computing the matrix-matrix product is \(mnp\), the product of the three dimensions involved.
+
+In some special cases the complexity is less than \(2mnp\) flops. As an example, when we compute the \(n\times n\) Gram matrix \(G=B^{T}B\) we only need to compute the entries in the upper (or lower) half of \(G\), since \(G\) is symmetric. This saves around half the flops, so the complexity is around \(pn^{2}\) flops. But the order is the same.
+
+Complexity of sparse matrix multiplication.Multiplying sparse matrices can be done efficiently, since we don't need to carry out any multiplications in which one or the other entry is zero. We start by analyzing the complexity of multiplying a sparse matrix with a non-sparse matrix. Suppose that \(A\) is \(m\times p\) and sparse, and \(B\) is \(p\times n\), but not necessarily sparse. The inner product of the \(i\)th row \(a_{i}^{T}\) of \(A\) with the \(j\)th column of \(B\) requires no more than \(2\,\mathbf{nnz}(a_{i}^{T})\) flops. Summing over \(i=1,\ldots,m\) and \(j=1,\ldots,n\) we get \(2\,\mathbf{nnz}(A)n\) flops. If \(B\) is sparse, the total number of flops is no more that \(2\,\mathbf{nnz}(B)m\) flops. (Note that these formulas agree with the one given above, \(2mnp\), when the sparse matrices have all entries nonzero.)
+
+There is no simple formula for the complexity of multiplying two sparse matrices, but it is certainly no more than \(2\min\{\mathbf{nnz}(A)n,\mathbf{nnz}(B)m\}\) flops.
+
+Complexity of matrix triple product.Consider the product of three matrices,
+
+\[D=ABC\]
+
+with \(A\) of size \(m\times n\), \(B\) of size \(n\times p\), and \(C\) of size \(p\times q\). The matrix \(D\) can be computed in two ways, as \((AB)C\) and as \(A(BC)\). In the first method we start with \(AB\) (\(2mnp\) flops) and then form \(D=(AB)C\) (\(2mpq\) flops), for a total of \(2mp(n+q)\) flops. In the second method we compute the product \(BC\) (\(2npq\) flops) and then form \(D=A(BC)\) (\(2mnq\) flops), for a total of \(2nq(m+p)\) flops.
+
+You might guess that the total number of flops required is the same with the two methods, but it turns out it is not. The first method is less expensive when \(2mp(n+q)<2nq(m+p)\), _i.e._, when
+
+\[\frac{1}{n}+\frac{1}{q}<\frac{1}{m}+\frac{1}{p}.\]
+
+For example, if \(m=p\) and \(n=q\), the first method has a complexity proportional to \(m^{2}n\), while the second method has complexity \(mn^{2}\), and one would prefer the first method when \(m\ll n\).
+
+As a more specific example, consider the product \(ab^{T}c\), where \(a,b,c\) are \(n\)-vectors. If we first evaluate the outer product \(ab^{T}\), the cost is \(n^{2}\) flops, and we need to store \(n^{2}\) values. We then multiply the vector \(c\) by this \(n\times n\) matrix, which 

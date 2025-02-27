@@ -1,0 +1,27 @@
+Similarly, feasibility gives \(yAx\leq cx\). We get equality only when the second slackness condition is fulfilled. If there is an overpricing \((y^{*}A)_{j}<c_{j}\), it must be canceled through multiplication by \(x_{j}^{*}=0\). This leaves us with \(y^{*}b=cx^{*}\) in equation (3). This equality guarantees the optimality of \(x^{*}\) and \(y^{*}\).
+
+### The Proof of Duality
+
+The one-sided inequality \(yb\leq cx\) was easy to prove; it gave a quick test for optimal vectors (they turn it into an equality); and now it has given the slackness conditions in equation (2). The only thing it has not done is to show that \(y^{*}b=cx^{*}\) is really possible. Until those optimal vectors are actually produced, the duality theorem is not complete.
+
+To produce \(y^{*}\) we return to the simplex method--which has already computed \(x^{*}\). Our problem is to show that the method stopped in the right place for the dual problem (even though it was constructed to solve the primal). Recall that the \(m\) inequalities \(Ax\geq b\) were changed to equations by introducing the slack variables \(w=Ax-b\):
+
+\[\textbf{Primal feasibility}\qquad\begin{bmatrix}A&-I\end{bmatrix}\begin{bmatrix} x\\ w\end{bmatrix}=b\quad\text{and}\quad\begin{bmatrix}x\\ w\end{bmatrix}\geq 0.\] (4)
+
+Every simplex step picked \(m\) columns of the long matrix \([A\ -I]\) to be basic, and shifted them (theoretically) to the front. This produced \([B\ \ N]\). The same shift reordered the long cost vector \([c\ \ 0]\) into \([c_{B}\ \ c_{N}]\). The stopping condition, which brought the simplex method to an end, was \(r=c_{N}-c_{B}B^{-1}N\geq 0\).
+
+_This condition \(r\geq 0\) was finally met_, since the number of corners is finite. At that moment the cost was as low as possible:
+
+\[\textbf{Minimum cost}\qquad cx^{*}=\begin{bmatrix}c_{B}&c_{N}\end{bmatrix} \begin{bmatrix}B^{-1}b\\ 0\end{bmatrix}=c_{B}B^{-1}b.\] (5)
+
+_If we can choose \(y^{*}=c_{B}B^{-1}\) in the dual, we certainly have \(y^{*}b=cx^{*}\)._ The minimum and maximum will be equal. We have to show that this \(y^{*}\) satisfies the dual constraints \(yA\leq c\) and \(y\geq 0\):
+
+\[\textbf{Dual feasibility}\qquad y\begin{bmatrix}A&-I\end{bmatrix}\leq \begin{bmatrix}c&0\end{bmatrix}.\] (6)
+
+When the simplex method reshuffles the long matrix and vector to put the basic variables first, this rearranges the constraints in equation (6) into
+
+\[y\begin{bmatrix}B&N\end{bmatrix}\leq\begin{bmatrix}c_{B}&c_{N}\end{bmatrix}.\] (7)
+
+For \(y^{*}=c_{B}B^{-1}\), the first half is an equality and the second half is \(c_{B}B^{-1}N\leq c_{N}\). This is the stopping condition \(r\geq 0\) that we know to be satisfied! Therefore our \(y^{*}\) is feasible, and _the duality theorem is proved_. By locating the critical \(m\) by \(m\) matrix \(B\), which is nonsingular as long as degeneracy is forbidden, the simplex method has produced the optimal \(y^{*}\) as well as \(x^{*}\).
+
+ 

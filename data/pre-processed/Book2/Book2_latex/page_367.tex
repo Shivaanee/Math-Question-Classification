@@ -1,0 +1,15 @@
+
+
+## Chapter 17 Constrained least squares applications
+
+In this chapter we discuss several applications of equality constrained least squares.
+
+### 17.1 Portfolio optimization
+
+In _portfolio optimization_ (also known as _portfolio selection_), we invest in different assets, typically stocks, over some investment periods. The goal is to make investments so that the combined return on all our investments is consistently high. (We must accept the idea that for our average return to be high, we must tolerate some variation in the return, _i.e._, some risk.) The idea of optimizing a portfolio of assets was proposed in 1953 by Harry Markowitz, who won the Nobel prize in economics for this work in 1990. In this section we will show that a version of this problem can be formulated and solved as a linearly constrained least squares problem.
+
+#### Portfolio risk and return
+
+Portfolio allocation weights.We allocate a total amount of money to be invested in \(n\) different assets. The allocation across the \(n\) assets is described by an allocation \(n\)-vector \(w\), which satisfies \(\mathbf{1}^{T}w=1\), _i.e._, its entries sum to one. If a total (dollar) amount \(V\) is to be invested in some period, then \(Vw_{j}\) is the amount invested in asset \(j\). (This can be negative, meaning a short position of \(|Vw_{j}|\) dollars on asset \(j\).) The entries of \(w\) are called by various names including _fractional allocations_, _asset weights_, _asset allocations_, or just _weights_.
+
+For example, the asset allocation \(w=e_{j}\) means that we invest everything in asset \(j\). (In this way, we can think of the individual assets as simple portfolios.) The asset allocation \(w=(-0.2,0.0,1.2)\) means that we take a short position in asset \(1\) of one fifth of the total amount invested, and put the cash derived from the

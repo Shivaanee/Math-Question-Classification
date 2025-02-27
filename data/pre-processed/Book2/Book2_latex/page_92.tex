@@ -1,0 +1,14 @@
+
+
+#### Document topic discovery
+
+We start with a corpus of \(N=500\) Wikipedia articles, compiled from weekly lists of the most popular articles between September 6, 2015, and June 11, 2016. We remove the section titles and reference sections (bibliography, notes, references, further reading), and convert each document to a list of words. The conversion removes numbers and stop words, and applies a stemming algorithm to nouns and verbs. We then form a dictionary of all the words that appear in at least 20 documents. This results in a dictionary of 4423 words. Each document in the corpus is represented by a word histogram vector of length 4423.
+
+We apply the \(k\)-means algorithm with \(k=9\), and 20 randomly chosen initial partitions. The \(k\)-means algorithm converges to similar but slightly different clusterings of the documents in each case. Figure 4.10 shows the clustering objective versus iteration of the \(k\)-means algorithm for three of these, including the one that gave the lowest final value of \(J^{\mathrm{clust}}\), which we use below.
+
+Table 4.1 summarizes the clustering with the lowest value of \(J^{\mathrm{clust}}\). For each of the nine clusters we show the largest ten coefficients of the word histogram of the cluster representative. Table 4.2 gives the size of each cluster and the titles of the ten articles closest to the cluster representative.
+
+Each of the clusters makes sense, and mostly contains documents on similar topics, or similar themes. The words with largest coefficients in the group representatives also make sense. It is interesting to see that \(k\)-means clustering has assigned movies and TV series (mostly) to different clusters (9 and 6). One can also note that clusters 8 and 9 share several top key words but are on separate topics (actors and movies, respectively).
+
+Figure 4.10: Clustering objective \(J^{\mathrm{clust}}\) after each iteration of the \(k\)-means algorithm, for three initial partitions, on Wikipedia word count histograms.
+

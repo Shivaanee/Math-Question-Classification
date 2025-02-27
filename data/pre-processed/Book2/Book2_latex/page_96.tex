@@ -1,0 +1,5 @@
+_imputing_ the missing entries. In our example, we might want to guess the age of the person whose age we do not know.
+
+We can use clustering, and the \(k\)-means algorithm in particular, to guess the missing entries. We first carry out \(k\)-means clustering on our data, using only those vectors that are complete, _i.e._, all of their entries are known. Now consider a vector \(x\) in our collection that is missing one or more entries. Since some of the entries of \(x\) are unknown, we cannot find the distances \(\|x-z_{j}\|\), and therefore we cannot say which group representative is closest to \(x\). Instead we will find the closest group representative to \(x\) using only the known entries in \(x\), by finding \(j\) that minimizes
+
+\[\sum_{i\in\mathcal{K}}(x 

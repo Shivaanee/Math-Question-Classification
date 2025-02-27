@@ -1,0 +1,18 @@
+In our discussion of algebraic operations with linear transformations we have not yet said anything about invertibility. One specific question of interest is this. For which linear operators \(T\) on the space \(V\) does there exist a linear operator \(T^{-1}\) such that \(TT^{-1}=T^{-1}T=I\)?
+
+The function \(T\) from \(V\) into \(W\) is called **invertible** if there exists a function \(U\) from \(W\) into \(V\) such that \(UT\) is the identity function on \(V\) and \(TU\) is the identity function on \(W\). If \(T\) is invertible, the function \(U\) is unique and is denoted by \(T^{-1}\). (See Appendix.) Furthermore, \(T\) is invertible if and only if
+
+1. \(T\) is \(1\!:\!1\), that is, \(T\alpha=T\beta\) implies \(\alpha=\beta\);
+2. \(T\) is onto, that is, the range of \(T\) is (all of) \(W\).
+
+**Theorem 7**.: _Let \(V\) and \(W\) be vector spaces over the field \(F\) and let \(T\) be a linear transformation from \(V\) into \(W\). If \(T\) is invertible, then the inverse function \(T^{-1}\) is a linear transformation \(from\)\(W\) onto \(V\)._
+
+Proof.: We repeat ourselves in order to underscore a point. When \(T\) is one-one and onto, there is a uniquely determined inverse function \(T^{-1}\) which maps \(W\) onto \(V\) such that \(T^{-1}T\) is the identity function on \(V\), and \(TT^{-1}\) is the identity function on \(W\). What we are proving here is that if a linear function \(T\) is invertible, then the inverse \(T^{-1}\) is also linear.
+
+Let \(\beta_{1}\) and \(\beta_{2}\) be vectors in \(W\) and let \(c\) be a scalar. We wish to show that
+
+\[T^{-1}(c\beta_{1}+\beta_{2})=cT^{-1}\beta_{1}+T^{-1}\beta_{2}.\]
+
+Let \(\alpha_{i}=T^{-1}\beta_{i}\), \(i=1,2\), that is, let \(\alpha_{i}\) be the unique vector in \(V\) such that \(T\alpha_{i}=\beta_{i}\). Since \(T\) is linear,
+
+\[\eqalign{T(c\alpha_{1}+\alpha_{i})&=cT\alpha_{1}+T\alpha_{2}\cr&=c\beta_{1}+ \beta_{2}.\cr}\ 

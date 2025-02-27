@@ -1,0 +1,23 @@
+
+
+## Chapter 18 Nonlinear least squares
+
+In previous chapters we studied the problems of solving a set of linear equations or finding a least squares approximate solution to them. In this chapter we study extensions of these problems in which linear is replaced with nonlinear. These nonlinear problems are in general hard to solve exactly, but we describe a heuristic algorithm that often works well in practice.
+
+### 18.1 Nonlinear equations and least squares
+
+#### Nonlinear equations
+
+Consider a set of \(m\) possibly nonlinear equations in \(n\) unknowns (or variables) \(x=(x_{1},\ldots,x_{n})\), written as
+
+\[f_{i}(x)=0,\qquad i=1,\ldots,m,\]
+
+where \(f_{i}:\mathbf{R}^{n}\rightarrow\mathbf{R}\) is a scalar-valued function. We refer to \(f_{i}(x)=0\) as the \(i\)th equation. For any \(x\) we call \(f_{i}(x)\) the \(i\)th _residual_, since it is a quantity we want to be zero. Many interesting practical problems can be expressed as the problem of solving, possibly approximately, a set of nonlinear equations.
+
+We take the right-hand side of the equations to be zero to simplify the problem notation. If we need to solve \(f_{i}(x)=b_{i}\), \(i=1,\ldots,m\), where \(b_{i}\) are some given nonzero numbers, we define \(\tilde{f}_{i}(x)=f_{i}(x)-b_{i}\), and solve \(\tilde{f}_{i}(x)=0\), \(i=1,\ldots,m\), which gives us a solution of the original equations. Assuming the right-hand sides of the equations are zero will simplify formulas and equations.
+
+We often write the set of equations in the compact vector form
+
+\[f(x)=0,\] (18.1)
+
+where \(f(x)=(f_{1}(x),\ldots,f_{m}(x))\) is an \(m\)-vector, and the zero vector on the right-hand side has dimension \(m\). We can think of \(f\) as a function that maps \(n\)-vectors to \(m\)-vectors, _i.e._, \(f:\mathbf{R}^{n}\rightarrow\mathbf{R}^{m}\). We refer to the \(m\)-vector \(f(x)\) as the residual

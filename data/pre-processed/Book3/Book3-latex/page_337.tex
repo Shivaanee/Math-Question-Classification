@@ -1,0 +1,31 @@
+\[\begin{bmatrix}A_{11}&\cdots&A_{1k}\\ \vdots&&\vdots\\ A_{k1}&\cdots&A_{kk}\end{bmatrix}\]
+
+a linear combination of its other columns. Such operations do not change determinants. That proves (9-6), except for the trivial observation that because \(B\) is triangular \(\Delta_{k}(B)=B_{11}\cdots B_{kk}\). Since \(A\) and \(P\) are invertible, \(B\) is invertible. Therefore,
+
+\[\Delta(B)=B_{11}\cdots B_{nn}\neq 0\]
+
+and so \(\Delta_{k}(A)\neq 0\), \(k=1\), \(\ldots,n\).
+
+**Theorem 6.**_Let \(f\) be a form on a finite-dimensional vector space \(V\) and let \(\Lambda\) be the matrix of \(f\) in an ordered basis \(\otimes\). Then \(f\) is a positive form if and only if \(\Lambda=\Lambda^{*}\) and the principal minors of \(\Lambda\) are all positive._
+
+Let's do the interesting half of the theorem first. Suppose that \(A=A^{*}\) and \(\Delta_{k}(A)>0\), \(1\leq k\leq n\). By the lemma, there exists an (unique) upper-triangular matrix \(P\) with \(P_{kk}=1\) such that \(B=AI^{\prime}\) is lower-triangular. The matrix \(P^{*}\) is lower-triangular, so that \(P^{*}B=I^{*}AP\) is also lower-triangular. Since \(A\) is self-adjoint, the matrix \(D=P^{*}AI^{\prime}\) is self-adjoint. \(\Lambda\) self-adjoint triangular matrix is necessarily a diagonal matrix. By the same reasoning which led to (9-6),
+
+\[\begin{array}{rcl}\Delta_{k}(D)&=&\Delta_{k}(P^{*}B)\\ &=&\Delta_{k}(B)\\ &=&\Delta_{k}(A).\end{array}\]
+
+Since \(D\) is diagonal, its principal minors are
+
+\[\Delta_{k}(D)=D_{11}\cdots D_{kk}.\]
+
+From \(\Delta_{k}(D)>0\), \(1\leq k\leq n\), we obtain \(D_{kk}>0\) for each \(k\).
+
+If \(A\) is the matrix of the form \(f\) in the ordered basis \(\otimes=\{\alpha_{1},\,\ldots,\,\alpha_{n}\}\), then \(D=P^{*}AP\) is the matrix of \(f\) in the basis \(\{\alpha^{\prime}_{1},\,\ldots,\,\alpha^{\prime}_{n}\}\) defined by
+
+\[\alpha^{\prime}_{j}=\sum_{i=1}^{n}P_{ij}\alpha_{i}\]
+
+See (9-2). Since \(D\) is diagonal with positive entries on its diagonal, it is obvious that
+
+\[X^{*}DX>0,\qquad X\neq 0\]
+
+from which it follows that \(f\) is a positive form.
+
+Now, suppose we start with a positive form \(f\). We know that \(A=A^{*}\). How do we show that \(\Delta_{k}(A)>0\), \(1\leq k\leq n\)? Let \(V_{k}\) be the subspace spanned by \(\alpha_{1},\,\ldots,\,\alpha_{k}\) and let \(f_{k}\) be the restriction of \(f\) to \(V_{k}\bigtimes V_{k}\). Evi 

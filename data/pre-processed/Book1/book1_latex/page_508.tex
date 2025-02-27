@@ -1,0 +1,29 @@
+
+
+**7.**: Cofactor expansion: \(\det=4(3)-4(1)+4(-4)-4(1)=-12\).
+**9.**: (a) \((n-1)\dot{n}!\) (each term \(n-1\)). (b) \(\left(1+\frac{1}{2!}+\cdots+\frac{1}{(n-1)!}\right)n!\).
+**(c) \(\frac{1}{3}(n^{3}+2n-3)\).**
+**11.**: \(\left[\begin{matrix}0&A\\ -B&I\end{matrix}\right]\left[\begin{matrix}I&0\\ B&I\end{matrix}\right]=\left[\begin{matrix}AB&A\\ 0&I\end{matrix}\right]\), \(\det\left[\begin{matrix}I&0\\ B&I\end{matrix}\right]=1\Rightarrow\det\left[\begin{matrix}0&A\\ -B&I\end{matrix}\right]=\)
+
+\(\det\left[\begin{matrix}AB&\cdot A\\ \cdot&0&I\end{matrix}\right]=\det\left(AB\right)\). Test \(A=[1&2]\), \(B=\left[\begin{matrix}1\\ 2\end{matrix}\right]\), \(\det\left[\begin{matrix}0&A\\ -B&I\end{matrix}\right]=5=\det\left(AB\right)\); \(A=\left[\begin{matrix}1\\ 2\end{matrix}\right]\), \(B=[1&2]\), \(\det\left[\begin{matrix}0&A\\ -B&I\end{matrix}\right]=0=\det\left(AB\right)\). Singular: \(\operatorname{rank}(AB)\leq\operatorname{rank}(A)\leq n<m\).
+**13.**: \(\det A=1+18+12-9-4-6=12\), so rows are independent; \(\det B=0\), so rows are dependent (row \(1+\) row \(2=\) row \(3\)); \(\det C=-1\), \(C\) has independent rows.
+**15.**: Each of the six terms in \(\det A\) is zero; the rank is at most \(2\); column \(2\) has no pivot.
+**17.**: \(a_{11}a_{23}a_{32}a_{44}\) has \(-\), \(a_{14}a_{23}a_{32}a_{41}\) has \(+\), so \(\det A=0\); \(\det B=2\cdot 4\cdot 4\cdot 2-1\cdot 4\cdot 4\cdot 1=48\).
+**19.**: (a) If \(a_{11}=a_{22}=a_{33}=0\) then four terms are sure zeros.
+**20.**: Fifteen terms are zero.
+**21.**: Some term \(a_{1\alpha}a_{2\beta}\cdots a_{n\omega}\) in the big formula is not zero! Move rows \(1\), \(2\), \(\ldots\), \(n\) into rows \(\alpha\), \(\beta\), \(\ldots\), \(\omega\). Then these nonzero \(a\)'s will be on the main diagonal.
+**22.**: \(4!/2=12\) even permutations; \(\det\left(I+P_{\text{even}}\right)=16\) or \(4\) or \(0\) (\(16\) comes from \(I+I\)).
+**23.**: \(C=\left[\begin{matrix}3&2&1\\ 2&4&2\\ 1&2&3\end{matrix}\right]\) and \(AC^{\text{T}}=\left[\begin{matrix}4&0&0\\ 0&4&0\\ 0&0&4\end{matrix}\right]=4I\). Therefore \(A^{-1}=\frac{1}{4}C^{\text{T}}\).
+**24.**: \(|B_{n}|=|A_{n}|-|A_{n-1}|=(n+1)-n=1\).
+**25.**: We must choose \(1\)s from columns \(2\) and \(1\), columns \(4\) and \(3\), and so on. Therefore \(n\) must be even to have \(\det A_{n}\neq 0\). The number of exchanges is \(\frac{1}{2}n\) so \(C_{n}=(-1)^{n/2}\).
+**31.**: \(S_{1}=3\), \(S_{2}=8\), \(S_{3}\). \(=21\). The rule looks like every second number in Fibonacci's sequence \(\ldots\), \(3\), \(5\), \(8\), \(13\), \(21\), \(34\), \(55\), \(\ldots\) so the guess is \(S_{4}=55\). The five nonzero terms in the big formula for \(S_{4}\) are (with \(3\)s where Problem 39 has \(2\)s) \(81+1-9-9-9-9=55\).
+**33.**: Changing \(3\) to \(2\) in the corner reduces the determinant \(F_{2n+2}\) by \(1\) times the cofactor of that corner entry. This cofactor is the determinant of \(S_{n-1}\) (one size smaller), which is \(F_{2n}\). Therefore changing \(3\) to \(2\) changes the determinant to \(F_{2n+2}-F_{2n}\), which is \(F_{2n+1}\).
+**35.**: (a) Every \(\det L=1\); \(\det U_{k}=\det A_{k}=2\), \(6\), \(-6\) for \(k=1,2\), \(3\).
+**26.**: Pivots \(5\), \(\frac{6}{5}\), \(\frac{7}{6}\).
+**37.**: The six terms are correct. Row \(1-2\) row \(2+\) row \(3=0\), so the matrix is singular.
+**38.**: The five nonzero terms in \(\det A=5\) are
+
+\((2)(2)(2)\ +\ (-1)(-1)(-1)(-1)\ -\ (-1)(-1)(2)(2)\ -\ (2)(2)(-1)(-1)\)
+
+\(-\ (2)(-1)(-1)(2)\).
+

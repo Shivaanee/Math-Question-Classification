@@ -1,0 +1,13 @@
+
+
+## Chapter Linear Programming and Game Theory
+
+### 8.1 Linear Inequalities
+
+Algebra is about equations, and analysis is often about inequalities. The line between them has always seemed clear. But I have realized that this chapter is a counterexample: _linear programming is about inequalities_, but it is unquestionably a part of linear algebra. It is also extremely useful--business decisions are more likely to involve linear programming than determinants or eigenvalues.
+
+There are three ways to approach the underlying mathematics: intuitively through the geometry, computationally through the simplex method, or algebraically through duality. These approaches are developed in Sections 8.1, 8.2, and 8.3. Then Section 8.4 is about problems (like marriage) in which the solution is an integer. Section 8.5 discusses poker and other matrix games. The MIT students in _Bringing Down the House_ counted high cards to win at blackjack (Las Vegas follows fixed rules, and a true matrix game involves random strategies).
+
+Section 8.3 has something new in this fourth edition. The simplex method is now in a lively competition with a completely different way to do the computations, called an **interior point method**. The excitement began when Karmarkar claimed that his version was 50 times faster than the simplex method. (His algorithm, outlined in 8.2, was one of the first to be patented--something we then believed impossible, and not really desirable.) That claim brought a burst of research into methods that approach the solution from the "interior" where all inequalities are strict: \(x\geq 0\) becomes \(x>0\). The result is now a great way to get help from the dual problem in solving the primal problem.
+
+One key to this chapter is to see the geometric meaning of _linear inequalities_. An inequality divides \(n\)-dimensional space into a _halfspace_ in which the inequality is satisfied, and a halfspace in which it is not. A typical example is \(x+2y\geq 4\). The boundary between the two halfspaces is the line \(x+2y=4\), where the inequality is "tight." Figure 8.1 would look almost the same in three dimensions. The boundary becomes a plane like \(x+2y+z=4\), and above it is the halfspace \(x+2y+z\geq 4\). In \(n\) dimensions, the

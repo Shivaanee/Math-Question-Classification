@@ -1,0 +1,33 @@
+
+
+#### Taylor approximation
+
+Suppose \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\) is differentiable, _i.e._, has partial derivatives, and \(z\) is an \(n\)-vector. The first-order Taylor approximation of \(f\) near \(z\) is given by
+
+\[\hat{f}(x)_{i} = f_{i}(z)+\frac{\partial f_{i}}{\partial x_{1}}(z)(x_{1}-z_{1})+ \cdots+\frac{\partial f_{i}}{\partial x_{n}}(z)(x_{n}-z_{n})\] \[= f_{i}(z)+\nabla f_{i}(z)^{T}(x-z),\]
+
+for \(i=1,\ldots,m\). (This is just the first-order Taylor approximation of each of the scalar-valued functions \(f_{i}\), described in SS2.2.) For \(x\) near \(z\), \(\hat{f}(x)\) is a very good approximation of \(f(x)\). We can express this approximation in compact notation, using matrix-vector multiplication, as
+
+\[\hat{f}(x)=f(z)+Df(z)(x-z),\] (8.3)
+
+where the \(m\times n\) matrix \(Df(z)\) is the _derivative_ or _Jacobian_ matrix of \(f\) at \(z\) (see SSC.1). Its components are the partial derivatives of \(f\),
+
+\[Df(z)_{ij}=\frac{\partial f_{i}}{\partial x_{j}}(z),\quad i=1,\ldots,m,\quad j =1,\ldots,n,\]
+
+evaluated at the point \(z\). The rows of the Jacobian are \(\nabla f_{i}(z)^{T}\), for \(i=1,\ldots,m\). The Jacobian matrix is named for the mathematician Carl Gustav Jacob Jacobi.
+
+As in the scalar-valued case, Taylor approximation is sometimes written with a second argument as \(\hat{f}(x;z)\) to show the point \(z\) around which the approximation is made. Evidently the Taylor series approximation \(\hat{f}\) is an affine function of \(x\). (It is often called a linear approximation of \(f\), even though it is not, in general, a linear function.)
+
+#### Regression model
+
+Recall the regression model (2.7)
+
+\[\hat{y}=x^{T}\beta+v,\] (8.4)
+
+where the \(n\)-vector \(x\) is a feature vector for some object, \(\beta\) is an \(n\)-vector of weights, \(v\) is a constant (the offset), and \(\hat{y}\) is the (scalar) value of the regression model prediction.
+
+Now suppose we have a set of \(N\) objects (also called _samples_ or _examples_), with feature vectors \(x^{(1)},\ldots,x^{(N)}\). The regression model predictions associated with the examples are given by
+
+\[\hat{y}^{(i)}=(x^{(i)})^{T}\beta+v,\quad i=1,\ldots,N.\]
+
+These numbers usually correspond to predictions of the value of the outputs or responses. If in addition to the example feature vectors \(x^{(i)}\) we are also given the

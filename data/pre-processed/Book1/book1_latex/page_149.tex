@@ -1,0 +1,19 @@
+
+
+**7.**: If that second graph represents six games between four teams, and the score differences are \(b_{1},\ldots,b_{6}\), when is it possible to assign potentials \(x_{1},\ldots,x_{4}\) so that the potential differences agree with the \(b\)'s? You are finding (from Kirchhoff or from elimination) the conditions that make \(Ax=b\) solvable.
+**8.**: Write down the dimensions of the four fundamental subspaces for this 6 by 4 incidence matrix, and a basis for each subspace.
+**9.**: Compute \(A^{\mathrm{T}}A\) and \(A^{\mathrm{T}}CA\), where the 6 by 6 diagonal matrix \(C\) has entries \(c_{1},\ldots,c_{6}\). How can you tell from the graph where the \(c\)'s will appear on the main diagonal of \(A^{\mathrm{T}}CA\)?
+**10.**: Draw a graph with numbered and directed edges (and numbered nodes) whose incidence matrix is
+
+\[A=\begin{bmatrix}-1&1&0&0\\ -1&0&1&0\\ 0&1&0&-1\\ 0&0&-1&1\end{bmatrix}.\]
+
+Is this graph a tree? (Are the rows of \(A\) independent?) Show that removing the last edge produces a spanning tree. Then the remaining rows are a basis for \(\underline{\phantom{-}}\)?
+**11.**: With the last column removed from the preceding \(A\), and with the numbers 1. 2, 2, 1 on the diagonal of \(C\), write out the 7 by 7 system
+
+\[\begin{array}{ccccl}C^{-1}y&+&Ax&=&0\\ A^{\mathrm{T}}y&&=&f.\end{array}\]
+
+Eliminating \(y_{1}\), \(y_{2}\), \(y_{3}\), \(y_{4}\) leaves three equations \(A^{\mathrm{T}}CAx=-f\) for \(x_{1}\), \(x_{2}\), \(x_{3}\). Solve the equations when \(f=(1,1,6)\). With those currents entering nodes 1, 2, 3 of the network, what are the potentials at the nodes and currents on the edges?
+**12.**: If \(A\) is a 12 by 7 incidence matrix from a connected graph, what is its rank? How many free variables are there in the solution to \(Ax=b\)? How many free variables are there in the solution to \(A^{\mathrm{T}}y=f\)? How many edges must be removed to leave a spanning tree?
+**13.**: In the graph above with 4 nodes and 6 edges, find all 16 spanning trees.
+**14.**: If MIT beats Harvard 35-0, Yale ties Harvard, and Princeton beats Yale 7-6, what score differences in the other 3 games (H-P MIT-P, MIT-Y) will allow potential differences that agree with the score differences? If the score differences are known for the games in a spanning tree, they are known for all games.
+**15.**: In our method for football rankings, should the strength of the opposition be considered -- or is that already built in?

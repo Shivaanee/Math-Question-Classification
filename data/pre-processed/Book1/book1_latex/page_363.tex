@@ -1,0 +1,34 @@
+One more preliminary remark. The two parts of this hook were linked by the chapter on determinants. Therefore we ask what part determinants play. _It is not enough to require that the determinant of \(A\) is positive_. If \(a=c=-1\) and \(b=0\). then \(\det A=1\) but \(A=-I=\) negative definite. The determinant test is applied not only to \(A\) itself, giving \(ac-b^{2}>0\), but also to the \(1\) by \(1\) submatrix \(a\) in the upper left-hand corner.
+
+The natural generalization will involve all \(n\) of the _upper left submatrices_ of \(A\):
+
+\[A_{1}=\begin{bmatrix}a_{11}\end{bmatrix},\qquad A_{2}=\begin{bmatrix}a_{11}&a _{12}\\ a_{21}&a_{22}\end{bmatrix},\qquad A_{3}=\begin{bmatrix}a_{11}&a_{12}&a_{13}\\ a_{21}&a_{22}&a_{23}\\ a_{31}&a_{32}&a_{33}\end{bmatrix},\cdots,\qquad A_{n}=A.\]
+
+Here is the main theorem on positive definiteness, and a reasonably detailed proof:
+
+6BEach of the following tests is a necessary and sufficient condition for the real symmetric matrix \(A\) to be _positive definite_:
+
+1. \(x^{\mathrm{T}}kx>0\) for all nonzero real vectors \(x\).
+2. All the eigenvalues of \(A\) satisfy \(\lambda_{i}>0\).
+3. All the upper left submatrices \(A_{k}\) have positive determinants.
+4. All the pivots (without row exchanges) satisfy \(d_{k}>0\).
+
+Proof.: Condition I defines a positive definite matrix. Our first step shows that each eigenvalue will be positive:
+
+\[\text{If}\quad Ax=\lambda x,\quad\text{then}\quad x^{\mathrm{T}}Ax=x^{\mathrm{ T}}\lambda x=\lambda\left\|x\right\|^{2}.\]
+
+_A positive definite matrix has positive eigenvalues, since \(x^{\mathrm{T}}Ax>0\)._
+
+Now we go in the other direction. If all \(\lambda_{i}>0\), we have to prove \(x^{\mathrm{T}}Ax>0\) for every vector \(x\) (not just the eigenvectors). Since symmetric matrices have a full set of orthonormal eigenvectors, any \(x\) is a combination \(c_{1}x_{1}+\cdots+c_{n}x_{n}\). Then
+
+\[Ax=c_{1}Ax_{1}+\cdots+c_{n}Ax_{n}=c_{1}\lambda_{1}x_{1}+\cdots+c_{n}\lambda_{ n}x_{n}.\]
+
+Because of the orthogonality \(x_{i}^{\mathrm{T}}x_{i}=0\), and the normalization \(x_{i}^{\mathrm{T}}x_{i}=1\),
+
+\[\begin{split} x^{\mathrm{T}}Ax&=\left(c_{1}x_{1}^{ \mathrm{T}}+\cdots+c_{n}x_{n}^{\mathrm{T}}\right)\left(c_{1}\lambda_{1}x_{1}+ \cdots+c_{n}\lambda_{n}x_{n}\right)\\ &=c_{1}^{2}\lambda_{1}+\cdots+c_{n}^{2}\lambda_{n}.\end{split}\] (2)
+
+If every \(\lambda_{i}>0\), then equation (2) shows that \(x^{\mathrm{T}}Ax>0\). Thus condition II implies condition I.
+
+_If condition I holds, so does condition III_: The determinant of \(A\) is the product of the eigenvalues. And if condition I holds, we already know that these eigenvalues are positive. But we also have to deal with every upper left submatrix \(A_{k}\). The trick is to look at all nonzero vectors whose last \(n-k\) components are zero:
+
+\[x^{\mathrm{T}}Ax=\begin{bmatrix}x_{k}^{\mathrm{T}}&0\end{bmatrix} \begin{bmatrix}A_{k}&*\\ *&*\end{bmatrix}\begin{bmatrix}x_{k}\\ 0\end{bmatrix}=x_{k}^{\mathrm{T}}A_{k}x_{k}>0.\] 

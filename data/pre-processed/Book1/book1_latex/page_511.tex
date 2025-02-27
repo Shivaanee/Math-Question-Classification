@@ -1,0 +1,21 @@
+17. The third row contains 6, 5, 4.
+19. \(A\) and \(A^{2}\) and \(A^{\infty}\) all have the same eigenvectors. The eigenvalues are 1 and 0.5 for \(A\), 1 and 0.25 for \(A^{2}\), 1 and 0 for \(A^{\infty}\). Therefore \(A^{2}\) is halfway between \(A\) and \(A^{\infty}\).
+21. \(\lambda_{1}=4\) and \(\lambda_{2}=-1\) (check trace and determinant) with \(x_{1}=(1,2)\) and \(x_{2}=(2,-1)\). \(A^{-1}\) has the same eigenvectors as \(A\), with eigenvalues \(1/\lambda_{1}=1/4\) and \(1/\lambda_{2}=-1\).
+23. 1. Multiply \(Ax\) to see \(\lambda x\) which reveals \(\lambda\). 2. Solve \((A-\lambda I)x=0\) to find \(x\).
+25. 1. \(Pu=(uu^{\mathrm{T}})u=u(u^{\mathrm{T}}u)=u\), so \(\lambda=1\). 2. 2. \(Pu=(uu^{\mathrm{T}})v=u(u^{\mathrm{T}}v)=0\), so \(\lambda=0\). 3. \(x_{1}=(-1,1,0,0)\), \(x_{2}=(-3,0,1,0)\), \(x_{3}=(-5,0,0,1)\) are orthogonal to \(u\), so they are eigenvectors of \(P\) with \(\lambda=0\).
+27. \(\lambda^{3}-1=0\) gives \(\lambda=1\) and \(\lambda=\frac{1}{2}(-1\pm i\sqrt{3})\); the three eigenvalues are \(1\), \(1\), \(-1\).
+29. 1. \(\mathrm{rank}=2\). 2. \(\mathrm{det}\,(B^{\mathrm{T}}B)=0\). _Not_ 3. 4. \((B+I)^{-1}\) has \((\lambda+1)^{-1}=1\), \(\frac{1}{2}\), \(\frac{1}{3}\).
+31. \(a=0\), \(b=9\), \(c=0\) multiply \(1\), \(\lambda\), \(\lambda^{2}\) in \(\det\,(A-\lambda I)=9\lambda-\lambda^{3}\): \(A=\) _companion matrix_.
+33. \(\begin{bmatrix}0&0\\ 1&0\end{bmatrix}\), \(\begin{bmatrix}0&1\\ 0&0\end{bmatrix}\), \(\begin{bmatrix}-1&1\\ -1&1\end{bmatrix}\). Always \(A^{2}=\) zero matrix if \(\lambda=0,0\) (Cayley-Hamilton).
+35. \(Ax=c_{1}\lambda_{1}x_{1}+\cdots+c_{n}\lambda_{n}x_{n}\) equals \(Bx=c_{1}\lambda_{1}x_{1}+\cdots+c_{n}\lambda_{n}x_{n}\) for all \(x\). So \(A=B\).
+37. \(\begin{bmatrix}a&b\\ c&d\end{bmatrix}\begin{bmatrix}1\\ 1\end{bmatrix}=\begin{bmatrix}a+b\\ c+d\end{bmatrix}=(a+b)\begin{bmatrix}1\\ 1\end{bmatrix}\); \(\lambda_{2}=d-b\) to produce trace \(=a+d\).
+39. We need \(\lambda^{3}=1\) but not \(\lambda=1\) (to avoid \(I\)). With \(\lambda_{1}=e^{2\pi i/3}\) and \(\lambda_{2}=e^{-2\pi i/3}\), the determinant will be \(\lambda_{1}\lambda_{2}=1\) and the trace is \(\lambda_{1}+\lambda_{2}=\cos\frac{2\pi}{3}+i\,\sin\frac{2\pi}{3}+\cos\frac{2 \pi}{3}-i\,\sin\frac{2\pi}{3}=-1\). One matrix with this trace \(-1\) and determinant 1 is \(A=\begin{bmatrix}-1&1\\ -1&0\end{bmatrix}\).
+
+### Problem Set 5.2, page 250
+
+1. \(\begin{bmatrix}1&1\\ 1&1\end{bmatrix}=\begin{bmatrix}1&1\\ 1&-1\end{bmatrix}\begin{bmatrix}2&0\\ 0&0\end{bmatrix}\begin{bmatrix}1&1\\ 1&-1\end{bmatrix}^{-1}\); \(\begin{bmatrix}2&1\\ 0&0\end{bmatrix}=\begin{bmatrix}1&1\\ 0&-2\end{bmatrix}\begin{bmatrix}2&0\\ 0&0\end{bmatrix}\begin{bmatrix}1&1\\ 0&-2\end{bmatrix}^{-1}\).
+3. \(\lambda=0\), 0, 3; the third column of \(S\) is a multiple of \(\begin{bmatrix}1\\ 1\\ 1\end{bmatrix}\) and the other columns are on the plane orthogonal to it.
+4. \(A_{1}\) and \(A_{3}\) cannot be diagonalized. They have only one line of eigenvectors.
+5. \(A=\begin{bmatrix}3&1\\ 1&-1\end{bmatrix}\begin{bmatrix}5&0\\ 0&1\end{bmatrix}\begin{bmatrix}3&1\\ 1&-1\end{bmatrix}^{-1}\) gives \(A^{100}=\begin{bmatrix}3&1\\ 1&-1\end{bmatrix}\begin{bmatrix}5^{100}&0\\ 0&1\end{bmatrix}\begin{bmatrix}3&1\\ 1&-1\end{bmatrix}^{-1}\)= \(\dfrac{1}{4}\begin{bmatrix}3\cdot 5^{100}+1&3\cdot 5^{100}-3\\ 5^{100}-1&5^{100}+3\end{bmatrix}\).
+
+ 

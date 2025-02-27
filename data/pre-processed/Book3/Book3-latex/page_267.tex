@@ -1,0 +1,25 @@
+Proof: If \(M=0\), there is nothing to prove. If \(M\neq 0\), we shall give an algorithm for finding a matrix \(M^{\prime}\) which is equivalent to \(M\) and which has the form
+
+\[M^{\prime}=\begin{bmatrix}f_{1}&0&\cdots&0\\ 0&&&\\ \vdots&&R&\\ 0&&&\end{bmatrix}\] (7-35)
+
+where \(R\) is an \((m-1)\times(n-1)\) matrix and \(f_{1}\) divides every entry of \(R\). We shall then be finished, because we can apply the same procedure to \(R\) and obtain \(f_{1}\), etc.
+
+Let \(l(M)\) be the minimum of the degrees of the non-zero entries of \(M\). Find the first column which contains an entry with degree \(l(M)\) and interchange that column with column \(1\). Call the resulting matrix \(M^{(0)}\). We describe a procedure for finding a matrix of the form
+
+\[\begin{bmatrix}g&0&\cdots&0\\ 0&&&\\ \vdots&&S&\\ 0&&&\end{bmatrix}\] (7-36)
+
+which is equivalent to \(M^{(0)}\). We begin by applying to the matrix \(M^{(0)}\) the procedure of the lemma before Theorem 6, a procedure which we shall call PL6. There results a matrix
+
+\[M^{(0)}=\begin{bmatrix}p&a&\cdots&b\\ 0&c&\cdots&d\\ \vdots&\vdots&&\vdots\\ 0&e&\cdots&f\end{bmatrix}.\] (7-37)
+
+If the entries \(a,\ldots,b\) are all \(0\), fine. If not, we use the analogue of PL6 for the first row, a procedure which we might call PL6\({}^{\prime}\). The result is a matrix
+
+\[M^{(2)}=\begin{bmatrix}q&0&\cdots&0\\ a^{\prime}&c^{\prime}&\cdots&e^{\prime}\\ \vdots&\vdots&&\vdots\\ b^{\prime}&d^{\prime}&\cdots&f^{\prime}\end{bmatrix}\] (7-38)
+
+where \(q\) is the greatest common divisor of \(p\), \(a\), \(\ldots,b\). In producing \(M^{(2)}\), we may or may not have disturbed the nice form of column \(1\). If we did, we can apply PL6 once again. Here is the point. In not more than \(l(M)\) steps:
+
+\[M^{(0)}\stackrel{{\text{PL6}}}{{\longrightarrow}}M^{(1)} \stackrel{{\text{PL6}^{\prime}}}{{\longrightarrow}}M^{(2)} \stackrel{{\text{PL6}}}{{\longrightarrow}}\cdots\to M^{(t)}\]
+
+we must arrive at a matrix \(M^{(t)}\) which has the form (7-36), because at each successive step we have \(l(M^{(k+1)})<l(M^{(k)})\). We name the process which we have just defined P7-36:
+
+\[M^{(0)}\stackrel{{\text{P7-36}}}{{\longrightarrow}}M^{(t)}.\] 

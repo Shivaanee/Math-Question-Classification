@@ -1,0 +1,31 @@
+Those new unknowns \(y_{1},\dots,y_{\ell}\) are called **Lagrange multipliers**. They build the constraint into a function \(L(x,y)\). This was the brilliant insight of Lagrange:
+
+\[L(x,y)=P(x)+y^{\mathrm{T}}(Cx-d)=\frac{1}{2}x^{\mathrm{T}}Ax-x^{\mathrm{T}}b+x^ {\mathrm{T}}C^{\mathrm{T}}y-y^{\mathrm{T}}d.\]
+
+That term in \(L\) is chosen exactly so that \(\partial L/\partial y=0\) brings back \(Cx=d\). When we set the derivatives of \(L\) to zero, we have \(n+\ell\) equations for \(n+\ell\) unknowns \(x\) and \(y\):
+
+\[\begin{array}{llll}\textbf{Constrained}&\partial L/\partial x=0:&Ax+C^{ \mathrm{T}}y=b\\ \textbf{minimization}&\partial L/\partial y=0:&Cx&=d\end{array}\] (4)
+
+The first equations involve the mysterious unknowns \(y\). You might well ask what they represent. Those "dual unknowns" \(y\) tell how much the constrained minimum \(P_{C/\min}\) (which only allows \(x\) when \(Cx=d\)) exceeds the unconstrained \(P_{\min}\) (allowing all \(x\)):
+
+\[\textbf{Sensitivity of minimum}\qquad P_{C/\min}=P_{\min}+\frac{1}{2}y^{\mathrm{T}}( CA^{-1}b-d)\geq P_{\min}.\] (5)
+
+**Example 2**.: Suppose \(P(x_{1},x_{2})=\frac{1}{2}x_{1}^{2}+\frac{1}{2}x_{2}^{2}\). Its smallest value is certainly \(P_{\min}=0\). This unconstrained problem has \(n=2\), \(A=I\), and \(b=0\). So the minimizing equation \(Ax=b\) just gives \(x_{1}=0\) and \(x_{2}=0\).
+
+Now add one constraint \(c_{1}x_{1}+c_{2}x_{2}=d\). This puts \(x\) on a line in the \(x_{1}\)-\(x_{2}\) plane. The old minimizer \(x_{1}=x_{2}=0\) is not on the line. The Lagrangian function \(L(x,y)=\frac{1}{2}x_{1}^{2}+\frac{1}{2}x_{2}^{2}+y(c_{1}x_{1}+c_{2}x_{2}-d)\) has \(n+\ell=2+1\) partial derivatives:
+
+\[\begin{array}{llll}\partial L/\partial x_{1}=0&x_{1}+c_{1}y=0\\ \partial L/\partial x_{2}=0&x_{2}+c_{2}y=0\\ \partial L/\partial y=0&c_{1}x_{1}+c_{2}x_{2}=d.\end{array}\] (6)
+
+Substituting \(x_{1}=-c_{1}y\) and \(x_{2}=-c_{2}y\) into the third equation gives \(-c_{1}^{2}y-c_{2}^{2}y=d\).
+
+\[\textbf{Solution}\qquad y=\frac{-d}{c_{1}^{2}+c_{2}^{2}}\qquad x_{1}=\frac{c_{ 1}d}{c_{1}^{2}+c_{2}^{2}}\qquad x_{2}=\frac{c_{2}d}{c_{1}^{2}+c_{2}^{2}}.\] (7)
+
+The constrained minimum of \(P=\frac{1}{2}x^{\mathrm{T}}x\) is reached at that solution point:
+
+\[P_{C/\min}=\frac{1}{2}x_{1}^{2}+\frac{1}{2}x_{2}^{2}=\frac{1}{2}\frac{c_{1}^{ 2}d^{2}+c_{2}^{2}d^{2}}{(c_{1}^{2}+c_{2}^{2})^{2}}=\frac{1}{2}\frac{d^{2}}{c_ {1}^{2}+c_{2}^{2}}.\] (8)
+
+This equals \(-\frac{1}{2}yd\) as predicted in equation (5), since \(b=0\) and \(P_{\min}=0\).
+
+Figure 5 shows what problem the linear algebra has solved, if the constraint keeps \(x\) on a line \(2x_{1}-x_{2}=5\). We are looking for **the closest point to \((0,0)\) on this line**. The solution is \(x=(2,-1)\). We expect this shortest vector \(x\) to be perpendicular to the line, and we are right.
+
+ 

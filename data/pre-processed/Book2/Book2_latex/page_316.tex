@@ -1,0 +1,27 @@
+
+
+**14.6**: _Polynomial classifier with one feature._ Generate 200 points \(x^{(1)},\ldots,x^{(200)}\), uniformly spaced in the interval \([-1,1]\), and take
+
+\[y^{(i)}=\left\{\begin{array}{ll}+1&-0.5\leq x^{(i)}<0.1\text{ or }0.5\leq x^{(i)} \\ -1&\text{otherwise}\end{array}\right.\]
+
+for \(i=1,\ldots,200\). Fit polynomial least squares classifiers of degrees \(0,\ldots,8\) to this training data set.
+
+1. Evaluate the error rate on the training data set. Does the error rate decrease when you increase the degree?
+2. For each degree, plot the polynomial \(\tilde{f}(x)\) and the classifier \(\hat{f}(x)=\mathbf{sign}(\tilde{f}(x))\).
+3. It is possible to classify this data set perfectly using a classifier \(\hat{f}(x)=\mathbf{sign}(\tilde{f}(x))\) and a cubic polynomial \[\tilde{f}(x)=c(x+0.5)(x-0.1)(x-0.5),\] for any positive \(c\). Compare this classifier with the least squares classifier of degree 3 that you found and explain why there is a difference.
+**14.7**: _Polynomial classifier with two features._ Generate 200 random 2-vectors \(x^{(1)},\ldots,x^{(200)}\) in a plane, from a standard normal distribution. Define
+
+\[y^{(i)}=\left\{\begin{array}{ll}+1&x_{1}^{(i)}x_{2}^{(i)}\geq 0\\ -1&\text{otherwise}\end{array}\right.\]
+
+for \(i=1,\ldots,200\). In other words, \(y^{(i)}\) is \(+1\) when \(x^{(i)}\) is in the first or third quadrant, and \(-1\) otherwise. Fit a polynomial least squares classifier of degree 2 to the data set, _i.e._, use a polynomial
+
+\[\tilde{f}(x)=\theta_{1}+\theta_{2}x_{1}+\theta_{3}x_{2}+\theta_{4}x_{1}^{2}+ \theta_{5}x_{1}x_{2}+\theta_{6}x_{2}^{2}.\]
+
+Give the error rate of the classifier. Show the regions in the plane where \(\hat{f}(x)=1\) and \(\hat{f}(x)=-1\). Also compare the computed coefficients with the polynomial \(\tilde{f}(x)=x_{1}x_{2}\), which classifies the data points with zero error.
+**14.8**: _Author attribution._ Suppose that the \(N\) feature \(n\)-vectors \(x^{(1)},\ldots,x^{(N)}\) are word count histograms, and the labels \(y^{(1)},\ldots,y^{(N)}\) give the document authors (as one of \(1,\ldots,K\)). A classifier guesses which of the \(K\) authors wrote an unseen document, which is called _author attribution_. A least squares classifier using regression is fit to the data, resulting in the classifier
+
+\[\hat{f}(x)=\operatorname*{argmax}_{k=1,\ldots,K}(x^{T}\beta_{k}+v_{k}).\]
+
+For each author (_i.e._, \(k=1,\ldots,K\)) we find the ten largest (most positive) entries in the \(n\)-vector \(\beta_{k}\) and the ten smallest (most negative) entries. These correspond to two sets of ten words in the dictionary, for each author. Interpret these words, briefly, in English.
+**14.9**: _Nearest neighbor interpretation of multi-class classifier._ We consider the least squares \(K\)-class classifier of SS14.3.1. We associate with each data point the \(n\)-vector \(x\), and the label or class, which is one of \(1,\ldots,K\). If the class of the data point is \(k\), we associate it with a \(K\)-vector \(y\), whose entries are \(y_{k}=+1\) and \(y_{j}=-1\) for \(j\neq k\). (We can write this vector as \(y=2e_{k}-\mathbf{1}\).) Define \(\tilde{y}=(\tilde{f}_{1}(x),\ldots,\tilde{f}_{K}(x))\), which is our (real-valued or continuous) prediction of the label \(y\). Our multi-class prediction is given by \(\hat{f}(x)=\operatorname*{argmax}_{k=1,\ldots,K}\tilde{f}_{k}(x)\). Show that \(\hat{f}(x)\) is also the index of the nearest neighbor of \(\tilde{y}\) among the vectors \(2e_{k}-\mathbf{1}\), for \(k=1,\ldots,K\). In other words, our guess \(\hat{y}\) for the class is the nearest neighbor of our continuous prediction \(\tilde{y}\), among the vectors that encode the class labels.
+

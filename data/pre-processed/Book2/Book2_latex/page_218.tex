@@ -1,0 +1,27 @@
+argument works when \(n\) is odd. Lump the first entry in the sum together with the last entry, the second entry together with the second-to-last entry, and so on. Each of these pairs add up to \(2n\); since there are \(n/2\) such pairs, the total is \((n/2)(2n)=n^{2}\).
+
+Solving linear equations using the QR factorization.The formula (11.3) for the inverse of a matrix in terms of its QR factorization suggests a method for solving a square system of linear equations \(Ax=b\) with \(A\) invertible. The solution
+
+\[x=A^{-1}b=R^{-1}Q^{T}b\] (11.4)
+
+can be found by first computing the matrix-vector product \(y=Q^{T}b\), and then solving the triangular equation \(Rx=y\) by back substitution.
+
+Solving linear equations via QR factorization given an \(n\times n\) invertible matrix \(A\) and an \(n\)-vector \(b\).
+
+1. _QR factorization._ Compute the QR factorization \(A=QR\).
+2. Compute \(Q^{T}b\).
+3. _Back substitution._ Solve the triangular equation \(Rx=Q^{T}b\) using back substitution.
+
+The first step requires \(2n^{3}\) flops (see SS5.4), the second step requires \(2n^{2}\) flops, and the third step requires \(n^{2}\) flops. The total number of flops is then
+
+\[2n^{3}+3n^{2}\approx 2n^{3},\]
+
+so the order is \(n^{3}\), cubic in the number of variables, which is the same as the number of equations.
+
+In the complexity analysis above, we found that the first step, the QR factorization, dominates the other two; that is, the cost of the other two is negligible in comparison to the cost of the first step. This has some interesting practical implications, which we discuss below.
+
+Factor-solve methods.Algorithm 11.2 is similar to many methods for solving a set of linear equations and is sometimes referred to as a _factor-solve_ scheme. A factor-solve scheme consists of two steps. In the first (factor) step the coefficient matrix is factored as a product of matrices with special properties. In the second (solve) step one or more linear equations that involve the factors in the factorization are solved. (In algorithm 11.2, the solve step consists of steps 2 and 3.) The complexity of the solve step is smaller than the complexity of the factor step, and in many cases, it is negligible by comparison. This is the case in algorithm 11.2, where the factor step has order \(n^{3}\) and the solve step has order \(n^{2}\).
+
+Factor-solve methods with multiple right-hand sides.Now suppose that we must solve several sets of linear equations,
+
+\[Ax_{1}=b_{1},\ \ \ldots,\ Ax_{k}=b_{k},\] 

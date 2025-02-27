@@ -1,0 +1,11 @@
+occurs around \(\lambda=0.079\); any choice between around \(\lambda=0.065\) and \(0.100\) (say) would be reasonable. The horizontal dashed lines show the 'true' values of the coefficients (_i.e._, the ones we used to synthesize the data) given in (15.8). We can see that for \(\lambda\) near \(0.079\), our estimated parameters are close to the 'true' values.
+
+Linear independence of columns.One side benefit of adding regularization to the basic least squares data fitting method, as in (15.7), is that the columns of the associated stacked matrix are _always linearly independent_, even if the columns of the matrix \(A\) are not. To see this, suppose that
+
+\[\left[\begin{array}{c}A\\ \sqrt{\lambda}B\end{array}\right]x=0,\]
+
+where \(B\) is the \((p-1)\times p\) selector matrix
+
+\[B=(e_{2}^{T},\ldots,e_{p}^{T}),\]
+
+so \(B\theta=\theta_{2:p}\). From the last \(p-1\) entries in the equation above, we get \(\sqrt{\lambda}x_{i}=0\) for \(i=2,\ldots,p\), which implies that \(x_{2}=\cdots=x_{p}=0\). Using these values of \(x_{2},\ldots,x_{p}\) 

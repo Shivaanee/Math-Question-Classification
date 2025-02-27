@@ -1,0 +1,18 @@
+
+
+**4.**: For the positive definite \(A=\left[\begin{smallmatrix}2&-1\\ -1&2\end{smallmatrix}\right]\), compute \(\|A^{-1}\|=1/\lambda_{1}\), \(\|A\|=\lambda_{2}\), and \(c(A)=\lambda_{2}/\lambda_{1}\). Find a right-hand side \(b\) and a perturbation \(\delta b\) so that the error is the worst possible, \(\|\delta x\|/\|x\|=c\|\delta b\|/\|b\|\).
+**5.**: Show that if \(\lambda\) is any eigenvalue of \(A\), \(Ax=\lambda x\), then \(|\lambda|\leq\|A\|\).
+**6.**: The matrices in equation (4) have norms between 100 and 101. Why?
+**7.**: Comparing the eigenvalues of \(A^{\rm T}A\) and \(AA^{\rm T}\), prove that \(\|A\|=\|A^{\rm T}\|\).
+**8.**: For a positive definite \(A\), the Cholesky decomposition is \(A=LDL^{\rm T}=R^{\rm T}R\), where \(R=\sqrt{D}L^{\rm T}\). Show directly from equation (12) that the condition number of \(c(R)\) is the square root of \(c(A)\). Elimination without row exchanges cannot hurt a positive definite matrix, since \(c(A)=c(R^{\rm T})c(R)\).
+**9.**: Show that \(\max|\lambda|\) is not a true norm, by finding 2 by 2 counterexamples to \(\lambda_{\max}(A+B)\leq\lambda_{\max}(A)+\lambda_{\max}(B)\) and \(\lambda_{\max}(AB)\leq\lambda_{\max}(A)\lambda_{\max}(B)\).
+**10.**: Show that the eigenvalues of \(B=\left[\begin{smallmatrix}0&A\\ A^{\rm T}&0\end{smallmatrix}\right]\) are \(\pm\sigma_{i}\), the singular values of \(A\). _Hint_: Try \(B^{2}\).
+**11.**:
+1. Do \(A\) and \(A^{-1}\) have the same condition number \(c\)? 2. In parallel with the upper bound (8) on the error, prove a lower bound: \[\frac{\|\delta x\|}{\|x\|}\geq\frac{1}{c}\frac{\|\delta b\|}{\|b\|}.\qquad( \text{Consider }A^{-1}b=x\text{ instead of }Ax=b\text{.})\]
+**12.**: Find the norms \(\lambda_{\max}\) and condition numbers \(\lambda_{\max}/\lambda_{\min}\) of these positive definite matrices: \[\left[\begin{matrix}100&0\\ 0&2\end{matrix}\right]\qquad\left[\begin{matrix}2&1\\ 1&2\end{matrix}\right]\qquad\left[\begin{matrix}3&1\\ 1&1\end{matrix}\right].\]
+**13.**: Find the norms and condition numbers from the square roots of \(\lambda_{\max}(A^{\rm T}A)\) and \(\lambda_{\min}(A^{\rm T}A)\): \[\left[\begin{matrix}-2&0\\ 0&2\end{matrix}\right]\qquad\left[\begin{matrix}1&1\\ 0&0\end{matrix}\right]\qquad\left[\begin{matrix}1&1\\ -1&1\end{matrix}\right].\]
+**14.**: Prove that the condition number \(\|A\|\|A^{-1}\|\) is at least 1.
+**15.**: Why is \(I\) the only symmetric positive definite matrix that has \(\lambda_{\max}=\lambda_{\min}=1\)? Then the only matrices with \(\|A\|=1\) and \(\|A^{-1}\|=1\) must have \(A^{\rm T}A=I\). They are \(\underline{\underline{\underline{\underline{\underline{\underline{\underline{ \underline{\underline{\underline{\underline{\underline{\underline{\underline{ \underline{ \underline{ \underline{ \underline }}}}}}}}}}}}}}}\).
+**
+**16.**: Orthogonal matrices have norm \(\|Q\|=1\). If \(A=QR\), show that \(\|A\|\leq\|R\|\) and also \(\|R\|\leq\|A\|\). Then \(\|A\|=\|Q\|\|R\|\). Find an example of \(A=LU\) with \(\|A\|<\|L\|\|U\|\).
+

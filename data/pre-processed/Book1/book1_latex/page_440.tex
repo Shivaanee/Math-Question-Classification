@@ -1,0 +1,29 @@
+writing out all matrices in full !). For computational purposes (except for small problems in textbooks), the day of the tableau is over.
+
+To see why, remember that after the most negative coefficient in \(r\) indicates which column \(u\) will enter the basis, none of the other columns above \(r\) will be used. _It was a waste of time to compute them_. In a larger problem, hundreds of columns would be computed time and time again, just waiting for their turn to enter the basis. It makes the theory clear to do the eliminations so completely and reach \(R\). But in practice this cannot be justified.
+
+It is quicker, and in the end simpler, to see what calculations are really necessary. Each simplex step exchanges a column of \(N\) for a column of \(B\). Those columns are decided by \(r\) and \(\alpha\). This step begins with the current basis matrix \(B\) and the current solution \(x_{B}=B^{-1}b\).
+
+**A Step of the Simplex Method**
+
+Compute the row vector \(\lambda=c_{B}B^{-1}\) and the reduced costs \(r=c_{N}-\lambda N\).
+
+If \(r\geq 0\), stop: the current solution is optimal. Otherwise, if \(r_{i}\) is the most negative component, choose \(u=\) column \(i\) of \(N\) to enter the basis.
+
+Compute the ratios of \(B^{-1}b\) to \(B^{-1}u\), admitting only positive components of \(B^{-1}u\). (If \(B^{-1}u<0\), the minimal cost is \(-\infty\).) When the smallest ratio occurs at component \(k\), the \(k\)th column of the current \(B\) will leave.
+
+Update \(B\), \(B^{-1}\), or \(LU\), and the solution \(x_{B}=B^{-1}b\). Return to step 1.
+
+This is sometimes called the _revised simplex method_ to distinguish it from the operations on a tableau. It is really the simplex method itself, boiled down.
+
+This discussion is finished once we decide how to compute steps 1, 3, and 4:
+
+\[\lambda=c_{B}B^{-1},\qquad v=B^{-1}u,\quad\text{and}\quad x_{B}=B^{-1}b.\] (4)
+
+The most popular way is to work directly with \(B^{-1}\), calculating it explicitly at the first corner. At succeeding corners, the pivoting step is simple. When column \(k\) of the identity matrix is replaced by \(u\), column \(k\) of \(B^{-1}\) is replaced by \(v=B^{-1}u\). To recover the identity matrix, elimination will multiply the old \(B^{-1}\) by
+
+\[E^{-1}=\begin{bmatrix}1&v_{1}&&\\ &\cdot&\cdot&\\ &&v_{k}&\\ &&\cdot&\cdot&\\ &&v_{n}&1\end{bmatrix}^{-1}=\begin{bmatrix}1&&-v_{1}/v_{k}&\\ &\cdot&\cdot&\\ &&1/v_{k}&\\ &&\cdot&\cdot&\\ &&-v_{n}/v_{k}&1\end{bmatrix}\] (5)
+
+Many simplex codes use the _product form of the inverse_, which saves these simple matrices \(E^{-1}\) instead of directly updating \(B^{-1}\). When needed, they are applied to \(b\) and \(c_{B}\). At regular intervals (maybe every 40 simplex steps), \(B^{-1}\) is recomputed and the \(E^{-1}\) are erased. Equation (5) is checked in Problem 9 at the end of this section.
+
+ 

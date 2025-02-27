@@ -1,0 +1,33 @@
+
+
+### Difference Equations and Powers \(A^{k}\)
+
+Difference equations \(u_{k+1}=Au_{k}\) move forward in a finite number of finite steps. A differential equation takes an infinite number of infinitesimal steps, but the two theories stay absolutely in parallel. It is the same analogy between the discrete and the continuous that appears over and over in mathematics. A good illustration is compound interest, when the time step gets shorter.
+
+Suppose you invest $1000 at 6% interest. Compounded once a year, the principal \(P\) is multiplied by \(1.06\). _This is a difference equation \(P_{k+1}=AP_{k}=1.06P_{k}\) with a time step of one year_. After 5 years, the original \(P_{0}=1000\) has been multiplied 5 times:
+
+\[\mbox{\bf Yearly}\qquad P_{5}=(1.06)^{5}P_{0}\quad\mbox{which is}\quad(1.06)^{5}1000= \$1338.\]
+
+Now suppose the time step is reduced to a month. The new difference equation is \(p_{k+1}=(1+.06/12)p_{k}\). After 5 years, or 60 months, you have $11 more:
+
+\[\mbox{\bf Monthly}\qquad p_{60}=\left(1+\frac{.06}{12}\right)^{60}p_{0}\quad \mbox{which is}\quad(1.005)^{60}1000=\$1349.\]
+
+The next step is to compound every day, on 5(365) days. This only helps a little:
+
+\[\mbox{\bf Daily compounding}\qquad\left(1+\frac{.06}{365}\right)^{5\cdot 365}1000= \$1349.83.\]
+
+Finally, to keep their employees really moving, banks offer _continuous compounding_. The interest is added on at every instant, and the difference equation breaks down. You can hope that the treasurer does not know calculus (which is all about limits as \(\Delta t\to 0\)). The bank could compound the interest \(N\) times a year, so \(\Delta t=1/N\):
+
+\[\mbox{\bf Continuously}\qquad\left(1+\frac{.06}{N}\right)^{5N}1000\to e^{ \cdot 30}1000=\$1349.87.\]
+
+Or the bank can switch to a differential equation--the limit of the difference equation \(p_{k+1}=(1+.06\Delta t)p_{k}\). Moving \(p_{k}\) to the left side and dividing by \(\Delta t\),
+
+\[\begin{array}{l}\mbox{\bf Discrete to}\\ \mbox{\bf continuous}\qquad\frac{p_{k+1}-p_{k}}{\Delta t}=.06p_{k}\quad\mbox{ approaches}\quad\frac{dp}{dt}=.06p.\end{array}\] (1)
+
+_The solution is \(p(t)=e^{.06t}p_{0}\). After \(t=5\) years, this again amounts to $1349.87$. The principal stays finite, even when it is compounded every instant--and the improvement over compounding every day is only four cents._
+
+### Fibonacci Numbers
+
+The main object of this section is to solve \(u_{k+1}=Au_{k}\). That leads us to \(A^{k}\) and **powers of matrices**. Our second example is the famous _Fibonacci sequence_:
+
+\[\mbox{\bf Fibonacci numbers}\qquad 0,1,1,2,3,5,8,13,\ldots.\]

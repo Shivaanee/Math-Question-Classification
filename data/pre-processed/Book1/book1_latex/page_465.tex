@@ -1,0 +1,25 @@
+As in duality theory, _maximin \(\leq\) minimax_ is easy. We combine the definition in equation (1) of \(x^{*}\) and the definition in equation (2) of \(y^{*}\):
+
+\[\max_{x}\min_{y}yAx=\min_{y}yAx^{*}\leq y^{*}Ax^{*}\leq\max_{x}y^{*}Ax=\min_{y }\max_{x}yAx.\] (5)
+
+This only says that if \(X\) can guarantee to win at least \(\alpha\), and \(Y\) can guarantee to lose no more than \(\beta\), then \(\alpha\leq\beta\). The achievement of von Neumann was to prove that \(\alpha=\beta\). The minimax theorem means that equality must hold throughout equation (5).
+
+For us, the striking thing about the proof is that _it uses exactly the same mathematics as the theory of linear programming_. \(X\) and \(Y\) are playing "dual" roles. They are both choosing strategies from the "feasible set" of probability vectors: \(x_{i}\geq 0\), \(\sum x_{i}=1\), \(y_{i}\geq 0\), \(\sum y_{i}=1\). What is amazing is that even von Neumann did not immediately recognize the two theories as the same. (He proved the minimax theorem in 1928, linear programming began before 1947, and Gale, Kuhn, and Tucker published the first proof of duality in 1951--based on von Neumann's notes!) We are reversing history by deducing the minimax theorem from duality.
+
+Briefly, the minimax theorem can be proved as follows. Let \(b\) be the column vector of \(m\) 1s, and \(c\) be the row vector of \(n\) 1s. These linear programs are dual:
+
+\begin{tabular}{l l l} **(P)** & minimize \(cx\) & **(D)** & maximize \(yb\) \\  & subject to \(Ax\geq b\), \(x\geq 0\) & subject to \(yA\leq c\), \(y\geq 0\). \\ \end{tabular}
+
+To make sure that both problems are feasible, add a large number \(\alpha\) to all entries of \(A\). This cannot affect the optimal strategies, since every payoff goes up by \(\alpha\). For the resulting matrix, which we still denote by \(A\), \(y=0\) is feasible in the dual and any large \(x\) is feasible in the primal.
+
+The duality theorem of linear programming guarantees optimal \(x^{*}\) and \(y^{*}\) with \(cx^{*}=y^{*}b\). Because of the 1s in \(b\) and \(c\), this means that \(\sum x_{i}^{*}=\sum y_{i}^{*}=S\). Division by \(S\) changes the sums to 1--and _the resulting mixed strategies \(x^{*}/S\) and \(y^{*}/S\) are optimal_. For any other strategies \(x\) and \(y\),
+
+\[Ax^{*}\geq b\quad\mbox{implies}\quad yAx^{*}\geq yb=1\quad\mbox{and}\quad y^ {*}A\leq c\quad\mbox{implies}\quad y^{*}Ax\leq cx=1.\]
+
+The main point is that \(y^{*}Ax\leq 1\leq yAx^{*}\). Dividing by \(S\), this says that player \(X\) cannot win more than \(1/S\) against the strategy \(y^{*}/S\), and player \(Y\) cannot lose less than \(1/S\) against \(x^{*}/S\). Those strategies give \(\mbox{maximin}=\mbox{minimax}=1/S\).
+
+### Real Games
+
+This completes the theory, but it leaves a natural question: Which ordinary games are actually equivalent to "matrix games"? _Do chess and bridge and poker fit into von Neumann's theory?_
+
+I think chess does not fit very well, for two reasons. A strategy for black must include a decision on how to respond to white's first play, and second play, and so on to the end 

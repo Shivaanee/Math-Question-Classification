@@ -1,0 +1,33 @@
+To find \(\nabla f(x)_{k}\) we take the partial derivative of \(f\) with respect to \(x_{k}\). Differentiating the sum term by term, we get
+
+\[\nabla f(x)_{k} = \frac{\partial f}{\partial x_{k}}(x)\] \[= \sum_{i=1}^{m}2\left(\sum_{j=1}^{n}A_{ij}x_{j}-b_{i}\right)(A_{ik})\] \[= \sum_{i=1}^{m}2(A^{T})_{ki}(Ax-b)_{i}\] \[= \left(2A^{T}(Ax-b)\right)_{k}.\]
+
+This is our formula (12.3), written out in terms of its components.
+
+Now we continue the derivation of the solution of the least squares problem. Any minimizer \(\hat{x}\) of \(\|Ax-b\|^{2}\) must satisfy
+
+\[\nabla f(\hat{x})=2A^{T}(A\hat{x}-b)=0,\]
+
+which can be written as
+
+\[A^{T}A\hat{x}=A^{T}b.\] (12.4)
+
+These equations are called the _normal equations_. The coefficient matrix \(A^{T}A\) is the Gram matrix associated with \(A\); its entries are inner products of columns of \(A\).
+
+Our assumption (12.2) that the columns of \(A\) are linearly independent implies that the Gram matrix \(A^{T}A\) is invertible (SS11.5, page 214). This implies that
+
+\[\hat{x}=(A^{T}A)^{-1}A^{T}b\] (12.5)
+
+is the only solution of the normal equations (12.4). So this must be the unique solution of the least squares problem (12.1).
+
+We have already encountered the matrix \((A^{T}A)^{-1}A^{T}\) that appears in (12.5): It is the pseudo-inverse of the matrix \(A\), given in (11.5). So we can write the solution of the least squares problem in the simple form
+
+\[\hat{x}=A^{\dagger}b.\] (12.6)
+
+We observed in SS11.5 that \(A^{\dagger}\) is a left inverse of \(A\), which means that \(\hat{x}=A^{\dagger}b\) solves \(Ax=b\) if this set of over-determined equations has a solution. But now we see that \(\hat{x}=A^{\dagger}b\) is the least squares approximate solution, _i.e._, it minimizes \(\|Ax-b\|^{2}\). (And if there is a solution of \(Ax=b\), then \(\hat{x}=A^{\dagger}b\) is it.)
+
+The equation (12.6) looks very much like the formula for solution of the linear equations \(Ax=b\), when \(A\) is square and invertible, _i.e._, \(x=A^{-1}b\). It is very important to understand the difference between the formula (12.6) for the least squares approximate solution, and the formula for the solution of a square set of linear equations, \(x=A^{-1}b\). In the case of linear equations and the inverse, \(x=A^{-1}b\) actually satisfies \(Ax=b\). In the case of the least squares approximate solution, \(\hat{x}=A^{\dagger}b\) generally _does not_ satisfy \(A\hat{x}=b\).
+
+The formula (12.6) shows us that the solution \(\hat{x}\) of the least squares problem is a _linear_ function of \(b\). This generalizes the fact that the solution of a square invertible set of linear equations is a linear function of its right-hand side.
+
+ 

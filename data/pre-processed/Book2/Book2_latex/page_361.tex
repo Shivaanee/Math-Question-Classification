@@ -1,0 +1,23 @@
+We have seen the matrix in this formula before: It is the pseudo-inverse of a wide matrix with linearly independent rows. So we can express the solution of the least norm problem (16.2) in the very compact form
+
+\[\hat{x}=C^{\dagger}d.\]
+
+In SS11.5, we saw that \(C^{\dagger}\) is a right inverse of \(C\); here we see that not only does \(\hat{x}=C^{\dagger}d\) satisfy \(Cx=d\), but it gives the vector of least norm that satisfies \(Cx=d\).
+
+In SS11.5, we also saw that the pseudo-inverse of \(C\) can be expressed as \(C^{\dagger}=QR^{-T}\), where \(C^{T}=QR\) is the QR factorization of \(C^{T}\). The solution of the least norm problem can therefore be expressed as
+
+\[\hat{x}=QR^{-T}d\]
+
+and this leads to an algorithm for solving the least norm problem via the QR factorization.
+
+``` given a \(p\times n\) matrix \(C\) with linearly independent rows and a \(p\)-vector \(d\).
+
+1. QR factorization. Compute the QR factorization \(C^{T}=QR\).
+2. Compute \(\hat{x}\). Solve \(R^{T}y=d\) by forward substitution.
+3. Compute \(\hat{x}=Qy\). ```
+
+**Algorithm 16.3** Least norm via QR factorization
+
+The complexity of this algorithm is dominated by the cost of the QR factorization in step 1, _i.e._, \(2np^{2}\) flops.
+
+ 

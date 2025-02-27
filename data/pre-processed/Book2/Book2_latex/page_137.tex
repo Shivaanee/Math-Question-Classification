@@ -1,0 +1,18 @@
+
+
+**6.18**: _Vandermonde matrices._ A Vandermonde matrix is an \(m\times n\) matrix of the form
+
+\[V=\left[\begin{array}{ccccc}1&t_{1}&t_{1}^{2}&\cdots&t_{1}^{n-1}\\ 1&t_{2}&t_{2}^{2}&\cdots&t_{2}^{n-1}\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ 1&t_{m}&t_{m}^{2}&\cdots&t_{m}^{n-1}\end{array}\right]\]
+
+where \(t_{1},\ldots,t_{m}\) are numbers. Multiplying an \(n\)-vector \(c\) by the Vandermonde matrix \(V\) is the same as evaluating the polynomial of degree less than \(n\), with coefficients \(c_{1},\ldots,c_{n}\), at the points \(t_{1},\ldots,t_{m}\); see page 120. Show that the columns of a Vandermonde matrix are linearly independent if the numbers \(t_{1},\ldots,t_{m}\) are distinct, _i.e._, different from each other. _Hint_. Use the following fact from algebra: If a polynomial \(p\) with degree less than \(n\) has \(n\) or more roots (points \(t\) for which \(p(t)=0\)) then all its coefficients are zero.
+**6.19**: _Back-test timing._ The \(T\times n\) asset returns matrix \(R\) gives the returns of \(n\) assets over \(T\) periods. (See page 120.) When the \(n\)-vector \(w\) gives a set of portfolio weights, the \(T\)-vector \(Rw\) gives the time series of portfolio return over the \(T\) time periods. Evaluating portfolio return with past returns data is called _back-testing_.
+
+Consider a specific case with \(n=5000\) assets, and \(T=2500\) returns. (This is 10 years of daily returns, since there are around 250 trading days in each year.) About how long would it take to carry out this back-test, on a 1 Gflop/s computer?
+**6.20**: _Complexity of matrix-vector multiplication._ On page 123 we worked out the complexity of computing the \(m\)-vector \(Ax\), where \(A\) is an \(m\times n\) matrix and \(x\) is an \(n\)-vector, when each entry of \(Ax\) is computed as an inner product of a row of \(A\) and the vector \(x\). Suppose instead that we compute \(Ax\) as a linear combination of the columns of \(A\), with coefficients \(x_{1},\ldots,x_{n}\). How many flops does this method require? How does it compare to the method described on page 123?
+**6.21**: _Complexity of matrix-sparse-vector multiplication._ On page 123 we consider the complexity of computing \(Ax\), where \(A\) is a sparse \(m\times n\) matrix and \(x\) is an \(n\)-vector \(x\) (not assumed to be sparse). Now consider the complexity of computing \(Ax\) when the \(m\times n\) matrix \(A\) is not sparse, but the \(n\)-vector \(x\) is sparse, with \(\mathbf{nnz}(x)\) nonzero entries. Give the total number of flops in terms of \(m\), \(n\), and \(\mathbf{nnz}(x)\), and simplify it by dropping terms that are dominated by others when the dimensions are large. _Hint_. The vector \(Ax\) is a linear combination of \(\mathbf{nnz}(x)\) columns of \(A\).
+**6.22**: _Distribute or not?_ Suppose you need to compute \(z=(A+B)(x+y)\), where \(A\) and \(B\) are \(m\times n\) matrices and \(x\) and \(y\) are \(n\)-vectors.
+
+* What is the approximate flop count if you evaluate \(z\) as expressed, _i.e._, by adding \(A\) and \(B\), adding \(x\) and \(y\), and then carrying out the matrix-vector multiplication?
+* What is the approximate flop count if you evaluate \(z\) as \(z=Ax+Ay+Bx+By\), _i.e._, with four matrix-vector multiplies and three vector additions?
+* Which method requires fewer flops? Your answer can depend on \(m\) and \(n\). _Remark._ When comparing two computation methods, we usually do not consider a factor of 2 or 3 in flop counts to be significant, but in this exercise you can.
+

@@ -1,0 +1,15 @@
+Sparsity.A vector is said to be _sparse_ if many of its entries are zero; its _sparsity pattern_ is the set of indices of nonzero entries. The number of the nonzero entries of an \(n\)-vector \(x\) is denoted \(\mathbf{nnz}(x)\). Unit vectors are sparse, since they have only one nonzero entry. The zero vector is the sparsest possible vector, since it has no nonzero entries. Sparse vectors arise in many applications.
+
+## 2 Examples
+
+An \(n\)-vector can be used to represent \(n\) quantities or values in an application. In some cases the values are similar in nature (for example, they are given in the same physical units); in others, the quantities represented by the entries of the vector are quite different from each other. We briefly describe below some typical examples, many of which we will see throughout the book.
+
+Location and displacement.A 2-vector can be used to represent a position or location in a 2-dimensional (2-D) space, _i.e._, a plane, as shown in figure 1. A 3-vector is used to represent a location or position of some point in 3-dimensional (3-D) space. The entries of the vector give the coordinates of the position or location.
+
+A vector can also be used to represent a displacement in a plane or 3-D space, in which case it is typically drawn as an arrow, as shown in figure 1. A vector can also be used to represent the velocity or acceleration, at a given time, of a point that moves in a plane or 3-D space.
+
+Color.A 3-vector can represent a color, with its entries giving the Red, Green, and Blue (RGB) intensity values (often between 0 and 1). The vector \((0,0,0)\) represents black, the vector \((0,1,0)\) represents a bright pure green color, and the vector \((1,0.5,0.5)\) represents a shade of pink. This is illustrated in figure 1.
+
+Figure 1: _Left._ The 2-vector \(x\) specifies the position (shown as a dot) with coordinates \(x_{1}\) and \(x_{2}\) in a plane. _Right._ The 2-vector \(x\) represents a displacement in the plane (shown as an arrow) by \(x_{1}\) in the first axis and \(x_{2}\) in the second.
+
+ 

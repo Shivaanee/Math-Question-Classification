@@ -1,0 +1,26 @@
+1. Linear independence or dependence.
+2. Spanning a subspace.
+3. Basis for a subspace (a set of vectors).
+4. Dimension of a subspace (a number).
+
+The first step is to define _linear independence_. Given a set of vectors \(v_{1},\ldots,v_{k}\), we look at their combinations \(c_{1}v_{1}+c_{2}v_{2}+\cdots+c_{k}v_{k}\). The trivial combination, with all weights \(c_{i}=0\), obviously produces the zero vector: \(0v_{1}+\cdots+0v_{k}=0\). The question is whether this is the _only way_ to produce zero. If so, the vectors are independent.
+
+If any other combination of the vectors gives zero, they are _dependent_.
+
+**2E** Suppose \(c_{1}v_{1}+\cdots+c_{k}v_{k}=0\) only happens when \(c_{1}=\cdots=c_{k}=0\). Then the vectors \(v_{1},\ldots,v_{k}\) are _linearly independent_. If any \(c\)'s are nonzero, the \(v\)'s are _linearly dependent_. One vector is a combination of the others.
+
+Linear dependence is easy to visualize in three-dimensional space, when all vectors go out from the origin. Two vectors are dependent if they lie on the same line. _Three vectors are dependent if they lie in the same plane_. A random choice of three vectors, without any special accident, should produce linear independence (not in a plane). Four vectors are always linearly dependent in \(\mathbf{R}^{3}\).
+
+**Example 1**.: If \(v_{1}=\) zero vector, then the set is linearly dependent. We may choose \(c_{1}=3\) and all other \(c_{i}=0\); this is a nontrivial combination that produces zero.
+
+**Example 2**.: The columns of the matrix
+
+\[A=\begin{bmatrix}1&3&3&2\\ 2&6&9&5\\ -1&-3&3&0\end{bmatrix}\]
+
+are linearly dependent, since the second column is three times the first. The combination of columns with weights \(-3\), \(1\), \(0\), \(0\) gives a column of zeros.
+
+The rows are also linearly dependent; row \(3\) is two times row \(2\) minus five times row \(1\). (This is the same as the combination of \(b_{1}\), \(b_{2}\), \(b_{3}\), that had to vanish on the right-hand side in order for \(Ax=b\) to be consistent. Unless \(b_{3}-2b_{2}+5b_{1}=0\), the third equation would not become \(0=0\).)
+
+**Example 3**.: The columns of this triangular matrix are linearly _independent_:
+
+\[\text{{No zeros on the diagonal}}\qquad A=\begin{bmatrix}3&4&2\\ 0&1&5\\ 0&0&2\end{bmatrix}.\] 

@@ -1,0 +1,21 @@
+
+
+## Appendix C Derivatives and optimization
+
+Calculus does not play a big role in this book, except in chapters 18 and 19 (on nonlinear least squares and constrained nonlinear least squares), where we use derivatives, Taylor approximations, and the method of Lagrange multipliers. In this appendix we collect some basic material about derivatives and optimization, focusing on the few results and formulas we use.
+
+### Derivatives
+
+#### Scalar-valued function of a scalar
+
+Definition.Suppose \(f:\mathbf{R}\rightarrow\mathbf{R}\) is a real-valued function of a real (scalar) variable. For any number \(x\), the number \(f(x)\) is the _value_ of the function, and \(x\) is called the _argument_ of the function. The number
+
+\[\lim_{t\to 0}\frac{f(z+t)-f(z)}{t},\]
+
+(if the limit exists) is called the _derivative_ of the function \(f\) at the point \(z\). It gives the slope of the graph of \(f\) at the point \((z,f(z))\). We denote the derivative of \(f\) at \(z\) as \(f^{\prime}(z)\). We can think of \(f^{\prime}\) as a scalar-valued function of a scalar variable; this function is called the derivative (function) of \(f\).
+
+Taylor approximation.Let us fix the number \(z\). The (first order) _Taylor approximation_ of the function \(f\) at the point \(z\) is defined as
+
+\[\hat{f}(x)=f(z)+f^{\prime}(z)(x-z)\]
+
+for any \(x\). Here \(f(z)\) is the value of \(f\) at \(z\), \(x-z\) is the deviation of \(x\) from \(z\), and \(f^{\prime}(z)(x-z)\) is the approximation of the change in value of the function due to the deviation of \(x\) from \(z\). Sometimes the Taylor approximation is shown with

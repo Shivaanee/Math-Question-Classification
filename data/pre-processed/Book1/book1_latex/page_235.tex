@@ -1,0 +1,19 @@
+
+
+## Chapter 4 Determinants
+
+### 4.1 Introduction
+
+Determinants are much further from the center of linear algebra than they were a hundred years ago. Mathematics keeps changing direction! After all, a single number can tell only so much about a matrix. Still, it is amazing how much this number can do.
+
+One viewpoint is this: The determinant provides an explicit "formula" for each entry of \(A^{-1}\) and \(A^{-1}b\). This formula will not change the way we compute; even the determinant itself is found by elimination. In fact, elimination can be regarded as the most efficient way to substitute the entries of an \(n\) by \(n\) matrix into the formula. What the formula does is to show how \(A^{-1}\) depends on the \(n^{2}\) entries of \(A\), and how it varies when those entries vary.
+
+We can list four of the main uses of determinants:
+
+**1.** They test for invertibility. _If the determinant of \(A\) is zero, then \(A\) is singular_. _If \(\det A\neq 0\)_, _then \(A\) is invertible_ (and \(A^{-1}\) involves \(1/\det A\)).
+
+The most important application, and the reason this chapter is essential to the book, is to the family of matrices \(A-\lambda I\). The parameter \(\lambda\) is subtracted all along the main diagonal, and the problem is to find the _eigenvalues_ for which \(A-\lambda I\) is singular. The test is \(\det(A-\lambda I)=0\). This polynomial of degree \(n\) in \(\lambda\) has exactly \(n\) roots. The matrix has \(n\) eigenvalues, This is a fact that follows from the determinant formula, and not from a computer.
+
+**2.** The determinant of \(A\) equals the _volume_ of a box in \(n\)-dimensional space. The edges of the box come from the rows of \(A\) (Figure 4.1). The columns of \(A\) would give an entirely different box with the same volume.
+
+The simplest box is a little cube \(dV=dxdydz\), as in \(\int\!\!\!\int f(x,y,z)dV\). Suppose we change to cylindrical coordinates by \(x=r\cos\theta\), \(y=r\sin\theta\), \(z=z\). Just as a small interval \(dx\) is stretched to \((dx/du)du\)--when \(u\) replaces \(x\) in a single integral--so the volume element becomes \(J\,dr\,d\theta\,dz\). The _Jacobian determinant_ is the three-dimensional ana

@@ -1,0 +1,9 @@
+measured.) An audio (sound) signal can be represented as a vector whose entries give the value of acoustic pressure at equally spaced times (typically 48000 or 44100 per second). A vector might give the hourly rainfall (or temperature, or barometric pressure) at some location, over some time period. When a vector represents a time series, it is natural to plot \(x_{i}\) versus \(i\) with lines connecting consecutive time series values. (These lines carry no information; they are added only to make the plot easier to understand visually.) An example is shown in figure 1.3, where the 48-vector \(x\) gives the hourly temperature in downtown Los Angeles over two days.
+
+Daily return.A vector can represent the daily return of a stock, _i.e._, its fractional increase (or decrease if negative) in value over the day. For example the return time series vector \((-0.022,+0.014,+0.004)\) means the stock price went down 2.2% on the first day, then up 1.4% the next day, and up again 0.4% on the third day. In this example, the samples are not uniformly spaced in time; the index refers to trading days, and does not include weekends or market holidays. A vector can represent the daily (or quarterly, hourly, or minute-by-minute) value of any other quantity of interest for an asset, such as price or volume.
+
+Cash flow.A cash flow into and out of an entity (say, a company) can be represented by a vector, with positive entries representing payments to the entity, and negative entries representing payments by the entity. For example, with entries giving cash flow each quarter, the vector \((1000,-10,-10,-10,-1010)\) represents a one year loan of $1000, with 1% interest only payments made each quarter, and the principal and last interest payment at the end.
+
+Figure 1.3: Hourly temperature in downtown Los Angeles on August 5 and 6, 2015 (starting at 12:47AM, ending at 11:47PM).
+
+ 

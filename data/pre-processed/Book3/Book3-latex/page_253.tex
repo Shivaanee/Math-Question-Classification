@@ -1,0 +1,29 @@
+
+
+**21.**: Let \(A\) be an \(n\times n\) matrix with _real_ entries. Let \(T\) be the linear operator on \(R^{n}\) which is represented by \(A\) in the standard ordered basis, and let \(U\) be the linear operator on \(C^{n}\) which is represented by \(A\) in the standard ordered basis. Use the result of Exercise 20 to prove the following: If the only subspaces invariant under \(T\) are \(R^{n}\) and the zero subspace, then \(U\) is diagonalizable.
+
+### The Jordan Form
+
+Suppose that \(N\) is a nilpotent linear operator on the finite-dimensional space \(V\). Let us look at the cyclic decomposition for \(N\) which we obtain from Theorem 3. We have a positive integer \(r\) and \(r\) non-zero vectors \(\alpha_{1}\), \(\ldots\), \(\alpha_{r}\) in \(V\) with \(N\)-annihilators \(p_{1}\), \(\ldots\), \(p_{r}\), such that
+
+\[V\,=\,Z(\alpha_{1};N)\oplus\,\cdots\oplus\,Z(\alpha_{r};N)\]
+
+and \(p_{i+1}\) divides \(p_{i}\) for \(i\,=\,1\), \(\ldots\), \(r\,-\,1\). Since \(N\) is nilpotent, the minimal polynomial is \(x^{k}\) for some \(k\leq n\). Thus each \(p_{i}\) is of the form \(p_{i}=x^{k}\), and the divisibility condition simply says that
+
+\[k_{1}\geq k_{2}\geq\,\cdots\,\geq k_{r}.\]
+
+Of course, \(k_{1}=k\) and \(k_{r}\geq 1\). The companion matrix of \(x^{ki}\) is the \(k_{i}\times k_{i}\) matrix
+
+\[A_{i}=\begin{bmatrix}0&0&\cdots&0&0\\ 1&0&\cdots&0&0\\ 0&1&\cdots&0&0\\ \vdots&\vdots&&\vdots&\vdots\\ 0&0&\cdots&1&0\end{bmatrix}.\]
+
+Thus Theorem 3 gives us an ordered basis for \(V\) in which the matrix of \(N\) is the direct sum of the elementary nilpotent matrices (7-24), the sizes of which decrease as \(i\) increases. One sees from this that associated with a nilpotent \(n\times n\) matrix is a positive integer \(r\) and \(r\) positive integers \(k_{1}\), \(\ldots\), \(k_{r}\) such that \(k_{1}+\,\cdots\,+\,k_{r}=n\) and \(k_{i}\geq k_{i+1}\), and these positive integers determine the rational form of the matrix, i.e., determine the matrix up to similarity.
+
+Here is one thing we should like to point out about the nilpotent operator \(N\) above. The positive integer \(r\) is precisely the nullity of \(N\); in fact, the null space has as a basis the \(r\) vectors
+
+\[N^{k_{i}-1}\alpha_{i}.\]
+
+For, let \(\alpha\) be in the null space of \(N\). We write \(\alpha\) in the form
+
+\[\alpha=f_{1}\alpha_{1}+\,\cdots\,+\,f_{r}\alpha_{r}\]
+
+where \(f_{i}\) is a polynomial, the degree of which we may assume is less than \(k_{i}\). Since \(N\alpha=0\), for each \(i\) we have

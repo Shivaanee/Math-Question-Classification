@@ -1,0 +1,16 @@
+
+Solution via calculus.In this section we find the solution of the least squares problem using some basic results from calculus, reviewed in SSC.2. (We will also give an independent verification of the result, that does not rely on calculus, below.) We know that any minimizer \(\hat{x}\) of the function \(f(x)=\|Ax-b\|^{2}\) must satisfy
+
+\[\frac{\partial f}{\partial x_{i}}(\hat{x})=0,\quad i=1,\ldots,n,\]
+
+which we can express as the vector equation
+
+\[\nabla f(\hat{x})=0,\]
+
+where \(\nabla f(\hat{x})\) is the gradient of \(f\) evaluated at \(\hat{x}\). The gradient can be expressed in matrix form as
+
+\[\nabla f(x)=2A^{T}(Ax-b).\] (12.3)
+
+This formula can be derived from the chain rule given on page 184, and the gradient of the sum of squares function, given in SSC.1. For completeness, we will derive the formula (12.3) from scratch here. Writing the least squares objective out as a sum, we get
+
+\[f(x)=\|Ax-b\|^{2}=\sum_{i=1}^{m}\left(\sum_{j=1}^{n}A_{ij}x_{j}-b_{i}\right)^{ 2}.\] 

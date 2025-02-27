@@ -1,0 +1,17 @@
+to show how it can be broken into simple pieces. For linear algebra, the simple pieces are matrices of _rank_**1**:
+
+\[\textbf{Rank 1}\qquad A=\begin{bmatrix}2&1&1\\ 4&2&2\\ 8&4&4\\ -2&-1&-1\end{bmatrix}\quad\text{has}\quad r=1.\]
+
+Every row is a multiple of the first row, so the row space is one-dimensional. In fact, we can write the whole matrix _as the product of a column vector and a row vector_:
+
+\[A=(\textbf{column})(\textbf{row})\qquad\begin{bmatrix}2&1&1\\ 4&2&2\\ 8&4&4\\ -2&-1&-1\end{bmatrix}=\begin{bmatrix}1\\ 2\\ 4\\ -1\end{bmatrix}\begin{bmatrix}2&1&1\end{bmatrix}.\]
+
+The product of a 4 by 1 matrix and a 1 by 3 matrix is a 4 by 3 matrix. _This product has rank_ 1. At the same time, the columns are all multiples of the same column vector; the column space shares the dimension \(r=1\) and reduces to a line.
+
+\begin{tabular}{|c|} \hline _Every matrix of rank \(1\) has the simple form \(A=uv^{\mathrm{T}}=\textbf{column times row}\)._ \\ \hline \end{tabular}
+
+The rows are all multiples of the same vector \(v^{\mathrm{T}}\), and the columns are all multiples of \(u\). The row space and column space are lines--the easiest case.
+
+### Problem Set 2.4
+
+**1.**: True or false: If \(m=n\), then the row space of \(A\) equals the column space. If \(m<n\), then the nullspace has a larger dimension than \(\underline{\phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}} \phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt} {1.0pt}}\phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}}\phantom{ \rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}}\phantom{\rule{0.0pt}{1.0pt}} \phantom{\rule{0.0pt}{1.0pt}}\phantom{\ 

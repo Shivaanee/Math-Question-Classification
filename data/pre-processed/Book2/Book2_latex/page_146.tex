@@ -1,0 +1,20 @@
+
+Chain graph.The incidence matrix and the Dirichlet energy function have a particularly simple form for the _chain graph_ shown in figure 7.4, with \(n\) vertices and \(n-1\) edges. The \(n\times(n-1)\) incidence matrix is the transpose of the difference matrix \(D\) described on page 119, in (6.5). The Dirichlet energy is then
+
+\[\mathcal{D}(v)=\|Dv\|^{2}=(v_{2}-v_{1})^{2}+\cdots+(v_{n}-v_{n-1})^{2},\]
+
+the sum of squares of the differences between consecutive entries of the \(n\)-vector \(v\). This is used as a measure of the non-smoothness of the vector \(v\), considered as a time series. Figure 7.5 shows an example.
+
+### 7.4 Convolution
+
+The _convolution_ of an \(n\)-vector \(a\) and an \(m\)-vector \(b\) is the \((n+m-1)\)-vector denoted \(c=a*b\), with entries
+
+\[c_{k}=\sum_{i+j=k+1}a_{i}b_{j},\quad k=1,\ldots,n+m-1,\] (7.2)
+
+where the subscript in the sum means that we should sum over all values of \(i\) and \(j\) in their index ranges \(1,\ldots,n\) and \(1,\ldots,m\), for which the sum \(i+j\) is \(k+1\). For
+
+Figure 7.4: Chain graph.
+
+Figure 7.5: Two vectors of length 100, with Dirichlet energy \(\mathcal{D}(a)=1.14\) and \(\mathcal{D}(b)=8.99\).
+
+ 

@@ -1,0 +1,41 @@
+will show now how this special problem can be solved far more efficiently when \(m\) is much smaller than \(n\), using something called the _kernel trick_. Recall that the minimizer of \(J\) is given by (see (15.3))
+
+\[\hat{x} = (A^{T}A+\lambda I)^{-1}(A^{T}b+\lambda x^{\rm des})\] \[= (A^{T}A+\lambda I)^{-1}(A^{T}b+(\lambda I+A^{T}A)x^{\rm des}-(A^{T }A)x^{\rm des})\] \[= (A^{T}A+\lambda I)^{-1}A^{T}(b-Ax^{\rm des})+x^{\rm des}.\]
+
+The matrix inverse here has size \(n\times n\).
+
+We will use the identity
+
+\[(A^{T}A+\lambda I)^{-1}A^{T}=A^{T}(AA^{T}+\lambda I)^{-1}\] (15.10)
+
+which holds for any matrix \(A\) and any \(\lambda>0\). Note that the left-hand side of the identity involves the inverse of an \(n\times n\) matrix, whereas the right-hand side involves the inverse of a (smaller) \(m\times m\) matrix. (This is a variation on the push-through identity from exercise 11.9.)
+
+To show the identity (15.10), we first observe that the matrices \(A^{T}A+\lambda I\) and \(AA^{T}+\lambda I\) are invertible. We start with the equation
+
+\[A^{T}(AA^{T}+\lambda I)=(A^{T}A+\lambda I)A^{T},\]
+
+and multiply each side by \((A^{T}A+\lambda I)^{-1}\) on the left and \((AA^{T}+\lambda I)^{-1}\) on the right, which yields the identity above.
+
+Using (15.10) we can express the minimizer of \(J\) as
+
+\[\hat{x}=A^{T}(AA^{T}+\lambda I)^{-1}(b-Ax^{\rm des})+x^{\rm des}.\]
+
+We can compute the term \((AA^{T}+\lambda I)^{-1}(b-Ax^{\rm des})\) by computing the QR factorization of the \((m+n)\times m\) matrix
+
+\[\bar{A}=\left[\begin{array}{c}A^{T}\\ \sqrt{\lambda}I\end{array}\right],\]
+
+which has a cost of \(2(m+n)m^{2}\) flops. The other operations involve matrix-vector products and have order (at most) \(mn\) flops, so we can use this method to compute \(\hat{x}\) in around \(2(m+n)m^{2}\) flops. This complexity grows only linearly in \(n\).
+
+To summarize, we can minimize the regularized least squares objective \(J\) in (15.9) two different ways. One requires a QR factorization of the \((m+n)\times n\) matrix \(\bar{A}\), which has cost \(2(m+n)n^{2}\) flops. The other (which uses the kernel trick) requires a QR factorization of the \((m+n)\times m\) matrix \(\bar{A}\), which has cost \(2(m+n)m^{2}\) flops. We should evidently use the kernel trick when \(m<n\). The complexity can then be expressed as
+
+\[(m+n)\min\{m^{2},n^{2}\}\approx\min\{mn^{2},nm^{2}\}=(\max\{m,n\})(\min\{m,n\} )^{2}.\]
+
+where \(\approx\) means we ignore non-dominant terms.
+
+This is an instance of the _big-times-small-squared_ rule or mnemonic, which states that many operations involving a matrix \(A\) can be carried out with order
+
+\[({\rm big})\times({\rm small})^{2}\ \ {\rm flops},\]
+
+where 'big' and 'small' refer to the big and small dimensions of the matrix. Several other examples are listed in appendix B.
+
+ 

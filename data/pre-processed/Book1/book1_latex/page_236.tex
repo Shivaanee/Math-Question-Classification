@@ -1,0 +1,17 @@
+logue of the stretching factor \(dx/du\):
+
+\[J=\begin{vmatrix}\partial x/\partial r&\partial x/\partial\theta&\partial x/ \partial z\\ \partial y/\partial r&\partial y/\partial\theta&\partial y/\partial z\\ \partial z/\partial r&\partial z/\partial\theta&\partial z/\partial z\end{vmatrix} =\begin{vmatrix}\cos\theta&-r\sin\theta&0\\ \sin\theta&r\cos\theta&0\\ 0&0&1\end{vmatrix}.\]
+
+The value of this determinant is \(J=r\). It is the \(r\) in the cylindrical volume element \(r\;dr\,d\theta\,dz\); this element is our little box. (It looks curved if we try to draw it, but probably it gets straighter as the edges become infinitesimal.)
+
+**3.** The determinant gives a formula for each pivot. Theoretically, we could predict when a pivot entry will be zero, requiring a row exchange. From the formula _determinant_\(=\pm\) (_product of the pivots_), it follows that _regardless of the order of elimination, the product of the pivots remains the same apart from sign._
+
+Years ago, this led to the belief that it was useless to escape a very small pivot by exchanging rows, since eventually the small pivot would catch up with us. But what usually happens in practice, if an abnormally small pivot is not avoided, is that it is very soon followed by an abnormally large one. This brings the product back to normal but it leaves the numerical solution in ruins.
+
+**4.** The determinant measures the dependence of \(A^{-1}b\) on each element of \(b\). If one parameter is changed in an experiment, or one observation is corrected, the "influence coefficient" in \(A^{-1}\) is a ratio of determinants.
+
+There is one more problem about the determinant. It is difficult not only to decide on its importance, and its proper place in the theory of linear algebra, but also to choose
+
+Figure 4.1: The box formed from the rows of \(A\): volume \(=|\text{determinant}|\).
+
+ 

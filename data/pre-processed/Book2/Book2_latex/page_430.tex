@@ -1,0 +1,27 @@
+Like the nonlinear least squares problem, or solving a set of nonlinear equations, the constrained nonlinear least squares problem is in general hard to solve exactly. But the Levenberg-Marquardt algorithm for solving the (unconstrained) nonlinear least squares problem (18.2) can be leveraged to handle the problem with equality constraints. We will describe a basic algorithm below, the _penalty algorithm_, and a variation on it that works much better in practice, the _augmented Lagrangian algorithm_. These algorithms are heuristics for (approximately) solving the nonlinear least squares problem (19.1).
+
+Linear equality constraints.One special case of the constrained nonlinear least squares problem (19.1) is when the constraint function \(g\) is affine, in which case the constraints \(g(x)=0\) can be written \(Cx=d\) for some \(p\times n\) matrix \(C\) and a \(p\)-vector \(d\). In this case the problem (19.1) is called a nonlinear least squares problem with linear equality constraints. It can be (approximately) solved by the Levenberg-Marquardt algorithm described in chapter 18, by simply adding the linear equality constraints to the linear least squares problem that is solved in step 2. The more challenging problem is the case when \(g\) is not affine.
+
+#### Optimality condition
+
+Using Lagrange multipliers (see SSC.3) we can derive a condition that any solution of the constrained nonlinear least squares problem (19.1) must satisfy. The Lagrangian for the problem (19.1) is
+
+\[L(x,z)=\|f(x)\|^{2}+z_{1}g_{1}(x)+\cdots+z_{p}g_{p}(x)=\|f(x)\|^{2}+g(x)^{T}z,\] (19.2)
+
+where the \(p\)-vector \(z\) is the vector of Lagrange multipliers. The method of Lagrange multipliers tells us that for any solution \(\hat{x}\) of (19.1), there is a set of Lagrange multipliers \(\hat{z}\) that satisfy
+
+\[\frac{\partial L}{\partial x_{i}}(\hat{x},\hat{z})=0,\quad i=1,\ldots,n,\qquad \frac{\partial L}{\partial z_{i}}(\hat{x},\hat{z})=0,\quad i=1,\ldots,p\]
+
+(provided the rows of \(Dg(\hat{x})\) are linearly independent). The \(p\)-vector \(\hat{z}\) is called an _optimal Lagrange multiplier_.
+
+The second set of equations can be written as \(g_{i}(\hat{x})=0\), \(i=1,\ldots,p\), in vector form
+
+\[g(\hat{x})=0,\] (19.3)
+
+_i.e._, \(\hat{x}\) is feasible, which we already knew. The first set of equations can be written in vector form as
+
+\[2Df(\hat{x})^{T}f(\hat{x})+Dg(\hat{x})^{T}\hat{z}=0.\] (19.4)
+
+This equation is the extension of the condition (18.3) for the unconstrained nonlinear least squares problem (18.2). The equation (19.4), together with (19.3), _i.e._, \(\hat{x}\) is feasible, form the optimality conditions for the problem (19.1).
+
+If \(\hat{x}\) is a solution of the constrained nonlinear least squares problem (19.1), then it satisfies the optimality condition (19.4) for some Lagrange multiplier vector 

@@ -1,0 +1,17 @@
+is carried to the zero vector. Every \(Ax\) is in the column space. Nothing is carried to the left nullspace. _The real action is between the row space and column space_, and you see it by looking at a typical vector \(x\). It has a "row space component" and a "nullspace component," with \(x=x_{r}+x_{n}\). When multiplied by \(A\), this is \(Ax=Ax_{r}+Ax_{n}\):
+
+The nullspace component goes to zero: \(Ax_{n}=0\).
+
+The row space component goes to the column space: \(Ax_{r}=Ax\).
+
+Of course everything goes to the column space--the matrix cannot do anything else. I tried to make the row and column spaces the same size, with equal dimension \(r\).
+
+**3F** From the row space to the column space, \(A\) is actually invertible. Every vector \(b\) in the column space comes from exactly one vector \(x_{r}\) in the row space.
+
+Proof.: Every \(b\) in the column space is a combination \(Ax\) of the columns. In fact, \(b\) is \(Ax_{r}\), with \(x_{r}\) in the row space, since the nullspace component gives \(Ax_{n}=0\), If another vector \(x_{r}^{\prime}\) in the row space gives \(Ax_{r}^{\prime}=b\), then \(A(x_{r}-x_{r}^{\prime})=b-b=0\). This puts \(x_{r}-x_{r}^{\prime}\) in the nullspace and the row space, which makes it orthogonal to itself. Therefore it is zero, and \(x_{r}-x_{r}^{\prime}\). Exactly one vector in the row space is carried to \(b\). 
+
+_Every matrix transforms its row space onto its column space._
+
+On those \(r\)-dimensional spaces \(A\) is invertible. On its nullspace \(A\) is zero. When \(A\) is diagonal, you see the invertible submatrix holding the \(r\) nonzeros.
+
+\(A^{\rm T}\) goes in the opposite direction, from \({\bf R}^{m}\) to \({\bf R}^{n}\) and from \(C(A)\) back to \(C(A^{\rm T})\). Of course the transpose is not the inverse! \(A^{\rm T}\) moves the spaces correctly, but not the 

@@ -1,0 +1,31 @@
+\[\tilde{B}B\ =\begin{bmatrix}\det B&0\\ 0&\det B\end{bmatrix}.\]
+
+Hence, we have
+
+\[(\det B)\begin{bmatrix}\alpha_{1}\\ \alpha_{2}\end{bmatrix} =\ (\tilde{B}B)\begin{bmatrix}\alpha_{1}\\ \alpha_{2}\end{bmatrix}\] \[=\ \tilde{B}\ \Big{(}B\begin{bmatrix}\alpha_{1}\\ \alpha_{2}\end{bmatrix}\Big{)}\] \[=\begin{bmatrix}0\\ 0\end{bmatrix}.\]
+
+In the general case, let \(\tilde{B}=\operatorname{adj}\,B\). Then by (6-6)
+
+\[\sum_{j=1}^{n}\tilde{B}_{ki}B_{ij}\alpha_{j}=0\]
+
+for each pair \(k\), \(i\), and summing on \(i\), we have
+
+\[0 =\sum_{i=1}^{n}\sum_{j=1}^{n}\tilde{B}_{ki}B_{ij}\alpha_{j}\] \[=\sum_{j=1}^{n}\left(\sum_{i=1}^{n}\tilde{B}_{ki}B_{ij}\right) \alpha_{j}.\]
+
+Now \(\tilde{B}B=(\det B)I\), so that
+
+\[\sum_{i=1}^{n}\tilde{B}_{ki}B_{ij}=\delta_{kj}\det B.\]
+
+Therefore
+
+\[0 =\sum_{j=1}^{n}\delta_{kj}(\det B)\alpha_{j}\] \[=\ (\det B)\alpha_{k},\qquad 1\leq k\leq n.\quad\vrule height 6.0pt width 4.0pt depth 0.0pt\]
+
+The Cayley-Hamilton theorem is useful to us at this point primarily because it narrows down the search for the minimal polynomials of various operators. If we know the matrix \(A\) which represents \(T\) in some ordered basis, then we can compute the characteristic polynomial \(f\). We know that the minimal polynomial \(p\) divides \(f\) and that the two polynomials have the same roots. There is no method for computing precisely the roots of a polynomial (unless its degree is small); however, if \(f\) factors
+
+\[f=(x-c_{1})^{d_{1}}\cdots(x-c_{k})^{d_{k}},\qquad c_{1},\,\ldots,\,c_{k}\text{ distinct, }d_{i}\geq 1\] (6-7)
+
+then
+
+\[p=(x-c_{1})^{n}\cdots(x-c_{k})^{n},\qquad 1\leq r_{j}\leq d_{j}.\]
+
+That is all we can say in general. If \(f\) is the polynomial (6-7) and has degree \(n\), then for every polynomial \(p\) as in (6-8) 

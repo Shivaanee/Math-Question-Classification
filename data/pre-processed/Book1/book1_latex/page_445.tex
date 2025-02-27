@@ -1,0 +1,27 @@
+determined by \(y\geq 0\) and \(A^{\mathrm{T}}\) and \(c\). The whole theory of linear programming hinges on the relation between primal and dual. Here is the fundamental result:
+
+**8D Duality Theorem**: When both problems have feasible vectors, they have optimal \(x^{*}\) and \(y^{*}\). **The minimum cost \(cx^{*}\) equals the maximum income \(y^{*}b\).**
+
+If optimal vectors do not exist, there are two possibilities: Either both feasible sets are empty, or one is empty and the other problem is unbounded (the maximum is \(+\infty\) or the minimum is \(-\infty\)).
+
+The duality theorem settles the competition between the grocer and the druggist. _The result is always a tie_. We will find a similar "minimax theorem" in game theory. The customer has no economic reason to prefer vitamins over food, even though the druggist guarantees to match the grocer on every food--and even undercuts on expensive foods (like peanut butter). We will show that expensive foods are kept out of the optimal diet, so the outcome can be (and is) a tie.
+
+This may seem like a total stalemate, but I hope you will not be fooled. The optimal vectors contain the crucial information. In the primal problem, \(x^{*}\) tells the purchaser what to buy. In the dual, \(y^{*}\) fixes the natural prices (_shadow prices_) at which the economy should run. Insofar as our linear model reflects the true economy. \(x^{*}\) and \(y^{*}\) represent the essential decisions to be made.
+
+We want to prove that \(c^{*}x=y^{*}b\). It may seem obvious that the druggist can raise the vitamin prices \(y^{*}\) to meet the grocer, but only one thing is truly clear: Since each food can be replaced by its vitamin equivalent, with no increase in cost, all adequate food diets must cost at least as much as vitamins. This is only a one-sided inequality, _druggist's price \(\leq\) grocer's price_. It is called _weak duality_, and it is easy to prove for any linear program and its dual:
+
+**8E**: If \(x\) and \(y\) are feasible in the primal and dual problems, then \(yb\leq cx\).
+
+Proof.: Since the vectors are feasible, they satisfy \(Ax\geq b\) and \(yA\leq c\). Because feasibility also includes \(x\geq 0\) and \(y\geq 0\), we can take inner products without spoiling those inequalities (multiplying by negative numbers would reverse them):
+
+\[yAx\geq yb\qquad\text{and}\qquad yAx\leq cx.\] (1)
+
+Since the left-hand sides are identical, we have weak duality \(yb\leq cx\). 
+
+This one-sided inequality prohibits the possibility that both problems are unbounded. If \(yb\) is arbitrarily large, a feasible \(x\) would contradict \(yb\leq cx\). Similarly, if \(cx\) can go down to \(-\infty\), the dual cannot admit a feasible \(y\).
+
+Equally important, any vectors that achieve \(yb=cx\) must be optimal. At that point the grocer's price equals the druggist's price. We recognize an optimal food diet and optimal vitamin prices by the fact that the consumer has nothing to choose:
+
+**8F**: If the vectors \(x\) and \(y\) are feasible and \(cx=yb\), then \(x\) and \(y\) are optimal.
+
+ 

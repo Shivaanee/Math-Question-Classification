@@ -1,0 +1,13 @@
+
+
+### The Gram-Schmidt Process
+
+Suppose you are given three independent vectors \(a\), \(b\), \(c\). If they are orthonormal, life is easy. To project a vector \(v\) onto the first one, you compute \((a^{\mathrm{T}}v)a\). To project the same vector \(v\) onto the plane of the first two, you just add \((a^{\mathrm{T}}v)a+(b^{\mathrm{T}}v)b\). To project onto the span of \(a\), \(b\), \(c\), you add three projections. All calculations require only the inner products \(a^{\mathrm{T}}v\), \(b^{\mathrm{T}}v\), and \(c^{\mathrm{T}}v\). But to make this true, we are forced to say, "\(\boldsymbol{If}\) they are orthonormal." Now we propose to find a way to _make_ them orthonormal.
+
+The method is simple. We are given \(a\), \(b\), \(c\) and we want \(q_{1}\), \(q_{2}\), \(q_{3}\). There is no problem with \(q_{1}\): it can go in the direction of \(a\). We divide by the length, so that \(q_{1}=a/\|a\|\) is a unit vector. The real problem begins with \(q_{2}\)--which has to be orthogonal to \(q_{1}\). If the second vector \(b\) has any component in the direction of \(q_{1}\) (which is the direction of \(a\)), _that component has to be subtracted_:
+
+\[\text{\bf Second vector}\qquad B=b-(q_{1}^{\mathrm{T}}b)q_{1}\quad\text{and} \quad q_{2}=B/\|B\|.\] (9)
+
+\(B\) is orthogonal to \(q_{1}\). It is the part of \(b\) that goes in a new direction, and not in the \(a\). In Figure 3.10, \(B\) is perpendicular to \(q_{1}\). It sets the direction for \(q_{2}\).
+
+At this point \(q_{1}\) and \(q_{2}\) are set. The third orthogonal direction starts with \(c\). It will not be

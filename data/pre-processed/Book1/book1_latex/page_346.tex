@@ -1,0 +1,15 @@
+_Note_. This "zeroing" is not so easy to continue, because the rotations that produce zero in place of \(d\) and \(h\) will spoil the new zero in the corner. We have to leave one diagonal below the main one, and finish the eigenvalue calculation in a different way. Otherwise, if we could make \(A\) diagonal and see its eigenvalues, we would be finding the roots of the polynomial \(\det(A-\lambda I)\) by using only the square roots that determine \(\cos\theta\)--and that is impossible.
+**8.**: What matrix \(M\) changes the basis \(V_{1}=(1,1)\), \(V_{2}=(1,4)\) to the basis \(v_{1}=(2,5)\), \(v_{2}=(1,4)\)? The columns of \(M\) come from expressing \(V_{1}\) and \(V_{2}\) as combinations \(\sum m_{ij}v_{i}\) of the \(v\)'s.
+**9.**: For the same two bases, express the vector \((3,9)\) as a combination \(c_{1}V_{1}+c_{2}V_{2}\) and also as \(d_{1}v_{1}+d_{2}v_{2}\). Check numerically that \(M\) connects \(c\) to \(d\): \(Mc=d\).
+**10.**: Confirm the last exercise: If \(V_{1}=m_{11}v_{1}+m_{21}v_{2}\) and \(V_{2}=m_{12}v_{1}+m_{22}v_{2}\), and \(m_{11}c_{1}+m_{12}c_{2}=d_{1}\) and \(m_{21}c_{1}+m_{22}c_{2}=d_{2}\), the vectors \(c_{1}V_{1}+c_{2}V_{2}\) and \(d_{1}v_{1}+d_{2}v_{2}\) are the same. This is the "change of basis formula" \(Mc=d\).
+**11.**: If the transformation \(T\) is a reflection across the \(45^{\circ}\) line in the plane, find its matrix with respect to the standard basis \(v_{1}=(1,0)\), \(v_{2}=(0,1)\), and also with respect to \(V_{1}=(1,1)\), \(V_{2}=(1,-1)\). Show that those matrices are similar.
+**12.**: The _identity transformation_ takes every vector to itself: \(Tx=x\). Find the corresponding matrix, if the first basis is \(v_{1}=(1,2)\), \(v_{2}=(3,4)\) and the second basis is \(w_{1}=(1,0)\), \(w_{2}=(0,1)\). (It is not the identity matrix!)
+**13.**: The derivative of \(a+bx+cx^{2}\) is \(b+2cx+0x^{2}\).
+
+1. Write the 3 by 3 matrix \(D\) such that \[D\begin{bmatrix}a\\ b\\ c\end{bmatrix}=\begin{bmatrix}b\\ 2c\\ 0\end{bmatrix}.\]
+2. Compute \(D^{3}\) and interpret the results in terms of derivatives.
+3. What are the eigenvalues and eigenvectors of \(D\)?
+**14.**: Show that every number is an eigenvalue for \(Tf(x)=df/dx\), but the transformation \(Tf(x)=\int_{0}^{x}f(t)dt\) has no eigenvalues (here \(-\infty<x<\infty\)).
+**15.**: On the space of 2 by 2 matrices, let \(T\) be the transformation that _transposes every matrix_. Find the eigenvalues and "eigenmatrices" for \(A^{\rm T}=\lambda A\).
+**16.**:
+1. Find an orthogonal \(Q\) so that \(Q^{-1}AQ=\Lambda\) if \[A=\begin{bmatrix}1&1&1\\ 1&1&1\\ 1&1&1\end{bmatrix}\qquad\text{and}\qquad\Lambda=\begin{bmatrix}0&0&0\\ 0&0&0\\ 0&0&3\end{bmatrix}.\] 

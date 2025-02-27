@@ -1,0 +1,23 @@
+
+
+## Chapter 2 Linear functions
+
+In this chapter we introduce linear and affine functions, and describe some common settings where they arise, including regression models.
+
+### 2.1 Linear functions
+
+Function notation.The notation \(f:\mathbf{R}^{n}\to\mathbf{R}\) means that \(f\) is a _function_ that maps real \(n\)-vectors to real numbers, _i.e._, it is a scalar-valued function of \(n\)-vectors. If \(x\) is an \(n\)-vector, then \(f(x)\), which is a scalar, denotes the _value_ of the function \(f\) at \(x\). (In the notation \(f(x)\), \(x\) is referred to as the _argument_ of the function.) We can also interpret \(f\) as a function of \(n\) scalar arguments, the entries of the vector argument, in which case we write \(f(x)\) as
+
+\[f(x)=f(x_{1},x_{2},\ldots,x_{n}).\]
+
+Here we refer to \(x_{1},\ldots,x_{n}\) as the arguments of \(f\). We sometimes say that \(f\) is real-valued, or scalar-valued, to emphasize that \(f(x)\) is a real number or scalar.
+
+To describe a function \(f:\mathbf{R}^{n}\to\mathbf{R}\), we have to specify what its value is for any possible argument \(x\in\mathbf{R}^{n}\). For example, we can define a function \(f:\mathbf{R}^{4}\to\mathbf{R}\) by
+
+\[f(x)=x_{1}+x_{2}-x_{4}^{2}\]
+
+for any 4-vector \(x\). In words, we might describe \(f\) as the sum of the first two elements of its argument, minus the square of the last entry of the argument. (This particular function does not depend on the third element of its argument.)
+
+Sometimes we introduce a function without formally assigning a symbol for it, by directly giving a formula for its value in terms of its arguments, or describing how to find its value from its arguments. An example is the _sum function_, whose value is \(x_{1}+\cdots+x_{n}\). We can give a name to the value of the function, as in \(y=x_{1}+\cdots+x_{n}\), and say that \(y\) is a function of \(x\), in this case, the sum of its entries.
+
+Many functions are not given by formulas or equations. As an example, suppose \(f:\mathbf{R}^{3}\to\mathbf{R}\) is the function that gives the lift (vertical upward force) on a particular

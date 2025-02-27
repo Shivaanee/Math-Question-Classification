@@ -1,0 +1,25 @@
+
+
+**Example 22**: If \(V\) is an \(n\)-dimensional inner product space, then each ordered orthonormal basis \(\otimes=\{\alpha_{1},\ldots,\alpha_{n}\}\) determines an isomorphism of \(V\) onto \(F^{*}\) with the standard inner product. The isomorphism is simply
+
+\[T(x_{1}\alpha_{1}+\cdots+x_{n}\alpha_{n})=(x_{1},\ldots,x_{n}).\]
+
+There is the superficially different isomorphism which \(\otimes\) determines of \(V\) onto the space \(F^{n\times 1}\) with \(\langle X|Y\rangle=Y^{*}X\) as inner product. The isomorphism is
+
+\[\alpha\rightarrow[\alpha]_{\otimes}\]
+
+i.e., the transformation sending \(\alpha\) into its coordinate matrix in the ordered basis \(\otimes\). For any ordered basis \(\otimes\), this is a vector space isomorphism; however, it is an isomorphism of the two inner product spaces if and only if \(\otimes\) is orthonormal.
+
+**Example 23**: Here is a slightly less superficial isomorphism. Let \(W\) be the space of all \(3\times 3\) matrices \(A\) over \(R\) which are skew-symmetric, i.e., \(A^{\,t}=-A\). We equip \(W\) with the inner product \((A|B)=\frac{1}{2}\operatorname{tr}\,(AB^{\,t})\), the \(\frac{1}{2}\) being put in as a matter of convenience. Let \(V\) be the space \(R^{\,3}\) with the standard inner product. Let \(T\) be the linear transformation from \(V\) into \(W\) defined by
+
+\[T(x_{1},x_{2},x_{3})=\left[\begin{array}{ccc}0&-x_{3}&x_{2}\\ x_{3}&0&-x_{1}\\ -x_{2}&x_{1}&0\end{array}\right].\]
+
+Then \(T\) maps \(V\) onto \(W\), and putting
+
+\[A=\left[\begin{array}{ccc}0&-x_{3}&x_{2}\\ x_{3}&0&-x_{1}\\ -x_{2}&x_{1}&0\end{array}\right],\qquad B=\left[\begin{array}{ccc}0&-y_{3}& y_{2}\\ y_{3}&0&-y_{1}\\ -y_{2}&y_{1}&0\end{array}\right]\]
+
+we have
+
+\[\begin{array}{rl}\operatorname{tr}\,(AB^{\,t})&=&x_{3}y_{3}+x_{2}y_{2}+x_{3 }y_{3}+x_{2}y_{2}+x_{1}y_{1}\\ &=&2\langle x_{1}y_{1}+x_{2}y_{2}+x_{3}y_{3}\rangle.\end{array}\]
+
+Thus \((\alpha|\beta)=(T\alpha|T\beta)\) and

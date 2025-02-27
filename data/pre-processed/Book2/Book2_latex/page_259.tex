@@ -1,0 +1,15 @@
+This says that the value of the \(p\)th basis function can be expressed as a linear combination of the values of the first \(p-1\) basis functions _on the given data set_. Evidently, then, the \(p\)th basis function is redundant (on the given data set).
+
+#### Fitting univariate functions
+
+Suppose that \(n=1\), so the feature vector \(x\) is a scalar (as is the outcome \(y\)). The relationship \(y\approx f(x)\) says that \(y\) is approximately a (univariate) function \(f\) of \(x\). We can plot the data \((x^{(i)},y^{(i)})\) as points in the \((x,y)\) plane, and we can plot the model \(\hat{f}\) as a curve in the \((x,y)\)-plane. This allows us to visualize the fit of our model to the data.
+
+Straight-line fit.We take basis functions \(f_{1}(x)=1\) and \(f_{2}(x)=x\). Our model has the form
+
+\[\hat{f}(x)=\theta_{1}+\theta_{2}x,\]
+
+which is a straight line when plotted. (This is perhaps why \(\hat{f}\) is sometimes called a linear model, even though it is in general an affine, and not linear, function of \(x\).) Figure 13.2 shows an example. The matrix \(A\) in (13.1) is given by
+
+\[A=\left[\begin{array}{cc}1&x^{(1)}\\ 1&x^{(2)}\\ \vdots&\vdots\\ 1&x^{(N)}\end{array}\right]=\left[\begin{array}{cc}\mathbf{1}&x^{\mathrm{d} }\end{array}\right],\]
+
+where in the right-hand side we use \(x^{\mathrm{d}}\) to denote the \(N\)-vector of values \(x^{\mathrm{d}}=(x^{(1)},\ldots,x^{(N)})\). Provided that there are at least two different values appearing in 

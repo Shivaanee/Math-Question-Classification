@@ -1,0 +1,25 @@
+Strictly speaking, we have to show that the matrix \(A^{-1}\) with those columns is also a _left_-inverse. Solving \(AA^{-1}=I\) has at the same time solved \(A^{-1}A=I\), but why? **A 1-sided inverse of a square matrix is automatically a 2-sided inverse**. To see why, notice that _every Gauss-Jordan step is a multiplication on the left by an elementary matrix_. We are allowing three types of elementary matrices:
+
+1. \(E_{ij}\) to subtract a multiple \(\ell\) of row \(j\) from row \(i\)
+2. \(P_{ij}\) to exchange rows \(i\) and \(j\)
+3. \(D\) (or \(D^{-1}\)) to divide all rows by their pivots.
+
+The Gauss-Jordan process is really a giant sequence of matrix multiplications:
+
+\[(D^{-1}\cdots E\cdots P\cdots E)A=I.\] (6)
+
+That matrix in parentheses, to the left of \(A\), is evidently a left-inverse! It exists, it equals the right-inverse by Note 2, so _every nonsingular matrix is invertible_.
+
+The converse is also true: _If \(A\) is invertible, it has \(n\) pivots_. In an extreme case that is clear: \(A\) cannot have a whole column of zeros. The inverse could never multiply a column of zeros to produce a column of \(I\). In a less extreme case, suppose elimination starts on an invertible matrix \(A\) but breaks down at column 3:
+
+\[\begin{array}{l}\mbox{\bf Breakdown}\\ \mbox{\bf No pivot in column 3}\end{array}\qquad A^{\prime}=\begin{bmatrix}d_{1}&x&x&x \\ 0&d_{2}&x&x\\ 0&0&0&x\\ 0&0&0&x\end{bmatrix}.\]
+
+This matrix cannot have an inverse, no matter what the \(x\)'s are. One proof is to use column operations (for the first time?) to make the whole third column zero. By subtracting multiples of column 2 and then of column 1, we reach a matrix that is certainly not invertible. Therefore the original \(A\) was not invertible. Elimination gives a complete test: _An \(n\) by \(n\) matrix is invertible if and only if it has \(n\) pivots_.
+
+### The Transpose Matrix
+
+We need one more matrix, and fortunately it is much simpler than the inverse. The _transpose_ of \(A\) is denoted by \(A^{\mathrm{T}}\). Its columns are taken directly from the rows of \(A\)--the \(i\)th row of \(A\) becomes the \(i\)th column of \(A^{\mathrm{T}}\):
+
+\[\mbox{\bf Transpose}\qquad\mbox{If}\quad A=\begin{bmatrix}2&1&4\\ 0&0&3\end{bmatrix}\quad\mbox{then}\quad A^{\mathrm{T}}=\begin{bmatrix}2&0\\ 1&0\\ 4&3\end{bmatrix}.\]
+
+At the same time the columns of \(A\) become the rows of \(A^{\mathrm{T}}\), If \(A\) is an \(m\) by \(n\) matrix, then \(A^{\mathrm{T}}\) is \(n\) by \(m\). The final effect is to flip the matrix across its main diagonal, and the entry 

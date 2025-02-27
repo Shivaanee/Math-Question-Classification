@@ -1,0 +1,23 @@
+Let \(W\) be the same vector space, with the standard inner product \((X|Y)=Y^{*}X\). We know that \(V\) and \(W\) are isomorphic inner product spaces. It would seem that the most convenient way to describe an isomorphism between \(V\) and \(W\) is the following: Let \(T\) be the linear transformation from \(V\) into \(W\) defined by \(T(X)=PX\). Then \[\begin{array}{rcl}(\,\mbox{\it TX}|\,\mbox{\it TY})&=&(\,\mbox{\it PX}|\,\mbox {\it PY})\\ &=&(\,\mbox{\it PY})^{*}(\,\mbox{\it PX})\\ &=&Y^{*}P^{*}PX\\ &=&Y^{*}GX\\ &=&[X|Y].\end{array}\] Hence \(T\) is an isomorphism.
+
+Let \(V\) be the space of all continuous real-valued functions on the unit interval, \(0\leq t\leq 1\), with the inner product
+
+\[[f|\mbox{\it g}]=\int_{0}^{1}f(t)g(t)t^{2}\,dt.\]
+
+Let \(W\) be the same vector space with the inner product
+
+\[(f|\mbox{\it g})=\int_{0}^{1}f(t)g(t)\,dt.\]
+
+Let \(T\) be the linear transformation from \(V\) into \(W\) given by
+
+\[(\,\mbox{\it Tf})(t)=\mbox{\it f}(t).\]
+
+Then \((\,\mbox{\it Tf}|\,\mbox{\it Tg})=[f|\mbox{\it g}]\), and so \(T\) preserves inner products; however, \(T\) is _not_ an isomorphism of \(V\) onto \(W\), because the range of \(T\) is not all of \(W\). Of course, this happens because the underlying vector space is not finite-dimensional.
+
+Let V and W be inner product spaces over the same field, and let \(T\) be a linear transformation from V into W. Then \(T\) preserves inner products if and only if \(||\mbox{\it T\alpha}||=||\alpha||\) for every \(\alpha\) in V.
+
+If T preserves inner products, \(T\) 'preserves norms.' Suppose \(||\mbox{\it T\alpha}||=||\alpha||\) for every \(\alpha\) in \(V\). Then \(||\mbox{\it T\alpha}||^{2}=||\alpha||^{2}\). Now using the appropriate polarization identity, (8-3) or (8-4), and the fact that \(T\) is linear, one easily obtains \((\alpha|\beta)=(\mbox{\it T\alpha}|\,\mbox{\it T\beta})\) for all \(\alpha\), \(\beta\) in \(V\).
+
+A **unitary operator** on an inner product space is an isomorphism of the space onto itself.
+
+The product of two unitary operators is unitary. For, if \(U_{1}\) and \(U_{2}\) are unitary, then \(U_{2}U_{1}\) is invertible and \(||U_{2}U_{1\alpha}||=||U_{1\alpha}||=||\alpha||\) for each \(\alpha\). Also, the inverse of a unitary operator is unitary, since \(||U\alpha||=||\alpha||\) says \(||U^{-1}\beta||=||\beta||\), where \(\beta=U\alpha\). Since the identity operator is 

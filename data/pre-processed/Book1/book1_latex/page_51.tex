@@ -1,0 +1,29 @@
+pivots. This is easy to correct. **Divide out of \(U\) a diagonal pivot matrix \(D\)**:
+
+\[\textbf{Factor out }D\qquad U=\begin{bmatrix}d_{1}&&&\\ &d_{2}&&\\ &&\ddots&\\ &&&d_{n}\end{bmatrix}\begin{bmatrix}1&u_{12}/d_{1}&u_{13}/d_{1}&\vdots\\ &1&u_{23}/d_{2}&\vdots\\ &&\ddots&\vdots\\ &&&1\end{bmatrix}.\] (9)
+
+In the last example all pivots were \(d_{i}=1\). In that case \(D=I\). But that was very exceptional, and normally \(LU\) is different from \(LDU\) (also written \(LDV\)).
+
+_The triangular factorization can be written \(A=LDU\), where \(L\) and \(U\) have \(1\)s on the diagonal and \(D\) is the diagonal matrix of pivots._
+
+Whenever you see \(LDU\) or \(LDV\), it is understood that \(U\) or \(V\) has is on the diagonal--each row was divided by the pivot in \(D\). Then \(L\) and \(U\) are treated evenly. An example of \(LU\) splitting into \(LDU\) is
+
+\[A=\begin{bmatrix}1&2\\ 3&4\end{bmatrix}=\begin{bmatrix}1\\ 3&1\end{bmatrix}\begin{bmatrix}1&2\\ &-2\end{bmatrix}=\begin{bmatrix}1\\ 3&1\end{bmatrix}\begin{bmatrix}1&\\ &-2\end{bmatrix}\begin{bmatrix}1&2\\ &1\end{bmatrix}=LDU.\]
+
+That has the \(1\)s on the diagonals of \(L\) and \(U\), and the pivots \(1\) and \(-2\) in \(D\).
+
+_Remark 2_.: We may have given the impression in describing each elimination step, that the calculations must be done in that order. This is wrong. There is _some_ freedom, and there is a "Crout algorithm" that arranges the calculations in a slightly different way. _There is no freedom in the final \(L\), \(D\), and \(U\)_. That is our main point:
+
+* If \(A=L_{1}D_{1}U_{1}\) and also \(A=L_{2}D_{2}U_{2}\), where the \(L\)'s are lower triangular with unit diagonal, the \(U\)'s are upper triangular with unit diagonal, and the \(D\)'s are diagonal matrices with no zeros on the diagonal, then \(L_{1}=L_{2}\), \(D_{1}=D_{2}\), \(U_{1}=U_{2}\). The \(LDU\) factorization and the \(LU\) factorization are uniquely determined by \(A\).
+
+The proof is a good exercise with inverse matrices in the next section.
+
+### Row Exchanges and Permutation Matrices
+
+We now have to face a problem that has so far been avoided: The number we expect to use as a pivot might be zero. This could occur in the middle of a calculation. It will happen at the very beginning if \(a_{11}=0\). A simple example is
+
+\[\textbf{Zero in the pivot position}\qquad\begin{bmatrix}\textbf{0}&2\\ 3&4\end{bmatrix}\begin{bmatrix}u\\ v\end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\end{bmatrix}.\]
+
+The difficulty is clear; no multiple of the first equation will remove the coefficient \(3\).
+
+ 

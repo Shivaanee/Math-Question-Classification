@@ -1,0 +1,23 @@
+The input sequence is \(y=2,4,6,8\). The output sequence is \(c_{0},c_{1},c_{2},c_{3}\). The four equations (6) look for a four-term Fourier series that matches the inputs at four equally spaced points \(x\) on the interval from \(0\) to \(2\pi\):
+
+\[\begin{array}{ll}\textbf{Discrete}&\\ \textbf{Fourier}&c_{0}+c_{1}e^{ix}+c_{2}e^{2ix}+c_{3}e^{3ix}=\begin{cases}2& \text{at}&x=0\\ 4&\text{at}&x=\pi/2\\ 6&\text{at}&x=\pi\\ 8&\text{at}&x=3\pi/2.\end{cases}\end{array}\]
+
+Those are the four equations in system (6). At \(x=2\pi\) the series returns \(y_{0}=2\) and continues periodically. The Discrete Fourier Series is best written in this _complex_ form, as a combination of exponentials \(e^{ikx}\) rather than \(\sin kx\) and \(\cos kx\).
+
+For every \(n\), the matrix connecting \(y\) to \(c\) can be inverted. It represents \(n\) equations, requiring the finite series \(c_{0}+c_{1}e^{ix}+\cdots\)_(n terms)_ to agree with \(y\)_(at \(n\) points)_. The first agreement is at \(x=0\), where \(c_{0}+\cdots+c_{n-1}=y_{0}\). The remaining points bring powers of \(w\), and the full problem is \(Fc=y\):
+
+\[Fc=y\qquad\begin{bmatrix}1&1&1&\cdot&1\\ 1&w&w^{2}&\cdot&w^{n-1}\\ 1&w^{2}&w^{4}&\cdot&w^{2(n-1)}\\ \cdot&\cdot&\cdot&\cdot&\cdot\\ 1&w^{n-1}&w^{2(n-1)}&\cdot&w^{(n-1)^{2}}\end{bmatrix}\begin{bmatrix}c_{0}\\ c_{1}\\ c_{2}\\ c_{n-1}\end{bmatrix}=\begin{bmatrix}y_{0}\\ y_{1}\\ y_{2}\\ \cdot\\ y_{n-1}\end{bmatrix}.\] (7)
+
+_There stands the Fourier matrix \(F\)_ with entries \(F_{jk}=w^{jk}\). It is natural to number the rows and columns from \(0\) to \(n-1\), instead of \(1\) to \(n\). The first row has \(j=0\), the first column has \(k=0\), and all their entries are \(w^{0}=1\).
+
+To find the \(c\)'s we have to invert \(F\). In the \(4\) by \(4\) case, \(F^{-1}\) was built from \(1/i=-i\). That is the general rule, that \(F^{-1}\) comes from the complex number \(w^{-1}=\overline{w}\). It lies at the angle \(-2\pi/n\), where \(w\) was at the angle \(+2\pi/n\):
+
+**3V** The inverse matrix is built from the powers of \(w^{-1}=1/w=\overline{w}\):
+
+\[F^{-1}=\frac{1}{n}\begin{bmatrix}1&1&1&\cdot&1\\ 1&w^{-1}&w^{-2}&\cdot&w^{-(n-1)}\\ 1&w^{-2}&1&\cdot&\cdot\\ \cdot&\cdot&\cdot&\cdot&\cdot\\ 1&w^{-(n-1)}&w^{-2(n-1)}&\cdot&w^{-(n-1)^{2}}\end{bmatrix}=\frac{\overline{ F}}{n}.\] (8)
+
+\[\text{Thus}\quad F=\begin{bmatrix}1&1&1\\ 1&e^{2\pi i/3}&e^{4\pi i/3}\\ 1&e^{4\pi i/3}&e^{8\pi i/3}\end{bmatrix}\quad\text{has}\quad F^{-1}=\frac{1} {3}\begin{bmatrix}1&1&1\\ 1&e^{-2\pi i/3}&e^{-4\pi i/3}\\ 1&e^{-4\pi i/3}&e^{-8\pi i/3}\end{bmatrix}.\]
+
+Row \(j\) of \(F\) times column \(j\) of \(F^{-1}\) is always \((1+1+\cdots+1)/n=1\). The harder part is off the diagonal, to show that row \(j\) of \(F\) times column \(k\) of \(F^{-1}\) gives zero:
+
+\[1\cdot 1+w^{j}w^{-k}+w^{2j}w^{-2k}+\cdots+w^{(n-1)j}w^{-(n-1)k}=0\quad\text{if} \quad j\neq k.\] (9) 

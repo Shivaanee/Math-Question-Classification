@@ -1,0 +1,25 @@
+
+
+**25.**: When zero appears in a pivot position, \(A=LU\) _is not possible_! (We need nonzero pivots \(d\), \(f\), \(i\) in \(U\).) Show directly why these are both impossible:
+
+\[\begin{bmatrix}0&1\\ 2&3\end{bmatrix}=\begin{bmatrix}1&0\\ \ell&1\end{bmatrix}\begin{bmatrix}d&e\\ 0&f\end{bmatrix}\qquad\begin{bmatrix}1&1&0\\ 1&1&2\\ 1&2&1\end{bmatrix}=\begin{bmatrix}1&&\\ \ell&1&\\ m&n&1\end{bmatrix}\begin{bmatrix}d&e&g\\ &f&h\\ &&i\end{bmatrix}.\]
+**26.**: Which number \(c\) leads to zero in the second pivot position? A row exchange is needed and \(A=LU\) is not possible. Which \(c\) produces zero in the third pivot position? Then a row exchange can't help and elimination fails:
+
+\[A=\begin{bmatrix}1&c&0\\ 2&4&1\\ 3&5&1\end{bmatrix}.\]
+**27.**: What are \(L\) and \(D\) for this matrix \(A\)? What is \(U\) in \(A=LU\) and what is the new \(U\) in \(A=LDU\)?
+
+\[A=\begin{bmatrix}2&4&8\\ 0&3&9\\ 0&0&7\end{bmatrix}.\]
+**28.**: \(A\) and \(B\) are symmetric across the diagonal (because \(4=4\)). Find their triple factorizations \(LDU\) and say how \(U\) is related to \(L\) for these symmetric matrices:
+
+\[A=\begin{bmatrix}2&4\\ 4&11\end{bmatrix}\quad\text{and}\quad B=\begin{bmatrix}1&4&0\\ 4&12&4\\ 0&4&0\end{bmatrix}.\]
+**29.**: (Recommended) Compute \(L\) and \(U\) for the symmetric matrix
+
+\[A=\begin{bmatrix}a&a&a&a\\ a&b&b&b\\ a&b&c&c\\ a&b&c&d\end{bmatrix}.\]
+
+Find four conditions on \(a\), \(b\), \(c\), \(d\) to get \(A=LU\) with four pivots.
+**30.**: Find \(L\) and \(U\) for the nonsymmetric matrix
+
+\[A=\begin{bmatrix}a&r&r&r\\ a&b&s&s\\ a&b&c&t\\ a&b&c&d\end{bmatrix}.\]
+
+Find the four conditions on \(a\), \(b\), \(c\), \(d\), \(r\), \(s\), \(t\) to get \(A=LU\) with four pivots.
+

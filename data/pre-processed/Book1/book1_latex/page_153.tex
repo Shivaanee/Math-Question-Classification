@@ -1,0 +1,33 @@
+
+
+**Example 2**.: _Integration_ from \(0\) to \(t\) is also linear (_it takes \(\textbf{P}_{n}\) to \(\textbf{P}_{n+1}\)_):
+
+\[Ap(t)=\int_{0}^{t}(a_{0}+\cdots+a_{n}t^{n})dt=a_{0}t+\cdots+\frac{a_{n}}{n+1}t^{ n+1}.\] (3)
+
+This time there is no nullspace (except for the zero vector, as always!) but integration does not produce all polynomials in \(\textbf{P}_{n+1}\). The right side of equation (3) has no constant term. Probably the constant polynomials will be the left nullspace.
+
+**Example 3**.: _Multiplication_ by a fixed polynomial like \(2+3t\) is linear:
+
+\[Ap(t)=(2+3t)(a_{0}+\cdots+a_{n}t^{n})=2a_{0}+\cdots+3a_{n}t^{n+1}.\]
+
+Again this transforms \(\textbf{P}_{n}\) to \(\textbf{P}_{n+1}\), with no nullspace except \(p=0\).
+
+In these examples (and in almost all examples), linearity is not difficult to verify. It hardly even seems interesting. If it is there, it is practically impossible to miss. Nevertheless, it is the most important property a transformation can have1. Of course most transformations are not linear--for example, to square the polynomial (\(Ap=p^{2}\)), or to add \(1\) (\(Ap=p+1\)), or to keep the positive coefficients (\(A(t-t^{2})=t\)). It will be linear transformations, and _only those_, that lead us back to matrices.
+
+Footnote 1: Invertibility is perhaps in second place as an important property.
+
+### Transformations Represented by Matrices
+
+Linearity has a crucial consequence: _If we know \(Ax\) for each vector in a basis, then we know \(Ax\) for each vector in the entire space_. Suppose the basis consists of the \(n\) vectors \(x_{1},\ldots,x_{n}\). Every other vector \(x\) is a combination of those particular vectors (they span the space). Then linearity determines \(Ax\):
+
+\[\textbf{Linearity}\qquad\text{If}\quad x=c_{1}x_{1}+\cdots+c_{n}x_{n}\quad \text{then}\quad Ax=c_{1}(Ax_{1})+\cdots+c_{n}(Ax_{n}).\] (4)
+
+The transformation \(T(x)=Ax\) has no freedom left, after it has decided what to do with the basis vectors. The rest is determined by linearity. The requirement (1) for two vectors \(x\) and \(y\) leads to condition (4) for \(n\) vectors \(x_{1},\ldots,x_{n}\). The transformation does have a free hand with the vectors in the basis (they are independent). When those are settled, the transformation of every vector is settled.
+
+**Example 4**.: What linear transformation takes \(x_{1}\) and \(x_{2}\) to \(Ax_{1}\) and \(Ax_{2}\)?
+
+\[x_{1}=\begin{bmatrix}1\\ 0\end{bmatrix}\quad\text{goes to}\quad Ax_{1}=\begin{bmatrix}2\\ 3\\ 4\end{bmatrix};\quad x_{2}=\begin{bmatrix}0\\ 1\end{bmatrix}\quad\text{goes to}\quad Ax_{2}=\begin{bmatrix}4\\ 6\\ 8\end{bmatrix}.\]
+
+It must be multiplication \(T(x)=Ax\) by the matrix
+
+\[A=\begin{bmatrix}2&4\\ 3&6\\ 4&8\end{bmatrix}.\]

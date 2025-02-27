@@ -1,0 +1,25 @@
+One subscript is enough for a vector. The \(j\)th component of \(x\) is denoted by \(x_{j}\). (The multiplication above had \(x_{1}=2\), \(x_{2}=5\), \(x_{3}=0\).) Normally \(x\) is written as a column vector--like an \(n\) by 1 matrix. But sometimes it is printed on a line, as in \(x=(2,5,0)\). The parentheses and commas emphasize that it is not a 1 by 3 matrix. It is a column vector, and it is just temporarily lying down.
+
+To describe the product \(Ax\), we use the "_sigma_" symbol \(\Sigma\) for summation:
+
+\[\text{{Sigma notation}}\qquad\text{The $i$th component of $Ax$ is }\sum_{j=1}^{n}a_{ij}x_{j}.\]
+
+This sum takes us along the \(i\)th row of \(A\). The column index \(j\) takes each value from 1 to \(n\) and we add up the results--the sum is \(a_{i1}x_{1}+a_{i2}x_{2}+\cdots+a_{in}x_{n}\).
+
+We see again that the length of the rows (the number of columns in \(A\)) must match the length of \(x\). **An \(m\) by \(n\) matrix multiplies an \(n\)-dimensional vector** (and produces an \(m\)-dimensional vector). Summations are simpler than writing everything out in full, but matrix notation is better. (Einstein used "tensor notation," in which a repeated index automatically means summation. He wrote \(a_{ij}x_{j}\) or even \(a_{i}^{j}x_{j}\), without the \(\Sigma\). Not being Einstein, we keep the \(\Sigma\).)
+
+### The Matrix Form of One Elimination Step
+
+So far we have a convenient shorthand \(Ax=b\) for the original system of equations. What about the operations that are carried out during elimination? In our example, the first step subtracted 2 times the first equation from the second. On the right-hand side, 2 times the first component of \(b\) was subtracted from the second component. _The same result is achieved if we multiply \(b\) by this elementary matrix_ (or _elimination matrix_):
+
+\[\text{{Elementary matrix}}\qquad E=\begin{bmatrix}1&0&0\\ -\mathbf{2}&1&0\\ 0&0&1\end{bmatrix}.\]
+
+This is verified just by obeying the rule for multiplying a matrix and a vector:
+
+\[Eb=\begin{bmatrix}1&0&0\\ -\mathbf{2}&1&0\\ 0&0&1\end{bmatrix}\begin{bmatrix}5\\ -2\\ 9\end{bmatrix}=\begin{bmatrix}5\\ -\mathbf{12}\\ 9\end{bmatrix}.\]
+
+The components 5 and 9 stay the same (because of the 1, 0, 0 and 0, 0, 1 in the rows of \(E\)). The new second component \(-12\) appeared after the first elimination step.
+
+It is easy to describe the matrices like \(E\), which carry out the separate elimination steps. We also notice the "identity matrix," which does nothing at all.
+
+1BThe _identity matrix I_, with 1s on the diagonal and 0s everywhere else, leaves every vector unchanged. The _elementary matrix_\(E_{ij}\) subtracts \(\ell\) times 

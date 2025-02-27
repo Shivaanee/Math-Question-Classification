@@ -1,0 +1,18 @@
+
+Images.A monochrome (black and white) image is an array of \(M\times N\) pixels (square patches with uniform grayscale level) with \(M\) rows and \(N\) columns. Each of the \(MN\) pixels has a grayscale or intensity value, with 0 corresponding to black and 1 corresponding to bright white. (Other ranges are also used.) An image can be represented by a vector of length \(MN\), with the elements giving grayscale levels at the pixel locations, typically ordered column-wise or row-wise.
+
+Figure 4 shows a simple example, an \(8\times 8\) image. (This is a very low resolution; typical values of \(M\) and \(N\) are in the hundreds or thousands.) With the vector entries arranged row-wise, the associated 64-vector is
+
+\[x=(0.65,0.05,0.20,\ldots,0.28,0.00,0.90).\]
+
+A color \(M\times N\) pixel image is described by a vector of length \(3MN\), with the entries giving the R, G, and B values for each pixel, in some agreed-upon order.
+
+Video.A monochrome video, _i.e._, a sequence of length \(K\) of images with \(M\times N\) pixels, can be represented by a vector of length \(KMN\) (again, in some particular order).
+
+Word count and histogram.A vector of length \(n\) can represent the number of times each word in a dictionary of \(n\) words appears in a document. For example, \((25,2,0)\) means that the first dictionary word appears 25 times, the second one twice, and the third one not at all. (Typical dictionaries used for document word counts have many more than 3 elements.) A small example is shown in figure 5. A variation is to have the entries of the vector give the _histogram_ of word frequencies in the document, so that, _e.g._, \(x_{5}=0.003\) means that 0.3% of all the words in the document are the fifth word in the dictionary.
+
+It is common practice to count variations of a word (say, the same word stem with different endings) as the same word; for example, 'rain', 'rains', 'raining', and '
+
+Figure 4: \(8\times 8\) image and the grayscale levels at six pixels.
+
+ 

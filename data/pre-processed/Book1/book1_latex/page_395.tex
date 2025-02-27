@@ -1,0 +1,24 @@
+idea is simple, the applications can be complicated. For problems on this scale, the one undebatable point is their cost--I am afraid a billion dollars would be a conservative estimate of the expense so far. I hope some readers will be vigorous enough to master the finite element method and put it to good use.
+
+### Trial Functions
+
+Starting from the classical _Rayleigh-Ritz principle_, I will introduce the new idea of finite elements. The equation can be \(-u^{\prime\prime}=f(x)\) with boundary conditions \(u(0)=u(1)=0\). This problem is _infinite-dimensional_ (the vector \(b\) is replaced by a function \(f\), and the matrix \(A\) becomes \(-d^{2}/dx^{2}\)). We can write down the energy whose minimum is required, replacing inner products \(v^{\rm T}f\) by integrals of \(v(x)f(x)\):
+
+\[\mbox{\bf Total energy}\qquad P(v)=\frac{1}{2}v^{\rm T}Av-v^{\rm T}f=\frac{1}{2} \int_{0}^{1}v(x)(-v^{\prime\prime}(x))dx-\int_{0}^{1}v(x)f(x)dx.\] (1)
+
+\(P(v)\) is to be minimized over all functions \(v(x)\) that satisfy \(v(0)=v(1)=0\). _The function that gives the minimum will be the solution_\(u(x)\). The differential equation has been converted to a minimum principle, and it only remains to integrate by parts:
+
+\[\int_{0}^{1}v(-v^{\prime\prime})dx=\int_{0}^{1}(v^{\prime})^{2}dx-[vv^{\prime }]_{x=0}^{x=1}\quad\mbox{so}\quad P(v)=\int_{0}^{1}\left[\frac{1}{2}(v^{ \prime}(x))^{2}+v(x)f(x)\right]dx.\]
+
+The term \(vv^{\prime}\) is zero at both limits, because \(v\) is. Now \(\int(v^{\prime}(x))^{2}dx\) is _positive_ like \(x^{\rm T}Ax\). We are guaranteed a minimum.
+
+To compute the minimum exactly is equivalent to solving the differential equation exactly. _The Rayleigh-Ritz principle produces an \(n\)-dimensional problem by choosing only \(n\) trial functions \(V_{1}(x),\ldots,V_{n}(x)\)_. From all combinations \(V=y_{1}V_{1}(x)+\cdots+y_{n}V_{n}(x)\), we look for the particular combination (call it \(U\)) that minimizes \(P(V)\). This is the key idea, to minimize over a subspace of \(V\)'s instead of over all possible \(v(x)\). The function that gives the minimum is \(U(x)\). We hope and expect that \(U(x)\) is near the correct \(u(x)\).
+
+Substituting \(V\) for \(v\), the quadratic turns into
+
+\[P(V)=\frac{1}{2}\int_{0}^{1}\big{(}y_{1}V_{1}^{\prime}(x)+\cdots+y_{n}V_{n}^{ \prime}(x)\big{)}^{2}dx-\int_{0}^{1}\big{(}y_{1}V_{1}(x)+\cdots+y_{n}V_{n}(x) \big{)}f(x)dx.\] (2)
+
+The trial functions \(V\) are chosen in advance. That is the key step! The unknowns \(y_{1},\ldots,y_{n}\) go into a vector \(y\). Then \(P(V)=\frac{1}{2}y^{\rm T}Ay-y^{\rm T}b\) is recognized as one of the quadratics we are accustomed to. The matrix entries \(A_{ij}\) are \(\int V_{i}^{\prime}V_{j}^{\prime}dx=\mbox{coefficient of }y_{i}y_{j}\). The components \(b_{j}\) are \(\int V_{j}fdx\). We can certainly find the minimum of \(\frac{1}{2}y^{\rm T}Ay-y^{\rm T}b\) by solving \(Ay=b\). Therefore the Rayleigh-Ritz method has three steps:
+
+1. _Choose the trial functions \(V_{1},\ldots,V_{n}\)._
+2. _Compute the coefficients \(A_{ij}\) and \(b_{j}\)._ 

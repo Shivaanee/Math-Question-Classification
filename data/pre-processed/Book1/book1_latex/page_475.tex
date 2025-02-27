@@ -1,0 +1,12 @@
+* If \({\bf V}\cap{\bf W}\) contains only the zero vector, then equation (3) becomes \(\dim({\bf V}+{\bf W})=\dim{\bf V}+\dim{\bf W}\). Check this when \({\bf V}\) is the row space of \(A\), \({\bf W}\) is the nullspace of \(A\), and the matrix \(A\) is \(m\) by \(n\) of rank \(r\). What are the dimensions?
+* Give an example in \({\bf R}^{3}\) for which \({\bf V}\cap{\bf W}\) contains only the zero vector, but \({\bf V}\) is not orthogonal to \({\bf W}\).
+* If \({\bf V}\cap{\bf W}=\{0\}\), then \({\bf V}+{\bf W}\) is called the _direct sum_ of \({\bf V}\) and \({\bf W}\), with the special notation \({\bf V}\oplus{\bf W}\). If \({\bf V}\) is spanned by \((1,1,1)\) and \((1,0,1)\), choose a subspace \({\bf W}\) so that \({\bf V}\oplus{\bf W}={\bf R}^{3}\), Explain why any vector \(x\) in the direct sum \({\bf V}\oplus{\bf W}\) can be written in one _and only one way_ as \(x=v+w\) (with \(v\) in \({\bf V}\) and \(w\) in \({\bf W}\)).
+* Find a basis for the sum \({\bf V}+{\bf W}\) of the space \({\bf V}\) spanned by \(v_{1}=(1,1,0,0)\), \(v_{2}=(1,0,1,0)\) and the space \({\bf W}\) spanned by \(w_{1}=(0,1,0,1)\), \(w_{2}=(0,0,1,1)\). Find also the dimension of \({\bf V}\cap{\bf W}\) and a basis for it.
+* Prove from equation (3) that \(\operatorname{rank}(A+B)=\operatorname{rank}(A)+\operatorname{rank}(B)\).
+* **The intersection \(C(A)\cap C(B)\) matches the nullspace of \([A\;\;B]\)**. Each \(y=Ax_{1}=Bx_{2}\) in the column spaces of both \(A\) and \(B\) matches \(x=(x_{1},-x_{2})\) in the nullspace, because \([A\;\;B]x=Ax_{1}-Bx_{2}=0\). Check that \(y=(6,3,6)\) matches \(x=(1,1,-2,-3)\), and find the intersection \(C(A)\cap C(B)\), for \[A=\begin{bmatrix}1&5\\ 3&0\\ 2&4\end{bmatrix}\qquad\qquad B=\begin{bmatrix}3&0\\ 0&1\\ 0&2\end{bmatrix}.\]
+* Multiply \(A\otimes B\) times \(A^{-1}\otimes B^{-1}\) to get \(AA^{-1}\otimes BB^{-1}=I\otimes I=I_{\rm 2D}\).
+* What is the 4 by 4 Fourier matrix \(F_{\rm 2D}=F\otimes F\) for \(F=\begin{bmatrix}1&1\\ 1&-1\end{bmatrix}\)?
+* Suppose \(Ax=\lambda(A)x\) and \(By=\lambda(B)y\). Form a long column vector \(z\) with \(n^{2}\) components, \(x_{1}y\), then \(x_{2}y\), and eventually \(x_{n}y\). Show that \(z\) is an eigenvector for \((A\otimes I)z=\lambda(A)z\) and \((A\otimes B)z=\lambda(A)\lambda(B)z\).
+* What would be the seven-point Laplace matrix for \(-u_{xx}-u_{yy}-u_{zz}=0\)? This "three-dimensional" matrix is built from Kronecker products using \(I\) and \(A_{\rm 1D}\).
+
+ 

@@ -1,0 +1,31 @@
+
+
+**5.**_Subtracting a multiple of one row from another row leaves the same determinant_.
+
+\[\text{{Row operation}}\qquad\left|\begin{matrix}a-\ell c&b-\ell d\\ c&d\end{matrix}\right|=\left|\begin{matrix}a&b\\ c&d\end{matrix}\right|.\]
+
+Rule 3 would say that there is a further term \(-\ell\left|\begin{matrix}c&d\\ c&d\end{matrix}\right|\), but that term is zero by rule 4. The usual elimination steps do not affect the determinant!
+
+**6.**_If \(A\) has a row of zeros, then \(\det A=0\)._
+
+\[\text{{Zero row}}\qquad\left|\begin{matrix}0&0\\ c&d\end{matrix}\right|=0.\]
+
+One proof is to add some other row to the zero row. The determinant is unchanged, by rule 5. Because the matrix will now have two identical rows, \(\det A=0\) by rule 4.
+
+**7.**_If \(A\) is triangular then \(\det A\) is the product \(a_{11}a_{22}\cdots a_{nn}\) of the diagonal entries. If the triangular \(A\) has 1s along the diagonal, then \(\det A=1\)._
+
+\[\text{{Triangular matrix}}\qquad\left|\begin{matrix}a&b\\ 0&d\end{matrix}\right|=ad\qquad\left|\begin{matrix}a&0\\ c&d\end{matrix}\right|=ad.\]
+
+Proof.: Suppose the diagonal entries are nonzero. Then elimination can remove all the off-diagonal entries, without changing the determinant (by rule 5). If \(A\) is lower triangular, the steps are downward as usual. If \(A\) is upper triangular, the _last_ column is cleared out first--using multiples of \(a_{nn}\). Either way we reach the diagonal matrix \(D\):
+
+\[D=\left[\begin{matrix}a_{11}&&\\ &\ddots&\\ &&a_{nn}\end{matrix}\right]\quad\text{has}\quad\det D=a_{11}a_{22}\cdots a_{ nn}\det I=a_{11}a_{22}\cdots a_{nn}.\]
+
+To find \(\det D\) we patiently apply rule 3. Factoring out \(a_{11}\) and then \(a_{22}\) and finally \(a_{nn}\) leaves the identity matrix. At last we have a use for rule 1: \(\det I=1\). 
+
+_If a diagonal entry is zero then elimination will produce a zero row_. By rule 5 these elimination steps do not change the determinant. By rule 6 the zero row means a zero determinant. This means: When a triangular matrix is _singular_ (because of a zero on the main diagonal) its determinant is _zero_.
+
+This is a key property. **All singular matrices have a zero determinant**.
+
+**8.**_If \(A\) is singular, then \(\det A=0\). If \(A\) is invertible, then \(\det A\neq 0\)._
+
+\[\text{{Singular matrix}}\qquad\left[\begin{matrix}a&b\\ c&d\end{matrix}\right]\quad\text{is not invertible if and only if}\quad ad-bc=0.\]

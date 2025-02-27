@@ -1,0 +1,19 @@
+\(\mathbf{6A}\quad ax^{2}+2bxy+cy^{2}\) is positive definite if and only if \(a>0\) and \(ac>b^{2}\). Any \(f(x,y)\) has a minimum at a point where \(\partial F/\partial x=\partial F/\partial y=0\) with
+
+\[\frac{\partial F^{2}}{\partial x^{2}}>0\qquad\text{and}\qquad\left[\frac{ \partial F^{2}}{\partial x^{2}}\right]\left[\frac{\partial F^{2}}{\partial y^ {2}}\right]>\left[\frac{\partial F^{2}}{\partial x\partial y}\right]^{2}.\] (3)
+
+Test for a maximum:Since \(f\) has a maximum whenever \(-f\) has a minimum, we just reverse the signs of \(a\), \(b\), and \(c\). This actually leaves \(ac>b^{2}\) unchanged: The quadratic form is _negative definite_ if and only if \(a<0\) and \(ac>b^{2}\). The same change applies for a maximum of \(F(x,y)\).
+
+Singular case \(ac=b^{2}\):The second term in equation (2) disappears to leave only the first square--which is either _positive semidefinite_, when \(a>0\), or _negative semidefinite_, when \(a<0\). The prefix _semi_ allows the possibility that \(f\) can equal zero, as it will at the point \(x=b\), \(y=-a\). The surface \(z=f(x,y)\) degenerates from a bowl into a valley. For \(f=(x+y)^{2}\), the valley runs along the line \(x+y=0\).
+
+Saddle Point \(ac<b^{2}\):In one dimension, \(F(x)\) has a minimum or a maximum, or \(F^{\prime\prime}=0\). In two dimensions, a very important possibility still remains: _The combination \(ac-b^{2}\) may be negative_. This occurred in both examples, when \(b\) dominated \(a\) and \(c\). It also occurs if \(a\) and \(c\) have opposite signs. Then two directions give opposite results--in one direction \(f\) increases, in the other it decreases. It is useful to consider two special cases:
+
+\[\mathbf{Saddle\ points\ at}\ (0,0)\qquad f_{1}=2xy\quad\text{and}\quad f_{2}=x^{2 }-y^{2}\quad\text{and}\quad ac-b^{2}=-1.\]
+
+In the first, \(b=1\) dominates \(a=c=0\). In the second, \(a=1\) and \(c=-1\) have opposite sign. The saddles \(2xy\) and \(x^{2}-y^{2}\) are practically the same; if we turn one through \(45^{\circ}\) we get the other. They are also hard to draw.
+
+These quadratic forms are _indefinite_, because they can take either sign. So we have a stationary point that is neither a maximum or a minimum. It is called a _saddle point_. The surface \(z=x^{2}-y^{2}\) goes down in the direction of the \(y\) axis, where the legs fit (if you still ride a horse). In case you switched to a car, think of a road going over a mountain pass. The top of the pass is a minimum as you look along the range of mountains, but it is a maximum as you go along the road.
+
+Higher Dimensions: Linear Algebra
+
+Calculus would be enough to find our conditions \(F_{xx}>0\) and \(F_{xx}F_{yy}>F_{xy}^{2}\) for a minimum. But linear algebra is ready to do more, because the second derivatives fit into a symmetric matrix \(A\). The terms \(ax^{2}\) and \(cy^{2}\) appear _on the diagonal_. The cross derivative \(2bxy\) is 

@@ -1,0 +1,25 @@
+and a vector in \(W^{\prime}\). If \(\beta\) is in \(W^{\prime}\), it follows that \(E\beta=0\). Hence \(I-E\) maps \(V\) onto \(W^{\prime}\).
+
+The projection \(E\) constructed in the proof may be characterized as follows: \(E\beta=\alpha\) if and only if \(\alpha\) is in \(W\) and \(\beta-\alpha\) belongs to \(W^{\prime}\). Thus \(E\) is independent of the basis of \(W\) that was used in its construction. Hence we may refer to \(E\) as the **projection of \(V\) on \(W\)** that is **determined by** the direct sum decomposition
+
+\[V=W\bigoplus W^{\prime}.\]
+
+Note that \(E\) is an orthogonal projection if and only if \(W^{\prime}=W^{\perp}\).
+
+**Theorem 8**: _Let \(f\) be a form on a real or complex vector space \(V\) and \(A\) the matrix of \(f\) in the ordered basis \(\{\alpha_{i}\), ..., \(\alpha_{n}\}\) of \(V\). Suppose the principal minors of \(A\) are all different from \(0\). Then there is a unique upper-triangular matrix \(P\) with \(P_{kk}=1\)\((1\leq k\leq n)\) such that_
+
+\[P^{*}AP\]
+
+_is upper-triangular._
+
+Since \(\Delta_{k}(A*)=\overline{\Delta_{k}(A)}\)\((1\leq k\leq n)\), the principal minors of \(A*\) are all different from \(0\). Hence, by the lemma used in the proof of Theorem 6, there exists an upper-triangular matrix \(P\) with \(P_{kk}=1\) such that \(A*P\) is lower-triangular. Therefore, \(P*A=(A*P)*\) is upper-triangular. Since the product of two upper-triangular matrices is again upper-triangular, it follows that \(P*AP\) is upper-triangular. This shows the existence but not the uniqueness of \(P\). However, there is another more geometric argument which may be used to prove both the existence and uniqueness of \(P\).
+
+Let \(W_{k}\) be the subspace spanned by \(\alpha_{1}\), ..., \(\alpha_{k}\) and \(W^{\prime}_{k}\) the set of all \(\beta\) in \(V\) such that \(f(\alpha,\beta)=0\) for every \(\alpha\) in \(W_{k}\). Since \(\Delta_{k}(A)\neq 0\), the \(k\times k\) matrix \(M\) with entries
+
+\[M_{ij}=f(\alpha_{j},\alpha_{i})=A_{ij}\]
+
+(\(1\leq i,j\leq k\)) is invertible. By Theorem 7
+
+\[V=W_{k}\bigoplus W^{\prime}_{k}.\]
+
+Let \(E_{k}\) be the projection of \ 

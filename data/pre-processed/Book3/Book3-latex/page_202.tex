@@ -1,0 +1,31 @@
+
+
+**Theorem 3**: _Let \(T\) be a linear operator on an \(n\)-dimensional vector space \(V\)\([\)or, let \(A\) be an \(n\times n\) matrix\(].\) The characteristic and minimal polynomials for \(T\)\([\)for \(A]\) have the same roots, except for multiplicities._
+
+Let \(p\) be the minimal polynomial for \(T.\) Let \(c\) be a scalar. What we want to show is that \(\mbox{\boldmath$p$}(c)=0\) if and only if \(c\) is a characteristic value of \(T.\)
+
+First, suppose \(p(c)=0.\) Then
+
+\[p=(x-c)q\]
+
+where \(q\) is a polynomial. Since \(\deg q<\deg p,\) the definition of the minimal polynomial \(p\) tells us that \(q(T)\neq 0.\) Choose a vector \(\beta\) such that \(q(T)\beta\neq 0.\) Let \(\alpha=q(T)\beta.\) Then
+
+\[\begin{array}{rl}0&=p(T)\beta\\ &=(T-cI)q(T)\beta\\ &=(T-cI)\alpha\end{array}\]
+
+and thus, \(c\) is a characteristic value of \(T.\)
+
+Now, suppose that \(c\) is a characteristic value of \(T,\) say, \(T\alpha=c\alpha\) with \(\alpha\neq 0.\) As we noted in a previous lemma,
+
+\[p(T)\alpha=p(c)\alpha.\]
+
+Since \(p(T)=0\) and \(\alpha\neq 0,\) we have \(p(c)=0.\)
+
+Let \(T\) be a diagonalizable linear operator and let \(c_{1},\ldots,c_{k}\) be the distinct characteristic values of \(T.\) Then it is easy to see that the minimal polynomial for \(T\) is the polynomial
+
+\[p=(x-c_{1})\,\cdots\,(x-c_{k}).\]
+
+If \(\alpha\) is a characteristic vector, then one of the operators \(T-c_{1}I,\ldots,\)\(T-c_{k}I\) sends \(\alpha\) into \(0.\) Therefore
+
+\[(T-c_{1}I)\,\cdots\,(T-c_{k}I)\alpha=0\]
+
+for every characteristic vector \(\alpha.\) There is a basis for the underlying space which

@@ -1,0 +1,11 @@
+
+
+#### Examples.
+
+When the vectors represent displacements, a linear combination is the sum of the scaled displacements. This is illustrated in figure 11.11.
+* _Audio mixing._ When \(a_{1},\dots,a_{m}\) are vectors representing audio signals (over the same period of time, for example, simultaneously recorded), they are called _tracks_. The linear combination \(\beta_{1}a_{1}+\dots+\beta_{m}a_{m}\) is perceived as a mixture (also called a _mix_) of the audio tracks, with relative loudness given by \(|\beta_{1}|\), ..., \(|\beta_{m}|\). A producer in a studio, or a sound engineer at a live show, chooses values of \(\beta_{1},\dots,\beta_{m}\) to give a good balance between the different instruments, vocals, and drums.
+* _Cash flow replication._ Suppose that \(c_{1},\dots,c_{m}\) are vectors that represent cash flows, such as particular types of loans or investments. The linear combination \(f=\beta_{1}c_{1}+\dots+\beta_{m}c_{m}\) represents another cash flow. We say that the cash flow \(f\) has been _replicated_ by the (linear combination of the) original cash flows \(c_{1},\dots,c_{m}\). As an example, \(c_{1}=(1,-1.1,0)\) represents a $1 loan from period 1 to period 2 with 10% interest, and \(c_{2}=(0,1,-1.1)\) represents a $1 loan from period 2 to period 3 with 10% interest. The linear combination \[d=c_{1}+1.1c_{2}=(1,0,-1.21)\] represents a two period loan of $1 in period 1, with compounded 10% interest. Here we have replicated a two period loan from two one period loans.
+* _Line and segment_. When \(a\) and \(b\) are different \(n\)-vectors, the affine combination \(c=(1-\theta)a+\theta b\), where \(\theta\) is a scalar, describes a point on the _line_ passing through \(a\) and \(b\). When \(0\leq\theta\leq 1\), \(c\) is a convex combination of \(a\) and \(b\), and is said to lie on the _segment_ between \(a\) and \(b\). For \(n=2\) and \(n=3\), with the vectors representing coordinates of 2-D or 3-D points, this agrees with the usual geometric notion of line and segment. But we can also talk about the line passing through two vectors of dimension 100. This is illustrated in figure 12.
+
+Figure 11: _Left._ Two 2-vectors \(a_{1}\) and \(a_{2}\). _Right._ The linear combination \(b=0.75a_{1}+1.5a_{2}\).
+

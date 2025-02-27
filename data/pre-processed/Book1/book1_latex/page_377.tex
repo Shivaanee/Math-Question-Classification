@@ -1,0 +1,26 @@
+
+
+### 6.3 Singular Value Decomposition
+
+A great matrix factorization has been saved for the end of the basic course. \(U\Sigma V^{\mathrm{T}}\) joins with \(LU\) from elimination and \(QR\) from orthogonalization (Gauss and Gram-Schmidt). Nobody's name is attached; \(A=U\Sigma V^{\mathrm{T}}\) is known as the "SVD" or the _singular value decomposition_. We want to describe it, to prove it, and to discuss its applications--which are many and growing.
+
+The SVD is closely associated with the eigenvalue-eigenvector factorization \(Q\Lambda Q^{\mathrm{T}}\) of a positive definite matrix. The eigenvalues are in the diagonal matrix \(\Lambda\). The eigenvector matrix \(Q\)_is orthogonal_ (\(Q^{\mathrm{T}}Q=I\)) because eigenvectors of a symmetric matrix can be chosen to be orthonormal. For most matrices that is not true, and for rectangular matrices it is ridiculous (eigenvalues undefined). But now we allow the \(Q\) on the left and the \(Q^{\mathrm{T}}\) on the right to be _any two orthogonal matrices_\(U\) and \(V^{\mathrm{T}}\)--not necessarily transposes of each other. Then every matrix will split into \(A=U\Sigma V^{\mathrm{T}}\).
+
+The diagonal (but rectangular) matrix \(\Sigma\) has eigenvalues from \(A^{\mathrm{T}}A\), not from \(A\)! Those positive entries (also called sigma) will be \(\sigma_{1},\ldots,\sigma_{r}\). They are the _singular values_ of \(A\). They fill the first \(r\) places on the main diagonal of \(\Sigma\)--when \(A\) has rank \(r\). The rest of \(\Sigma\) is zero.
+
+With rectangular matrices, the key is almost always to consider \(A^{\mathrm{T}}A\) and \(AA^{\mathrm{T}}\).
+
+**Singular Value Decomposition:** Any \(m\) by \(n\) matrix \(A\) can be factored into
+
+\[A=U\Sigma V^{\mathrm{T}}=(\mathbf{orthogonal})(\mathbf{diagonal})(\mathbf{orthogonal }).\]
+
+The columns of \(U\) (\(m\) by \(m\)) are eigenvectors of \(AA^{\mathrm{T}}\), and the columns of \(V\) (\(n\) by \(n\)) are eigenvectors of \(A^{\mathrm{T}}A\). The \(r\) singular values on the diagonal of \(\Sigma\) (\(m\) by \(n\)) are the square roots of the nonzero eigenvalues of both \(AA^{\mathrm{T}}\) and \(A^{\mathrm{T}}A\).
+
+_Remark 1_.: For positive definite matrices, \(\Sigma\) is \(\Lambda\) and \(U\Sigma V^{\mathrm{T}}\) is identical to \(Q\Lambda Q^{\mathrm{T}}\). For other symmetric matrices, any negative eigenvalues in \(\Lambda\) become positive in \(\Sigma\). For complex matrices, \(\Sigma\) remains real but \(U\) and \(V\) become _unitary_ (the complex version of orthogonal). We take complex conjugates in \(U^{\mathrm{H}}U=I\) and \(V^{\mathrm{H}}V=I\) and \(A=U\Sigma V^{\mathrm{H}}\).
+
+_Remark 2_.: \(U\) and \(V\) give orthonormal bases for _all four fundamental subspaces_:
+
+\[\begin{array}{llll}\mathrm{first}&r&\mathrm{columns of}\ U\mathrm{:}& \mathbf{column\ space}\ \mathrm{of}\ A\\ \mathrm{last}&m-r&\mathrm{columns of}\ U\mathrm{:}&\mathbf{left\ nullspace}\ \mathrm{of}\ A\\ \mathrm{first}&r&\mathrm{columns of}\ V\mathrm{:}&\mathbf{row\ space}\ \mathrm{of}\ A\\ \mathrm{last}&n-r&\mathrm{columns of}\ V\mathrm{:}&\mathbf{nullspace}\ \mathrm{of}\ A\\ \end{array}\]
+
+_Remark 3_.: The SVD chooses those bases in an extremely special way. They are more than just orthonormal. _When \(A\) multiplies a column \(v_{j}\) of \(V\), it produces \(\sigma_{j}\) times a column of \(U\)_. That comes directly from \(AV=U\Sigma\), looked at a column at a time.
+

@@ -1,0 +1,21 @@
+Scalar-vector product.If \(x\) is an \(n\)-vector and \(a\) is a number, we can interpret the scalar-vector product \(xa\), with the scalar appearing on the right, as matrix-matrix multiplication. We consider the \(n\)-vector \(x\) to be an \(n\times 1\) matrix, and the scalar \(a\) to be a \(1\times 1\) matrix. The matrix product \(xa\) then makes sense, and is an \(n\times 1\) matrix, which we consider the same as an \(n\)-vector. It coincides with the scalar-vector product \(xa\), which we usually write (by convention) as \(ax\). But note that \(ax\) cannot be interpreted as matrix-matrix multiplication (except when \(n=1\)), since the number of columns of \(a\) (which is one) is not equal to the number of rows of \(x\) (which is \(n\)).
+
+Inner product.An important special case of matrix-matrix multiplication is the multiplication of a row vector with a column vector. If \(a\) and \(b\) are \(n\)-vectors, then the inner product
+
+\[a^{T}b=a_{1}b_{1}+a_{2}b_{2}+\cdots+a_{n}b_{n}\]
+
+can be interpreted as the matrix-matrix product of the \(1\times n\) matrix \(a^{T}\) and the \(n\times 1\) matrix \(b\). The result is a \(1\times 1\) matrix, which we consider to be a scalar. (This explains the notation \(a^{T}b\) for the inner product of vectors \(a\) and \(b\), defined in SS1.4.)
+
+Matrix-vector multiplication.The matrix-vector product \(y=Ax\) defined in (6.4) can be interpreted as a matrix-matrix product of \(A\) with the \(n\times 1\) matrix \(x\).
+
+Vector outer product.The _outer product_ of an \(m\)-vector \(a\) and an \(n\)-vector \(b\) is given by \(ab^{T}\), which is an \(m\times n\) matrix
+
+\[ab^{T}=\left[\begin{array}{cccc}a_{1}b_{1}&a_{1}b_{2}&\cdots&a_{1}b_{n}\\ a_{2}b_{1}&a_{2}b_{2}&\cdots&a_{2}b_{n}\\ \vdots&\vdots&&\vdots\\ a_{m}b_{1}&a_{m}b_{2}&\cdots&a_{m}b_{n}\end{array}\right],\]
+
+whose entries are all products of the entries of \(a\) and the entries of \(b\). Note that the outer product does not satisfy \(ab^{T}=ba^{T}\), _i.e._, it is not symmetric (like the inner product). Indeed, the equation \(ab^{T}=ba^{T}\) does not even make sense, unless \(m=n\); even then, it is not true in general.
+
+Multiplication by identity.If \(A\) is any \(m\times n\) matrix, then \(AI=A\) and \(IA=A\), _i.e._, when you multiply a matrix by an identity matrix, it has no effect. (Note the different sizes of the identity matrices in the formulas \(AI=A\) and \(IA=A\).)
+
+Matrix multiplication order matters.Matrix multiplication is (in general) _not commutative:_ We _do not_ (in general) have \(AB=BA\). In fact, \(BA\) may not even make sense, or, if it makes sense, may be a different size than \(AB\). For example, if \(A\) is \(2\times 3\) and \(B\) is \(3\times 4\), then \(AB\) makes sense (the dimensions are compatible) but \(BA\) does not even make sense (the dimensions are incompatible). Even when \(AB\) and \(BA\) both make sense and are the same size, _i.e._, when \(A\) and \(B\) are square, we do not (in general) have \(AB=BA\). As a simple example, take the matrices
+
+\[A=\left[\begin{array}{cc}1&6\\ 9&3\end{array}\right],\qquad B=\left[\begin{array}{cc}0&-1\\ -1&2\end{array}\right].\] 

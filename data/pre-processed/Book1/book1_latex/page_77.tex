@@ -1,0 +1,23 @@
+to approach zero. The difference \(\Delta u\) can be _forward_, _backward_, or _centered_:
+
+\[\frac{\Delta\bm{u}}{\Delta\bm{x}}=\frac{u(x+h)-u(x)}{h}\quad\text{or}\quad\frac{ u(x)-u(x-h)}{h}\quad\text{or}\quad\frac{u(x+h)-u(x-h)}{2h}.\] (3)
+
+The last is symmetric about \(x\) and it is the most accurate. For the second derivative there is just one combination that uses only the values at \(x\) and \(x\pm h\):
+
+\[\text{\bf Second difference}\qquad\frac{d^{2}u}{dx^{2}}\approx\frac{\bm{ \Delta}^{2}u}{\bm{\Delta x}^{2}}=\frac{u(x+h)-2u(x)+u(x-h)}{h^{2}}.\] (4)
+
+This also has the merit of being symmetric about \(x\). To repeat, the right-hand side approaches the true value of \(d^{2}u/dx^{2}\) as \(h\to 0\), but we have to stop at a positive \(h\).
+
+At each meshpoint \(x=jh\), the equation \(-d^{2}u/dx^{2}=f(x)\) is replaced by its discrete analogue (5). We multiplied through by \(h^{2}\) to reach \(n\) equations \(Au=b\):
+
+\[\text{\bf Difference equation}\qquad-u_{j+1}+2u_{j}-u_{j-1}=h^{2}f(jh)\quad \text{for }j=1,\ldots,n.\] (5)
+
+The first and last equations (\(j=1\) and \(j=n\)) include \(u_{0}=0\) and \(u_{n+1}=0\), which are known from the boundary conditions. These values would be shifted to the right-hand side of the equation if they were not zero. The structure of these \(n\) equations (5) can be better visualized in matrix form. We choose \(h=\frac{1}{6}\), to get a 5 by 5 matrix \(A\):
+
+\[\text{\bf Matrix equation}\qquad\begin{bmatrix}2&-1&&&\\ -1&2&-1&&\\ &-1&2&-1&\\ &&-1&2&-1\\ &&&-1&2\\ \end{bmatrix}\begin{bmatrix}u_{1}\\ u_{2}\\ u_{3}\\ u_{4}\\ u_{5}\end{bmatrix}=h^{2}\begin{bmatrix}f(h)\\ f(2h)\\ f(3h)\\ f(4h)\\ f(5h)\end{bmatrix}.\] (6)
+
+From now on, _we will work with equation_ (6). It has a very regular coefficient matrix, whose order \(n\) can be very large. The matrix \(A\) possesses many special properties, and three of those properties are fundamental:
+
+1. _The matrix \(A\) is tridiagonal._ All nonzero entries lie on the main diagonal and the two adjacent diagonals. Outside this band all entries are \(a_{ij}=0\). These zeros will bring a tremendous simplification to Gaussian elimination.
+2. _The matrix is symmetric._ Each entry \(a_{ij}\) equals its mirror image \(a_{ji}\), so that \(A^{\mathrm{T}}=A\). The upper triangular \(U\) will be the transpose of the lower triangular \(L\), and \(A=LDL^{\mathrm{T}}\). This symmetry of \(A\) reflects the symmetry of \(d^{2}u/dx^{2}\). An odd derivative like \(du/dx\) or \(d^{3}u/dx^{3}\) would destroy the symmetry.
+3. _The matrix is positive definite._ This extra property says that _the pivots are positive_. Row exchanges are unnecessary in theory and in practice. This is in contrast to the matrix \(B\) at the end of this section, which is not positive definite. Without a row exchange it is totally vulnerable to roundoff. Positive definiteness brings this whole course together (in Chapter 6)! 

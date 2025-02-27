@@ -1,0 +1,21 @@
+Taking into account the movement of the commodity across the network, and the purchase and sale of the commodity, we get the dynamics
+
+\[x_{t+1}=x_{t}+A^{\rm sc}f_{t}+p_{t}-s_{t},\quad t=1,2,\ldots.\]
+
+In applications where we control or run a supply chain, \(s_{t}\) is beyond our control, but we can manipulate \(f_{t}\) (the flow of goods between storage locations) and \(p_{t}\) (purchases at locations). This suggests treating \(s_{t}\) as the offset, and \(u_{t}=(f_{t},p_{t})\) as the input in a linear dynamical system with input (9.2). We can write the dynamics equations above in this form, with dynamics and input matrices
+
+\[A=I,\qquad B=\left[\begin{array}{cc}A^{\rm sc}&I\end{array}\right].\]
+
+(Note that \(A^{\rm sc}\) refers to the supply chain graph incidence matrix, while \(A\) is the dynamics matrix in (9.2).) This gives
+
+\[x_{t+1}=Ax_{t}+B(f_{t},p_{t})-s_{t},\quad t=1,2,\ldots,.\]
+
+A simple example is shown in figure 9.8. The supply chain dynamics equation is
+
+\[x_{t+1}=x_{t}+\left[\begin{array}{cccccc}-1&-1&0&1&0&0\\ 1&0&-1&0&1&0\\ 0&1&1&0&0&1\end{array}\right]\left[\begin{array}{c}f_{t}\\ p_{t}\end{array}\right]-s_{t},\quad t=1,2,\ldots.\]
+
+It is a good exercise to check that the matrix-vector product (the middle term of the right-hand side) gives the amount of commodity added at each location, as a result of shipment and purchasing.
+
+Figure 9.8: A simple supply chain with \(n=3\) storage locations and \(m=3\) transportation links.
+
+ 

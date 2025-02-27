@@ -1,0 +1,29 @@
+
+
+### Least Squares Again
+
+In minimization, our big application is least squares. The best \(\widehat{x}\) is the vector that minimizes the squared error \(E^{2}=\|Ax-b\|^{2}\). This is a quadratic and it fits our framework! I will highlight the parts that look new:
+
+\[\mbox{\bf Squared error}\qquad E^{2}=(Ax-b)^{\rm T}(Ax-b)=x^{\rm T}\mbox{\boldmath$A ^{\rm T}$}\mbox{\boldmath$A$}x-2x^{\rm T}\mbox{\boldmath$A^{\rm T}$}\mbox{ \boldmath$b$}+\mbox{\boldmath$b^{\rm T}$}\mbox{\boldmath$b$}.\] (9)
+
+Compare with \(\frac{1}{2}x^{\rm T}Ax-x^{\rm T}b\) at the start of the section, which led to \(Ax=b\):
+
+\[\left[\mbox{$A$ changes to $A^{\rm T}$}A\right]\qquad\left[\mbox{$b$ changes to $A^{\rm T}$}b\right]\qquad\left[\mbox{$b$ is added}\right].\]
+
+The constant \(b^{\rm T}b\) raises the whole graph--this has no effect on the best \(\widehat{x}\). The other two changes, \(A\) to \(A^{\rm T}A\) and \(b\) to \(A^{\rm T}b\), give a new way to reach the least-squares equation (normal equation). The minimizing equation \(Ax=b\) changes into the
+
+\[\mbox{\bf Least-squares equation}\qquad A^{\rm T}A\widehat{x}=A^{\rm T}b.\] (10)
+
+Optimization needs a whole book. We stop while it is pure linear algebra.
+
+### The Rayleigh quotient
+
+Our second goal is to find a minimization problem equivalent to \(Ax=\lambda x\). That is not so easy. The function to minimize cannot be a quadratic, or its derivative would be linear--and the eigenvalue problem is nonlinear (\(\lambda\) times \(x\)). The trick that succeeds is to divide one quadratic by another one:
+
+\[\mbox{\bf Rayleigh quotient}\qquad\mbox{Minimize}\quad R(x)=\frac{x^{\rm T}Ax}{x^{ \rm T}x}.\]
+
+### 61 Rayleigh's Principle:
+
+The minimum value of the Rayleigh quotient is the smallest eigenvalue \(\lambda_{1}\). \(R(x)\) reaches that minimum at the first eigenvector \(x_{1}\) of \(A\):
+
+\[\mbox{\bf Minimum where $Ax_{1}=\lambda x_{1}$}\qquad R(x_{1})=\frac{x_{1}^{ \rm T}Ax_{1}}{x_{1}^{\rm T}x_{1}}=\frac{x_{1}^{\rm T}\lambda_{1}x_{1}}{x_{1}^ {\rm T}x_{1}}=\lambda_{1}.\]

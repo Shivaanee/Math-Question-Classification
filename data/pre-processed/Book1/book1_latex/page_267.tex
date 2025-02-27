@@ -1,0 +1,26 @@
+
+
+**35.**: An \(n\)-dimensional cube has how many corners? How many edges? How many \((n-1)\)-dimensional faces? The \(n\)-cube whose edges are the rows of \(2I\) has volume . A hypercube computer has parallel processors at the corners with connections along the edges.
+**36.**: The triangle with corners \((0,0)\), \((1,0)\), \((0,1)\) has area \(\frac{1}{2}\). The pyramid with four corners \((0,0,0)\), \((1,0,0)\), \((0,1,0)\), \((0,0,1)\) has volume . The pyramid in \(\mathbf{R}^{4}\) with five corners at \((0,0,0,0)\) and the rows of \(I\) has what volume?
+
+**Problems 37-40 are about areas \(dA\) and volumes \(dV\) in calculus.**
+
+**37.**: Polar coordinates satisfy \(x=r\cos\theta\) and \(y=r\sin\theta\). Polar area \(J\,dr\,d\theta\) includes \(J\):
+
+\[J=\begin{vmatrix}\partial x/\partial r&\partial x/\partial\theta\\ \partial y/\partial r&\partial y/\partial\theta\end{vmatrix}=\begin{vmatrix} \cos\theta&-r\sin\theta\\ \sin\theta&r\cos\theta\end{vmatrix}.\]
+
+The two columns are orthogonal. Their lengths are . Thus \(J=\).
+**38.**: Spherical coordinates \(\rho\), \(\phi\), \(\theta\) give \(x=\rho\sin\phi\cos\theta\), \(y=\rho\sin\phi\sin\theta\), \(z=\rho\cos\phi\). Find the Jacobian matrix of 9 partial derivatives: \(\partial x/\partial\rho\), \(\partial x/\partial\phi\), \(\partial x/\partial\theta\) are in row 1. Simplify its determinant to \(J=\rho^{2}\sin\phi\). Then \(dV=\rho^{2}\sin\phi\)\(d\rho\)\(d\phi\)\(d\theta\).
+**39.**: The matrix that connects \(r\), \(\theta\) to \(x\), \(y\) is in Problem 37. Invert that matrix:
+
+\[J^{-1}=\begin{vmatrix}\partial r/\partial x&\partial r/\partial y\\ \partial\theta/\partial x&\partial\theta/\partial y\end{vmatrix}=\begin{vmatrix} \cos\theta&?\\ ?&?\end{vmatrix}=?\]
+
+It is surprising that \(\partial r/\partial x=\partial x/\partial r\). The product \(JJ^{-1}=I\) gives the chain rule
+
+\[\frac{\partial x}{\partial x}=\frac{\partial x}{\partial r}\frac{\partial r} {\partial x}+\frac{\partial x}{\partial\theta}\frac{\partial\theta}{\partial x }=1.\]
+**40.**: The triangle with corners \((0,0)\), \((6,0)\), and \((1,4)\) has area . When you rotate it by \(\theta=60^{\ast}\) the area is . The rotation matrix has
+
+\[\text{determinant}=\begin{vmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{vmatrix}=\begin{vmatrix}\frac{1}{2}&?\\ ?&?\end{vmatrix}=?\]
+**41.**: Let \(P=(1,0,-1)\), \(Q=(1,1,1)\), and \(R=(2,2,1)\). Choose \(S\) so that \(PQRS\) is a parallelogram, and compute its area. Choose \(T\), \(U\), \(V\) so that \(OPQRSTUV\) is a tilted box, and compute its volume.
+**42.**: Suppose \((x,y,z)\), \((1,1,0)\), and \((1,2,1)\) lie on a plane through the origin. What determinant is zero? What equation does this give for the plane?
+**43.**: Suppose \((x,y,z)\) is a linear combination of \((2,3,1)\) and \((1,2,3)\). What determinant is zero? What equation does this give for the plane of all combinations?

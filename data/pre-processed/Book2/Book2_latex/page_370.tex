@@ -1,0 +1,27 @@
+
+
+#### Portfolio optimization
+
+We want to choose \(w\) so that we achieve high return and low risk. This means that we seek portfolio returns \(r_{t}\) that are consistently high. This is an optimization problem with two objectives, return and risk. Since there are two objectives, there is a family of solutions, that trade off return and risk. For example, when the last asset is risk-free, the portfolio weight \(w=e_{n}\) achieves zero risk (which is the smallest possible value), and return \(\mu^{\rm rf}\). We will see that other choices of \(w\) can lead to higher return, but higher risk as well. Portfolio weights that minimize risk for a given level of return (or maximize return for a given level of risk) are called _Pareto optimal_. The risk and return of this family of weights are typically plotted on a risk-return plot, with risk on the horizontal axis and return on the vertical axis. Individual assets can be considered (very simple) portfolios, corresponding to \(w=e_{j}\). In this case the corresponding portfolio return and risk are simply the return and risk of asset \(j\) (over the same \(T\) periods).
+
+One approach is to fix the return of the portfolio to be some given value \(\rho\), and minimize the risk over all portfolios that achieve the required return. Doing this for many values of \(\rho\) produces (different) portfolio allocation vectors that trade off risk and return. Requiring that the portfolio return be \(\rho\) can be expressed as
+
+\[{\bf avg}(r)=(1/T){\bf 1}^{T}(Rw)=\mu^{T}w=\rho,\]
+
+where \(\mu=R^{T}{\bf 1}/T\) is the \(n\)-vector of the average asset returns. This is a single linear equation in \(w\). Assuming that it holds, we can express the square of the risk as
+
+\[{\bf std}(r)^{2}=(1/T)\|r-{\bf avg}(r){\bf 1}\|^{2}=(1/T)\|r-\rho{\bf 1}\|^{2}.\]
+
+Thus to minimize risk (squared), with return value \(\rho\), we must solve the linearly constrained least squares problem
+
+\[\begin{array}{ll}\mbox{minimize}&\|Rw-\rho{\bf 1}\|^{2}\\ \mbox{subject to}&\left[\begin{array}{c}{\bf 1}^{T}\\ \mu^{T}\end{array}\right]w=\left[\begin{array}{c}1\\ \rho\end{array}\right].\end{array}\] (17.2)
+
+(We dropped the factor \(1/T\) from the objective, which does not affect the solution.) This is a constrained least squares problem with two linear equality constraints. The first constraint sets the sum of the allocation weights to one, and the second requires that the mean portfolio return is \(\rho\).
+
+The portfolio optimization problem has the solution
+
+\[\left[\begin{array}{c}w\\ z_{1}\\ z_{2}\end{array}\right]=\left[\begin{array}{ccc}2R^{T}R&{\bf 1}&\mu\\ {\bf 1}^{T}&0&0\\ \mu^{T}&0&0\end{array}\right]^{-1}\left[\begin{array}{c}2\rho T\mu\\ 1\\ \rho\end{array}\right],\] (17.3)
+
+where \(z_{1}\) and \(z_{2}\) are Lagrange multipliers for the equality constraints (which we don't care about).
+
+As a historical note, the portfolio optimization problem (17.2) is not exactly the same as the one proposed by Markowitz. His formulation used a statistical model of returns, where instead we are using a set of actual (or _realized_) returns. (See exercise 17.2 for a formulation of the problem that is closer to the original formulation by Markowitz.)

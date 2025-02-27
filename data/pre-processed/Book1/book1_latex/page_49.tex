@@ -1,0 +1,23 @@
+\(E^{-1}\) applied to \(F^{-1}\) applied to \(G^{-1}\) applied to \(I\) produces \(A\).
+
+\[\begin{bmatrix}1&\\ \ell_{21}&1\\ &&1\end{bmatrix}\text{ times }\begin{bmatrix}1&\\ &1\\ \ell_{31}&1\end{bmatrix}\text{ times }\begin{bmatrix}1&\\ &1\\ &\ell_{32}&1\end{bmatrix}\text{ equals }\begin{bmatrix}1&0&0\\ \ell_{21}&1&0\\ \ell_{31}&\ell_{32}&1\end{bmatrix}.\]
+
+The order is right for the \(\ell\)'s to fall into position. This always happens! Note that parentheses in \(E^{-1}F^{-1}G^{-1}\) were not necessary because of the associative law.
+
+#### \(A=uu\): The \(n\) by \(n\) case
+
+The factorization \(A=LU\) is so important that we must say more. It used to be missing in linear algebra courses when they concentrated on the abstract side. Or maybe it was thought to be too hard--but you have got it. If the last Example 4 allows any \(U\) instead of the particular \(U=I\), we can see how the rule works in general. _The matrix \(L\), applied to \(U\), brings back \(A\)_:
+
+\[A=LU\qquad\begin{bmatrix}1&0&0\\ \ell_{21}&1&0\\ \ell_{31}&\ell_{32}&1\end{bmatrix}\begin{bmatrix}\text{row 1 of }U\\ \text{row 2 of }U\\ \text{row 3 of }U\end{bmatrix}=\text{original }A.\] (7)
+
+The proof is to _apply the steps of elimination_. On the right-hand side they take \(A\) to \(U\). On the left-hand side they reduce \(L\) to \(I\), as in Example 4. (The first step subtracts \(\ell_{21}\) times \((1,0,0)\) from the second row, which removes \(\ell_{21}\).) Both sides of (7) end up equal to the same matrix \(U\), and the steps to get there are all reversible. Therefore (7) is correct and \(A=LU\).
+
+\(A=LU\) is so crucial, and so beautiful, that Problem 8 at the end of this section suggests a second approach. We are writing down 3 by 3 matrices, but you can see how the arguments apply to larger matrices. Here we give one more example, and then put \(A=LU\) to use.
+
+**Example 5**.: (\(A=LU\), with zeros in the empty spaces)
+
+\[A=\begin{bmatrix}1&-1&\\ -1&2&-1&\\ &-1&2&-1\\ &&-1&2\end{bmatrix}=\begin{bmatrix}1&&&\\ -1&1&&\\ &-1&1&\\ &&&-1&1\end{bmatrix}\begin{bmatrix}1&-1&&\\ &1&-1&\\ &&1&-1\\ &&&1\end{bmatrix}.\]
+
+That shows how a matrix \(A\) with three diagonals has factors \(L\) and \(U\) with two diagonals. This example comes from an important problem in differential equations (Section 1.7). The second difference in \(A\) is a backward difference \(L\) times a forward difference \(U\).
+
+ 

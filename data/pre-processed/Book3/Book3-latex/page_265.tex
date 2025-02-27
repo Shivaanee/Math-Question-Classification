@@ -1,0 +1,29 @@
+is a non-zero scalar polynomial. Evidently the \((m-1)\times(m-1)\) matrix \(B\) in (7-32) has the same determinant as does \(Q\). Therefore, we may apply the last lemma to \(B\). If we continue this way for \(m\) steps, we obtain an upper-triangular matrix
+
+\[R=\begin{bmatrix}1&a_{2}&\cdots&a_{m}\\ 0&1&\cdots&b_{m}\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&1\end{bmatrix}\]
+
+which is row-equivalent to \(R\). Obviously \(R\) is row-equivalent to the \(m\times m\) identity matrix.
+
+_Corollary._ _Let \(M\) and \(N\) be \(m\times n\) matrices with entries in the polynomial algebra \(F[x]\). Then \(N\) is row-equivalent to \(M\) if and only if_
+
+\[N\,=\,PM\]
+
+_where \(P\) is an invertible \(m\times m\) matrix with entries in \(F[x]\)._
+
+We now define **elementary column operations** and **column-equivalence** in a manner analogous to row operations and row-equivalence. We do not need a new concept of elementary matrix because the class of matrices which can be obtained by performing one elementary column operation on the identity matrix is the same as the class obtained by using a single elementary row operation.
+
+_Definition._ _The matrix \(N\) is_ **equivalent** _to the matrix \(M\) if we can pass from \(M\) to \(N\) by means of a sequence of operations_
+
+\[M\,=\,M_{0}\,\rightarrow\,M_{1}\,\rightarrow\,\cdots\,\rightarrow\,M_{k}\,=\,N\]
+
+_each of which is an elementary row operation or an elementary column operation._
+
+_Theorem 7._ _Let \(M\) and \(N\) be \(m\times n\) matrices with entries in the polynomial algebra \(F[x]\). Then \(N\) is equivalent to \(M\) if and only if_
+
+\[N\,=\,PMQ\]
+
+_where \(P\) is an invertible matrix in \(F[x]^{m\times m}\) and \(Q\) is an invertible matrix in \(F[x]^{n\times n}\)._
+
+_Theorem 8._ _Let \(A\) be an \(n\times n\) matrix with entries in the field \(F\), and let \(p_{1},\ldots,p_{r}\) be the invariant factors for \(A\). The matrix \(xI-A\) is equivalent to the \(n\times n\) diagonal matrix with diagonal entries \(p_{1},\ldots,p_{r}\)\(1,\)\(1,\ldots,\)\(1\)._
+
+_Proof._ There exists an invertible \(n\times n\) matrix \(P\), with entries in \(F\), such that \(PAP^{-1}\) is in rational form, that is, has the block form 

@@ -1,0 +1,26 @@
+
+
+**11.**: Suppose \(P\) is the projection matrix onto the subspace \({\bf S}\) and \(Q\) is the projection onto the orthogonal complement \({\bf S}^{\perp}\). What are \(P+Q\) and \(PQ\)? Show that \(P-Q\) is its own inverse.
+**12.**: If \({\bf V}\) is the subspace spanned by \((1,1,0,1)\) and \((0,0,1,0)\), find
+
+1. a basis for the orthogonal complement \({\bf V}^{\perp}\).
+2. the projection matrix \(P\) onto \({\bf V}\).
+3. the vector in \({\bf V}\) closest to the vector \(b=(0,1,0,-1)\) in \({\bf V}^{\perp}\).
+**13.**: Find the best straight-line fit (least squares) to the measurements
+
+\[\begin{array}{llll}b=4&\mbox{at}&t=-2,&b=3&\mbox{at}&t=-1,\\ b=1&\mbox{at}&t=0,&b=0&\mbox{at}&t=2.\end{array}\]
+
+Then find the projection of \(b=(4,3,1,0)\) onto the column space of
+
+\[A=\begin{bmatrix}1&-2\\ 1&-1\\ 1&0\\ 1&2\end{bmatrix}.\]
+**14.**: The vectors \(a_{1}=(1,1,0)\) and \(a_{2}=(1,1,1)\) span a plane in \({\bf R}^{3}\). Find the projection matrix \(P\) onto the plane, and find a nonzero vector \(b\) that is projected to zero.
+**15.**: If \(P\) is the projection matrix onto a line in the \(x\)-\(y\) plane, draw a figure to describe the effect of the "reflection matrix" \(H=I-2P\). Explain both geometrically and algebraically why \(H^{2}=I\).
+**16.**: Show that if \(u\) has unit length, then the rank-1 matrix \(P=uu^{\rm T}\) is a projection matrix: It has properties (i) and (ii) in 3N. By choosing \(u=a/\|a\|\), \(P\) becomes the projection onto the line through \(a\), and \(Pb\) is the point \(p=\widehat{xa}\). Rank-1 projections correspond exactly to least-squares problems in one unknown.
+**17.**: What 2 by 2 matrix projects the \(x\)-\(y\) plane onto the \(-45^{\circ}\) line \(x+y=0\)?
+**18.**: We want to fit a plane \(y=C+Dt+Ez\) to the four points
+
+\[\begin{array}{llll}y=3&\mbox{at}&t=1,z=1&y=6&\mbox{at}&t=0,z=3\\ y=5&\mbox{at}&t=2,z=1&y=0&\mbox{at}&t=0,z=0.\end{array}\]
+
+1. Find 4 equations in 3 unknowns to pass a plane through the points (if there is such a plane).
+2. Find 3 equations in 3 unknowns for the best least-squares solution.
+**19.**: If \(P_{C}=A(A^{\rm T}A)^{-1}A^{\rm T}\) is the projection onto the column space of \(A\), what is the projection \(P_{R}\) onto the row space? (It is not \(P_{C}^{\rm T}\)!)

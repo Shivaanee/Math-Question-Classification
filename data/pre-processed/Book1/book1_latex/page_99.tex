@@ -1,0 +1,23 @@
+For any \(m\) by \(n\) matrix \(A\) there is a permutation \(P\), a lower triangular \(L\) with unit diagonal, and an \(m\) by \(n\) echelon matrix \(U\), such that \(PA=LU\).
+
+_Now comes \(R\)_. We can go further than \(U\), to make the matrix even simpler. Divide the second row by its pivot \(3\), so that _all pivots are \(1\)_. Then use the pivot row to produce _zero above the pivot_. This time we subtract a row from a _higher row_. The final result (the best form we can get) is the _reduced row echelon form \(R\)_:
+
+\[\begin{bmatrix}1&3&3&2\\ 0&0&3&3\\ 0&0&0&0\end{bmatrix}\longrightarrow\begin{bmatrix}1&3&3&2\\ 0&0&\mathbf{1}&\mathbf{1}\\ 0&0&0&0\end{bmatrix}\longrightarrow\begin{bmatrix}\mathbf{1}&\mathbf{3}& \mathbf{0}&\mathbf{-1}\\ \mathbf{0}&\mathbf{0}&\mathbf{1}&\mathbf{1}\\ \mathbf{0}&\mathbf{0}&\mathbf{0}&\mathbf{0}\end{bmatrix}=R.\]
+
+This matrix \(R\) is the final result of elimination on \(A\). MATLAB would use the command \(\mathsf{R}=\mathsf{rref}(\mathsf{A})\). Of course \(\mathsf{rref}(\mathsf{R})\) would give \(R\) again!
+
+What is the row reduced form of a square invertible matrix? In that case \(R\) is the _identity matrix_. There is a full set of pivots, all equal to \(1\), with zeros above and below. So \(\mathsf{rref}(\mathsf{A})=1\), when \(A\) is invertible.
+
+For a \(5\) by \(8\) matrix with four pivots, Figure 2.3 shows the reduced form \(R\). **It still contains an identity matrix, in the four pivot rows and four pivot columns**. From \(R\) we will quickly find the nullspace of \(A\). \(Rx=0\) has the same solutions as \(Ux=0\) and \(Ax=0\).
+
+### Pivot Variables and Free Variables
+
+Our goal is to read off all the solutions to \(Rx=0\). The pivots are crucial:
+
+\[\begin{array}{c}\mbox{\bf Nullspace of $R$}\\ \mbox{\bf(pivot columns}\\ \mbox{\bf in boldface)}\end{array}\qquad Rx=\begin{bmatrix}\mathbf{1}&3& \mathbf{0}&-1\\ \mathbf{0}&0&\mathbf{1}&1\\ \mathbf{0}&0&\mathbf{0}&0\end{bmatrix}\begin{bmatrix}\boldsymbol{u}\\ \boldsymbol{v}\\ \boldsymbol{w}\\ \boldsymbol{y}\end{bmatrix}=\begin{bmatrix}0\\ 0\\ 0\end{bmatrix}.\]
+
+The unknowns \(u\), \(v\), \(w\), \(y\) go into two groups. One group contains the _pivot variables_, those that correspond to _columns with pivots_. The first and third columns contain the pivots, so \(\boldsymbol{u}\) and \(\boldsymbol{w}\) are the pivot variables. The other group is made up of the _free variables_, corresponding to _columns without pivots_. These are the second and fourth columns, so \(v\) and \(y\) are free variables.
+
+To find the most general solution to \(Rx=0\) (or, equivalently, to \(Ax=0\)) we may assign arbitrary values to the free variables. Suppose we call these values simply \(v\) and \(y\). The pivot variables are completely determined in terms of \(v\) and \(y\):
+
+\[Rx=0\qquad\begin{array}{c}\boldsymbol{u}+3v-y=0\qquad\mbox{yields}\qquad \boldsymbol{u}=-3v+y\\ \boldsymbol{w}+y=0\qquad\mbox{yields}\qquad\boldsymbol{w}=\qquad-y\end{array}\] (1) 

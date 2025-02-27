@@ -1,0 +1,29 @@
+mentary matrix,** that is, an elementary matrix in \(F[x]^{\mathsf{m}\times\mathsf{m}}\), is one which can be obtained from the \(m\times m\) identity matrix by means of a single elementary row operation. Clearly each elementary row operation on \(M\) can be effected by multiplying \(M\) on the left by a suitable \(m\times m\) elementary matrix; in fact, if \(e\) is the operation, then
+
+\[e(M)\,=\,e(I)M.\]
+
+Let \(M\), \(N\) be matrices in \(F[x]^{\mathsf{m}\times\mathsf{n}}\). We say that \(N\) is **row-equivalent** to \(M\) if \(N\) can be obtained from \(M\) by a finite succession of elementary row operations:
+
+\[M\,=\,M_{0}\,\mathsf{\rightarrow}\,M_{1}\,\mathsf{\rightarrow}\,\cdots \,\mathsf{\rightarrow}\,M_{k}\,=\,N.\]
+
+Evidently \(N\) is row-equivalent to \(M\) if and only if \(M\) is row-equivalent to \(N\), so that we may use the terminology '\(M\) and \(N\) are row-equivalent.' If \(N\) is row-equivalent to \(M\), then
+
+\[N\,=\,PM\]
+
+where the \(m\times m\) matrix \(P\) is a product of elementary matrices:
+
+\[P\,=\,E_{1}\,\cdots\,E_{k}.\]
+
+In particular, \(P\) is an invertible matrix with inverse
+
+\[P^{\mathsf{-1}}=E_{k}^{-1}\,\cdots\,E_{1}^{-1}.\]
+
+Of course, the inverse of \(E_{j}\) comes from the inverse elementary row operation.
+
+All of this is just as it is in the case of matrices with entries in \(F\). It parallels the elementary results in Chapter 1. Thus, the next problem which suggests itself is to introduce a row-reduced echelon form for polynomial matrices. Here, we meet a new obstacle. How do we row-reduce a matrix? The first step is to single out the leading non-zero entry of row \(1\) and to divide every entry of row \(1\) by that entry. We cannot (necessarily) do that when the matrix has polynomial entries. As we shall see in the next theorem, we can circumvent this difficulty in certain cases; however, there is not any entirely suitable row-reduced form for the general matrix in \(F[x]^{\mathsf{m}\times\mathsf{n}}\). If we introduce column operations as well and study the type of equivalence which results from allowing the use of both types of operations, we can obtain a very useful standard form for each matrix. The basic tool is the following.
+
+**Lemma**.: _Let \(M\) be a matrix in \(F[x]^{\mathsf{m}\times\mathsf{n}}\) which has some non-zero entry in its first column, and let \(p\) be the greatest common divisor of the entries in column \(1\) of \(M\). Then \(M\) is row-equivalent to a matrix \(N\) which has_
+
+\[\left[\begin{array}{c}p\\ 0\\ \vdots\\ 0\end{array}\right]\]
+
+_as its first column._ 

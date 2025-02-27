@@ -1,0 +1,25 @@
+reflected across the \(45^{*}\) line. It was split into \((2,2)+(2,-2)\) and the two parts were reflected separately. The same could be done for projections: split, project separately, and add the projections. These rules apply to _any transformation that comes from a matrix_.
+
+Their importance has earned them a name: Transformations that obey rules (i)-(iii) are called _linear transformations_. The rules can be combined into one requirement:
+
+**2T** For all numbers \(c\) and \(d\) and all vectors \(x\) and \(y\), matrix multiplication satisfies the rule of linearity:
+
+\[A(cx+dy)=c(Ax)+d(Ay).\] (1)
+
+Every transformation \(T(x)\) that meets this requirement is a _linear transformation_.
+
+Any matrix leads immediately to a linear transformation. The more interesting question is in the opposite direction: _Does every linear transformation lead to a matrix_? The object of this section is to find the answer, yes. This is the foundation of an approach to linear algebra--starting with property (1) and developing its consequences--that is much more abstract than the main approach in this book. We preferred to begin directly with matrices, and now we see how they represent linear transformations.
+
+A transformation need not go from \(\mathbf{R}^{n}\) to the same space \(\mathbf{R}^{n}\). It is absolutely permitted to transform vectors in \(\mathbf{R}^{n}\) to vectors in a different space \(\mathbf{R}^{m}\). That is exactly what is done by an \(m\) by \(n\) matrix! The original vector \(x\) has \(n\) components, and the transformed vector \(Ax\) has \(m\) components. The rule of linearity is equally satisfied by rectangular matrices, so they also produce linear transformations.
+
+Having gone that far, there is no reason to stop. The operations in the linearity condition (1) are addition and scalar multiplication, but \(x\) and \(y\) need not be column vectors in \(\mathbf{R}^{n}\). Those are not the only spaces. By definition, _any vector space allows the combinations \(cx+dy\)_--the "vectors" are \(x\) and \(y\), but they may actually be polynomials or matrices or functions \(x(t)\) and \(y(t)\). As long as the transformation satisfies equation (1), it is linear.
+
+We take as examples the spaces \(\mathbf{P}_{n}\), in which the vectors are polynomials \(p(t)\) of degree \(n\). They look like \(p=a_{0}+a_{1}t+\cdots+a_{n}t^{n}\), and the dimension of the vector space is \(n+1\) (because with the constant term, there are \(n+1\) coefficients).
+
+**Example 1**.: The operation of _differentiation_, \(A=d/dt\), is linear:
+
+\[Ap(t)=\frac{d}{dt}(a_{0}+a_{1}t+\cdots+a_{n}t^{n})=a_{1}+\cdots+na_{n}t^{n-1}.\] (2)
+
+The nullspace of this \(A\) is the one-dimensional space of constants: \(da_{0}/dt=0\). The column space is the \(n\)-dimensional space \(\mathbf{P}_{n-1}\); the right-hand side of equation (2) is always in that space. The sum of nullity (\(=1\)) and rank (\(=n\)) is the dimension of the original space \(\mathbf{P}_{n}\).
+
+ 

@@ -1,0 +1,25 @@
+they are _unit vectors_--each has length \(\|e_{i}\|=1\). They point along the coordinate axes. If these axes are rotated, the result is a new **orthonormal basis**: a new system of _mutually orthogonal unit vectors_. In \(\mathbf{R}^{2}\) we have \(\cos^{2}\theta+\sin^{2}\theta=1\):
+
+\[\mathbf{Orthonormal\ vectors\ in\ \mathbf{R}^{2}}\qquad v_{1}=(\cos\theta,\sin \theta)\quad\text{and}\quad v_{2}=(-\sin\theta,\cos\theta).\]
+
+### Orthogonal Subspaces
+
+We come to the orthogonality of two subspaces. **Every vector**_in one subspace must be orthogonal to_ **every vector**_in the other subspace_. Subspaces of \(\mathbf{R}^{3}\) can have dimension 0, 1, 2, or 3. The subspaces are represented by lines or planes through the origin--and in the extreme cases, by the origin alone or the whole space. The subspace \(\{0\}\) is orthogonal to all subspaces. A line can be orthogonal to another line, or it can be orthogonal to a plane, but _a plane cannot be orthogonal to a plane_.
+
+I have to admit that the front wall and side wall of a room look like perpendicular planes in \(\mathbf{R}^{3}\). But by our definition, that is not so! There are lines \(v\) and \(w\) in the front and side walls that do not meet at a right angle. The line along the corner is in _both_ walls, and it is certainly not orthogonal to itself.
+
+### 3B
+
+Two subspaces \(\mathbf{V}\) and \(\mathbf{W}\) of the same space \(\mathbf{R}^{n}\) are _orthogonal_ if every vector \(v\) in \(\mathbf{V}\) is orthogonal to every vector \(w\) in \(\mathbf{W}\): \(v^{\mathsf{T}}w=0\) for all \(v\) and \(w\).
+
+**Example 2**.: Suppose \(\mathbf{V}\) is the plane spanned by \(v_{1}=(1,0,0,0)\) and \(v_{2}=(1,1,0,0)\). If \(\mathbf{W}\) is the line spanned by \(w=(0,0,4,5)\), then \(w\) is orthogonal to both \(v\)'s. The line \(\mathbf{W}\) will be orthogonal to the whole plane \(\mathbf{V}\).
+
+In this case, with subspaces of dimension 2 and 1 in \(\mathbf{R}^{4}\), there is room for a third subspace. The line \(\mathbf{L}\) through \(z=(0,0,5,-4)\) is perpendicular to \(\mathbf{V}\) and \(\mathbf{W}\). Then the dimensions add to \(2+1+1=4\). What space is perpendicular to all of \(\mathbf{V}\), \(\mathbf{W}\), and \(\mathbf{L}\)?
+
+The important orthogonal subspaces don't come by accident, and they come two at a time. In fact orthogonal subspaces are unavoidable: _They are the fundamental subspaces!_ The first pair is the _nullspace_ and _row space_. Those are subspaces of \(\mathbf{R}^{n}\)--the rows have \(n\) components and so does the vector \(x\) in \(Ax=0\). We have to show, using \(Ax=0\), that _the rows of \(A\) are orthogonal to the nullspace vector \(x\)_.
+
+### 3C
+
+Fundamental theorem of orthogonalityThe row space is orthogonal to the nullspace (in \(\mathbf{R}^{n}\)). The column space is orthogonal to the left nullspace (in \(\mathbf{R}^{m}\)).
+
+_First Proof._ Suppose \(x\) is a vector in the nullspace. Then \(Ax=0\), and this system of 

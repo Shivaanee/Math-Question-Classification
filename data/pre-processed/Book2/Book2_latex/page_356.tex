@@ -1,0 +1,35 @@
+The second block equation, \(C\bar{x}=0\), implies (by taking the transpose) \(\bar{x}^{T}C^{T}=0\), so the equation above becomes \(2\|A\bar{x}\|^{2}=0\), _i.e._, \(A\bar{x}=0\). We also have \(C\bar{x}=0\), so
+
+\[\left[\begin{array}{c}A\\ C\end{array}\right]\bar{x}=0.\]
+
+Since the matrix on the left has linearly independent columns (by assumption), we conclude that \(\bar{x}=0\). The first block equation above then becomes \(C^{T}\bar{z}=0\). But by our assumption that the columns of \(C^{T}\) are linearly independent, we have \(\bar{z}=0\). So \((\bar{x},\bar{z})=0\), which is a contradiction.
+
+The converse is also true. First suppose that the rows of \(C\) are linearly dependent. Then there is a nonzero vector \(\bar{z}\) with \(C^{T}\bar{z}=0\). Then
+
+\[\left[\begin{array}{cc}2A^{T}A&C^{T}\\ C&0\end{array}\right]\left[\begin{array}{c}0\\ \bar{z}\end{array}\right]=0,\]
+
+which shows the KKT matrix is not invertible. Now suppose that the stacked matrix in (16.5) has linearly dependent columns, which means there is a nonzero vector \(\bar{x}\) for which
+
+\[\left[\begin{array}{c}A\\ C\end{array}\right]\bar{x}=0.\]
+
+Direct calculation shows that
+
+\[\left[\begin{array}{cc}2A^{T}A&C^{T}\\ C&0\end{array}\right]\left[\begin{array}{c}\bar{x}\\ 0\end{array}\right]=0,\]
+
+which shows that the KKT matrix is not invertible.
+
+When the conditions (16.5) hold, the constrained least squares problem (16.1) has the (unique) solution \(\hat{x}\), given by
+
+\[\left[\begin{array}{c}\hat{x}\\ \hat{z}\end{array}\right]=\left[\begin{array}{cc}2A^{T}A&C^{T}\\ C&0\end{array}\right]^{-1}\left[\begin{array}{c}2A^{T}b\\ d\end{array}\right].\] (16.6)
+
+(This formula also gives us \(\hat{z}\), the set of Lagrange multipliers.) From (16.6), we observe that the solution \(\hat{x}\) is a linear function of \((b,d)\).
+
+Direct verification of constrained least squares solution.We will now show directly, without using calculus, that the solution \(\hat{x}\) given in (16.6) is the unique vector that minimizes \(\|Ax-b\|^{2}\) over all \(x\) that satisfy the constraints \(Cx=d\), when the conditions (16.5) hold. Let \(\hat{x}\) and \(\hat{z}\) denote the vectors given in (16.6), so they satisfy
+
+\[2A^{T}A\hat{x}+C^{T}\hat{z}=2A^{T}b,\qquad C\hat{x}=d.\]
+
+Suppose that \(x\neq\hat{x}\) is any vector that satisfies \(Cx=d\). We will show that \(\|Ax-b\|^{2}>\|A\hat{x}-b\|^{2}\).
+
+We proceed in the same way as for the least squares problem:
+
+\[\|Ax-b\|^{2} = \|(Ax-A\hat{x})+(A\hat{x}-b)\|^{2}\] \[= \|Ax-A\hat{x}\|^{2}+\|A\hat{x}-b\|^{2}+2(Ax-A\hat{x})^{T}(A\hat{x }-b).\] 

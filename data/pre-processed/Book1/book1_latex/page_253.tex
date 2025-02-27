@@ -1,0 +1,31 @@
+
+
+**9.**: How many multiplications to find an \(n\) by \(n\) determinant from
+
+1. the big formula (6)?
+2. the cofactor formula (10), building from the count for \(n-1\)?
+3. the product of pivots formula (including the elimination steps)?
+**10.**: In a 5 by 5 matrix, does a \(+\) sign or \(-\) sign go with \(a_{15}a_{24}a_{33}a_{42}a_{51}\) down the reverse diagonal? In other words, is \(P=(5,4,3,2,1)\) even or odd? The checkerboard pattern of \(\pm\) signs for cofactors does _not_ give \(\det P\).
+**11.**: If \(A\) is \(m\) by \(n\) and \(B\) is \(n\) by \(m\), explain why
+
+\[\det\begin{bmatrix}0&A\\ -B&I\end{bmatrix}=\det AB.\qquad\left(\text{\em Hint: Postmultiply by } \begin{bmatrix}I&0\\ B&I\end{bmatrix}\cdot\right)\]
+
+Do an example with \(m<n\) and an example with \(m>n\). Why does your second example automatically have \(\det AB=0\)?
+**12.**: Suppose the matrix \(A\) is fixed, except that \(a_{11}\) varies from \(-\infty\) to \(+\infty\). Give examples in which \(\det A\) is always zero or never zero. Then show from the cofactor expansion (8) that otherwise \(\det A=0\) for exactly _one value_ of \(a_{11}\).
+
+**Problems 13-23 use the big formula with \(n!\) terms: \(|A|=\sum\pm a_{1\alpha}a_{2\beta}\cdots a_{m\star}\)**13.**: Compute the determinants of \(A\), \(B\), \(C\) from six terms. Independent rows?
+
+\[A=\begin{bmatrix}1&2&3\\ 3&1&2\\ 3&2&1\end{bmatrix}\qquad B=\begin{bmatrix}1&2&3\\ 4&4&4\\ 5&6&7\end{bmatrix}\qquad C=\begin{bmatrix}1&1&1\\ 1&1&0\\ 1&0&0\end{bmatrix}.\]
+**14.**: Compute the determinants of \(A\), \(B\), \(C\). Are their columns independent?
+
+\[A=\begin{bmatrix}1&1&0\\ 1&0&1\\ 0&1&1\end{bmatrix}\qquad B=\begin{bmatrix}1&2&3\\ 4&5&6\\ 7&8&9\end{bmatrix}\qquad C=\begin{bmatrix}A&0\\ 0&B\end{bmatrix}.\]
+**15.**: Show that \(\det A=0\), regardless of the five nonzeros marked by \(x\)'s:
+
+\[A=\begin{bmatrix}x&x&x\\ 0&0&x\\ 0&0&x\end{bmatrix}.\qquad(\text{What is the rank of }A\text{?})\]
+**16.**: This problem shows in two ways that \(\det A=0\) (the \(x\)'s are any numbers):
+
+\[A=\begin{bmatrix}x&x&x&x&x\\ x&x&x&x&x\\ 0&0&0&x&x\\ 0&0&0&x&x\\ 0&0&0&x&x\end{bmatrix}.\qquad\qquad\text{$5$ by 5 matrix}\]
+
+3 by 3 zero matrix
+
+3 always singular

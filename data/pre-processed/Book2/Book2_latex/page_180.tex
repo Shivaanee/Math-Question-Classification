@@ -1,0 +1,29 @@
+Introducing the velocity of the mass, \(v(\tau)=dp(\tau)/d\tau\), we can write the equation above as two coupled differential equations,
+
+\[\frac{dp}{d\tau}(\tau)=v(\tau),\qquad m\frac{dv}{d\tau}(\tau)=-\eta v(\tau)+f( \tau).\]
+
+The first equation relates the position and velocity; the second is from the law of motion.
+
+Discretization.To develop an (approximate) linear dynamical system model from the differential equations above, we first discretize time. We let \(h>0\) be a time interval (called the 'sampling interval') that is small enough that the velocity and forces do not change very much over \(h\) seconds. We define
+
+\[p_{k}=p(kh),\qquad v_{k}=v(kh),\qquad f_{k}=f(kh),\]
+
+which are the continuous quantities 'sampled' at multiples of \(h\) seconds. We now use the approximations
+
+\[\frac{dp}{d\tau}(kh)\approx\frac{p_{k+1}-p_{k}}{h},\qquad\frac{dv}{d\tau}(kh) \approx\frac{v_{k+1}-v_{k}}{h},\] (9.5)
+
+which are justified since \(h\) is small. This leads to the (approximate) equations (replacing \(\approx\) with \(=\))
+
+\[\frac{p_{k+1}-p_{k}}{h}=v_{k},\qquad m\frac{v_{k+1}-v_{k}}{h}=f_{k}-\eta v_{k}.\]
+
+Finally, using state \(x_{k}=(p_{k},v_{k})\), we write this as
+
+\[x_{k+1}=\left[\begin{array}{cc}1&h\\ 0&1-h\eta/m\end{array}\right]x_{k}+\left[\begin{array}{c}0\\ h/m\end{array}\right]f_{k},\quad k=1,2,\ldots,\]
+
+which is a linear dynamical system of the form (9.2), with input \(f_{k}\) and dynamics and input matrices
+
+\[A=\left[\begin{array}{cc}1&h\\ 0&1-h\eta/m\end{array}\right],\qquad B=\left[\begin{array}{c}0\\ h/m\end{array}\right].\]
+
+This linear dynamical system gives an approximation of the true motion, due to our approximation (9.5) of the derivatives. But for \(h\) small enough, it is accurate. This linear dynamical system can be used to simulate the motion of the mass, if we know the external force applied to it, _i.e._, \(u_{t}\) for \(t=1,2,\ldots\).
+
+The approximation (9.5), which turns a set of differential equations into a recursion that approximates it, is called the _Euler method_, named after the mathematician Leonhard Euler. (There are other, more sophisticated, methods for approximating differential equations as recursions.) 

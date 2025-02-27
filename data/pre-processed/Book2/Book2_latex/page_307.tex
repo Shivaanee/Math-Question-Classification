@@ -1,0 +1,15 @@
+
+
+### 14.3 Multi-class classifiers
+
+In a multi-class classification problem, we have \(K>2\) possible labels. This is sometimes referred to more compactly as \(K\)-class classification. (The case \(K=2\) is Boolean classification, discussed above.) For our generic discussion of multi-class classifiers, we will encode the labels as \(y=1,2,\ldots,K\). In some applications there are more natural encodings; for example, the Likert scale labels _Strongly Disagree_, _Disagree_, _Neutral_, _Agree_, and _Strongly Agree_ are typically encoded as \(-2,-1,0,1,2\), respectively.
+
+A multi-class classifier is a function \(\hat{f}:\mathbf{R}^{n}\rightarrow\{1,\ldots,K\}\). Given a feature vector \(x\), \(\hat{f}(x)\) (which is an integer between \(1\) and \(K\)) is our prediction of the associated outcome. A multi-class classifier classifies \(n\)-vectors into \(K\) groups, corresponding to the values \(1,\ldots,K\).
+
+Examples.Multi-class classifiers are used in many application areas.
+
+* _Handwritten digit classification._ We are given an image of a hand-written digit (and possibly other features generated from the images), and wish to guess which of ten digits it represents. This classifier is used to do automatic (computer-based) reading of handwritten digits.
+* _Marketing demographic classification._ Data from purchases made, or web sites visited, is used to train a multi-class classifier for a set of market segments, such as college-educated women aged 25-30, men without college degrees aged 45-55, and so on. This classifier guesses the demographic segment of a new customer, based only on their purchase history. This can be used to select which promotions to offer a customer for whom we only have purchase data. The classifier is trained using data from known customers.
+
+Figure 14.6: ROC curve.
+

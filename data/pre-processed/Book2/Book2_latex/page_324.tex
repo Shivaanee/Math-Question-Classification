@@ -1,0 +1,21 @@
+We also identify one or more _secondary objectives_\(J_{2}\), \(J_{3}\), ..., \(J_{k}\), that we would also like to be small. These secondary objectives are typically generic ones, like the desire that some parameters be 'small' or 'smooth', or close to some previous or prior value. In estimation applications these secondary objectives typically correspond to some kind of prior knowledge or assumption about the vector \(x\) that we seek. We wish to minimize our primary objective, but are willing to accept an increase in it, if this gives a sufficient decrease in the secondary objectives.
+
+The weights are treated like 'knobs' in our method, that we change ('turn' or 'tune' or 'tweak') to achieve a value of \(\hat{x}\) that we like (or can live with). For given candidate values of \(\lambda\) we evaluate the objectives; if we decide that \(J_{2}\) is larger than we would like, but we can tolerate a somewhat larger \(J_{3}\), then we increase \(\lambda_{2}\) and decrease \(\lambda_{3}\), and find \(\hat{x}\) and the associated values of \(J_{1}\), \(J_{2}\), \(J_{3}\) using the new weights. This is repeated until a reasonable trade-off among them has been obtained. In some cases we can be principled in how we adjust the weights; for example, in data fitting, we can use validation to help guide us in the choice of the weights. In many other applications, it comes down to (application-specific) judgment or even taste.
+
+The additional terms \(\lambda_{2}J_{2},\ldots,\lambda_{k}J_{k}\) that we add to the primary objective \(J_{1}\), are sometimes called _regularization (terms)_. The secondary objectives are sometimes described by name, as in 'least squares fitting with smoothness regularization'.
+
+In exploring the trade-offs among the objectives, the weights are typically varied over a wide range of values, by choosing a finite number of values (perhaps ten or a few tens) that are _logarithmically spaced_, as in figures 15.1 and 15.2. This means that for \(N\) values of \(\lambda\) between \(\lambda^{\min}\) and \(\lambda^{\max}\), we use the values
+
+\[\lambda^{\min},\quad\theta\lambda^{\min},\quad\theta^{2}\lambda^{\min},\ \ldots,\quad\theta^{N-1}\lambda^{\min}=\lambda^{\max},\]
+
+with \(\theta=(\lambda^{\max}/\lambda^{\min})^{1/(N-1)}\).
+
+### 15.2 Control
+
+In control applications, the goal is to decide on a set of actions or inputs, specified by an \(n\)-vector \(x\), that achieve some goals. The actions result in some outputs or effects, given by an \(m\)-vector \(y\). We consider here the case when the inputs and outputs are related by an affine model
+
+\[y=Ax+b.\]
+
+The \(m\times n\) matrix \(A\) and \(m\)-vector \(b\) characterize the _input-output mapping_ of the system. The model parameters \(A\) and \(b\) are found from analytical models, experiments, computer simulations, or fit to past (observed) data. Typically the input or action \(x=0\) has some special meaning. The \(m\)-vector \(b\) gives the output when the input is zero. In many cases the vectors \(x\) and \(y\) represent _deviations_ of the inputs and outputs from some standard values.
+
+ 

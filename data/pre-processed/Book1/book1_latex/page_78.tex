@@ -1,0 +1,22 @@
+We return to the fact that \(A\) is tridiagonal. What effect does this have on elimination? The first stage of the elimination process produces zeros below the first pivot:
+
+\[\begin{array}{ccccc}\textbf{Elimination}&\left[\begin{array}{ccccc}2&-1&&&&\\ -1&2&-1&&\\ &-1&2&-1&\\ &&-1&2&-1\\ &&&-1&2\end{array}\right]\rightarrow\left[\begin{array}{ccccc}2&-1&&\\ 0&\frac{3}{2}&-1&&\\ &-1&2&-1&\\ &&-1&2&-1\\ &&&-1&2\end{array}\right].\end{array}\]
+
+Compared with a general 5 by 5 matrix, that step displays two major simplifications:
+
+1. There was _only one nonzero entry_ below the pivot.
+2. The pivot row was _very short_.
+
+The multiplier \(\ell_{21}=-\frac{1}{2}\) came from one division. The new pivot \(\frac{3}{2}\) came from _a single multiplication-subtraction_. Furthermore, _the tridiagonal pattern is preserved_: Every stage of elimination admits the simplifications (a) and (b).
+
+The final result is the \(LDU=LDL^{\mathrm{T}}\) factorization of \(A\). Notice the pivots!
+
+\[A=\begin{bmatrix}1&&&&\\ -\frac{1}{2}&1&&\\ &-\frac{2}{3}&1&&\\ &&-\frac{3}{4}&1&\\ &&&-\frac{4}{5}&1\end{bmatrix}\begin{bmatrix}\frac{\mathbf{2}}{1}&&&&\\ &\frac{\mathbf{3}}{2}&&\\ &&\frac{\mathbf{4}}{3}&\\ &&\frac{\mathbf{5}}{4}&\\ &&&\frac{\mathbf{6}}{5}\end{bmatrix}\begin{bmatrix}1&-\frac{1}{2}&&\\ &1&-\frac{2}{3}&&\\ &&1&-\frac{3}{4}&\\ &&&1&-\frac{4}{5}\\ &&&1\end{bmatrix}.\]
+
+_The \(L\) and \(U\) factors of a tridiagonal matrix are bidiagonal_. The three factors together have the same band structure of three essential diagonals (\(3n-2\) parameters) as \(A\). Note too that \(L\) and \(U\) are transposes of one another, as expected from the symmetry. The pivots 2/1, 3/2, 4/3, 5/4, 6/5 are all positive. Their product is the _determinant_ of \(A\): \(\det A=6\). The pivots are obviously converging to 1, as \(n\) gets large. Such matrices make a computer very happy.
+
+These sparse factors \(L\) and \(U\) completely change the usual operation count. Elimination on each column needs only two operations, as above, and there are \(n\) columns. _In place of \(n^{3}/3\) operations we need only \(2n\)_. Tridiagonal systems \(Ax=b\) can be solved almost instantly. _The cost of solving a tridiagonal system is proportional to \(n\)_.
+
+A **band matrix** has \(a_{ij}=0\) except in the band \(|i-j|<w\) (Figure 1.8). The "half bandwidth" is \(w=1\) for a diagonal matrix, \(w=2\) for a tridiagonal matrix, and \(w=n\) for a full matrix. For each column, elimination requires \(w(w-1)\) operations: a row of length \(w\) acts on \(w-1\) rows below. _Elimination on the \(n\) columns of a band matrix requires about \(w^{2}n\) operations_.
+
+As \(w\) approaches \(n\), the matrix becomes full, and the count is roughly \(n^{3}\). For an exact count, the lower right-hand corner has no room for bandwidth \(w\). The precise number of divisions and multiplication-subtractions that produce \(L\), \(D\), and \(U\) (without assuming a 

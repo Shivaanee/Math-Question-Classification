@@ -1,0 +1,22 @@
+We hope that these examples enhance the reader's understanding of the adjoint of a linear operator. We see that the adjoint operation, passing from \(T\) to \(T^{*}\), behaves somewhat like conjugation on complex numbers. The following theorem strengthens the analogy.
+
+**Theorem 9**: _Let \(V\) be a finite-dimensional inner product space. If \(T\) and \(U\) are linear operators on \(V\) and \(c\) is a scalar,_
+
+1. (T + \(U\))* = T* + U*;
+2. (cT)* = \(\bar{c}\)T*;
+3. (TU)* = U*T*;
+4. (T*)* = T.
+
+To prove (i), let \(\alpha\) and \(\beta\) be any vectors in \(V\). Then
+
+\[\begin{array}{rcl}((T\ +\ U)\alpha|\beta)&=&(T\alpha\ +\ U\alpha|\beta)\\ &=&(T\alpha|\beta)\ +\ (U\alpha|\beta)\\ &=&(\alpha|T^{*}\beta)\ +\ (\alpha|U^{*}\beta)\\ &=&(\alpha|T^{*}\beta\ +\ U^{*}\beta)\\ &=&(\alpha|(T^{*}\ +\ U^{*})\beta).\end{array}\]
+
+From the uniqueness of the adjoint we have \((T\ +\ U)^{*}=T^{*}+U^{*}\). We leave the proof of (ii) to the reader. We obtain (iii) and (iv) from the relations
+
+\[\begin{array}{rcl}(TU\alpha|\beta)&=&(U\alpha|T^{*}\beta)&=&(\alpha|U^{*}T^{* }\beta)\\ &(T^{*}\alpha|\beta)&=&(\overline{\beta}|\overline{T^{*}}\alpha)&=&(T\beta| \overline{\alpha})&=&(\alpha|T\beta).\end{array}\]
+
+Theorem 9 is often phrased as follows: The mapping \(T\to T^{*}\) is a conjugate-linear anti-isomorphism of period 2. The analogy with complex conjugation which we mentioned above is, of course, based upon the observation that complex conjugation has the properties \((\overline{z_{1}+z_{2}})=\bar{z}_{1}+\bar{z}_{2}\), \((\overline{z_{1}z_{2}})=\bar{z}_{2}\bar{z}_{2}\), \(\bar{z}=z\). One must be careful to observe the reversal of order in a product, which the adjoint operation imposes: \((UT)^{*}=T^{*}U^{*}\). We shall mention extensions of this analogy as we continue our study of linear operators on an inner product space. We might mention something along these lines now. A complex number \(z\) is real if and only if \(z=\bar{z}\). One might expect that the linear operators \(T\) such that \(T=T^{*}\) behave in some way like the real numbers. This is in fact the case. For example, if \(T\) is a linear operator on a finite-dimensional _complex_ inner product space, then
+
+\[T\ =\ U_{1}+iU_{1}\]
+
+where \(U_{1}=U^{*}_{1}\) and \(U_{2}=U^{*}_{2}\). Thus, in some sense, \(T\) has a 'real part' and an 'imaginary part.' The operators \(U_{1}\) and \(U_{2}\) satisfying \(U_{1}=U^{*}_{1}\), and \(U_{2}=U^{*}_{2}\) and (8-15) are unique, and are given by 

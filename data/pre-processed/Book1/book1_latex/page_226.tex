@@ -1,0 +1,25 @@
+The key is to notice that those terms are the powers of \(W=w^{j}w^{-k}\):
+
+\[1+W+W^{2}+\cdots+W^{n-1}=0.\] (10)
+
+This number \(W\) is still a root of unity: \(W^{n}=w^{nj}w^{-nk}\) is equal to \(1^{j}1^{-k}=1\). Since \(j\) is different from \(k\), \(W\) is different from \(1\). It is one of the _other_ roots on the unit circle. _Those roots all satisfy \(1+W+\cdots+W^{n-1}=0\)_. Another proof comes from
+
+\[1-W^{n}=(1-W)(1+W+W^{2}+\cdots+W^{n-1}).\] (11)
+
+Since \(W^{n}=1\), the left side is zero. But \(W\) is not \(1\), so the last factor must be zero. _The columns of \(F\) are orthogonal_.
+
+### The Fast Fourier Transform
+
+Fourier analysis is a beautiful theory, and it is also very practical. To analyze a waveform into its frequencies is the best way to take a signal apart. The reverse process brings it back. For physical and mathematical reasons the exponentials are special, and we can pinpoint one central cause: _If you differentiate \(e^{ikx}\), or integrate it, or translate \(x\) to \(x+h\), the result is still a multiple of \(e^{ikx}\)_. Exponentials are exactly suited to differential equations, integral equations, and difference equations. Each frequency component goes its own way, as an eigenvector, and then they recombine into the solution. The analysis and synthesis of signals--computing \(c\) from \(y\) and \(y\) from \(c\)--is a central part of scientific computing.
+
+We want to show that \(Fc\) and \(F^{-1}y\) can be done quickly. The key is in the relation of \(F_{4}\) to \(F_{2}\)--or rather to _two copies_ of \(F_{2}\), which go into a matrix \(F_{2}^{*}\):
+
+\[F_{4}=\begin{bmatrix}1&1&1&1\\ 1&i&i^{2}&i^{3}\\ 1&i^{2}&i^{4}&i^{6}\\ 1&i^{3}&i^{6}&i^{9}\end{bmatrix}\quad\text{is close to}\quad F_{2}^{*}= \begin{bmatrix}1&1&&\\ 1&-1&&\\ &&1&1\\ &&1&-1\end{bmatrix}.\]
+
+\(F_{4}\) contains the powers of \(w_{4}=i\), the _fourth root_ of \(1\). \(F_{2}^{*}\) contains the powers of \(w_{2}=-1\), the _square root_ of \(1\). Note especially that half the entries in \(F_{2}^{*}\) are zero. The \(2\) by \(2\) transform, done twice, requires only half as much work as a direct \(4\) by \(4\) transform. If \(64\) by \(64\) transform could be replaced by two \(32\) by \(32\) transforms, the work would be cut in half (plus the cost of reassembling the results). What makes this true, and possible in practice, is the simple connection between \(w_{64}\) and \(w_{32}\):
+
+\[(w_{64})^{2}=w_{32},\qquad\text{or}\qquad\left(e^{2\pi i/64}\right)^{2}=e^{2 \pi i/32}.\]
+
+The \(32\)nd root is twice as far around the circle as the \(64\)th root. If \(w^{64}=1\), then \((w^{2})^{32}=1\). The \(m\)th root is the square of the \(n\)th root, if \(m\) is half of \(n\):
+
+\[w_{n}^{2}=w_{m}\qquad\text{if}\qquad m=\tfrac{1}{2}n.\] (12) 

@@ -1,0 +1,25 @@
+to our desire that \(J_{1}\) should be small. We will discuss later how to choose these weights.
+
+Scaling all the weights in the weighted sum objective (15.1) by any positive number is the same as scaling the weighted sum objective \(J\) by the number, which does not change its minimizers. Since we can scale the weights by any positive number, it is common to choose \(\lambda_{1}=1\). This makes the first objective term \(J_{1}\) our _primary_ objective; we can interpret the other weights as being relative to the primary objective.
+
+Weighted sum least squares via stacking.We can minimize the weighted sum objective function (15.1) by expressing it as a standard least squares problem. We start by expressing \(J\) as the norm squared of a single vector:
+
+\[J=\left\|\left[\begin{array}{c}\sqrt{\lambda_{1}}(A_{1}x-b_{1})\\ \vdots\\ \sqrt{\lambda_{k}}(A_{k}x-b_{k})\end{array}\right]\right\|^{2},\]
+
+where we use the property that \(\|(a_{1},\ldots,a_{k})\|^{2}=\|a_{1}\|^{2}+\cdots+\|a_{k}\|^{2}\) for any vectors \(a_{1},\ldots,a_{k}\). So we have
+
+\[J=\left\|\left[\begin{array}{c}\sqrt{\lambda_{1}}A_{1}\\ \vdots\\ \sqrt{\lambda_{k}}A_{k}\end{array}\right]x-\left[\begin{array}{c}\sqrt{ \lambda_{1}}b_{1}\\ \vdots\\ \sqrt{\lambda_{k}}b_{k}\end{array}\right]\right\|^{2}=\|\tilde{A}x-\tilde{b} \|^{2},\]
+
+where \(\tilde{A}\) and \(\tilde{b}\) are the matrix and vector
+
+\[\tilde{A}=\left[\begin{array}{c}\sqrt{\lambda_{1}}A_{1}\\ \vdots\\ \sqrt{\lambda_{k}}A_{k}\end{array}\right],\qquad\tilde{b}=\left[\begin{array}[ ]{c}\sqrt{\lambda_{1}}b_{1}\\ \vdots\\ \sqrt{\lambda_{k}}b_{k}\end{array}\right].\] (15.2)
+
+The matrix \(\tilde{A}\) is \(m\times n\), and the vector \(\tilde{b}\) has length \(m\), where \(m=m_{1}+\cdots+m_{k}\).
+
+We have now reduced the problem of minimizing the weighted sum least squares objective to a standard least squares problem. Provided the columns of \(\tilde{A}\) are linearly independent, the minimizer is unique, and given by
+
+\[\hat{x} = (\tilde{A}^{T}\tilde{A})^{-1}\tilde{A}^{T}\tilde{b}\] (15.3) \[= (\lambda_{1}A_{1}^{T}A_{1}+\cdots+\lambda_{k}A_{k}^{T}A_{k})^{-1 }(\lambda_{1}A_{1}^{T}b_{1}+\cdots+\lambda_{k}A_{k}^{T}b_{k}).\]
+
+This reduces to our standard formula for the solution of a least squares problem when \(k=1\) and \(\lambda_{1}=1\). (In fact, when \(k=1\), \(\lambda_{1}\) does not matter.) We can compute \(\hat{x}\) via the QR factorization of \(\tilde{A}\).
+
+Independent columns of stacked matrix.Our assumption (12.2) that the columns of \(\tilde{A}\) in (15.2) are linearly independent is not the same as assuming that each of \(A_{1},\ldots,A_{k}\) has linearly independent columns. We can state the condition that \(\tilde{A}\) has linearly independent columns as: There is no nonzero vector \(x\) that satisfies 

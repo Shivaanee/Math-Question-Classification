@@ -1,0 +1,25 @@
+split between the same entry \(b\) above and below. A quadratic \(f(x,y)\) comes directly from a symmetric 2 by 2 matrix!
+
+\[x^{\mathrm{T}}Ax\ \mathbf{in}\ \mathbf{R}^{2}\qquad ax^{2}+2bxy+cy^{2}=\begin{bmatrix}x &y\end{bmatrix}\begin{bmatrix}a&b\\ b&c\end{bmatrix}\begin{bmatrix}x\\ y\end{bmatrix}.\] (4)
+
+This identity (please multiply it out) is the key to the whole chapter. It generalizes immediately to \(n\) dimensions, and it is a perfect shorthand for studying maxima and minima. When the variables are \(x_{1},\ldots,x_{n}\), they go into a column vector \(x\). _For any symmetric matrix \(A\), the product \(x^{\mathrm{T}}Ax\) is a pure quadratic form \(f(x_{1},\ldots,x_{n})\)_:
+
+\[x^{\mathrm{T}}Ax\ \mathbf{in}\ \mathbf{R}^{n}\qquad\begin{bmatrix}x_{1}&x_{2} &\cdot&x_{n}\end{bmatrix}\begin{bmatrix}a_{11}&a_{12}&\cdot&a_{1n}\\ a_{21}&a_{22}&\cdot&a_{2n}\\ \cdot&\cdot&\cdot&\cdot\\ a_{n1}&a_{n2}&\cdot&a_{nn}\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\\ x_{n}\end{bmatrix}=\sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}x_{i}x_{j}.\] (5)
+
+The diagonal entries \(a_{11}\) to \(a_{nn}\) multiply \(x_{1}^{2}\) to \(x_{n}^{2}\). The pair \(a_{ij}=a_{ji}\) combines into \(2a_{ij}x_{i}x_{j}\). Then \(f=a_{11}x_{1}^{2}+2a_{12}x_{1}x_{2}+\cdots+a_{nn}x_{n}^{2}\).
+
+There are no higher-order terms or lower-order terms--only second-order. The function is zero at \(x=(0,\ldots,0)\), and its first derivatives are zero. The tangent is flat; this is a stationary point. We have to decide if \(x=0\) is a minimum or a maximum or a saddle point of the function \(f=x^{\mathrm{T}}Ax\).
+
+**Example 3**.: \(f=2x^{2}+4xy+y^{2}\) and \(A=\begin{bmatrix}2&2\\ 2&1\end{bmatrix}\to\text{saddle point}\)_._
+
+**Example 4**.: \(f=2xy\) and \(A=\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\to\text{saddle point}\)_._
+
+**Example 5**.: \(A\) is 3 by 3 for \(2x_{1}^{2}-2x_{1}x_{2}+2x_{2}^{2}-2x_{2}x_{3}+2x_{3}^{2}\):
+
+\[f=\begin{bmatrix}x_{1}&x_{2}&x_{3}\end{bmatrix}\begin{bmatrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\\ x_{3}\end{bmatrix}\to\text{minimum at }(0,0,0).\]
+
+Any function \(F(x_{1},\ldots,x_{n})\) is approached in the same way. At a stationary point all first derivatives are zero. \(A\) is the **"second derivative matrix"** with entries \(a_{ij}=\partial^{2}F/\partial x_{i}\partial x_{j}\). This automatically equals \(a_{ji}=\partial^{2}F/\partial x_{j}\partial x_{i}\), so \(A\) is symmetric. _Then \(F\) has a minimum when the pure quadratic \(x^{\mathrm{T}}Ax\) is positive definite_. These second-order terms control \(F\) near the stationary point:
+
+\[\text{Taylor series}\qquad F(x)=F(0)+x^{\mathrm{T}}(\text{grad }F)+\frac{1}{2}x^{\mathrm{T}}Ax+\text{higher order terms}.\] (6)
+
+At a stationary point, \(\text{grad }F=(\partial F/\partial x_{1},\ldots,\partial F/\partial x_{n})\) is a vector of zeros. The second derivatives in \(x^{\mathrm{T}}Ax\) take the graph up or down (or saddle). If the stationary point is at 

@@ -1,0 +1,27 @@
+It is important to observe that the product of two matrices need not be defined; the product is defined if and only if the number of columns in the first matrix coincides with the number of rows in the second matrix. Thus it is meaningless to interchange the order of the factors in (a), (b), and (c) above. Frequently we shall write products such as \(AB\) without explicitly mentioning the sizes of the factors and in such cases it will be understood that the product is defined. From (d), (e), (f), (g) we find that even when the products \(AB\) and \(BA\) are both defined it need not be true that \(AB=BA\); in other words, matrix multiplication is _not commutative_.
+
+**Example 11**:
+
+1. If \(I\) is the \(m\times m\) identity matrix and \(A\) is an \(m\times n\) matrix, \(IA=A\).
+2. If \(I\) is the \(n\times n\) identity matrix and \(A\) is an \(m\times n\) matrix, \(AI=A\).
+3. If \(0^{k,m}\) is the \(k\times m\) zero matrix, \(0^{k,n}=0^{k,m}A\). Similarly, \(A0^{n,p}=0^{m,p}\).
+
+**Example 12**: Let \(A\) be an \(m\times n\) matrix over \(F\). Our earlier shorthand notation, \(AX=Y\), for systems of linear equations is consistent with our definition of matrix products. For if
+
+\[X=\begin{bmatrix}x_{1}\\ x_{2}\\ \vdots\\ x_{n}\end{bmatrix}\]
+
+with \(x_{i}\) in \(F\), then \(AX\) is the \(m\times 1\) matrix
+
+\[Y=\begin{bmatrix}y_{1}\\ y_{2}\\ \vdots\\ y_{m}\end{bmatrix}\]
+
+such that \(y_{i}=A_{i2}x_{1}+A_{i2}x_{2}+\cdots+A_{i\infty}x_{n}\).
+
+The use of column matrices suggests a notation which is frequently useful. If \(B\) is an \(n\times p\) matrix, the columns of \(B\) are the \(1\times n\) matrices \(B_{1},\ldots,B_{p}\) defined by
+
+\[B_{j}=\begin{bmatrix}B_{1j}\\ \vdots\\ B_{nj}\end{bmatrix},\qquad 1\leq j\leq p.\]
+
+The matrix \(B\) is the succession of these columns:
+
+\[B\,=\,[B_{1},\ldots,B_{p}].\]
+
+The \(i,j\) entry of the product matrix \(AB\) is formed from the \(i\)th row of 

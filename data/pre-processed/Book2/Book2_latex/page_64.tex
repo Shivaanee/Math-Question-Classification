@@ -1,0 +1,16 @@
+
+
+## Examples.
+
+* _Mean return and risk._ Suppose that an \(n\)-vector represents a time series of return on an investment, expressed as a percentage, in \(n\) time periods over some interval of time. Its average gives the mean return over the whole interval, often shortened to its _return_. Its standard deviation is a measure of how variable the return is, from period to period, over the time interval, _i.e._, how much it typically varies from its mean, and is often called the (per period) _risk_ of the investment. Multiple investments can be compared by plotting them on a _risk-return plot_, which gives the mean and standard deviation of the returns of each of the investments over some interval. A desirable return history vector has high mean return and low risk; this means that the returns in the different periods are consistently high. Figure 3.4 shows an example.
+* _Temperature or rainfall._ Suppose that an \(n\)-vector is a time series of the daily average temperature at a particular location, over a one year period. Its average gives the average temperature at that location (over the year) and its standard deviation is a measure of how much the temperature varied from its average value. We would expect the average temperature to be high and the standard deviation to be low in a tropical location, and the opposite for a location with high latitude.
+
+Chebyshev inequality for standard deviation.The Chebyshev inequality (3.2) can be transcribed to an inequality expressed in terms of the mean and standard deviation: If \(k\) is the number of entries of \(x\) that satisfy \(|x_{i}-\mathbf{avg}(x)|\geq a\), then \(k/n\leq(\mathbf{std}(x)/a)^{2}\). (This inequality is only interesting for \(a>\mathbf{std}(x)\).) For example, at most \(1/9=11.1\%\) of the entries of a vector can deviate from the mean value \(\mathbf{avg}(x)\) by 3 standard deviations or more. Another way to state this is: The fraction of entries of \(x\) within \(\alpha\) standard deviations of \(\mathbf{avg}(x)\) is at least \(1-1/\alpha^{2}\) (for \(\alpha>1\)).
+
+As an example, consider a time series of return on an investment, with a mean return of \(8\%\), and a risk (standard deviation) \(3\%\). By the Chebyshev inequality, the fraction of periods with a loss (_i.e._, \(x_{i}\leq 0\)) is no more than \((3/8)^{2}=14.1\%\). (In fact, the fraction of periods when the return is either a loss, \(x_{i}\leq 0\), or very good, \(x_{i}\geq 16\%\), is together no more than \(14.1\%\).)
+
+### Properties of standard deviation.
+
+* _Adding a constant._ For any vector \(x\) and any number \(a\), we have \(\mathbf{std}(x+a\mathbf{1})=\mathbf{std}(x)\). Adding a constant to every entry of a vector does not change its standard deviation.
+* _Multiplying by a scalar._ For any vector \(x\) and any number \(a\), we have \(\mathbf{std}(ax)=|a|\,\mathbf{std}(x)\). Multiplying a vector by a scalar multiplies the standard deviation by the absolute value of the scalar.
+

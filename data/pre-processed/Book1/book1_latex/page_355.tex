@@ -1,0 +1,23 @@
+
+
+## Chapter 6 Positive Definite Matrices
+
+### 6.1 _Minima, Maxima, and Saddle Points_
+
+Up to now, we have hardly thought about **the signs of the eigenvalues**. We couldn't ask whether \(\lambda\) was positive before it was known to be real. Chapter 5 established that every symmetric matrix has real eigenvalues. Now we will find a test that can be applied directly to \(A\), without computing its eigenvalues, which will _guarantee that all those eigenvalues are positive_. The test brings together three of the most basic ideas in the book--_pivots_, _determinants_, and _eigenvalues_.
+
+The signs of the eigenvalues are often crucial. For stability in differential equations, we needed negative eigenvalues so that \(e^{\lambda t}\) would decay. The new and highly important problem is to recognize a _minimum point_. This arises throughout science and engineering and every problem of optimization. The mathematical problem is to move the second derivative test \(F^{\prime\prime}>0\) into \(n\) dimensions. Here are two examples:
+
+\[F(x,y)=7+2(x+y)^{2}-y\sin y-x^{3}\qquad f(x,y)=2x^{2}+4xy+y^{2}.\]
+
+_Does either \(F(x,y)\) or \(f(x,y)\) have a minimum at the point \(x=y=0\)?_
+
+_Remark 3_.: The _zero-order terms_\(F(0,0)=7\) and \(f(0,0)=0\) have no effect on the answer. They simply raise or lower the graphs of \(F\) and \(f\).
+
+_Remark 4_.: The _linear terms_ give a necessary condition: To have any chance of a minimum, the first derivatives must vanish at \(x=y=0\):
+
+\[\frac{\partial F}{\partial x}=4(x+y)-3x^{2}=0\qquad\text{and}\qquad\frac{ \partial F}{\partial y}=4(x+y)-y\cos y-\sin y=0\]
+
+\[\frac{\partial f}{\partial x}=4x+4y=0\qquad\text{and}\qquad\frac{\partial f}{ \partial y}=4x+2y=0.\quad\text{All zero}.\]
+
+Thus \((x,y)=(0,0)\) is a stationary point for both functions. The surface \(z=F(x,y

@@ -1,0 +1,27 @@
+three inverse matrices in the right order:
+
+\[E^{-1}F^{-1}G^{-1}=\begin{bmatrix}1&&\\ \mathbf{2}&1&\\ &&1\end{bmatrix}\begin{bmatrix}1&&\\ &1&\\ -\mathbf{1}&1\end{bmatrix}\begin{bmatrix}1&&\\ &1&\\ &-\mathbf{1}&1\end{bmatrix}=\begin{bmatrix}1&&\\ \mathbf{2}&1&\\ -\mathbf{1}&-\mathbf{1}&1\end{bmatrix}=L.\] (6)
+
+The special thing is that _the entries below the diagonal are the multipliers \(\ell=2\)_, \(-1\), and \(-1\). When matrices are multiplied, there is usually no direct way to read off the answer. Here the matrices come in just the right order so that their product can be written down immediately. If the computer stores each multiplier \(\ell_{ij}\)--the number that multiplies the pivot row \(j\) when it is subtracted from row \(i\), and produces a zero in the \(i\), \(j\) position--then these multipliers give a complete record of elimination.
+
+_The numbers \(\ell_{ij}\) fit right into the matrix \(L\) that takes \(U\) back to \(A\)._
+
+**1H**: _Triangular factorization \(A=LU\) with no exchanges of rows_. \(L\) is lower triangular, with 1s on the diagonal. The multipliers \(\ell_{ij}\) (taken from elimination) are below the diagonal. \(U\) is the upper triangular matrix which appears after forward elimination, The diagonal entries of \(U\) are the pivots.
+
+**Example 1**: \[A=\begin{bmatrix}1&2\\ 3&8\end{bmatrix}\text{ goes to }U=\begin{bmatrix}1&2\\ 0&2\end{bmatrix}\text{ with }L=\begin{bmatrix}1&0\\ 3&1\end{bmatrix}.\quad\text{Then }LU=A.\]
+
+**Example 2**: (which needs a row exchange)
+
+\[A=\begin{bmatrix}0&2\\ 3&4\end{bmatrix}\quad\text{cannot be factored into }A=LU.\]
+
+**Example 3**: (with all pivots and multipliers equal to 1)
+
+\[A=\begin{bmatrix}1&1&1\\ 1&2&2\\ 1&2&3\end{bmatrix}=\begin{bmatrix}1&0&0\\ 1&1&0\\ 1&1&1\end{bmatrix}\begin{bmatrix}1&1&1\\ 0&1&1\\ 0&0&1\end{bmatrix}=LU.\]
+
+From \(A\) to \(U\) there are subtractions of rows. From \(U\) to \(A\) there are additions of rows.
+
+**Example 4**: (when \(U\) is the identity and \(L\) is the same as \(A\))
+
+\[\text{\bf Lower triangular case}\qquad A=\begin{bmatrix}1&0&0\\ \ell_{21}&1&0\\ \ell_{31}&\ell_{32}&1\end{bmatrix}.\]
+
+The elimination steps on this \(A\) are easy: (i) \(E\) subtracts \(\ell_{21}\) times row 1 from row 2, (ii) \(F\) subtracts \(\ell_{31}\) times row 1 from row 3, and (iii) \(G\) subtracts \(\ell_{32}\) times row 2 from row 3. The result is the identity matrix \(U=I\). The inverses of \(E\), \(F\), and \(G\) will bring back \(A\): 

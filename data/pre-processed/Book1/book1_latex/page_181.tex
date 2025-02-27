@@ -1,0 +1,22 @@
+
+
+**45.**: Suppose an \(n\) by \(n\) matrix is invertible: \(AA^{-1}=I\). Then the first column of \(A^{-1}\) is orthogonal to the space spanned by which rows of \(A\)?
+**46.**: Find \(A^{\mathrm{T}}A\) if the columns of \(A\) are unit vectors, all mutually perpendicular.
+**47.**: Construct a 3 by 3 matrix \(A\) with no zero entries whose columns are mutually perpendicular. Compute \(A^{\mathrm{T}}A\). Why is it a diagonal matrix?
+**48.**: The lines \(3x+y=b_{1}\) and \(6x+2y=b_{2}\) are . They are the same line if . In that case \((b_{1},b_{2})\) is perpendicular to the vector . The nullspace of the matrix is the line \(3x+y=\raisebox{-3.01pt}{\includegraphics[]{figures/1.eps}}\). One particular vector in that nullspace is .
+**49.**: Why is each of these statements false?
+
+1. \((1,1,1)\) is perpendicular to \((1,1,-2)\), so the planes \(x+y+z=0\) and \(x+y-2z=0\) are orthogonal subspaces.
+2. The subspace spanned by \((1,1,0,0,0)\) and \((0,0,0,1,1)\) is the orthogonal complement of the subspace spanned by \((1,-1,0,0,0)\) and \((2,-2,3,4,-4)\).
+3. Two subspaces that meet only in the zero vector are orthogonal.
+**50.**: Find a matrix with \(v=(1,2,3)\) in the row space and column space. Find another matrix with \(v\) in the nullspace and column space. Which pairs of subspaces can \(v\)_not_ be in?
+**51.**: Suppose \(A\) is 3 by 4, \(B\) is 4 by 5, and \(AB=0\). Prove \(\mathrm{rank}(A)+\mathrm{rank}(B)\leq 4\).
+**52.**: The command \(\mathsf{N}=\mathsf{null}(\mathsf{A})\) will produce a basis for the nullspace of \(A\). Then the command \(\mathsf{B}=\mathsf{null}(\mathsf{N}^{\prime})\) will produce a basis for the .
+
+### **Cosines and Projections onto Lines**
+
+Vectors with \(x^{\mathrm{T}}y=0\) are orthogonal. Now we allow inner products that are _not zero_, and angles that are _not right angles_. We want to connect inner products to angles, and also to transposes. In Chapter 1 the transpose was constructed by flipping over a matrix as if it were some kind of pancake. We have to do better than that.
+
+One fact is unavoidable: _The orthogonal case is the most important_. Suppose we want to find the distance from a point \(b\) to the line in the direction of the vector \(a\). We are looking along that line for the point \(p\) closest to \(b\). The key is in the geometry: _The line connecting \(b\) to \(p\)_ (the dotted line in Figure 3.5) _is perpendicular to \(a\). This fact will allow us to find the projection \(p\)_. Even though \(a\) and \(b\) are not orthogonal, the distance problem automatically brings in orthogonality.
+
+The situation is the same when we are given a plane (or any subspace \(\mathbf{S}\)) instead of a line. Again the problem is to find the point \(p\) on that subspace that is closest to \(b\). _This

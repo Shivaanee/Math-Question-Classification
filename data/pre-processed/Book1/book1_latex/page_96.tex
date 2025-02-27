@@ -1,0 +1,28 @@
+
+
+**27.**: If \(A\) is any 8 by 8 invertible matrix, then its column space is . Why?
+**28.**: True or false (with a counterexample if false)?
+
+1. The vectors \(b\) that are not in the column space \(\boldsymbol{C}(A)\) form a subspace.
+2. If \(\boldsymbol{C}(A)\) contains only the zero vector, then \(A\) is the zero matrix.
+3. The column space of \(2A\) equals the column space of \(A\).
+4. The column space of \(A-I\) equals the column space of \(A\).
+**29.**: Construct a 3 by 3 matrix whose column space contains \((1,1,0)\) and \((1,0,1)\) but not \((1,1,1)\). Construct a 3 by 3 matrix whose column space is only a line.
+**30.**: If the 9 by 12 system \(Ax=b\) is solvable for every \(b\), then \(\boldsymbol{C}(A)=\).
+**31.**: Why isn't \(\boldsymbol{R}^{2}\) a subspace of \(\boldsymbol{R}^{3}\)?
+
+### **Solving \(Ax=0\) and \(Ax=b\)**
+
+Chapter 1 concentrated on square invertible matrices. There was one solution to \(Ax=b\) and it was \(x=-A^{-1}b\). That solution was found by elimination (not by computing \(A^{-1}\)). A rectangular matrix brings new possibilities--\(U\) may not have a full set of pivots. This section goes onward from \(U\) to a reduced form \(R\)**--the simplest matrix that elimination can give**. \(R\) reveals all solutions immediately.
+
+For an invertible matrix, the nullspace contains only \(x=0\) (multiply \(Ax=0\) by \(A^{-1}\)). The column space is the whole space (\(Ax=b\) has a solution for every \(b\)). The new questions appear when the nullspace contains _more than the zero vector_ and/or the column space contains _less than all vectors_:
+
+1. Any vector \(x_{n}\) in the nullspace can be added to a particular solution \(x_{p}\). The solutions to all linear equations have this form, \(x=x_{p}+x_{n}\): **Complete solution**\(Ax_{p}=b\)**and**\(Ax_{n}=0\)**produce**\(A(x_{p}+x_{n})=b\)**.**
+2. When the column space doesn't contain every \(b\) in \(\boldsymbol{R}^{m}\), we need the conditions on \(b\) that make \(Ax=b\) solvable.
+
+A 3 by 4 example will be a good size. We will write down all solutions to \(Ax=0\). We will find the conditions for \(b\) to lie in the column space (so that \(Ax=b\) is solvable). The 1 by 1 system \(0x=b\), one equation and one unknown, shows two possibilities:
+
+\(0x=b\) has _no solution_ unless \(b=0\). The column space of the 1 by 1 zero matrix contains only \(b=0\).
+
+\(0x=0\) has _infinitely many solutions_. The nullspace contains _all_\(x\). A particular solution is \(x_{p}=0\), and the complete solution is \(x=x_{p}+x_{n}=0+(\text{any }x)\).
+

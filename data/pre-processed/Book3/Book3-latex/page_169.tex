@@ -1,0 +1,21 @@
+Using (5-24), we have what we want:
+
+(5-25) \[A\,(\operatorname{adj}\,A)\,=\,(\det A)I.\]
+
+As for matrices over a field, an \(n\bigtimes n\) matrix \(A\) over \(K\) is called **invertible over \(K\)** if there is an \(n\bigtimes n\) matrix \(A^{-1}\) with entries in \(K\) such that \(AA^{-1}\,=\,A^{-1}\!A\,=\,I\). If such an inverse matrix exists it is unique; for the same argument used in Chapter 1 shows that when \(BA\,=\,AC\,=\,I\) we have \(B\,=\,C\). The formulas (5-23) and (5-25) tell us the following about invertibility of matrices over \(K\). If the element \(\det A\) has a multiplicative inverse in \(K\), then \(A\) is invertible and \(A^{-1}\,=\,(\det A)^{-1}\operatorname{adj}\,A\) is the unique inverse of \(A\). Conversely, it is easy to see that if \(A\) is invertible over \(K\), the element \(\det A\) is invertible in \(K\). For, if \(BA\,=\,I\) we have
+
+\[1\,=\,\det I\,=\,\det\,(AB)\,=\,(\det A)(\det B).\]
+
+What we have proved is the following.
+
+**Theorem 4**: _Let \(\operatorname{A}\) be an \(n\bigtimes n\) matrix over \(\operatorname{K}\). Then \(\operatorname{A}\) is invertible over \(\operatorname{K}\) if and only if \(\operatorname{A}\) is invertible in \(\operatorname{K}\). When \(\operatorname{A}\) is invertible, the unique inverse for \(\operatorname{A}\) is_
+
+\[\operatorname{A^{-1}}\,=\,(\det\,\operatorname{A})^{-1}\,adj\,\operatorname{ A}.\]
+
+_In particular, an \(n\bigtimes n\) matrix over a field is invertible if and only if its determinant is different from zero._
+
+We should point out that this determinant criterion for invertibility proves that an \(n\bigtimes n\) matrix with either a left or right inverse is invertible. This proof is completely independent of the proof which we gave in Chapter 1 for matrices over a field. We should also like to point out what invertibility means for matrices with polynomial entries. If \(K\) is the polynomial ring \(F[x]\), the only elements of \(K\) which are invertible are the non-zero scalar polynomials. For if \(f\) and \(g\) are polynomials and \(fg\,=\,1\), we have \(\deg\,f\,+\,\deg\,g\,=\,0\) so that \(\deg\,f\,=\,\deg\,g\,=\,0\), i.e., \(f\) and \(g\) are scalar polynomials. So an \(n\bigtimes n\) matrix over the polynomial ring \(F[x]\) is invertible over \(F[x]\) if and only if its determinant is a non-zero scalar polynomial.
+
+Let \(K\,=\,R[x]\), the ring of polynomials over the field of real numbers. Let
+
+\[A\,=\,\begin{bmatrix}x^{\sharp}+x&x+ 

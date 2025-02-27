@@ -1,0 +1,18 @@
+Sec. 1.4
+
+\[\begin{bmatrix}1&-2&1&y_{1}\\ 2&1&1&y_{2}\\ 0&5&-1&y_{3}\end{bmatrix}\stackrel{{\text{\tiny(2)}}}{{\longrightarrow}} \begin{bmatrix}1&-2&1&y_{1}\\ 0&5&-1&(y_{2}-2y_{1})\\ 0&5&-1&y_{3}\end{bmatrix}\stackrel{{\text{\tiny(2)}}}{{ \longrightarrow}}\\ \begin{bmatrix}1&-2&1&y_{1}\\ 0&5&-1&(y_{2}-2y_{1})\\ 0&0&0&(y_{3}-y_{2}+2y_{1})\end{bmatrix}\stackrel{{\text{\tiny(1 )}}}{{\longrightarrow}}\begin{bmatrix}1&-2&1&y_{1}\\ 0&1&-\frac{1}{5}&\frac{1}{5}(y_{2}-2y_{1})\\ 0&0&0&(y_{3}-y_{2}+2y_{1})\end{bmatrix}\stackrel{{\text{\tiny(2)}} }{{\longrightarrow}}\ .\]
+
+The condition that the system \(AX=Y\) have a solution is thus
+
+\[2y_{1}-y_{2}+y_{3}=0\]
+
+and if the given scalars \(y_{i}\) satisfy this condition, all solutions are obtained by assigning a value \(c\) to \(x_{3}\) and then computing
+
+\[\begin{array}{l}x_{1}=-\frac{3}{5}c+\frac{1}{5}(y_{1}+2y_{2})\\ x_{2}=\phantom{-}\frac{1}{5}c+\frac{1}{5}(y_{2}-2y_{1}).\end{array}\]
+
+Let us observe one final thing about the system \(AX=Y.\) Suppose the entries of the matrix \(A\) and the scalars \(y_{1},\,.\,.\,.\,,\,y_{m}\) happen to lie in a subfield \(F_{1}\) of the field \(F.\) If the system of equations \(AX=Y\) has a solution with \(x_{1},\,.\,.\,,\,x_{n}\) in \(F,\) it has a solution with \(x_{1},\,.\,.\,,\,x_{n}\) in \(F_{1}.\) For, over either field, the condition for the system to have a solution is that certain relations hold between \(y_{1},\,.\,.\,,\,y_{m}\) in \(F_{1}\) (the relations \(z_{i}=0\) for \(i>r\), above). For example, if \(AX=Y\) is a system of linear equations in which the scalars \(y_{k}\) and \(A_{ij}\) are real numbers, and if there is a solution in which \(x_{1},\,.\,.\,,\,x_{n}\) are complex numbers, then there is a solution with \(x_{1},\,.\,.\,,\,x_{n}\) real numbers.
+
+### Exercises
+
+1. Find all solutions to the following system of equations by row-reducing the coefficient matrix: \[\begin{array}{l}\frac{1}{5}x_{1}+2x_{2}-\phantom{-}6x_{3}=0\\ -4x_{1}\phantom{-}+\phantom{-}5x_{3}=0\\ -3x_{1}+6x_{2}-13x_{3}=0\\ -\frac{1}{5}x_{1}+2x_{3}-\phantom{-}\frac{1}{5}x_{3}=0\end{array}\]
+2. Find a row-reduced echelon matrix which is row-equivalent to \[A=\begin{bmatrix}1&-i\\ 2&2\\ i&1+i\end{bmatrix}.\] What are the solutions of \(AX=0\)? 

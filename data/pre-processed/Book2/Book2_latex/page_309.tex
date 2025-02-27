@@ -1,0 +1,24 @@
+data set size (the sum of all entries in the confusion matrix):
+
+\[(1/N)\sum_{i\neq j}N_{ij}=1-(1/N)\sum_{i}N_{ii}.\]
+
+This measure implicitly assumes that all errors are equally bad. In many applications this is not the case; for example, some medical mis-diagnoses might be worse for a patient than others.
+
+We can also look at the rate with which we predict each label correctly. The quantity \(N_{ii}/N_{i}\) is called the _true label \(i\) rate_. It is the fraction of data points with label \(y=i\) for which we correctly predicted \(\hat{y}=i\). (The true label \(i\) rates reduce to the true positive and true negative rates for Boolean classifiers.)
+
+A simple example, with \(K=3\) labels (_Dislike_, _Neutral_, and _Like_), and a total number \(N=500\) data points, is shown in table 14.8. Out of 500 data points, 454 (the sum of the diagonal entries) were classified correctly. The remaining 46 data points (the sum of the off-diagonal entries) correspond to the 6 different types of errors. The overall error rate is \(46/500=9.2\%\). The true label _Dislike_ rate is \(183/(183+10+5)=92.4\%\), _i.e._, among the data points with label _Dislike_, we correctly predicted the label on \(92.4\%\) of the data. The true label _Neutral_ rate is \(61/(7+61+8)=80.3\%\), and the true label _Like_ rate is \(210/(3+13+210)=92.9\%\).
+
+#### Least squares multi-class classifier
+
+The idea behind the least squares Boolean classifier can be extended to handle multi-class classification problems. For each possible label value, we construct a new data set with the Boolean label \(+1\) if the label has the given value, and \(-1\) otherwise. (This is sometimes called a _one-versus-others_ or _one-versus-all_ classifier.) From these \(K\) Boolean classifiers we must create a classifier that chooses one of the \(K\) possible labels. We do this by selecting the label for which the least squares regression fit has the highest value, which roughly speaking is the one with the highest level of confidence. Our classifier is then
+
+\[\hat{f}(x)=\operatorname*{argmax}_{k=1,\ldots,K}\tilde{f}_{k}(x),\]
+
+where \(\tilde{f}_{k}\) is the least squares regression model for label \(k\) against the others. The notation argmax means the index of the largest value among the numbers \(\tilde{f}_{k}(x)\)
+
+\begin{table}
+\begin{tabular}{c c c c} \hline \hline  & \multicolumn{3}{c}{\(\hat{y}\)} \\ \cline{2-3} \(y\) & _Dislike_ & _Neutral_ & _Like_ \\ \hline _Dislike_ & 183 & 10 & 5 \\ _Neutral_ & 7 & 61 & 8 \\ _Like_ & 3 & 13 & 210 \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.8: Example confusion matrix of a multi-class classifier with three classes.
+
+ 

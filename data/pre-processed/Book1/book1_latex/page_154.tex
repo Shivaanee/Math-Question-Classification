@@ -1,0 +1,27 @@
+Starting with a different basis \((1,1)\) and \((2,-1)\), this same \(A\) is also the only linear transformation with
+
+\[A\begin{bmatrix}1\\ 1\end{bmatrix}=\begin{bmatrix}6\\ 9\\ 12\end{bmatrix}\qquad\text{and}\qquad A\begin{bmatrix}2\\ -1\end{bmatrix}=\begin{bmatrix}0\\ 0\\ 0\end{bmatrix}.\]
+
+Next we find matrices that represent differentiation and integration. _First we must decide on a basis_. For the polynomials of degree 3 there is a natural choice for the four basis vectors:
+
+\[\textbf{Basis for P}_{3}\qquad p_{1}=1,\quad p_{2}=t,\quad p_{3}=t^{2},\quad p _{4}=t^{3}.\]
+
+That basis is not unique (it never is), but some choice is necessary and this is the most convenient. The derivatives of those four basis vectors are 0, 1, 2\(t\), 3\(t^{2}\):
+
+\[\textbf{Action of }d/dt\qquad Ap_{1}=0,\quad Ap_{2}=p_{1},\quad Ap_{3}=2p_{2}, \quad Ap_{4}=3p_{3}.\] (5)
+
+"\(d/dt\)" is acting exactly like a matrix, but which matrix? Suppose we were in the usual four-dimensional space with the usual basis--the coordinate vectors \(p_{1}=(1,0,0,0)\), \(p_{2}=(0,1,0,0)\), \(p_{3}=(0,0,1,0)\), \(p_{4}=(0,0,0,1)\). The matrix is decided by equation (5):
+
+\[\textbf{Differentiation matrix}\qquad A_{\text{diff}}=\begin{bmatrix}0&1&0&0 \\ 0&0&2&0\\ 0&0&0&3\\ 0&0&0&0\end{bmatrix}.\]
+
+\(Ap_{1}\) is its first column, which is zero. \(Ap_{2}\) is the second column, which is \(p_{1}\). \(Ap_{3}\) is \(2p_{2}\) and \(Ap_{4}\) is 3\(p_{3}\). The nullspace contains \(p_{1}\) (the derivative of a constant is zero). The column space contains \(p_{1}\), \(p_{2}\), \(p_{3}\) (the derivative of a cubic is a quadratic). The derivative of a combination like \(p=2+t-t^{2}-t^{3}\) is decided by linearity, and there is nothing new about that--it is the way we all differentiate. It would be crazy to memorize the derivative of every polynomial.
+
+The matrix can differentiate that \(p(t)\), because matrices build in linearity!
+
+\[\frac{dp}{dt}=Ap\longrightarrow\begin{bmatrix}0&1&0&0\\ 0&0&2&0\\ 0&0&0&3\\ 0&0&0&0\end{bmatrix}\begin{bmatrix}2\\ 1\\ -1\\ -1\end{bmatrix}=\begin{bmatrix}1\\ -2\\ -3\\ 0\end{bmatrix}\longrightarrow 1-2t-3t^{2}.\]
+
+In short, _the matrix carries all the essential information_. If the basis is known, and the matrix is known, then the transformation of every vector is known.
+
+The coding of the information is simple. To transform a space to itself, one basis is enough. A transformation from one space to another requires a basis for each.
+
+ 

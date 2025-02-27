@@ -1,0 +1,35 @@
+Suppose we have a scalar \(c_{J}\) for each shuffle and we define
+
+\[L=\Sigma_{J}c_{J}D_{J}.\]
+
+From (5-40) and (5-41) we obtain
+
+\[c_{I}=L(\beta_{ii},\ldots,\beta_{i}).\]
+
+In particular, if \(L=0\) then \(c_{I}=0\) for each shuffle \(I\).
+
+_Corollary_. _If \(V\) is a free \(K\)-module of rank \(n\), then \(\Lambda^{n}(V)\) is a free \(K\)-module of rank \(1\). If \(T\) is a linear operator on \(V\), there is a unique element \(c\) in \(K\) such that
+
+\[L(T\alpha_{1},\ldots,\mbox{\rm T}\alpha_{n})=cL(\alpha_{1},\ldots,\alpha_{n})\]
+
+for every alternating \(n\)-linear form \(L\) on \(V\).
+
+Proof.: If \(L\) is in \(\Lambda^{n}(V)\), then clearly
+
+\[L_{T}(\alpha_{1},\ldots,\alpha_{n})=L(T\alpha_{n},\ldots,\mbox{\rm T}\alpha_{n})\]
+
+defines an alternating \(n\)-linear form \(L_{T}\). Let \(M\) be a generator for the rank \(1\) module \(\Lambda^{n}(V)\). Each \(L\) in \(\Lambda^{n}(V)\) is uniquely expressible as \(L=aM\) for some \(a\) in \(K\). In particular, \(M_{T}=cM\) for a certain \(c\). For \(L=aM\) we have
+
+\[\begin{array}{ll}L_{T}=&(aM)_{T}\\ =&aM_{T}\\ =&a(cM)\\ =&c(aM)\\ =&cL.\quad\rule{0.0pt}{12.9pt}\end{array}\]
+
+Of course, the element \(c\) in the last corollary is called the **determinant** of \(T\). From (5-39) for the case \(r=n\) (when there is only one shuffle \(J=(1,\ldots,n)\)) we see that the determinant of \(T\) is the determinant of the matrix which represents \(T\) in any ordered basis \(\langle\beta_{1},\ldots,\beta_{n}\rangle\). Let us see why. The representing matrix has \(i\), \(j\) entry
+
+\[A_{ij}=f_{j}(T\beta_{i})\]
+
+so that
+
+\[\begin{array}{ll}D_{J}(T\beta_{1},\ldots,\mbox{\rm T}\beta_{n})=\sum_{ \sigma}\,(\mbox{\rm sgn}\;\sigma)\;A\,(1,\sigma 1)\,\cdots\,A\,(n,\sigma n)\\ =&\det A.\end{array}\]
+
+On the other hand,
+
+\[\begin{array}{ll}D_{J}(T\beta_{1},\ldots,\mbox{\rm T}\beta_{n})=(\det T 

@@ -1,0 +1,37 @@
+
+
+**26.**: Project \(a_{1}=(1,0)\) onto \(a_{2}=(1,2)\). Then project the result back onto \(a_{1}\). Draw these projections and multiply the projection matrices \(P_{1}P_{2}\): Is this a projection?
+
+### Projections and Least Squares
+
+Up to this point, \(Ax=b\) either has a solution or not. If \(b\) is not in the column space \(\boldsymbol{C}(A)\), the system is inconsistent and Gaussian elimination fails. This failure is almost certain when there are several equations and only one unknown:
+
+\[\begin{array}{rllll}\mbox{\bf More equations}&2x&=&b_{1}\\ \mbox{\bf than unknowns--}&3x&=&b_{2}\\ \mbox{\bf no solution?}&4x&=&b_{3}.\end{array}\]
+
+This is solvable when \(b_{1}\), \(b_{2}\), \(b_{3}\) are in the ratio 2:3:4. The solution \(x\) will exist only if \(b\) is on the same line as the column \(a=(2,3,4)\).
+
+In spite of their unsolvability, inconsistent equations arise all the time in practice. They have to be solved! One possibility is to determine \(x\) from part of the system, and ignore the rest; this is hard to justify if all \(m\) equations come from the same source. Rather than expecting no error in some equations and large errors in the others, it is much better _to choose the \(x\) that minimizes an average error \(E\) in the \(m\) equations._
+
+The most convenient "average" comes from the _sum of squares_:
+
+\[\mbox{\bf Squared error}\qquad E^{2}=(2x-b_{1})^{2}+(3x-b_{2})^{2}+(4x-b_{3})^{2}.\]
+
+If there is an exact solution, the minimum error is \(E=0\). In the more likely case that \(b\) is not proportional to \(a\), the graph of \(E^{2}\) will be a parabola. The minimum error is at the lowest point, where the derivative is zero:
+
+\[\frac{dE^{2}}{dx}=2\big{[}(2x-b_{1})2+(3x-b_{2})3+(4x-b_{3})4\big{]}=0.\]
+
+Solving for \(x\), the least-squares solution of this model system \(ax=b\) is denoted by \(\widehat{x}\):
+
+\[\mbox{\bf Leastsquares solution}\qquad\widetilde{x}=\frac{2b_{1}+3b_{2}+4b_{3}}{2 ^{2}+3^{2}+4^{2}}=\frac{a^{\mathrm{T}}b}{a^{\mathrm{T}}a}.\]
+
+_You recognize \(a^{\mathrm{T}}b\) in the numerator and \(a^{\mathrm{T}}a\) in the denominator._
+
+The general case is the same. We "solve" \(ax=b\) by minimizing
+
+\[E^{2}=\|ax-b\|^{2}=(a_{1}x-b_{1})^{2}+\cdots+(a_{m}x-b_{m})^{2}.\]
+
+The derivative of \(E^{2}\) is zero at the point \(\widehat{x}\), if
+
+\[(a_{1}\widehat{x}-b_{1})a_{1}+\cdots+(a_{m}\widehat{x}-b_{m})a_{m}=0.\]
+
+We are minimizing the distance from \(b\) to the line through \(a\), and calculus gives the same answer, \(\widehat{x}=(a_{1}b_{1}+\cdots+a_{m}b_{m})/(a_{1}^{2}+\cdots+a_{m}^{2})\), that geometry did earlier:

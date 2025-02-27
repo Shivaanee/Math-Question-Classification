@@ -1,0 +1,14 @@
+
+
+## Chapter Matrices and Gaussian Elimination
+
+### 1.1 Introduction
+
+This book begins with the central problem of linear algebra: _solving linear equations_. The most important ease, and the simplest, is when the number of unknowns equals the number of equations. We have \(n\)**equations in \(n\) unknowns**, starting with \(n=2\):
+
+\[\begin{array}{ccccc}\textbf{Two equations}&1x&+&2y&=&3\\ \textbf{Two unknowns}&4x&+&5y&=&6.\end{array}\] (1)
+
+The unknowns are \(x\) and \(y\). I want to describe two ways, _elimination_ and _determinants_, to solve these equations. Certainly \(x\) and \(y\) are determined by the numbers 1, 2, 3, 4, 5, 6. The question is how to use those six numbers to solve the system.
+
+1. **Elimination** Subtract 4 times the first equation from the second equation. This eliminates \(x\) from the second equation. and it leaves one equation for \(y\): \[(\textbf{equation 2})-4(\textbf{equation 1})\qquad-3y=-6.\] (2) Immediately we know \(y=2\). Then \(x\) comes from the first equation \(1x+2y=3\): \[\textbf{Back-substitution}\qquad 1x+2(2)=3\quad\text{gives}\quad x=-1.\] (3) Proceeding carefully, we cheek that \(x\) and \(y\) also solve the second equation. This should work and it does: 4 times (\(x=-1\)) plus 5 times (\(y=2\)) equals 6.
+2. **Determinants** The solution \(y=2\) depends completely on those six numbers in the equations. There most be a formula for \(y\) (and also \(x\)) It is a "ratio of determinants" and I hope you will allow me to write it down directly: \[y=\frac{\begin{vmatrix}1&3\\ 4&6\\ \hline 1&2\\ 4&5\end{vmatrix}}{\begin{vmatrix}1&2\\ 4&5\end{vmatrix}}=\frac{1\cdot 6-3\cdot 4}{1\cdot 5-2\cdot 4}=\frac{-6}{-3}=2.\] (4)

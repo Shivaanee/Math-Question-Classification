@@ -1,0 +1,20 @@
+
+
+**Example 1**.: Using the Gauss-Jordan Method to Find \(A^{-1}\)
+
+\[\begin{bmatrix}\boldsymbol{A}&e_{1}&e_{2}&e_{3}\end{bmatrix}=\begin{bmatrix} \boldsymbol{2}&\boldsymbol{1}&\boldsymbol{1}&1&0&0\\ \boldsymbol{4}&-\boldsymbol{6}&\boldsymbol{0}&0&1&0\\ -\boldsymbol{2}&\boldsymbol{7}&\boldsymbol{2}&0&0&1\end{bmatrix}\] \[\mathbf{pivot}=\boldsymbol{2}\to\begin{bmatrix}\boldsymbol{2}& \boldsymbol{1}&\boldsymbol{1}&1&0&0\\ \boldsymbol{0}&-\boldsymbol{8}&-\boldsymbol{2}&-2&1&0\\ \boldsymbol{0}&\boldsymbol{8}&\boldsymbol{3}&1&0&1\end{bmatrix}\] \[\mathbf{pivot}=-\boldsymbol{8}\to\begin{bmatrix}\boldsymbol{2}& \boldsymbol{1}&\boldsymbol{1}&1&0&0\\ \boldsymbol{0}&-\boldsymbol{8}&-\boldsymbol{2}&-2&1&0\\ \boldsymbol{0}&\boldsymbol{0}&\boldsymbol{1}&-1&1&1\end{bmatrix}=\begin{bmatrix} \boldsymbol{U}&L^{-1}\end{bmatrix}.\]
+
+This completes the first half--forward elimination. The upper triangular \(U\) appears in the first three columns. The other three columns are the same as \(L^{-1}\). (This is the effect of applying the elementary operations \(GFE\) to the identity matrix.) Now the second half will go from \(U\) to \(I\) (multiplying by \(U^{-1}\)). That takes \(L^{-1}\) to \(U^{-1}L^{-1}\) which is \(A^{-1}\). **Creating zeros _above_ the pivots, we reach \(A^{-1}\):
+
+\[\begin{split}\text{\bf Second half}\quad\begin{bmatrix}U&L^{-1} \end{bmatrix}\to\begin{bmatrix}2&1&\boldsymbol{0}&2&-1&-1\\ 0&-8&\boldsymbol{0}&-4&3&2\\ 0&0&1&-1&1&1\end{bmatrix}\\ \text{\bf zeros above pivots}\to\begin{bmatrix}2&\boldsymbol{0}& \boldsymbol{0}&\frac{12}{8}&-\frac{5}{8}&-\frac{6}{8}\\ 0&-8&\boldsymbol{0}&-4&3&2\\ 0&0&1&-1&1&1\end{bmatrix}\\ \text{\bf divide by pivots}\to\begin{bmatrix}1&0&0&\frac{12}{16}&-\frac{5}{16}&- \frac{6}{16}\\ 0&1&0&\frac{4}{8}&-\frac{3}{8}&-\frac{2}{8}\\ 0&0&1&-\boldsymbol{1}&\boldsymbol{1}&\boldsymbol{1}\end{bmatrix}=\begin{bmatrix} I&\boldsymbol{A^{-1}}\end{bmatrix}.\end{split}\]
+
+At the last step, we divided the rows by their pivots \(2\) and \(-8\) and \(1\). The coefficient matrix in the left-hand half became the identity. Since \(A\) went to \(I\), the same operations on the right-hand half must have carried \(I\) into \(A^{-1}\). Therefore we have computed the inverse.
+
+A note for the future: You can see the determinant \(-16\) appearing in the denominators of \(A^{-1}\). **The determinant is the product of the pivots (2)(\(-\)8)(1)**. It enters at the end when the rows are divided by the pivots.
+
+_Remark 1_.: In spite of this brilliant success in computing \(A^{-1}\), I don't recommend it, I admit that \(A^{-1}\) solves \(Ax=b\) in one step. Two triangular steps are better:
+
+\[x=A^{-1}b\quad\text{separates into}\quad Lc=b\quad\text{and}\quad Ux=c.\]
+
+We could write \(c=L^{-1}b\) and then \(x=U^{-1}c=U^{-1}L^{-1}b\). But note that we did not explicitly form, and in actual computation _should not form_, these matrices \(L^{-1}\) and \(U^{-1}\).
+

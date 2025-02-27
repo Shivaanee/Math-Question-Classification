@@ -1,0 +1,23 @@
+be an ordered basis for \(V\). Let \(\epsilon_{1},\ldots,\epsilon_{n}\) be the standard basis vectors in \(F^{n}\), and let \(T\) be the linear transformation from \(V\) into \(F^{n}\) such that \(T\alpha_{j}=\epsilon_{i},j=1,\ldots,n\). In other words, let \(T\) be the 'natural' isomorphism of \(V\) onto \(F^{n}\) that is determined by \(\otimes\). If we take the standard inner product on \(F^{n}\), then
+
+\[p_{T}(\sum_{j}x_{j}\alpha_{i},\sum_{k}y_{k}\alpha_{k})\,=\,\sum_{j=1}^{n}x_{j} \vec{y}_{j}.\]
+
+Thus, for any basis for \(V\) there is an inner product on \(V\) with the property \((\alpha_{j}|\alpha_{k})=\delta_{jk}\); in fact, it is easy to show that there is exactly one such inner product. Later we shall show that every inner product on \(V\) is determined by some basis \(\otimes\) in the above manner.
+
+(b) We look again at Example 5 and take \(V=W\), the space of continuous functions on the unit interval. Let \(T\) be the linear operator 'multiplication by \(t\),' that is, \((Tf)(t)=tf(t)\), \(0\leq t\leq 1\). It is easy to see that \(T\) is linear. Also \(T\) is non-singular; for suppose \(Tf=0\). Then \(tf(t)=0\) for \(0\leq t\leq 1\); hence \(f(t)=0\) for \(t>0\). Since \(f\) is continuous, we have \(f(0)=0\) as well, or \(f=0\). Now using the inner product of Example 5, we construct a new inner product on \(V\) by setting
+
+\[\eqalign{pr(f,g)&=\int_{0}^{1}(Tf)(t)(\overline{Tg)(t)}\,dt\cr&=\int_{0}^{1}f( t)\overline{g(t)}t^{2}\,dt.\cr}\]
+
+We turn now to some general observations about inner products. Suppose \(V\) is a complex vector space with an inner product. Then for all \(\alpha,\beta\) in \(V\)
+
+\[(\alpha|\beta)\,=\,{\rm Re}\,\,(\alpha|\beta)\,+\,i\,\,{\rm Im}\,\,(\alpha| \beta)\]
+
+where \({\rm Re}\,\,(\alpha|\beta)\) and \({\rm Im}\,\,(\alpha|\beta)\) are the real and imaginary parts of the complex number \((\alpha|\beta)\). If \(z\) is a complex number, then \({\rm Im}\,\,(z)={\rm Re}\,\,(-iz)\). It follows that
+
+\[{\rm Im}\,\,(\alpha|\beta)\,=\,{\rm Re}\,\,[-i(\alpha|\beta)]\,=\,{\rm Re}\, \,(\alpha|i\beta).\]
+
+Thus the inner product is completely determined by its 'real part' in accordance with
+
+\[(\alpha|\beta)\,=\,{\rm Re}\,\,(\alpha|\beta)\,+\,i\,\,{\rm Re}\,\,(\alpha|i \beta).\]
+
+Oceansially it is very useful to know that a inner product on a real or complex vector space is determined by another function, the so-called quadratic form determined by the inner product. To define it, we first denote the positive square root of \((\alpha|\alpha)\) by \(||\alpha||\); \(||\alpha||\) is called the **norm** of \(\alpha\) with respect to the inner product. By looking at the standard inner products in \(R^{1}\), \(C^{1}\), \(R^{2}\), and \(R^{3}\), the reader should be able to convince himself that it is appropriate to think of the norm of \(\alpha\) as the 'length' or 'magnitude' of \(\alpha\). The **quadratic form** determined by the inner product 

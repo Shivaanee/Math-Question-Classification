@@ -1,0 +1,21 @@
+We typically have a desired or target output, denoted by the \(m\)-vector \(y^{\rm des}\). The primary objective is
+
+\[J_{1}=\|Ax+b-y^{\rm des}\|^{2},\]
+
+the norm squared deviation of the output from the desired output. The main objective is to choose an action \(x\) so that the output is as close as possible to the desired value.
+
+There are many possible secondary objectives. The simplest one is the norm squared value of the input, \(J_{2}=\|x\|^{2}\), so the problem is to optimally trade off missing the target output (measured by \(\|y-y^{\rm des}\|^{2}\)), and keeping the input small (measured by \(\|x\|^{2}\)).
+
+Another common secondary objective has the form \(J_{2}=\|x-x^{\rm nom}\|^{2}\), where \(x^{\rm nom}\) is a nominal or standard value for the input. In this case the secondary objective it to keep the input close to the nominal value. This objective is sometimes used when \(x\) represents a new choice for the input, and \(x^{\rm nom}\) is the current value. In this case the goal is to get the output near its target, while not changing the input much from its current value.
+
+Control of heating and cooling.As an example, \(x\) could give the vector of \(n\) heating (or cooling) power levels in a commercial building with \(n\) air handling units (with \(x_{i}>0\) meaning heating and \(x_{i}<0\) meaning cooling) and \(y\) could represent the resulting temperature at \(m\) locations in the building. The matrix \(A\) captures the effect of each of \(n\) heating/cooling units on the temperatures in the building at each of \(m\) locations; the vector \(b\) gives the temperatures at the \(m\) locations when no heating or cooling is applied. The desired or target output might be \(y^{\rm des}=T^{\rm des}\mathbf{1}\), assuming the target temperature is the same at all locations. The primary objective \(\|y-y^{\rm des}\|^{2}\) is the sum of squares of the deviations of the location temperatures from the target temperature. The secondary objective \(J_{2}=\|x\|^{2}\), the norm squared of the vector of heating/cooling powers, would be reasonable, since it is at least roughly related to the energy cost of the heating and cooling.
+
+We find tentative choices of the input by minimizing \(J_{1}+\lambda_{2}J_{2}\) for various values of \(\lambda_{2}\). If for the current value of \(\lambda_{2}\) the heating/cooling powers are larger than we'd like, we increase \(\lambda_{2}\) and re-compute \(\hat{x}\).
+
+Product demand shaping.In _demand shaping_, we adjust or change the prices of a set of \(n\) products in order to move the demand for the products towards some given target demand vector, perhaps to better match the available supply of the products. The standard price elasticity of demand model is \(\delta^{\rm dem}=E^{\rm d}\delta^{\rm price}\), where \(\delta^{\rm dem}\) is the vector of fractional demand changes, \(\delta^{\rm price}\) is the vector of fractional price changes, and \(E^{\rm d}\) is the price elasticity of demand matrix. (These are all described on page 150.) In this example the price change vector \(\delta^{\rm price}\) represents the action that we take; the result is the change in demand, \(\delta^{\rm dem}\). The primary objective could be
+
+\[J_{1}=\|\delta^{\rm dem}-\delta^{\rm tar}\|^{2}=\|E^{\rm d}\delta^{\rm price}- \delta^{\rm tar}\|^{2},\]
+
+where \(\delta^{\rm tar}\) is the target change in demand.
+
+ 

@@ -1,0 +1,23 @@
+
+
+**Theorem 14**: _Let \(\mathrm{V}\) be a finite-dimensional inner product space and let \(\mathrm{T}\) be any linear operator on \(\mathrm{V}\). Then there exist a unitary operator \(\mathrm{U}\) on \(\mathrm{V}\) and a non-negative operator \(\mathrm{N}\) on \(\mathrm{V}\) such that \(\mathrm{T}=\mathrm{UN}\). The non-negative operator \(\mathrm{N}\) is unique. If \(\mathrm{T}\) is invertible, the operator \(\mathrm{U}\) is also unique._
+
+Suppose we have \(\mathit{T}=\mathit{UN}\), where \(\mathit{U}\) is unitary and \(\mathit{N}\) is non-negative. Then \(\mathit{T}^{*}=(\mathit{UN})^{*}=\mathit{N}^{*}\mathit{U}^{*}=\mathit{NU}^{*}\). Thus \(\mathit{T}^{*}\mathit{T}=\mathit{NU}^{*}\mathit{UN}=\mathit{N}^{2}\). This shows that \(\mathit{N}\) is uniquely determined as the non-negative square root of the non-negative operator \(\mathit{T}^{*}\mathit{T}\).
+
+So, to begin the proof of the existence of \(\mathit{U}\) and \(\mathit{N}\), we use Theorem 13 to define \(\mathit{N}\) as the unique non-negative square root of \(\mathit{T}^{*}\mathit{T}\). If \(\mathit{T}\) is invertible, then so is \(\mathit{N}\) because
+
+\[(\mathit{N}\alpha|\mathit{N}\alpha)=(\mathit{N}^{*}\alpha|\alpha)=(\mathit{T} ^{*}\mathit{T}\alpha|\alpha)=(\mathit{T}\alpha|\mathit{T}\alpha).\]
+
+In this case, we define \(\mathit{U}=\mathit{TN}^{-1}\) and prove that \(\mathit{U}\) is unitary. Now \(\mathit{U}^{*}=(\mathit{TN}^{-1})^{*}=(\mathit{N}^{-1})^{*}\mathit{T}^{*}=( \mathit{N}^{*})^{-1}\mathit{T}^{*}=\mathit{N}^{-1}\mathit{T}^{*}\). Thus
+
+\[\begin{array}{rl}\mathit{UU}^{*}=&\mathit{TN}^{-1}\mathit{N}^{-1}\mathit{T }^{*}\\ =&\mathit{T}(\mathit{N}^{-1})^{2}\mathit{T}^{*}\\ =&\mathit{T}(\mathit{N}^{2})^{-1}\mathit{T}^{*}\\ =&\mathit{T}(\mathit{T}^{*}\mathit{T})^{-1}\mathit{T}^{*}\\ =&\mathit{T}\mathit{T}^{-1}(\mathit{T}^{*})^{-1}\mathit{T}^{*}\\ =&\mathit{I}\end{array}\]
+
+and \(\mathit{U}\) is unitary.
+
+If \(\mathit{T}\) is not invertible, we shall have to do a bit more work to define \(\mathit{U}\). We first define \(\mathit{U}\) on the range of \(\mathit{N}\). Let \(\alpha\) be a vector in the range of \(\mathit{N}\), say \(\alpha=\mathit{N}\beta\). We define \(\mathit{U}\alpha=\mathit{T}\beta\), motivated by the fact that we want \(\mathit{UN}\beta=\mathit{T}\beta\). We must verify that \(\mathit{U}\) is well-defined on the range of \(\mathit{N}\); in other words, if \(\mathit{N}\beta^{\prime}=\mathit{N}\beta\) then \(\mathit{T}\beta^{\prime}=\mathit{T}\beta\). We verified above that \(||\mathit{N}\gamma||^{2}=||\mathit{T}\gamma||^{2}\) for every \(\gamma\) in \(\mathit{V}\). Thus, with \(\gamma=\beta-\beta^{\prime}\), we see that \(\mathit{N}(\beta-\beta^{\prime})=0\) if and only if \(\mathit{T}(\beta-\beta^{\prime})=0\). So \(\mathit{U}\) is well-defined on the range of \(\mathit{N}\) and is clearly linear where defined. Now if \(\mathit{W}\) is the range of \(\mathit{N}\), we are going to define \(\mathit{U}\) on \(\mathit{W}^{\bot}\). To do this, we need the following observation. Since \(\mathit{T}\) and \(\mathit{N}\) have the same null space, their ranges have the same dimension. Thus \(\mathit{W}^{\bot}\) has the same dimension as the orthogonal complement of the range of \(\mathit{T}\). Therefore, there exists an (inner product space) isomorphism \(\mathit{U}_{0}\) of \(\mathit{W}^{\bot}\) onto \(\mathit{T}(\mathit{V})^{\bot}\). Now we have defined \(\mathit{U}\) on \(\mathit{W}\), and we define \(\mathit{U}\) on \(\mathit{W}^{\bot}\) to be \(\mathit{U}_{0}\).
+
+Let us repeat the definition of \(\mathit{U}\). Since \(\mathit{V}=\mathit{W}\oplus\mathit{W}^{\bot}\), each \(\alpha\) in \(\mathit{V}\) is uniquely expressible in the form \(\alpha=\mathit{N}\beta+\gamma\), where \(\mathit{N}\beta\) is in the range \(\mathit{W}\) of \(\mathit{N}\), and \(\gamma\) is in \(\mathit{W}^{\bot}\). We define
+
+\[\mathit{U}\alpha=\mathit{T}\beta+\mathit{U}_{0}\gamma.\]
+
+This \(\mathit{U}\) is clearly linear, and we verified above that it is well-defined. Also

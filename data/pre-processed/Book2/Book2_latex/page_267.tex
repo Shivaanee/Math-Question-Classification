@@ -1,0 +1,21 @@
+piecewise-linear function with \(k\) knot points using the \(p=k+2\) basis functions
+
+\[f_{1}(x)=1,\qquad f_{2}(x)=x,\qquad f_{i+2}(x)=(x-a_{i})_{+},\quad i=1,\ldots,k,\]
+
+where \((u)_{+}=\max\{u,0\}\). These basis functions are shown in figure 13.7 for \(k=2\) knot points at \(a_{1}=-1\), \(a_{2}=1\). An example of a piecewise-linear fit with these knot points is shown in figure 13.8.
+
+#### Regression
+
+We now return to the general case when \(x\) is an \(n\)-vector. Recall that the regression model has the form
+
+\[\hat{y}=x^{T}\beta+v,\]
+
+where \(\beta\) is the weight vector and \(v\) is the offset. We can put this model in our general data fitting form using the basis functions \(f_{1}(x)=1\), and
+
+\[f_{i}(x)=x_{i-1},\quad i=2,\ldots,n+1,\]
+
+so \(p=n+1\). The regression model can then be expressed as
+
+\[\hat{y}=x^{T}\theta_{2:(n+1)}+\theta_{1},\]
+
+and we see that \(\beta=\theta_{2:n+1}\) and \(v= 

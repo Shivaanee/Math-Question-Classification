@@ -1,0 +1,15 @@
+trivial solution \(x_{i}=\cdots=x_{n}=0\), an inhomogeneous system need have no solution at all.
+
+We form the **augmented matrix**\(A^{\prime}\) of the system \(AX=Y\). This is the \(m\times(n+1)\) matrix whose first \(n\) columns are the columns of \(A\) and whose last column is \(Y\). More precisely,
+
+\[\begin{array}{l}A^{\prime}_{ij}=A_{ij},\ \ \ \text{if}\ \ \ j\leq n\\ A^{\prime}_{i(n+1)}=y_{i}.\end{array}\]
+
+Suppose we perform a sequence of elementary row operations on \(A\), arriving at a row-reduced echelon matrix \(R\). If we perform this same sequence of row operations on the augmented matrix \(A^{\prime}\), we will arrive at a matrix \(R^{\prime}\) whose first \(n\) columns are the columns of \(R\) and whose last column contains certain scalars \(z_{1}\), \(\ldots\), \(z_{m}\). The scalars \(z_{i}\) are the entries of the \(m\times 1\) matrix
+
+\[Z=\begin{bmatrix}z_{1}\\ \vdots\\ z_{m}\end{bmatrix}\]
+
+which results from applying the sequence of row operations to the matrix \(Y\). It should be clear to the reader that, just as in the proof of Theorem 3, the systems \(AX=Y\) and \(RX=Z\) are equivalent and hence have the same solutions. It is very easy to determine whether the system \(RX=Z\) has any solutions and to determine all the solutions if any exist. For, if \(R\) has \(r\) non-zero rows, with the leading non-zero entry of row \(i\) occurring in column \(k_{i}\), \(i=1,\ldots\), \(r\), then the first \(r\) equations of \(RX=Z\) effectively express \(x_{k_{1}}\), \(\ldots\), \(x_{k}\), in terms of the \((n-r)\) remaining \(x_{j}\) and the scalars \(z_{1}\), \(\ldots\), \(z_{r}\). The last \((m-r)\) equations are
+
+\[\begin{array}{l}0\,=\,z_{r+1}\\ \vdots\quad\vdots\\ 0\,=\,z_{m}\end{array}\]
+
+and accordingly the condition for the system to have a solution is \(z_{i}=0\) for \(i>r\). If this condition is satisfied, all solutions to the system are found just as in the homogeneous case, by assigning arbitrary values to \(( 

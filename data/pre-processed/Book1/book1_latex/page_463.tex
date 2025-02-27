@@ -1,0 +1,22 @@
+
+
+### Matrix Games
+
+The most general "\(m\) by \(n\) matrix game" is exactly like our example. \(X\) has \(n\) possible moves (columns of \(A\)). \(Y\) chooses from the \(m\) rows. The entry \(a_{ij}\) is the payment when \(X\) chooses column \(j\) and \(Y\) chooses row \(i\). A negative entry means a payment to \(Y\). This is a _zero-sum game_. Whatever one player loses, the other wins.
+
+\(X\) is free to choose any mixed strategy \(x=(x_{1},\ldots,x_{n})\). These \(x_{1}\) give the frequencies for the \(n\) columns and they add to \(1\). At every turn \(X\) uses a random device to produce strategy \(i\) with frequency \(x_{i}\). \(Y\) chooses a vector \(y=(y_{1},\ldots,y_{m})\), also with \(y_{i}\geq 0\) and \(\sum y_{i}=1\), which gives the frequencies for selecting rows.
+
+A single play of the game is random. On the average, the combination of column \(j\) for \(X\) and row \(i\) for \(Y\) will turn up with probability \(x_{i}y_{i}\). When it does come up, the payoff is \(a_{ij}\). The expected payoff to \(X\) from this combination is \(a_{ij}x_{j}y_{i}\), and _the total expected payoff from each play of the same game is \(\sum\sum a_{ij}xjy_{i}=yAx\)_:
+
+\[yAx=\begin{bmatrix}y_{1}&\cdots&y_{m}\end{bmatrix}\begin{bmatrix}a_{11}&a_{12 }&\cdots&a_{1n}\\ \vdots&\vdots&&\vdots\\ a_{m1}&a_{m2}&\cdots&a_{mn}\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\\ \vdots\\ x_{n}\end{bmatrix}=a_{11}x_{1}y_{1}+\cdots+a_{mn}x_{n}y_{m}\]
+
+It is this payoff \(yAx\) that \(X\) wants to maximize and \(Y\) wants to minimize.
+
+**Example 1**.: Suppose \(A\) is the \(n\) by \(n\) identity matrix, \(A=I\). The expected payoff becomes \(yIx=x_{1}y_{1}+\cdots+x_{n}y_{n}\). \(X\) is hoping to hit on the same choice as \(Y\), to win \(a_{ii}=\$1\). \(Y\) is trying to evade \(X\), to pay \(a_{ij}=\$0\). If \(X\) chooses any column more often than another, \(Y\) can escape more often. _The optimal mixture is \(x^{*}=(1/n,1/n,\ldots,1/n)\)_. Similarly \(Y\) cannot overemphasize any row--the optimal mixture is \(y^{*}=(1/n,1/n,\ldots,1/n)\). The probability that both will choose strategy \(i\) is \((1/n)^{2}\), and the sum over \(i\) is the expected payoff to \(X\). The total value of the game is \(n\) times \((1/n)^{2}\), or \(1/n\):
+
+\[y^{*}Ax^{*}=\begin{bmatrix}1/n&\cdots&1/n\end{bmatrix}\begin{bmatrix}1&&\\ &\ddots&\\ &&1\end{bmatrix}\begin{bmatrix}1/n\\ \vdots\\ 1/n\end{bmatrix}=\begin{pmatrix}1\\ n\end{pmatrix}^{2}+\cdots+\begin{pmatrix}1\\ n\end{pmatrix}^{2}=\frac{1}{n}.\]
+
+As \(n\) increases, \(Y\) has a better chance to escape. The value \(1/n\) goes down.
+
+The symmetric matrix \(A=I\) did not make the game fair. _A skew-symmetric matrix_, \(A^{\mathrm{T}}=-A\), _means a completely fair game_. Then a choice of strategy \(j\) by \(X\) and \(i\) by \(Y\) wins \(a_{ij}\) for \(X\), and a choice of \(j\) by \(Y\) and \(i\) by \(X\) wins the same amount for \(Y\) (because \(a_{ji}=-a_{ij}\)). The optimal strategies \(x^{*}\) and \(y^{*}\) must be the same, and the expected payoff must be \(y^{*}Ax^{*}=0\). The value of the game, when \(A^{\mathrm{T}}=-A\), is zero. But the strategy is still to be found.
+

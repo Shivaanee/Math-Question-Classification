@@ -1,0 +1,21 @@
+
+
+**11.**: Why is the norm of \(B^{k}\) never larger than \(\|B\|^{k}\)? Then \(\|B\|<1\) guarantees that the powers \(B^{k}\) approach zero (convergence). This is no surprise, since \(|\lambda|_{\max}\) is below \(\|B\|\).
+**12.**: If \(A\) is singular, then all splittings \(A=S-T\) must fail. From \(Ax=0\), show that \(S^{-1}Tx=x\). So this matrix \(B=S^{-1}T\) has \(\lambda=1\) and fails.
+**13.**: Change the 2s to 3s and find the eigenvalues of \(S^{-1}T\) for both methods:
+
+\[\begin{array}{ll}\mbox{\bf(J)}&\left[\begin{matrix}3&0\\ 0&3\end{matrix}\right]x_{k+1}=\left[\begin{matrix}0&1\\ 1&0\end{matrix}\right]x_{k}+b&\mbox{\bf(GS)}&\left[\begin{matrix}3&0\\ -1&3\end{matrix}\right]x_{k+1}=\left[\begin{matrix}0&1\\ 0&0\end{matrix}\right]x_{k}+b.\end{array}\]
+
+Does \(|\lambda|_{\max}\) for Gauss-Seidel equal \(|\lambda|_{\max}^{2}\) for Jacobi?
+**14.**: Write a computer code (MATLAB or other) for Gauss-Seidel. You can define \(S\) and \(T\) from \(A\), or set up the iteration loop directly from the entries \(a_{ij}\). Test it on the \(-1\), \(2\), \(-1\) matrices \(A\) of order \(10\), \(20\), \(50\), with \(b=(1,0,\ldots,0)\).
+**15.**: The **SOR** splitting matrix \(S\) is the same as for Gauss-Seidel except that the diagonal is divided by \(\omega\). Write a program for **SOR** on an \(n\) by \(n\) matrix. Apply it with \(\omega=1\), \(1.4\), \(1.8\), \(2.2\) when \(A\) is the \(-1\), \(2\), \(-1\) matrix of order \(10\).
+**16.**: When \(A=A^{\mathsf{T}}\), the _Arnoldi-Lanczos method_ finds orthonormal \(q\)'s so that \(Aq_{j}=b_{j-1}q_{j-1}+a_{j}q_{j}+b_{j}q_{j+1}\) (with \(q_{0}=0\)). Multiply by \(q_{j}^{\mathrm{T}}\) to find a formula for \(a_{j}\). The equation says that \(AQ=QT\) where \(T\) is a matrix.
+**17.**: What bound on \(|\lambda|_{\max}\) does Gershgorin give For these matrices (see Problem 4)? What are the three Gershgorin circles that contain all the eigenvalues?
+
+\[A=\left[\begin{matrix}.3&.3&.2\\ .3&.2&.4\\ .2&.4&.1\end{matrix}\right]\qquad A=\left[\begin{matrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{matrix}\right].\]
+**The key point for large matrices is that matrix-vector multiplication is much faster than matrix-matrix multiplication**. A crucial construction starts with a vector \(b\) and computes \(Ab,A^{2}b,\ldots\) (but never \(A^{2}\)!). The first \(N\) vectors span the \(N\)th _Krylov subspace_. They are the columns of the _Krylov matrix_\(K_{N}\):
+
+\[K_{N}=\left[\begin{matrix}b&Ab&A^{2}b&\cdots&A^{N-1}b\end{matrix}\right].\]
+
+The Arnoldi-Lanczos iteration orthogonalizes the columns of \(K_{N}\), and the conjugate gradient iteration solves \(Ax=b\) when \(A\) is symmetric positive definite.
+

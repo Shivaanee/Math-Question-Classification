@@ -1,0 +1,21 @@
+all with the same coefficient matrix \(A\), but different right-hand sides. We can express this as the matrix equation \(AX=B\), where \(X\) is the \(n\times k\) matrix with columns \(x_{1},\ldots,x_{k}\), and \(B\) is the \(n\times k\) matrix with columns \(b_{1},\ldots,b_{k}\) (see page 180). Assuming \(A\) is invertible, the solution of \(AX=B\) is \(X=A^{-1}B\).
+
+A naive way to solve the \(k\) problems \(Ax_{i}=b_{i}\) (or in matrix notation, compute \(X=A^{-1}B\)) is to apply algorithm 11.2\(k\) times, which costs \(2kn^{3}\) flops. A more efficient method exploits the fact that \(A\) is the same matrix in each problem, so we can re-use the matrix factorization in step 1 and only need to repeat steps 2 and 3 to compute \(\tilde{x}_{k}=R^{-1}Q^{T}b_{k}\) for \(l=1,\ldots,k\). (This is sometimes referred to as _factorization caching_, since we save or cache the factorization after carrying it out, for later use.) The cost of this method is \(2n^{3}+3kn^{2}\) flops, or approximately \(2n^{3}\) flops if \(k\ll n\). The (surprising) conclusion is that we can solve _multiple_ sets of linear equations, with the same coefficient matrix \(A\), at essentially the same cost as solving _one_ set of linear equations.
+
+Backslash notation.In several software packages for manipulating matrices, \(A\backslash b\) is taken to mean the solution of \(Ax=b\), _i.e._, \(A^{-1}b\), when \(A\) is invertible. This _backslash_ notation is extended to matrix right-hand sides: \(A\backslash B\), with \(B\) an \(n\times k\) matrix, denotes \(A^{-1}B\), the solution of the matrix equation \(AX=B\). (The computation is implemented as described above, by factoring \(A\) just once, and carrying out \(k\) back substitutions.) This backslash notation is not standard mathematical notation, however, so we will not use it in this book.
+
+Computing the matrix inverse.We can now describe a method to compute the inverse \(B=A^{-1}\) of an (invertible) \(n\times n\) matrix \(A\). We first compute the QR factorization of \(A\), so \(A^{-1}=R^{-1}Q^{T}\). We can write this as \(RB=Q^{T}\), which, written out by columns is
+
+\[Rb_{i}=\tilde{q}_{i},\quad i=1,\ldots,n,\]
+
+where \(b_{i}\) is the \(i\)th column of \(B\) and \(\tilde{q}_{i}\) is the \(i\)th column of \(Q^{T}\). We can solve these equations using back substitution, to get the columns of the inverse \(B\).
+
+``` given an \(n\times n\) invertible matrix \(A\).
+1. QR factorization. Compute the QR factorization \(A=QR\).
+2. For \(i=1,\ldots,n\), Solve the triangular equation \(Rb_{i}=\tilde{q}_{i}\) using back substitution. ```
+
+**Algorithm 11.3** Computing the inverse via QR factorization
+
+The complexity of this method is \(2n^{3}\) flops (for the QR factorization) and \(n^{3}\) for \(n\) back substitutions, each of which costs \(n^{2}\) flops. So we can compute the matrix inverse in around \(3n^{3}\) flops.
+
+This gives an alternative method for solving the square set of linear equations \(Ax=b\): We first compute the inverse matrix \(A^{-1}\), and then the matrix-vector product \(x=(A^{-1})b\). This method has a higher flop count than directly solving 

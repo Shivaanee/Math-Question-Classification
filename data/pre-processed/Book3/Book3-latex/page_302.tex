@@ -1,0 +1,23 @@
+Then \(L\) is a linear functional on \(V\), but there is no \(g\) with \(L(f)=(f|g)\), unless \(c_{1}=c_{2}=\cdots=c_{n}=0\). Just repeat the above argument with \(h=(x-z_{1})\)\(\cdots\)\((x-z_{n})\).
+
+We turn now to the concept of the adjoint of a linear opcrator.
+
+**Theorem 7**: _For any linear operator \(T\) on a finite-dimensional inner product space \(V\), there exists a unique linear operator \(T^{*}\) on \(V\) such that_
+
+\[(T\alpha|\beta)\,=\,(\alpha|T^{*}\beta)\] (8-14)
+
+_for all \(\alpha\), \(\beta\) in \(V\)._
+
+Let \(\beta\) be any vector in \(V\). Then \(\alpha\,\hbox to 0.0pt{$\rightarrow$}\,(T\alpha|\beta)\) is a linear functional on \(V\). By Theorem 6 there is a unique vector \(\beta^{\prime}\) in \(V\) such that \((T\alpha|\beta)=(\alpha|\beta^{\prime})\) for every \(\alpha\) in \(V\). Let \(T^{*}\) denote the mapping \(\beta\,\hbox to 0.0pt{$\rightarrow$}\,\beta^{\prime}\):
+
+\[\beta^{\prime}\,=\,T^{*}\beta.\]
+
+We have (8-14), but we must verify that \(T^{*}\) is a linear operator. Let \(\beta\), \(\gamma\) be in \(V\) and let \(c\) be a scalar. Then for any \(\alpha\),
+
+\[\eqalign{(\alpha|T^{*}(c\beta\,+\,\gamma))&=\,(T\alpha|c\beta\,+\,\gamma)\cr&= \,(T\alpha|c\beta)\,+\,(T\alpha|\gamma)\cr&=\,\bar{c}(T\alpha|\beta)\,+\,(T \alpha|\gamma)\cr&=\,\bar{c}(\alpha|T^{*}\beta)\,+\,(\alpha|T^{*}\gamma)\cr&=\,( \alpha|cT^{*}\beta\,+\,T^{*}\gamma).\cr}\]
+
+Thus \(T^{*}(c\beta\,+\,\gamma)=cT^{*}\beta\,+\,T^{*}\gamma\) and \(T^{*}\) is linear.
+
+The uniqueness of \(T^{*}\) is clear. For any \(\beta\) in \(V\), the vector \(T^{*}\beta\) is uniquely determined as the vector \(\beta^{\prime}\) such that \((T\alpha|\beta)=(\alpha|\beta^{\prime})\) for every \(\alpha\).
+
+**Theorem 8**: _Let 

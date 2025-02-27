@@ -1,0 +1,19 @@
+
+
+## Chapter Orthogonality
+
+### 3.1 Orthogonal Vectors and Subspaces
+
+A basis is a set of independent vectors that span a space. Geometrically, it is a set of coordinate axes. A vector space is defined without those axes, but every time I think of the \(x\)-\(y\) plane or three-dimensional space or \(\mathbf{R}^{n}\), the axes are there. They are usually perpendicular! _The coordinate axes that the imagination constructs are practically always orthogonal_. In choosing a basis, we tend to choose an orthogonal basis.
+
+The idea of an orthogonal basis is one of the foundations of linear algebra. We need a basis to convert geometric constructions into algebraic calculations, and we need an orthogonal basis to make those calculations simple. A further specialization makes the basis just about optimal: The vectors should have _length_ 1. For an _orthonormal basis_ (orthogonal unit vectors), we will find
+
+1. the length \(\|x\|\) of a vector;
+2. the test \(x^{\mathrm{T}}y=0\) for perpendicular vectors; and
+3. how to create perpendicular vectors from linearly independent vectors.
+
+More than just vectors, _subspaces_ can also be perpendicular. We will discover, so beautifully and simply that it will be a delight to see, that _the fundamental subspaces meet at right angles_. Those four subspaces are perpendicular in pairs, two in \(\mathbf{R}^{m}\) and two in \(\mathbf{R}^{n}\). That will complete the fundamental theorem of linear algebra.
+
+The first step is to find the _length of a vector_. It is denoted by \(\|x\|\), and in two dimensions it comes from the hypotenuse of a right triangle (Figure 3.1a). The square of the length was given a long time ago by Pythagoras: \(\|x\|^{2}=x_{1}^{2}+x_{2}^{2}\).
+
+In three-dimensional space, \(x=(x_{1},x_{2},x_{3})\) is the diagonal of a box (Figure 3.1b). Its length comes from _two_ applications of the Pythagorean formula. The two-dimensional case takes care of \((x_{1},x_{2},0)=(1,2,0)\) across the base. This forms a right angle with the vertical side \((0,0,x_{3})=(0,0,3)\). The hypotenuse of the bold triangle (Pythagoras again)

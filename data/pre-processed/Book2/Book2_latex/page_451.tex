@@ -1,0 +1,18 @@
+
+
+## Appendix B Complexity
+
+Here we summarize approximate complexities or flop counts of various operations and algorithms encountered in the book. We drop terms of lower order. When the operands or arguments are sparse, and the operation or algorithm has been modified to take advantage of sparsity, the flop counts can be dramatically lower than those given here.
+
+##### Vector operations
+
+In the table below, \(x\) and \(y\) are \(n\)-vectors and \(a\) is a scalar.
+
+\[\begin{array}{ll}ax&n\\ x+y&n\\ x^{T}y&2n\\ \|x\|&2n\\ \|x-y\|&3n\\ \mathbf{rms}(x)&2n\\ \mathbf{std}(x)&4n\\ \angle(x,y)&6n\end{array}\]
+
+The convolution \(a*b\) of an \(n\)-vector \(a\) and \(m\)-vector \(b\) can be computed by a special algorithm that requires \(5(m+n)\log_{2}(m+n)\) flops.
+
+##### Matrix operations
+
+In the table below, \(A\) and \(B\) are \(m\times n\) matrices, \(C\) is an \(m\times p\) matrix, \(x\) is an \(n\)-vector, and \(a\) is a scalar.
+

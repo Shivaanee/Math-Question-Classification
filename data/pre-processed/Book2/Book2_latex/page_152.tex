@@ -1,0 +1,15 @@
+the pixel values in the image \(Y=X\star D^{\text{ver}}\) are the vertical first order differences of those in \(X\):
+
+\[Y_{ij}=X_{ij}-X_{i-1,j},\quad i=2,\dots,m,\quad j=1,\dots,n\]
+
+(and \(Y_{1j}=X_{1j}\), \(X_{m+1,j}=-X_{mj}\) for \(j=1,\dots,n\)). As an example, the convolutions of the matrix (7.5) with \(D^{\text{hor}}\) and \(D^{\text{ver}}\) are
+
+\[X\star D^{\text{hor}}=\left[\begin{array}{cccccccccc}1&0&0&0&0&0&0&0&0&-1\\ 1&0&0&0&0&0&0&0&0&-1\\ 1&0&-1&0&0&0&1&0&-1\\ 1&0&0&-1&1&0&-1&1&0&-1\\ 1&0&0&-1&1&0&-1&1&0&-1\\ 1&0&0&0&0&0&0&0&-1\\ 1&0&0&0&0&0&0&0&-1\\ \end{array}\right]\]
+
+and
+
+\[X\star D^{\text{ver}}=\left[\begin{array}{cccccccccc}1&1&1&1&1&1&1&1&1\\ 0&0&0&0&0&0&0&0&0\\ 0&0&-1&-1&-1&-1&-1&0&0\\ 0&0&1&0&1&1&0&0&0\\ 0&0&0&0&0&0&0&0&0\\ 0&0&0&0&0&0&0&0\\ 0&0&0&1&0&0&1&0&0\\ 0&0&0&0&0&0&0&0&0\\ -1&-1&-1&-1&-1&-1&-1&-1&-1\\ \end{array}\right].\]
+
+Figure 7.
+
+ 

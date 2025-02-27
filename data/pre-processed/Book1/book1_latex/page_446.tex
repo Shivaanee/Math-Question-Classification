@@ -1,0 +1,30 @@
+Since no feasible \(y\) can make \(yb\) larger than \(cx\), our \(y\) that achieves this value is optimal. Similarly, any \(x\) that achieves the cost \(cx=yb\) must be an optimal \(x^{*}\).
+
+We give an example with two foods and two vitamins. Note how \(A^{\mathrm{T}}\) appears when we write out the dual, since \(yA\leq c\) for row vectors means \(A^{\mathrm{T}}y^{\mathrm{T}}\leq c^{\mathrm{T}}\) for columns.
+
+\[\begin{array}{ccccc}\textbf{Primal}&\text{Minimize}&x_{1}+4x_{2}&\textbf{Dual}& \text{Maximize}&6y_{1}+7y_{2}\\ \text{subject to}&x_{1}\geq 0,&x_{2}\geq 0&\text{subject to}&y_{1}\geq 0,&y_{2}\geq 0\\ &2x_{1}+x_{2}\geq 6&\text{}&2y_{1}+5y_{2}\leq 1\\ &5x_{1}+3x_{2}\geq 7.&\text{}&y_{1}+3x_{2}\leq 4.\end{array}\]
+
+_Solution_\(x_{1}=3\) and \(x_{2}=0\) are feasible, with cost \(x_{1}+4x_{2}=3\). In the dual, \(y_{1}=\frac{1}{2}\) and \(y_{2}=0\) give the same value \(6y_{1}+7y_{2}=3\). These vectors must be optimal.
+
+Please look closely to see what actually happens at the moment when \(yb=cx\). Some of the inequality constraints are **tight**, meaning that equality holds. Other constraints are loose, and the key rule makes economic sense:
+
+1. The diet has \(x_{j}^{*}=0\) when food \(j\) is priced _above_ its vitamin equivalent.
+2. The price is \(y_{i}^{*}=0\) when vitamin \(i\) is _oversupplied_ in the diet \(x^{*}\).
+
+In the example, \(x_{2}=0\) because the second food is too expensive. Its price exceeds the druggist's price, since \(y_{1}+3y_{2}\leq 4\) is a strict inequality \(\frac{1}{2}+0<4\). Similarly, the diet required seven units of the second vitamin, but actually supplied \(5x_{1}+3x_{2}=15\). So we found \(y_{2}=0\), and that vitamin is a _free good_. You can see how the duality has become complete.
+
+These _optimality conditions_ are easy to understand in matrix terms. From equation (1) we want \(y^{*}Ax^{*}=y^{*}b\) at the optimum. Feasibility requires \(Ax^{*}\geq b\), and we look for any components _in which equality fails_. This corresponds to a vitamin that is oversupplied, so its price is \(y_{i}^{*}=0\).
+
+At the same time, we have \(y^{*}A\leq c\). All strict inequalities (expensive foods) correspond to \(x_{j}^{*}=0\) (omission from the diet). That is the key to \(y^{*}Ax^{*}=cx^{*}\), which we need. These are the _complementary slackness conditions_ of linear programming, and the _Kuhn-Tucker conditions_ of nonlinear programming:
+
+8GThe optimal vectors \(x^{*}\) and \(y^{*}\) satisfy **complementary slackness**:
+
+\[\text{If}\quad(Ax^{*})_{i}>b_{i}\quad\text{then}\quad y_{i}^{*}=0\qquad\text{ If}\quad(y^{*}A)_{j}>c_{j}\quad\text{then}\quad x_{j}^{*}=0.\] (2)
+
+Let me repeat the proof. Any feasible vectors \(x\) and \(y\) satisfy weak duality:
+
+\[yb\leq y(Ax)=(yA)x\leq cx.\] (3)
+
+We need equality, and there is only one way in which \(y^{*}b\) can equal \(y^{*}(Ax^{*})\). _Any time \(b_{i}<(Ax^{*})_{i}\), the factor \(y_{i}^{*}\) that multiplies these components must be zero_.
+
+ 

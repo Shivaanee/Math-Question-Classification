@@ -1,0 +1,30 @@
+
+
+### The Cartesian Product of Two Vector Spaces
+
+If \(\mathbf{V}\) has dimension \(n\), and \(\mathbf{W}\) has dimension \(q\), their Cartesian product \(\mathbf{V}\times\mathbf{W}\) has dimension \(n+q\).
+
+Definition \(\mathbf{V}\times\mathbf{W}\) contains all pairs of vectors \(x=(v,w)\).
+
+Adding \((v,w)\) to \((v^{*},w^{*})\) in this product space gives \((v+v^{*},w+w^{*})\). Multiplying by \(c\) gives \((cv,cw)\). All operations in \(\mathbf{V}\times\mathbf{W}\) are a component at a time.
+
+Example 7: The Cartesian product of \(\mathbf{R}^{2}\) and \(\mathbf{R}^{3}\) is very much like \(\mathbf{R}^{5}\). A typical vector \(x\) in \(\mathbf{R}^{2}\times\mathbf{R}^{3}\) is \(((1,2),(4,6,5))\): one vector from \(\mathbf{R}^{2}\) and one from \(\mathbf{R}^{3}\). That looks like \((1,2,4,6,5)\) in \(\mathbf{R}^{5}\).
+
+Cartesian products go naturally with _block matrices_. From \(\mathbf{R}^{5}\) to \(\mathbf{R}^{5}\), we have ordinary 5 by 5 matrices. On the product space \(\mathbf{R}^{2}\times\mathbf{R}^{3}\), the natural form of a matrix is a 5 by 5 block matrix \(M\):
+
+\[M=\begin{bmatrix}\mathbf{R}^{2}\text{ to }\mathbf{R}^{2}&\mathbf{R}^{3}\text{ to }\mathbf{R}^{2}\\ \mathbf{R}^{2}\text{ to }\mathbf{R}^{3}&\mathbf{R}^{3}\text{ to }\mathbf{R}^{3}\end{bmatrix}= \begin{bmatrix}2\text{ by }2&2\text{ by }3\\ 3\text{ by }2&3\text{ by }3\end{bmatrix}=\begin{bmatrix}A&B\\ C&D\end{bmatrix}.\]
+
+Matrix-vector multiplication produces \((Av+Bw,Cv+Dw)\). Not too fascinating.
+
+### The Tensor Product of Two Vector Spaces
+
+Somehow we want a product space that has dimension \(n\)_times \(q\)_. **The vectors in this "tensor product" (denoted \(\otimes\)) will look like \(n\) by \(q\) matrices**. For the tensor product \(\mathbf{R}^{2}\otimes\mathbf{R}^{3}\), the vectors will look like 2 by 3 matrices. The dimension of \(\mathbf{R}^{2}\times\mathbf{R}^{3}\) is 5, but the dimension of \(R^{2}\otimes\mathbf{R}^{3}\) is going to be 6.
+
+Start with \(v=(1,2)\) and \(w=(4,6,5)\) in \(\mathbf{R}^{2}\) and \(\mathbf{R}^{3}\). The Cartesian product just puts them next to each other as \((v,w)\). The tensor product combines \(v\) and \(w\) into the _rank 1 matrix_\(vw^{\mathrm{T}}\):
+
+\[\text{Column times row}\qquad v\otimes w=vw^{\mathrm{T}}\begin{bmatrix}1\\ 2\end{bmatrix}\begin{bmatrix}4&6&5\end{bmatrix}=\begin{bmatrix}4&6&5\\ 8&12&10\end{bmatrix}.\]
+
+All the special matrices \(vw^{\mathrm{T}}\) belong to the tensor product \(\mathbf{R}^{2}\otimes\mathbf{R}^{3}\). The product space is _spanned_ by those vectors \(v\otimes w\). Combinations of rank-1 matrices give _all_ 2 by 3 matrices, so the dimension of \(\mathbf{R}^{2}\otimes\mathbf{R}^{3}\) is 6. Abstractly: The tensor product \(\mathbf{V}\otimes\mathbf{W}\) is identified with the space of linear transformations from \(\mathbf{V}\) to \(\mathbf{W}\).
+
+If \(\mathbf{V}\) is only a line in \(\mathbf{R}^{2}\), and \(\mathbf{W}\) is only a line in \(\mathbf{R}^{3}\), then \(\mathbf{V}\otimes\mathbf{W}\) is only a "line in matrix space." The dimensions are now \(1\times 1=1\). All the rank-1 matrices \(vw^{\mathrm{T}}\) will be multiples of one matrix.
+

@@ -1,0 +1,31 @@
+possible to choose one having a number of special properties. Before going into this we need to introduce a class of matrices.
+
+**Definition**: An \(\mathrm{m}\times\mathrm{n}\) matrix is said to be an **elementary matrix** if it can be obtained from the \(\mathrm{m}\times\mathrm{m}\) identity matrix by means of a single elementary row operation. \({}_{\Box}\)
+
+**Example 13**: A \(2\times 2\) elementary matrix is necessarily one of the following:
+
+\[\begin{bmatrix}0&1\\ 1&0\end{bmatrix},\quad\begin{bmatrix}1&c\\ 0&1\end{bmatrix},\quad\begin{bmatrix}1&0\\ c&1\end{bmatrix}\]
+
+\[\begin{bmatrix}c&0\\ 0&1\end{bmatrix},\quad\quad c\neq 0,\quad\quad\begin{bmatrix}1&0\\ 0&c\end{bmatrix},\quad\quad c\neq 0.\]
+
+**Theorem 9**: _Let \(\mathrm{e}\) be an elementary row operation and let \(\mathrm{E}\) be the \(\mathrm{m}\times\mathrm{m}\) elementary matrix \(\mathrm{E}=\mathrm{e}(\mathrm{I})\). Then, for every \(\mathrm{m}\times\mathrm{n}\) matrix \(\mathrm{A}\),_
+
+\[\mathrm{e}(\mathrm{A})=\mathrm{EA}.\]
+
+Proof: The point of the proof is that the entry in the \(i\)th row and \(j\)th column of the product matrix \(EA\) is obtained from the \(i\)th row of \(E\) and the \(j\)th column of \(A\). The three types of elementary row operations should be taken up separately. We shall give a detailed proof for an operation of type (ii). The other two cases are even easier to handle than this one and will be left as exercises. Suppose \(r\neq s\) and \(e\) is the operation 'replacement of row \(r\) by row \(r\) plus \(c\) times row \(s\).' Then
+
+\[E_{ik}=\begin{bmatrix}\delta_{ik}&i\neq r\\ \delta_{ik}+c\delta_{ik},&i=r.\end{bmatrix}\]
+
+Therefore,
+
+\[(EA)_{ij}=\sum\limits_{k=1}^{m}E_{ik}A_{kj}=\begin{cases}A_{ik},&i\neq r\\ A_{rj}+cA_{sij},&i=r.\end{cases}\]
+
+In other words \(EA=e(A)\).
+
+**Corollary**: _Let \(\mathrm{A}\) and \(\mathrm{B}\) be \(\mathrm{m}\times\mathrm{n}\) matrices over the field \(\mathrm{F}\). Then \(\mathrm{B}\) is row-equivalent to \(\mathrm{A}\) if and only if \(\mathrm{B}=\mathrm{PA}\), where \(\mathrm{P}\) is a product of \(\mathrm{m}\times\mathrm{m}\) elementary matrices. \({}_{\Box}\)_
+
+Proof: Suppose \(B=PA\) where \(P=E_{*}\cdots E_{2}E_{1}\) and the \(E_{i}\) are \(m\times m\) elementary matrices. Then \(E_{1}A\) is row-equivalent to \(A\), and \(E_{2}(E_{1}A)\) is row-equivalent to \(E_{1}A\). So \(E_{2}E_{1}A\) is row-equivalent to \(A\); and continuing in this way we see that \((E_{*}\cdots E_{1})A\) is row-equivalent to \(A\).
+
+Now suppose that \(B\) is row-equivalent to \(A\). Let \(E_{1}\), \(E_{2}\), \(\ldots\), \(E_{*}\) be the elementary matrices corresponding to some sequence of elementary row operations which carries \(A\) into \(B\). Then \(B=(E_{*}\cdots E_{1})A\).
+
+ 

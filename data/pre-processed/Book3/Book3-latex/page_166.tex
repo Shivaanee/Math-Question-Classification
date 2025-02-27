@@ -1,0 +1,23 @@
+Since \(\sigma\sigma^{-1}\) is the identity permutation,
+
+\[(\operatorname{sgn}\,\sigma)(\operatorname{sgn}\,\sigma^{-1})\,=\,1\quad\text{or} \quad\operatorname{sgn}\,(\sigma^{-1})\,=\,\operatorname{sgn}\,(\sigma).\]
+
+Furthermore, as \(\sigma\) varies over all permutations of degree \(n\), so does \(\sigma^{-1}\). Therefore
+
+\[\det\,(A^{\,t}) \,=\,\sum_{\sigma}\,(\operatorname{sgn}\,\sigma^{-1})A\,(1,\, \sigma^{-1}1)\,\cdots\,A(n,\,\sigma^{-1}n)\] \[\,=\,\det\,A\]
+
+proving (5-17).
+
+On certain occasions one needs to compute specific determinants. When this is necessary, it is frequently useful to take advantage of the following fact. _If \(B\) is obtained from \(A\) by adding a multiple of one row of \(A\) to another_ (_or a multiple of one column to another_), _then_
+
+\[\det\,B\,=\,\det\,A.\] (5-18)
+
+We shall prove the statement about rows. Let \(B\) be obtained from \(A\) by adding \(c\alpha_{j}\) to \(\alpha_{i}\), where \(i<j\). Since \(\det\) is linear as a function of the \(i\)th row
+
+\[\det\,B\,=\,\det\,A\,+\,c\,\det\,(\alpha_{1},\,\ldots,\,\alpha_{j},\,\ldots,\, \alpha_{j},\,\ldots,\,\alpha_{n})\] \[\,=\,\det\,A.\]
+
+Another useful fact is the following. Suppose we have an \(n\times n\) matrix of the block form
+
+\[\begin{bmatrix}A&B\\ 0&C\end{bmatrix}\]
+
+where \(A\) is an \(r\times r\) matrix, \(C\) is an \(s\times s\) matrix, \(B\) is \(r\times s\), and 

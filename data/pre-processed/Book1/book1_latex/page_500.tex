@@ -1,0 +1,20 @@
+\(\begin{bmatrix}0&0&2&0\\ 0&0&0&6\\ 0&0&0&0\\ 0&0&0&0\\ \end{bmatrix}\). The nullspace is spanned by \((1,0,0,0)\) and \((0,1,0,0)\), which gives linear \(P_{1}\). Second derivatives of linear functions are zero. The column space is accidentally the same as the nullspace, because second derivatives of cubics are linear.
+9. \(e^{t}\) and \(e^{-t}\) are a basis for the solutions of \(u^{\prime\prime}=u\).
+11. \(\begin{bmatrix}\cos^{\prime}\theta&-\sin\theta\\ \sin\theta&\cos\theta\\ \end{bmatrix}\begin{bmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\\ \end{bmatrix}=\begin{bmatrix}1&0\\ 0&1\\ \end{bmatrix}\) so \(H^{2}=I\).
+13. 1. Yes. 1. Yes. 2. Yes. We don't need parentheses \((AB)C\) or \(A(BC)\) for \(ABC\)!
+15. \(A=\begin{bmatrix}1&0&0&0\\ 0&0&1&0\\ 0&1&0&0\\ 0&0&0&1\\ \end{bmatrix}\) and \(A^{2}=I\); the double transpose of a matrix gives the matrix itself. Note \(A_{23}=1\) because transpose of matrix 2 is matrix 3.
+17. \(A=\begin{bmatrix}0&0&0\\ 1&0&0\\ 0&1&0\\ 0&0&1\\ \end{bmatrix}\); \(B=\begin{bmatrix}0&1&0&0\\ 0&0&1&0\\ 0&0&0&1\\ \end{bmatrix}\); \(AB=\begin{bmatrix}0&0&0&0\\ 0&1&0&0\\ 0&0&1&0\\ 0&0&0&1\\ \end{bmatrix}\); \(BA=\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&1\\ \end{bmatrix}\).
+19. 1. 1. is invertible with \(T^{-1}(y)=y^{1/3}\); 1. is invertible with \(T^{-1}(y)=y-11\).
+21. With \(w=0\), linearity gives \(T(v+0)=T(v)+T(0)\). Thus \(T(0)=0\). With \(c=-1\), linearity gives \(T(-0)=-T(0)\). Certainly \(T(-0)=T(0)\). Thus \(T(0)=0\).
+23. \(S(T(v))=S(v)=v\).
+25. 2. and 3. are linear, 1. fails \(T(2v)=2T(v)\), 2. fails \(T(v+w)=T(v)+T(w)\).
+27. \(T(T(v))=(v_{3},v_{1},v_{2})\); \(T^{3}(v)=v\); \(T^{100}(v)=T(T^{99}(v))=T(v)\).
+29. 1. \(T(1,0)=0\). 2. \((0,0,1)\) is not in the range. 3. \(T(0,1)=0\).
+31. Associative law gives \(A(M_{1}+M_{2})=AM_{1}+AM_{2}\). Distributive law over \(c\)'s gives \(A(cM)=c(AM)\).
+33. No matrix \(A\) gives \(A\begin{bmatrix}0&0\\ 1&0\\ \end{bmatrix}=\begin{bmatrix}0&1\\ 0&0\\ \end{bmatrix}\). To professors: The matrix space has dimension 4. Linear transformations on that space must come from 4 by 4 matrices (16 parameters). Those multiplications by \(A\) in Problems 31 and 32 were special transformations with only 4 parameters.
+35. \(T(I)=0\) but \(M=\begin{bmatrix}0&b\\ 0&0\\ \end{bmatrix}=T(M)\); these fill the range. \(M=\begin{bmatrix}a&0\\ c&d\\ \end{bmatrix}\) in the kernel.
+37. 1. \(M=\begin{bmatrix}r&s\\ t&u\\ \end{bmatrix}\). 2. \(N=\begin{bmatrix}a&b\\ c&d\\ \end{bmatrix}^{-1}\). 3. \(ad=bc\).
+39. Reorder basis by _permutation matrix_; change lengths by _positive diagonal matrix_.
+41. \(\begin{bmatrix}1&a&a^{2}\\ 1&b&b^{2}\\ 1&c&c^{2}\\ \end{bmatrix}\begin{bmatrix}A\\ B\\ C\\ \end{bmatrix}=\begin{bmatrix}4\\ 5\\ 6\\ \end{bmatrix}\); Vandermonde determinant \(=(b-a)(c-a)(c-b)\); the points \(a,b,c\) must be different, and then determinant \(\neq 0\) (interpolation is possible).
+
+ 

@@ -1,0 +1,22 @@
+
+
+## 11.3 Slack Variables
+
+There is a simple way to change the inequality \(x+2y\geq 4\) to an equation. Just introduce the difference as a _slack variable_\(w=x+2y-4\). This is our equation! The old constraint \(x+2y\geq 4\) is converted into \(w\geq 0\), which matches perfectly the other inequality constraints \(x\geq 0\), \(y\geq 0\). Then we have only equations and simple nonnegativity constraints on \(x\), \(y\), \(w\). The variables \(w\) that "take up the slack" are now included in the vector unknown \(x\):
+
+\[\mbox{\bf Primal problem}\qquad\mbox{\bf Minimize $cx$ subject to $Ax=b$ and $x\geq 0$.}\]
+
+The row vector \(c\) contains the costs; in our example, \(c=[2\ \ 3\ \ 0]\). The condition \(x\geq 0\) puts the problem into the nonnegative part of \(\mbox{\bf R}^{n}\). Those inequalities cut back on the solutions to \(Ax=b\). Elimination is in danger, and a completely new idea is needed.
+
+### The Diet Problem and Its Dual
+
+Our example with cost \(2x+3y\) can be put into words. It illustrates the "diet problem" in linear programming, with two sources of protein--say steak and peanut butter. Each bound of peanut butter gives a unit of protein, and each steak gives two units. At least four units are required in the diet. Therefore a diet containing \(x\) pounds of peanut butter and \(y\) steaks is constrained by \(x+2y\geq 4\), as well as by \(x\geq 0\) and \(y\geq 0\). (We cannot have negative steak or peanut butter.) This is the feasible set, and me p1001cm is to minimize the cost. If a bound of peanut butter costs $2 and a steak is $3. then the cost of the whole diet is \(2x+3y\). Fortunately, the optimal diet is two steaks: \(x^{*}=0\) and \(y^{*}=2\).
+
+Every linear program, including this one, has a _dual_. If the original probe 1v a minimization, its dual is a maximization. _The minimum in the given "primal problem" equals the maximum in its dual_. This is the key to linear programming, and it will be explained in Section 11.3. Here we stay with the diet problem and try to interpret its dual.
+
+In place of the shopper, who buys enough protein at minimal cost, the dual problem is faced by a druggist. _Protein pills_ compete with steak and peanut butter. Immediately we meet the two ingredients of a typical linear program: The druggist maximizes the pill price \(p\), but that price is subject to linear constraints. Synthetic protein must not cost more than the protein in peanut butter ($2 a unit) or the protein in steak ($3 for two units). The price must be nonnegative or the druggist will not sell. Since four units of protein are required, the income to the druggist will be \(4p\):
+
+\[\mbox{\bf Dual problem}\qquad\mbox{\bf Maximize $4p$, subject to $p\leq 2$, $2p\leq 3$, and $p\geq 0$.}\]
+
+In this example the dual is easier to solve than the primal; it has only one unknown \(p\). The constraint \(2p\leq 3\) is the tight one that is really active, and the maximum price of synthetic protein is \(p=\$1.50\). The maximum revenue is \(4p=\$6\), and the shopper ends up paying the same for natural and synthetic protein. That is the duality theorem: _maximum equals minimum_.
+

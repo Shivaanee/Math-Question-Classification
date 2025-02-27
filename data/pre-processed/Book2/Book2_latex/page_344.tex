@@ -1,0 +1,40 @@
+
+
+## 15 Multi-objective least squares
+
+### 15.1 A scalar multi-objective least squares problem
+
+We consider the special case of the multi-objective least squares problem in which the variable \(x\) is a scalar, and the \(k\) matrices \(A_{i}\) are all \(1\times 1\) matrices with value \(A_{i}=1\), so \(J_{i}=(x-b_{i})^{2}\). In this case our goal is to choose a number \(x\) that is simultaneously close to all the numbers \(b_{1},\ldots,b_{k}\). Let \(\lambda_{1},\ldots,\lambda_{k}\) be positive weights, and \(\hat{x}\) the minimizer of the weighted objective (15.1). Show that \(\hat{x}\) is a weighted average (or convex combination; see page 15.1) of the numbers \(b_{1},\ldots,b_{k}\), _i.e._, it has the form
+
+\[x=w_{1}b_{1}+\cdots+w_{k}b_{k},\]
+
+where \(w_{i}\) are nonnegative and sum to one. Give an explicit formula for the combination weights \(w_{i}\) in terms of the multi-objective least squares weights \(\lambda_{i}\).
+
+Consider the regularized data fitting problem (15.7). Recall that the elements in the first column of \(A\) are one. Let \(\hat{\theta}\) be the solution of (15.7), _i.e._, the minimizer of
+
+\[\left\|A\theta-y\right\|^{2}+\lambda(\theta_{2}^{2}+\cdots+\theta_{p}^{2}),\]
+
+and let \(\tilde{\theta}\) be the minimizer of
+
+\[\left\|A\theta-y\right\|^{2}+\lambda\|\theta\|^{2}=\left\|A\theta-y\right\|^{ 2}+\lambda(\theta_{1}^{2}+\theta_{2}^{2}+\cdots+\theta_{p}^{2}),\]
+
+in which we also penalize \(\theta_{1}\). Suppose columns 2 through \(p\) of \(A\) have mean zero (for example, because features \(2,\ldots,p\) have been standardized on the data set; see page 15.2). Show that \(\tilde{\theta}_{k}=\tilde{\theta}_{k}\) for \(k=2,\ldots,p\).
+
+_Weighted Gram matrix_. Consider a multi-objective least squares problems with matrices \(A_{1},\ldots,A_{k}\) and positive weights \(\lambda_{1},\ldots,\lambda_{k}\). The matrix
+
+\[G=\lambda_{1}A_{1}^{T}A_{1}+\cdots+\lambda_{k}A_{k}^{T}A_{k}\]
+
+is called the _weighted Gram matrix_; it is the Gram matrix of the stacked matrix \(\tilde{A}\) (given in (15.2)) associated with the multi-objective problem. Show that \(G\) is invertible provided there is no nonzero vector \(x\) that satisfies \(A_{1}x=0,\,\ldots,\,A_{k}x=0\).
+
+_Robust approximate solution of linear equations._ We wish to solve the square set of \(n\) linear equations \(Ax=b\) for the \(n\)-vector \(x\). If \(A\) is invertible the solution is \(x=A^{-1}b\). In this exercise we address an issue that comes up frequently: We don't know \(A\) exactly. One simple method is to just choose a typical value of \(A\) and use it. Another method, which we explore here, takes into account the variation in the matrix \(A\). We find a set of \(K\) versions of \(A\), and denote them as \(A^{(1)},\ldots,A^{(K)}\). (These could be found by measuring the matrix \(A\) at different times, for example.) Then we choose \(x\) so as to minimize
+
+\[\left\|A^{(1)}x-b\right\|^{2}+\cdots+\left\|A^{(K)}x-b\right\|^{2},\]
+
+the sum of the squares of residuals obtained with the \(K\) versions of \(A\). This choice of \(x\), which we denote \(x^{\text{rob}}\), is called a _robust_ (approximate) solution. Give a formula for \(x^{\text{rob}}\), in terms of \(A^{(1)},\ldots,A^{(K)}\) and \(b\). (You can assume that a matrix you construct has linearly independent columns.) Verify that for \(K=1\) your formula reduces to \(x^{\text{rob}}=(A^{(1)})^{-1}b\).
+
+_Some properties of bi-objective least squares._ Consider the bi-objective least squares problem with objectives
+
+\[J_{1}(x)=\left\|A_{1}x-b_{1}\right\|^{2},\qquad J_{2}(x)=\left\|A_{2}x-b_{2} \right\|^{2}.\]
+
+For \(\lambda>0\), let \(\hat{x}(\lambda)\) denote the minimizer of \(J_{1}(x)+\lambda J_{2}(x)\). (We assume the columns of the stacked matrix are linearly independent.) We define \(J_{1}^{*}(\lambda)=J_{1}(\hat{x}(\lambda))\) and \(J_{2}^{*}(\lambda)=J_{2}(\hat{x}(\lambda))\), the values of the two objectives as functions of the weight parameter. The optimal trade-off curve is the set of points \((J_{1}^{*}(\lambda),J_{2}^{*}(\lambda))\), as \(\lambda\) varies over all positive numbers.
+

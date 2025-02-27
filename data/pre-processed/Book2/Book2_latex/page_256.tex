@@ -1,0 +1,27 @@
+Model.We will form a _model_ of the relationship between \(x\) and \(y\), given by
+
+\[y\approx\hat{f}(x),\]
+
+where \(\hat{f}:\mathbf{R}^{n}\to\mathbf{R}\). We write \(\hat{y}=\hat{f}(x)\), where \(\hat{y}\) is the (scalar) _prediction_ (of the outcome \(y\)), given the independent variable (vector) \(x\). The hat appearing over \(f\) is traditional notation that suggests that the function \(\hat{f}\) is an approximation of the function \(f\). The function \(\hat{f}\) is called the model, prediction function, or predictor. For a specific value of the feature vector \(x\), \(\hat{y}=\hat{f}(x)\) is the prediction of the outcome.
+
+Linear in the parameters model.We will focus on a specific form for the model, which has the form
+
+\[\hat{f}(x)=\theta_{1}f_{1}(x)+\dots+\theta_{p}f_{p}(x),\]
+
+where \(f_{i}:\mathbf{R}^{n}\to\mathbf{R}\) are _basis functions_ or _feature mappings_ that we choose, and \(\theta_{i}\) are the _model parameters_ that we choose. This form of model is called _linear in the parameters_, since for each \(x\), \(\hat{f}(x)\) is a linear function of the model parameter \(p\)-vector \(\theta\). The basis functions are usually chosen based on our idea of what \(f\) looks like. (We will see many examples of this below.) Once the basis functions have been chosen, there is the question of how to choose the model parameters, given our set of data.
+
+Prediction error.Our goal is to choose the model \(\hat{f}\) so that it is consistent with the data, _i.e._, we have \(y^{(i)}\approx\hat{f}(x^{(i)})\), for \(i=1,\dots,N\). (There is another goal in choosing \(\hat{f}\), that we will discuss in SS13.2.) For data sample \(i\), our model predicts the value \(\hat{y}^{(i)}=\hat{f}(x^{(i)})\), so the _prediction error_ or _residual_ for this data point is
+
+\[r^{(i)}=y^{(i)}-\hat{y}^{(i)}.\]
+
+(Some authors define the prediction error in the opposite way, as \(\hat{y}^{(i)}-y^{(i)}\). We will see that this does not affect the methods developed in this chapter.)
+
+Vector notation for outcomes, predictions, and residuals.For our data set and model, we have the observed response \(y^{(i)}\), the prediction \(\hat{y}^{(i)}\), and the residual or prediction error \(r^{(i)}\), for each example \(i=1,\dots,N\). We will now use vector notation to express these as \(N\)-vectors,
+
+\[y^{\mathrm{d}}=(y^{(1)},\dots,y^{(N)}),\qquad\hat{y}^{\mathrm{d}}=(\hat{y}^{( 1)},\dots,\hat{y}^{(N)}),\qquad r^{\mathrm{d}}=(r^{(1)},\dots,r^{(N)}),\]
+
+respectively. (In the notation used above to describe the approximate relation between the feature vector and the outcome, \(y\approx f(x)\), and the prediction function \(\hat{y}=\hat{f}(x)\), the symbols \(y\) and \(\hat{y}\) refer to generic scalar values. With the superscript \(\mathrm{d}\) (for 'data'), \(y^{\mathrm{d}}\), \(\hat{y}^{\mathrm{d}}\), and \(r^{\mathrm{d}}\) refer to the \(N\)-vectors of observed data values, predicted values, and associated residuals.)
+
+Using this vector notation we can express the (vector of) residuals as \(r^{\mathrm{d}}=y^{\mathrm{d}}-\hat{y}^{\mathrm{d}}\). A natural measure of how well the model predicts the observed data, or how consistent it is with the observed data, is the RMS prediction error \(\mathbf{rms}(r^{\mathrm{d}})\). The ratio \(\mathbf{rms}(r^{\mathrm{d}})/\,\mathbf{rms}(y^{\mathrm{d}})\) gives a relative prediction error. For example, if the relative prediction error is 0.1, we might say that the model predicts the outcomes, or fits the data, within 10%.
+
+ 

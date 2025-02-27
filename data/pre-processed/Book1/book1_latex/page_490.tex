@@ -1,0 +1,16 @@
+33. A \(*\) ones(4,1) gives the zero vector, so \(A\) cannot be invertible.
+35. \(\begin{bmatrix}1&3&1&0\\ 2&7&0&1\end{bmatrix}\to\begin{bmatrix}1&3&1&0\\ 0&1&-2&1\end{bmatrix}\to\begin{bmatrix}1&0&7&-3\\ 0&1&-2&1\end{bmatrix}=[I&A^{-1}]\); \(\begin{bmatrix}1&3&1&0\\ 3&8&0&1\end{bmatrix}\to\begin{bmatrix}1&0&-8&3\\ 0&1&3&-1\end{bmatrix}=[I&A^{-1}]\).
+37. \(\begin{bmatrix}1&a&b&1&0&0\\ 0&1&c&0&1&0\\ 0&0&1&0&0&1\end{bmatrix}\to\begin{bmatrix}1&a&0&1&0&-b\\ 0&1&0&0&1&-c\\ 0&0&1&0&0&1\end{bmatrix}\)
+39. \(\begin{bmatrix}2&2&0&1\\ 0&2&1&0\end{bmatrix}\to\begin{bmatrix}2^{{}^{\prime}}&0&-1&1\\ 0&2&1&0\end{bmatrix}\to\begin{bmatrix}1&0&-1/2&1/2\\ 0&1&1/2&0\end{bmatrix}=[I&A^{-1}]\).
+41. Not invertible for \(c=7\) (equal columns), \(c=2\) (equal rows), \(c=0\) (zero column).
+43. \(A^{-1}=\begin{bmatrix}1&1&0\cdot&0\\ 0&1&1&0\\ 0&0&1&1\\ 0&0&0&1\end{bmatrix}\). The 5 by 5 \(A^{-1}\) also has 1s on the diagonal and superdiagonal.
+45. \(\begin{bmatrix}I&0\\ -C&I\end{bmatrix}\), \(\begin{bmatrix}A^{-1}&0\\ -D^{-1}CA^{-1}&D^{-1}\end{bmatrix}\), and \(\begin{bmatrix}-D&I\\ -I&0\end{bmatrix}\).
+47. For \(Ax=b\) with \(\mathsf{A}=\mathsf{ones(4,\ 4)}=\) singular matrix and \(\mathsf{b}=\mathsf{ones(4,\ 1)}\), \(\mathsf{A\backslash b}\) will pick \(x=(1,0,0,0)\) and \(\mathsf{pinv(A)*b}\) will pick the shortest solution \(x=(1,1,1,1)/4\).
+49. \(A^{\mathsf{T}}=\begin{bmatrix}1&9\\ 0&3\end{bmatrix}\), \(A^{-1}=\begin{bmatrix}1&0\\ -3&1/3\end{bmatrix}\), \((A^{-1})^{\mathsf{T}}=(A^{\mathsf{T}})^{-1}=\begin{bmatrix}1&-3\\ 0&1/3\end{bmatrix}\); \(A^{\mathsf{T}}=A\) and then \(A^{-1}=\frac{1}{c^{2}}\begin{bmatrix}0&c\\ c&-1\end{bmatrix}=(A^{-1})^{\mathsf{T}}=(A^{\mathsf{T}})^{-1}\).
+51. \(\big{(}(AB)^{-1}\big{)}^{\mathsf{T}}=(B^{-1}A^{-1})^{\mathsf{T}}=(A^{-1})^{ \mathsf{T}}(B^{-1})^{\mathsf{T}}\); \((U^{-1})^{\mathsf{T}}\) is _lower_ triangular.
+63. (a) \(x^{\mathsf{T}}Ay=a_{22}=5\). (b) \(x^{\mathsf{T}}A=[4\quad 5\quad 6]\). (c) \(Ay=\begin{bmatrix}2\\ 5\end{bmatrix}\).
+65. \((Px)^{\mathsf{T}}(Py)=x^{\mathsf{T}}P^{\mathsf{T}}Py=x^{\mathsf{T}}y\) because \(P^{\mathsf{T}}P=I\); usually \(Px\cdot y=x\cdot P^{\mathsf{T}}y\neq x\cdot Py\): \(\begin{bmatrix}0&1&0\\ 0&0&1\\ 1&0&0\end{bmatrix}\)\(\begin{bmatrix}1\\ 2\\ 3\end{bmatrix}\cdot\begin{bmatrix}1\\ 1\\ 2\end{bmatrix}\neq\begin{bmatrix}1\\ 2\\ 3\end{bmatrix}\cdot\begin{bmatrix}0&1&0\\ 0&0&1\\ 1&0&0\end{bmatrix}\)\(\begin{bmatrix}1\\ 2\end{bmatrix}\).
+67. \(PAP^{\mathsf{T}}\) recovers the symmetry.
+69. (a) The transpose of \(R^{\mathsf{T}}AR\) is \(R^{\mathsf{T}}A^{\mathsf{T}}R^{\mathsf{TT}}=R^{\mathsf{T}}AR=n\) by \(n\). (b) \((R^{\mathsf{T}}R)_{jj}=\) (column \(j\) of \(R\)) - (column \(j\) of \(R\)) = length squared of column \(j\).
+
+ 

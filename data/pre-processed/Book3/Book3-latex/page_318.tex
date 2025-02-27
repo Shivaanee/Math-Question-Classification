@@ -1,0 +1,28 @@
+Sec. 8.4
+
+1. For which \(\gamma\) is \(M_{\gamma}\) positive? 2. What is det \((M_{\gamma})\)? 3. Find the matrix of \(M_{\gamma}\) in the basis \(\{1,i\}\). 4. If \(T\) is a linear operator on \(V\), find necessary and sufficient conditions for \(T\) to be an \(M_{\gamma}\). 5. Find a unitary operator on \(V\) which is not an \(M_{\gamma}\).
+
+**4.** Let \(V\) be \(R^{2}\), with the standard inner product. If \(U\) is a unitary operator on \(V\), show that the matrix of \(U\) in the standard ordered basis is either
+
+\[\begin{bmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{bmatrix}\ \ \text{or}\ \ \begin{bmatrix}\cos\theta&\sin \theta\\ \sin\theta&-\cos\theta\end{bmatrix}\]
+
+for some real \(\theta\), \(0\leq\theta<2\pi\). Let \(U_{\theta}\) be the linear operator corresponding to the first matrix, i.e., \(U_{\theta}\) is rotation through the angle \(\theta\). Now convince yourself that every unitary operator on \(V\) is either a rotation, or reflection about the \(\epsilon_{i}\)-axis followed by a rotation.
+
+1. What is \(U_{\theta}U_{\bullet}\)? 2. Show that \(U_{\theta}^{\bullet}=U_{-\theta}\). 3. Let \(\phi\) be a fixed real number, and let \(\mathfrak{G}=\{\alpha_{1},\alpha_{2}\}\) be the orthonormal basis obtained by rotating \(\{\epsilon_{1},\epsilon_{2}\}\) through the angle \(\phi\), i.e., \(\alpha_{i}=U_{\bullet}\epsilon_{i}\). If \(\theta\) is another real number, what is the matrix of \(U_{\theta}\) in the ordered basis (\(\mathfrak{G}\)?
+
+**5.** Let \(V\) be \(R^{2}\), with the standard inner product. Let \(W\) be the plane spanned by \(\alpha=(1,1,1)\) and \(\beta=(1,1,-2)\). Let \(U\) be the linear operator defined, geometrically, as follows: \(U\) is rotation through the angle \(\theta\), about the straight line through the origin which is orthogonal to \(W\). There are actually two such rotations --choose one. Find the matrix of \(U\) in the standard ordered basis. (Here is one way you might proceed. Find \(\alpha_{1}\) and \(\alpha_{2}\) which form an orthonormal basis for \(W\). Let \(\alpha_{3}\) be a vector of norm \(1\) which is orthogonal to \(W\). Find the matrix of \(U\) in the basis \(\{\alpha_{1},\alpha_{2},\alpha_{3}\}\). Perform a change of basis.)
+
+**6.** Let \(V\) be a finite-dimensional inner product space, and let \(W\) be a subspace of \(V\). Then \(V=W\oplus W^{\perp}\), that is, each \(\alpha\) in \(V\) is uniquely expressible in the form \(\alpha=\beta+\gamma\), with \(\beta\) in \(W\) and \(\gamma\) in \(W^{\perp}\). Define a linear operator \(U\) by \(U\alpha=\beta-\gamma\).
+
+1. Prove that \(U\) is both self-adjoint and unitary.
+2. If \(V\) is \(R^{2}\) with the standard inner product and \(W\) is the subspace spanned by \((1,0,1)\), find the matrix of \(U\) in the standard ordered basis.
+
+**7.** Let \(V\) be a _complex_ inner product space and \(T\) a _self-adjoint_ linear operator on \(V\). Show that
+
+1. \(||\alpha+iT\alpha||=||\alpha-iT\alpha||\) for every \(\alpha\) in \(V\).
+2. \(\alpha+iT\alpha=\beta+iT\beta\) if and only if \(\alpha=\beta\).
+3. \(I+iT\) is non-singular.
+4. \(I-iT\) is non-singular.
+5. Now suppose \(V\) is finite-dimensional, and prove that \[U=(I-iT)(I+iT)^{-1}\] is a unitary operator; \(U\) is called the **Cayley transform** of \(T\). In a certain sense, \(U=f(T)\), where \(f(x)=(1-ix)/(1+ix)\).
+
+ 

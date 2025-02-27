@@ -1,0 +1,19 @@
+the best definition. Obviously, \(\det A\) will not be some extremely simple function of \(n^{2}\) variables; otherwise \(A^{-1}\) would be much easier to find than it actually is.
+
+_The simple things about the determinant are not the explicit formulas, but the properties it possesses_. This suggests the natural place to begin. The determinant can be (and will be) defined by its three most basic properties: \(\det I=1\), **the sign is reversed by a row exchange, the determinant is linear in each row separately**. The problem is then to show, by systematically using these properties, how the determinant can be computed. This will bring us back to the product of the pivots.
+
+Section 4.2 explains these three defining properties of the determinant, and their most important consequences. Section 4.3 gives two more formulas for the determinant--the "big formula" with \(n!\) terms, and a formula "by induction". In Section 4.4 the determinant is applied to find \(A^{-1}\). Then we compute \(x=A^{-1}b\) by _Cramer's rule_. And finally, in an optional remark on permutations, we show that whatever the order in which the properties are used, the result is always the same--the defining properties are self-consistent.
+
+Here is a light-hearted question about permutations. _How many exchanges does it take to change VISA into AVIS_? Is this permutation odd or even?
+
+### 4.2 Properties of the Determinant
+
+This will be a pretty long list. Fortunately each rule is easy to understand, and even easier to illustrate, for a 2 by 2 example. Therefore we shall verify that the familiar definition in the 2 by 2 case,
+
+\[\det\begin{bmatrix}a&b\\ c&d\end{bmatrix}=\begin{vmatrix}a&b\\ c&d\end{vmatrix}=ad-bc,\]
+
+possesses every property in the list. (Notice the two accepted notations for the determinant, \(\det A\) and \(|A|\).) Properties 4-10 will be deduced from the previous ones. **Every property is a consequence of the first three**. We emphasize that the rules apply to square matrices _of any size_.
+
+**1.**_The determinant of the identity matrix is \(1\)_.
+
+\[\det I=1\qquad\begin{vmatrix}1&0\\ 0&1\end{vmatrix}=1\qquad\text{and}\qquad\begin{vmatrix}1&0&0\\ 0&1&0\\ 0&0&1\end{vmatrix}=1\qquad\text{and}\ldots\] 

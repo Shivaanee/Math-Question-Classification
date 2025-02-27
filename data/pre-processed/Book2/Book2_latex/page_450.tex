@@ -1,0 +1,17 @@
+
+
+\begin{tabular}{l l} \(\|X\|\) & Norm of matrix \(X\). \\ \(X^{k}\) & (Square) matrix \(X\) to the \(k\)th power. \\ \(X^{-1}\) & Inverse of (square) matrix \(X\). \\ \(X^{-T}\) & Inverse of transpose of matrix \(X\). \\ \(X^{\dagger}\) & Pseudo-inverse of matrix \(X\). \\ \(\mathbf{diag}(x)\) & Diagonal matrix with diagonal entries \(x_{1},\ldots,x_{n}\). \\ \end{tabular}
+
+#### Functions and derivatives
+
+\begin{tabular}{l l} \(f:A\to B\) & \(f\) is a function on the set \(A\) into the set \(B\). \\ \(\nabla f(z)\) & Gradient of function \(f:\mathbf{R}^{n}\to\mathbf{R}\) at \(z\). \\ \(Df(z)\) & Derivative (Jacobian) matrix of function \(f:\mathbf{R}^{n}\to\mathbf{R}^{m}\) at \(z\). \\ \end{tabular}
+
+#### 1.4.2 Ellipsis notation
+
+In this book we use standard mathematical ellipsis notation in lists and sums. We write \(k,\ldots,l\) to mean the list of all integers from \(k\) to \(l\). For example, \(3,\ldots,7\) means \(3,4,5,6,7\). This notation is used to describe a list of numbers or vectors, or in sums, as in \(\sum_{i=1,\ldots,n}a_{i}\), which we also write as \(a_{1}+\cdots+a_{n}\). Both of these mean the sum of the \(n\) terms \(a_{1},a_{2},\ldots,a_{n}\).
+
+#### 1.4.3 Sets
+
+In a few places in this book we encounter the mathematical concept of sets. The notation \(\{a_{1},\ldots,a_{n}\}\) refers to a _set_ with elements \(a_{1},\ldots,a_{n}\). This is not the same as the vector with entries \(a_{1},\ldots,a_{n}\), which is denoted \((a_{1},\ldots,a_{n})\). For sets the order does not matter, so, for example, we have \(\{1,2,6\}=\{6,1,2\}\). Unlike a vector, a set cannot have repeated elements. We can also specify a set by giving conditions that its entries must satisfy, using the notation \(\{x\mid\text{condition}(x)\}\), which means the set of \(x\) that satisfy the condition, which depends on \(x\). We say that a set contains its elements, or that the elements are in the set, using the symbol \(\in\), as in \(2\in\{1,2,6\}\). The symbol \(\not\in\) means not in, or not an element of, as in \(3\not\in\{1,2,6\}\).
+
+We can use sets to describe a sum over some elements in a list. The notation \(\sum_{i\in S}x_{i}\) means the sum over all \(x_{i}\) for which \(i\) is in the set \(S\)

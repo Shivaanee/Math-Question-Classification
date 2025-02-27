@@ -1,0 +1,21 @@
+_Note 4_.: Roundoff error also enters \(Ax=\lambda x\). What is the condition number of the eigenvalue problem? _The condition number of the diagonalizing \(S\) measures the sensitivity of the eigenvalues_. If \(\mu\) is an eigenvalue of \(A+E\), then its distance from one of the eigenvalues of \(A\) is
+
+\[|\mu-\lambda|\leq\|S\|\|S^{-1}\|\|E\|=c(S)\|E\|.\] (13)
+
+With orthonormal eigenvectors and \(S=Q\), the eigenvalue problem is perfectly conditioned: \(c(Q)=1\). The change \(\delta\lambda\) in the eigenvalues is no greater than the change \(\delta A\). Therefore the best case is when \(A\) is symmetric, or more generally when \(AA^{\rm T}=A^{\rm T}A\). Then \(A\) is a normal matrix; its diagonalizing \(S\) is an orthogonal \(Q\) (Section 5.6).
+
+If \(x_{k}\) is the \(k\)th column of \(S\) and \(y_{k}\) is the \(k\)th row of \(S^{-1}\), then \(\lambda_{k}\) changes by
+
+\[\delta\lambda_{k}=y_{k}Ex_{k}+\text{terms of order }\|E\|^{2}.\] (14)
+
+In practice, \(y_{k}Ex_{k}\) is a realistic estimate of \(\delta\lambda\). The idea in every good algorithm is to keep the error matrix \(E\) as small as possible--usually by insisting, as in the next section, on orthogonal matrices at every step of the computation of \(\lambda\).
+
+## 7 Problem Set 7.2
+
+**1.**: For an orthogonal matrix \(Q\), show that \(\|Q\|=1\) and also \(c(Q)=1\). Orthogonal matrices (and their multiples \(\alpha Q\)) are the only perfectly conditioned matrices.
+**2.**: Which "famous" inequality gives \(\|(A+B)x\|\leq\|Ax\|+\|Bx\|\), and why does it follow from equation (5) that \(\|A+B\|\leq\|A\|+\|B\|\)?
+**3.**: Explain why \(\|ABx\|\leq\|A\|\|B\|\|x\|\), and deduce from equation (5) that \(\|AB\|\leq\|A\|\|B\|\). Show that this also implies \(c(AB)\leq c(A)c(B)\).
+
+Figure 7.1: The norms of \(A\) and \(A^{-1}\) come from the longest and shortest \(Ax\).
+
+ 

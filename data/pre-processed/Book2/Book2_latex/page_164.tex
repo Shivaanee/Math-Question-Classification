@@ -1,0 +1,25 @@
+
+
+#### Examples
+
+Coefficients of linear combinations.Let \(a_{1},\ldots,a_{n}\) denote the columns of \(A\). The system of linear equations \(Ax=b\) can be expressed as
+
+\[x_{1}a_{1}+\cdots+x_{n}a_{n}=b,\]
+
+_i.e._, \(b\) is a linear combination of \(a_{1},\ldots,a_{n}\) with coefficients \(x_{1},\ldots,x_{n}\). So solving \(Ax=b\) is the same as finding coefficients that express \(b\) as a linear combination of the vectors \(a_{1},\ldots,a_{n}\).
+
+Polynomial interpolation.We seek a polynomial \(p\) of degree at most \(n-1\) that interpolates a set of \(m\) given points \((t_{i},y_{i})\), \(i=1,\ldots,m\). (This means that \(p(t_{i})=y_{i}\).) We can express this as a set of \(m\) linear equations in the \(n\) unknowns \(c\), where \(c\) is the \(n\)-vector of coefficients: \(Ac=y\). Here the matrix \(A\) is the Vandermonde matrix (6.7), and the vector \(c\) is the vector of polynomial coefficients, as described in the example on page 120.
+
+Balancing chemical reactions.A chemical reaction involves \(p\) reactants (molecules) and \(q\) products, and can be written as
+
+\[a_{1}R_{1}+\cdots+a_{p}R_{p}\longrightarrow b_{1}P_{1}+\cdots+b_{q}P_{q}.\]
+
+Here \(R_{1},\ldots,R_{p}\) are the reactants, \(P_{1},\ldots,P_{q}\) are the products, and the numbers \(a_{1},\ldots,a_{p}\) and \(b_{1},\ldots,b_{q}\) are positive numbers that tell us how many of each of these molecules is involved in the reaction. They are typically integers, but can be scaled arbitrarily; we could double all of these numbers, for example, and we still have the same reaction. As a simple example, we have the electrolysis of water,
+
+\[2\mathrm{H}_{2}\mathrm{O}\longrightarrow 2\mathrm{H}_{2}+\mathrm{O}_{2},\]
+
+which has one reactant, water (\(\mathrm{H}_{2}\mathrm{O}\)), and two products, molecular hydrogen (\(\mathrm{H}_{2}\)) and molecular oxygen (\(\mathrm{O}_{2}\)). The coefficients tell us that 2 water molecules create 2 hydrogen molecules and 1 oxygen molecule. The coefficients in a reaction can be multiplied by any nonzero numbers; for example, we could write the reaction above as \(3\mathrm{H}_{2}\mathrm{O}\longrightarrow 3\mathrm{H}_{2}+(3/2)\mathrm{O}_{2}\). By convention reactions are written with all coefficients integers, with least common divisor one.
+
+In a chemical reaction the numbers of constituent atoms must balance. This means that for each atom appearing in any of the reactants or products, the total amount on the left-hand side must equal the total amount on the right-hand side. (If any of the reactants or products is charged, _i.e._, an ion, then the total charge must also balance.) In the simple water electrolysis reaction above, for example, we have 4 hydrogen atoms on the left (2 water molecules, each with 2 hydrogen atoms), and 4 on the right (2 hydrogen molecules, each with 2 hydrogen atoms). The oxygen atoms also balance, so this reaction is balanced.
+
+Balancing a chemical reaction with specified reactants and products, _i.e._, finding the numbers \(a_{1},\ldots,a_{p}\) and \(b_{1},\ldots,b_{q}\), can be expressed as a system of linear equations. We can express the requirement that the reaction balances as a set of

@@ -1,0 +1,19 @@
+Linear dynamical system with input.There are many variations on and extensions of the basic linear dynamical system model (9.1), some of which we will encounter later. As an example, we can add additional terms to the update equation:
+
+\[x_{t+1}=A_{t}x_{t}+B_{t}u_{t}+c_{t},\quad t=1,2,\ldots.\] (9.2)
+
+Here \(u_{t}\) is an \(m\)-vector called the _input_, \(B_{t}\) is the \(n\times m\)_input matrix_, and the \(n\)-vector \(c_{t}\) is called the _offset_, all at time \(t\). The input and offset are used to model other factors that affect the time evolution of the state. Another name for the input \(u_{t}\) is _exogenous variable_, since, roughly speaking, it comes from outside the system.
+
+Markov model.The linear dynamical system (9.1) is sometimes called a _Markov_ model (after the mathematician Andrey Markov). Markov studied systems in which the next state value depends on the current one, and not on the previous state values \(x_{t-1},x_{t-2},\ldots\). The linear dynamical system (9.1) is the special case of a Markov system where the next state is a linear function of the current state.
+
+In a variation on the Markov model, called a (linear) \(K\)-Markov model, the next state \(x_{t+1}\) depends on the current state and \(K-1\) previous states. Such a system has the form
+
+\[x_{t+1}=A_{1}x_{t}+\cdots+A_{K}x_{t-K+1},\quad t=K,K+1,\ldots.\] (9.3)
+
+Models of this form are used in time series analysis and econometrics, where they are called (vector) _auto-regressive models_. When \(K=1\), the Markov model (9.3) is the same as a linear dynamical system (9.1). When \(K>1\), the Markov model (9.3) can be reduced to a standard linear dynamical system (9.1), with an appropriately chosen state; see exercise 9.4.
+
+Simulation.If we know the dynamics (and input) matrices, and the state at time \(t\), we can find the future state trajectory \(x_{t+1},x_{t+2},\ldots\) by iterating the equation (9.1) (or (9.2), provided we also know the input sequence \(u_{t},u_{t+1},\ldots\)). This is called _simulating_ the linear dynamical system. Simulation makes predictions about the future state of a system. (To the extent that (9.1) is only an approximation or model of some real system, we must be careful when interpreting the results.) We can carry out what-if simulations, to see what would happen if the system changes in some way, or if a particular set of inputs occurs.
+
+### 9.2 Population dynamics
+
+Linear dynamical systems can be used to describe the evolution of the age distribution in some population over time. Suppose \(x_{t}\) is a 100-vector, with \((x_{t})_{i}\) denoting the number of people in some population (say, a country) with age \(i-1\) (say, on January 1) in year \(t\), where \(t\) is measured starting from some base year, for \(i=1,\ldots,100\). While \((x_{t})_{i}\) is an integer, it is large enough that we simply consider 

@@ -1,0 +1,34 @@
+
+Right inverse.Now we turn to the closely related concept of right inverse. A matrix \(X\) that satisfies
+
+\[AX=I\]
+
+is called a _right inverse_ of \(A\). The matrix \(A\) is _right-invertible_ if a right inverse exists. Any right inverse has the same dimensions as \(A^{T}\).
+
+Left and right inverse of matrix transpose.If \(A\) has a right inverse \(B\), then \(B^{T}\) is a left inverse of \(A^{T}\), since \(B^{T}A^{T}=(AB)^{T}=I\). If \(A\) has a left inverse \(C\), then \(C^{T}\) is a right inverse of \(A^{T}\), since \(A^{T}C^{T}=(CA)^{T}=I\). This observation allows us to map all the results for left-invertibility given above to similar results for right-invertibility. Some examples are given below.
+
+* A matrix is right-invertible if and only if its rows are linearly independent.
+* A tall matrix cannot have a right inverse. Only square or wide matrices can be right-invertible.
+
+Solving linear equations with a right inverse.Consider the set of \(m\) linear equations in \(n\) variables \(Ax=b\). Suppose \(A\) is right-invertible, with right inverse \(B\). This implies that \(A\) is square or wide, so the linear equations \(Ax=b\) are square or under-determined.
+
+Then for _any_\(m\)-vector \(b\), the \(n\)-vector \(x=Bb\) satisfies the equation \(Ax=b\). To see this, we note that
+
+\[Ax=A(Bb)=(AB)b=Ib=b.\]
+
+We can conclude that if \(A\) is right-invertible, then the linear equations \(Ax=b\) can be solved for _any_ vector \(b\). Indeed, \(x=Bb\) is a solution. (There can be other solutions of \(Ax=b\); the solution \(x=Bb\) is simply one of them.)
+
+In summary, a right inverse can be used to find \(a\) solution of a square or under-determined set of linear equations, for any vector \(b\).
+
+Examples.Consider the matrix appearing in the example above on page 199,
+
+\[A=\left[\begin{array}{rr}-3&-4\\ 4&6\\ 1&1\end{array}\right]\]
+
+and the two left inverses
+
+\[B=\frac{1}{9}\left[\begin{array}{rr}-11&-10&16\\ 7&8&-11\end{array}\right],\qquad C=\frac{1}{2}\left[\begin{array}{rr}0&-1&6 \\ 0&1&-4\end{array}\right].\]
+
+* The over-determined linear equations \(Ax=(1,-2,0)\) have the unique solution \(x=(1,-1)\), which can be obtained from _either_ left inverse: \[x=B(1,-2,0)=C(1,-2,0).\]
+* The over-determined linear equations \(Ax=(1,-1,0)\) do not have a solution, since \(x=C(1,-1,0)=(1/2,-1/2)\) does not satisfy \(Ax=(1,-1,0)\).
+
+ 

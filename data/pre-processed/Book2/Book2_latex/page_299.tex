@@ -1,0 +1,32 @@
+is not our final model \(\hat{f}\). The function \(\tilde{f}\) is the least squares fit over our data set, and \(\tilde{f}(x)\), for a general vector \(x\), is a number.
+
+Our final classifier is then taken to be
+
+\[\hat{f}(x)=\mathbf{sign}(\tilde{f}(x)),\] (14.1)
+
+where \(\mathbf{sign}(a)=+1\) for \(a\geq 0\) and \(-1\) for \(a<0\). We call this classifier the _least squares classifier_.
+
+The intuition behind the least squares classifier is simple. The value \(\tilde{f}(x)\) is a number, which (ideally) is near \(+1\) when \(y^{(i)}=+1\), and near \(-1\) when \(y^{(i)}=-1\). If we are forced to guess one of the two possible outcomes \(+1\) or \(-1\), it is natural to choose \(\mathbf{sign}(\tilde{f}(x))\). (Indeed, \(\mathbf{sign}(\tilde{f}(x))\) is the nearest neighbor of \(\tilde{f}(x)\) among the points \(-1\) and \(+1\).) Intuition suggests that the number \(\tilde{f}(x)\) can be related to our confidence in our guess \(\hat{y}=\mathbf{sign}(\tilde{f}(x))\): When \(\tilde{f}(x)\) is near \(1\) we have confidence in our guess \(\hat{y}=+1\); when it is small and negative (say, \(\tilde{f}(x)=-0.03\)), we guess \(\hat{y}=-1\), but our confidence in the guess will be low. We won't pursue this idea further in this book, except in multi-class classifiers, which we discuss in SS14.3.
+
+The least squares classifier is often used with a regression model, _i.e._, \(\tilde{f}(x)=x^{T}\beta+v\), in which case the classifier has the form
+
+\[\hat{f}(x)=\mathbf{sign}(x^{T}\beta+v).\] (14.2)
+
+We can easily interpret the coefficients in this model. For example, if \(\beta_{7}\) is negative, it means that the larger the value of \(x_{7}\) is, the more likely we are to guess \(\hat{y}=-1\). If \(\beta_{4}\) is the coefficient with the largest magnitude, then we can say that \(x_{4}\) is the feature that contributes the most to our classification decision.
+
+#### Iris flower classification
+
+We illustrate least squares classification with a famous data set, first used in the 1930s by the statistician Ronald Fisher. The data are measurements of four attributes of three types of iris flowers: _Iris Setosa_, _Iris Versicolour_, and _Iris Virginica_. The data set contains 50 examples of each class. The four attributes are:
+
+* \(x_{1}\) is the sepal length in cm,
+* \(x_{2}\) is the sepal width in cm,
+* \(x_{3}\) is the petal length in cm,
+* \(x_{4}\) is the petal width in cm.
+
+We compute a Boolean classifier of the form (14.2) that distinguishes the class _Iris Virginica_ from the other two classes. Using the entire set of 150 examples we find the coefficients
+
+\[v=-2.39,\quad\beta_{1}=-0.0918,\quad\beta_{2}=0.406,\quad\beta_{3}=0.00798, \quad\beta_{4}=1.10.\]
+
+The confusion matrix associated with this classifier is shown in table 14.3. The error rate is 7.3%.
+
+ 

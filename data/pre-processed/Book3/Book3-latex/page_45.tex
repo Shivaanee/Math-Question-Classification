@@ -1,0 +1,17 @@
+
+
+**Example 7**.: **The solution space of a system of homogeneous linear equations.** Let \(A\) be an \(m\times n\) matrix over \(F\). Then the set of all \(n\times 1\) (column) matrices \(X\) over \(F\) such that \(AX=0\) is a subspace of the space of all \(n\times 1\) matrices over \(F\). To prove this we must show that \(A(eX+Y)=0\) when \(AX=0\), \(AY=0\), and \(c\) is an arbitrary scalar in \(F\). This follows immediately from the following general fact.
+
+**Lemma**.: _If \(A\) is an \(m\times n\) matrix over \(F\) and \(B\), \(C\) are \(n\times p\) matrices over \(F\) then_
+
+\[A(dB+C)=d(AB)+AC\]
+
+_for each scalar \(d\) in \(F\)._
+
+\[\begin{array}{rcl}\mbox{\em Proof.}&[A(dB+C)]_{ij}&=&\sum\limits_{k}A\,u( dB+C)_{kj}\\ &=&\sum\limits_{k}\,(dA\,uB_{kj}+A\,uC_{kj})\\ &=&d\sum\limits_{k}A\,uB_{kj}+\sum\limits_{k}A\,uC_{kj}\\ &=&d(AB)_{ij}+(AC)_{ij}\\ &=&[d(AB)+AC]_{ij}.\quad\rule{0.0pt}{14.226378pt}\end{array}\]
+
+Similarly one can show that \((dB+C)A=d(BA)+CA\), if the matrix sums and products are defined.
+
+**Theorem 2**.: _Let \(V\) be a vector space over the field \(F\). The intersection of any collection of subspaces of \(V\) is a subspace of \(V\)._
+
+Proof.: Let \(\{W_{a}\}\) be a collection of subspaces of \(V\), and let \(W=\bigcap\limits_{a}W_{a}\) be their intersection. Recall that \(W\) is defined as the set of all elements belonging to every \(W_{a}\) (see Appendix). Since each \(W_{a}\) is a subspace

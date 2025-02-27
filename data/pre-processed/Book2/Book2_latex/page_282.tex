@@ -1,0 +1,9 @@
+Consider an example with \(n=2\) original features. Our prediction \(\hat{y}\) is a sum of two piecewise-linear functions, each depending on one of the original features. Figure 13.14 shows an example. In this example model, we can say that increasing \(x_{1}\) increases our prediction \(\hat{y}\); but for high values of \(x_{1}\) (_i.e._, above 1) the increase in the prediction is less pronounced, and for low values (_i.e._, below \(-1\)), it is more pronounced.
+
+Products and interactions.New features can be developed from pairs of original features, for example, their product. From the original features we can add \(x_{i}x_{j}\), for \(i,j=1,\ldots,n\), \(i\leq j\). Products are used to model interactions among the features. Product features are easily interpretable when the original features are Boolean, _i.e._, take the values 0 or 1. Thus \(x_{i}=1\) means that feature \(i\) is present or has occurred, and the new product feature \(x_{i}x_{j}\) has the value 1 exactly when both feature \(i\) and \(j\) have occurred.
+
+Stratified models.In a _stratified model_, we have several different sub-models, and choose the one to use depending on the values of the regressors. For example, instead of treating gender as a regressor in a single model of some medical outcome, we build two different sub-models, one for male patients and one for female patients. In this case we choose the sub-model to use based on one of the original features, gender.
+
+As a more general example, we can carry out clustering of the original feature vectors, and fit a separate model within each cluster. To evaluate \(\hat{y}\) for a new \(x\), we first determine which cluster \(x\) is in, and then use the associated model. Whether or not a stratified model is a good idea is checked using out-of-sample validation.
+
+ 

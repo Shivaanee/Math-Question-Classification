@@ -1,0 +1,21 @@
+It makes an angle \(\theta\) with the horizontal. The whole plane enters in Chapter 5, where complex numbers will appear as eigenvalues (even of real matrices). Here we need only special points \(w\), all of them on the unit circle, in order to solve \(w^{n}=1\).
+
+The square of \(w\) can be found directly (it just doubles the angle):
+
+\[w^{2}=(\cos\theta+i\sin\theta)^{2}=\cos^{2}\theta-\sin^{2}\theta+2i\sin\theta \cos\theta.\]
+
+The real part \(\cos^{2}\theta-\sin^{2}\theta\) is \(\cos 2\theta\), and the imaginary part \(2\,\sin\theta\cos\theta\) is \(\sin 2\theta\). (Note that \(i\) is not included; the imaginary part is a real number.) Thus \(w^{2}=\cos 2\theta+i\sin 2\theta\). The square of \(w\) is still on the unit circle, but _at the double angle \(2\theta\)_. That makes us suspect that \(w^{n}\) lies at the angle \(n\theta\), and we are right.
+
+There is a better way to take powers of \(w\). The combination of cosine and sine is a complex exponential, with amplitude one and phase angle \(\theta\):
+
+\[\cos\theta+i\sin\theta=e^{i\theta}.\] (2)
+
+The rules for multiplying, like \((e^{2})(e^{3})=e^{5}\), continue to hold when the exponents \(i\theta\) are imaginary. _The powers of \(w=e^{i\theta}\) stay on the unit circle_:
+
+\[\text{{Powers of }}w\qquad w^{2}=e^{i2\theta},\quad w^{n}=e^{in\theta},\quad \frac{1}{w}=e^{-i\theta}.\] (3)
+
+The \(n\)th power is at the angle \(n\theta\). When \(n=-1\), _the reciprocal \(1/w\) has angle \(-\theta\)_. If we multiply \(\cos\theta+i\sin\theta\) by \(\cos(-\theta)+i\sin(-\theta)\), we get the answer \(1\):
+
+\[e^{i\theta}e^{-i\theta}=(\cos\theta+i\sin\theta)(\cos\theta-i\sin\theta)=\cos^ {2}\theta+\sin^{2}\theta=1.\]
+
+_Note_. I remember the day when a letter came to MIT from a prisoner in New York, asking if Euler's formula (2) was true. It is really astonishing that three of the key 

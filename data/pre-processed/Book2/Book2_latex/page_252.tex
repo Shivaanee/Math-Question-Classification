@@ -1,0 +1,33 @@
+
+
+**12.14**: _Recursive least squares._ In some applications of least squares the rows of the coefficient matrix \(A\) become available (or are added) sequentially, and we wish to solve the resulting family of growing least squares problems. Define the \(k\times n\) matrices and \(k\)-vectors
+
+\[A^{(k)}=\left[\begin{array}{c}a_{1}^{T}\\ \vdots\\ a_{k}^{T}\end{array}\right]=A_{1:k,1:n},\qquad b^{(k)}=\left[\begin{array}{c }b_{1}\\ \vdots\\ b_{k}\end{array}\right]=b_{1:k},\]
+
+for \(k=1,\ldots,m\). We wish to compute \(\hat{x}^{(k)}=A^{(k)\dagger}b^{(k)}\), for \(k=n,n+1,\ldots,m\). We will assume that the columns of \(A^{(n)}\) are linearly independent, which implies that the columns of \(A^{(k)}\) are linearly independent for \(k=n,\ldots,m\). We will also assume that \(m\) is much larger than \(n\). The naive method for computing \(x^{(k)}\) requires \(2kn^{2}\) flops, so the total cost for \(k=n,\ldots,m\) is
+
+\[\sum_{k=n}^{m}2kn^{2}=\left(\sum_{k=n}^{m}k\right)(2n^{2})=\left(\frac{m^{2}- n^{2}+m+n}{2}\right)(2n^{2})\approx m^{2}n^{2}\text{ flops}.\]
+
+A simple trick allows us to compute \(x^{(k)}\) for \(k=n\ldots,m\) much more efficiently, with a cost that grows linearly with \(m\). The trick also requires memory storage order \(n^{2}\), which does not depend on \(m\). for \(k=1,\ldots,m\), define
+
+\[G^{(k)}=(A^{(k)})^{T}A^{(k)},\qquad h^{(k)}=(A^{(k)})^{T}b^{(k)}.\]
+
+* Show that \(\hat{x}^{(k)}=(G^{(k)})^{-1}h^{(k)}\) for \(k=n,\ldots,m\). _Hint._ See (12.8).
+* Show that \(G^{(k+1)}=G^{(k)}+a_{k}a_{k}^{T}\) and \(h^{(k+1)}=h^{(k)}+b_{k}a_{k}\), for \(k=1,\ldots,m-1\).
+* _Recursive least squares_ is the following algorithm. For \(k=n,\ldots,m\), compute \(G^{(k+1)}\) and \(h^{(k+1)}\) using (b); then compute \(\hat{x}^{(k)}\) using (a). Work out the total flop count for this method, keeping only dominant terms. (You can include the cost of computing \(G^{(n)}\) and \(h^{(n)}\), which should be negligible in the total.) Compare to the flop count for the naive method.
+
+_Remark_.: A further trick called the matrix inversion lemma (which is beyond the scope of this book) can be used to reduce the complexity of recursive least squares to order \(mn^{2}\).
+
+**12.15**: _Minimizing a squared norm plus an affine function._ A generalization of the least squares problem (12.1) adds an affine function to the least squares objective,
+
+\[\text{minimize}\quad\|Ax-b\|^{2}+c^{T}x+d,\]
+
+where the \(n\)-vector \(x\) is the variable to be chosen, and the (given) data are the \(m\times n\) matrix \(A\), the \(m\)-vector \(b\), the \(n\)-vector \(c\), and the number \(d\). We will use the same assumption we use in least squares: The columns of \(A\) are linearly independent. This generalized problem can be solved by reducing it to a standard least squares problem, using a trick called _completing the square_.
+
+Show that the objective of the problem above can be expressed in the form
+
+\[\|Ax-b\|^{2}+c^{T}x+d=\|Ax-b+f\|^{2}+g,\]
+
+for some \(m\)-vector \(f\) and some constant \(g\). It follows that we can solve the generalized least squares problem by minimizing \(\|Ax-(b-f)\|\), an ordinary least squares problem with solution \(\hat{x}=A^{\dagger}(b-f)\).
+
+_Hints._ Express the norm squared term on the right-hand side as \(\|(Ax-b)+f\|^{2}\) and expand it. Then argue that the equality above holds provided \(2A^{T}f=c\). One possible choice is \(f=(1/2)(A^{\dagger})^{T}c\). (You must justify these statements.)

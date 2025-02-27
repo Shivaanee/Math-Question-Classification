@@ -1,0 +1,37 @@
+
+
+**15.** A unitary operator on \(R^{4}\) (with the standard inner product) is simply a linear operator which preserves the quadratic form
+
+\[||(x,y,z,t)||^{2}=x^{2}+y^{2}+z^{2}+t^{2}\]
+
+that is, a linear operator \(U\) such that \(||U\alpha||^{2}=||\alpha||^{2}\) for all \(\alpha\) in \(R^{4}\). In a certain part of the theory of relativity, it is of interest to find the linear operators \(T\) which preserve the form
+
+\[||(x,y,z,t)||^{2}_{L}=(^{2}-x^{2}-y^{2}-z^{2}.\]
+
+Now \(||\ \ ||^{2}_{L}\) does not come from an inner product, but from something called the 'Lorentz metric' (which we shall not go into). For that reason, a linear operator \(T\) on \(R^{4}\) such that \(||T\alpha||^{2}_{L}=||\alpha||^{2}_{L}\), for every \(\alpha\) in \(R^{4}\), is called a **Lorentz transformation.**
+
+(a) Show that the function \(U\) defined by
+
+\[U(x,y,z,t)=\left[\matrix{t+x&y+iz\cr y-iz&t-x\cr}\right]\]
+
+is an isomorphism of \(R^{4}\) onto the real vector space \(H\) of all self-adjoint \(2\times 2\) complex matrices.
+
+(b) Show that \(||\alpha||^{2}_{L}=\det(U\alpha)\).
+
+(c) Suppose \(T\) is a (real) linear operator on the space \(H\) of \(2\times 2\) self-adjoint matrices. Show that \(L=U^{-1}TU\) is a linear operator on \(R^{4}\).
+
+(d) Let \(M\) be any \(2\times 2\) complex matrix. Show that \(T_{M}(A)=M^{*}AM\) defines a linear operator \(T_{M}\) on \(H\). (Be sure you check that \(T_{M}\) maps \(H\) into \(H\).)
+
+(e) If \(M\) is a \(2\times 2\) matrix such that \(|\det M|=1\), show that \(L_{M}=U^{-1}T_{M}U\) is a Lorentz transformation on \(R^{4}\).
+
+(f) Find a Lorentz transformation which is not an \(L_{M}\).
+
+**8.5.**_Normal Operators_
+
+The principal objective in this section is the solution of the following problem. If \(T\) is a linear operator on a finite-dimensional inner product space \(V\), under what conditions does \(V\) have an orthonormal basis consisting of characteristic vectors for \(T\)? In other words, when is there an _orthonormal_ basis \(\otimes\) for \(V\), such that the matrix of \(T\) in the basis \(\otimes\) is diagonal?
+
+We shall begin by deriving some necessary conditions on \(T\), which we shall subsequently show are sufficient. Suppose \(\otimes=\{\alpha_{1},\ldots,\alpha_{n}\}\) is an orthonormal basis for \(V\) with the property
+
+\[T\alpha_{j}=c_{j}\alpha_{j},\ \ \ \ \ j=1,\ldots,n.\]
+
+This simply says that the matrix of \(T\) in the ordered basis \(\otimes\) is the diagonal matrix with diagonal entries \(c_{1},\ldots,c_{n}\). The adjoint operator \(T^{*}\) is represented in this same ordered basis by the conjugate transpose matrix, i.e., the diagonal matrix with diagonal entries \(\bar{c}_{1},\ldots,\bar{c}_{n}\). If \(V\) is a real inner

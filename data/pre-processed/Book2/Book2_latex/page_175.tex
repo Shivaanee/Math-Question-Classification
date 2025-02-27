@@ -1,0 +1,19 @@
+it a real number. In any case, our model certainly is not accurate at the level of individual people. Also, note that the model does not track people 100 and older. The distribution of ages in the US in 2010 is shown in figure 9.1.
+
+The birth rate is given by a 100-vector \(b\), where \(b_{i}\) is the average number of births per person with age \(i-1\), \(i=1,\ldots,100\). (This is half the average number of births per woman with age \(i-1\), assuming equal numbers of men and women in the population.) Of course \(b_{i}\) is approximately zero for \(i<13\) and \(i>50\). The approximate birth rates for the US in 2010 are shown in figure 9.2. The death rate is given by a 100-vector \(d\), where \(d_{i}\) is the portion of those aged \(i-1\) who will die this year. The death rates for the US in 2010 are shown in figure 9.3.
+
+To derive the dynamics equation (9.1), we find \(x_{t+1}\) in terms of \(x_{t}\), taking into account only births and deaths, and not immigration. The number of 0-year olds next year is the total number of births this year:
+
+\[(x_{t+1})_{1}=b^{T}x_{t}.\]
+
+The number of \(i\)-year olds next year is the number of \((i-1)\)-year-olds this year, minus those who die:
+
+\[(x_{t+1})_{i+1}=(1-d_{i})(x_{t})_{i},\quad i=1,\ldots,99.\]
+
+We can assemble these equations into the time-invariant linear dynamical system
+
+\[x_{t+1}=Ax_{t},\quad t=1,2,\ldots,\] (9.4)
+
+Figure 9.1: Age distribution in the US in 2010. (United States Census Bureau, census.gov).
+
+ 

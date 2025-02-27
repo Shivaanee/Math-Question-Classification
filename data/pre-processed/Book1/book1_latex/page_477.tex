@@ -1,0 +1,23 @@
+eigenvalue \(\lambda=0\) has two eigenvectors, \(e_{3}\) and \(e_{5}\), which correspond to the two Jordan blocks \(J_{2}\) and \(J_{3}\). If \(A\) had 5 eigenvectors, all blocks would be 1 by 1 and \(J\) would be diagonal.
+
+The key question is this: _If \(A\) is some other \(5\) by \(5\) matrix, under what conditions will its Jordan form be this same \(J\)? When will there exist an \(M\) such that \(M^{-1}AM=J\)_? As a first requirement, any similar matrix \(A\) must share the same eigenvalues 8, 8, 0, 0, 0. But the diagonal matrix with these eigenvalues is not similar to \(J\)--and our question really concerns the eigenvectors.
+
+To answer it, we rewrite \(M^{-1}AM=J\) in the simpler form \(AM=MJ\):
+
+\[A\left[\begin{matrix}x_{1}&x_{2}&x_{3}&x_{4}&x_{5}\\ &&&&\\ \end{matrix}\right]=\left[\begin{matrix}&&&\\ x_{1}&x_{2}&x_{3}&x_{4}&x_{5}\\ &&&&\\ \end{matrix}\right]\left[\begin{matrix}8&1&&&\\ 0&8&&&\\ &&0&1&\\ &&0&0&\\ &&&0\\ \end{matrix}\right].\]
+
+Carrying out the multiplications a column at a time,
+
+\[Ax_{1}=8x_{1}\qquad\text{and}\qquad Ax_{2}=8x_{2}+x_{1}\] (1)
+
+\[Ax_{3}=0x_{3}\qquad\text{and}\qquad Ax_{4}=0x_{4}+x_{3}\qquad\text{and}\qquad Ax _{5}=0x_{5}.\] (2)
+
+Now we can recognize the conditions on \(A\). It must have three genuine eigenvectors, just as \(J\) has. The one with \(\lambda=8\) will go into the first column of \(M\), exactly as it would have gone into the first column of \(S\): \(Ax_{1}=8x_{1}\), The other two, which will be named \(x_{3}\) and \(x_{5}\), go into the third and fifth columns of \(M\): \(Ax_{3}=Ax_{5}=0\). Finally there must be two other special vectors, the _generalized eigenvectors_\(x_{2}\) and \(x_{4}\). We think of \(x_{2}\) as belonging to a _string of vectors_, headed by \(x_{1}\) and described by equation (1). In fact, \(x_{2}\) is the only other vector in the string, and the corresponding block \(J_{1}\) is of order 2. Equation (2) describes _two different strings_, one in which \(x_{4}\) follows \(x_{3}\), and another in which \(x_{5}\) is alone; the blocks \(J_{2}\) and \(J_{3}\) are 2 by 2 and 1 by 1.
+
+_The search for the Jordan form of \(A\) becomes a search for these strings of vectors, each one headed by an eigenvector: For every \(i\),_
+
+\[\text{either}\qquad Ax_{i}=\lambda_{i}x_{i}\qquad\text{or}\qquad Ax_{i}= \lambda_{i}x_{i}+x_{i-1}.\] (3)
+
+The vectors \(x_{i}\) go into the columns of \(M\), and each string produces a single block in \(J\). Essentially, we have to show how these strings can be constructed for every matrix \(A\). Then if the strings match the particular equations (1) and (2), our \(J\) will be the Jordan form of \(A\).
+
+I think that Filippov's idea makes the construction as clear and simple as possible1. It proceeds by mathematical induction, starting from the fact that every 1 by 1 matrix 

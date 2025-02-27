@@ -1,0 +1,23 @@
+and stored. Then the _inverse transform_ brings us back from Fourier coefficients to pixel values. We need to know the inverse rule for Kronecker products:
+
+\[\mbox{\it The inverse of the matrix $A\otimes B$ is the matrix $A^{-1}\otimes B^{-1}$.}\]
+
+The FFT also speeds up the 2D inverse transform! We just invert in one direction followed by the other direction. We are adding \(\sum c_{k\ell}e^{ikx}e^{i\ell y}\) over \(k\) and then \(\ell\).
+
+The Laplace difference matrix \(A_{\rm 2D}=(A\otimes I)+(I\otimes A)\) has no simple inverse formula. That is why the equation \(A_{\rm 2D}u=b\) has been studied so carefully. One of the fastest methods is to diagonalize \(A_{\rm 2D}\) by using its eigenvector matrix (which is the Fourier sine matrix \(S\otimes S\), very similar to \(F_{\rm 2D}\)). The eigenvalues of \(A_{\rm 2D}\) come immediately from the eigenvalues of \(A_{\rm 1D}\):
+
+The \(n^{2}\) eigenvalues of \((A\otimes I)+(I\otimes B)\) are all the sums \(\lambda_{i}(A)+\lambda_{j}(B)\).
+
+The \(n^{2}\) eigenvalues of \(A\otimes B\) are all the products \(\lambda_{i}(A)\lambda_{j}(B)\).
+
+If \(A\) and \(B\) are \(n\) by \(n\), the determinant of \(A\otimes B\) (the product of its eigenvalues) is \((\det A)^{n}(\det B)^{n}\). The trace of \(A\otimes B\) is (trace \(A\))(trace \(B\)). This appendix illustrates both "pure linear algebra" and its crucial applications!
+
+## Problem Set A
+
+**1.**: Suppose \({\bf S}\) and \({\bf T}\) are subspaces of \({\bf R}^{13}\), with \(\dim{\bf S}=7\) and \(\dim{\bf T}=8\).
+
+1. What is the largest possible dimension of \({\bf S}\cap{\bf T}\)?
+2. What is the smallest possible dimension of \({\bf S}\cap{\bf T}\)?
+3. What is the smallest possible dimension of \({\bf S}+{\bf T}\)?
+4. What is the largest possible dimension of \({\bf S}+{\bf T}\)?
+**2.**: What are the intersections of the following pairs of subspaces? 

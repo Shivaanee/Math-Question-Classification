@@ -1,0 +1,21 @@
+
+
+**12.12**: _Least squares placement._ The 2-vectors \(p_{1},\ldots,p_{N}\) represent the locations or positions of \(N\) objects, for example, factories, warehouses, and stores. The last \(K\) of these locations are fixed and given; the goal in a _placement problem_ to choose the locations of the first \(N-K\) objects. Our choice of the locations is guided by an undirected graph; an edge between two objects means we would like them to be close to each other. In _least squares placement_, we choose the locations \(p_{1},\ldots,p_{N-K}\) so as to minimize the sum of the squares of the distances between objects connected by an edge,
+
+\[\|p_{i_{1}}-p_{j_{1}}\|^{2}+\cdots+\|p_{i_{L}}-p_{j_{L}}\|^{2},\]
+
+where the \(L\) edges of the graph are given by \((i_{1},j_{1}),\ldots,(i_{L},j_{L})\).
+
+1. Let \(\mathcal{D}\) be the Dirichlet energy of the graph, as defined on page 135. Show that the sum of the squared distances between the \(N\) objects can be expressed as \(\mathcal{D}(u)+\mathcal{D}(v)\), where \(u=((p_{1})_{1},\ldots,(p_{N})_{1})\) and \(v=((p_{1})_{2},\ldots,(p_{N})_{2})\) are \(N\)-vectors containing the first and second coordinates of the objects, respectively.
+2. Express the least squares placement problem as a least squares problem, with variable \(x=(u_{1:(N-K)},v_{1:(N-K)})\). In other words, express the objective above (the sum of squares of the distances across edges) as \(\|Ax-b\|^{2}\), for an appropriate \(m\times n\) matrix \(A\) and \(m\)-vector \(b\). You will find that \(m=2L\). _Hint._ Recall that \(\mathcal{D}(y)=\|B^{T}y\|^{2}\), where \(B\) is the incidence matrix of the graph.
+3. Solve the least squares placement problem for the specific problem with \(N=10\), \(K=4\), \(L=13\), fixed locations \[p_{7}=(0,0),\quad p_{8}=(0,1),\quad p_{8}=(1,1),\quad p_{10}=(1,0),\] and edges \[(1,3),\quad(1,4),\quad(1,7),\quad(2,3),\quad(2,5),\quad(2,8),\quad(2,9),\] \[(3,4),\quad(3,5),\quad(4,6),\quad(5,6),\quad(6,9),\quad(6,10).\] Plot the locations, showing the graph edges as lines connecting the locations.
+**12.13**: _Iterative method for least squares problem._ Suppose that \(A\) has linearly independent columns, so \(\hat{x}=A^{\dagger}b\) minimizes \(\|Ax-b\|^{2}\). In this exercise we explore an iterative method, due to the mathematician Lewis Richardson, that can be used to compute \(\hat{x}\). We define \(x^{(1)}=0\) and for \(k=1,2,\ldots\),
+
+\[x^{(k+1)}=x^{(k)}-\mu A^{T}(Ax^{(k)}-b),\]
+
+where \(\mu\) is a positive parameter, and the superscripts denote the iteration number. This defines a sequence of vectors that converge to \(\hat{x}\) provided \(\mu\) is not too large; the choice \(\mu=1/\|A\|^{2}\), for example, always works. The iteration is terminated when \(A^{T}(Ax^{(k)}-b)\) is small enough, which means the least squares optimality conditions are almost satisfied. To implement the method we only need to multiply vectors by \(A\) and by \(A^{T}\). If we have efficient methods for carrying out these two matrix-vector multiplications, this iterative method can be faster than algorithm 12.1 (although it does not give the exact solution). Iterative methods are often used for very large scale least squares problems.
+
+1. Show that if \(x^{(k+1)}=x^{(k)}\), we have \(x^{(k)}=\hat{x}\).
+2. Express the vector sequence \(x^{(k)}\) as a linear dynamical system with constant dynamics matrix and offset, _i.e._, in the form \(x^{(k+1)}=Fx^{(k)}+g\).
+3. Generate a random \(20\times 10\) matrix \(A\) and \(20\)-vector \(b\), and compute \(\hat{x}=A^{\dagger}b\). Run the Richardson algorithm with \(\mu=1/\|A\|^{2}\) for \(500\) iterations, and plot \(\|x^{(k)}-\hat{x}\|\) to verify that \(x^{(k)}\) appears to be converging to \(\hat{x}\).
+

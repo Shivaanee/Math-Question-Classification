@@ -1,0 +1,19 @@
+In this example _all four subspaces are lines_. That is an accident, coming from \(r=1\) and \(n-r=1\) and \(m-r=1\). Figure 2.5 shows that two pairs of lines are perpendicular. That is no accident!
+
+If you change the last entry of \(A\) from 6 to 7, all the dimensions are different. The column space and row space have dimension \(r=2\). The nullspace and left nullspace contain only the vectors \(x=0\) and \(y=0\). _The matrix is invertible_.
+
+### Existence of Inverses
+
+We know that if \(A\) has a left-inverse (\(BA=I\)) and a right-inverse (\(AC=I\)), then the two inverses are equal: \(B=B(AC)(BA)C=C\). Now, from the rank of a matrix, it is easy to decide which matrices actually have these inverses. Roughly speaking, _an inverse exists only when the rank is as large as possible_.
+
+The rank always satisfies \(r\leq m\) and also \(r\leq n\). An \(m\) by \(n\) matrix cannot have more than \(m\) independent rows or \(n\) independent columns. There is not space for more than \(m\) pivots, or more than \(n\). We want to prove that when \(r=m\) there is a right-inverse, and \(Ax=b\) always has a solution. When \(r=n\) there is a left-inverse, and the solution (_if it exists_) is unique.
+
+Only a square matrix can have both \(r=m\) and \(r=n\), and therefore only a square matrix can achieve both existence and uniqueness. Only a square matrix has a two-sided inverse.
+
+**2Q EXISTENCE: Full row rank \(r=m\). \(Ax=b\) has _at least_** one solution \(x\) for every \(b\) if and only if the columns span \(\mathbf{R}^{m}\). Then \(A\) has a _right-inverse_\(C\) such that \(AC=I_{m}\) (\(m\) by \(m\)). This is possible only if \(m\leq n\).
+
+**UNIQUENESS: Full column rank \(r=n\). \(Ax=b\) has _at most_** one solution \(x\) for every \(b\) if and only if the columns are linearly independent. Then \(A\) has an \(n\) by \(m\)**left-inverse**\(B\) such that \(BA=I_{n}\). This is possible only if \(m\geq n\).
+
+Figure 2.5: The four fundamental subspaces (lines) for the singular matrix \(A\).
+
+ 

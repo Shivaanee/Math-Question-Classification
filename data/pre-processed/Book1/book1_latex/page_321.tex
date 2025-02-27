@@ -1,0 +1,26 @@
+
+
+**33.**: Write five terms of the infinite series for \(e^{At}\). Take the \(t\) derivative of each term. Show that you have four terms of \(Ae^{At}\). Conclusion: \(e^{At}u(0)\) solves \(u^{\prime}=Au\).
+**34.**: The matrix \(B=\left[\begin{smallmatrix}0&-1\\ 0&0\end{smallmatrix}\right]\) has \(B^{2}=0\). Find \(e^{Bt}\) from a (short) infinite series. Check that the derivative of \(e^{Bt}\) is \(Be^{Bt}\).
+**35.**: Starting from \(u(0)\), the solution at time \(T\) is \(e^{AT}u(0)\). Go an additional time \(t\) to reach \(e^{At}(e^{AT}u(0))\). This solution at time \(t+T\) can also be written as . Conclusion: \(e^{At}\) times \(e^{AT}\) equals .
+**36.**: Write \(A=\left[\begin{smallmatrix}1&1\\ 0&0\end{smallmatrix}\right]\) in the form \(S\Lambda S^{-1}\). Find \(e^{At}\) from \(Se^{\Lambda t}S^{-1}\).
+**37.**: If \(A^{2}=A\), show that the infinite series produces \(e^{At}=I+(e^{t}-1)A\). For \(A=\left[\begin{smallmatrix}1&1\\ 0&0\end{smallmatrix}\right]\) in Problem 36, this gives \(e^{At}=\) .
+**38.**: Generally \(e^{A}e^{B}\) is different from \(e^{B}e^{A}\). They are both different from \(e^{A+B}\). Check this using Problems 36-37 and 34:
+
+\[A=\left[\begin{smallmatrix}1&1\\ 0&0\end{smallmatrix}\right]\qquad B=\left[\begin{smallmatrix}0&-1\\ 0&0\end{smallmatrix}\right]\qquad A+B=\left[\begin{smallmatrix}1&0\\ 0&0\end{smallmatrix}\right].\]
+**39.**: Write \(A=\left[\begin{smallmatrix}1&1\\ 0&3\end{smallmatrix}\right]\) as \(S\Lambda S^{-1}\). Multiply \(Se^{\Lambda t}S^{-1}\) to find the matrix exponential \(e^{At}\). Check \(e^{At}=I\) when \(t=0\).
+**40.**: Put \(A=\left[\begin{smallmatrix}1&3\\ 0&0\end{smallmatrix}\right]\) into the infinite series to find \(e^{At}\). First compute \(A^{2}\):
+
+\[e^{At}=\left[\begin{smallmatrix}1&0\\ 0&1\end{smallmatrix}\right]+\left[\begin{smallmatrix}t&3t\\ 0&0\end{smallmatrix}\right]+\frac{1}{2}\left[\begin{array}{array}{c}\\ \end{array}\right]+\cdots=\left[\begin{smallmatrix}e^{t}\\ 0\end{array}\right].\]
+**41.**: Give two reasons why the matrix exponential \(e^{At}\) is never singular:
+
+1. Write its inverse.
+2. Write its eigenvalues. If \(Ax=\lambda x\) then \(e^{At}x=\) .
+**42.**: Find a solution \(x(t)\), \(y(t)\) of the first system that gets large as \(t\to\infty\). To avoid this instability a scientist thought of exchanging the two equations!
+
+\[\begin{array}{ccccccccc}dx/dt&=&0x&-&4y&\text{ becomes }&dy/dt&=&-2x&+&2y\\ dy/dt&=&-2x&+&2y&\text{ }&dx/dt&=&0x&-&4y.\end{array}\]
+
+Now the matrix \(\left[\begin{smallmatrix}-2&2\\ 0&-4\end{smallmatrix}\right]\) is stable. It has \(\lambda<0\). Comment on this craziness.
+**43.**: From this general solution to \(du/dt=Au\), find the matrix \(A\):
+
+\[u(t)=c_{1}e^{2t}\left[\begin{matrix}2\\ 1\end{matrix}\right]+c_{2}e^{5t}\left[\begin{matrix}1\\ 1\end{matrix}\right].\]

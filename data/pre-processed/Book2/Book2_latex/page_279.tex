@@ -1,0 +1,23 @@
+
+
+### 13.3 Feature engineering
+
+In this section we discuss some methods used to find appropriate basis functions or feature mappings \(f_{1},\ldots,f_{p}\). We observed above (in SS13.1.2) that fitting a linear in the parameters model reduces to regression with new features which are the original features \(x\) mapped through the basis (or feature mapping) functions \(f_{1},\ldots,f_{p}\). Choosing the feature mapping functions is sometimes called _feature engineering_, since we are generating features to use in regression.
+
+For a given data set we may consider several, or even many, candidate choices of the basis functions. To choose among these candidate choices of basis functions, we use out-of-sample validation or cross-validation.
+
+Adding new features to get a richer model.In many cases the basis functions include the constant one, _i.e._, we have \(f_{1}(x)=1\). (This is equivalent to having the offset in the basic regression model.) It is also very common to include the original features as well, as in \(f_{i}(x)=x_{i-1}\), \(i=2,\ldots,n+1\). If we do this, we are effectively starting with the basic regression model; we can then add new features to get a richer model. In this case we have \(p>n\), so there are more mapped features than original features. (Whether or not it is a good idea to add the new features can be determined by out-of-sample validation or cross-validation.)
+
+Dimension reduction.In some cases, and especially when the number \(n\) of the original features is very large, the feature mappings are used to construct a smaller set of \(p<n\) features. In this case we can think of the feature mappings or basis functions as a _dimension reduction_ or _data aggregation_ procedure.
+
+#### Transforming features
+
+Standardizing features.Instead of using the original features directly, it is common to apply a scaling and offset to each original feature, say,
+
+\[f_{i}(x)=(x_{i}-b_{i})/a_{i},\quad i=2,\ldots,n+1,\]
+
+so that across the data set, the average value of \(f_{i}(x)\) is near zero, and the standard deviation is around one. (This is done by choosing \(b_{i}\) to be near the mean of the feature \(i\) values over the data set, and choosing \(a_{i}\) to be near the standard deviation of the values.) This is called _standardizing_ or _\(z\)-scoring_ the features. The standardized feature values are easily interpretable since they correspond to \(z\)-values; for example, \(f_{2}(x)=+3.3\) means that the value of original feature 2 is quite a bit above the typical value. The standardization of each original feature is typically the first step in feature engineering.
+
+Note that the constant feature \(f_{1}(x)=1\) is not standardized. (In fact, it cannot be standardized since its standard deviation across the data set is zero.)
+
+Winsorizing features.When the data include some very large values that are thought to be errors (say, in collecting the data), it is common to _clip_ or _win-sorize_ the data. This means that we set any data values with absolute value larger

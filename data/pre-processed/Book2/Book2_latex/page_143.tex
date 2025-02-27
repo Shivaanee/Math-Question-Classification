@@ -1,0 +1,17 @@
+graph can be described by its \(n\times m\)_incidence matrix_, defined as
+
+\[A_{ij}=\left\{\begin{array}{rl}1&\text{edge $j$ points to node $i$}\\ -1&\text{edge $j$ points from node $i$}\\ 0&\text{otherwise.}\end{array}\right.\]
+
+The incidence matrix is evidently sparse, since it has only two nonzero entries in each column (one with value \(1\) and other with value \(-1\)). The \(j\)th column is associated with the \(j\)th edge; the indices of its two nonzero entries give the nodes that the edge connects. The \(i\)th row of \(A\) corresponds to node \(i\); its nonzero entries tell us which edges connect to the node, and whether they point into or away from the node. The incidence matrix for the graph shown in figure 7.2 is
+
+\[A=\left[\begin{array}{rrrrr}-1&-1&0&1&0\\ 1&0&-1&0&0\\ 0&0&1&-1&-1\\ 0&1&0&0&1\end{array}\right].\]
+
+A directed graph can also be described by its adjacency matrix, described on page 112. The adjacency and incidence matrices for a directed graph are closely related, but not the same. The adjacency matrix does not explicitly label the edges \(j=1,\ldots,m\). There are also some small differences in the graphs that can be represented using incidence and adjacency matrices. For example, self edges (that connect from and to the same vertex) cannot be represented in an incidence matrix.
+
+#### Networks
+
+In many applications a graph is used to represent a _network_, through which some commodity or quantity such as electricity, water, heat, or vehicular traffic flows. The edges of the graph represent the _paths_ or _links_ over which the quantity can move or flow, in either direction. If \(x\) is an \(m\)-vector representing a flow in the network, we interpret \(x_{j}\) as the flow (rate) along the edge \(j\), with a positive value meaning the flow is in the direction of edge \(j\), and negative meaning the flow is in the opposite direction of edge \(j\). In a network, the direction of the edge or link does not specify the direction of flow; it only specifies which direction of flow we consider to be positive.
+
+Flow conservation.When \(x\) represents a flow in a network, the matrix-vector product \(y=Ax\) can be given a very simple interpretation. The \(n\)-vector \(y=Ax\) can be interpreted as the vector of net flows, from the edges, into the nodes: \(y_{i}\) is equal to the total of the flows that come in to node \(i\), minus the total of the flows that go out from node \(i\). The quantity \(y_{i}\) is sometimes called the _flow surplus_ at node \(i\).
+
+If \(Ax=0\), we say that _flow conservation_ occurs, since at each node, the total inflow matches the total out-flow. In this case the flow vector \(x\) is called a _circulation_. This could be used as a model of traffic flow (in a closed system), with the nodes 

@@ -1,0 +1,25 @@
+A rectangular matrix cannot have both existence and uniqueness. If \(m\) is different from \(n\), we cannot have \(r=m\) and \(r=n\).
+
+A square matrix is the opposite. If \(m=n\), we cannot have one property _without_ the other. A square matrix has a left-inverse if and only if it has a right-inverse. There is only one inverse, namely \(B=C=A^{-1}\). _Existence implies uniqueness and uniqueness implies existence, when the matrix is square_. The condition for invertibility is **full rank**: \(r=m=n\). Each of these conditions is a necessary and sufficient test:
+
+1. The columns span \(\mathbf{R}^{n}\), so \(Ax=b\) has at least one solution for every \(b\).
+2. The columns are independent, so \(Ax=0\) has only the solution \(x=0\).
+
+This list can be made much longer, especially if we look ahead to later chapters. Every condition is equivalent to every other, and ensures that \(A\) is invertible.
+
+1. The rows of \(A\) span \(\mathbf{R}^{n}\).
+2. The rows are linearly independent.
+3. Elimination can be completed: \(PA=LDU\), with all \(n\) pivots.
+4. The determinant of \(A\) is not zero.
+5. Zero is not an eigenvalue of \(A\).
+6. \(A^{\mathrm{T}}A\) is positive definite.
+
+Here is a typical application to polynomials \(P(t)\) of degree \(n-1\). The only such polynomial that vanishes at \(t_{1},\ldots,t_{n}\) is \(P(t)\equiv 0\). No other polynomial of degree \(n-1\) can have \(n\) roots. This is uniqueness, and it implies existence: Given any values \(b_{1},\ldots,b_{n}\), there _exists_ a polynomial of degree \(n-1\) interpolating these values: \(P(t_{i})=b_{i}\). The point is that we are dealing with a square matrix; the number \(n\) of coefficients in \(P(t)=x_{1}+x_{2}t+\cdots+x_{n}t^{n-1}\) matches the number of equations:
+
+\[\begin{array}{ccccc}\textbf{Interpolation}&\\ P(t_{i})=b_{i}&\\ \end{array}\qquad\begin{bmatrix}1&t_{1}&t_{1}^{2}&\cdots&t_{1}^{n-1}\\ 1&t_{2}&t_{2}^{2}&\cdots&t_{2}^{n-1}\\ \vdots&\vdots&\vdots&\vdots&\vdots\\ 1&t_{n}&t_{n}^{2}&\cdots&t_{n}^{n-1}\\ \end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\\ \vdots\\ x_{n}\\ \end{bmatrix}=\begin{bmatrix}b_{1}\\ b_{2}\\ \vdots\\ b_{n}\\ \end{bmatrix}.\]
+
+That _Vandermonde matrix_ is \(n\) by \(n\) and full rank. \(Ax=b\) always has a solution--a polynomial can be passed through any \(b_{i}\) at distinct points \(t_{i}\). Later we shall actually find the determinant of \(A\); it is not zero.
+
+### Matrices of Rank 1
+
+Finally comes the easiest case, when the rank is as _small_ as possible (except for the zero matrix with rank 0), One basic theme of mathematics is, given something complicated, 

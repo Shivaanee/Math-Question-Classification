@@ -1,0 +1,25 @@
+a number \(e^{i\theta}\) on the unit circle: \(z=re^{i\theta}\). That expresses \(z\) in "polar coordinates." If we think of \(z\) as a 1 by 1 matrix, \(r\) corresponds to a _positive definite matrix_ and \(e^{i\theta}\) corresponds to an _orthogonal matrix_. More exactly, since \(e^{i\theta}\) is complex and satisfies \(e^{-i\theta}e^{i\theta}=1\), it forms a 1 by 1 _unitary matrix_: \(U^{\mathrm{H}}U=I\). We take the complex conjugate as well as the transpose, for \(U^{\mathrm{H}}\).
+
+The SVD extends this "polar factorization" to matrices of any size:
+
+Every real square matrix can be factored into \(A=QS\), where \(Q\) is _orthogonal_ and \(S\) is _symmetric positive semidefinite_. If \(A\) is invertible then \(S\) is positive definite.
+
+For proof we just insert \(V^{\mathrm{T}}V=I\) into the middle of the SVD:
+
+\[A=U\Sigma V^{\mathrm{T}}=(UV^{\mathrm{T}})(V\Sigma V^{\mathrm{T}}).\] (4)
+
+The factor \(S=V\Sigma V^{\mathrm{T}}\) is symmetric and semidefinite (because \(\Sigma\) is). The factor \(Q=UV^{\mathrm{T}}\) is an orthogonal matrix (because \(Q^{\mathrm{T}}Q=VU^{\mathrm{T}}UV^{\mathrm{T}}=I\)). In the complex case, \(S\) becomes Hermitian instead of symmetric and \(Q\) becomes unitary instead of orthogonal. In the invertible case \(\Sigma\) is definite and so is \(S\).
+
+**Example 3**.: Polar decomposition:
+
+\[A=QS\qquad\begin{bmatrix}1&-2\\ 3&-1\end{bmatrix}=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}\begin{bmatrix}3&-1\\ -1&2\end{bmatrix}.\]
+
+**Example 4**.: Reverse polar decomposition:
+
+\[A=S^{\prime}Q\qquad\begin{bmatrix}1&-2\\ 3&-1\end{bmatrix}=\begin{bmatrix}2&1\\ 1&3\end{bmatrix}\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}.\]
+
+The exercises show how, in the reverse order. \(S\) changes but \(Q\) remains the same. Both \(S\) and \(S^{\prime}\) are symmetric positive definite because this \(A\) is invertible.
+
+Application of \(A=Qs\):A major use of the polar decomposition is in continuum mechanics (and recently in robotics). In any deformation, it is important to separate stretching from rotation, and that is exactly what \(QS\) achieves. The orthogonal matrix \(Q\) is a rotation, and possibly a reflection. The material feels no strain. The symmetric matrix \(S\) has eigenvalues \(\sigma_{1},\ldots,\sigma_{r}\), which are the stretching factors (or compression factors). The diagonalization that displays those eigenvalues is the natural choice of axes--called _principal axes_: as in the ellipses of Section 6.2. It is \(S\) that requires work on the material, and stores up elastic energy.
+
+We note that \(S^{2}\) is \(A^{\mathrm{T}}A\), which is symmetric positive definite when \(A\) is invertible. \(S\) is the symmetric positive definite square root of \(A^{\mathrm{T}}A\), and \(Q\) is \(AS^{-1}\). In fact, \(A\)_could be rectangular, as long as \(A^{\mathrm{T}}A\) is positive definite_. (That is the condition we keep meeting, 

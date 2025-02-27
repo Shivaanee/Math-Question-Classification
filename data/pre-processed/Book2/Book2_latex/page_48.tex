@@ -1,0 +1,24 @@
+
+
+## Chapter 2 Linear functions
+
+### 2.1 Linear functions
+
+Linear functions are a special case of linear functions, and are usually called the _linear functions_, which are functions of the form
+
+\[\hat{y}=x^{T}\beta+v,\] (2.1)
+
+where \(\beta\) is an \(n\)-vector and \(v\) is a scalar, is called a _regression model_. In this context, the entries of \(x\) are called the _regressors_, and \(\hat{y}\) is called the _prediction_, since the regression model is typically an approximation or prediction of some true value \(y\), which is called the _dependent variable_, _outcome_, or _label_.
+
+The vector \(\beta\) is called the _weight vector_ or _coefficient vector_, and the scalar \(v\) is called the _offset_ or _intercept_ in the regression model. Together, \(\beta\) and \(v\) are called the _parameters_ in the regression model. (We will see in chapter 13 how the parameters in a regression model can be estimated or guessed, based on some past or known observations of the feature vector \(x\) and the associated outcome \(y\).) The symbol \(\hat{y}\) is used in the regression model to emphasize that it is an _estimate_ or _prediction_ of some outcome \(y\).
+
+The entries in the weight vector have a simple interpretation: \(\beta_{i}\) is the amount by which \(\hat{y}\) increases (if \(\beta_{i}>0\)) when feature \(i\) increases by one (with all other features the same). If \(\beta_{i}\) is small, the prediction \(\hat{y}\) doesn't depend too strongly on feature \(i\). The offset \(v\) is the value of \(\hat{y}\) when all features have the value \(0\).
+
+The regression model is very interpretable when all of the features are Boolean, _i.e._, have values that are either \(0\) or \(1\), which occurs when the features represent which of two outcomes holds. As a simple example consider a regression model for the lifespan of a person in some group, with \(x_{1}=0\) if the person is female (\(x_{1}=1\) if male), \(x_{2}=1\) if the person has type II diabetes, and \(x_{3}=1\) if the person smokes cigarettes. In this case, \(v\) is the regression model estimate for the lifespan of a female nondiabetic nonsmoker; \(\beta_{1}\) is the increase in estimated lifespan if the person is male, \(\beta_{2}\) is the increase in estimated lifespan if the person is diabetic, and \(\beta_{3}\) is the increase in estimated lifespan if the person smokes cigarettes. (In a model that fits real data, all three of these coefficients would be negative, meaning that they decrease the regression model estimate of lifespan.)
+
+Simplified regression model notation.Vector stacking can be used to lump the weights and offset in the regression model (2.7) into a single parameter vector, which simplifies the regression model notation a bit. We create a new regressor vector \(\tilde{x}\), with \(n+1\) entries, as \(\tilde{x}=(1,x)\). We can think of \(\tilde{x}\) as a new feature vector, consisting of all \(n\) original features, and one new feature added (\(\tilde{x}_{1}\)) at the beginning, which always has the value one. We define the parameter vector \(\tilde{\beta}=(v,\beta)\), so the regression model (2.7) has the simple inner product form
+
+\[\hat{y}=x^{T}\beta+v=\left[\begin{array}{c}1\\ x\end{array}\right]^{T}\left[\begin{array}{c}v\\ \beta\end{array}\right]=\tilde{x}^{T}\tilde{\beta}.\] (2.8)
+
+Often we omit the tildes, and simply write this as \(\hat{y}=x^{T}\beta\), where we assume that the first feature in \(x\) is the constant \(1\). A feature that always has the value \(1\) is not particularly informative or interesting, but it does simplify the notation in a regression model.
+

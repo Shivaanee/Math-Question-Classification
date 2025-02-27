@@ -1,0 +1,16 @@
+
+
+#### Handwritten digit classification
+
+We apply nonlinear least squares classification on the MNIST set of handwritten digits used in chapter 14. We first consider the Boolean problem of recognizing the digit zero. We use linear features, _i.e._,
+
+\[\tilde{f}(x)=x^{T}\beta+v,\]
+
+where \(x\) is the 493-vector of pixel intensities. To determine the parameters \(v\) and \(\beta\) we solve the nonlinear least squares problem
+
+\[\text{minimize }\sum_{i=1}^{N}(\phi((x^{(i)})^{T}\beta+v)-y^{(i)})^{2}+ \lambda\|\beta\|^{2},\] (18.18)
+
+where \(\phi\) is the sigmoid function (18.16) and \(\lambda\) is a positive regularization parameter. (This \(\lambda\) is the regularization parameter in the classification problem; it has no relation to the trust parameter \(\lambda^{(k)}\) in the iterates of the Levenberg-Marquardt algorithm.)
+
+Figure 18.17 shows the classification error on the training and test sets as a function of the regularization parameter \(\lambda\). For \(\lambda=100\), the classification errors on the training and test sets are about 0.7%. This is less than half the 1.6% error of the Boolean least squares classifier that used the same features, discussed in chapter 14. This improvement in performance, by more than a factor of two, comes from minimizing an objective that is closer to what we want (_i.e._, the number of prediction errors on the training set) than the surrogate linear least squares objective. The confusion matrices for the training set and test set are given in table 18.1. Figure 18.18 shows the distribution of the values of \(\tilde{f}(x^{(i)})\) for the two classes of the data set.
+

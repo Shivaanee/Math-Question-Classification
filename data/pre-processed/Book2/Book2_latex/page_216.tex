@@ -1,0 +1,21 @@
+Negative matrix powers.We can now give a meaning to matrix powers with negative integer exponents. Suppose \(A\) is a square invertible matrix and \(k\) is a positive integer. Then by repeatedly applying property (11.2), we get
+
+\[(A^{k})^{-1}=(A^{-1})^{k}.\]
+
+We denote this matrix as \(A^{-k}\). For example, if \(A\) is square and invertible, then \(A^{-2}=A^{-1}A^{-1}=(AA)^{-1}\). With \(A^{0}\) defined as \(A^{0}=I\), the identity \(A^{k+l}=A^{k}A^{l}\) holds for all integers \(k\) and \(l\).
+
+Triangular matrix.A triangular matrix with nonzero diagonal elements is invertible. We first discuss this for a lower triangular matrix. Let \(L\) be \(n\times n\) and lower triangular with nonzero diagonal elements. We show that the columns are linearly independent, _i.e._, \(Lx=0\) is only possible if \(x=0\). Expanding the matrix-vector product, we can write \(Lx=0\) as
+
+\[L_{11}x_{1} = 0\] \[L_{21}x_{1}+L_{22}x_{2} = 0\] \[L_{31}x_{1}+L_{32}x_{2}+L_{33}x_{3} = 0\] \[\vdots\] \[L_{n1}x_{1}+L_{n2}x_{2}+\cdots+L_{n,n-1}x_{n-1}+L_{nn}x_{n} = 0.\]
+
+Since \(L_{11}\neq 0\), the first equation implies \(x_{1}=0\). Using \(x_{1}=0\), the second equation reduces to \(L_{22}x_{2}=0\). Since \(L_{22}\neq 0\), we conclude that \(x_{2}=0\). Using \(x_{1}=x_{2}=0\), the third equation now reduces to \(L_{33}x_{3}=0\), and since \(L_{33}\) is assumed to be nonzero, we have \(x_{3}=0\). Continuing this argument, we find that all entries of \(x\) are zero, and this shows that the columns of \(L\) are linearly independent. It follows that \(L\) is invertible.
+
+A similar argument can be followed to show that an upper triangular matrix with nonzero diagonal elements is invertible. One can also simply note that if \(R\) is upper triangular, then \(L=R^{T}\) is lower triangular with the same diagonal, and use the formula \((L^{T})^{-1}=(L^{-1})^{T}\) for the inverse of the transpose.
+
+Inverse via QR factorization.The QR factorization gives a simple expression for the inverse of an invertible matrix. If \(A\) is square and invertible, its columns are linearly independent, so it has a QR factorization \(A=QR\). The matrix \(Q\) is orthogonal and \(R\) is upper triangular with positive diagonal entries. Hence \(Q\) and \(R\) are invertible, and the formula for the inverse product gives
+
+\[A^{-1}=(QR)^{-1}=R^{-1}Q^{-1}=R^{-1}Q^{T}.\] (11.3)
+
+In the following section we give an algorithm for computing \(R^{-1}\), or more directly, the product \(R^{-1}Q^{T}\). This gives us a method to compute the matrix inverse.
+
+ 

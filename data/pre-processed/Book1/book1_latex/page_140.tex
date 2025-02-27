@@ -1,0 +1,21 @@
+
+
+**Nullspace of \(A\):** Is there a combination of the columns that gives \(Ax=0\)? Normally the answer comes from elimination, but here it comes at a glance. _The columns add up to the zero column_. The nullspace contains \(x=(1,1,1,1)\), since \(Ax=0\). The equation \(Ax=b\) does not have a unique solution (if it has a solution at all). Any "constant vector" \(x=(c,c,c,c)\) can be added to any particular solution of \(Ax=b\). The complete solution has this arbitrary constant \(c\) (like the \(+C\) when we integrate in calculus).
+
+This has a meaning if we think of \(x_{1}\), \(x_{2}\), \(x_{3}\), \(x_{4}\) as the _potentials_ (the voltages) _at the nodes_. The five components of \(Ax\) give the _differences_ in potential across the five edges. The difference across edge \(1\) is \(x_{2}-x_{1}\), from the \(\pm 1\) in the first row.
+
+The equation \(Ax=b\) asks: Given the differences \(b_{1},\ldots,b_{5}\), find the actual potentials \(x_{1},\ldots,x_{4}\). But that is impossible to do! We can raise or lower all the potentials by the same constant \(c\), and the differences will not change--confirming that \(x=(c,c,c,c)\) is in the nullspace of \(A\). Those are the only vectors in the nullspace, since \(Ax=0\) means equal potentials across every edge. The nullspace of this incidence matrix is one-dimensional. _The rank is \(4-1=3\)_.
+
+Column Space:For which differences \(b_{1},\ldots,b_{5}\) can we solve \(Ax=b\)? To find a direct test, look back at the matrix. Row 1 plus row 3 equals row 2. On the right-hand side we need \(b_{1}+b_{3}=b_{2}\), or no solution is possible. Similarly, row 3 plus row 5 is row 4. The right-hand side must satisfy \(b_{3}+b_{5}=b_{4}\), for elimination to arrive at \(0=0\). To repeat, if \(b\) is in the column space, then
+
+\[b_{1}-b_{2}+b_{3}=0\qquad\text{and}\qquad b_{3}-b_{4}+b_{5}=0.\] (1)
+
+Continuing the search, we also find that rows \(1+4\) equal rows \(2+5\). But this is nothing new; subtracting the equations in (1) already produces \(b_{1}+b_{4}=b_{2}+b_{5}\). There are _two conditions_ on the five components, because the column space has dimension \(5-2\). Those conditions would come from elimination, but here they have a meaning on the graph.
+
+_Loops:_ Kirchhoff's Voltage Law says that potential differences around a loop must add to zero, Around the upper loop in Figure 2.6, the differences satisfy \((x_{2}-x_{1})+(x_{3}-x_{2})=(x_{3}-x_{1})\). Those differences are \(b_{1}+b_{3}=b_{2}\). To circle the lower loop and arrive back at the same potential, we need \(b_{3}+b_{5}=b_{4}\).
+
+**2R** The test for \(b\) to be in the column space is _Kirchhoff's Voltage Law_:
+
+_The sum of potential differences around a loop must be zero._
+
+**Left Nullspace:** To solve \(A^{\mathrm{T}}y=0\), we find its meaning on the graph. The vector \(y\) has five components, one for each edge. These numbers represent **currents** flowing along the five edges. Since \(A^{\mathrm{T}}\) is 4 by 5, the equations \(A^{\mathrm{T}}y=0\) give four conditions on those

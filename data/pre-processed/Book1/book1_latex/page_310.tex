@@ -1,0 +1,25 @@
+starting conditions can lead to "superdecay" at the rate \(e^{-3t}\), In fact, those conditions must come from the eigenvector \((1,-1)\). If the experiment admits only nonnegative concentrations, superdecay is impossible and the limiting rate must be \(e^{-t}\). The solution that decays at this slower rate corresponds to the eigenvector \((1,1)\). Therefore the two concentrations will become nearly equal (typical for diffusion) as \(t\to\infty\).
+
+One more comment on this example: It is a discrete approximation, with only two unknowns, to the continuous diffusion described by this partial differential equation:
+
+\[\textbf{Heat equation}\qquad\frac{\partial u}{\partial t}=\frac{\partial^{2}u }{\partial x^{2}}.\]
+
+That heat equation is approached by dividing the pipe into smaller and smaller segments, of length \(1/N\). The discrete system with \(N\) unknowns is governed by
+
+\[\frac{d}{dt}\begin{bmatrix}u_{1}\\ \cdot\\ \cdot\\ u_{N}\end{bmatrix}=\begin{bmatrix}-2&1&&\\ 1&-2&\cdot&\\ &\cdot&\cdot&1\\ &&1&-2\end{bmatrix}\begin{bmatrix}u_{1}\\ \cdot\\ \cdot\\ u_{N}\end{bmatrix}=Au.\] (12)
+
+This is the finite difference matrix with the \(1\), \(-2\), \(1\) pattern. The right side \(Au\) approaches the second derivative \(d^{2}u/dx^{2}\), after a scaling factor \(N^{2}\) comes from the flow problem. In the limit as \(N\to\infty\), we reach the _heat equation_\(\partial u/\partial t=\partial^{2}u/\partial x^{2}\). Its solutions are still combinations of pure exponentials, but now there are infinitely many. Instead of eigenvectors from \(Ax=\lambda x\), we have _eigenfunctions_ from \(d^{2}u/dx^{2}=\lambda u\). Those are \(u(x)=\sin n\pi x\) with \(\lambda=-n^{2}\pi^{2}\). Then the solution to the heat equation is
+
+\[u(t)=\sum_{n=1}^{\infty}c_{n}e^{-n^{2}\pi^{2}t}\sin n\pi x.\]
+
+The constants \(c_{n}\) are determined by the initial condition. The novelty is that the eigenvectors are functions \(u(x)\), because the problem is continuous and not discrete.
+
+### stability of differential equations
+
+Just as for difference equations. the eigenvalues decide how \(u(t)\) behaves as \(t\to\infty\). As long as \(A\) can be diagonalized, there will be \(n\) pure exponential solutions to the differential equation, and any specific solution \(u(t)\) is some combination
+
+\[u(t)=Se^{\Lambda t}S^{-1}u_{0}=c_{1}e^{gl_{1}t}x_{1}+\cdots+c_{n}e^{gl_{n}t}x_ {n}.\]
+
+Stability is governed by those factors \(e^{gl_{i}t}\). If they all approach zero, then \(u(t)\) approaches zero: if they all stay bounded, then \(u(t)\) stays bounded; if one of them blows up, then except for very special starting conditions the solution will blow up. Furthermore, the size of \(e^{\lambda t}\) depends only on the real part of \(\lambda\). _It is only the real parts of the eigenvalues that govern stability_: If \(\lambda=a+ib\), then
+
+\[e^{\lambda t}=e^{at}e^{ibt}=e^{at}(\cos bt+i\sin bt)\quad\text{and the magnitude is}\quad|e^{\lambda t}|=e^{at}.\] 

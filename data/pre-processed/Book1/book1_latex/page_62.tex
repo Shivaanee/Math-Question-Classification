@@ -1,0 +1,27 @@
+\(AB\) which is the key formula in matrix computations. Ordinary numbers are the same: \((a+b)^{-1}\) is hard to simplify, while \(1/ab\) splits into \(1/a\) times \(1/b\). But for matrices _the order of multiplication must be correct_--if \(ABx=y\) then \(Bx=A^{-1}y\) and \(x=B^{-1}A^{-1}y\). **The inverses come in reverse order**.
+
+**1L** A product \(AB\) of invertible matrices is inverted by \(B^{-1}A^{-1}\):
+
+\[\textbf{Inverse of}\ AB\qquad(AB)^{-1}=B^{-1}A^{-1}.\] (4)
+
+Proof.: To show that \(B^{-1}A^{-1}\) is the inverse of \(AB\), we multiply them and use the associative law to remove parentheses. Notice how \(B\) sits next to \(B^{-1}\):
+
+\[(AB)(B^{-1}A^{-1})=ABB^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I\]
+
+\[(B^{-1}A^{-1})(AB)=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I.\]
+
+A similar rule holds with three or more matrices:
+
+\[\textbf{Inverse of}\ ABC\qquad(ABC)^{-1}=C^{-1}B^{-1}A^{-1}.\]
+
+We saw this change of order when the elimination matrices \(E\), \(F\), \(G\) were inverted to come back from \(U\) to \(A\). In the forward direction, \(GFEA\) was \(U\). In the backward direction, \(L=E^{-1}F^{-1}G^{-1}\) was the product of the inverses. _Since \(G\) came last, \(G^{-1}\) comes first_. Please check that \(A^{-1}\) would be \(U^{-1}GFE\).
+
+### The Calculation of \(A^{-1}\): The Gauss-Jordan Method
+
+Consider the equation \(AA^{-1}=I\). If it is taken _a column at a time_, that equation determines each column of \(A^{-1}\). The first column of \(A^{-1}\) is multiplied by \(A\), to yield the first column of the identity: \(Ax_{1}=e_{1}\). Similarly \(Ax_{2}=e_{2}\) and \(Ax_{3}=e_{3}\) the \(e\)'s are the columns of \(I\). In a 3 by 3 example, A times \(A^{-1}\) is \(I\):
+
+\[Ax_{i}=e_{i}\qquad\begin{bmatrix}2&1&1\\ 4&-6&0\\ -2&7&2\end{bmatrix}\begin{bmatrix}x_{1}&x_{2}&x_{3}\end{bmatrix}=\begin{bmatrix} e_{1}&e_{2}&e_{3}\end{bmatrix}=\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&1\end{bmatrix}.\] (5)
+
+Thus we have three systems of equations (or \(n\) systems). They all have the same coefficient matrix \(A\). The right-hand sides \(e_{1}\), \(e_{2}\), \(e_{3}\) are different, but elimination is possible _on all systems simultaneously_. This is the _Gauss-Jordan method_. Instead of stopping at \(U\) and switching to back-substitution, it continues by subtracting multiples of a row _from the rows above_. This produces zeros above the diagonal as well as below. When it reaches the identity matrix we have found \(A^{-1}\).
+
+The example keeps all three columns \(e_{1}\), \(e_{2}\), \(e_{3}\), and operates on rows of length six: 

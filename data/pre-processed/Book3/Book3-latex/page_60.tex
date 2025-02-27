@@ -1,0 +1,31 @@
+Similarly, the \(i\)th coordinate of \((c\alpha)\) is \(cx_{i}\). One should also note that every \(n\)-tuple \((x_{1},\,.\,.\,.\,,\,x_{n})\) in \(F^{n}\) is the \(n\)-tuple of coordinates of some vector in \(V\), namely the vector
+
+\[\sum\limits_{i\,=\,1}^{n}\,x_{i}\alpha_{i}.\]
+
+To summarize, each ordered basis for \(V\) determines a one-one correspondence
+
+\[\alpha\,\rightarrow\,(x_{1},\,.\,.\,.\,,\,x_{n})\]
+
+between the set of all vectors in \(V\) and the set of all \(n\)-tuples in \(F^{n}\). This correspondence has the property that the correspondent of \((\alpha+\beta)\) is the sum in \(F^{n}\) of the correspondents of \(\alpha\) and \(\beta\), and that the correspondent of \((c\alpha)\) is the product in \(F^{n}\) of the scalar \(c\) and the correspondent of \(\alpha\).
+
+One might wonder at this point why we do not simply select some ordered basis for \(V\) and describe each vector in \(V\) by its corresponding \(n\)-tuple of coordinates, since we would then have the convenience of operating only with \(n\)-tuples. This would defeat our purpose, for two reasons. First, as our axiomatic definition of vector space indicates, we are attempting to learn to reason with vector spaces as abstract algebraic systems. Second, even in those situations in which we use coordinates, the significant results follow from our ability to change the coordinate system, i.e., to change the ordered basis.
+
+Frequently, it will be more convenient for us to use the **coordinate matrix of \(\alpha\) relative to the ordered basis \(\mathbb{G}\)**:
+
+\[X=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}\]
+
+rather than the \(n\)-tuple \((x_{1},\,.\,.\,.\,,\,x_{n})\) of coordinates. To indicate the dependence of this coordinate matrix on the basis, we shall use the symbol
+
+\[[\alpha]_{\mathbb{G}}\]
+
+for the coordinate matrix of the vector \(\alpha\) relative to the ordered basis \(\mathbb{G}\). This notation will be particularly useful as we now proceed to describe what happens to the coordinates of a vector \(\alpha\) as we change from one ordered basis to another.
+
+Suppose then that \(V\) is \(n\)-dimensional and that
+
+\[\mathbb{G}\,=\,\{\alpha_{1},\,.\,.\,,\,\alpha_{n}\}\quad\text{and}\quad \mathbb{G}^{\prime}\,=\,\{\alpha_{1}^{\prime},\,.\,.\,.\,,\,\alpha_{n}^{ \prime}\}\]
+
+are two ordered bases for \(V\). There are unique scalars \(P_{ij}\) such that
+
+\[\alpha_{j}^{\prime}\,=\,\sum\limits_{i\,=\,1}^{n}\,P_{ij}\alpha_{ij}\qquad 1 \leq j\leq n.\] (2-13)
+
+Let \(x_{1}^{\prime},\,.\,.\,.\,,\,x_{n}^{\prime}\) be the coordinates of a given vector \(\alpha\) in the ordered basis \(\mathbb{G}^{\prime}\). Then 

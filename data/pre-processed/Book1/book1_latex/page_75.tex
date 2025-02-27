@@ -1,0 +1,31 @@
+65
+(a) Find the total currents $A^{\mathrm{T}} y$ out of the three cities.
+(b) Verify that $(A x)^{\mathrm{T}} y$ agrees with $x^{\mathrm{T}}\left(A^{\mathrm{T}} y\right)$ —six terms in both.
+62. Producing $x_1$ trucks and $x_2$ planes requires $x_1+50 x_2$ tons of steel, $40 x_1+1000 x_2$ pounds of rubber, and $2 x_1+50 x_2$ months of labor. If the unit costs $y_1, y_2, y_3$ are $\$ 700$ per ton, $\$ 3$ per pound, and $\$ 3000$ per month, what are the values of one truck and one plane? Those are the components of $A^{\mathrm{T}} y$.
+63. $A x$ gives the amounts of steel, rubber, and labor to produce $x$ in Problem 62. Find $A$. Then $(A x)^{\mathrm{T}} y$ is the $\qquad$ of inputs while $x^{\mathrm{T}}\left(A^{\mathrm{T}} y\right)$ is the value of $\qquad$ .
+64. Here is a new factorization of $A$ into triangular times symmetric:
+$$
+\text { Start from } A=L D U \text {. Then } A \text { equals } L\left(U^{\mathrm{T}}\right)^{-1} \text { times } U^{\mathrm{T}} D U \text {. }
+$$
+
+Why is $L\left(U^{\mathrm{T}}\right)^{-1}$ triangular? Its diagonal is all 1s. Why is $U^{\mathrm{T}} D U$ symmetric?
+65. A group of matrices includes $A B$ and $A^{-1}$ if it includes $A$ and $B$. "Products and inverses stay in the group." Which of these sets are groups? Lower triangularmatrices $L$ with is on the diagonal, symmetric matrices $S$, positive matrices $M$, diagonal invertible matrices $D$, permutation matrices $P$. Invent two more matrix groups.
+66. If every row of a 4 by 4 matrix contains the numbers $0,1,2,3$ in some order, can the matrix be symmetric? Can it be invertible?
+67. Prove that no reordering of rows and reordering of columns can transpose a typical matrix.
+68. A square northwest matrix $B$ is zero in the southeast corner, below the antidiagonal that connects $(1, n)$ to $(n, 1)$. Will $B^{\mathrm{T}}$ and $B^2$ be northwest matrices? Will $B^{-1}$ be northwest or southeast? What is the shape of $B C=$ northwest times southeast? You are allowed to combine permutations with the usual $L$ and $U$ (southwest and northeast).
+69. Compare tic; $\operatorname{inv}(\mathrm{A})$; toc for $\mathrm{A}=\operatorname{rand}(500)$ and $\mathrm{A}=\operatorname{rand}(1000)$. The $n^3$ count says that computing time (measured by tic; toc) should multiply by 8 when $n$ is doubled. Do you expect these random $A$ to be invertible?
+70. $I=\operatorname{eye}(1000) ; A=\operatorname{rand}(1000) ; B=\operatorname{triu}(\mathrm{A})$; produces a random triangular matrix $B$. Compare the times for $\operatorname{inv}(B)$ and $B \backslash I$. Backslash is engineered to use the zeros in $B$, while inv uses the zeros in $I$ when reducing $[B I]$ by Gauss-Jordan. (Compare also with $\operatorname{inv}(A)$ and $A \backslash I$ for the full matrix $A$.)
+71. Show that $L^{-1}$ has entries $j / i$ for $i \leq j$ (the $-1,2,-1$ matrix has this $L$ ):
+$$
+L=\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+-\frac{1}{2} & 1 & 0 & 0 \\
+0 & -\frac{2}{3} & 1 & 0 \\
+0 & 0 & -\frac{3}{4} & 1
+\end{array}\right] \quad \text { and } \quad L^{-1}=\left[\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+\frac{1}{2} & 1 & 0 & 0 \\
+\frac{1}{3} & \frac{2}{3} & 1 & 0 \\
+\frac{1}{4} & \frac{2}{4} & \frac{3}{4} & 1
+\end{array}\right] \text {. }
+$$

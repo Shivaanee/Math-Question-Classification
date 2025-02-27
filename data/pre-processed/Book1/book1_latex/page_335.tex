@@ -1,0 +1,23 @@
+
+
+**38.**: If \(v_{1},\ldots,v_{n}\) is an orthonormal basis for \({\bf C}^{n}\), the matrix with those columns is a \(\underline{\rule{0.0pt}{12.0pt}}\) matrix. Show that any vector \(z\) equals \((v_{1}^{\rm H}z)v_{1}+\cdots+(v_{n}^{\rm H}z)v_{n}\).
+**39.**: The functions \(e^{-ix}\) and \(e^{-ix}\) are orthogonal on the interval \(0\leq x\leq 2\pi\) because their _complex_ inner product is \(\int_{0}^{2\pi}\underline{\rule{0.0pt}{12.0pt}}=0\).
+**40.**: The vectors \(v=(1,i,1)\), \(w=(i,1,0)\) and \(z=\underline{\rule{0.0pt}{12.0pt}}\) are an orthogonal basis for \(\underline{\rule{0.0pt}{12.0pt}}\).
+**41.**: If \(A=R+iS\) is a Hermitian matrix, are the real matrices \(R\) and \(S\) symmetric?
+**42.**: The (complex) dimension of \({\bf C}^{n}\) is \(\underline{\rule{0.0pt}{12.0pt}}\). Find a nonreal basis for \({\bf C}^{n}\).
+**43.**: Describe all 1 by 1 matrices that are Hermitian and also unitary. Do the same for 2 by 2 matrices.
+**44.**: How are the eigenvalues of \(A^{\rm H}\) (square matrix) related to the eigenvalues of \(A\)?
+**45.**: If \(u^{\rm H}u=1\), show that \(I-2uu^{\rm H}\) is Hermitian and also unitary. The rank-1 matrix \(uu^{\rm H}\) is the projection onto what line in \({\bf C}^{n}\)?
+**46.**: If \(A+iB\) is a unitary matrix (\(A\) and \(B\) are real), show that \(Q=\left[\begin{smallmatrix}A&-B\\ B&A\end{smallmatrix}\right]\) is an orthogonal matrix.
+**47.**: If \(A+iB\) is a Hermitian matrix (\(A\) and \(B\) are real), show that \(\left[\begin{smallmatrix}A&-B\\ B&A\end{smallmatrix}\right]\) is symmetric.
+**48.**: Prove that the inverse of a Hermitian matrix is again a Hermitian matrix.
+**49.**: Diagonalize this matrix by constructing its eigenvalue matrix \(\Lambda\) and its eigenvector matrix \(S\):
+
+\[A=\left[\begin{matrix}2&1-i\\ 1+i&3\end{matrix}\right]=A^{\rm H}.\]
+**50.**: A matrix with orthonormal eigenvectors has the form \(A=U\Lambda U^{-1}=U\Lambda U^{\rm H}\). _Prove that \(AA^{\rm H}=A^{\rm H}A\)._ These are exactly the _normal matrices_.
+
+### 5.6 Similarity Transformations
+
+Virtually every step in this chapter has involved the combination \(S^{-1}AS\). The eigenvectors of \(A\) went into the columns of \(S\), and that made \(S^{-1}AS\) a diagonal matrix (called \(\Lambda\)). When \(A\) was symmetric, we wrote \(Q\) instead of \(S\), choosing the eigenvectors to be orthonormal. In the complex case, when \(A\) is Hermitian we write \(U\)--it is still the matrix of eigenvectors. Now we look at all combinations \(M^{-1}AM\)--_formed with any invertible \(M\) on the right and its inverse on the left_. The invertible eigenvector matrix \(S\) may fail to exist (the defective case), or we may not know it, or we may not want to use it.
+
+First a new word: _The matrices \(A\) and \(M^{-1}AM\) are "similar"._ Going from one to the other is a _similarity transformation_. It is the natural step for differential equations

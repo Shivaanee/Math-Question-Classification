@@ -1,0 +1,27 @@
+
+
+#### Validation.
+
+To test our least squares classification method, we apply 5-fold cross-validation. We randomly divide the data set into 5 folds of 30 examples (10 for each class). The results are shown in table 14.4. The test data sets contain only 30 examples, so a single prediction error changes the test error rate significantly (_i.e._, by 3.3%). This explains what would seem to be large variation seen in the test set error rates. We might guess that the classifier will perform on new unseen data with an error rate in the 7-10% range, but our test sets are not large enough to predict future performance more accurately than this. (This is an example of the limitation of cross-validation when the data set is small; see the discussion on page 268.)
+
+#### Handwritten digit classification
+
+We now consider a much larger example, the MNIST data set described in SS4.4.1. The (training) data set contains 60000 images of size 28 by 28. (A few samples are shown in figure 4.6.) The number of examples per digit varies between 5421 (for digit five) and 6742 (for digit one). The pixel intensities are scaled to lie between 0 and 1. We remove the pixels that are nonzero in fewer than 600 training examples. The remaining 493 pixels are shown as the white area in figure 14.1. There is also a separate test set containing 10000 images. Here we will consider classifiers to distinguish the digit zero from the other nine digits.
+
+In this first experiment, we use the 493 pixel intensities, plus an additional feature with value 1, as the \(n=494\) features in the least squares classifier (14.1).
+
+\begin{table}
+\begin{tabular}{c c c c c c c} \hline \hline  & \multicolumn{5}{c}{Model parameters} & \multicolumn{2}{c}{Error rate (\%)} \\ \cline{2-7} Fold & \(v\) & \(\beta_{1}\) & \(\beta_{2}\) & \(\beta_{3}\) & \(\beta_{4}\) & Train & Test \\ \hline
+1 & \(-2.45\) & \(0.0240\) & \(0.264\) & \(-0.00571\) & \(0.994\) & \(6.7\) & \(3.3\) \\
+2 & \(-2.38\) & \(-0.0657\) & \(0.398\) & \(-0.07593\) & \(1.251\) & \(5.8\) & \(10.0\) \\
+3 & \(-2.63\) & \(0.0340\) & \(0.326\) & \(-0.08869\) & \(1.189\) & \(7.5\) & \(3.3\) \\
+4 & \(-1.89\) & \(-0.3338\) & \(0.577\) & \(0.09902\) & \(1.151\) & \(6.7\) & \(16.7\) \\
+5 & \(-2.42\) & \(-0.1464\) & \(0.456\) & \(0.11200\) & \(0.944\) & \(8.3\) & \(3.3\) \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.4: Five-fold validation for the Boolean classifier of the Iris data set.
+
+\begin{table}
+\begin{tabular}{c c c c} \hline \hline  & \multicolumn{2}{c}{Prediction} \\ \cline{2-5} Outcome & \(\hat{y}=+1\) & \(\hat{y}=-1\) & Total \\ \hline \(y=+1\) & 46 & 4 & 50 \\ \(y=-1\) & 7 & 93 & 100 \\ All & 53 & 97 & 150 \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.3: Confusion matrix for a Boolean classifier of the Iris data set.
+

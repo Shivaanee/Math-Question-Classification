@@ -1,0 +1,17 @@
+Example.A simple 2-D example is shown in figures 15.8-15.10. Figure 15.8 shows the geometry of the \(m=4000\) lines and the square region, shown as the square. The square is divided into \(100\times 100\) pixels, so \(n=10000\).
+
+The density of the object we are imaging is shown in figure 15.9. In this object the density of each pixel is either 0 or 1 (shown as white or black, respectively). We reconstruct or estimate the object density from the 4000 (noisy) line integral measurements by solving the regularized least squares problem
+
+\[\text{minimize}\quad\|Ax-y\|^{2}+\lambda\|Dx\|^{2},\]
+
+where \(\|Dx\|^{2}\) is the sum of squares of the differences of the pixel values from their neighbors. Figure 15.10 shows the results for six different values of \(\lambda\). We can see that for small \(\lambda\) the reconstruction is relatively sharp, but suffers from noise. For large \(\lambda\) the noise in the reconstruction is smaller, but it is too smooth.
+
+### 15.4 Regularized data fitting
+
+We consider least squares data fitting, as described in chapter 13. In SS13.2 we considered the issue of over-fitting, where the model performs poorly on new, unseen data, which occurs when the model is too complicated for the given data set. The remedy is to keep the model simple, _e.g._, by fitting with a polynomial of not too high a degree.
+
+Regularization is another way to avoid over-fitting, different from simply choosing a model that is simple (_i.e._, does not have too many basis functions). Regularization is also called _de-tuning_, _shrinkage_, or _ridge regression_, for reasons we will explain below.
+
+Figure 15.7: A square region of interest divided into 25 pixels, and a line passing through it.
+
+ 

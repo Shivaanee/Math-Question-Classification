@@ -1,0 +1,25 @@
+is invertible. The matrix in (4-15) is called a **Vandermonde matrix**; it is an interesting exercise to show directly that such a matrix is invertible, when \(t_{0}\), \(t_{1}\), \(\ldots\), \(t_{n}\) are \(n\) + 1 distinct elements of \(F\).
+
+If \(f\) is any polynomial over \(F\) we shall, in our present discussion, denote by \(f^{\sim}\) the polynomial function from \(F\) into \(F\) taking each \(t\) in \(F\) into \(f(t)\). By definition (cf. Example 4, Chapter 2) every polynomial function arises in this way; however, it may happen that \(f^{\sim}\) = \(g^{\sim}\) for two polynomials \(f\) and \(g\) such that \(f\neq g\). Fortunately, as we shall see, this unpleasant situation only occurs in the case where \(F\) is a field having only a finite number of distinct elements. In order to describe in a precise way the relation between polynomials and polynomial functions, we need to define the product of two polynomial functions. If \(f\), \(g\) are polynomials over \(F\), the product of \(f^{\sim}\) and \(g^{\sim}\) is the function \(f^{\sim}g^{\sim}\) from \(F\) into \(F\) given by
+
+\[(f^{\sim}g^{\sim})(t)\ =\ f^{\sim}(t)g^{\sim}(t),\qquad t\ \mbox{in}\ F.\] (4-16)
+
+By part (ii) of Theorem 2, \((fg)(t)\ =\ f(t)g(t)\), and hence
+
+\[(fg)^{\sim}(t)\ =\ f^{\sim}(t)g^{\sim}(t)\]
+
+for each \(t\) in \(F\). Thus \(f^{\sim}g^{\sim}\ =\ (fg)^{\sim}\), and is a polynomial function. At this point it is a straightforward matter, which we leave to the reader, to verify that the vector space of polynomial functions over \(F\) becomes a linear algebra with identity over \(F\) if multiplication is defined by (4-16).
+
+**Definition**.: _Let \(F\) be a field and let \(\alpha\) and \(\alpha^{\sim}\) be linear algebras over \(F\). The algebras \(\alpha\) and \(\alpha^{\sim}\) are said to be_ **isomorphic** _if there is a one-to-one mapping \(\alpha\to\alpha^{\sim}\) of \(\alpha\) onto \(\alpha^{\sim}\) such that_
+
+\[\mbox{(a)}\qquad\qquad\qquad\qquad\qquad(\alpha\ +\ \mbox{d}\beta)^{ \sim}\ =\ \mbox{c}\alpha^{\sim}\ +\ \mbox{d}\beta^{\sim}\] \[\mbox{(b)}\qquad\qquad\qquad\qquad\qquad\qquad\qquad(\alpha\beta )^{\sim}\ =\ \alpha^{\sim}\beta^{\sim}\]
+
+_for all \(\alpha\), \(\beta\) in \(\alpha\) and all scalars \(c\), \(d\) in \(F\). The mapping \(\alpha\to\alpha^{\sim}\) is called an_ **isomorphism** _of \(\alpha\) onto \(\alpha^{\sim}\). An isomorphism of \(\alpha\) onto \(\alpha^{\sim}\) is thus a vector-space isomorphism of \(\alpha\) onto \(\alpha^{\sim}\) which has the additional property_ (b) _of 'preserving' products_.
+
+**Example 4**.: _Let \(V\) be an \(n\)-dimensional vector space over the field \(F\). By Theorem 13 of Chapter 3 and subsequent remarks, each ordered basis \(\otimes\) of \(V\) determines an isomorphism \(T\to[T]_{\otimes}\) of the algebra of linear operators on \(V\) onto the algebra of \(n\times n\) matrices over \(F\). Suppose now that \(U\) is a fixed linear operator on \(V\) and that we are given a polynomial_
+
+\[f=\sum_{i\ =0}^{n}c_{i}x^{i}\]
+
+_with coefficients \(c_{i}\) in \(F\). Then_
+
+\[f(U)\ =\ \sum_{i\ =0}^{n}c_{i}U^{i}\] 

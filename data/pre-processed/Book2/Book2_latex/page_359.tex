@@ -1,0 +1,17 @@
+
+
+**Algorithm 16.2** Constrained least squares via QR factorization
+
+In the unconstrained case (when \(p=0\)), step 1 reduces to computing the QR factorization of \(A\), steps 2 and 3 are not needed, and step 4 reduces to solving \(R\hat{x}=Q_{1}^{T}b\). This is the same as algorithm 12.1 for solving (unconstrained) least squares problems.
+
+We now give a complexity analysis. Step 1 involves the QR factorizations of an \((m+p)\times n\) and an \(n\times p\) matrix, which costs \(2(m+p)n^{2}+2np^{2}\) flops. Step 2 requires \(p^{2}\) flops. In step 3, we first evaluate \(Q_{1}^{T}b\) (\(2mn\) flops), multiply the result by \(\tilde{Q}^{T}\) (\(2pn\) flops), and then solve for \(w\) using forward substitution (\(p^{2}\) flops). Step 4 requires \(2mn+2pn\) flops to form the right-hand side, and \(n^{2}\) flops to compute \(\hat{x}\) via back substitution. The costs of steps 2, 3, and 4 are quadratic in the dimensions, and so are negligible compared to the cost of step 1, so our final complexity is
+
+\[2(m+p)n^{2}+2np^{2}\]
+
+flops. The assumption (16.5) implies the inequalities
+
+\[p\leq n\leq m+p,\]
+
+and therefore \((m+p)n^{2}\geq np^{2}\). So the flop count above is no more than \(4(m+p)n^{2}\) flops. In particular, its order is \((m+p)n^{2}\).
+
+Sparse constrained least squares.Constrained least squares problems with sparse matrices \(A\) and \(C\) arise in many applications; we will see several examples in the next chapter. Just as for solving linear equations, or (unconstrained) least squares problems, there are methods that exploit the sparsity in \(A\) and \(C\) to solve constrained least squares problems more efficiently than the generic algorithms 16.1

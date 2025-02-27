@@ -1,0 +1,16 @@
+
+
+**Remark 1.1**: _The \(k\)th term in this sum is called a _minusoid signal_. The coefficient \(a_{k}\geq 0\) is called the _amplitude_, \(\omega_{k}>0\) is called the _frequency_, and \(\phi_{k}\) is called the _phase_ of the \(k\)th sinusoid. (The phase is usually chosen to lie in the range from \(-\pi\) to \(\pi\).) In many applications the frequencies are multiples of \(\omega_{1}\), _i.e._, \(\omega_{k}=k\omega_{1}\) for \(k=2,\ldots,K\), in which case the approximation is called a _Fourier approximation_, named for the mathematician Jean-Baptiste Joseph Fourier.
+
+Suppose you have observed the values \(z_{1},\ldots,z_{T}\), and wish to choose the sinusoid amplitudes \(a_{1},\ldots,a_{K}\) and phases \(\phi_{1},\ldots,\phi_{K}\) so as to minimize the RMS value of the approximation error \((\hat{z}_{1}-z_{1},\ldots,\hat{z}_{T}-z_{T})\). (We assume that the frequencies are given.) Explain how to solve this using least squares model fitting.
+
+_Hint._ A sinusoid with amplitude \(a\), frequency \(\omega\), and phase \(\phi\) can be described by its cosine and sine coefficients \(\alpha\) and \(\beta\), where
+
+\[a\cos(\omega t-\phi)=\alpha\cos(\omega t)+\beta\sin(\omega t),\]
+
+where (using the cosine of sum formula) \(\alpha=a\cos\phi\), \(\beta=a\sin\phi\). We can recover the amplitude and phase from the cosine and sine coefficients as
+
+\[a=\sqrt{\alpha^{2}+\beta^{2}},\qquad\phi=\arctan(\beta/\alpha).\]
+
+Express the problem in terms of the cosine and sine coefficients.
+

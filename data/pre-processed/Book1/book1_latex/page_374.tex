@@ -1,0 +1,23 @@
+
+
+**21.**: A positive definite matrix cannot have a zero (or even worse, a negative number) on its diagonal. Show that this matrix fails to have \(x^{\mathrm{T}}Ax>0\):
+
+\[\begin{bmatrix}x_{1}&x_{2}&x_{3}\end{bmatrix}\begin{bmatrix}4&1&1\\ 1&0&2\\ 1&2&5\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\\ x_{3}\end{bmatrix}\quad\text{ is not positive when }\quad(x_{1},x_{2},x_{3})=(\quad,\quad,\quad).\]
+**22.**: A diagonal entry \(a_{jj}\) of a symmetric matrix cannot be smaller than all \(\lambda\)'s. If it were, then \(A-a_{jj}I\) would have eigenvalues and would be positive definite. But \(A-a_{jj}I\) has a on the main diagonal.
+**23.**: Give a quick reason why each of these statements is true:
+
+1. Every positive definite matrix is invertible.
+2. The only positive definite projection matrix is \(P=I\).
+3. A diagonal matrix with positive diagonal entries is positive definite.
+4. A symmetric matrix with a positive determinant might not be positive definite!
+**24.**: For which \(s\) and \(t\) do \(A\) and \(B\) have all \(\lambda>0\) (and are therefore positive definite)?
+
+\[A=\begin{bmatrix}s&-4&-4\\ -4&s&-4\\ -4&-4&s\end{bmatrix}\qquad\text{and}\qquad B=\begin{bmatrix}t&3&0\\ 3&t&4\\ 0&4&t\end{bmatrix}.\]
+**25.**: You may have seen the equation for an ellipse as \((\frac{x}{a})^{2}+(\frac{y}{b})^{2}=1\). What are \(a\) and \(b\) when the equation is written as \(\lambda_{1}x^{2}+\lambda_{2}y^{2}=1\)? The ellipse \(9x^{2}+16y^{2}=1\) has half-axes with lengths \(a=\), and \(b=\).
+**26.**: Draw the tilted ellipse \(x^{2}+xy+y^{2}=1\) and find the half-lengths of its axes from the eigenvalues of the corresponding \(A\).
+**27.**: With positive pivots in \(D\), the factorization \(A=LDL^{\mathrm{T}}\) becomes \(L\sqrt{D}\sqrt{D}L^{\mathrm{T}}\). (Square roots of the pivots give \(D=\sqrt{D}\sqrt{D}\).) Then \(C=L\sqrt{D}\) yields the _Cholesky factorization_\(A=CC^{\mathrm{T}}\), which is "symmetrized \(LU\)":
+
+\[\text{From}\quad C=\begin{bmatrix}3&0\\ 1&2\end{bmatrix}\quad\text{find}\,A.\qquad\text{From}\quad A=\begin{bmatrix} 4&8\\ 8&25\end{bmatrix}\quad\text{find}\,C.\]
+**28.**: In the Cholesky factorization \(A=CC^{\mathrm{T}}\), with \(C=L\sqrt{D}\), the square roots of the pivots are on the diagonal of \(C\). Find \(C\) (lower triangular) for
+
+\[A=\begin{bmatrix}9&0&0\\ 0&1&2\\ 0&2&8\end{bmatrix}\qquad\text{and}\qquad A=\begin{bmatrix}1&1&1\\ 1&2&2\\ 1&2&7\end{bmatrix}.\]

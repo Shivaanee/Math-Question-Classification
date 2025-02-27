@@ -1,0 +1,19 @@
+steps of the shifted algorithm, the matrix \(A_{k}\) looks like this:
+
+\[A_{k}=\left[\begin{array}{ccccc}\ast&\ast&\ast&\ast\\ \ast&\ast&\ast&\ast\\ 0&\ast&\ast&\ast\\ \hline 0&0&\epsilon&\lambda_{1}^{\prime}\end{array}\right],\qquad\text{with} \quad\epsilon\ll 1.\]
+
+We accept the computed \(\lambda_{1}^{\prime}\) as a very close approximation to the true \(\lambda_{1}\). To find the next eigenvalue, the \(QR\) algorithm continues with the smaller matrix (3 by 3, in the illustration) in the upper left-hand corner. Its subdiagonal elements will be somewhat reduced by the first \(QR\) steps, and another two steps are sufficient to find \(\lambda_{2}\). This gives a systematic procedure for finding all the eigenvalues. In fact, _the QR method is now completely described_. It only remains to catch up on the eigenvectors--that is a single inverse power step--and to use the zeros that Householder created.
+
+**2.** When \(A_{0}\) is tridiagonal or Hessenberg, each \(QR\) step is very fast. The Gram-Schmidt process (factoring into \(QR\)) takes \(O(n^{3})\) operations for a full matrix \(A\). For a Hessenberg matrix this becomes \(O(n^{2})\), and for a tridiagonal matrix it is \(O(n)\). Fortunately, each new \(A_{k}\) is again in Hessenberg or tridiagonal form:
+
+\[Q_{0}\ \mathbf{is\ Hessenberg}\qquad Q_{0}=A_{0}R_{0}^{-1}=\begin{bmatrix} \ast&\ast&\ast&\ast\\ \ast&\ast&\ast&\ast\\ 0&\ast&\ast&\ast\\ 0&0&\ast&\ast\end{bmatrix}\begin{bmatrix}\ast&\ast&\ast&\ast\\ 0&\ast&\ast&\ast\\ 0&0&\ast&\ast\\ 0&0&0&\ast\end{bmatrix}.\]
+
+You can easily check that this multiplication leaves \(Q_{0}\) with the same three zeros as \(A_{0}\). _Hessenberg times triangular is Hessenberg_. So is triangular times Hessenberg:
+
+\[A_{1}\ \mathbf{is\ Hessenberg}\qquad A_{1}=R_{0}Q_{0}=\begin{bmatrix}\ast& \ast&\ast&\ast\\ 0&\ast&\ast&\ast\\ 0&0&\ast&\ast\\ 0&0&0&\ast\end{bmatrix}\begin{bmatrix}\ast&\ast&\ast&\ast\\ \ast&\ast&\ast&\ast\\ 0&\ast&\ast&\ast\\ 0&0&\ast&\ast\end{bmatrix}.\]
+
+The symmetric case is even better, since \(A_{1}=Q_{0}^{-1}A_{0}Q_{0}=Q_{0}^{\mathrm{T}}A_{0}Q_{0}\) stays symmetric. By the reasoning just completed, \(A_{1}\) is also Hessenberg. So \(A_{1}\) must be _tridiagonal_. The same applies to \(A_{2},A_{3},\ldots\), and _every QR step begins with a tridiagonal matrix_.
+
+The last point is the factorization itself, producing the \(Q_{k}\) and \(R_{k}\) from each \(A_{k}\) (or really from \(A_{k}-\alpha_{k}I\)). We may use Householder again, but it is simpler to annihilate each subdiagonal element in turn by a "plane rotation" \(P_{ij}\). The first is \(P_{21}\):
+
+\[\mathbf{Rotation\ to\ kill}\ a_{21}\qquad P_{21}A_{k}=\begin{bmatrix}\cos\theta&- \sin\theta\\ \sin\theta&\cos\theta\\ &&1\\ &&&1\end{bmatrix}\begin{bmatrix}a_{11}&\ast&\ast&\ast\\ a_{21}&\ast&\ast&\ast\\ 0&\ast&\ast&\ast\\ 0&0&\ast&\ast\end{bmatrix}\] (7) 

@@ -1,0 +1,35 @@
+Now we have the fundamental equation of this chapter. It involves two unknowns \(\lambda\) and \(x\). It is an algebra problem, and differential equations can be forgotten! The number \(\lambda\) (lambda) is an _eigenvalue_ of the matrix \(A\), and the vector \(x\) is the associated _eigenvector_. Our goal is to find the eigenvalues and eigenvectors, \(\lambda\)'s and \(x\)'s, and to use them.
+
+### The Solution of \(Ax=\lambda x\)
+
+Notice that \(Ax=\lambda x\) is a nonlinear equation; \(\lambda\) multiplies \(x\). If we could discover \(\lambda\), then the equation for \(x\) would be linear. In fact we could write \(\lambda Ix\) in place of \(\lambda x\), and bring this term over to the left side:
+
+\[(A-\lambda I)x=0.\] (9)
+
+The identity matrix keeps matrices and vectors straight; the equation \((A-\lambda)x=0\) is shorter, but mixed up. This is the key to the problem:
+
+\begin{tabular}{|l|} \hline
+**_The vector \(x\) is in the nullspace of \(A-\lambda I\)._** \\
+**_The number \(\lambda\) is chosen so that \(A-\lambda I\) has a nullspace._** \\ \hline \end{tabular}
+
+Of course every matrix has a nullspace. It was ridiculous to suggest otherwise, but you see the point. We want a _nonzero_ eigenvector \(x\), The vector \(x=0\) always satisfies \(Ax=\lambda x\), but it is useless in solving differential equations. The goal is to build \(u(t)\) out of exponentials \(e^{\lambda t}x\), and _we are interested only in those particular values \(\lambda\) for which there is a nonzero eigenvector \(x\)_. To be of any use, the nullspace of \(A-\lambda I\) must contain vectors other than zero. In short, \(A-\lambda I\)_must be singular_.
+
+For this, the determinant gives a conclusive test.
+
+**5A** The number \(\lambda\) is an eigenvalue of \(A\) if and only if \(A-\lambda I\) is singular:
+
+\[\det(A-\lambda I)=0.\] (10)
+
+This is the characteristic equation. Each \(\lambda\) is associated with eigenvectors \(x\):
+
+\[(A-\lambda I)x=0\qquad\text{or}\qquad Ax=\lambda x.\] (11)
+
+In our example, we shift \(A\) by \(\lambda I\) to make it singular:
+
+\[\textbf{Subtract}\ \lambda I\qquad A-\lambda I=\begin{bmatrix}4-\lambda&-5 \\ 2&-3-\lambda\end{bmatrix}.\]
+
+Note that \(\lambda\) is subtracted only from the main diagonal (because it multiplies \(I\)).
+
+\[\textbf{Determinant}\qquad|A-\lambda I|=(4-\lambda)(-3-\lambda)+10\qquad \text{or}\qquad\lambda^{2}-\lambda-2.\]
+
+This is the _characteristic polynomial_. Its roots, where the determinant is zero, are the eigenvalues. They come from the general formula for the roots of a quadratic, or from 

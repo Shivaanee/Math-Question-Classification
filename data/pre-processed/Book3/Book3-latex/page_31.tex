@@ -1,0 +1,36 @@
+\(m\times m\) identity matrix. In other words, there is an \(m\times m\) matrix \(Q\), which is itself a product of elementary matrices. such that \(QP=I\). As we shall soon see, the existence of a \(Q\) with \(QP=I\) is equivalent to the fact that \(P\) is a product of elementary matrices.
+
+Definition: Let \(A\) be an \(n\times n\) (square) matrix over the field \(F\). An \(n\times n\) matrix \(B\) such that \(BA=I\) is called a **left inverse** of \(A\); an \(n\times n\) matrix \(B\) such that \(AB=I\) is called a **right inverse** of \(A\). If \(AB=BA=I\), then \(B\) is called a **two-sided inverse** of \(A\) and \(A\) is said to be **invertible**.
+
+Lemma: If \(A\) has a left inverse \(B\) and a right inverse \(C\), then \(B=C\).
+
+Proof: Suppose \(BA=I\) and \(AC\eqsuit I\). Then
+
+\(B=BI=B(AC)=(BA)C=IC=C\).
+
+Thus if \(A\) has a left and a right inverse, \(A\) is invertible and has a unique two-sided inverse, which we shall denote by \(A^{-1}\) and simply call **the inverse** of \(A\).
+
+Theorem 3.1: _Let \(A\) and \(B\) be \(n\times n\) matrices over \(I\)._
+
+1. _If_ \(A\) _is invertible, so_ \(is\)__\(A^{-1}\) _and_ \((A^{-1})^{-1}=A\)_._
+2. _If both_ \(A\) _and_ \(B\) _are invertible, so_ \(is\)__\(AB\)_, and_ \((AB)^{-1}=B^{-1}A^{-1}\)_._
+
+Proof: The first statement is evident from the symmetry of the definition. The second follows upon verification of the relations
+
+\[(AB)(B^{-1}A^{-1})=(B^{-1}A^{-1})(AB)=I.\]
+
+Corollary: A product of invertible matrices is invertible.
+
+Theorem 3.2: _An elementary matrix is invertible._
+
+Proof: Let \(E\) be an elementary matrix corresponding to the elementary row operation \(e\). If \(e_{1}\) is the inverse operation of \(e\) (Theorem 3.1) and \(E_{1}=e_{1}(I)\), then
+
+\[EE_{1}=e(E_{1})=e(e_{1}(I))=I\]
+
+and
+
+\[E_{1}E=e_{1}(E)=e_{1}(e(I))=I\]
+
+so that \(E\) is invertible and \(E_{1}=E^{-1}\).
+
+Example 3 

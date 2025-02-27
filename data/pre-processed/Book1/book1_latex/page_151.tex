@@ -1,0 +1,14 @@
+
+
+\begin{tabular}{l l} \(A=\begin{bmatrix}c&0\\ 0&c\end{bmatrix}\) & 1. A multiple of the identity matrix, \(A=cI\), _stretches_ every vector by the same factor \(c\). The whole space expands or contracts (or somehow goes through the origin and out the opposite side, when \(c\) is negative). \\ \(A=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}\) & 2. A _rotation_ matrix turns the whole space around the origin. This example turns all vectors through \(90^{\circ}\), transforming every point \((x,y)\) to \((-y,x)\). \\ \(A=\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\) & 3. A _reflection_ matrix transforms every vector into its image on the opposite side of a mirror. In this example the mirror is the \(45^{\circ}\) line \(y=x\), and a point like \((2,2)\) is unchanged. A point like \((2,-2)\) is reversed to \((-2,2)\). On a combination like \(v=(2,2)+(2,-2)=(4,0)\), the matrix leaves one part and reverses the other part. The output is \(Av=(2,2)+(-2,2)=(0,4)\) \\ \(A=\begin{bmatrix}0&1\\ 1&0\end{bmatrix}\) & That reflection matrix is also a permutation matrix! It is algebraically so simple, sending \((x,y)\) to \((y,x)\), that the geometric picture was concealed. \\ \(A=\begin{bmatrix}1&0\\ 0&0\end{bmatrix}\) & 4. A _projection_ matrix takes the whole space onto a lower-dimensional subspace (not invertible). The example transforms each vector \((x,y)\) in the plane to the nearest point \((x,0)\) on the horizontal axis. That axis is the column space of \(A\). The \(y\)-axis that projects to \((0,0)\) is the nullspace. \\ \end{tabular}
+
+Those examples could be lifted into three dimensions. There are matrices to stretch the earth or spin it or reflect it across the plane of the equator (forth pole transforming to south pole). There is a matrix that projects everything onto that plane (both poles to the center). It is also important to recognize that matrices cannot do everything, and some transformations \(T(x)\) are _not possible_ with \(Ax\):
+
+1. It is impossible to move the origin, since \(A0=0\) for every matrix.
+2. If the vector \(x\) goes to \(x^{\prime}\), then \(2x\) must go to \(2x^{\prime}\). in general \(cx\) must go to \(cx^{\prime}\), since \(A(cx)=c(Ax)\).
+3. If the vectors \(x\) and \(y\) go to \(x^{\prime}\) and \(y^{\prime}\), then their sum \(x+y\) must go to \(x^{\prime}+y^{\prime}\)--since \(A(x+y)=Ax+Ay\).
+
+Matrix multiplication imposes those rules on the transformation. The second rule contains the first (take \(c=0\) to get \(A0=0\)). We saw rule (iii) in action when \((4,0)\) was
+
+Figure 2.9: Transformations of the plane by four matrices.
+

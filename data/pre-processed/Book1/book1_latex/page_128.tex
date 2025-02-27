@@ -1,0 +1,21 @@
+The basis for the nullspace is
+
+\[\begin{array}{rcl}\mbox{\bf Special solutions}&v&=&1\\ y&=&0\end{array}\quad x_{1}=\begin{bmatrix}-3\\ 1\\ 0\\ 0\end{bmatrix};\qquad\begin{array}{rcl}v&=&0\\ y&=&1\end{array}\quad x_{2}=\begin{bmatrix}1\\ 0\\ -1\\ 1\end{bmatrix}.\]
+
+Any combination \(c_{1}x_{1}+c_{2}x_{2}\) has \(c_{1}\) as its \(v\) component, and \(c_{2}\) as its \(y\) component. The only way to have \(c_{1}x_{1}+c_{2}x_{2}=0\) is to have \(c_{1}=c_{2}=0\), so these vectors are independent. They also span the nullspace; the complete solution is \(vx_{1}+yx_{2}\). Thus the \(n-r=4-2\) vectors are a basis.
+
+The nullspace is also called the _kernel_ of \(A\), and its dimension \(n-r\) is the _nullity_.
+
+1. The column space of \(A\)The column space is sometimes called the **range**. This is consistent with the usual idea of the range, as the set of all possible values \(f(x)\); \(x\) is in the domain and \(f(x)\) is in the range. In our case the function is \(f(x)=Ax\). Its domain consists of all \(x\) in \(\mbox{\bf R}^{n}\); its range is all possible vectors \(Ax\), which is the column space. (In an earlier edition of this book we called it \(R(A)\).)
+
+Our problem is to find bases for the column spaces of \(U\) and \(A\). _Those spaces are different_ (just look at the matrices!) but their dimensions are the same.
+
+The first and third columns of \(U\) are a basis for its column space. They are the _columns with pivots_. Every other column is a combination of those two. Furthermore, the same is true of the original \(A\)--even though its columns are different. _The pivot columns of \(A\) are a basis for its column space_. The second column is three times the first, just as in \(U\). The fourth column equals (column 3) \(-\) (column 1). The same nullspace is telling us those dependencies.
+
+The reason is this: \(Ax=0\)_exactly when \(Ux=0\)_. The two systems are equivalent and have the same solutions. The fourth column of \(U\) was also (column 3) \(-\) (column 1). Every linear dependence \(Ax=0\) among the columns of \(A\) is matched by a dependence \(Ux=0\) among the columns of \(U\), with exactly the same coefficients. _If a set of columns of \(A\) is independent, then so are the corresponding columns of \(U\), and vice versa_.
+
+To find a basis for the column space \(C(A)\), we use what is already done for \(U\). The \(r\) columns containing pivots are a basis for the column space of \(U\). We will pick those same \(r\) columns in \(A\):
+
+**20**The dimension of the column space \(C(A)\) equals the rank \(r\), which also equals the dimension of the row space: _The number of independent columns equals the number of independent rows_. A basis for \(C(A)\) is formed by the \(r\) columns of \(A\) that correspond, in \(U\), to the columns containing pivots.
+
+The row space and the column space have the same dimension \(r\)! This is one of the most important theorems in linear algebra. It is often abbreviated as "_row rank_\(=\)_column rank_." It expresses a result that, for a random 10 by 12 matrix, is not at all 

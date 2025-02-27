@@ -1,0 +1,25 @@
+are real numbers, which will be our assumption unless we state otherwise. The set of real \(m\times n\) matrices is denoted \(\mathbf{R}^{m\times n}\). But matrices with complex entries, for example, do arise in some applications.
+
+Matrix indexing.As with vectors, standard mathematical notation indexes the rows and columns of a matrix starting from 1. In computer languages, matrices are often (but not always) stored as 2-dimensional arrays, which can be indexed in a variety of ways, depending on the language. Lower level languages typically use indices starting from 0; higher level languages and packages that support matrix operations usually use standard mathematical indexing, starting from 1.
+
+Square, tall, and wide matrices.A _square_ matrix has an equal number of rows and columns. A square matrix of size \(n\times n\) is said to be of _order_\(n\). A _tall_ matrix has more rows than columns (size \(m\times n\) with \(m>n\)). A _wide_ matrix has more columns than rows (size \(m\times n\) with \(n>m\)).
+
+Column and row vectors.An \(n\)-vector can be interpreted as an \(n\times 1\) matrix; we do not distinguish between vectors and matrices with one column. A matrix with only one row, _i.e._, with size \(1\times n\), is called a _row vector_; to give its size, we can refer to it as an _\(n\)-row-vector_. As an example,
+
+\[\left[\begin{array}{ccc}-2.1&-3&0\end{array}\right]\]
+
+is a 3-row-vector (or \(1\times 3\) matrix). To distinguish them from row vectors, vectors are sometimes called _column vectors_. A \(1\times 1\) matrix is considered to be the same as a scalar.
+
+Notational conventions.Many authors (including us) tend to use capital letters to denote matrices, and lower case letters for (column or row) vectors. But this convention is not standardized, so you should be prepared to figure out whether a symbol represents a matrix, column vector, row vector, or a scalar, from context. (The more considerate authors will tell you what the symbols represent, for example, by referring to 'the matrix \(A\)' when introducing it.)
+
+Columns and rows of a matrix.An \(m\times n\) matrix \(A\) has \(n\) columns, given by (the \(m\)-vectors)
+
+\[a_{j}=\left[\begin{array}{c}A_{1j}\\ \vdots\\ A_{mj}\end{array}\right],\]
+
+for \(j=1,\ldots,n\). The same matrix has \(m\) rows, given by the (\(n\)-row-vectors)
+
+\[b_{i}=\left[\begin{array}{cc}A_{i1}&\cdots&A_{in}\end{array}\right],\]
+
+for \(i=1,\ldots,m\).
+
+As a specific example, the \(2\times 3\) matrix 

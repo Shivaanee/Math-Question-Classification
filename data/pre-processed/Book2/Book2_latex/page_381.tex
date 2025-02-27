@@ -1,0 +1,23 @@
+
+
+### Time-weighted objective.
+
+We replace \(J_{\rm output}\) with
+
+\[J_{\rm output}=w_{1}\|y_{1}\|^{2}+\dots+w_{T}\|y_{T}\|^{2},\]
+
+where \(w_{1},\dots,w_{T}\) are given positive constants. This allows us to weight earlier or later output values differently. A common choice, called _exponential weighting_, is \(w_{t}=\theta^{t}\), where \(\theta>0\). For \(\theta>1\) we weight later values of \(y_{t}\) more than earlier values; the opposite is true for \(\theta<1\) (in which case \(\theta\) is sometimes called the _discount_ or _forgetting factor_).
+
+Way-point constraints.A way-point constraint specifies that \(y_{\tau}=y^{\rm wp}\), where \(y^{\rm wp}\) is a given \(p\)-vector, and \(\tau\) is a given way-point time. This constraint is typically used when \(y_{t}\) represents a position of a vehicle; it requires that the vehicle pass through the position \(y^{\rm wp}\) at time \(t=\tau\). Way-point constraints can be expressed as linear equality constraints on the big vector \(z\).
+
+#### Linear state feedback control
+
+In the linear quadratic control problem we work out a sequence of inputs \(u_{1},\dots,u_{T-1}\) to apply to the system, by solving the constrained least squares problem (17.8). It is typically used in cases where \(t=T\) has some significance, like the time of landing or docking for a vehicle.
+
+We have already mentioned (on page 185) another simpler approach to the control of a linear dynamical system. In _linear state feedback control_ we measure the state in each period and use the input
+
+\[u_{t}=Kx_{t}\]
+
+for \(t=1,2,\dots\). The matrix \(K\) is called the _state feedback gain matrix_. State feedback control is very widely used in practical applications, especially ones where there is no fixed future time \(T\) when the state must take on some desired value; instead, it is desired that both \(x_{t}\) and \(u_{t}\) should be small and converge to zero. One practical advantage of linear state feedback control is that we can find the state feedback matrix \(K\) ahead of time; when the system is operating, we determine the input values using one simple matrix-vector multiply. Here we show how an appropriate state feedback gain matrix \(K\) can be found using linear quadratic control.
+
+Let \(\hat{z}\) denote the solution of the linear quadratic control problem, _i.e._, the solution of the linearly constrained least squares problem (17.8), with \(x^{\rm des}=0\). The solution \(\hat{z}\) is a linear function of \(x^{\rm init}\) and \(x^{\rm des}\); since

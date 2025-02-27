@@ -1,0 +1,23 @@
+
+
+**1.13**: _Average age in a population._ Suppose the 100-vector \(x\) represents the distribution of ages in some population of people, with \(x_{i}\) being the number of \(i-1\) year olds, for \(i=1,\ldots,100\). (You can assume that \(x\neq 0\), and that there is no one in the population over age 99.) Find expressions, using vector notation, for the following quantities.
+
+1. The total number of people in the population. 2. The total number of people in the population age 65 and over. 3. The average age of the population. (You can use ordinary division of numbers in your expression.)
+**1.14**: _Industry or sector exposure._ Consider a set of \(n\) assets or stocks that we invest in. Let \(f\) be an \(n\)-vector that encodes whether each asset is in some specific industry or sector, _e.g._, pharmaceuticals or consumer electronics. Specifically, we take \(f_{i}=1\) if asset \(i\) is in the sector, and \(f_{i}=0\) if it is not. Let the \(n\)-vector \(h\) denote a portfolio, with \(h_{i}\) the dollar value held in asset \(i\) (with negative meaning a short position). The inner product \(f^{T}h\) is called the (dollar value) _exposure_ of our portfolio to the sector. It gives the net dollar value of the portfolio that is invested in assets from the sector. A portfolio \(h\) is called _neutral_ (to a sector or industry) if \(f^{T}h=0\).
+
+A portfolio \(h\) is called _long only_ if each entry is nonnegative, _i.e._, \(h_{i}\geq 0\) for each \(i\). This means the portfolio does not include any short positions.
+
+What does it mean if a long-only portfolio is neutral to a sector, say, pharmaceuticals? Your answer should be in simple English, but you should back up your conclusion with an argument.
+**1.15**: _Cheapest supplier._ You must buy \(n\) raw materials in quantities given by the \(n\)-vector \(q\), where \(q_{i}\) is the amount of raw material \(i\) that you must buy. A set of \(K\) potential suppliers offer the raw materials at prices given by the \(n\)-vectors \(p_{1},\ldots,p_{K}\). (Note that \(p_{k}\) is an \(n\)-vector; \((p_{k})_{i}\) is the price that supplier \(k\) charges per unit of raw material \(i\).) We will assume that all quantities and prices are positive.
+
+If you must choose just one supplier, how would you do it? Your answer should use vector notation.
+
+A (highly paid) consultant tells you that you might do better (_i.e._, get a better total cost) by splitting your order into two, by choosing two suppliers and ordering \((1/2)q\) (_i.e._, half the quantities) from each of the two. He argues that having a diversity of suppliers is better. Is he right? If so, explain how to find the two suppliers you would use to fill half the order.
+**1.16**: _Inner product of nonnegative vectors._ A vector is called _nonnegative_ if all its entries are nonnegative.
+
+1. Explain why the inner product of two nonnegative vectors is nonnegative.
+2. Suppose the inner product of two nonnegative vectors is zero. What can you say about them? Your answer should be in terms of their respective sparsity patterns, _i.e._, which entries are zero and nonzero.
+**1.17**: _Linear combinations of cash flows._ We consider cash flow vectors over \(T\) time periods, with a positive entry meaning a payment received, and negative meaning a payment made. A (unit) _single period loan_, at time period \(t\), is the \(T\)-vector \(l_{t}\) that corresponds to a payment received of $1 in period \(t\) and a payment made of $\((1+r)\) in period \(t+1\), with all other payments zero. Here \(r>0\) is the interest rate (over one period).
+
+Let \(c\) be a $1 \(T-1\) period loan, starting at period 1. This means that $1 is received in period 1, \(\$(1+r)^{T-1}\) is paid in period \(T\), and all other payments (_i.e._, \(c_{2},\ldots,c_{T-1}\)) are zero. Express \(c\) as a linear combination of single period loans.
+**1.18**: _Linear combinations of linear combinations._ Suppose that each of the vectors \(b_{1},\ldots,b_{k}\) is a linear combination of the vectors \(a_{1},\ldots,a_{m}\), and \(c\) is a linear combination of \(b_{1},\ldots,b_{k}\). Then \(c\) is a linear combination of \(a_{1},\ldots,a_{m}\). Show this for the case with \(m=k=2\). (Showing it in general is not much more difficult, but the notation gets more complicated.)

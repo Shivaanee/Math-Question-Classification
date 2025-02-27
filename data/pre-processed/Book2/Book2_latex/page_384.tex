@@ -1,0 +1,30 @@
+
+Formulation as constrained least squares problem.The least squares state estimation problem (17.11) can be formulated as a linearly constrained least squares problem, using stacking. We define the stacked vector
+
+\[z=(x_{1},\ldots,x_{T},w_{1},\ldots,w_{T-1}).\]
+
+The objective in (17.11) can be expressed as \(\|\tilde{A}z-\tilde{b}\|^{2}\), with
+
+\[\tilde{A}=\left[\begin{array}{ccccc|c}C_{1}&&&&\\ &C_{2}&&&\\ &&\ddots&&\\ &&&C_{T}&&&\\ \hline&&&\sqrt{\lambda}I&&\\ &&&\ddots&\\ &&&\sqrt{\lambda}I\end{array}\right],\qquad\tilde{b}=\left[\begin{array}{c}y _{1}\\ y_{2}\\ \vdots\\ y_{T}\\ \hline 0\\ \vdots\\ 0\end{array}\right].\]
+
+The constraints in (17.11) can be expressed as \(\tilde{C}z=\tilde{d}\), with \(\tilde{d}=0\) and
+
+\[\tilde{C}=\left[\begin{array}{ccccc|c}A_{1}&-I&&&\\ &A_{2}&-I&&\\ &&\ddots&\\ &&&A_{T-1}&-I\end{array}\right]\left[\begin{array}{ccccc}B_{1}&&&\\ &B_{2}&&&\\ &&\ddots&\\ &&&B_{T-1}\end{array}\right].\]
+
+The constrained least squares problem has dimensions
+
+\[\tilde{n}=Tn+(T-1)m,\quad\tilde{m}=Tp+(T-1)m,\quad\tilde{p}=(T-1)n\]
+
+so using one of the standard methods described in SS16.2 would require order
+
+\[(\tilde{p}+\tilde{m})\tilde{n}^{2}\approx T^{3}(m+p+n)(m+n)^{2}\]
+
+flops. As in the case of linear quadratic control, the matrices \(\tilde{A}\) and \(\tilde{C}\) are very sparse, and by exploiting this sparsity (see page 349), the large constrained least squares problem can be solved in order \(T(m+p+n)(m+n)^{2}\) flops, which grows only linearly in \(T\).
+
+The least squares state estimation problem was formulated in around 1960 by Rudolf Kalman and others (in a statistical framework). He and others developed a particular recursive algorithm for solving the problem, and the whole method has come to be known as _Kalman filtering_. For this work Kalman was awarded the Kyoto Prize in 1985.
+
+#### Example
+
+We consider a system with \(n=4\), \(p=2\), and \(m=2\), and time-invariant matrices
+
+\[A=\left[\begin{array}{ccccc}1&0&1&0\\ 0&1&0&1\\ 0&0&1&0\\ 0&0&0&1\end{array}\right],\qquad B=\left[\begin{array}{ccccc}0&0\\ 0&0\\ 1&0\\ 0&1\end{array}\right],\qquad C=\left[\begin{array}{ccccc}1&0&0&0\\ 0&1&0&0\end{array}\right].\] 

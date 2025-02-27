@@ -1,0 +1,26 @@
+In the first line here, we apply (two-term) superposition to the argument
+
+\[\alpha_{1}x_{1}+(1)(\alpha_{2}x_{2}+\cdots+\alpha_{k}x_{k}),\]
+
+and in the other lines we apply this recursively.
+
+The superposition equality (2.2) is sometimes broken down into two properties, one involving the scalar-vector product and one involving vector addition in the argument. A function \(f:\mathbf{R}^{n}\rightarrow\mathbf{R}\) is linear if it satisfies the following two properties.
+
+* _Homogeneity._ For any \(n\)-vector \(x\) and any scalar \(\alpha\), \(f(\alpha x)=\alpha f(x)\).
+* _Additivity._ For any \(n\)-vectors \(x\) and \(y\), \(f(x+y)=f(x)+f(y)\).
+
+Homogeneity states that scaling the (vector) argument is the same as scaling the function value; additivity says that adding (vector) arguments is the same as adding the function values.
+
+Inner product representation of a linear function.We saw above that a function defined as the inner product of its argument with some fixed vector is linear. The converse is also true: If a function is linear, then it can be expressed as the inner product of its argument with some fixed vector.
+
+Suppose \(f\) is a scalar-valued function of \(n\)-vectors, and is linear, _i.e._, (2.2) holds for all \(n\)-vectors \(x\), \(y\), and all scalars \(\alpha\), \(\beta\). Then there is an \(n\)-vector \(a\) such that \(f(x)=a^{T}x\) for all \(x\). We call \(a^{T}x\) the _inner product representation_ of \(f\).
+
+To see this, we use the identity (1.1) to express an arbitrary \(n\)-vector \(x\) as \(x=x_{1}e_{1}+\cdots+x_{n}e_{n}\). If \(f\) is linear, then by multi-term superposition we have
+
+\[f(x) = f(x_{1}e_{1}+\cdots+x_{n}e_{n})\] \[= x_{1}f(e_{1})+\cdots+x_{n}f(e_{n})\] \[= a^{T}x,\]
+
+with \(a=(f(e_{1}),f(e_{2}),\ldots,f(e_{n}))\). The formula just derived,
+
+\[f(x)=x_{1}f(e_{1})+x_{2}f(e_{2})+\cdots+x_{n}f(e_{n})\] (2.3)
+
+which holds for any linear scalar-valued function 

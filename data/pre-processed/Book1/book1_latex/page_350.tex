@@ -1,0 +1,35 @@
+
+
+**44.** Why is each of these statements true?
+
+1. If \(A\) is similar to \(B\), then \(A^{2}\) is similar to \(B^{2}\).
+2. \(A^{2}\) and \(B^{2}\) can be similar when \(A\) and \(B\) are not similar (try \(\lambda=0,0\)).
+3. \(\left[\begin{smallmatrix}3&0\\ 0&4\end{smallmatrix}\right]\) is similar to \(\left[\begin{smallmatrix}3&1\\ 0&4\end{smallmatrix}\right]\).
+4. \(\left[\begin{smallmatrix}3&0\\ 0&3\end{smallmatrix}\right]\) is not similar to \(\left[\begin{smallmatrix}3&1\\ 0&3\end{smallmatrix}\right]\).
+5. If we exchange rows 1 and 2 of \(A\), and then exchange columns 1 and 2, **the eigenvalues stay the same**.
+
+### Properties of Eigenvalues and Eigenvectors
+
+How are the properties of a matrix reflected in its eigenvalues and eigenvectors? This question is fundamental throughout Chapter 5. A table that organizes the key facts may be helpful. For each class of matrices, here are the special properties of the eigenvalues \(\lambda_{i}\) and eigenvectors \(x_{i}\).
+
+\begin{tabular}{l l l}
+**Symmetric:** & \(A^{\mathrm{T}}=A\) & real \(\lambda\)'s & orthogonal \(x_{i}^{\mathrm{T}}x_{j}=0\) \\
+**Orthogonal:** & \(Q^{\mathrm{T}}=Q^{-1}\) & all \(|\lambda|=1\) & orthogonal \(\overline{x}_{i}^{\mathrm{T}}x_{j}=0\) \\
+**Skew-symmetric:** & \(A^{\mathrm{T}}=-A\) & imaginary \(\lambda\)'s & orthogonal \(\overline{x}_{i}^{\mathrm{T}}x_{j}=0\) \\
+**Complex Hermitian:** & \(\overline{A}^{\mathrm{T}}=A\) & real \(\lambda\)'s & orthogonal \(\overline{x}_{i}^{\mathrm{T}}x_{j}=0\) \\
+**Positive definite:** & \(x^{\mathrm{T}}Ax>0\) & all \(\lambda>0\) & orthogonal \\
+**Similar matrix:** & \(B=M^{-1}AM\) & \(\lambda(B)=\lambda(A)\) & \(x(B)=M^{-1}x(A)\) \\
+**Projection:** & \(P=P^{2}=P^{\mathrm{T}}\) & \(\lambda=1;0\) & column space; nullspace \\
+**Reflection:** & \(I-2uu^{\mathrm{T}}\) & \(\lambda=-1;1,\ldots,1\) & \(u;u^{\perp}\) \\
+**Rank-1 matrix:** & \(w^{\mathrm{T}}\) & \(\lambda=v^{\mathrm{T}}u;0,\ldots,0\) & \(u;v^{\perp}\) \\
+**Inverse:** & \(A^{-1}\) & \(1/\lambda(A)\) & eigenvectors of \(A\) \\
+**Shift:** & \(A+cI\) & \(\lambda(A)+c\) & eigenvectors of \(A\) \\
+**Stable powers:** & \(A^{n}\to 0\) & all \(|\lambda|<1\) & \\
+**Stable exponential:** & \(e^{At}\to 0\) & all Re\(\lambda<0\) & \\
+**Markov:** & \(m_{ij}>0\), \(\sum_{i=1}^{n}m_{ij}=1\) & \(\lambda_{\mathrm{max}}=1\) & steady state \(x>0\) \\
+**Cyclic permutation:** & \(P^{n}=I\) & \(\lambda_{k}=e^{2\pi ik/n}\) & \(x_{k}=(1,\lambda_{k},\ldots,\lambda_{k}^{n-1})\) \\
+**Diagonalizable:** & \(S\Lambda S^{-1}\) & diagonal of \(\Lambda\) & columns of \(S\) are independent \\
+**Symmetric:** & \(Q\Lambda Q^{\mathrm{T}}\) & diagonal of \(\Lambda\) (real) & columns of \(Q\) are orthonormal \\
+**Jordan:** & \(J=M^{-1}AM\) & diagonal of \(J\) & each block gives 1 eigenvector \\
+**Every matrix:** & \(A=U\Sigma V^{\mathrm{T}}\) & rank\((A)=\) rank\((\Sigma)\) & eigenvectors of \(A^{\mathrm{T}}A\), \(AA^{\mathrm{T}}\) in \(V\), \(U\) \\ \hline \end{tabular}
+

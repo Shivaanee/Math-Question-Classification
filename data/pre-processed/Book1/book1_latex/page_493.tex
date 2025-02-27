@@ -1,0 +1,14 @@
+5. \(\begin{bmatrix}u\\ v\\ w\end{bmatrix}=\begin{bmatrix}-2v-3\\ v\\ 2\end{bmatrix}=v\begin{bmatrix}-2\\ 1\\ 0\end{bmatrix}+\begin{bmatrix}-3\\ 0\\ 2\end{bmatrix}\); no solution!
+7. \(c=7\) allows \(u=1\), \(v=1\), \(w=0\). The column space is a plane.
+9. 1. \(x=x_{2}\begin{bmatrix}-2\\ 1\\ 0\\ 0\end{bmatrix}+x_{4}\begin{bmatrix}2\\ 0\\ -2\\ 1\end{bmatrix}\), for any \(x_{2}\), \(x_{4}\). Row-reduced \(R=\begin{bmatrix}1&2&0&-2\\ 0&0&1&2\\ 0&0&0&0\end{bmatrix}\). 2. Complete solution \(x=\begin{bmatrix}a-3b\\ 0\\ b\\ 0\end{bmatrix}+x_{2}\begin{bmatrix}-2\\ 1\\ 0\end{bmatrix}+x_{4}\begin{bmatrix}2\\ 0\\ -2\\ 1\end{bmatrix}\), for any \(x_{2}\), \(x_{4}\).
+11. \(\begin{bmatrix}1&1\\ 1&1\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\end{bmatrix}=\begin{bmatrix}1\\ 0\end{bmatrix}\) has nullspace = line through \((-1,1)\) but no solution. Any \(b=\begin{bmatrix}c\\ c\end{bmatrix}\) has many particular solutions to \(Ax_{p}=b\).
+13. \(R=\begin{bmatrix}1&1&1\\ 0&0&0&0\\ 0&0&0&0\end{bmatrix}\); \(R=\begin{bmatrix}1&0&1&0\\ 0&1&0&1\\ 0&0&0&0\end{bmatrix}\); \(R=\begin{bmatrix}1&-1&1&-1\\ 0&0&0&0\\ 0&0&0&0\end{bmatrix}\). 14. A nullspace matrix \(N=\begin{bmatrix}-F\\ I\end{bmatrix}\) is \(n\) by \(n-r\).
+15. I think this is true.
+19. The special solutions are the columns of \(N=\begin{bmatrix}-2&-3\\ -4&-5\\ 1&0\\ 0&1\end{bmatrix}\) and \(N=\begin{bmatrix}1&0\\ 0&-2\\ 0&1\end{bmatrix}\).
+21. The \(r\) pivot columns of \(A\) form an \(m\) by \(r\) submatrix of rank \(r\), so that matrix \(A^{*}\) has \(r\) independent pivot rows, giving an \(r\) by \(r\) invertible submatrix of \(A\). (The pivot rows of \(A^{*}\) and \(A\) are the same, since elimination is done in the same order--we just don't see for \(A^{*}\) the "free" columns of zeros that appear for \(A\).)
+23. \((uv^{\mathrm{T}})(wz^{\mathrm{T}})=u(v^{\mathrm{T}}w)z^{\mathrm{T}}\) has rank 1 unless \(v^{\mathrm{T}}w=0\).
+25. We are given \(AB=I\) which has rank \(n\). Then \(\operatorname{rank}(AB)\leq\operatorname{rank}(A)\) forces \(\operatorname{rank}(A)=n\).
+27. If \(R=EA\) and the same \(R=E^{*}B\), then \(B=(E^{*})^{-1}EA\). (To get \(B\), reduce \(A\) to \(R\) and then invert steps back to \(B\).) \(B\) is an _invertible_ matrix times \(A\), when they share the same \(R\).
+29. Since \(R\) starts with \(r\) independent rows, \(R^{\mathrm{T}}\) starts with \(r\) independent columns (and then zeros). So _its_ reduced echelon form is \(\begin{bmatrix}I&0\\ 0&0\end{bmatrix}\) where \(I\) is \(r\) by \(r\).
+
+ 

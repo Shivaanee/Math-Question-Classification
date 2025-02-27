@@ -1,0 +1,25 @@
+Definition: The module \(\mathrm{V}\) is **finitely generated** if it contains a finite subset which spans \(\mathrm{V}\). The **rank** of a finitely generated module is the smallest integer \(\mathrm{k}\) such that some \(\mathrm{k}\) elements span \(\mathrm{V}\).
+
+We repeat that a module may be finitely generated without having a finite basis. If \(V\) is a free \(K\)-module with \(n\) generators, then \(V\) is isomorphic to the module \(K^{*}\). If \(\{\beta_{1},\ldots,\beta_{n}\}\) is a basis for \(V\), there is an isomorphism which sends the vector \(c_{1}\beta_{1}+\cdots+c_{n}\beta_{n}\) onto the \(n\)-tuple \((c_{1},\ldots,c_{n})\) in \(K^{*}\). It is not immediately apparent that the same module \(V\) could not also be a free module on \(k\) generators, with \(k\not\simeq n\). In other words, it is not obvious that any two bases for \(V\) must contain the same number of elements. The proof of that fact is an interesting application of determinants.
+
+Theorem 4.1: _Let \(\mathrm{K}\) be a commutative ring with identity. If \(\mathrm{V}\) is a free \(\mathrm{K}\)-module with \(\mathrm{n}\) generators, then the rank of \(\mathrm{V}\) is \(\mathrm{n}\)._
+
+Proof: We are to prove that \(V\) cannot be spanned by less than \(n\) of its elements. Since \(V\) is isomorphic to \(K^{*}\), we must show that, if \(m<n\), the module \(K^{*}\) is not spanned by \(n\)-tuples \(\alpha_{1},\ldots,\alpha_{m}\). Let \(A\) be the matrix with rows \(\alpha_{1},\ldots,\alpha_{m}\). Suppose that each of the standard basis vectors \(\epsilon_{1},\ldots,\epsilon_{n}\) is a linear combination of \(\alpha_{1},\ldots,\alpha_{m}\). Then there exists a matrix \(P\) in \(K^{n\times n}\) such that
+
+\[PA\,=\,I\]
+
+where \(I\) is the \(n\times n\) identity matrix. Let \(\vec{A}\) be the \(n\times n\) matrix obtained by adjoining \(n\,=\,m\) rows of \(0\)'s to the bottom of \(A\), and let \(\vec{P}\) be any \(n\times n\) matrix which has the columns of \(P\) as its first \(n\) columns. Then
+
+\[\vec{P}\vec{A}\,=\,I.\]
+
+Therefore \(\det\vec{A}\neq 0\). But, since \(m<n\), at least one row of \(\vec{A}\) has all \(0\) entries. This contradiction shows that \(\alpha_{1},\ldots,\alpha_{m}\) do not span \(K^{*}\).
+
+It is interesting to note that Theorem 4.1 establishes the uniqueness of the dimension of a (finite-dimensional) vector space. The proof, based upon the existence of the determinant function, is quite different from the proof we gave in Chapter 2. From Theorem 4.1 we know that 'free module of rank \(n\)' is the same as 'free module with \(n\) generators.'
+
+If \(V\) is a module over \(K\), the **dual module \(V^{*}\)** consists of all linear functions \(f\) from \(V\) into \(K\). If \(V\) is a free module of rank \(n\), then \(V^{*}\) is also a free module of rank \(n\). The proof is just the same as for vector spaces. If \(\{\beta_{1},\ldots,\beta_{n}\}\) is an ordered basis for \(V\), there is an associated **dual basis**\(\{f_{1},\ldots,f_{n}\}\) for the module \(V^{*}\). The function \(f_{i}\) assigns to each \(\alpha\) in \(V\) its \(i\)th coordinate relative to \(\{\beta_{1},\ldots,\beta_{n}\}\):
+
+\[\alpha\,=\,f_{1}(\alpha)\beta_{1}\,+\,\cdots\,+\,f_{n}(\alpha)\beta_{n}.\]
+
+If \(f\) is a linear function on \(V\), then
+
+\[f\,=\,f(\beta_{1})f_{1}\,+\,\cdots\,+\,f(\beta_{n})f_{n}.\] 

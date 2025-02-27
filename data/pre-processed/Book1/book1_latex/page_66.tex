@@ -1,0 +1,24 @@
+in row \(i\), column \(j\) of \(A^{\mathrm{T}}\) comes from row \(j\), column \(i\) of \(A\):
+
+\[\textbf{Entries of}\ A^{\mathrm{T}}\qquad(A^{\mathrm{T}})_{ij}=A_{ji}.\] (7)
+
+The transpose of a lower triangular matrix is upper triangular. The transpose of \(A^{\mathrm{T}}\) brings us back to \(A\).
+
+If we add two matrices and then transpose, the result is the same as first transposing and then adding: \((A+B)^{\mathrm{T}}\) is the same as \(A^{\mathrm{T}}+B^{\mathrm{T}}\). But what is the transpose of a product \(AB\) or an inverse \(A^{-1}\)? Those are the essential formulas of this section:
+
+1. The transpose of \(AB\) is \((AB)^{\mathrm{T}}=B^{\mathrm{T}}A^{\mathrm{T}}\),
+2. The transpose of \(A^{-1}\) is \((A^{-1})^{\mathrm{T}}=(A^{\mathrm{T}})^{-1}\).
+
+Notice how the formula for \((AB)^{\mathrm{T}}\) resembles the one for \((AB)^{-1}\). In both cases we reverse the order, giving \(B^{\mathrm{T}}A^{\mathrm{T}}\) and \(B^{-1}A^{-1}\). The proof for the inverse was easy, but this one requires an unnatural patience with matrix multiplication. The first row of \((AB)^{\mathrm{T}}\) is the first column of \(AB\). So the columns of \(A\) are weighted by the first column of \(B\). This amounts to the rows of \(A^{\mathrm{T}}\) weighted by the first row of \(B^{\mathrm{T}}\). That is exactly the first row of \(B^{\mathrm{T}}A^{\mathrm{T}}\). The other rows of \((AB)^{\mathrm{T}}\) and \(B^{\mathrm{T}}A^{\mathrm{T}}\) also agree.
+
+\[\textbf{Start from}\qquad\qquad AB =\begin{bmatrix}1&0\\ 1&1\end{bmatrix}\begin{bmatrix}3&3&3\\ 2&2&2\end{bmatrix}=\begin{bmatrix}3&3&3\\ 5&5&5\end{bmatrix}\] \[\textbf{Transpose to}\qquad B^{\mathrm{T}}A^{\mathrm{T}} =\begin{bmatrix}3&2\\ 3&2\\ 3&2\end{bmatrix}\begin{bmatrix}1&1\\ 0&1\end{bmatrix}=\begin{bmatrix}3&5\\ 3&5\\ 3&5\end{bmatrix}.\]
+
+To establish the formula for \((A^{-1})^{\mathrm{T}}\), start from \(AA^{-1}=I\) and \(A^{-1}A=I\) and take transposes. On one side, \(I^{\mathrm{T}}=I\). On the other side, we know from part (i) the transpose of a product. You see how \((A^{-1})^{\mathrm{T}}\) is the inverse of \(A^{\mathrm{T}}\), proving (ii):
+
+\[\textbf{Inverse of}\ A^{\mathrm{T}}=\textbf{Transpose of}\ A^{-1}\qquad(A^{-1})^{ \mathrm{T}}A^{\mathrm{T}}=I.\] (8)
+
+### Symmetric Matrices
+
+With these rules established, we can introduce a special class of matrices, probably the most important class of all. _A symmetric matrix is a matrix that equals its own transpose:_\(A^{\mathrm{T}}=A\). The matrix is necessarily square. Each entry on one side of the diagonal equals its "mirror image" on the other side: \(a_{ij}=a_{ji}\). Two simple examples are \(A\) and \(D\) (and also \(A^{-1}\)):
+
+\[\textbf{Symmetric matrices}\qquad A=\begin{bmatrix}1&2\\ 2&8\end{bmatrix}\quad\text{and}\quad D=\begin{bmatrix}1&0\\ 0&4\end{bmatrix}\quad\text{and}\quad A^{-1}=\frac{1}{4}\begin{bmatrix}8&-2\\ -2&1\end{bmatrix}.\] 

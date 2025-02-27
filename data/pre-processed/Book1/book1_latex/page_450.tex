@@ -1,0 +1,23 @@
+rewrite that as \(sX=\theta e\). Creating the diagonal matrix \(S\) from \(s\), this is \(eSX=\theta e\). If we change \(e\), \(y\), \(c\), and \(s\) to column vectors, and transpose, optimality now has three parts:
+
+\[\textbf{Primal} Ax=b,\quad x\geq 0.\] (10a) \[\textbf{Dual} A^{\mathrm{T}}y+s=c.\] (10b) \[\textbf{Nonlinear} XSe-\theta e=0.\] (10c)
+
+Newton's method takes a step \(\Delta x\), \(\Delta y\), \(\Delta s\) from the current \(x\), \(y\), \(s\). (Those solve equations (10a) and (10b), but not (10c).) By ignoring the second-order term \(\Delta X\Delta Se\), the corrections come from linear equations!
+
+\[A\Delta x=0.\] (11a) \[\textbf{Newton step} A^{\mathrm{T}}\Delta y+\Delta s=0.\] (11b) \[S\Delta x+X\Delta s=\theta e-XSe.\] (11c)
+
+Robert Freund's notes for his MIT class pin down the (quadratic) convergence rate and the computational complexity of this algorithm. Regardless of the dimensions \(m\) and \(n\), the duality gap \(sx\) is generally below \(10^{-8}\) after 20-80 Newton steps. This algorithm is used almost "as is" in commercial interior-point software, and for a large class of nonlinear optimization problems as well.
+
+### The Theory of Inequalities
+
+There is more than one way to study duality. We quickly proved \(yb\leq cx\), and then used the simplex method to get equality. This was a _constructive proof_; \(x^{*}\) and \(y^{*}\) were actually computed. Now we look briefly at a different approach, which omits the simplex algorithm and looks more directly at the geometry. I think the key ideas will be just as clear (in fact, probably clearer) if we omit some of the details.
+
+The best illustration of this approach came in the Fundamental Theorem of Linear Algebra. The problem in Chapter 2 was to find \(b\) in the column space of \(A\). After elimination and the four subspaces, this solvability question was answered in a completely different way by Problem 11 in Section 3.1:
+
+\[\textbf{8H} Ax=b\text{ has a solution \ \ \ \ \ }\textbf{or}\quad\text{ there is a $y$ such that $yA=0$ and $yb\neq 0$.}\]
+
+This is the _theorem of the alternative_, because to find both \(x\) and \(y\) is impossible: If \(Ax=b\) then \(yAx=yb\neq 0\), and this contradicts \(yAx=0x=0\). In the language of subspaces, either \(b\) is in the column space, or it has a component sticking into the left nullspace. That component is the required \(y\).
+
+For inequalities, we want to find a theorem of exactly the same kind. Start with the same system \(Ax=b\), but add the constraint \(x\geq 0\). When does there exist a _nonnegative solution_ to \(Ax=b\)?
+
+In Chapter 2, \(b\) was anywhere in the column space. Now we allow only _nonnegative_ combinations, and the \(b\)'s no longer fill out a subspace. Instead, they fill a cone-shaped 

@@ -1,0 +1,27 @@
+defines an inner product on \(V\). Furthermore, if we introduce the **conjugate transpose** matrix \(B^{\star}\), where \(B^{\star}_{kj}=\overline{B}_{jk}\), we may express this inner product on \(F^{n\times n}\) in terms of the trace function :
+
+\[(A|B)\,=\,\operatorname{tr}\,(AB^{\star})\,=\,\operatorname{tr}\,(B^{\star}A).\]
+
+For
+
+\[\operatorname{tr}\,(AB^{\star}) =\,\underset{j}{\Sigma}\,(AB^{\star})_{ij}\] \[=\,\underset{j}{\Sigma}\,\underset{k}{\Sigma}\,A_{jk}B^{\star}_{kj}\] \[=\,\underset{j}{\Sigma}\,\underset{k}{\Sigma}\,A_{jk}\overline{ B}_{jk}.\]
+
+**Example 4**: Let \(F^{n\times 1}\) be the space of \(n\times 1\) (column) matrices over \(F\), and let \(Q\) be an \(n\times n\) invertible matrix over \(F\). For \(X\), \(Y\) in \(F^{n\times 1}\) set
+
+\[(X|Y)\,=\,Y^{\star}Q^{\star}QX.\]
+
+We are identifying the \(1\times 1\) matrix on the right with its single entry. When \(Q\) is the identity matrix, this inner product is essentially the same as that in Example 1; we call it the **standard inner product** on \(F^{n\times 1}\). The reader should note that the terminology 'standard inner product' is used in two special contexts. For a general finite-dimensional vector space over \(F\), there is no obvious inner product that one may call standard.
+
+**Example 5**: Let \(V\) be the vector space of all continuous complex-valued functions on the unit interval, \(0\leq t\leq 1\). Let
+
+\[(f|g)\,=\,\int_{0}^{1}f(t)\overline{g(t)}\;dt.\]
+
+The reader is probably more familiar with the space of real-valued continuous functions on the unit interval, and for this space the complex conjugate on \(g\) may be omitted.
+
+**Example 6**: This is really a whole class of examples. One may construct new inner products from a given one by the following method. Let \(V\) and \(W\) be vector spaces over \(F\) and suppose \((\ \ |\ \ )\) is an inner product on \(W\). If \(T\) is a non-singular linear transformation from \(V\) into \(W\), then the equation
+
+\[p_{T}(\alpha,\beta)\,=\,(T\alpha|T\beta)\]
+
+defines an inner product \(p_{T}\) on \(V\). The inner product in Example 4 is a special case of this situation. The following are also special cases.
+
+1. Let \(V\) be a finite-dimensional vector space, and let \[\mathfrak{G}\,=\,\{\alpha_{1},\,.\,.\,.\,,\,\alpha_{n}\}\] 

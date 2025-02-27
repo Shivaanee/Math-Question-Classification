@@ -1,0 +1,23 @@
+With state feedback, we have
+
+\[x_{t+1}=Ax_{t}+Bu_{t}=Ax_{t}+B(Kx_{t})=(A+BK)x_{t},\quad t=1,2,\ldots.\]
+
+This recursion is called the _closed-loop system_. The matrix \(A+BK\) is called the _closed-loop dynamics matrix_. (In this context, the recursion \(x_{t+1}=Ax_{t}\) is called the _open-loop system_. It gives the dynamics when \(u_{t}=0\).)
+
+### 10.3 Matrix power
+
+It makes sense to multiply a square matrix \(A\) by itself to form \(AA\). We refer to this matrix as \(A^{2}\). Similarly, if \(k\) is a positive integer, then \(k\) copies of \(A\) multiplied together is denoted \(A^{k}\). If \(k\) and \(l\) are positive integers, and \(A\) is square, then \(A^{k}A^{l}=A^{k+l}\) and \((A^{k})^{l}=A^{kl}\). By convention we take \(A^{0}=I\), which makes the formulas above hold for all nonnegative integer values of \(k\) and \(l\).
+
+We should mention one ambiguity in matrix power notation that occasionally arises. When \(A\) is a square matrix and \(T\) is a nonnegative integer, \(A^{T}\) can mean either the transpose of the matrix \(A\) or its \(T\)th power. Usually which is meant is clear from the context, or the author explicitly states which meaning is intended. To avoid this ambiguity, some authors use a different symbol for the transpose, such as \(A^{\mathrm{T}}\) (with the superscript in roman font) or \(A^{\prime}\), or avoid referring to the \(T\)th power of a matrix. When \(A\) is not square there is no ambiguity, since \(A^{T}\) can only be the transpose in this case.
+
+Other matrix powers.Matrix powers \(A^{k}\) with \(k\) a negative integer will be discussed in SS11.2. Non-integer powers, such as \(A^{1/2}\) (the matrix squareroot), need not make sense, or can be ambiguous, unless certain conditions on \(A\) hold. This is an advanced topic in linear algebra that we will not pursue in this book.
+
+Paths in a directed graph.Suppose \(A\) is the \(n\times n\) adjacency matrix of a directed graph with \(n\) vertices:
+
+\[A_{ij}=\left\{\begin{array}{ll}1&\mbox{there is a edge from vertex $j$ to vertex $i$}\\ 0&\mbox{otherwise}\end{array}\right.\]
+
+(see page 112). A _path_ of length \(\ell\) is a sequence of \(\ell+1\) vertices, with an edge from the first to the second vertex, an edge from the second to third vertex, and so on. We say the path goes from the first vertex to the last one. An edge can be considered a path of length one. By convention, every vertex has a path of length zero (from the vertex to itself).
+
+The elements of the matrix powers \(A^{\ell}\) have a simple meaning in terms of paths in the graph. First examine the expression for the \(i,j\) element of the square of \(A\):
+
+\[(A^{2})_{ij}=\sum_{k=1}^{n}A_{ik}A_{kj}.\] 

@@ -1,0 +1,16 @@
+5. Integrate by parts: \(\int_{0}^{1}-V_{i}^{\prime\prime}V_{j}\,dx=\int_{0}^{1}V_{i}^{\prime}V_{j}^{\prime }\,dx-\big{[}V_{i}^{\prime}V_{j}\big{]}_{x=0}^{\star=1}=\int_{0}^{1}V_{i}^{ \prime}V_{j}^{\prime}\,dx=\text{same}\ A_{ij}\).
+7. \(A=4,\,M=\frac{1}{3}\). Their ratio \(12\) (Rayleigh quotient on the subspace of multiples of \(V(x)\)) is _larger_ than the true eigenvalue \(\lambda=\pi^{2}\).
+9. The mass matrix \(M\) is \(h/6\) times the \(1,\,4,\,1\) tridiagonal matrix.
+
+#### Problem Set 7.2, page 357
+
+1. If \(Q\) is orthogonal, its norm is \(\|Q\|=\max\|Qx\|/\|x\|=1\) because \(Q\) preserves length: \(\|Qx\|=\|x\|\) for every \(x\). Also \(Q^{-1}\) is orthogonal and has norm one, so \(c(Q)=1\).
+3. \(\|ABx\|\leq\|A\|\|Bx\|\), by the definition of the norm of \(A\), and then \(\|Bx\|\leq\|B\|\|x\|\). Dividing by \(\|x\|\) and maximizing, \(\|AB\|\leq\|A\|\|B\|\). The same is true for the inverse, \(\|B^{-1}A^{-1}\|\leq\|B^{-1}\|\|A^{-1}\|\); \(c(AB)\leq c(A)c(B)\) by multiplying these inequalities.
+5. In the definition \(\|A\|=\max\|Ax\|/\|x\|\), choose \(x\) to be the particular eigenvector in question; \(\|Ax\|=|\lambda|\|x\|\), so the ratio is \(|\lambda|\) and _maximum_ ratio is _at least_\(|\lambda|\).
+7. \(A^{\mathrm{T}}A\) and \(AA^{\mathrm{T}}\) have the same eigenvalues, since \(A^{\mathrm{T}}Ax=\lambda x\) gives \(AA^{\mathrm{T}}(Ax)=A(A^{\mathrm{T}}Ax)=\lambda(Ax)\). Equality of the largest eigenvalues means \(\|A\|=\|A^{\mathrm{T}}\|\).
+9. \(A=\begin{bmatrix}0&1\\ 0&0\end{bmatrix}\), \(B=\begin{bmatrix}0&0\\ 1&0\end{bmatrix}\), \(\lambda_{\max}(A+B)>\lambda_{\max}(A)+\lambda_{\max}(B)\) (since \(1>0+0\)), and \(\lambda_{\max}(AB)>\lambda_{\max}(A)\lambda_{\max}(B)\). So \(\lambda_{\max}(A)\) is not a norm.
+10. Yes, \(c(A)=\|A\|\,\|A^{-1}\|=c(A^{-1})\), since \((A^{-1})^{-1}\) is \(A\) again. (b) \(A^{-1}b=x\) leads to \(\dfrac{\|\delta b\|}{\|b\|}\leq\|A\|\,\|A^{-1}\|\dfrac{\|\delta x\|}{\|x\|}\). This is \(\dfrac{\|\delta x\|}{\|x\|}\geq\dfrac{1}{c}\dfrac{\|\delta b\|}{\|b\|}\).
+11. \(\|A\|=2\) and \(c=1;\,\|A\|=\sqrt{2}\) and \(c\) is infinite (singular !); \(\|A\|=\sqrt{2}\) and \(c=1\).
+12. If \(\lambda_{\max}=\lambda_{\min}=1\), then all \(\lambda_{i}=1\) and \(A=SIS^{-1}=I\). The only matrices with \(\|A\|=\|A^{-1}\|=1\) are _orthogonal matrices_, because \(A^{\mathrm{T}}A\) has to be \(I\).
+13. The residual \(b-Ay=(10^{-7},0)\) is much smaller than \(b-Az=(.0013,.0016)\). But \(z\) is much closer to the solution than \(y\).
+14. \(x_{1}^{2}+\cdots+x_{n}^{2}\) is not smaller than \(\max(x_{i}^{2})=(\|x\|_{\infty})^{2}\) and not larger than \((|x_{1}|+\cdots+|x_{n}|)^{2}\), which is \((\|x\|_{1})^{2}\). Certainly \(x_{1}^{2}+\cdots+x_{n}^{2}\leq n\,\max(x_{i}^{2})\), so \(\|x\|\leq\sqrt{n}\|x\|_{\infty}\). Choose \(y=(\text{sign}\ x_{1},\,\text{sign}\ x_{2},\,\ldots,\,\text{sign}\ x_{n})\) to get \(x\cdot y=\|x\|_{1}\). By Schwarz, this is at most \(\|x\|\|y\|=\sqrt{n}\|x\|\). Choose \(x=(1,\,1,\ldots,\,1)\) for maximum ratios \(\sqrt 

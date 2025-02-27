@@ -1,0 +1,21 @@
+Here we assume that the steering angle is always less than \(90^{\circ}\), so the tangent term in the last equation makes sense. The first two equations state that the car is moving in the direction \(\theta(t)\) (its orientation) at speed \(s(t)\). The last equation gives the change in orientation as a function of the car speed and the steering angle. For a fixed steering angle and speed, the car moves in a circle.
+
+We can control the speed \(s\) and the steering angle \(\phi\); the goal is to move the car over some time period from a given initial position and orientation to a specified final position and orientation.
+
+We now discretize the equations in time. We take a small time interval \(h\), and obtain the approximations
+
+\[p_{1}(t+h) \approx p_{1}(t)+hs(t)\cos\theta(t),\] \[p_{2}(t+h) \approx p_{2}(t)+hs(t)\sin\theta(t),\] \[\theta(t+h) \approx \theta(t)+h(s(t)/L)\tan\phi(t).\]
+
+We will use these approximations to derive nonlinear state equations for the car motion, with state \(x_{k}=(p_{1}(kh),p_{2}(kh),\theta(kh))\) and input \(u_{k}=(s(kh),\phi(kh))\). We have
+
+\[x_{k+1}=f(x_{k},u_{k}),\]
+
+with
+
+\[f(x_{k},u_{k})=x_{k}+h(u_{k})_{1}\left[\begin{array}{c}\cos(x_{k})_{3}\\ \sin(x_{k})_{3}\\ (\tan(u_{k})_{2})/L\end{array}\right].\]
+
+We now consider the nonlinear optimal control problem
+
+\[\begin{array}{ll}\mbox{minimize}&\sum\limits_{k=1}^{N}\|u_{k}\|^{2}+\gamma \sum\limits_{k=1}^{N-1}\|u_{k+1}-u_{k}\|^{2}\\ \mbox{subject to}&x_{2}=f(0,u_{1})\\ &x_{k+1}=f(x_{k},u_{k}),\quad k=2,\ldots,N-1\\ &x_{\rm final}=f(x_{N},u_{N}),\end{array}\] (19.12)
+
+with variables \(u_{1},\ldots,u_{N}\), and \(x_{2},\ldots,x_ 

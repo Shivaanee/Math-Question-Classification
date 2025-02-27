@@ -1,0 +1,38 @@
+
+Solving linear equations with the inverse.Consider the square system of \(n\) linear equations with \(n\) variables, \(Ax=b\). If \(A\) is invertible, then for any \(n\)-vector \(b\),
+
+\[x=A^{-1}b\] (11.1)
+
+is a solution of the equations. (This follows since \(A^{-1}\) is a right inverse of \(A\).) Moreover, it is the _only_ solution of \(Ax=b\). (This follows since \(A^{-1}\) is a left inverse of \(A\).) We summarize this very important result as
+
+_The square system of linear equations \(Ax=b\), with \(A\) invertible, has the unique solution \(x=A^{-1}b\), for any \(n\)-vector \(b\)._
+
+One immediate conclusion we can draw from the formula (11.1) is that the solution of a square set of linear equations is a linear function of the right-hand side vector \(b\).
+
+Invertibility conditions.For square matrices, left-invertibility, right-invertibility, and invertibility are equivalent: If a matrix is square and left-invertible, then it is also right-invertible (and therefore invertible) and vice-versa.
+
+To see this, suppose \(A\) is an \(n\times n\) matrix and left-invertible. This implies that the \(n\) columns of \(A\) are linearly independent. Therefore they form a basis and so any \(n\)-vector can be expressed as a linear combination of the columns of \(A\). In particular, each of the \(n\) unit vectors \(e_{i}\) can be expressed as \(e_{i}=Ab_{i}\) for some \(n\)-vector \(b_{i}\). The matrix \(B=\left[\begin{array}{cccc}b_{1}&b_{2}&\cdots&b_{n}\end{array}\right]\) satisfies
+
+\[AB=\left[\begin{array}{cccc}Ab_{1}&Ab_{2}&\cdots&Ab_{n}\end{array}\right]= \left[\begin{array}{cccc}e_{1}&e_{2}&\cdots&e_{n}\end{array}\right]=I.\]
+
+So \(B\) is a right inverse of \(A\).
+
+We have just shown that for a square matrix \(A\),
+
+\[\mbox{left-invertibility}\quad\Longrightarrow\quad\mbox{column independence}\quad \Longrightarrow\quad\mbox{right-invertibility}.\]
+
+(The symbol \(\Longrightarrow\) means that the left-hand condition implies the right-hand condition.) Applying the same result to the transpose of \(A\) allows us to also conclude that
+
+\[\mbox{right-invertibility}\quad\Longrightarrow\quad\mbox{row independence}\quad \Longrightarrow\quad\mbox{left-invertibility}.\]
+
+So all six of these conditions are equivalent; if any one of them holds, so do the other five.
+
+In summary, for a square matrix \(A\), the following are equivalent.
+
+* \(A\) is invertible.
+* The columns of \(A\) are linearly independent.
+* The rows of \(A\) are linearly independent.
+* \(A\) has a left inverse.
+* \(A\) has a right inverse.
+
+ 

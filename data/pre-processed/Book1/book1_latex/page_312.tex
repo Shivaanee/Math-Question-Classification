@@ -1,0 +1,23 @@
+For complex eigenvalues, \(b\) and \(c\) have opposite signs and are sufficiently large.
+
+**Example 2**.: One from each quadrant: only #2 is stable:
+
+\[\begin{bmatrix}1&0\\ 0&2\end{bmatrix}\qquad\begin{bmatrix}-1&0\\ 0&-2\end{bmatrix}\qquad\begin{bmatrix}1&0\\ 0&-2\end{bmatrix}\qquad\begin{bmatrix}-1&0\\ 0&2\end{bmatrix}\]
+
+On the boundaries of the second quadrant, the equation is neutrally stable. On the horizontal axis, one eigenvalue is zero (because the determinant is \(\lambda_{1}\lambda_{2}=0\)). On the vertical axis above the origin, both eigenvalues are purely imaginary (because the trace is Zero). Crossing those axes are the two ways that stability is lost.
+
+The \(n\) by \(n\) case is more difficult. A test for \(\operatorname{Re}\lambda_{i}<0\) came from Routh and Hurwitz, who found a series of inequalities on the entries \(a_{ij}\). I do not think this approach is much good for a large matrix; the computer can probably find the eigenvalues with more certainty than it can test these inequalities. Lyapunov's idea was to find a _weighting matrix_\(W\)_so that the weighted length_\(\|Wu(t)\|\)_is always decreasing_. If there exists such a \(W\), then \(\|Wu\|\) will decrease steadily to zero, and after a few ups and downs \(u\) must get there too (stability). The real value of Lyapunov's method is for a nonlinear equation--then stability can be proved without knowing a formula for \(u(t)\).
+
+**Example 3**.: \(du/dt=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}u\) sends \(u(t)\) around a circle, starting from \(u(0)=(1,0)\).
+
+Since \(\operatorname{trace}=0\) and \(\det=1\), we have purely imaginary eigenvalues:
+
+\[\begin{bmatrix}-\lambda&-1\\ 1&-\lambda\end{bmatrix}=\lambda^{2}+1=0\qquad\text{so}\qquad\lambda=+i\text{ and }-i.\]
+
+The eigenvectors are \((1,-i)\) and \((1,i)\). and the solution is
+
+\[u(t)=\frac{1}{2}e^{it}\begin{bmatrix}1\\ -i\end{bmatrix}+\frac{1}{2}e^{-it}\begin{bmatrix}1\\ i\end{bmatrix}.\]
+
+Figure 5.2: Stability and instability regions for a 2 by 2 matrix.
+
+ 

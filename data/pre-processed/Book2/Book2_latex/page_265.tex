@@ -1,0 +1,9 @@
+where \(\hat{y}^{\rm lin}\) and \(\hat{y}^{\rm seas}\) are defined as
+
+\[\hat{y}^{\rm lin}=\theta_{1}\left[\begin{array}{c}1\\ 2\\ \vdots\\ N\end{array}\right],\qquad\hat{y}^{\rm seas}=\left[\begin{array}{c}\theta_{2: (P+1)}\\ \theta_{2:(P+1)}\\ \vdots\\ \theta_{2:(P+1)}\end{array}\right].\]
+
+The second component is periodic or _seasonal_, with period \(P=12\), and consists of the pattern \((\theta_{2},\ldots,\theta_{P+1})\), repeated \(N/P\) times (we assume \(N\) is a multiple of \(P\)). The constant term is omitted in the model because it would be redundant: It has the same effect as adding a constant to the parameters \(\theta_{2},\ldots,\theta_{P+1}\).
+
+The least squares fit is computed by minimizing \(\|A\theta-y^{\rm d}\|^{2}\) where \(\theta\) is a \((P+1)\)-vector and the matrix \(A\) in (13.1) is given by
+
+\[A=\left[\begin{array}{ccccc}1&1&0&\cdots&0\\ 2&0&1&\cdots&0\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ P&0&0&\cdots&1\\ P+1&1&0&\cdots&0\\ P+2&0&1&\cdots&0\\ \vdots&\vdots&\vdots&\ddots&\vdots\\ 2P&0&0&\cdots&1\\ \vdots&\vdots&\vdots&&\vdots\\ N-P+1& 

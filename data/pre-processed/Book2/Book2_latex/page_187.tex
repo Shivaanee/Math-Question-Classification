@@ -1,0 +1,22 @@
+
+
+## Chapter 10 Matrix multiplication
+
+In this chapter we introduce matrix multiplication, a generalization of matrix-vector multiplication, and describe several interpretations and applications.
+
+### 10.1 Matrix-matrix multiplication
+
+It is possible to multiply two matrices using _matrix multiplication_. You can multiply two matrices \(A\) and \(B\) provided their dimensions are _compatible_, which means the number of columns of \(A\) equals the number of rows of \(B\). Suppose \(A\) and \(B\) are compatible, _e.g._, \(A\) has size \(m\times p\) and \(B\) has size \(p\times n\). Then the product matrix \(C=AB\) is the \(m\times n\) matrix with elements
+
+\[C_{ij}=\sum_{k=1}^{p}A_{ik}B_{kj}=A_{i1}B_{1j}+\cdots+A_{ip}B_{pj},\qquad i=1, \ldots,m,\quad j=1,\ldots,n.\] (10.1)
+
+There are several ways to remember this rule. To find the \(i,j\) element of the product \(C=AB\), you need to know the \(i\)th row of \(A\) and the \(j\)th column of \(B\). The summation above can be interpreted as 'moving left to right along the \(i\)th row of \(A\)' while moving 'top to bottom' down the \(j\)th column of \(B\). As you go, you keep a running sum of the product of elements, one from \(A\) and one from \(B\).
+
+As a specific example, we have
+
+\[\left[\begin{array}{rr}-1.5&3&2\\ 1&-1&0\end{array}\right]\left[\begin{array}{rr}-1&-1\\ 0&-2\\ 1&0\end{array}\right]=\left[\begin{array}{rr}3.5&-4.5\\ -1&1\end{array}\right].\]
+
+To find the \(1,2\) entry of the right-hand matrix, we move along the first row of the left-hand matrix, and down the second column of the middle matrix, to get \((-1.5)(-1)+(3)(-2)+(2)(0)=-4.5\).
+
+Matrix-matrix multiplication includes as special cases several other types of multiplication (or product) we have encountered so far.
+

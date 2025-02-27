@@ -1,0 +1,27 @@
+The linear quadratic control problem (with initial and final state constraints) is
+
+\[\begin{array}{ll}\mbox{minimize}&J_{\rm output}+\rho J_{\rm input}\\ \mbox{subject to}&x_{t+1}=A_{t}x_{t}+B_{t}u_{t},\quad t=1,\ldots,T-1,\\ &x_{1}=x^{\rm init},\quad x_{T}=x^{\rm des},\end{array}\] (17.8)
+
+where the variables to be chosen are \(x_{1},\ldots,x_{T}\) and \(u_{1},\ldots,u_{T-1}\).
+
+Formulation as constrained least squares problem.We can solve the linear quadratic control problem (17.8) by setting it up as a big linearly constrained least squares problem. We define the vector \(z\) of all these variables, stacked:
+
+\[z=(x_{1},\ldots,x_{T},u_{1},\ldots,u_{T-1}).\]
+
+The dimension of \(z\) is \(Tn+(T-1)m\). The control objective can be expressed as \(\|\tilde{A}z-\tilde{b}\|^{2}\), where \(\tilde{b}=0\) and \(\tilde{A}\) is the block matrix
+
+\[\tilde{A}=\left[\begin{array}{cccc|cccc}C_{1}&&&&&&&\\ &C_{2}&&&&\\ &&\ddots&&&&&\\ &&&C_{T}&&&\\ \hline&&&&\sqrt{\rho}I&&\\ &&&&\ddots&\\ &&&&&&&\sqrt{\rho}I\end{array}\right].\]
+
+In this matrix, (block) entries not shown are zero, and the identity matrices in the lower right corner have dimension \(m\). (The lines in the matrix delineate the portions related to the states and the inputs.) The dynamics constraints, and the initial and final state constraints, can be expressed as \(\tilde{C}z=\tilde{d}\), with
+
+\[\tilde{C}=\left[\begin{array}{cccc|cccc}A_{1}&-I&&&&B_{1}&&&&\\ &A_{2}&-I&&&&B_{2}&&\\ &&\ddots&\ddots&&&&\ddots&\\ &&&A_{T-1}&-I&&&&B_{T-1}\\ \hline I&&&&I&&\\ \end{array}\right],\qquad\tilde{d}=\left[\begin{array}{c}0\\ 0\\ \vdots\\ 0\\ \hline x^{\rm init}\\ x^{\rm des}\end{array}\right],\]
+
+where (block) entries not shown are zero. (The vertical line separates the portions of the matrix associated with the states and the inputs, and the horizontal lines separate the dynamics equations and the initial and final state constraints.)
+
+The solution \(\hat{z}\) of the constrained least squares problem
+
+\[\begin{array}{ll}\mbox{minimize}&\|\tilde{A}z-\tilde{b}\|^{2}\\ \mbox{subject to}&\tilde{C}z=\tilde{d}\end{array}\] (17.9)
+
+gives us the optimal input trajectory and the associated optimal state (and output) trajectory. The solution \(\hat{z}\) is a linear function of \(\tilde{b}\) and \(\tilde{d}\); since here \(\tilde{b}=0\), it is a linear function of \(x^{\rm init}\) and \(x^{\rm des}\).
+
+ 

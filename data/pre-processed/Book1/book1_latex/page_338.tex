@@ -1,0 +1,21 @@
+I think an example is the best way to explain \(B=M^{-1}AM\). Suppose \(T\) is _projection onto the line \(L\)_ at angle \(\theta\). This linear transformation is completely described without the help of a basis. But to represent \(T\) by a matrix, we do need a basis. Figure 5.5 offers two choices, the standard basis \(v_{1}=(1,0)\), \(v_{2}=(0,1)\) and a basis \(V_{1}\), \(V_{2}\) chosen especially for \(T\).
+
+In fact \(TV_{1}=V_{1}\) (since \(V_{1}\) is already on the line \(L\)) and \(TV_{2}=0\) (since \(V_{2}\) is perpendicular to the line). In that eigenvector basis, the matrix is diagonal:
+
+\[\text{\bf Eigenvector basis}\qquad B=[T]_{V\text{ to }V}=\begin{bmatrix}1&0\\ 0&0\end{bmatrix}.\]
+
+The other thing is the change of basis matrix \(M\). For that we express \(V_{1}\) as a combination \(v_{1}\cos\theta\bot v_{2}\sin\theta\) and put those coefficients into column 1. Similarly \(V_{2}\) (or \(IV_{2}\), the transformation is the identity) is \(-v_{1}\sin\theta+v_{2}\cos\theta\), producing column 2:
+
+\[\text{\bf Change of basis}\qquad M=[I]_{V\text{ to }V}=\begin{bmatrix}c&-s\\ s&c\end{bmatrix}.\]
+
+The inverse matrix \(M^{-1}\) (which is here the transpose) goes from \(v\) to \(V\). Combined with \(B\) and \(M\), it gives the projection matrix in the standard basis of \(v\)'s:
+
+\[\text{\bf Standard basis}\qquad A=MBM^{-1}=\begin{bmatrix}c^{2}&cs\\ cs&s^{2}\end{bmatrix}.\]
+
+We can summarize the main point. The way to simplify that matrix \(A\)--in fact to diagonalize it--is to find its eigenvectors. They go into the columns of \(M\) (or \(S\)) and \(M^{-1}AM\) is diagonal. The algebraist says the same thing in the language of linear transformations: _Choose a basis consisting of eigenvectors_. The standard basis led to \(A\), which was not simple. The right basis led to \(B\), which was diagonal.
+
+We emphasize again that \(M^{-1}AM\) does not arise in solving \(Ax=b\). There the basic operation was to multiply \(A\) (on the left side only!) by a matrix that subtracts a multiple
+
+Figure 5.5: Change of basis to make the projection matrix diagonal.
+
+ 

@@ -1,0 +1,21 @@
+loops. Now it has a linear algebra proof for any connected graph:
+
+\[(\textbf{\# of nodes})-(\textbf{\# of edges})+(\textbf{\# of loops})=(n)-(m)+(m-n+1)=1.\] (3)
+
+For a single loop of 10 nodes and 10 edges, the Euler number is \(10-10+1\). If those 10 nodes are each connected to an eleventh node in the center, then \(11-20+10\) is still 1.
+
+Every vector \(f\) in the row space has \(x^{\mathrm{T}}f=f_{1}+\cdots+f_{n}=0\)--the currents from outside add to zero. Every vector \(b\) in the column space has \(y^{\mathrm{T}}b=0\)--the potential differences add to zero around all loops. In a moment we link \(x\) to \(y\) by a third law (_Ohm's law for each resistor_). First we stay with the matrix \(A\) for an application that seems frivolous but is not.
+
+### The Ranking of Football Teams
+
+At the end of the season, the polls rank college football teams. The ranking is mostly an average of opinions, and it sometimes becomes vague after the top dozen colleges. We want to rank all teams on a more mathematical basis.
+
+The first step is to recognize the graph. If team \(j\) played team \(k\), there is an edge between them. The _teams_ are the _nodes_, and the _games_ are the _edges_. There are a few hundred nodes and a few thousand edges--which will be given a direction by an arrow from the visiting team to the home team. Figure 2.7 shows part of the Ivy League, and some serious teams, and also a college that is not famous for big time football. Fortunately for that college (from which I am writing these words) the graph is not connected. Mathematically speaking, we cannot prove that MIT is not number 1 (unless it happens to play a game against somebody).
+
+If football were perfectly consistent, we could assign a "potential" \(x_{j}\) to every team. Then if visiting team \(v\) played home team \(h\), the one with higher potential would win. In the ideal case, the difference \(b\) in the score would exactly equal the difference \(x_{h}-x_{v}\) in their potentials. They wouldn't even have to play the game! There would be complete agreement that the team with highest potential is the best.
+
+This method has two difficulties (at least). We are trying to find a number \(x\) for every team, and we want \(x_{h}-x_{v}=b_{i}\), for every game. That means a few thousand equations
+
+Figure 2.7: Part of the graph for college football.
+
+ 

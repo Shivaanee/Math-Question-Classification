@@ -1,0 +1,11 @@
+* _Running sum._\(f\) forms the running sum of the elements in \(x\): \[f(x)=(x_{1},\,x_{1}+x_{2},\,x_{1}+x_{2}+x_{3},\,\ldots,\,x_{1}+x_{2}+\cdots+x_{n}).\] The running sum function can be expressed as \(f(x)=Ax\) with \[A=\left[\begin{array}{cccc}1&0&\cdots&0&0\\ 1&1&\cdots&0&0\\ \vdots&\vdots&\ddots&\vdots&\vdots\\ 1&1&\cdots&1&0\\ 1&1&\cdots&1&1\end{array}\right],\] _i.e._, \(A_{ij}=1\) if \(i\geq j\) and \(A_{ij}=0\) otherwise. This is the running sum matrix defined in (6.6).
+* _De-meaning._\(f\) subtracts the mean from each entry of a vector \(x\): \(f(x)=x-\mathbf{avg}(x)\mathbf{1}\). The de-meaning function can be expressed as \(f(x)=Ax\) with \[A=\left[\begin{array}{cccc}1-1/n&-1/n&\cdots&-1/n\\ -1/n&1-1/n&\cdots&-1/n\\ \vdots&\vdots&\ddots&\vdots\\ -1/n&-1/n&\cdots&1-1/n\end{array}\right].\]
+
+Examples of functions that are not linear.Here we list some examples of functions \(f\) that map \(n\)-vectors \(x\) to \(n\)-vectors \(f(x)\) that are _not_ linear. In each case we show a superposition counterexample.
+
+* _Absolute value._\(f\) replaces each element of \(x\) with its absolute value: \(f(x)=(|x_{1}|,|x_{2}|,\ldots,|x_{n}|)\). The absolute value function is not linear. For example, with \(n=1\), \(x=1\), \(y=0\), \(\alpha=-1\), \(\beta=0\), we have \[f(\alpha x+\beta y)=1\neq\alpha f(x)+\beta f(y)=-1,\] so superposition does not hold.
+* _Sort._\(f\) sorts the elements of \(x\) in decreasing order. The sort function is not linear (except when \(n=1\), in which case \(f(x)=x\)). For example, if \(n=2\), \(x=(1,0)\), \(y=(0,1)\), \(\alpha=\beta=1\), then \[f(\alpha x+\beta y)=(1,1)\neq\alpha f(x)+\beta f(y)=(2,0).\]
+
+Affine functions.A vector-valued function \(f:\mathbf{R}^{n}\rightarrow\mathbf{R}^{m}\) is called affine if it can be expressed as \(f(x)=Ax+b\), where \(A\) is an \(m\times n\) matrix and \(b\) is an \(m\)-vector. It can be shown that a function \(f:\mathbf{R}^{n}\rightarrow\mathbf{R}^{m}\) is affine if and only if
+
+\[f(\alpha x+\beta y)=\alpha f(x)+\beta f(y)\] 

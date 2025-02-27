@@ -1,0 +1,21 @@
+_Remark_.: One good way to write down the forward elimination steps is to include the right-hand side as an extra column. There is no need to copy \(u\) and \(v\) and \(w\) and \(=\) at every step, so we are left with the bare minimum:
+
+\[\begin{bmatrix}2&1&1&5\\ 4&-6&0&-2\\ -2&7&2&9\end{bmatrix}\longrightarrow\begin{bmatrix}2&1&1&5\\ 0&-8&-2&-12\\ 0&8&3&14\end{bmatrix}\longrightarrow\begin{bmatrix}2&1&1&5\\ 0&-8&-2&-12\\ 0&0&1&2\end{bmatrix}.\]
+
+At the end is the triangular system, ready for back-substitution. You may prefer this arrangement, which guarantees that operations on the left-hand side of the equations are also done on the right-hand side--because _both sides are there together_.
+
+In a larger problem, forward elimination takes most of the effort. We use multiples of the first equation to produce zeros below the first pivot. Then the second column is cleared out below the second pivot. The forward step is finished when the system is triangular; equation \(n\) contains only the last unknown multiplied by the last pivot. Back-substitution yields the complete solution in the opposite order--beginning with the last unknown, then solving for the next to last, and eventually for the first.
+
+By definition, _pivots cannot be zero_. We need to divide by them.
+
+### The Breakdown of Elimination
+
+_Under what circumstances could the process break down?_ Something must go wrong in the singular case, and something might go wrong in the nonsingular case. This may seem a little premature--after all, we have barely got the algorithm working. But the possibility of breakdown sheds light on the method itself.
+
+The answer is: With a full set of \(n\) pivots, there is only one solution. The system is non singular, and it is solved by forward elimination and back-substitution. But _if a zero appears_ in a pivot position, elimination has to stop--either temporarily or permanently. The system might or might not be singular.
+
+If the first coefficient is zero, in the upper left corner, the elimination of \(u\) from the other equations will be impossible. The same is true at every intermediate stage. Notice that a zero can appear in a pivot position, even if the original coefficient in that place was not zero. Roughly speaking, _we do not know whether a zero will appear until we try_, by actually going through the elimination process.
+
+In many cases this problem can be cured, and elimination can proceed. Such a system still counts as nonsingular; it is only the algorithm that needs repair. In other cases a breakdown is unavoidable. Those incurable systems are singular, they have no solution or else infinitely many, and a full set of pivots cannot be found.
+
+ 

@@ -1,0 +1,20 @@
+
+
+### 4.4 Examples
+
+Complexity.In step 1 of the \(k\)-means algorithm, we find the nearest neighbor to each of \(N\)\(n\)-vectors, over the list of \(k\) centroids. This requires approximately \(3Nkn\) flops. In step 2 we average the \(n\)-vectors over each of the cluster groups. For a cluster with \(p\) vectors, this requires \(n(p-1)\) flops, which we approximate as \(np\) flops; averaging all clusters requires a total of \(Nn\) flops. This is less than the cost of partitioning in step 1. So \(k\)-means requires around \((3k+1)Nn\) flops per iteration. Its order is \(Nkn\) flops.
+
+Each run of \(k\)-means typically takes fewer than a few tens of iterations, and usually \(k\)-means is run some modest number of times, like 10. So a very rough guess of the number of flops required to run \(k\)-means 10 times (in order to choose the best partition found) is \(1000Nkn\) flops.
+
+As an example, suppose we use \(k\)-means to partition \(N=100000\) vectors with size \(n=100\) into \(k=10\) groups. On a 1 Gflop/s computer we guess that this will take around 100 seconds. Given the approximations made here (for example, the number of iterations that each run of \(k\)-means will take), this is obviously a crude estimate.
+
+### 4.4 Examples
+
+#### Image clustering
+
+The MNIST (Mixed National Institute of Standards) database of handwritten digits is a data set containing \(N=60000\) grayscale images of size \(28\times 28\), which we represent as \(n\)-vectors with \(n=28\times 28=784\). Figure 4.6 shows a few examples from the data set. (The data set is available from Yann LeCun at yann.lecun.com/exdb/mnist.)
+
+We use the \(k\)-means algorithm to partition these images into \(k=20\) clusters, starting with a random assignment of the vectors to groups, and repeating the experiment 20 times. Figure 4.7 shows the clustering objective versus iteration number for three of the 20 initial assignments, including the two that gave the lowest and the highest final values of the objective.
+
+Figure 4.8 shows the representatives with the lowest final value of the clustering objective. Figure 4.9 shows the set with the highest value. We can see that most of the representatives are recognizable digits, with some reasonable confusion, for example between '4' and '9' or '3' and '8'. This is impressive when you consider that the \(k\)-means algorithm knows nothing about digits, handwriting, or even that the 784-vectors represent \(28\times 28\) images; it uses only the distances between 784-vectors. One interpretation is that the \(k\)-means algorithm has 'discovered' the digits in the data set.
+

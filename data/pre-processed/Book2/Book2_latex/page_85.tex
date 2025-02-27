@@ -1,0 +1,12 @@
+
+
+### The \(k\)-means algorithm
+
+One iteration of the \(k\)-means algorithm is illustrated in figure 4.2.
+
+Comments and clarifications.
+* Ties in step 1 can be broken by assigning \(x_{i}\) to the group associated with one of the closest representatives with the smallest value of \(j\).
+* It is possible that in step 1, one or more of the groups can be empty, _i.e._, contain no vectors. In this case we simply drop this group (and its representative). When this occurs, we end up with a partition of the vectors into fewer than \(k\) groups.
+
+Figure 4.2: _One iteration of the \(k\)-means algorithm._ The 30 2-vectors \(x_{i}\) are shown as filled circles, and the 3 group representatives \(z_{j}\) are shown as rectangles. In the left-hand figure the vectors are each assigned to the closest representative. In the right-hand figure, the representatives are replaced by the cluster centroids.
+

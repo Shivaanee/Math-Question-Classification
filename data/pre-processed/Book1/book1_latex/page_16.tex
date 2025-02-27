@@ -1,0 +1,19 @@
+The second plane is \(4u-6v=-2\). It is drawn vertically, because \(w\) can take any value. The coefficient of \(w\) is zero, but this remains a plane in 3-space. (The equation \(4u=3\), or even the extreme case \(u=0\), would still describe a plane.) The figure shows the intersection of the second plane with the first. That intersection is a line. _In three dimensions a line requires two equations_; in \(n\) dimensions it will require \(n-1\).
+
+Finally the third plane intersects this line in a point. The plane (not drawn) represents the third equation \(-2u+7v+2w=9\), and it crosses the line at \(u=1\), \(v=1\), \(w=2\). That triple intersection point \((1,1,2)\) solves the linear system.
+
+How does this row picture extend into \(n\) dimensions? The \(n\) equations will contain \(n\) unknowns. The first equation still determines a "plane." It is no longer a two-dimensional plane in 3-space; somehow it has "dimension" \(n-1\). It must be flat and extremely thin within \(n\)-dimensional space, although it would look solid to us.
+
+If time is the fourth dimension, then the plane \(t=0\) cuts through four-dimensional space and produces the three-dimensional universe we live in (or rather, the universe as it was at \(t=0\)). Another plane is \(z=0\), which is also three-dimensional; it is the ordinary \(x\)-\(y\) plane taken over all time. Those three-dimensional planes will intersect! They share the ordinary \(x\)-\(y\) plane at \(t=0\). We are down to two dimensions, and the next plane leaves a line. Finally a fourth plane leaves a single point. It is the intersection point of 4 planes in 4 dimensions, and it solves the 4 underlying equations.
+
+I will be in trouble if that example from relativity goes any further. The point is that linear algebra can operate with any number of equations. The first equation produces an \((n-1)\)-dimensional plane in \(n\) dimensions, The second plane intersects it (we hope) in a smaller set of "dimension \(n-2\)." Assuming all goes well, every new plane (every new equation) reduces the dimension by one. At the end, when all \(n\) planes are accounted for, the intersection has dimension zero. It is a _point_, it lies on all the planes, and its coordinates satisfy all \(n\) equations. It is the solution!
+
+### Column Vectors and Linear Combinations
+
+We turn to the columns. This time the vector equation (the same equation as (1)) is
+
+\[\textbf{Column form}\qquad u\begin{bmatrix}2\\ 4\\ -2\end{bmatrix}+v\begin{bmatrix}1\\ -6\\ 7\end{bmatrix}+w\begin{bmatrix}1\\ 0\\ 2\end{bmatrix}=\begin{bmatrix}5\\ -2\\ 9\end{bmatrix}=b.\] (2)
+
+Those are _three-dimensional column vectors_. _The vector \(b\) is identified with the point whose coordinates are \(5\), \(-2\), \(9\)_. Every point in three-dimensional space is matched to a vector, and vice versa. That was the idea of Descartes, who turned geometry into algebra by working with the coordinates of the point. We can write the vector in a column, or we can list its components as \(b=(5,-2,9)\), or we can represent it geometrically by an arrow from the origin. You can choose _the arrow_, or _the point_, or _the three numbers_. In six dimensions it is probably easiest to choose the six numbers.
+
+ 

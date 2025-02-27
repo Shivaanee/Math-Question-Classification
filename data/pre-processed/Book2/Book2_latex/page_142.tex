@@ -1,0 +1,18 @@
+
+Image cropping.As a more interesting example, suppose that \(x\) is an image with \(M\times N\) pixels, with \(M\) and \(N\) even. (That is, \(x\) is an \(MN\)-vector, with its entries giving the pixel values in some specific order.) Let \(y\) be the \((M/2)\times(N/2)\) image that is the upper left corner of the image \(x\), _i.e._, a cropped version. Then we have \(y=Ax\), where \(A\) is an \((MN/4)\times(MN)\) selector matrix. The \(i\)th row of \(A\) is \(e_{k_{i}}^{T}\), where \(k_{i}\) is the index of the pixel in \(x\) that corresponds to the \(i\)th pixel in \(y\).
+
+Permutation matrices.An \(n\times n\)_permutation matrix_ is one in which each column is a unit vector, and each row is the transpose of a unit vector. (In other words, \(A\) and \(A^{T}\) are both selector matrices.) Thus, exactly one entry of each row is one, and exactly one entry of each column is one. This means that \(y=Ax\) can be expressed as \(y_{i}=x_{\pi_{i}}\), where \(\pi\) is a permutation of \(1,2,\ldots,n\), _i.e._, each integer from \(1\) to \(n\) appears exactly once in \(\pi_{1},\ldots,\pi_{n}\).
+
+As a simple example consider the permutation \(\pi=(3,1,2)\). The associated permutation matrix is
+
+\[A=\left[\begin{array}{ccc}0&0&1\\ 1&0&0\\ 0&1&0\end{array}\right].\]
+
+Multiplying a 3-vector by \(A\) re-orders its entries: \(Ax=(x_{3},x_{1},x_{2})\).
+
+### 7.3 Incidence matrix
+
+Directed graph.A _directed graph_ consists of a set of _vertices_ (or nodes), labeled \(1,\ldots,n\), and a set of _directed edges_ (or branches), labeled \(1,\ldots,m\). Each edge is connected from one of the nodes and into another one, in which case we say the two nodes are connected or adjacent. Directed graphs are often drawn with the vertices as circles or dots, and the edges as arrows, as in figure 7.2. A directed
+
+Figure 7.2: Directed graph with four vertices and five edges.
+
+ 

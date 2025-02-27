@@ -1,0 +1,31 @@
+multiplied by \(i\) or \(-i\):
+
+\[(K-\lambda_{1}I)x_{1} =\begin{bmatrix}-i&-1\\ 1&-i\end{bmatrix}\begin{bmatrix}y\\ z\end{bmatrix}=\begin{bmatrix}0\\ 0\end{bmatrix}\qquad\text{and}\qquad x_{1}=\begin{bmatrix}1\\ -i\end{bmatrix}\] \[(K-\lambda_{2}I)x_{2} =\begin{bmatrix}i&-1\\ 1&i\end{bmatrix}\begin{bmatrix}y\\ z\end{bmatrix}=\begin{bmatrix}0\\ 0\end{bmatrix}\qquad\text{and}\qquad x_{2}=\begin{bmatrix}1\\ i\end{bmatrix}.\]
+
+The eigenvalues are distinct, even if imaginary, and the eigenvectors are independent. They go into the columns of \(S\):
+
+\[S=\begin{bmatrix}1&1\\ -i&i\end{bmatrix}\qquad\text{and}\qquad S^{-1}KS=\begin{bmatrix}i&0\\ 0&-i\end{bmatrix}.\]
+
+We are faced with an inescapable fact, that _complex numbers are needed even for real matrices_. If there are too few real eigenvalues, there are always \(n\) complex eigenvalues. (Complex includes real, when the imaginary part is zero.) If there are too few eigenvectors in the real world \(\mathbf{R}^{3}\), or in \(\mathbf{R}^{n}\), we look in \(\mathbf{C}^{3}\) or \(\mathbf{C}^{n}\). The space \(\mathbf{C}^{n}\) contains all column vectors with complex components, and it has new definitions of length and inner product and orthogonality. But it is not more difficult than \(\mathbf{R}^{n}\), and in Section 5.5 we make an easy conversion to the complex case.
+
+### Powers and Products: \(A^{k}\) and \(Ab\)
+
+There is one more situation in which the calculations are easy. _The eigenvalue of \(A^{2}\) are exactly \(\lambda_{1}^{2},\ldots,\lambda_{n}^{2}\), and every eigenvector of \(A\) is also an eigenvector of \(A^{2}\)_. We start from \(Ax=\lambda x\), and multiply again by \(A\):
+
+\[A^{2}x=A\lambda x=\lambda Ax=\lambda^{2}x.\] (3)
+
+Thus \(\lambda^{2}\) is an eigenvalue of \(A^{2}\), with the same eigenvector \(x\). If the first multiplication by \(A\) leaves the direction of \(x\) unchanged, then so does the second.
+
+The same result comes from diagonalization, by squaring \(S^{-1}AS=\Lambda\):
+
+\[\text{Eigenvalues of}\ A^{2}\qquad(S^{-1}AS)(S^{-1}AS)=\Lambda^{2}\quad\text{ or}\quad S^{-1}A^{2}S=\Lambda^{2}.\]
+
+The matrix \(A^{2}\) is diagonalized by the same \(S\), so the eigenvectors are unchanged. The eigenvalues are squared. This continues to hold for any power of \(A\):
+
+**5E** The eigenvalues of \(A^{k}\) are \(\lambda_{1}^{k},\ldots,\lambda_{n}^{k}\), and each eigenvector of \(A\) is still an eigenvector of \(A^{k}\). When \(S\) diagonalizes \(A\), it also diagonalizes \(A^{k}\):
+
+\[\Lambda^{k}=(S^{-1}AS)(S^{-1}AS)\cdots(S^{-1}AS)=S^{-1}A^{k}S.\] (4)
+
+Each \(S^{-1}\) cancels an \(S\), except for the first \(S^{-1}\) and the last \(S\).
+
+ 

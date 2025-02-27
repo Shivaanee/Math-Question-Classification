@@ -1,0 +1,17 @@
+"plane" has dimension \(n-1\).
+
+Another constraint is fundamental to linear programming: \(x\) and \(y\) are required to be _nonnegative_. This pair of inequalities \(x\geq 0\) and \(y\geq 0\) produces two more halfspaces. Figure 8.2 is bounded by the coordinate axes: \(x\geq 0\) admits all points to the right of \(x=0\), and \(y\geq 0\) is the halfspace above \(y=0\).
+
+### The Feasible Set and the Cost Function
+
+The important step is to impose all three inequalities at once. They combine to give the shaded region in Figure 8.2. This _feasible set_ is the _intersection_ of the three halfspaces \(x+2y\geq 4\), \(x\geq 0\), and \(y\geq 0\). A feasible set is composed of the solutions to a family of linear inequalities like \(Ax\geq b\) (the intersection of \(m\) halfspaces). When we also require that every component of \(x\) is nonnegative (the vector inequality \(x\geq 0\)), this adds \(n\) more halfspaces. The more constraints we impose, the smaller the feasible set.
+
+It can easily happen that a feasible set is bounded or even empty. If we switch our example to the halfspace \(x+2y\leq 4\), keeping \(x\geq 0\) and \(y\geq 0\), we get the small triangle \(OAB\). By combining both inequalities \(x+2y\geq 4\) and \(x+2y\leq 4\), the set shrinks to a line where \(x+2y=4\). If we add a contradictory constraint like \(x+2y\leq-2\), the feasible set is empty.
+
+The algebra of linear inequalities (or feasible sets) is one part of our subject. But linear programming has another essential ingredient: It looks for _the feasible point that maximizes or minimizes a certain cost function_ like \(2x+3y\). The problem in linear programming is to find the point that _lies in the feasible set and minimizes the cost_.
+
+The problem is illustrated by the geometry of Figure 8,2. The family of costs \(2x+3y\)
+
+Figure 8.1: Equations give lines and planes. Inequalities give halfspaces.
+
+ 

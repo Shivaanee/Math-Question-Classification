@@ -1,0 +1,19 @@
+
+
+### Problem Set 8.4, page 406
+
+1. The maximal flow is 13, with the minimal cut separating node 6 from the other nodes.
+2. Increasing the capacity of pipes from node 4 to node 6 or node 4 to node 5 will produce the largest increase in the maximal flow. The maximal flow increases from 8 to 9.
+3. Assign capacities = 1 to all edges. The maximum number of disjoint paths from \(s\) to \(t\) then equals the maximum flow. The minimum number of edges whose removal disconnects \(s\) from \(t\) is the minimum cut. Then max flow = min cut.
+4. Rows 1, 4, and 5 violate Hall's condition; the 3 by 3 submatrix coming from rows 1, 4, 5, and columns 1, 2, 5 has \(3+3>5\).
+5. The matrix has \(2n\) 1s which cannot be covered by less than \(n\) lines because each line covers exactly two 1s. It takes \(n\) lines; there must be a complete matching. 2. \(\begin{bmatrix}1&1&1&1&1\\ 1&0&0&0&1\\ 1&0&0&0&1\\ 1&0&0&0&1\\ 1&1&1&1&1\end{bmatrix}\). The 1s can be covered with four lines; five marriages are not possible.
+6. If each \(m+1\) marries the only acceptable man \(m\), there is no one for #1 to marry (even though all are acceptable to #1).
+7. Algorithm 1 gives 1-3, 3-2, 2-5, 2-4, 4-6, and algorithm 2 gives 2-5, 4-6, 2-4, 3-2, 1-3. These are equal-length shortest spanning trees.
+8. Rows 1, 3, 5 only have 1s in columns 2 and 4. 2. Columns 1, 3, 5 (in rows 2, 4). 3. Zero submatrix from rows 1, 3, 5 and columns 1, 3, 5. 4. Rows 2, 4 and columns 2, 4 cover all 1s.
+
+### Problem Set 8.5, page 413
+
+1. \(-10x_{1}+70(1-x_{1})=10x_{1}-10(1-x_{1})\), or \(x_{1}=\frac{4}{5}\), \(x_{2}=\frac{1}{5}\); \(-10y_{1}+10(1-y_{1})=70y_{1}-10(1-y_{1})\), or \(y_{1}=\frac{1}{5}\), \(y_{2}=\frac{4}{5}\); average payoff \(yAx=6\).
+2. If \(X\) chooses column \(j\), \(Y\) will choose its smallest entry \(a_{ij}\) (in row \(i\)). \(X\) will not move, since this is the largest entry in that row. In Problem 2, \(a_{12}=2\) was an equilibrium of this kind. If we exchange the 2 and 4 below it, no entry has this property, and mixed strategies are required.
+3. The best strategy for \(X\) combines the two lines to produce a horizontal line, guaranteeing this height of \(7/3\). The combination is \(\frac{2}{3}(3y+2(1-y))+\frac{1}{3}(y+3(1-y))=7/3\), so \(X\) chooses the columns with frequencies \(\frac{2}{3}\), \(0\), \(\frac{1}{3}\).
+4. For columns, we want \(x_{1}a+(1-x_{1})b=x_{1}c+(1-x_{1})d=u\), so \(x_{1}(a-b-c+d)=d-b\). For rows, \(y_{1}a+(1-y_{1})c=y_{1}b+(1-y_{1})d=v\) exchanges \(b\) and \(c\). Compare \(u\) with \(v\): \[u=x_{1}(a-b)+b=\frac{(a-b)(d-b)}{a-b-c+d}+b=\frac{ad-bc}{a-b-c+d}=\text{ same after }b\leftrightarrow c=v.\]

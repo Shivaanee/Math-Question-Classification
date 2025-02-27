@@ -1,0 +1,25 @@
+
+
+**61.**: Total currents are \(A^{\mathsf{T}}y=\begin{bmatrix}1&0&1\\ -1&1&0\\ 0&-1&-1\end{bmatrix}\begin{bmatrix}y_{\text{BC}}\\ y_{\text{CS}}\\ y_{\text{BS}}\end{bmatrix}=\begin{bmatrix}y_{\text{BC}}+y_{\text{BS}}\\ -y_{\text{BC}}+y_{\text{CS}}\\ -y_{\text{CS}}-y_{\text{BS}}\end{bmatrix}.\) Either way \((Ax)^{\mathsf{T}}y=x^{\mathsf{T}}(A^{\mathsf{T}}y)=x_{\text{B}}y_{\text{BC}}+x_ {\text{B}}y_{\text{BS}}-x_{\text{C}}y_{\text{BC}}+x_{\text{C}}y_{\text{CS}}-x_ {\text{S}}y_{\text{CS}}-x_{\text{S}}y_{\text{BS}}.\)
+**63.**: \(Ax\cdot y\) is the _cost_ of inputs, whereas \(x\cdot A^{\mathsf{T}}y\) is the _value_ of outputs.
+**65.**: These are groups: Lower triangular with diagonal \(1\)s, diagonal invertible \(D\), and permutations \(P\). Two more: Even permutations, all nonsingular matrices.
+**67.**: Reordering the rows and/or columns of \(\begin{bmatrix}a&b\\ c&d\end{bmatrix}\) will move entry \(a\), not giving \(\begin{bmatrix}a&c\\ b&d\end{bmatrix}\).
+**69.**: Random matrices are almost surely invertible.
+**71.**: The \(-1\), \(2\), \(-1\) matrix in Section 1.7 has \(A=LDL^{\mathsf{T}}\) with \(\ell_{i,i-1}=1-\frac{1}{i}\).
+
+**Problem Set 1.7, page 63**
+
+**1.**: \(\begin{bmatrix}2&-1\\ -1&2&-1\\ &-1&2&-1\\ &&-1&2\end{bmatrix}\)
+
+\[=\begin{bmatrix}1&&&\\ -\frac{1}{2}&1&&\\ &-\frac{2}{3}&1&\\ &&-\frac{3}{4}&1\end{bmatrix}\begin{bmatrix}2&&&\\ &\frac{3}{2}&&\\ &&\frac{4}{3}&\\ &&\frac{5}{4}\end{bmatrix}\begin{bmatrix}1&-\frac{1}{2}&&\\ &1&-\frac{2}{3}&\\ &&1&-\frac{3}{4}\\ &&&1\end{bmatrix}=LDL^{\mathsf{T}}\\ \text{det}=5.\]
+**3.**: \(A_{0}=\begin{bmatrix}1&-1&&\\ -1&2&-1&\\ &-1&2&-1\\ &&-1&2&-1\\ &&-1&1\end{bmatrix}\). Each row adds to \(1\), so \(A_{0}\begin{bmatrix}c\\ c\\ c\\ c\\ c\end{bmatrix}=\begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\end{bmatrix}\).
+**5.**: \((u_{1},\,u_{2},\,u_{3})=(\pi^{2}/8,\,0,\,-\pi^{2}/8)\) instead of the true values \((1,0,\,-1)\).
+**7.**: \(H^{-1}=\begin{bmatrix}9&-36&30\\ -36&192&-180\\ 30&-180&180\end{bmatrix}\).
+**9.**: The \(10\) by \(10\) Hilbert matrix is very ill-conditioned.
+**11.**: A large pivot is multiplied by less than \(1\) in eliminating each entry below it. An extreme case, with multipliers \(=1\) and pivots \(=\frac{1}{2}\), \(\frac{1}{2}\), \(4\), is \(A=\begin{bmatrix}1/2&1/2&1\\ -1/2&0&1\\ -1/2&-1&1\end{bmatrix}\).
+
+**Problem Set 2.1, page 73**
+
+1. 1. 1. The set of all \((u,\,v)\), where \(u\) and \(v\) are ratios \(p/q\) of integers. 2. The set of all \((u,\,v)\), where \(u=0\) or \(v=0\). .
+2. \(C(A)\) is the \(x\)-axis; \(N(A)\) is the line through \((1,\,1)\); \(C(B)\) is \(\mathbf{R}^{2}\); \(N(B)\) is the line through \((-2,\,1,\,0)\); \(C(C)\) is the point \((0,\,0)\) in \(\mathbf{R}^{2}\); the nullspace-\(N(C)\) is \(\mathbf{R}^{3}\).
+

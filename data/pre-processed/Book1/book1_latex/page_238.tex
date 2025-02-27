@@ -1,0 +1,27 @@
+
+
+**2.**_The determinant changes sign when two rows are exchanged._
+
+\[\mbox{Row exchange}\qquad\begin{vmatrix}c&d\\ a&b\end{vmatrix}=cb-ad=-\begin{vmatrix}a&b\\ c&d\end{vmatrix}.\]
+
+The determinant of every _permutation matrix_ is \(\det P=\pm 1\). By row exchanges, we can turn \(P\) into the identity matrix. Each row exchange switches the sign of the determinant, until we reach \(\det I=1\). Now come all other matrices!
+
+**3.**_The determinant depends linearly on the first row_. Suppose \(A\), \(B\), \(C\) are the same from the second row down--and row \(1\) of \(A\) is a linear combination of the first rows of \(B\) and \(C\). Then the rule says: \(\det A\)_is the same combination of \(\det B\) and \(\det C\)_.
+
+Linear combinations involve two operations--adding vectors and multiplying by scalars. Therefore this rule can be split into two parts:
+
+\[\mbox{Add vectors in row 1}\qquad\begin{vmatrix}a+a^{\prime}&b+b^{\prime}\\ c&d\end{vmatrix}=\begin{vmatrix}a&b\\ c&d\end{vmatrix}+\begin{vmatrix}a^{\prime}&b^{\prime}\\ c&d\end{vmatrix}.\]
+
+\[\mbox{Multiply by $t$ in row 1}\qquad\qquad\begin{vmatrix}ta&tb\\ c&d\end{vmatrix}=t\begin{vmatrix}a&b\\ c&d\end{vmatrix}.\]
+
+Notice that the first part is _not_ the false statement \(\det(B+C)=\det B+\det C\). You cannot add all the rows: only one row is allowed to change. Both sides give the answer \(ad+a^{\prime}d-bc-b^{\prime}c\).
+
+The second part is not the false statement \(\det(tA)=t\det A\). The matrix \(tA\) has a factor \(t\) in _every_ row (and the determinant is multiplied by \(t^{n}\)). It is like the volume of a box, when all sides are stretched by \(4\). In \(n\) dimensions the volume and determinant go up by \(4^{n}\). If only one side is stretched, the volume and determinant go up by \(4\); that is rule \(3\). By rule \(2\), there is nothing special about the first row.
+
+_The determinant is now settled_, but that fact is not at all obvious. Therefore we gradually use these rules to find the determinant of any matrix.
+
+**4.**_If two rows of \(A\) are equal, then \(\det A=0\)._
+
+\[\mbox{Equal rows}\qquad\begin{vmatrix}a&b\\ a&b\end{vmatrix}=ab-ba=0.\]
+
+This follows from rule \(2\), since if the equal rows are exchanged, the determinant is supposed to change sign. But it also has to stay the same, because the matrix stays the same. The only number which can do that is zero, so \(\det A=0\). (The reasoning fails if \(1=-1\), which is the case in Boolean algebra. Then rule \(4\) should replace rule \(2\) as one of the defining properties.)

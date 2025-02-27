@@ -1,0 +1,18 @@
+
+Row and column interpretations.We can express the matrix-vector product in terms of the rows or columns of the matrix. From (6.4) we see that \(y_{i}\) is the inner product of \(x\) with the \(i\)th row of \(A\):
+
+\[y_{i}=b_{i}^{T}x,\quad i=1,\ldots,m,\]
+
+where \(b_{i}^{T}\) is the row \(i\) of \(A\). The matrix-vector product can also be interpreted in terms of the columns of \(A\). If \(a_{k}\) is the \(k\)th column of \(A\), then \(y=Ax\) can be written
+
+\[y=x_{1}a_{1}+x_{2}a_{2}+\cdots+x_{n}a_{n}.\]
+
+This shows that \(y=Ax\) is a linear combination of the columns of \(A\); the coefficients in the linear combination are the elements of \(x\).
+
+General examples.In the examples below, \(A\) is an \(m\times n\) matrix and \(x\) is an \(n\)-vector.
+
+* _Zero matrix._ When \(A=0\), we have \(Ax=0\). In other words, \(0x=0\). (The left-hand \(0\) is an \(m\times n\) matrix, and the right-hand zero is an \(m\)-vector.)
+* _Identity._ We have \(Ix=x\) for any vector \(x\). (The identity matrix here has dimension \(n\times n\).) In other words, multiplying a vector by the identity matrix gives the same vector.
+* _Picking out columns and rows._ An important identity is \(Ae_{j}=a_{j}\), the \(j\)th column of \(A\). Multiplying a unit vector by a matrix 'picks out' one of the columns of the matrix. \(A^{T}e_{i}\), which is an \(n\)-vector, is the \(i\)th row of \(A\), transposed. (In other words, \((A^{T}e_{i})^{T}\) is the \(i\)th row of \(A\).)
+* _Summing or averaging columns or rows._ The \(m\)-vector \(A\mathbf{1}\) is the sum of the columns of \(A\); its \(i\)th entry is the sum of the entries in the \(i\)th row of \(A\). The \(m\)-vector \(A(\mathbf{1}/n)\) is the average of the columns of \(A\); its \(i\)th entry is the average of the entries in the \(i\)th row of \(A\). In a similar way, \(A^{T}\mathbf{1}\) is an \(n\)-vector, whose \(j\)th entry is the sum of the entries in the \(j\)th column of \(A\).
+* _Difference matrix._ The \((n-1)\times n\) matrix \[D=\left[\begin{array}{ccccccc}-1&1&0&\cdots&0&0&0\\ 0&-1&1&\cdots&0&0&0\\ &&\ddots&\ddots&&\\ &&&\ddots&\ddots&&\\ 0&0&0&\cdots&-1&1&0\\ 0&0&0&\cdots&0&-1&1\end{array}\right]\] (6.5) (where entries not shown are zero, and entries with diagonal dots are \(1\) or \(-1\), continuing the pattern) is called the _difference matrix_. The vector \(Dx\) is the \((n-1)\)-vector of differences of consecutive entries of \(x\): \[Dx=\left[\begin{array}{c}x_{2}-x_{1}\\ x_{3}-x_{2}\\ \vdots\\ x_{n}-x_{n-1}\end{array}\right].\] 

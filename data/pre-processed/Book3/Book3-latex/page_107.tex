@@ -1,0 +1,35 @@
+
+
+**Example 19**: _Here is an important example of a linear functional. Let \(n\) be a positive integer and \(F\) a field. If \(A\) is an \(n\times n\) matrix with entries in \(F\), the_trace _of \(A\) is the scalar_
+
+\[\operatorname{tr}A\,=\,A_{11}+A_{22}+\,\cdots\,+A_{nn}.\]
+
+_The trace function is a linear functional on the matrix space \(F^{n\times n}\) because_
+
+\[\operatorname{tr}\left(eA\,+\,B\right) = \mathop{\sum}\limits_{i\,=\,1}^{n}\left(eA_{ii}+\,B_{ii}\right)\] \[= c\mathop{\sum}\limits_{i\,=\,1}^{n}A_{ii}+\mathop{\sum} \limits_{i\,=\,1}^{n}B_{ii}\] \[= e\operatorname{tr}A\,+\,\operatorname{tr}B.\]
+
+**Example 20**: _Let \(V\) be the space of all polynomial functions from the field \(F\) into itself. Let \(t\) be an element of \(F\). If we define_
+
+\[L_{t}(p)\,=\,p(t)\]
+
+_then \(L_{t}\) is a linear functional on \(V\). One usually describes this by saying that, for each \(t\), 'evaluation at \(t\)' is a linear functional on the space of polynomial functions. Perhaps we should remark that the fact that the functions are polynomials plays no role in this example. Evaluation at \(t\) is a linear functional on the space of all functions from \(F\) into \(F\)._
+
+**Example 21**: _This may be the most important linear functional in mathematics. Let \([a,\,b]\) be a closed interval on the real line and let \(C([a,\,b])\) be the space of continuous real-valued functions on \([a,\,b]\). Then_
+
+\[L(g)\,=\,\int_{a}^{b}g(t)\,dt\]
+
+_defines a linear functional \(L\) on \(C([a,\,b])\)._
+
+_If \(V\) is a vector space, the collection of all linear functionals on \(V\) forms a vector space in a natural way. It is the space \(L(V,\,F)\). We denote this space by \(V^{*}\) and call it the_dual space _of \(V\)_:_
+
+\[V^{*}\,=\,L(V,\,F).\]
+
+_If \(V\) is finite-dimensional, we can obtain a rather explicit description of the dual space \(V^{*}\). From Theorem 5 we know something about the space \(V^{*}\), namely that_
+
+\[\dim\,\,V^{*}\,=\,\dim\,\,V.\]
+
+_Let \(\mathfrak{G}=\{\alpha_{1},\,\ldots,\,\alpha_{n}\}\) be a basis for \(V\). According to Theorem 1, there is (for each \(i\)) a unique linear functional \(f_{i}\) on \(V\) such that_
+
+\[f_{i}(\alpha_{j})\,=\,\delta_{ij}.\] (3-11)
+
+_In this way we obtain from \(\mathfrak{G}\) a set of \(n\) distinct linear functionals \(f_{1}\), \(\ldots\), \(f_{n}\) on \(V\). These functionals are also linearly independent. For, suppose_

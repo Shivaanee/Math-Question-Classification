@@ -1,0 +1,27 @@
+\[c_{k}=\frac{(\beta|\alpha_{k})}{||\alpha_{k}||^{2}},\qquad 1\leq k\leq m.\]
+
+Thus when \(\beta=0\), each \(c_{k}=0\); so \(S\) is an independent set.
+
+_Corollary. If a vector \(\beta\) is a linear combination of an orthogonal sequence of non-zero vectors \(\alpha_{1},\ldots,\alpha_{m}\), then \(\beta\) is the particular linear combination_
+
+\[\beta=\sum\limits_{k=1}^{m}\frac{(\beta|\alpha_{k})}{||\alpha_{k}||^{2}}\, \alpha_{k}.\]
+
+This corollary follows from the proof of the theorem. There is another corollary which although obvious, should be mentioned. If \(\{\alpha_{1},\ldots,\alpha_{m}\}\) is an orthogonal set of non-zero vectors in a finite-dimensional inner product space \(V\), then \(m\leq\dim V\). This says that the number of mutually orthogonal directions in \(V\) cannot exceed the algebraically defined dimension of \(V\). The maximum number of mutually orthogonal directions in \(V\) is what one would intuitively regard as the geometric dimension of \(V\), and we have just seen that this is not greater than the algebraic dimension. The fact that these two dimensions are equal is a particular corollary of the next result.
+
+_Theorem 3. Let \(V\) be an inner product space and let \(\beta_{1}\), ..., \(\beta_{n}\) be any independent vectors in \(V\). Then one may construct orthogonal vectors \(\alpha_{1},\ldots,\alpha_{n}\) in \(V\) such that for each \(k=1\), \(2\), ..., n the set_
+
+\[\{\alpha_{1},\ldots,\alpha_{k}\}\]
+
+_is a basis for the subspace spanned by \(\beta_{1},\ldots,\beta_{k}\)._
+
+Proof.: The vectors \(\alpha_{1},\ldots,\alpha_{n}\) will be obtained by means of a construction known as the **Gram-Schmidt orthogonalization process.** First let \(\alpha_{1}=\beta_{1}\). The other vectors are then given inductively as follows: Suppose \(\alpha_{1},\ldots,\alpha_{m}\) (\(1\leq m<n\)) have been chosen so that for every \(k\)
+
+\[\{\alpha_{1},\ldots,\alpha_{k}\},\qquad 1\leq k\leq m\]
+
+is an orthogonal basis for the subspace of \(V\) that is spanned by \(\beta_{1},\ldots,\beta_{k}\). To construct the next vector \(\alpha_{m+1}\), let
+
+\[\alpha_{m+1}=\beta_{m+1}-\sum\limits_{k=1}^{m}\frac{(\beta_{m+1}|\alpha_{k})} {||\alpha_{k}||^{2}}\,\alpha_{k}.\]
+
+Then \(\alpha_{m+1}\neq 0\). For otherwise \(\beta_{m+1}\) is a linear combination of \(\alpha_{1},\ldots,\alpha_{m}\) and hence a linear combination of \(\beta_{1},\ldots,\beta_{m}\). Furthermore, if \(1\leq j\leq m\), then
+
+\[\begin{array}{l}(\alpha_{m+1}|\alpha_{j})=(\beta_{m+1}|\alpha_{j})-\sum \limits_{k=1}^{m}\frac{(\beta_{m+1}|\alpha_{k})}{||\alpha_{k}||^{2}}\,(\alpha_ {k}|\alpha_{j})\\ =(\beta_{m+1}|\alpha_{j})-(\beta_{m+1}|\alpha_{j})\\ =0.\end{array}\] 

@@ -1,0 +1,33 @@
+If \(A\) is invertible this rule also applies to its inverse (the power \(k=-1\)). _The eigenvalues of \(A^{-1}\) are \(1/\lambda_{i}\)_. That can be seen even without diagonalizing:
+
+\[\text{if}\quad Ax=\lambda x\quad\text{then}\quad x=\lambda A^{-1}x\quad\text{ and}\quad\frac{1}{\lambda}x=A^{-1}x.\]
+
+**Example 3**.: If \(K\) is rotation through \(90^{\circ}\), then \(K^{2}\) is rotation through \(180^{\circ}\) (which means \(-I\)) and \(K^{-1}\) is rotation through \(-90^{\circ}\):
+
+\[K=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix},\qquad K^{2}=\begin{bmatrix}-1&0\\ 0&-1\end{bmatrix},\quad\text{and}\quad K^{-1}=\begin{bmatrix}0&1\\ -1&0\end{bmatrix}.\]
+
+The eigenvalues of \(K\) are \(i\) and \(-i\); their squares are \(-1\) and \(-1\); their reciprocals are \(1/i=-i\) and \(1/(-i)=i\). Then \(K^{4}\) is a complete rotation through \(360^{\circ}\):
+
+\[K^{4}=\begin{bmatrix}1&0\\ 0&1\end{bmatrix}\quad\text{and also}\quad\Lambda^{4}=\begin{bmatrix}i^{4}&0 \\ 0&(-i)^{4}\end{bmatrix}=\begin{bmatrix}1&0\\ 0&1\end{bmatrix}.\]
+
+For a _product of two matrices_, we can ask about the eigenvalues of \(AB\)--but we won't get a good answer. It is very tempting to try the same reasoning, hoping to prove what is _not in general true_. If \(\lambda\) is an eigenvalue of \(A\) and \(\mu\) is an eigenvalue of \(B\), here is the false proof that \(AB\) has the eigenvalue \(\mu\lambda\):
+
+\[\text{{False proof}}\qquad ABx=A\mu x=\mu Ax=\mu\lambda x.\]
+
+The mistake lies in assuming that \(A\) and \(B\) share the _same_ eigenvector \(x\). In general, they do not, We could have two matrices with zero eigenvalues, while \(AB\) has \(\lambda=1\):
+
+\[AB=\begin{bmatrix}0&1\\ 0&0\end{bmatrix}\begin{bmatrix}0&0\\ 1&0\end{bmatrix}=\begin{bmatrix}1&0\\ 0&0\end{bmatrix}.\]
+
+The eigenvectors of this \(A\) and \(B\) are completely different, which is typical. For the same reason, the eigenvalues of \(A+B\) generally have nothing to do with \(\lambda+\mu\).
+
+This false proof does suggest what _is_ true. If the eigenvector is the same for \(A\) and \(B\), then the eigenvalues multiply and \(AB\) has the eigenvalue \(\mu\lambda\). But there is something more important. There is an easy way to recognize when \(A\) and \(B\) share a full set of eigenvectors, and that is a key question in quantum mechanics:
+
+**5F** Diagonalizable matrices share the same eigenvector matrix \(S\) if and only if \(AB=BA\).
+
+Proof.: If the same \(S\) diagonalizes both \(A=S\Lambda_{1}S^{-1}\) and \(B=S\Lambda_{2}S^{-1}\), we can multiply in either order:
+
+\[AB=S\Lambda_{1}S^{-1}S\Lambda_{2}S^{-1}=S\Lambda_{1}\Lambda_{2}S^{-1}\quad \text{and}\quad BA=S\Lambda_{2}S^{-1}S\Lambda_{1}S^{-1}=S\Lambda_{2}\Lambda_{ 1}S^{-1}.\]
+
+Since \(\Lambda_{1}\Lambda_{2}=\Lambda_{2}\Lambda_{1}\) (diagonal matrices always commute) we have \(AB=BA\).
+
+ 

@@ -1,0 +1,17 @@
+span, and they are independent. So they form a basis. Notice again that _a vector space does not have a unique basis_.
+
+**Example 9**.: These four columns span the column space of \(U\), but they are not independent:
+
+\[\textbf{Echelon matrix}\qquad U=\begin{bmatrix}1&3&3&2\\ 0&0&3&1\\ 0&0&0&0\end{bmatrix}.\]
+
+There are many possibilities for a basis, but we propose a specific choice: _The columns that contain pivots_ (in this case the first and third, which correspond to the basic variables) _are a basis for the column space_. These columns are independent, and it is easy to see that they span the space. In fact, the column space of \(U\) is just the \(x\)-\(y\) plane within \(\mathbf{R}^{3}\). \(C(U)\) is _not the same_ as the column space \(C(A)\) before elimination--but the _number_ of independent columns didn't change.
+
+To summarize: _The columns of any matrix span its column space_. If they are independent, they are a basis for the column space--whether the matrix is square or rectangular. If we are asking the columns to be a basis for the whole space \(\mathbf{R}^{n}\), then the matrix must be square and invertible.
+
+### Dimension of a Vector Space
+
+A space has infinitely many different bases, but there is something common to all of these choices. The _number of basis vectors_ is a property of the space itself:
+
+**2J** Any two bases for a vector space \(\mathbf{V}\) contain the same number of vectors. This number, which is shared by all bases and expresses the number of "degrees of freedom" of the space, is the _dimension_ of \(\mathbf{V}\).
+
+We have to prove this fact: All possible bases contain the same number of vectors. The \(x\)-\(y\) plane in Figure 2.4 has two vectors in every basis; its dimension is 2. In three 

@@ -1,0 +1,25 @@
+the total number is 5494), we get the confusion matrices for the training and test data sets shown in table 14.7. The error rates are consistent, and equal to 0.21% for the training set and 0.24% for the test set, a very substantial improvement compared to the 1.6% in the first experiment. A comparison of the distributions in figures 14.4 and 14.2 also shows how much better the new classifier distinguishes between the two classes of the training set. We conclude that this was a successful exercise in feature engineering.
+
+#### Receiver operating characteristic
+
+One useful modification of the least squares classifier (14.1) is to skew the decision boundary, by subtracting a constant \(\alpha\) from \(\tilde{f}(x)\) before taking the sign:
+
+\[\hat{f}(x)=\mathbf{sign}(\tilde{f}(x)-\alpha).\] (14.3)
+
+The classifier is then
+
+\[\hat{f}(x)=\left\{\begin{array}{cc}+1&\tilde{f}(x)\geq\alpha\\ -1&\tilde{f}(x)<\alpha.\end{array}\right.\]
+
+We call \(\alpha\) the _decision threshold_ for the modified classifier. The basic least squares classifier (14.1) has decision threshold \(\alpha=0\).
+
+By choosing \(\alpha\) positive, we make the guess \(\hat{f}(x)=+1\) less frequently, so the numbers in the first column of the confusion matrix go down, and the numbers in the second column go up (since the sum of the numbers in each row is always the same). This means that choosing \(\alpha\) positive decreases the true positive rate (which is bad), but it also decreases the false positive rate (which is good). Choosing \(\alpha\) negative has the opposite effect, increasing the true positive rate (which is good) and increasing the false positive rate (which is bad). The parameter \(\alpha\) is chosen depending on how much we care about the two competing metrics, in the particular application.
+
+By sweeping \(\alpha\) over a range, we obtain a family of classifiers that vary in their true positive and false positive rates. We can plot the false positive and negative rates, as well as the error rate, as a function of \(\alpha\). A more common way to plot this data has the strange name _receiver operating characteristic_ (ROC). The ROC shows
+
+\begin{table}
+\begin{tabular}{c c c c} \hline \hline  & \multicolumn{3}{c}{Prediction} \\ \cline{2-4} Outcome & \(\hat{y}=+1\) & \(\hat{y}=-1\) & Total \\ \hline \(y=+1\) & 5813 & 110 & 5923 \\ \(y=-1\) & 15 & 54062 & 54077 \\ All & 5828 & 54172 & 60000 \\ \hline \hline \end{tabular} 
+\begin{tabular}{c c c c} \hline \hline  & \multicolumn{3}{c}{Prediction} \\ \cline{2-4} Outcome & \(\hat{y}=+1\) & \(\hat{y}=-1\) & Total \\ \hline \(y=+1\) & 963 & 17 & 980 \\ \(y=-1\) & 7 & 9013 & 9020 \\ All & 970 & 9030 & 10000 \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.7: Confusion matrices for the Boolean classifier to recognize the digit zero after addition of 5000 new features. The table on the left is for the training set. The table on the right is for the test set.
+
+ 

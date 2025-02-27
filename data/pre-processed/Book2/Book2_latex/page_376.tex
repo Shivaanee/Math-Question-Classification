@@ -1,0 +1,29 @@
+Now suppose that the last asset is risk-free. The portfolio \(w=e_{n}\) is Pareto optimal, since it achieves return \(\mu^{\rm rf}\) with zero risk. We then find one other Pareto optimal portfolio, for example, the one \(w^{2}\) that achieves return \(2\mu^{\rm rf}\), twice the risk-free return. (We could choose here any return other than \(\mu^{\rm rf}\).) Then we can express the general Pareto optimal portfolio as
+
+\[w=(1-\theta)e_{n}+\theta w^{2},\]
+
+where \(\theta=\rho/\mu^{\rm rf}-1\).
+
+### 17.2 Linear quadratic control
+
+We consider a time-varying linear dynamical system with state \(n\)-vector \(x_{t}\) and input \(m\)-vector \(u_{t}\), with dynamics equations
+
+\[x_{t+1}=A_{t}x_{t}+B_{t}u_{t},\quad t=1,2,\ldots.\] (17.6)
+
+The system has an output, the \(p\)-vector \(y_{t}\), given by
+
+\[y_{t}=C_{t}x_{t},\quad t=1,2,\ldots.\] (17.7)
+
+Usually, \(m\leq n\) and \(p\leq n\), _i.e._, there are fewer inputs and outputs than states.
+
+In control applications, the input \(u_{t}\) represents quantities that we can choose or manipulate, like control surface deflections or engine thrust on an airplane. The state \(x_{t}\), input \(u_{t}\), and output \(y_{t}\) typically represent _deviations_ from some standard or desired operating condition, for example, the deviation of aircraft speed and altitude from the desired values. For this reason it is desirable to have \(x_{t}\), \(y_{t}\), and \(u_{t}\) small.
+
+_Linear quadratic control_ refers to the problem of choosing the input and state sequences, over a time period \(t=1,\ldots,T\), so as to minimize a sum of squares objective, subject to the dynamics equations (17.6), the output equations (17.7), and additional linear equality constraints. (In 'linear quadratic', 'linear' refers to the linear dynamics, and 'quadratic' refers to the objective function, which is a sum of squares.)
+
+Most control problems include an _initial state constraint_, which has the form \(x_{1}=x^{\rm init}\), where \(x^{\rm init}\) is a given initial state. Some control problems also include a _final state constraint_\(x_{T}=x^{\rm des}\), where \(x^{\rm des}\) is a given ('desired') final (also called terminal or target) state.
+
+The objective function has the form \(J=J_{\rm output}+\rho J_{\rm input}\), where
+
+\[J_{\rm output} = \|y_{1}\|^{2}+\cdots+\|y_{T}\|^{2}=\|C_{1}x_{1}\|^{2}+\cdots+\|C_ {T}x_{T}\|^{2},\] \[J_{\rm input} = \|u_{1}\|^{2}+\cdots+\|u_{T-1}\|^{2}.\]
+
+The positive parameter \(\rho\) weights the input objective \(J_{\rm input}\) relative to 

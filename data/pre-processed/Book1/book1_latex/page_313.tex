@@ -1,0 +1,29 @@
+That is correct but not beautiful. By substituting \(\cos t\pm i\sin t\) for \(e^{it}\) and \(e^{-it}\), _real numbers will reappear_: The circling solution is \(u(t)=(\cos t,\sin t)\).
+
+Starting from a different \(u(0)=(a,b)\), the solution \(u(t)\) ends up as
+
+\[u(t)=\begin{bmatrix}a\cos t-b\sin t\\ b\cos t+a\sin t\end{bmatrix}=\begin{bmatrix}\cos t&-\sin t\\ \sin t&\cos t\end{bmatrix}\begin{bmatrix}a\\ b\end{bmatrix}.\] (15)
+
+There we have something important! The last matrix is multiplying \(u(0)\), so it must be the exponential \(e^{At}\). (Remember that \(u(t)=e^{At}u(0)\).) That matrix of cosines and sines is our leading example of an _orthogonal matrix_. The columns have length 1, their inner product is zero, and we have a confirmation of a wonderful fact:
+
+_If \(A\) is skew-symmetric \((A^{\mathrm{T}}=-A)\) then \(e^{At}\) is an orthogonal matrix._
+
+\(A^{\mathrm{T}}=-A\) gives a conservative system. No energy is lost in damping or diffusion:
+
+\[A^{\mathrm{T}}=-A,\qquad(e^{At})^{\mathrm{T}}=e^{-At},\quad\text{and}\quad \|e^{At}u(0)\|=\|u(0)\|.\]
+
+That last equation expresses an essential property of orthogonal matrices. When they multiply a vector, the length is not changed. The vector \(u(0)\) is just rotated, and that describes the solution to \(du/dt=Au\): _It goes around in a circle_.
+
+In this very unusual case, \(e^{At}\) can also be recognized directly from the infinite series. Note that \(A=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}\) has \(A^{2}=-I\), and use this in the series for \(e^{At}\):
+
+\[I+At+\frac{(At)^{2}}{2}+\frac{(At)^{3}}{6}+\cdots =\begin{bmatrix}\left(1-\frac{t^{2}}{2}+\cdots\right)&\left(-t+ \frac{t^{3}}{6}-\cdots\right)\\ \left(t-\frac{t^{3}}{6}+\cdots\right)&\left(1-\frac{t^{2}}{2}+\cdots\right) \end{bmatrix}\] \[=\begin{bmatrix}\cos t&-\sin t\\ \sin t&\cos t\end{bmatrix}\]
+
+**Example 4**.: The diffusion equation is stable: \(A=\begin{bmatrix}-2&1\\ 1&-2\end{bmatrix}\) has \(\lambda=-1\) and \(\lambda=-3\).
+
+**Example 5**.: If we close off the infinite segments, nothing can escape:
+
+\[\frac{du}{dt}=\begin{bmatrix}-1&1\\ 1&-1\end{bmatrix}u\qquad\text{or}\qquad\begin{array}{c}dv/dt=w-v\\ dw/dt=v-w.\end{array}\]
+
+This is a _continuous Markov process_. Instead of moving every year, the particles move every instant. Their total number \(v+w\) is constant. That comes from adding the two equations on the right-hand side: the derivative of \(v+w\) is zero.
+
+A discrete Markov matrix has its column sums equal to \(\lambda_{\max}=1\). A _continuous_ Markov matrix, for differential equations, has its column sums equal to \(\lambda_{\max}=0\). \(A\) is a discrete Markov matrix if and only if \(B=A-I\) is a continuous Markov matrix. The 

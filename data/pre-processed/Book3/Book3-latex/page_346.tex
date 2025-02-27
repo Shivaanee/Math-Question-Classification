@@ -1,0 +1,33 @@
+Sec. 9.5
+
+Because \(E_{1}\), \(\ldots\), \(E_{k}\) are canonically associated with \(T\) and
+
+\[I=E_{1}+\cdots+E_{k}\]
+
+the family of projections \(\{E_{1},\,\ldots,E_{k}\}\) is called the **resolution of the identity defined by \(T\)**.
+
+There is a comment that should be made about the proof of the spectral theorem. We derived the theorem using Theorems 18 and 22 of Chapter 8 on the diagonalization of self-adjoint and normal operators. There is another, more algebraic, proof in which it must first be shown that the minimal polynomial of a normal operator is a product of distinct prime factors. Then one proceeds as in the proof of the primary decomposition theorem (Theorem 12, Chapter 6). We shall give such a proof in the next section.
+
+In various applications it is necessary to know whether one may compute certain functions of operators or matrices, e.g., square roots. This may be done rather simply for diagonalizable normal operators.
+
+Definition: Let \(T\) be a diagonalizable normal operator on a finite-dimensional inner product space and
+
+\[T=\sum\limits_{j=1}^{k}c_{j}E_{j}\]
+
+its spectral resolution. Suppose \(f\) is a function whose domain includes the spectrum of \(T\) that has values in the field of scalars. Then the linear operator \(f(T)\) is defined by the equation
+
+\[f(T)=\sum\limits_{j=1}^{k}f(c_{j})E_{i}.\]
+
+Theorem 10: Let \(T\) be a diagonalizable normal operator with spectrum \(S\) on a finite-dimensional inner product space \(V\). Suppose \(f\) is a function whose domain contains \(S\) that has values in the field of scalars. Then \(f(T)\) is a diagonalizable normal operator with spectrum \(f(S)\). If \(U\) is a unitary map of \(V\) onto \(V^{\prime}\) and \(T^{\prime}=UTU^{-1}\), then \(S\) is the spectrum of \(T^{\prime}\) and
+
+\[f(T^{\prime})=Uf(T)U^{-1}.\]
+
+Proof: The normality of \(f(T)\) follows by a simple computation from (9-12) and the fact that
+
+\[f(T)^{*}=\sum\limits_{j}\overline{f(c_{j})}E_{j}.\]
+
+Moreover, it is clear that for every \(\alpha\) in \(E_{j}(V)\)
+
+\[f(T)\alpha=f(c_{j})\alpha.
+
+ 

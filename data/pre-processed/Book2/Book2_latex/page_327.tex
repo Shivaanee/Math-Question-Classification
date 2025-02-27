@@ -1,0 +1,24 @@
+The matrix \(A\) can be wide, square, or tall; the same methods are used to estimate \(x\) in all three cases. When \(A\) is wide, we would not have enough measurements to determine \(x\) from \(y\), even without the noise (_i.e._, with \(v=0\)). In this case we have to also rely on our prior information about \(x\) to make a reasonable guess. When \(A\) is square or tall, we would have enough measurements to determine \(x\), if there were no noise present. Even in this case, judicious use of multiple-objective least squares can incorporate our prior knowledge in the estimation, and yield far better results.
+
+#### Regularized inversion
+
+If we guess that \(x\) has the value \(\hat{x}\), then we are implicitly making the guess that \(v\) has the value \(y-A\hat{x}\). If we assume that smaller values of \(v\) (measured by \(\|v\|\)) are more plausible than larger values, then a sensible choice for \(\hat{x}\) is the least squares approximate solution, which minimizes \(\|A\hat{x}-y\|^{2}\). We will take this as our primary objective. Our prior information about \(x\) enters in one or more secondary objectives. Simple examples are listed below.
+
+* \(\|x\|^{2}\): \(x\) should be small. This corresponds to the (prior) assumption that \(x\) is more likely to be small than large.
+* \(\|x-x^{\text{prior}}\|^{2}\): \(x\) should be near \(x^{\text{prior}}\). This corresponds to the assumption that \(x\) is near some known vector \(x^{\text{prior}}\).
+* \(\|Dx\|^{2}\), where \(D\) is the first difference matrix (15.4). This corresponds to the assumption that \(x\) should be smooth, _i.e._, \(x_{i+1}\) should be near \(x_{i}\). This regularization is often used when \(x\) represents a time series.
+* The Dirichlet energy \(\mathcal{D}(x)=\|A^{T}x\|^{2}\), where \(A\) is the incidence matrix of a graph (see page 135). This corresponds to the assumption that \(x\) varies smoothly across the graph, _i.e._, \(x_{i}\) is near \(x_{j}\) when \(i\) and \(j\) are connected by an edge of the graph. When the Dirichlet energy is used as a regularizer, it is sometimes called _Laplacian regularization_. (The previous example, \(\|Dx\|^{2}\), is special case of Dirichlet energy, for the chain graph.)
+
+Finally, we will choose our estimate \(\hat{x}\) by minimizing
+
+\[\|Ax-y\|^{2}+\lambda_{2}J_{2}(x)+\cdots+\lambda_{p}J_{p}(x),\]
+
+where \(\lambda_{i}>0\) are weights, and \(J_{2},\ldots,J_{p}\) are the regularization terms. This is called _regularized inversion_ or _regularized estimation_. We may repeat this for several choices of the weights, and choose the best estimate for the particular application.
+
+Tikhonov regularized inversion.Choosing \(\hat{x}\) to minimize
+
+\[\|Ax-y\|^{2}+\lambda\|x\|^{2}\]
+
+for some choice of \(\lambda>0\) is called _Tikhonov regularized inversion_, after the mathematician Andrey Tikhonov. Here we seek a guess \(\hat{x}\) that is consistent with the measurements (_i.e._, \(\|A\hat{x}-y\|^{2}\) is small), but not too big.
+
+ 

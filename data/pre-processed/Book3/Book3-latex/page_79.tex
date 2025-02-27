@@ -1,0 +1,33 @@
+so that \(U\) is exactly the rule \(T\) which we defined above. This shows that the linear transformation \(T\) with \(T\alpha_{j}=\beta_{j}\) is unique.
+
+Theorem 1 is quite elementary; however, it is so basic that we have stated it formally. The concept of function is very general. If \(V\) and \(W\) are (non-zero) vector spaces, there is a multitude of functions from \(V\) into \(W\). Theorem 1 helps to underscore the fact that the functions which are linear are extremely special.
+
+**Example 6**.: The vectors
+
+\[\alpha_{1} = (1,2)\] \[\alpha_{2} = (3,4)\]
+
+are linearly independent and therefore form a basis for \(R^{2}\). According to Theorem 1, there is a unique linear transformation from \(R^{2}\) into \(R^{3}\) such that
+
+\[T\alpha_{1} = (3,2,1)\] \[T\alpha_{2} = (6,5,4).\]
+
+If so, we must be able to find \(T(\epsilon_{1})\). We find scalars \(c_{1}\), \(c_{2}\) such that \(\epsilon_{1}=c_{1}\alpha_{1}+c_{2}\alpha_{2}\) and then we know that \(T\epsilon_{1}=c_{1}T\alpha_{1}+c_{2}T\alpha_{2}\). If \((1,0)=c_{1}(1,2)+c_{2}(3,4)\) then \(c_{1}=-2\) and \(c_{2}=1\). Thus
+
+\[T(1,0) = -2(3,2,1)+(6,5,4)\] \[= (0,1,2).\]
+
+**Example 7**.: Let \(T\) be a linear transformation from the \(m\)-tuple space \(F^{m}\) into the \(n\)-tuple space \(F^{n}\). Theorem 1 tells us that \(T\) is uniquely determined by the sequence of vectors \(\beta_{1}\), ..., \(\beta_{m}\) where
+
+\[\beta_{i}=T\epsilon_{i},\qquad i=1,\,\ldots,\,m.\]
+
+In short, \(T\) is uniquely determined by the images of the standard basis vectors. The determination is
+
+\[\alpha = (x_{1},\,\ldots,\,x_{m})\] \[T\alpha = x_{1}\beta_{1}+\,\cdots+x_{m}\beta_{m}.\]
+
+If \(B\) is the \(m\times n\) matrix which has row vectors \(\beta_{1}\), ..., \(\beta_{m}\), this says that
+
+\[T\alpha=\,\alpha B.\]
+
+In other words, if \(\beta_{i}=(B_{1i},\,\ldots,\,B_{in})\), then
+
+\[T(x_{1},\,\ldots,\,x_{n})=[x_{1}\,\cdots\,x_{m}]\,\,\begin{bmatrix}B_{11}& \cdots&B_{1n}\\ \vdots&&\vdots\\ B_{m1}&\cdots&B_{mn}\end{bmatrix}.\]
+
+This is a very explicit description of the linear transformation. In Section 3.4 we shall make a serious study of the relationship between linear trans 

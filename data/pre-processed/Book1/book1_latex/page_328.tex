@@ -1,0 +1,27 @@
+_Remark_.: If \(A\) is real and its eigenvalues happen to be real, then its eigenvectors are also real. They solve \((A-\lambda I)x=0\) and can be computed by elimination. But they will not be orthogonal unless \(A\) is symmetric: \(A=Q\Lambda Q^{\mathrm{T}}\) leads to \(A^{\mathrm{T}}=A\).
+
+If \(A\) is real, all complex eigenvalues come in conjugate pairs: \(Ax=\lambda x\) and \(A\overline{x}=\overline{\lambda}\overline{x}\). _If \(a+ib\) is an eigenvalue of a real matrix, so is \(a-ib\)._ (If \(A=A^{\mathrm{T}}\) then \(b=0\).)
+
+Strictly speaking, the spectral theorem \(A=Q\Lambda Q^{\mathrm{T}}\) has been proved only when the eigenvalues of \(A\) are distinct. Then there are certainly \(n\) independent eigenvectors, and \(A\) can be safely diagonalized. Nevertheless it is true (see Section 5.6) that _even with repeated eigenvalues, a symmetric matrix still has a complete set of orthonormal eigenvectors_. The extreme case is the identity matrix, which has \(\lambda=1\) repeated \(n\) times--and no shortage of eigenvectors.
+
+To finish the complex case we need the analogue of a real orthogonal matrix--and you can guess what happens to the requirement \(Q^{\mathrm{T}}Q=I\). The transpose will be replaced by the conjugate transpose. The condition will become \(U^{\mathrm{H}}U=I\). The new letter \(U\) reflects the new name: _A complex matrix with orthonormal columns is called a unitary matrix_.
+
+### Unitary Matrices
+
+May we propose two analogies? _A Hermitian (or symmetric) matrix can be compared to a real number. A unitary (or orthogonal) matrix can be compared to a number on the unit circle_--a complex number of absolute value 1. The \(\lambda\)'s are real if \(A^{\mathrm{H}}=A\), and they are on the unit circle if \(U^{\mathrm{H}}U=I\). The eigenvectors can be scaled to unit length and made orthonormal.6
+
+Footnote 6: Later we compare “skew-Hermitian” matrices with pure imaginary numbers, and “normal” matrices with all complex numbers \(a+ib\). A nonnormal matrix without orthogonal eigenvectors belongs to none of these classes, and is outside the whole analogy.
+
+Those statements are not yet proved for unitary (including orthogonal) matrices. Therefore we go directly to the three properties of \(U\) that correspond to the earlier Properties 1-3 of \(A\). Remember that \(U\) has orthonormal columns:
+
+\[\mathbf{Unitary\ matrix}\qquad U^{\mathrm{H}}U=I,\qquad UU^{\mathrm{H}}=I, \quad\text{and}\quad U^{\mathrm{H}}=U^{-1}.\]
+
+This leads directly to Property \(1^{\prime}\), that multiplication by \(U\) has no effect on inner products, angles, or lengths. The proof is on one line, just as it was for \(Q\):
+
+\[\mathbf{Property\ 1^{\prime}}\ \ (Ux)^{\mathrm{H}}(Uy)=x^{\mathrm{H}}U^{ \mathrm{H}}Uy=x^{\mathrm{H}}y\text{ and lengths are preserved by }U\text{:}\] \[\mathbf{Length\ unchanged}\qquad\|Ux\|^{2}=x^{\mathrm{H}}U^{ \mathrm{H}}Ux=\|x\|^{2}.\] (11)
+
+\[\mathbf{Property\ 2^{\prime}}\ \ \text{Every eigenvalue of $U$ has absolute value $|\lambda|=1$.}\]
+
+This follows directly from \(Ux=\lambda x\), by comparing the lengths of the two sides: \(\|Ux\|=\|x\|\) by Property \(1^{\prime}\), and always \(\|\lambda x\|=|\lambda|\|x\|\). Therefore \(|\lambda|=1\).
+
+ 

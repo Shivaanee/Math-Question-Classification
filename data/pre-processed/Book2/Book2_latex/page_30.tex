@@ -1,0 +1,19 @@
+This formula expresses an inner product on the left-hand side as a sum of four inner products on the right-hand side, and is analogous to expanding a product of sums in algebra. Note that on the left-hand side, the two addition symbols refer to vector addition, whereas on the right-hand side, the three addition symbols refer to scalar (number) addition.
+
+General examples.* _Unit vector._\(e_{i}^{T}a=a_{i}\). The inner product of a vector with the \(i\)th standard unit vector gives (or 'picks out') the \(i\)th element \(a\).
+* _Sum._\(\mathbf{1}^{T}a=a_{1}+\cdots+a_{n}\). The inner product of a vector with the vector of ones gives the sum of the elements of the vector.
+* _Average._\((\mathbf{1}/n)^{T}a=(a_{1}+\cdots+a_{n})/n\). The inner product of an \(n\)-vector with the vector \(\mathbf{1}/n\) gives the average or mean of the elements of the vector. The average of the entries of a vector is denoted by \(\mathbf{avg}(x)\). The Greek letter \(\mu\) is a traditional symbol used to denote the average or mean.
+* _Sum of squares._\(a^{T}a=a_{1}^{2}+\cdots+a_{n}^{2}\). The inner product of a vector with itself gives the sum of the squares of the elements of the vector.
+* _Selective sum._ Let \(b\) be a vector all of whose entries are either \(0\) or \(1\). Then \(b^{T}a\) is the sum of the elements in \(a\) for which \(b_{i}=1\).
+
+Block vectors.If the vectors \(a\) and \(b\) are block vectors, and the corresponding blocks have the same sizes (in which case we say they _conform_), then we have
+
+\[a^{T}b=\left[\begin{array}{c}a_{1}\\ \vdots\\ a_{k}\end{array}\right]^{T}\left[\begin{array}{c}b_{1}\\ \vdots\\ b_{k}\end{array}\right]=a_{1}^{T}b_{1}+\cdots+a_{k}^{T}b_{k}.\]
+
+The inner product of block vectors is the sum of the inner products of the blocks.
+
+Applications.The inner product is useful in many applications, a few of which we list here.
+
+* _Co-occurrence._ If \(a\) and \(b\) are \(n\)-vectors that describe occurrence, _i.e._, each of their elements is either \(0\) or \(1\), then \(a^{T}b\) gives the total number of indices for which \(a_{i}\) and \(b_{i}\) are both one, that is, the total number of co-occurrences. If we interpret the vectors \(a\) and \(b\) as describing subsets of \(n\) objects, then \(a^{T}b\) gives the number of objects in the intersection of the two subsets. This is illustrated in figure 1.13, for two subsets \(A\) and \(B\) of \(7\) objects, labeled \(1,\ldots,7\), with corresponding occurrence vectors \[a=(0,1,1,1,1,1),\qquad b=(1,0,1,0,1,0,0).\] Here we have \(a^{T}b=2\), which is the number of objects in both \(A\) and \(B\) (_i.e._, objects \(3\) and \(5\)).
+
+ 

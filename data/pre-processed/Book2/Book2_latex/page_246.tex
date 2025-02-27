@@ -1,0 +1,17 @@
+The vector of illumination levels is a linear function of the lamp powers, so we have \(l=Ap\) for some \(m\times n\) matrix \(A\). The \(j\)th column of \(A\) gives the illumination pattern for lamp \(j\), _i.e._, the illumination when lamp \(j\) has power 1 and all other lamps are off. We will assume that \(A\) has linearly independent columns (and therefore is tall). The \(i\)th row of \(A\) gives the sensitivity of pixel \(i\) to the \(n\) lamp powers.
+
+The goal is to find lamp powers that result in a desired illumination pattern \(l^{\text{des}}\), such as \(l^{\text{des}}=\alpha\mathbf{1}\), which is uniform illumination with value \(\alpha\) across the area. In other words, we seek \(p\) so that \(Ap\approx l^{\text{des}}\). We can use least squares to find \(\hat{p}\) that minimizes the sum square deviation from the desired illumination, \(\|Ap-l^{\text{des}}\|^{2}\). This gives the lamp power levels
+
+\[\hat{p}=A^{\dagger}l^{\text{des}}=(A^{T}A)^{-1}A^{T}l^{\text{des}}.\]
+
+(We are not guaranteed that these powers are nonnegative, or less than the maximum allowed power level.)
+
+An example is shown in figure 12.5. The area is a \(25\times 25\) grid with \(m=625\) pixels, each (say) 1m square. The lamps are at various heights ranging from 3m to 6m, and at the positions shown in the figure. The illumination decays with an inverse square law, so \(A_{ij}\) is proportional to \(d_{ij}^{-2}\), where \(d_{ij}\) is the (3-D) distance between the center of the pixel and the lamp position. The matrix \(A\) is scaled so that when all lamps have power one, the average illumination level is one. The desired illumination pattern is \(\mathbf{1}\), _i.e._, uniform with value 1.
+
+With \(p=\mathbf{1}\), the resulting illumination pattern is shown in the top part of figure 12.5. The RMS illumination error is 0.24. We can see that the corners are quite a bit darker than the center, and there are pronounced bright spots directly beneath each lamp. Using least squares we find the lamp powers
+
+\[\hat{p}=(1.46,\,0.79,\,2.97,\,0.74,\,0.08,\,0.21,\,0.21,\,2.05,\,0.91,\,1.47).\]
+
+The resulting illumination pattern has an RMS error of 0.14, about half of the RMS error with all lamp powers set to one. The illumination pattern is shown in the bottom plot of figure 12.5; we can see that the illumination is more uniform than when all lamps have power 1. Most illumination values are near the target level 1, with the corners a bit darker and the illumination a bit brighter directly below each lamp, but less so than when all lamps have power one. This is clear from figure 12.6, which shows the histogram of patch illumination values for all lamp powers one, and for lamp powers \(\hat{p}\).
+
+ 

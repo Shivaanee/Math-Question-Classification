@@ -1,0 +1,37 @@
+
+
+**5.** An \(n\times n\) matrix \(A\) over the field of complex numbers is said to be **unitary** if \(AA^{*}=I\) (\(A^{*}\) denotes the conjugate transpose of \(A\)). If \(A\) is unitary, show that \(|\det A|=1\).
+
+**6.** Let \(T\) and \(U\) be linear operators on the finite dimensional vector space \(V\). Prove
+
+(a) \(\det(TU)=(\det T)(\det U)\);
+
+(b) \(T\) is invertible if and only if \(\det T\neq 0\).
+
+**7.** Let \(A\) be an \(n\times n\) matrix over \(K\), a commutative ring with identity. Suppose \(A\) has the block form
+
+\[A=\begin{bmatrix}A_{1}&0&\cdots&0\\ 0&A_{2}&\cdots&0\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&A_{k}\end{bmatrix}\]
+
+where \(A_{i}\) is an \(r_{i}\times r_{i}\) matrix. Prove
+
+\[\det A=(\det A_{1})(\det A_{2})\ \cdots\ (\det A_{k}).\]
+
+**8.** Let \(V\) be the vector space of \(n\times n\) matrices over the field \(F\). Let \(B\) be a fixed element of \(V\) and let \(T_{B}\) be the linear operator on \(V\) defined by \(T_{B}(A)=AB\ -BA\). Show that \(\det T_{B}=0\).
+
+**9.** Let \(A\) be an \(n\times n\) matrix over a field, \(A\neq 0\). If \(r\) is any positive integer between \(1\) and \(n\), an \(r\times r\)**submatrix** of \(A\) is any \(r\times r\) matrix obtained by deleting \((n-r)\) rows and \((n-r)\) columns of \(A\). The **determinant rank** of \(A\) is the largest positive integer \(r\) such that some \(r\times r\) submatrix of \(A\) has a non-zero determinant. Prove that the determinant rank of \(A\) is equal to the row rank of \(A\) (\(=\) column rank \(A\)).
+
+**10.** Let \(A\) be an \(n\times n\) matrix over the field \(F\). Prove that there are at most \(n\) distinct scalars \(c\) in \(F\) such that \(\det(cI\ -\ A)=0\).
+
+**11.** Let \(A\) and \(B\) be \(n\times n\) matrices over the field \(F\). Show that if \(A\) is invertible there are at most \(n\) scalars \(c\) in \(F\) for which the matrix \(cA\ +\ B\) is not invertible.
+
+**12.** If \(V\) is the vector space of \(n\times n\) matrices over \(F\) and \(B\) is a fixed \(n\times n\) matrix over \(F\), let \(L_{B}\) and \(R_{B}\) be the linear operators on \(V\) defined by \(L_{B}(A)=BA\) and \(R_{B}(A)=AB\). Show that
+
+(a) \(\det L_{B}=(\det B)^{n}\);
+
+(b) \(\det R_{B}=(\det B)^{n}\).
+
+**13.** Let \(V\) be the vector space of all \(n\times n\) matrices over the field of complex numbers, and let \(B\) be a fixed \(n\times n\) matrix over \(C\). Define a linear operator \(M_{B}\) on \(V\) by \(M_{B}(A)=BAB^{*}\), where \(B^{*}=\overline{B^{i}}\). Show that
+
+\[\det M_{B}=|\det B|^{2n}.\]
+
+Now let \(H\) be the set of all Hermitian matrices in \(V\), \(A\) being Hermitian if \(A=A^{*}\). Then \(H\) is a vector space over the field of _real_ numbers. Show that the function \(T_{B}\) defined by \(T_{B}(A)=BAB^{*}\) is a linear operator on the real vector space \(H\), and then show that \(\det T_{B}=|\det B|^{2n}\). (_Hint:_ In computing \(\det T_{B_{i}}\) show that \(V\) has a basis consisting of Hermitian matrices and then show that \(\det T_{B}=\det M_{B_{i}}\))

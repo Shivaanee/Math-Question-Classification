@@ -1,0 +1,27 @@
+
+
+### An Example of Gaussian Elimination
+
+The way to understand elimination is by example. We begin in three dimensions:
+
+\[\begin{array}{ccccccccc}\mbox{\bf Original system}&\begin{array}{ccccccccc}2u&+&v&+&w&=&5\\ 4u&-&6v&&=&-2\\ -2u&+&7v&+&2w&=&9.\end{array}\end{array}\] (1)
+
+The problem is to find the unknown values of \(u\), \(v\), and \(w\), and we shall apply Gaussian elimination. (Gauss is recognized as the greatest of all mathematicians, but certainly not because of this invention, which probably took him ten minutes. Ironically, it is the most frequently used of all the ideas that bear his name.) The method starts by _subtracting multiples of the first equation from the other equations_. The goal is to eliminate \(u\) from the last two equations. This requires that we
+
+* subtract \(2\) times the first equation from the second
+* subtract \(-1\) times the first equation from the third. \[\begin{array}{ccccccccc}\mbox{\bf Equivalent system}&\begin{array}{ccccccccc}\mbox{\bf 2}u&+&v&+&w&=&5\\ -&\mbox{\bf 8}v&-&2w&=&-12\\ 8v&+&3w&=&14.\end{array}\] (2)
+
+The coefficient \(2\) is the _first pivot_. Elimination is constantly dividing the pivot into the numbers underneath it, to find out the right multipliers.
+
+The pivot for the **second stage of elimination** is \(-8\). We now ignore the first equation. A multiple of the second equation will be subtracted from the remaining equations (in this case there is only the third one) so as to eliminate \(v\). We add the second equation to the third or, in other words, we
+
+* subtract \(-1\) times the second equation from the third.
+
+The elimination process is now complete, at least in the "forward" direction:
+
+\[\begin{array}{ccccccccc}\mbox{\bf Triangular system}&\begin{array}{ccccccccc}\mbox{\bf 2}u&+&v&+&w&=&5\\ -&\mbox{\bf 8}v&-&2w&=&-12\\ &&\mbox{\bf 1}w&=&2.\end{array}\] (3)
+
+This system is solved backward, bottom to top. The last equation gives \(w=2\). Substituting into the second equation, we find \(v=1\). Then the first equation gives \(u=1\). This process is called _back-substitution_.
+
+To repeat: Forward elimination produced the pivots \(2\), \(-8\), \(1\). It subtracted multiples of each row from the rows beneath, It reached the "triangular" system (3), which is solved in reverse order: Substitute each newly computed value into the equations that are waiting.
+

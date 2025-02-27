@@ -1,0 +1,27 @@
+matrix_ A _of_ T _in the basis_ B _is upper triangular. Then_ T _is normal if and only if_ A _is a diagonal matrix._
+
+Proof: Since B is an orthonormal basis, _A_* is the matrix of _T_* in \(B\). If \(A\) is diagonal, then _AA_* = _A_*_A_, and this implies _TT_* = _T_*_T_. Conversely, suppose \(T\) is normal, and let \(A\) is upper-triangular, _T_\(\alpha_{1}=A_{11}\alpha_{1}\). By Theorem 19 this implies, _T_*\(\alpha_{1}=\bar{A}_{11}\alpha_{1}\). On the other hand,
+
+\[\begin{array}{rcl}\mbox{\it T}^{*}\alpha_{1}&=&\sum\limits_{j}\ (A\,\mbox{\it*})_{j1}\alpha_{j}\\ &=&\sum\limits_{j}\ \bar{A}_{1j}\alpha_{j}.\end{array}\]
+
+Therefore, \(A_{1j}=0\) for every \(j>1\). In particular, \(A_{12}=0\), and since \(A\) is upper-triangular, it follows that
+
+\[\mbox{\it T}\alpha_{2}=\mbox{\it A}_{22}\alpha_{2}.\]
+
+Thus _T_*\(\alpha_{2}=\bar{A}_{22}\alpha_{2}\) and \(A_{2j}=0\) for all \(j\neq 2\). Continuing in this fashion, we find that \(A\) is diagonal.
+
+**Theorem 21**: _Let_ V _be a finite-dimensional complex inner product space and let_ T _be any linear operator on_ V_. Then there is an orthonormal basis for_ V _in which the matrix of_ T _is upper triangular._
+
+Proof: Let \(n\) be the dimension of \(V\). The theorem is true when \(n\) = 1, and we proceed by induction on \(n\), assuming the result is true for linear operators on complex inner product spaces of dimension \(n\) - 1. Since \(V\) is a finite-dimensional complex inner product space, there is a unit vector _\(\alpha\)_ in \(V\) and a scalar \(c\) such that
+
+\[\mbox{\it T}^{*}\alpha=\mbox{\it c}\alpha.\]
+
+Let \(W\) be the orthogonal complement of the subspace spanned by _\(\alpha\)_ and let \(S\) be the restriction of \(T\) to \(W\). By Theorem 17, \(W\) is invariant under \(T\). Thus \(S\) is a linear operator on \(W\). Since \(W\) has dimension \(n\) - 1, our inductive assumption implies the existence of an orthonormal basis \(\{\alpha_{1},\ldots,\alpha_{n-1}\}\) for \(W\) in which the matrix of \(S\) is upper-triangular; let \(\alpha_{n}=\alpha\). Then \(\{\alpha_{1},\ldots,\alpha_{n}\}\) is an orthonormal basis for \(V\) in which the matrix of \(T\) is upper-triangular.
+
+This theorem implies the following result for matrices.
+
+**Corollary**: _For every complex_ n _matrix_ A _there is a unitary matrix_ U _such that_ U\({}^{-1}\)AU _is upper-triangular._
+
+Now combining Theorem 21 and Theorem 20, we immediately obtain the following analogue of Theorem 18 for normal operators.
+
+ 

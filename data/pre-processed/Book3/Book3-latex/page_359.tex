@@ -1,0 +1,33 @@
+Proof: Suppose \(N\) is normal and that \(N^{*}\alpha=0\). Then \(N\alpha\) lies in the range of \(N\) and also lies in the null space of \(N\). By Lemma 1, this implies \(N\alpha=0\).
+
+Lemma 3: _Let T be a normal operator and f any polynomial with coefficients in the scalar field. Then f(T) is also normal._
+
+\[Proof.\]
+
+Suppose \(f=a_{0}+a_{1}x+\cdots+a_{n}x^{n}\). Then
+
+\[f(T)=a_{0}1+a_{1}T+\cdots+a_{n}T^{n}\]
+
+and
+
+\[f(T)^{*}=a_{0}I+a_{1}T^{*}+\cdots+a_{n}(T^{*})^{n}.\]
+
+Since \(T^{*}T=TT^{*}\), it follows that \(f(T)\) commutes with \(f(T)^{*}\).
+
+Lemma 4: _Let T be a normal operator and f, g relatively prime polynomials with coefficients in the scalar field. Suppose \(\alpha\) and \(\beta\) are vectors such that f(T)\(\alpha=0\) and g(T)\(\beta=0\). Then \((\bullet|\beta)=0\)._
+
+Proof: There are polynomials \(a\) and \(b\) with coefficients in the scalar field such that \(a\!f+bg=1\). Thus
+
+\[a(T)f(T)+b(T)g(T)=I\]
+
+and \(\alpha=g(T)b(T)\alpha\). It follows that
+
+\[(\alpha|\beta)=(g(T)b(T)\alpha|\beta)=(b(T)\alpha|g(T)^{*}\beta).\]
+
+By assumption \(g(T)\beta=0\). By Lemma 3, \(g(T)\) is normal. Therefore, by Theorem 19 of Chapter 8, \(g(T)^{*}\beta=0\); hence \((\alpha|\beta)=0\).
+
+Proof of Theorem 17.: Recall that the minimal polynomial for \(T\) is the monic polynomial of least degree among all polynomials \(f\) such that \(f(T)=0\). The existence of such polynomials follows from the assumption that \(V\) is finite-dimensional. Suppose some prime factor \(p_{j}\) of \(p\) is repeated. Then \(p=p_{j}^{2}g\) for some polynomial \(g\). Since \(p(T)=0\), it follows that
+
+\[(p_{j}(T))^{*}g(T)\alpha=0\]
+
+for every \(\alpha\) in \ 

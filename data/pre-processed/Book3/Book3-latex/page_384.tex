@@ -1,0 +1,31 @@
+
+
+**16.** Let \(F\) be a field and \(V\) the space of \(n\times 1\) matrices over \(F\). Suppose \(A\) is an invertible, symmetric \(n\times n\) matrix over \(F\) and that \(f\) is the bilinear form on \(V\) defined by \(f(X,\,Y)=X^{t}A\,Y\). Let \(P\) be an invertible \(n\times n\) matrix over \(F\) and \(\mathbb{B}\) the basis for \(V\) consisting of the columns of \(P\). Show that the basis \(\mathbb{B}^{\prime}\) of Exercise 13 consists of the columns of the matrix \(\Lambda^{-1}(P^{t})^{-1}\).
+
+**17.** Let \(V\) be a finite-dimensional vector space over a field \(F\) and \(f\) a symmetric bilinear form on \(V\). For each subspace \(W\) of \(V\), let \(W^{\perp}\) be the set of all vectors \(\alpha\) in \(V\) such that \(f(\alpha,\beta)=0\) for every \(\beta\) in \(W\). Show that
+
+1. \(W^{\perp}\) is a subspace.
+2. \(V=\{0\}^{\perp}\).
+3. \(V^{\perp}=\{0\}^{\perp}\) if and only if \(f\) is non-degenerate.
+4. rank \(f=\dim\,V\,-\,\dim\,V^{\perp}\).
+5. If \(\dim\,V=n\) and \(\dim\,W=m\), then \(\dim\,W^{\perp}\geq n-m\). (_Hint:_ Let \(\{\beta_{1},\,.\,.\,,\,\beta_{m}\}\) be a basis of \(W\) and consider the mapping of \(V\) into \(F^{m}\).)
+
+(f) The restriction of \(f\) to \(W\) is non-degenerate if and only if
+
+\[W\cap W^{\perp}=\{0\}\,.\]
+
+(g) \(V=W\oplus W^{\perp}\) if and only if the restriction of \(f\) to \(W\) is non-degenerate.
+
+**18.** Let \(V\) be a finite-dimensional vector space over \(C\) and \(f\) a non-degenerate symmetric bilinear form on \(V\). Prove that there is a basis \(\mathbb{B}\) of \(V\) such that \(\mathbb{B}^{\prime}=\mathbb{B}\). (\(\mathrm{Se}\cdot\mathrm{Exercise\ 13}\) for a definition of \(\mathbb{B}^{\prime}\).)
+
+**10.3. \(Skev\)-\(Symmetric\)\(Bilinear\)\(Forms\)**
+
+Throughout this section \(V\) will be a vector space over a subfield \(F\) of the field of complex numbers. A bilinear form \(f\) on \(V\) is called **skew-symmetric** if \(f(\alpha,\beta)=-f(\beta,\alpha)\) for all vectors \(\alpha\), \(\beta\) in \(V\). We shall prove one theorem concerning the simplification of the matrix of a skew-symmetric bilinear form on a finite-dimensional space \(V\). First, let us make some general observations.
+
+Suppose \(f\) is _any_ bilinear form on \(V\). If we let
+
+\[\begin{array}{rcl}g(\alpha,\beta)&=&\frac{1}{2}[f(\alpha,\beta)\,+f(\beta, \alpha)]\\ h(\alpha,\beta)&=&\frac{1}{2}[f(\alpha,\beta)\,-f(\beta,\alpha)]\end{array}\]
+
+then it is easy to verify that \(g\) is a symmetric bilinear form on \(V\) and \(h\) is a skew-symmetric bilinear form on \(V\). Also \(f=g+h\). Furthermore, this expression for \(V\) as the sum of a symmetric and a skew-symmetric form is unique. Thus, the space \(L(V,\,V,\,F)\) is the direct sum of the subspace of symmetric forms and the subspace of skew-symmetric forms.
+
+If \(V\) is finite-dimensional, the bilinear form \(f\) is skew-symmetric if and only if its matrix \(A\) in some (or every) ordered basis is skew-symmetric, \(A^{t}=-A\). This is proved just as one proves the corresponding fact about

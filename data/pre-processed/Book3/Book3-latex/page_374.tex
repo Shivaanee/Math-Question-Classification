@@ -1,0 +1,25 @@
+\(R_{f}\) have the same nullity. Let \(\mathfrak{G}\) be an ordered basis for \(V\), and let \(A\,=\,[f]_{\mathfrak{G}}\). If \(\alpha\) and \(\beta\) are vectors in \(V\), with coordinate matrices \(X\) and \(Y\) in the ordered basis \(\mathfrak{G}\), then \(f(\alpha,\,\beta)\,=\,X^{\,\prime}A\,Y\). Now \(R_{f}(\beta)\,=\,0\,\) means that \(f(\alpha,\,\beta)\,=\,0\,\) for every \(\alpha\) in \(V\), i.e., that \(X^{\,\prime}A\,Y\,=\,0\,\) for every \(n\,\times\,1\) matrix \(X\). The latter condition simply says that \(A\,Y\,=\,0\). The nullity of \(R_{f}\) is therefore equal to the dimension of the space of solutions of \(A\,Y\,=\,0\).
+
+Similarly, \(L_{f}(\alpha)\,=\,0\) if and only if \(X^{\,\prime}A\,Y\,=\,0\,\) for every \(n\,\times\,1\) matrix \(Y\). Thus \(\alpha\) is in the null space of \(L_{f}\) if and only if \(X^{\,\prime}A\,=\,0\), i.e., \(A^{\,\prime}X\,=\,0\). The nullity of \(L_{f}\) is therefore equal to the dimension of the space of solutions of \(A^{\,\prime}X\,=\,0\). Since the matrices \(A\) and \(A^{\,\prime}\) have the same column-rank, we see that
+
+\[\text{nullity }(L_{f})\,=\,\text{nullity }(R_{f}).\quad\vrule height 6.0pt width 4.0pt depth 0.0pt\]
+
+**Definition**.: _If \(f\) is a bilinear form on the finite-dimensional space \(V\), the \(\mathbf{rank}\) of \(f\) is the integer \(r\,=\,\text{rank }(L_{f})\,=\,\text{rank }(R_{f})\)._
+
+**Corollary 1**.: _The rank of a bilinear form is equal to the rank of the matrix of the form in any ordered basis._
+
+**Corollary 2**.: _If \(f\) is a bilinear form on the \(n\)-dimensional vector space \(V\), the following are equivalent:_
+
+* _rank_ (f) \(=\,n\)_._
+* _For each non-zero_ \(\alpha\) _in_ \(V\)_, there is a_ \(\beta\) _in_ \(V\) _such that_ \(f(\alpha,\beta)\neq 0\)_._
+* _For each non-zero_ \(\beta\) _in_ \(V\)_, there is an_ \(\alpha\) _in_ \(V\) _such that_ \(f(\alpha,\beta)\neq 0\)_._
+
+Proof.: Statement (b) simply says that the null space of \(L_{f}\) is the zero subspace. Statement (c) says that the null space of \(R_{f}\) is the zero subspace. The linear transformations \(L_{f}\) and \(R_{f}\) have nullity \(0\) if and only if they have rank \(n\), i.e., if and only if rank \((f)\,=\,n\). 
+
+**Definition**.: _A bilinear form \(f\) on a vector space \(V\) is called \(\mathbf{non-degenerate}\) (or \(\mathbf{non-singular}\)) if it satisfies conditions (b) and (c) of Corollary 2._
+
+If \(V\) is finite-dimensional, then \(f\) is non-degenerate provided \(f\) satisfies any one of the three conditions of Corollary 2. In particular, \(f\) is non-degenerate (non-singular) if and only if its matrix in some (every) ordered basis for \(V\) is a non-singular matrix.
+
+**Example 5**.: _Let \(V\,=\,R^{n}\), and let \(f\) be the bilinear form defined on \(\alpha\,=\,(x_{1},\,.\,.\,.\,,\,x_{n})\) and \(\beta\,=\,(y_{1},\,.\,.\,.\,,\,y_{n})\) by_
+
+\[f(\alpha,\,\beta)\,=\,x_{1}y_{1}+\,\cdots\,+\,x_{n}y_{n}.\] 

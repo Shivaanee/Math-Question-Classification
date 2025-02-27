@@ -1,0 +1,31 @@
+probabilities_. With probability \(\frac{1}{10}\), an individual outside California moves in. If inside, the probability of moving out is \(\frac{2}{10}\). The movement becomes a _random process_, and \(A\) is called a _transition matrix_.
+
+The components of \(u_{k}=A^{k}u_{0}\) specify the probability that the individual is outside or inside the state. These probabilities are never negative and add to \(1\)--everybody has to be somewhere. That brings us back to the two fundamental properties of a Markov matrix: Each column adds to \(1\), and no entry is negative.
+
+Why is \(\lambda=1\) always an eigenvalue? Each column of \(A-I\) adds up to \(1-1=0\). Therefore the rows of \(A-I\) add up to the zero row, they are linearly dependent, and \(\det(A-I)=0\).
+
+Except for very special cases, \(u_{k}\) will approach the corresponding eigenvector4. In the formula \(u_{k}=c_{1}\lambda_{1}^{k}x_{1}+\cdots+c_{n}\lambda_{n}^{k}x_{n}\), no eigenvalue can be larger than \(1\). (Otherwise the probabilities \(u_{k}\) would blow up.) If all other eigenvalues are strictly smaller than \(\lambda_{1}=1\), then the first term in the formula will be dominant. The other \(\lambda_{i}^{k}\) go to zero, and \(u_{k}\to c_{1}x_{1}=u_{\infty}=\) steady state.
+
+Footnote 4: If everybody outside moves in and everybody inside moves out, then the populations are reversed every year and there is no steady state. The transition matrix is \(A=\left[\begin{smallmatrix}0&1\\ 1&0\end{smallmatrix}\right]\) and \(-1\) is an eigenvalue as well as \(+1\)—which cannot happen if all \(a_{ij}>0\).
+
+This is an example of one of the central themes of this chapter: Given information about \(A\), find information about its eigenvalues. Here we found \(\lambda_{\max}=1\).
+
+##### Stability of \(u_{k+1}=Au_{k}\)
+
+There is an obvious difference between Fibonacci numbers and Markov processes. The numbers \(F_{k}\) become larger and larger, while by definition any "probability" is between \(0\) and \(1\). The Fibonacci equation is _unstable_. So is the compound interest equation \(P_{k+1}=1.06P_{k}\); the principal keeps growing forever. If the Markov probabilities decreased to zero, that equation would be stable; but they do not, since at every stage they must add to \(1\). Therefore a Markov process is _neutrally stable_.
+
+We want to study the behavior of \(u_{k+1}=Au_{k}\) as \(k\to\infty\). Assuming that \(A\) can be diagonalized, \(u_{k}\) will be a combination of pure solutions:
+
+\[\text{{Solution at time }}k\qquad u_{k}=S\Lambda^{k}S^{-1}u_{0}=c_{1} \lambda_{1}^{k}x_{1}+\cdots+c_{n}\lambda_{n}^{k}x_{n}.\]
+
+The growth of \(u_{k}\) is governed by the \(\lambda_{i}^{k}\). _Stability depends on the eigenvalues_:
+
+**5J**: The difference equation \(u_{k+1}=Au_{k}\) is
+
+_stable_ if all eigenvalues satisfy \(|\lambda_{i}|<1\);
+**_neutrally stable_** if some \(|\lambda_{i}|=1\) and all the other \(|\lambda_{i}|<1\); and
+**_unstable_** if at least one eigenvalue has \(|\lambda_{i}|>1\).
+
+In the stable case, the powers \(A^{k}\) approach zero and so does \(u_{k}=A^{k}u_{0}\).
+
+ 

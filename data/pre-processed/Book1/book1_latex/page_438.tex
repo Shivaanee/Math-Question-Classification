@@ -1,0 +1,29 @@
+any entry in \(r\) is negative, the cost can still be reduced**. We can make \(rx_{N}\) negative, at the start of equation (2), by increasing a component of \(x_{N}\). That will be our next step. But if \(r\geq 0\), the best corner has been found. This is the _stopping test_, or _optimality condition_:
+
+**8B** The corner is optimal when \(r=c_{N}-c_{B}B^{-1}N\geq 0\). Its cost is \(c_{B}B^{-1}b\).
+
+Negative components of \(r\) correspond to edges on which the cost goes down.
+
+**The entering variable \(x_{i}\) corresponds to the most negative component of \(r\)**.
+
+The components of \(r\) are the _reduced costs_--the cost in \(c_{N}\) to use a free variable _minus what it saves_. Computing \(r\) is called _pricing out_ the variables. If the direct cost (in \(c_{N}\)) is less than the saving (from reducing basic variables), then \(r_{i}<0\), and it will pay to increase that free variable.
+
+Suppose the most negative reduced cost is \(r_{i}\). Then the \(i\)th component of \(x_{N}\) is the _entering variable_, which increases from zero to a positive value \(\alpha\) at the next corner (the end of the edge).
+
+As \(x_{i}\) is increased, other components of \(x\) may decrease (to maintain \(Ax=b\)). The \(x_{k}\) that reaches zero first becomes the _leaving variable_--it changes from basic to free. _We reach the next corner when a component of \(x_{B}\) drops to zero_.
+
+That new corner is feasible because we still have \(x\geq 0\). It is basic because we again have \(n\) zero components. The \(i\)th component of \(x_{N}\) went from zero to \(\alpha\). The \(k\)th component of \(x_{B}\) dropped to zero (the other components of \(x_{B}\) remain positive). The leaving \(x_{k}\) that drops to zero is the one that gives the minimum ratio in equation (3):
+
+**8C** Suppose \(x_{i}\) is the entering variable and \(u\) is column \(i\) of \(N\):
+
+\[\mbox{\bf At new corner}\qquad x_{i}=\alpha=\mbox{smallest ratio}\frac{(B^{-1} b)_{j}}{(B^{-1}u)_{j}}=\frac{(B^{-1}b)_{k}}{(B^{-1}u)_{k}}.\] (3)
+
+This minimum is taken only over positive components of \(B^{-1}u\). The \(k\)th column of the old \(B\) leaves the basis (\(x_{k}\) becomes 0) and the new column \(u\) enters.
+
+\(B^{-1}u\) is the column of \(B^{-1}N\) in the reduced tableau \(R\), above the most negative entry in the bottom row \(r\), If \(B^{-1}u\leq 0\), the next corner is infinitely far away and the minimal cost is \(-\infty\) (this doesn't happen here). Our example will go from the corner \(P\) to \(Q\), and begin again at \(Q\).
+
+**Example 3**.: The original cost function \(x+y\) and constraints \(Ax=b=(6,6)\) give
+
+\[\begin{bmatrix}A&b\\ c&0\end{bmatrix}=\left[\begin{array}{rrrrr}1&2&-1&0&6\\ .2&.1&.0&-1&6\\ 1&1&0&0&0\end{array}\right].\]
+
+At the corner \(P\) in Figure 8.3, \(x=0\) intersects \(2x+y=6\). To be organized, we exchange 

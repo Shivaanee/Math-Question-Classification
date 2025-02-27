@@ -1,0 +1,25 @@
+_There is nothing exceptional about \(\lambda=0\)_. Like every other number, zero might be an eigenvalue and it might not. If it is, then its eigenvectors satisfy \(Ax=0x\). Thus \(x\) is in the nullspace of \(A\). A zero eigenvalue signals that \(A\) is singular (not invertible); its determinant is zero. Invertible matrices have all \(\lambda\neq 0\).
+
+**Example 3**.: The eigenvalues are on the main diagonal when \(A\) is _triangular_:
+
+\[\det(A-\lambda I)=\left|\begin{matrix}1-\lambda&4&5\\ 0&\frac{3}{4}-\lambda&6\\ 0&0&\frac{1}{2}-\lambda\end{matrix}\right|=(1-\lambda)(\tfrac{3}{4}-\lambda)( \tfrac{1}{2}-\lambda).\]
+
+The determinant is just the product of the diagonal entries. It is zero if \(\lambda=1\), \(\lambda=\tfrac{3}{4}\), or \(\lambda=\tfrac{1}{2}\); the eigenvalues were already sitting along the main diagonal.
+
+This example, in which the eigenvalues can be found by inspection, points to one main theme of the chapter: To transform A into a diagonal or triangular matrix _without changing its eigenvalues_. We emphasize once more that the Gaussian factorization \(A=LU\) is not suited to this purpose. The eigenvalues of \(U\) may be visible on the diagonal, but they are _not_ the eigenvalues of \(A\).
+
+For most matrices, there is no doubt that the eigenvalue problem is computationally more difficult than \(Ax=b\). With linear systems, a finite number of elimination steps produced the exact answer in a finite time. (Or equivalently, Cramer's rule gave an exact formula for the solution.) No such formula can give the eigenvalues, or Galois would turn in his grave. For a 5 by 5 matrix, \(\det(A-\lambda I)\) involves \(\lambda^{5}\). Galois and Abel proved that there can be no algebraic formula for the roots of a fifth-degree polynomial.
+
+All they will allow is a few simple checks on the eigenvalues, _after_ they have been computed, and we mention two good ones: _sum and product_.
+
+5B The _sum_ of the \(n\) eigenvalues equals the sum of the \(n\) diagonal entries:
+
+\[\text{Trace of}\quad A=\lambda_{1}+\dots+\lambda_{n}=a_{11}+\dots+a_{nn}.\] (15)
+
+Furthermore, the _product_ of the \(n\) eigenvalues equals the _determinant_ of \(A\).
+
+The projection matrix \(P\) had diagonal entries \(\tfrac{1}{2}\), \(\tfrac{1}{2}\) and eigenvalues 1, 0. Then \(\tfrac{1}{2}+\tfrac{1}{2}\) agrees with \(1+0\) as it should. So does the determinant, which is \(0\cdot 1=0\). A singular matrix, with zero determinant, has one or more of its eigenvalues equal to zero.
+
+There should be no confusion between the diagonal entries and the eigenvalues. For a triangular matrix they are the same--but that is exceptional. Normally the pivots, diagonal entries, and eigenvalues are completely different, And for a 2 by 2 matrix, the trace and determinant tell us everything:
+
+\[\begin{bmatrix}a&b\\ c&d\end{bmatrix}\quad\text{has trace $a+d$, and determinant $ad-bc$}\] 

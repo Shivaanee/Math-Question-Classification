@@ -1,0 +1,35 @@
+the _pseudo-inverse_ of \(A\). It is denoted \(A^{\dagger}\) (or \(A^{+}\)):
+
+\[A^{\dagger}=(A^{T}A)^{-1}A^{T}.\] (11.5)
+
+The pseudo-inverse is also called the _Moore-Penrose inverse_, after the mathematicians Eliakim Moore and Roger Penrose.
+
+When \(A\) is square, the pseudo-inverse \(A^{\dagger}\) reduces to the ordinary inverse:
+
+\[A^{\dagger}=(A^{T}A)^{-1}A^{T}=A^{-1}A^{-T}A^{T}=A^{-1}I=A^{-1}.\]
+
+Note that this equation does not make sense (and certainly is not correct) when \(A\) is not square.
+
+Pseudo-inverse of a square or wide matrix.Transposing all the equations, we can show that a (square or wide) matrix \(A\) has a right inverse if and only if its rows are linearly independent. Indeed, one right inverse is given by
+
+\[A^{T}(AA^{T})^{-1}.\] (11.6)
+
+(The matrix \(AA^{T}\) is invertible if and only if the rows of \(A\) are linearly independent.)
+
+The matrix in (11.6) is also referred to as the pseudo-inverse of \(A\), and denoted \(A^{\dagger}\). The only possible confusion in defining the pseudo-inverse using the two different formulas (11.5) and (11.6) occurs when the matrix \(A\) is square. In this case, however, they both reduce to the ordinary inverse:
+
+\[A^{T}(AA^{T})^{-1}=A^{T}A^{-T}A^{-1}=A^{-1}.\]
+
+Pseudo-inverse in other cases.The pseudo-inverse \(A^{\dagger}\) is defined for any matrix, including the case when \(A\) is tall but its columns are linearly dependent, the case when \(A\) is wide but its rows are linearly dependent, and the case when \(A\) is square but not invertible. In these cases, however, it is not a left inverse, right inverse, or inverse, respectively. We mention it here since the reader may encounter it. (We will see what \(A^{\dagger}\) means in these cases in exercise 11.)
+
+Pseudo-inverse via QR factorization.The QR factorization gives a simple formula for the pseudo-inverse. If \(A\) is left-invertible, its columns are linearly independent and the QR factorization \(A=QR\) exists. We have
+
+\[A^{T}A=(QR)^{T}(QR)=R^{T}Q^{T}QR=R^{T}R,\]
+
+so
+
+\[A^{\dagger}=(A^{T}A)^{-1}A^{T}=(R^{T}R)^{-1}(QR)^{T}=R^{-1}R^{-T}R^{T}Q^{T}=R^ {-1}Q^{T}.\]
+
+We can compute the pseudo-inverse using the QR factorization, followed by back substitution on the columns of \(Q^{T}\). (This is exactly the same as algorithm 11.3 when \(A\) is square and invertible.) The complexity of this method is \(2n^{2}m\) flops (for the QR factorization), and \(mn^{2}\) flops for the \(m\) back substitutions. So the total is \(3mn^{2}\) flops.
+
+ 

@@ -1,0 +1,24 @@
+A small pivot forces a practical change in elimination. Normally we compare each pivot with all possible pivots in the same column. Exchanging rows to obtain the largest possible pivot is called _partial pivoting_.
+
+For \(B\), the pivot \(.0001\) would be compared with the possible pivot I below it. A row exchange would take place immediately. In matrix terms, this is multiplication by a permutation matrix \(P=[\begin{smallmatrix}0&1\\ 1&0\end{smallmatrix}]\). The new matrix \(C=PB\) has good factors:
+
+\[C=\begin{bmatrix}1&1\\ .0001&1\end{bmatrix}=\begin{bmatrix}1&0\\ .0001&1\end{bmatrix}\begin{bmatrix}1&0\\ 0&.9999\end{bmatrix}\begin{bmatrix}1&1\\ 0&1\end{bmatrix}\]
+
+The pivots for \(C\) are \(1\) and \(.9999\), much better than \(.0001\) and \(-9999\) for \(B\).
+
+The strategy of _complete pivoting_ looks also in all later columns for the largest possible pivot. Not only a row but also a column exchange may be needed. (This is _post_multiplication by a permutation matrix.) The difficulty with being so conservative is the expense, and partial pivoting is quite adequate.
+
+We have finally arrived at the fundamental algorithm of numerical linear algebra: _elimination with partial pivoting_. Some further refinements, such as watching to see whether a whole row or column needs to be resealed, are still possible. But essentially the reader now knows what a computer does with a system of linear equations. Compared with the "theoretical" description--_find \(A^{-1}\), and multiply \(A^{-1}b\)_--our description has consumed a lot of the reader's time (and patience). I wish there were an easier way to explain how x is actually found, but I do not think there is.
+
+## Problem Set 1.7
+
+**1.**: Write out the \(LDU=LDL^{\mathrm{T}}\) factors of \(A\) in equation (6) when \(n=4\). Find the determinant as the product of the pivots in \(D\).
+**2.**: Modify \(a_{11}\) in equation (6) from \(a_{11}=2\) to \(a_{11}=1\), and find the \(LDU\) factors of this new tridiagonal matrix.
+**3.**: Find the \(5\) by \(5\) matrix \(A_{0}\) (\(h=\frac{1}{6}\)) that approximates
+
+\[-\frac{d^{2}u}{dx^{2}}=f(x),\qquad\frac{du}{dx}(0)=\frac{du}{dx}(1)=0,\]
+
+replacing these boundary conditions by \(u_{0}=u_{1}\) and \(u_{6}=u_{5}\). Check that your \(A_{0}\) times the constant vector \((C,C,C,C,C)\), yields zero; \(A_{0}\)_is singular_. Analogously, if \(u(x)\) is a solution of the continuous problem, then so is \(u(x)+C\).
+**4.**: Write down the \(3\) by \(3\) finite-difference matrix equation (\(h=\frac{1}{4}\)) for
+
+\[-\frac{d^{2}u}{dx^{2}}+u=x,\qquad u(0)=u(1)=0.\] 

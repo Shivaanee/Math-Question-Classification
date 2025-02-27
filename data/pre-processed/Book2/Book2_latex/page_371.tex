@@ -1,0 +1,17 @@
+Future returns and the big assumption.The portfolio optimization problem (17.2) suffers from what would appear to be a serious conceptual flaw: It requires us to know the asset returns over the periods \(t=1,\ldots,T\), in order to compute the optimal allocation to use over those periods. This is silly: If we knew _any_ future returns, we would be able to achieve as large a portfolio return as we like, by simply putting large positive weights on the assets with positive returns and negative weights on those with negative returns. The whole challenge in investing is that we do not know future returns.
+
+Assume the current time is period \(T\), so we know the (so-called _realized_) return matrix \(R\). The portfolio weight \(w\) found by solving (17.2), based on the observed returns in periods \(t=1,\ldots,T\), can still be useful, when we make one (big) assumption:
+
+_Future asset returns are similar to past returns._ (17.4)
+
+In other words, if the asset returns for future periods \(T+1,T+2,\ldots\) are similar in nature to the past periods \(t=1,\ldots,T\), then the portfolio allocation \(w\) found by solving (17.2) could be a wise choice to use in future periods.
+
+Every time you invest, you are warned that the assumption (17.4) need not hold; you are required to acknowledge that past performance is no guarantee of future performance. The assumption (17.4) often holds well enough to be useful, but in times of 'market shift' it need not.
+
+This situation is similar to that encountered when fitting models to observed data, as in chapters 13 and 14. The model is trained on past data that you have observed; but it will be used to make predictions on future data that you have not yet seen. A model is useful only to the extent that future data looks like past data. And this is an assumption which often (but not always) holds reasonably well.
+
+Just as in model fitting, investment allocation vectors can (and should) be validated before being used. For example, we determine the weight vector by solving (17.2) using past returns data over some past training period, and check the performance on some other past testing period. If the portfolio performance over the training and testing periods are reasonably consistent, we gain confidence (but no guarantee) that the weight vector will work in future periods. For example, we might determine the weights using the realized returns from two years ago, and then test these weights by the performance of the portfolio over last year. If the test works out, we use the weights for next year. In portfolio optimization, validation is sometimes called _back-testing_, since you are testing the investment method on previous realized returns, to get an idea of how the method will work on (unknown) future returns.
+
+The basic assumption (17.4) often holds less well than the analogous assumption in data fitting, _i.e._, that future data looks like past data. For this reason we expect less coherence between the training and test performance of a portfolio, compared to a generic data fitting application. This is especially so when the test period has a small number of periods in it, like 100; see the discussion on page 268.
+
+ 

@@ -1,0 +1,25 @@
+whose only non-zero entry is a 1 in row \(i\) and column \(j\). Since these matrix units comprise a basis for the space of \(n\times n\) matrices, the forms \(f_{ij}\) comprise a basis for the space of bilinear forms.
+
+The concept of the matrix of a bilinear form in an ordered basis is similar to that of the matrix of a linear operator in an ordered basis. Just as for linear operators, we shall be interested in what happens to the matrix representing a bilinear form, as we change from one ordered basis to another. So, suppose \(\otimes=\{\alpha_{\mathfrak{l}},\ldots,\alpha_{\mathfrak{n}}\}\) and \(\otimes^{\prime}=\{\alpha_{\mathfrak{l}}^{\prime},\ldots,\alpha_{\mathfrak{n }}^{\prime}\}\) are two ordered bases for \(V\) and that \(f\) is a bilinear form on \(V\). How are the matrices \([f]_{\otimes}\) and \([f]_{\otimes^{\prime}}\) related? Well, let \(P\) be the (invertible) \(n\times n\) matrix such that
+
+\[[\alpha]_{\otimes}=P[\alpha]_{\otimes^{\prime}}\]
+
+for all \(\alpha\) in \(V\). In other words, define \(P\) by
+
+\[\alpha_{j}^{\prime}=\sum_{i=1}^{n}P_{ij}\alpha_{i}.\]
+
+For any vectors \(\alpha\), \(\beta\) in \(V\)
+
+\[\begin{array}{rl}f(\alpha,\beta)&=\ [\alpha]_{\otimes}^{\prime}[f]_{ \otimes}[\beta]_{\otimes}\\ &=\ (P[\alpha]_{\otimes^{\prime}}]^{\prime}[f]_{\otimes}P[\beta]_{\otimes^{ \prime}}\\ &=\ [\alpha]_{\otimes^{\prime}}^{\prime}(P^{\iota}[f]_{\otimes}P)[\beta]_{ \otimes^{\prime}}.\end{array}\]
+
+By the definition and uniqueness of the matrix representing \(f\) in the ordered basis \(\otimes^{\prime}\), we must have
+
+\[[f]_{\otimes^{\prime}}=P^{\iota}[f]_{\otimes}P.\]
+
+**Example 4**: Let \(V\) be the vector space \(R^{\natural}\). Let \(f\) be the bilinear form defined on \(\alpha=(x_{\mathfrak{l}},x_{\mathfrak{l}})\) and \(\beta=(y_{\mathfrak{l}},y_{\mathfrak{l}})\) by
+
+\[f(\alpha,\beta)=x_{\mathfrak{l}}y_{\mathfrak{l}}+x_{\mathfrak{l}}y_{\mathfrak{ l}}+x_{\mathfrak{l}}y_{\mathfrak{l}}+x_{\mathfrak{l}}y_{\mathfrak{l}}.\]
+
+Now
+
+\[f(\alpha,\beta)=[x_{\mathfrak 

@@ -1,0 +1,25 @@
+Proof.: There is at least one \(m\times n\) row-reduced echelon matrix with row space \(W\). Since \(\dim\,W\leq m\), we can select some \(m\) vectors \(\alpha_{1},\ldots,\alpha_{m}\) in \(W\) which span \(W\). Let \(A\) be the \(m\times n\) matrix with row vectors \(\alpha_{1},\ldots,\alpha_{m}\) and let \(R\) be a row-reduced echelon matrix which is row-equivalent to \(A\). Then the row space of \(R\) is \(W\).
+
+Now let \(R\) be any row-reduced echelon matrix which has \(W\) as its row space. Let \(\rho_{1},\ldots,\rho_{r}\) be the non-zero row vectors of \(R\) and suppose that the leading non-zero entry of \(\rho_{i}\) occurs in column \(k_{i}\), \(i=1,\ldots,r\). The vectors \(\rho_{1},\ldots,\rho_{r}\) form a basis for \(W\). In the proof of Theorem 10, we observed that if \(\beta=(b_{1},\ldots,b_{n})\) is in \(W\), then
+
+\[\beta=e_{1}\rho_{1}+\cdots+e_{r}\rho_{r},\]
+
+and \(e_{i}=b_{k}\); in other words, the unique expression for \(\beta\) as a linear combination of \(\rho_{1},\ldots,\rho_{r}\) is
+
+(2-21) \[\beta=\sum_{i=1}^{r}b_{k}\rho_{i}.\]
+
+Thus any vector \(\beta\) is determined: if one knows the coordinates \(b_{k},i=1,\ldots,\)\(r\). For example, \(\rho_{*}\) is the unique vector in \(W\) which has \(k_{*}\)th coordinate \(1\) and \(k_{*}\)th coordinate \(0\) for \(i\neq s\).
+
+Suppose \(\beta\) is in \(W\) and \(\beta\neq 0\). We claim the first non-zero coordinate of \(\beta\) occurs in one of the columns \(k_{*}\). Since
+
+\[\beta=\sum_{i=1}^{r}b_{k_{i}}\rho_{i}\]
+
+and \(\beta\neq 0\), we can write
+
+(2-22) \[\beta=\sum_{i=s}^{r}b_{k_{i}}\rho_{i},\qquad b_{k_{*}}\neq 0.\]
+
+From the conditions (2-18) one has \(R_{ij}=0\) if \(i>s\) and \(j\leq k_{*}\). Thus
+
+\[\beta=(0,\ldots,0,\ \ \ b_{k_{*}}\ldots,b_{n}),\qquad b_{k_{*}}\neq 0\]
+
+and the first non-zero coordinate of \(\beta\) occurs in column \(k_{*}\). Note also that for each \(k_{*}\), \(s=1,\ldots,r 

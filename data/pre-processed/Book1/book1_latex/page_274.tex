@@ -1,0 +1,29 @@
+In the differential equation, this produces the special solutions \(u=e^{\lambda t}x\). They are the _pure exponential solutions_ to \(du/dt=Au\). Notice \(e^{-t}\) and \(e^{2t}\):
+
+\[u(t)=e^{\lambda_{1}t}x_{1}=e^{-t}\begin{bmatrix}1\\ 1\end{bmatrix}\qquad\text{and}\qquad u(t)=e^{\lambda_{2}t}x_{2}=e^{2t} \begin{bmatrix}5\\ 2\end{bmatrix}.\]
+
+These two special solutions give the complete solution. They can be multiplied by any numbers \(c_{1}\) and \(c_{2}\), and they can be added together. When \(u_{1}\) and \(u_{2}\) satisfy the linear equation \(du/dt=Au\), so does their sum \(u_{1}+u_{2}\):
+
+\[\textbf{Complete solution}\qquad u(t)=c_{1}e^{\lambda_{1}t}x_{1}+c_{2}e^{ \lambda_{2}t}x_{2}\] (12)
+
+This is _superposition_, and it applies to differential equations (homogeneous and linear) just as it applied to matrix equations \(Ax=0\). The nullspace is always a subspace, and combinations of solutions are still solutions.
+
+Now we have two free parameters \(c_{1}\) and \(c_{2}\), and it is reasonable to hope that they can be chosen to satisfy the initial condition \(u=u(0)\) at \(t=0\):
+
+\[\textbf{Initial condition}\qquad c_{1}x_{1}+c_{2}x_{2}=u(0)\qquad\text{or} \qquad\begin{bmatrix}1&5\\ 1&2\end{bmatrix}\begin{bmatrix}c_{1}\\ c_{2}\end{bmatrix}=\begin{bmatrix}8\\ 5\end{bmatrix}.\] (13)
+
+The constants are \(c_{1}=3\) and \(c_{2}=1\), and _the solution to the original equation_ is
+
+\[u(t)=3e^{-t}\begin{bmatrix}1\\ 1\end{bmatrix}+e^{2t}\begin{bmatrix}5\\ 2\end{bmatrix}.\] (14)
+
+Writing the two components separately, we have \(v(0)=8\) and \(w(0)=5\):
+
+\[\textbf{Solution}\qquad v(t)=3e^{-t}+5e^{2t},\qquad w(t)=3e^{-t}+2e^{2t}.\]
+
+The key was in the eigenvalues \(\lambda\) and eigenvectors \(x\). Eigenvalues are important in themselves, and not just part of a trick for finding \(u\). Probably the homeliest example is that of soldiers going over a bridge.1 Traditionally, they stop marching and just walk across. If they happen to march at a frequency equal to one of the eigenvalues of the bridge, it would begin to oscillate. (Just as a child's swing does; you soon notice the natural frequency of a swing, and by matching it you make the swing go higher.) An engineer tries to keep the natural frequencies of his bridge or rocket away from those of the wind or the sloshing of fuel. And at the other extreme, a stockbroker spends his life trying to get in line with the natural frequencies of the market. The eigenvalues are the most important feature of practically any dynamical system.
+
+Footnote 1: One which I never really believed—but a bridge did crash this way in 1831.
+
+### Summary and Examples
+
+To summarize, this introduction has shown how \(\lambda\) and \(x\) appear naturally and automatically when solving \(du/dt=Au\). Such an equation has _pure exponential solutions_ 

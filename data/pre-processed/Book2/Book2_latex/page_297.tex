@@ -1,0 +1,21 @@
+
+Error rate and confusion matrix.For a given data set
+
+\[x^{(1)},\ldots,x^{(N)},\qquad y^{(1)},\ldots,y^{(N)},\]
+
+and model \(\hat{f}\), we can count the numbers of each of the four possibilities that occur across the data set, and display them in a _contingency table_ or _confusion matrix_, which is a \(2\times 2\) table with the columns corresponding to the value of \(\hat{y}^{(i)}\) and the rows corresponding to the value of \(y^{(i)}\). (This is the convention used in machine learning; in statistics, the rows and columns are sometimes reversed.) The entries give the total number of each of the four cases listed above, as shown in table 14.1. The diagonal entries correspond to correct decisions, with the upper left entry the number of true positives, and the lower right entry the number of true negatives. The off-diagonal entries correspond to errors, with the upper right entry the number of false negatives, and the lower left entry the number of false positives. The total of the four numbers is \(N\), the number of examples in the data set. Sometimes the totals of the rows and columns are shown, as in table 14.1.
+
+Various performance metrics are expressed in terms of the numbers in the confusion matrix.
+
+* The _error rate_ is the total number of errors (of both kinds) divided by the total number of examples, _i.e._, \((N_{\mathrm{fp}}+N_{\mathrm{fn}})/N\).
+* The _true positive rate_ (also known as the _sensitivity_ or _recall rate_) is \(N_{\mathrm{tp}}/N_{\mathrm{p}}\). This gives the fraction of the data points with \(y=+1\) for which we correctly guessed \(\hat{y}=+1\).
+* The _false positive rate_ (also known as the _false alarm rate_) is \(N_{\mathrm{fp}}/N_{\mathrm{n}}\). The false positive rate is the fraction of data points with \(y=-1\) for which we incorrectly guess \(\hat{y}=+1\).
+* The _specificity_ or _true negative rate_ is one minus the false positive rate, _i.e._, \(N_{\mathrm{tn}}/N_{\mathrm{n}}\). The true negative rate is the fraction of the data points with \(y=-1\) for which we correctly guess \(\hat{y}=-1\).
+* The _precision_ is \(N_{\mathrm{tp}}/(N_{\mathrm{tp}}+N_{\mathrm{fp}})\), the fraction of true predictions that are correct.
+
+\begin{table}
+\begin{tabular}{c c c c} \hline \hline  & \multicolumn{3}{c}{Prediction} \\ \cline{2-4} Outcome & \(\hat{y}=+1\) & \(\hat{y}=-1\) & Total \\ \hline \(y=+1\) & \(N_{\mathrm{tp}}\) & \(N_{\mathrm{fn}}\) & \(N_{\mathrm{p}}\) \\ \(y=-1\) & \(N_{\mathrm{fp}}\) & \(N_{\mathrm{tn}}\) & \(N_{\mathrm{n}}\) \\ All & \(N_{\mathrm{tp}}+N_{\mathrm{fp}}\) & \(N_{\mathrm{fn}}+N_{\mathrm{tp}}\) & \(N\) \\ \hline \hline \end{tabular}
+\end{table}
+Table 14.1: Confusion matrix. The off-diagonal entries \(N_{\mathrm{fn}}\) and \(N_{\mathrm{fp}}\) give the numbers of the two types of error.
+
+ 

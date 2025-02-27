@@ -1,0 +1,15 @@
+first column of \(A^{-1}\), which is \(A^{-1}e_{1}\), gives the coefficients of the polynomial that has value 1 at \(-1.1\), and value 0 at \(-0.4\), 0.2, and 0.8. The four polynomials with coefficients given by the columns of \(A^{-1}\) are called the _Lagrange polynomials_ associated with the points \(-1.1\), \(-0.4\), 0.2, 0.8. These are plotted in figure 11.2. (The Lagrange polynomials are named after the mathematician Joseph-Louis Lagrange, whose name will re-appear in several other contexts.)
+
+The rows of \(A^{-1}\) are also interesting: The \(i\)th row shows how the values \(b_{1}\), ..., \(b_{4}\), the polynomial values at the points \(-1.1\), \(-0.4\), 0.2, 0.8, map into the \(i\)th coefficient of the polynomial, \(c_{i}\). For example, we see that the coefficient \(c_{4}\) is not very sensitive to the value of \(b_{1}\) (since \((A^{-1})_{41}\) is small). We can also see that for each increase of one in \(b_{4}\), the coefficient \(c_{2}\) increases by around 0.95.
+
+Balancing chemical reactions.(See page 154 for background.) We consider the problem of balancing the chemical reaction
+
+\[a_{1}\mathrm{Cr}_{2}\mathrm{O}_{7}^{2-}+a_{2}\mathrm{Fe}^{2+}+a_{3}\mathrm{H} ^{+}\longrightarrow b_{1}\mathrm{Cr}^{3+}+b_{2}\mathrm{Fe}^{3+}+b_{3} \mathrm{H}_{2}\mathrm{O},\]
+
+where the superscript gives the charge of each reactant and product. There are 4 atoms (Cr, O, Fe, H) and charge to balance. The reactant and product matrices are (using the order just listed)
+
+\[R=\left[\begin{array}{ccc}2&0&0\\ 7&0&0\\ 0&1&0\\ 0&0&1\\ -2&2&1\end{array}\right],\qquad P=\left[\begin{array}{ccc}1&0&0\\ 0&0&1\\ 0&1&0\\ 0&0&2\\ 3&3&0\end{array}\right].\]
+
+Figure 11.1 Cubic interpolants through two sets of points, shown as circles and squares.
+
+ 

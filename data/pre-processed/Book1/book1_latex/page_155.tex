@@ -1,0 +1,19 @@
+Suppose the vectors \(x_{1},\ldots,x_{n}\) are a basis for the space \(\mathbf{V}\), and vectors \(y_{1},\ldots,y_{m}\) are a basis for \(\mathbf{W}\). Each linear transformation \(T\) from \(\mathbf{V}\) to \(\mathbf{W}\) is represented by a matrix \(A\). The \(j\)th column is found by applying \(T\) to the \(j\)th basis vector \(x_{j}\), and writing \(T(x_{j})\) as a combination of the \(y\)'s:
+
+\[\mathbf{Column\ }j\ \mathbf{of\ }A\qquad T(x_{j})=Ax_{j}=a_{1j}y_{1}+a_{2j}y_{2}+ \cdots+a_{mj}y_{m}.\] (6)
+
+For the differentiation matrix, column 1 came from the first basis vector \(p_{1}=1\). Its derivative is zero, so column 1 is zero. The last column came from \((d/dt)t^{3}=3t^{2}\). Since \(3t^{2}=0p_{1}+0p_{2}+3p_{3}+0p_{4}\), the last column contained 0, 0, 3. 0. The rule (6) constructs the matrix, a column at a time.
+
+We do the same for integration. That goes from cubics to quartics, transforming \(\mathbf{V}=\mathbf{P}_{3}\) into \(\mathbf{W}=\mathbf{P}_{4}\), so we need a basis for \(\mathbf{W}\). The natural choice is \(y_{1}=1\), \(y_{2}=t\), \(y_{3}=t^{2}\), \(y_{4}=t^{3}\), \(y_{5}=t^{4}\), spanning the polynomials of degree 4. The matrix \(A\) will be \(m\) by \(n\), or 5 by 4. It comes from applying integration to each basis vector of \(\mathbf{V}\):
+
+\[\int_{0}^{t}1dt=t\quad\text{or}\quad Ax_{1}=y_{2},\quad\ldots,\quad\int_{0}^{t }t^{3}dt=\frac{1}{4}t^{4}\quad\text{or}\quad Ax_{4}=\frac{1}{4}y_{5}.\]
+
+\[\mathbf{Integration\ matrix}\qquad A_{\text{int}}=\begin{bmatrix}0&0&0&0\\ 1&0&0&0\\ 0&\frac{1}{2}&0&0\\ 0&0&\frac{1}{3}&0\\ 0&0&0&\frac{1}{4}\end{bmatrix}.\]
+
+Differentiation and integration are _inverse operations_. Or at least integration _followed_ by differentiation brings back the original function. To make that happen for matrices, we need the differentiation matrix from quartics down to cubics, which is 4 by 5:
+
+\[A_{\text{diff}}=\begin{bmatrix}0&1&0&0&0\\ 0&0&2&0&0\\ 0&0&0&3&0\\ 0&0&0&0&4\end{bmatrix}\qquad\text{and}\qquad A_{\text{diff}}A_{\text{int}}= \begin{bmatrix}1&&&\\ &1&&\\ &&1&\\ &&&1\end{bmatrix}.\]
+
+Differentiation is a _left-inverse_ of integration. Rectangular matrices cannot have two-sided inverses! In the opposite order, \(A_{\text{int}}A_{\text{diff}}=I\) cannot be true. The 5 by 5 product has zeros in column 1. The derivative of a constant is zero. In the other columns \(A_{\text{int}}A_{\text{diff}}\) is the identity and the integral of the derivative of \(t^{n}\) is \(t^{n}\).
+
+ 

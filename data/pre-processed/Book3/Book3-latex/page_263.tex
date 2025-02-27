@@ -1,0 +1,25 @@
+Proof.: We shall prove something more than we have stated. We shall show that there is an algorithm for finding \(N\), i.e., a prescription which a machine could use to calculate \(N\) in a finite number of steps. First, we need some notation.
+
+Let \(M\) be any \(m\times n\) matrix with entries in \(F[x]\) which has a non-zero first column
+
+\[M_{1}=\begin{bmatrix}f_{1}\\ \vdots\\ f_{m}\end{bmatrix}.\]
+
+Define
+
+\[l(M_{1}) = \min_{f_{i}\neq 0}\,\deg f_{i}\] (7-29) \[p(M_{1}) = \text{g.e.d.}\ (f_{1},.\ .\ .,f_{m}).\]
+
+Let \(j\) be some index such that \(\deg f_{i}=l(M_{1})\). To be specific, let \(j\) be the smallest index \(i\) for which \(\deg f_{i}=l(M_{1})\). Attempt to divide each \(f_{i}\) by \(f_{j}\):
+
+\[f_{i}=f_{i}g_{i}+r_{i},\qquad r_{i}=0\quad\text{or}\quad\deg r_{i}<\deg f_{j}.\] (7-30)
+
+For each \(i\) different from \(j\), replace row \(i\) of \(M\) by row \(i\) minus \(g_{i}\) times row \(j\). Multiply row \(j\) by the reciprocal of the leading coefficient of \(f_{j}\) and then interchange rows \(j\) and \(1\). The result of all these operations is a matrix \(M^{\prime}\) which has for its first column
+
+\[M^{\prime}_{1}=\begin{bmatrix}\overline{f}_{j}\\ r_{2}\\ \vdots\\ r_{j-1}\\ r_{1}\\ r_{j+1}\\ \vdots\\ r_{m}\end{bmatrix}.\] (7-31)
+
+where \(\overline{f}_{j}\) is the monic polynomial obtained by normalizing\(f_{j}\) to have leading coefficient \(1\). We have given a well-defined procedure for associating with each \(M\) a matrix \(M^{\prime}\) with these properties.
+
+1. \(M^{\prime}\) is row-equivalent to \(M\).
+2. \(p(M^{\prime}_{1})=p(M_{1})\).
+3. Either \(l(M^{\prime}_{1})<l(M_{1})\) or \[M^{\prime}_{1}=\begin{bmatrix}p(M_{1})\\ 0\\ \vdots\\ 0\end{bmatrix}.\]
+
+It is easy to verify (b) and (c) from (7-30) and (7-31). Property (c) 

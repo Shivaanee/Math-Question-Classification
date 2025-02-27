@@ -1,0 +1,21 @@
+obvious. It also says something about square matrices: _If the rows of a square matrix are linearly independent, then so are the columns_ (and vice versa). Again, that does not seem self-evident (at least, not to the author).
+
+To see once more that both the row and column spaces of \(U\) have dimension \(r\), consider a typical situation with rank \(r=3\). The echelon matrix \(U\) certainly has three independent rows:
+
+\[U=\left[\begin{array}{cccccc}d_{1}&*&*&*&*&*\\ \hline 0&0&0&d_{2}&*&*\\ 0&0&0&0&d_{3}\\ 0&0&0&0&0\end{array}\right].\]
+
+We claim that \(U\) also has three independent columns, and no more, The columns have only three nonzero components. If we can show that the pivot columns--the first, fourth, and sixth--are linearly independent, they must be a basis (for the column space of \(U\), not \(A\)!). Suppose a combination of these pivot columns produced zero:
+
+\[c_{1}\left[\begin{array}{c}d_{1}\\ 0\\ 0\\ 0\end{array}\right]+c_{2}\left[\begin{array}{c}*\\ d_{2}\\ 0\\ 0\end{array}\right]+c_{3}\left[\begin{array}{c}*\\ *\\ d_{3}\\ 0\end{array}\right]=\left[\begin{array}{c}0\\ 0\\ 0\\ 0\end{array}\right].\]
+
+Working upward in the usual way, \(c_{3}\) must be zero because the pivot \(d_{3}\neq 0\), then \(c_{2}\) must be zero because \(d_{2}\neq 0\), and finally \(c_{1}=0\). This establishes independence and completes the proof. Since \(Ax=0\) if and only if \(Ux=0\), the first, fourth, and sixth columns of \(A\)--whatever the original matrix \(A\) was, which we do not even know in this example--are a basis for \(C(A)\).
+
+The row space and column space both became clear after elimination on \(A\). Now comes the fourth fundamental subspace, which has been keeping quietly out of sight. Since the first three spaces were \(C(A)\), \(N(A)\), and \(C(A^{\rm T})\), the fourth space must be \(N(A^{\rm T})\), It is the nullspace of the transpose, or the _left nullspace_ of \(A\). \(A^{\rm T}y=0\) means \(y^{\rm T}A=0\), and the vector appears on the left-hand side of \(A\).
+
+**4. The left nullspace of \(A\) (\(=\) the nullspace of \(A^{\rm T}\))** If \(A\) is an \(m\) by \(n\) matrix, then \(A^{\rm T}\) is \(n\) by \(m\). Its nullspace is a subspace of \({\bf R}^{m}\); the vector \(y\) has \(m\) components. Written as \(y^{\rm T}A=0\), those components multiply the _rows_ of \(A\) to produce the zero row:
+
+\[y^{\rm T}A=\left[\begin{array}{ccc}y_{1}&\cdots&y_{m}\end{array}\right] \left[\begin{array}{cc}&A\end{array}\right]=\left[\begin{array}{ccc}0& \cdots&0\end{array}\right].\]
+
+The dimension of this nullspace \(N(A^{\rm T})\) is easy to find, For _any_ matrix, _the number of pivot variables plus the number of free variables must match the total number of columns_. For \(A\), that was \(r+(n-r)=n\). In other words, rank plus nullity equals \(n\):
+
+\[\mbox{dimension of }C(A)+\mbox{dimension of }N(A)=\mbox{number of columns}.\] 

@@ -1,0 +1,29 @@
+which makes sense because \(f(\alpha)\neq 0\). Then the vector \(\gamma=\beta-c\alpha\) is in \(N_{f}\) since
+
+\[\eqalign{f(\gamma)&=f(\beta-c\alpha)\cr&=f(\beta)-cf(\alpha)\cr&=0.\cr}\]
+
+So \(\beta\) is in the subspace spanned by \(N_{f}\) and \(\alpha\).
+
+Now let \(N\) be a hyperspace in \(V\). Fix some vector \(\alpha\) which is not in \(N\). Since \(N\) is a maximal proper subspace, the subspace spanned by \(N\) and \(\alpha\) is the entire space \(V\). Therefore each vector \(\beta\) in \(V\) has the form
+
+\[\beta=\gamma+c\alpha,\qquad\gamma\hbox{ in }N,c\hbox{ in }F.\]
+
+The vector \(\gamma\) and the scalar \(c\) are uniquely determined by \(\beta\). If we have also
+
+\[\beta=\gamma^{\prime}+c^{\prime}\alpha,\qquad\gamma^{\prime}\hbox{ in }N,c^{\prime}\hbox{ in }F.\]
+
+then
+
+\[(c^{\prime}-c)\alpha=\gamma-\gamma^{\prime}.\]
+
+If \(c^{\prime}-c\neq 0\), then \(\alpha\) would be in \(N\); hence, \(c^{\prime}=c\) and \(\gamma^{\prime}=\gamma\). Another way to phrase our conclusion is this: If \(\beta\) is in \(V\), there is a unique scalar \(c\) such that \(\beta-c\alpha\) is in \(N\). Call that scalar \(g(\beta)\). It is easy to see that \(g\) is a linear functional on \(V\) and that \(N\) is the null space of \(g\).
+
+_Lemma._ If \(f\) and \(g\) are linear functionals on a vector space \(V\), _then \(g\) is a scalar multiple of \(f\) if and only if the null space of \(g\) contains the null space of \(f\), that is, if and only if \(f(\alpha)=0\) implies \(g(\alpha)=0\).
+
+_Proof._ If \(f=0\) then \(g=0\) as well and \(g\) is trivially a scalar multiple of \(f\). Suppose \(f\neq 0\) so that the null space \(N_{f}\) is a hyperspace in \(V\). Choose some vector \(\alpha\) in \(V\) with \(f(\alpha)\neq 0\) and let
+
+\[c={g(\alpha)\over f(\alpha)}.\]
+
+The linear functional \(h=g-c\hbox{ if is }0\hbox{ on }N_{f}\), since both \(f\) and \(g\) are \(0\) there, and \(h(\alpha)=g(\alpha)-cf(\alpha)=0\). Thus \(h\) is \(0\) on the subspace spanned by \(N_{f}\) and \(\alpha\)--and that subspace is \(V\). We conclude that \(h=0\), i.e.
+
+ 

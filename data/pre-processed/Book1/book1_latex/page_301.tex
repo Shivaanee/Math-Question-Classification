@@ -1,0 +1,27 @@
+The "Perron-Frobenius theorem" gives the key properties of a _positive matrix_--not to be confused with a _positive definite_ matrix, which is symmetric and has all its eigenvalues positive. Here all the entries \(a_{ij}\) are positive.
+
+**5K** If \(A\) is a positive matrix, so is its largest eigenvalue: \(\lambda_{1}>\) all other \(|\lambda_{i}|\).
+
+Every component of the corresponding eigenvector \(x_{1}\) is also positive.
+
+Proof.: Suppose \(A>0\). The key idea is to look at all numbers \(t\) such that \(Ax\geq tx\) for some nonnegative vector \(x\) (other than \(x=0\)). We are allowing inequality in \(Ax\geq tx\) in order to have many positive candidates \(t\). For the largest value \(t_{\max}\) (which is attained), we will show that _equality holds_: \(Ax=t_{\max}x\).
+
+Otherwise, if \(Ax\geq t_{\max}x\) is not an equality, multiply by \(A\). Because \(A\) is positive, that produces a strict inequality \(A^{2}x>t_{\max}Ax\). Therefore the positive vector \(y=Ax\) satisfies \(Ay>t_{\max}y\), and \(t_{\max}\) could have been larger. This contradiction forces the equality \(Ax=t_{\max}x\), and we have an eigenvalue. Its eigenvector \(x\) is positive (not just nonnegative) because on the left-hand side of that equality \(Ax\) is sure to be positive.
+
+To see that no eigenvalue can be larger than \(t_{\max}\), suppose \(Az=\lambda z\). Since \(\lambda\) and \(z\) may involve negative or complex numbers, we take absolute values: \(|\lambda||z|=|Az|\leq A|z|\) by the "triangle inequality." This \(|z|\) is a nonnegative vector, so \(|\lambda|\) is one of the possible candidates \(t\). Therefore \(|\lambda|\) cannot exceed \(\lambda_{1}\), which was \(t_{\max}\). 
+
+**Example 4** (_Von Neumann's model of an expanding economy_).:
+
+We go back to the 3 by 3 matrix A that gave the consumption of steel, food, and labor. If the outputs are \(s_{1}\), \(f_{1}\), \(\ell_{1}\), then the required inputs are
+
+\[u_{0}=\begin{bmatrix}.4&0&.1\\ 0&.1&.8\\ .5&.7&.1\end{bmatrix}\begin{bmatrix}s_{1}\\ f_{1}\\ \ell_{1}\end{bmatrix}=Au_{1}.\]
+
+In economics the difference equation is backward! Instead of \(u_{1}=Au_{0}\) we have \(u_{0}=Au_{1}\). If \(A\) is small (as it is), then production does not consume everything--and the economy can grow. The eigenvalues of \(A^{-1}\) will govern this growth. But again there is a nonnegative twist, since steel, food, and labor cannot come in negative amounts. Von Neumann asked for the maximum rate \(t\) at which the economy can expand and _still stay nonnegative_, meaning that \(u_{1}\geq tu_{0}\geq 0\).
+
+Thus the problem requires \(u_{1}\geq tAu_{1}\). It is like the Perron-Frobenius theorem, with \(A\) on the other side. As before, equality holds when \(t\) reaches \(t_{\max}\)--which is the eigenvalue associated with the positive eigenvector of \(A^{-1}\). In this example the expansion factor is \(\frac{10}{9}\):
+
+\[x=\begin{bmatrix}1\\ 5\\ 5\\ \end{bmatrix}\qquad\text{and}\qquad Ax=\begin{bmatrix}.4&0&.1\\ 0&.1&.8\\ .5&.7&.1\end{bmatrix}\begin{bmatrix}1\\ 5\\ 5\end{bmatrix}=\begin{bmatrix}0.9\\ 4.5\\ 4.5\end{bmatrix}=\frac{9}{10}x.\]
+
+With steel-food-labor in the ratio 1-5-5, the economy grows as quickly as possible: _The maximum growth rate is \(1/\lambda_{1}\)_.
+
+ 

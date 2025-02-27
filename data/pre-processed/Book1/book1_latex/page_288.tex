@@ -1,0 +1,26 @@
+In the opposite direction, suppose \(AB=BA\). Starting from \(Ax=\lambda x\), we have
+
+\[ABx=BAx=B\lambda x=\lambda Bx.\]
+
+Thus \(x\) and \(Bx\) are both eigenvectors of \(A\), sharing the same \(\lambda\) (or else \(Bx=0\)). If we assume for convenience that the eigenvalues of \(A\) are distinct--the eigenspaces are all one-dimensional--then \(Bx\)_must be a multiple of \(x\)_. in other words \(x\) is an eigenvector of \(B\) as well as \(A\). The proof with repeated eigenvalues is a little longer. 
+
+_Heisenberg's uncertainty principle_ comes from noncommuting matrices, like position \(P\) and momentum \(Q\). Position is symmetric, momentum is skew-symmetric, and together they satisfy \(QP-PQ=I\). The uncertainty principle follows directly from the Schwarz inequality \((Qx)^{\mathrm{T}}(Px)\leq\|Qx\|\|Px\|\) of Section 3.2:
+
+\[\|x\|^{2}=x^{\mathrm{T}}x=x^{\mathrm{T}}(QP-PQ)x\leq 2\|Qx\|\|Px\|.\]
+
+The product of \(\|Qx\|/\|x\|\) and \(\|Px\|/\|x\|\)--momentum and position errors, when the wave function is \(x\)--is at least \(\frac{1}{2}\). It is impossible to get both errors small, because when you try to measure the position of a particle you change its momentum.
+
+At the end we come back to \(A=S\Lambda S^{-1}\). That factorization is particularly suited to take powers of \(A\), and the simplest case \(A^{2}\) makes the point. The \(LU\) factorization is hopeless when squared, but \(S\Lambda S^{-1}\) is perfect. The square is \(S\Lambda^{2}S^{-1}\), and the eigenvectors are unchanged. By following those eigenvectors we will solve difference equations and differential equations.
+
+### Problem Set 5.2
+
+**1.**: Factor the following matrices into \(S\Lambda S^{-1}\):
+
+\[A=\begin{bmatrix}1&1\\ 1&1\end{bmatrix}\qquad\text{and}\qquad A=\begin{bmatrix}2&1\\ 0&0\end{bmatrix}.\]
+**2.**: Find the matrix \(A\) whose eigenvalues are 1 and 4, and whose eigenvectors are \(\begin{bmatrix}3\\ 1\end{bmatrix}\) and \(\begin{bmatrix}2\\ 1\end{bmatrix}\), respectively. (_Hint_: \(A=S\Lambda S^{-1}\).)
+**3.**: Find _all_ the eigenvalues and eigenvectors of
+
+\[A=\begin{bmatrix}1&1&1\\ 1&1&1\\ 1&1&1\end{bmatrix}\]
+
+and write two different diagonalizing matrices \(S\).
+**4.**: If a 3 by 3 upper triangular matrix has diagonal entries 1, 2, 7, how do you know it can be diagonalized? What is \(\Lambda\)? 

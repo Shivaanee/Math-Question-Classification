@@ -1,0 +1,16 @@
+This can be verified in the example. The third power of \(A\) is
+
+\[A^{3}=\left[\begin{array}{cccccc}1&1&1&1&2\\ 2&0&2&3&1\\ 2&1&1&2&2\\ 1&0&1&1&0\\ 0&1&0&0&1\end{array}\right].\]
+
+The \((A^{3})_{24}=3\) paths of length three from vertex \(4\) to vertex \(2\) are \((4,3,3,2)\), \((4,5,3,2)\), \((4,5,1,2)\).
+
+Linear dynamical system.Consider a time-invariant linear dynamical system, described by \(x_{t+1}=Ax_{t}\). We have \(x_{t+2}=Ax_{t+1}=A(Ax_{t})=A^{2}x_{t}\). Continuing this argument, we have
+
+\[x_{t+\ell}=A^{\ell}x_{t},\]
+
+for \(\ell=1,2,\ldots\). In a linear dynamical system, we can interpret \(A^{\ell}\) as the matrix that propagates the state forward \(\ell\) time steps.
+
+For example, in a population dynamics model, \(A^{\ell}\) is the matrix that maps the current population distribution into the population distribution \(\ell\) periods in the future, taking into account births, deaths, and the births and deaths of children, and so on. The total population \(\ell\) periods in the future is given by \(\mathbf{1}^{T}(A^{\ell}x_{t})\), which we can write as \((\mathbf{1}^{T}A^{\ell})x_{t}\). The row vector \(\mathbf{1}^{T}A^{\ell}\) has an interesting interpretation: Its \(i\)th entry is the contribution to the total population in \(\ell\) periods due to each person with current age \(i-1\). It is plotted in figure 10.2 for the US data given in SS9.2.
+
+Figure 10.2: Contribution factor per age in 2010 to the total population in 2020. The value for age \(i-1\)
+

@@ -1,0 +1,25 @@
+Both columns end with a zero, so \(C(A)\) is the \(x\)-\(y\) plane within three-dimensional space The projection of \(b=(4,5,6)\) is \(p=(4,5,0)\)--the \(x\) and \(y\) components stay the same but \(z=6\) will disappear. That is confirmed by solving the normal equations:
+
+\[A^{\mathrm{T}}A=\begin{bmatrix}1&1&0\\ 2&3&0\end{bmatrix}\begin{bmatrix}1&2\\ 1&3\\ 0&0\end{bmatrix}=\begin{bmatrix}2&5\\ 5&13\end{bmatrix}.\]
+
+\[\widehat{x}=(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}b=\begin{bmatrix}13&-5\\ -5&2\end{bmatrix}\begin{bmatrix}1&1&0\\ 2&3&0\end{bmatrix}\begin{bmatrix}4\\ 5\\ 6\end{bmatrix}=\begin{bmatrix}2\\ 1\end{bmatrix}.\]
+
+\[\text{\bf Projection}\qquad p=A\widehat{x}=\begin{bmatrix}1&2\\ 1&3\\ 0&0\end{bmatrix}\begin{bmatrix}2\\ 1\end{bmatrix}=\begin{bmatrix}4\\ 5\\ 0\end{bmatrix}.\]
+
+In this special case, the best we can do is to solve the first two equations of \(Ax=b\). Then \(\widehat{x}_{1}=2\) and \(\widehat{x}_{2}=1\). The error in the equation \(0x_{1}+0x_{2}=6\) is sure to be \(6\).
+
+_Remark 4_.: Suppose \(b\) is actually in the column space of \(A\)--it is a combination \(b=Ax\) of the columns. Then the projection of \(b\) is still \(b\):
+
+\[b\text{\bf in column space}\qquad p=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}Ax=Ax=b.\]
+
+The closest point \(p\) is just \(b\) itself--which is obvious.
+
+_Remark 5_.: At the other extreme, suppose \(b\) is _perpendicular_ to every column, so \(A^{\mathrm{T}}b=0\). In this case \(b\) projects to the zero vector:
+
+\[b\text{\bf in left nullspace}\qquad p=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}b=A(A^{ \mathrm{T}}A)^{-1}0=0.\]
+
+_Remark 6_.: When \(A\) is square and invertible, the column space is the whole space. Every vector projects to itself, \(p\) equals \(b\), and \(\widehat{x}=x\):
+
+\[\text{\bf If $A$ is invertible}\qquad p=A(A^{\mathrm{T}}A)^{-1}A^{\mathrm{T}}b= AA^{-1}(A^{\mathrm{T}})^{-1}A^{\mathrm{T}}b=b.\]
+
+_This is the only case when we can take apart \((A^{\mathrm{T}}A)^{-1}\), and write it as \(A^ 

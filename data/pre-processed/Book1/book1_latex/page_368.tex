@@ -1,0 +1,25 @@
+\(x^{\rm T}Ax=1\):
+
+\[\mbox{\bf New squares}\qquad 5u^{2}+8uv+v^{2}=\left(\frac{u}{\sqrt{2}}-\frac{v}{ \sqrt{2}}\right)^{2}+9\left(\frac{u}{\sqrt{2}}+\frac{v}{\sqrt{2}}\right)^{2}=1.\] (4)
+
+\(\lambda=1\) and \(\lambda=9\) are outside the squares. The eigenvectors are inside. This is different from completing the square to \(5(u+\frac{4}{3}v)^{2}+\frac{9}{5}v^{2}\), with the _pivots_ outside.
+
+The first square equals \(1\) at \((1/\sqrt{2},-1/\sqrt{2})\) at the end of the major axis. The minor axis is one-third as long, since we need \((\frac{1}{3})^{2}\) to cancel the \(9\).
+
+Any ellipsoid \(x^{\rm T}Ax=1\) can be simplified in the same way. _The key step is to diagonalize \(A=Q\Lambda Q^{\rm T}\)_. We straightened the picture by rotating the axes. Algebraically, the change to \(y=Q^{\rm T}x\) produces a sum of squares:
+
+\[x^{\rm T}Ax=(x^{\rm T}Q)\Lambda(Q^{\rm T}x)=y^{\rm T}\Lambda y=\lambda_{1}y_{1 }^{2}+\cdots+\lambda_{n}y_{n}^{2}=1.\] (5)
+
+The _major axis_ has \(y_{1}=1/\sqrt{\lambda_{1}}\) along the eigenvector with the smallest eigenvalue.
+
+The other axes are along the other eigenvectors. Their lengths are \(1/\sqrt{\lambda_{2}},\ldots,1/\sqrt{\lambda_{n}}\). Notice that the \(\lambda\)'s must be positive--_the matrix must be positive definite_--or these square roots are in trouble. An indefinite equation \(y_{1}^{2}-9y_{2}^{2}=1\) describes a hyperbola and not an ellipse. A hyperbola is a cross-section through a saddle, and an ellipse is a cross-section through a bowl.
+
+The change from \(x\) to \(y=Q^{\rm T}x\) rotates the axes of the space, to match the axes of the ellipsoid. In the \(y\) variables we can see that it is an ellipsoid, because the equation becomes so manageable:
+
+6E Suppose \(A=Q\Lambda Q^{\rm T}\) with \(\lambda_{i}>0\). Rotating \(y=Q^{\rm T}x\) simplifies \(x^{\rm T}Ax=1\):
+
+\[x^{\rm T}Q\Lambda Q^{\rm T}x=1,\qquad y^{\rm T}\Lambda y=1,\quad\mbox{and} \quad\lambda_{1}y_{1}^{2}+\cdots+\lambda_{n}y_{n}^{2}=1.\]
+
+This is the equation of an ellipsoid. Its axes have lengths \(1/\sqrt{\lambda_{1}},\ldots,1/\sqrt{\lambda_{n}}\) from the center. In the original \(x\)-space they point along the eigenvectors of \(A\).
+
+ 

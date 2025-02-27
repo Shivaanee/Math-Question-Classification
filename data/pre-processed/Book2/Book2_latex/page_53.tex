@@ -1,0 +1,24 @@
+
+
+**2.4**: _Linear function?_ The function \(\phi:{\bf R}^{3}\to{\bf R}\) satisfies
+
+\[\phi(1,1,0)=-1,\qquad\phi(-1,1,1)=1,\qquad\phi(1,-1,-1)=1.\]
+
+Choose one of the following, and justify your choice: \(\phi\) must be linear; \(\phi\) could be linear; \(\phi\) cannot be linear.
+**2.5**: _Affine function._ Suppose \(\psi:{\bf R}^{2}\to{\bf R}\) is an affine function, with \(\psi(1,0)=1\), \(\psi(1,-2)=2\).
+
+1. What can you say about \(\psi(1,-1)\)? Either give the value of \(\psi(1,-1)\), or state that it cannot be determined.
+2. What can you say about \(\psi(2,-2)\)? Either give the value of \(\psi(2,-2)\), or state that it cannot be determined. Justify your answers.
+**2.6**: _Questionnaire scoring._ A questionnaire in a magazine has 30 questions, broken into two sets of 15 questions. Someone taking the questionnaire answers each question with 'Rarely', 'Sometimes', or 'Often'. The answers are recorded as a 30-vector \(a\), with \(a_{i}=1,2,3\) if question \(i\) is answered Rarely, Sometimes, or Often, respectively. The total score on a completed questionnaire is found by adding up 1 point for every question answered Sometimes and 2 points for every question answered Often on questions 1-15, and by adding 2 points and 4 points for those responses on questions 16-30. (Nothing is added to the score for Rarely responses.) Express the total score \(s\) in the form of an affine function \(s=w^{T}a+v\), where \(w\) is a 30-vector and \(v\) is a scalar (number).
+**2.7**: _General formula for affine functions._ Verify that formula (2.4) holds for any affine function \(f:{\bf R}^{n}\to{\bf R}\). You can use the fact that \(f(x)=a^{T}x+b\) for some \(n\)-vector \(a\) and scalar \(b\).
+**2.8**: _Integral and derivative of polynomial._ Suppose the \(n\)-vector \(c\) gives the coefficients of a polynomial \(p(x)=c_{1}+c_{2}x+\cdots+c_{n}x^{n-1}\).
+
+1. Let \(\alpha\) and \(\beta\) be numbers with \(\alpha<\beta\). Find an \(n\)-vector \(a\) for which \[a^{T}c=\int_{\alpha}^{\beta}p(x)\;dx\] always holds. This means that the integral of a polynomial over an interval is a linear function of its coefficients.
+2. Let \(\alpha\) be a number. Find an \(n\)-vector \(b\) for which \[b^{T}c=p^{\prime}(\alpha).\] This means that the derivative of the polynomial at a given point is a linear function of its coefficients.
+**2.9**: _Taylor approximation._ Consider the function \(f:{\bf R}^{2}\to{\bf R}\) given by \(f(x_{1},x_{2})=x_{1}x_{2}\). Find the Taylor approximation \(\hat{f}\) at the point \(z=(1,1)\). Compare \(f(x)\) and \(\hat{f}(x)\) for the following values of \(x\): \[x=(1,1),\quad x=(1.05,0.95),\quad x=(0.85,1.25),\quad x=(-1,2).\] Make a brief comment about the accuracy of the Taylor approximation in each case.
+**2.10**: _Regression model._ Consider the regression model \(\hat{y}=x^{T}\beta+v\), where \(\hat{y}\) is the predicted response, \(x\) is an 8-vector of features, \(\beta\) is an 8-vector of coefficients, and \(v\) is the offset term. Determine whether each of the following statements is true or false.
+
+1. If \(\beta_{3}>0\) and \(x_{3}>0\), then \(\hat{y}\geq 0\).
+2. If \(\beta_{2}=0\) then the prediction \(\hat{y}\) does not depend on the second feature \(x_{2}\).
+3. If \(\beta_{6}=-0.8\), then increasing \(x_{6}\) (keeping all other \(x_{i}\)s the same) will decrease \(\hat{y}\).
+

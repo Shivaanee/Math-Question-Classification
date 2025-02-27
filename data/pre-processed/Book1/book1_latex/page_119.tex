@@ -1,0 +1,25 @@
+dimensions we need three vectors, along the \(x\)-\(y\)-\(z\) axes or in three other (linearly independent!) directions. _The dimension of the space \(\mathbf{R}^{n}\) is \(n\)_. The column space of \(U\) in Example 9 had dimension 2; it was a "two-dimensional subspace of \(\mathbf{R}^{3}\)." The zero matrix is rather exceptional, because its column space contains only the zero vector. By convention, the empty set is a basis for that space, and its dimension is zero.
+
+Here is our first big theorem in linear algebra:
+
+**2K** If \(v_{1},\ldots,v_{m}\) and \(w_{1},\ldots,w_{n}\) are both bases for the same vector space, then \(m=n\). The number of vectors is the same.
+
+Proof.: Suppose there are more \(w\)'s than \(v\)'s (\(n>m\)). We will arrive at a contradiction. Since the \(v\)'s form a basis, they must span the space. _Every \(w_{j}\) can be written as a combination of the \(v\)'s_: If \(w_{1}=a_{11}v_{1}+\cdots+a_{m1}v_{m}\), this is the first column of a matrix multiplication \(VA\):
+
+\[W=\begin{bmatrix}w_{1}&w_{2}&\cdots&w_{n}\end{bmatrix}=\begin{bmatrix}v_{1}& \cdots&v_{m}\end{bmatrix}\begin{bmatrix}a_{11}\\ \vdots\\ a_{m1}\end{bmatrix}=VA.\]
+
+We don't know each \(a_{ij}\), but we know the shape of \(A\) (it is \(m\) by \(n\)). The second vector \(w_{2}\) is also a combination of the \(v\)'s. The coefficients in that combination fill the second column of \(A\). The key is that \(A\) has a row for every \(v\) and a column for every \(w\). \(A\) is a short, wide matrix, since \(n>m\). _There is a nonzero solution to \(Ax=0\)_. Then \(VAx=0\) which is \(Wx=0\). _A combination of the \(w\)'s gives zero!_ The \(w\)'s could not be a basis--so we cannot have \(n>m\).
+
+If \(m>n\) we exchange the \(v\)'s and \(w\)'s and repeat the same steps. The only way to avoid a contradiction is to have \(m=n\). This completes the proof that \(m=n\). To repeat: The _dimension of a space_ is the number of vectors in every basis. 
+
+This proof was used earlier to show that every set of \(m+1\) vectors in \(\mathbf{R}^{m}\) must be dependent. The \(v\)'s and \(w\)'s need not be column vectors--the proof was all about the matrix \(A\) of coefficients. In fact we can see this general result: _In a subspace of dimension \(k\), no set of more than \(k\) vectors can be independent, and no set of more than \(k\) vectors can. span the space_.
+
+There are other "dual" theorems, of which we mention only one. We can start with a set of vectors that is too small or too big, and end up with a basis:
+
+**2L** Any linearly independent set in **V** can be extended to a basis, by adding more vectors if necessary.
+
+Any spanning set in **V** can be reduced to a basis, by discarding vectors if necessary.
+
+The point is that a basis is a _maximal independent set_. It cannot be made larger without losing independence. A basis is also a _minimal spanning set_. It cannot be made smaller and still span the space.
+
+ 

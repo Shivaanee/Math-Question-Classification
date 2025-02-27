@@ -1,0 +1,22 @@
+_Remark 1_.: The **maximin principle** extends to \(j\)-dimensional subspaces \(S_{j}\):
+
+\[\text{Maximum of minimum}\qquad\lambda_{j+1}=\max_{\text{all }S_{j}}\left[\min_{x \perp S_{j}}R(x)\right].\] (14)
+
+_Remark 2_.: There is also a **minimax principle** for \(\lambda_{n-j}\):
+
+\[\text{Minimum of maximum}\qquad\lambda_{n-j}=\min_{\text{all }S_{j}}\left[\max_{x \perp S_{j}}R(x)\right].\] (15)
+
+If \(j=1\), we are maximizing \(R(x)\) over one constraint \(x^{\text{T}}v=0\). That maximum is between the unconstrained \(\lambda_{n-1}\) and \(\lambda_{n}\). The toughest constraint makes \(x\) perpendicular to the top eigenvector \(v=x_{n}\). Then the best \(x\) is the next eigenvector \(x_{n-1}\). The "minimum of the maximum" is \(\lambda_{n-1}\).
+
+_Remark 3_.: For the generalized problem \(Ax=\lambda Mx\), the same principles hold if \(M\) is positive definite. In the Rayleigh quotient, \(x^{\text{T}}x\) becomes \(x^{\text{T}}Mx\):
+
+\[\text{Rayleigh quotient}\qquad\text{Minimizing}\quad R(x)=\frac{x^{\text{T}}Ax }{x^{\text{T}}Mx}\quad\text{gives}\quad\lambda_{1}(M^{-1}A).\] (16)
+
+Even for _unequal_ masses in an oscillating system (\(M\neq I\)), holding one mass at equilibrium will raise the lowest frequency and lower the highest frequency.
+
+### Problem Set 6.4
+
+1. Consider the system \(Ax=b\) given by \[\begin{bmatrix}2&-1&0\\ -1&2&-1\\ 0&-1&2\end{bmatrix}\begin{bmatrix}x_{1}\\ x_{2}\\ x_{3}\end{bmatrix}=\begin{bmatrix}4\\ 0\\ 4\end{bmatrix}.\] Construct the corresponding quadratic \(P(x_{1},x_{2},x_{3})\), compute its partial derivatives \(\partial P/\partial x_{i}\), and verify that they vanish exactly at the desired solution.
+2. Complete the square in \(P=\frac{1}{2}x^{\text{T}}Ax-x^{\text{T}}b=\frac{1}{2}(x-A^{-1}b)^{\text{T}}A( x-A^{-1}b)+\text{constant}\). This constant equals \(P_{\text{min}}\) because the term before it is never negative. (Why?)
+3. Find the minimum, if there is one of \(P_{1}=\frac{1}{2}x^{2}+xy+y^{2}-3y\) and \(P_{2}=\frac{1}{2}x^{2}-3y\). What matrix \(A\) is associated with \(P_{2}\)?
+4. (Review) Another quadratic that certainly has its minimum at \(Ax=b\) is \[Q(x)=\frac{1}{2}\|Ax-b\|^{2}=\frac{1}{2}x^{\text{T}}A^{\text{T}}Ax-x^{\text{T} }A^{\text{T}}b+\frac{1}{2}b^{\text{T}}b.\] Comparing \(Q\) with \(P\), and ignoring the constant \(\frac{1}{2}b^{\text{T}}b\), what system of equations do we get at the minimum of \(Q\)? What are these equations called in the theory of least squares? 

@@ -1,0 +1,17 @@
+the solution of one linear least squares problem (minimizing (19.10) and (19.6), respectively). The two lines show the absolute value of the feasibility residual \(|g(x^{(k)})|\), and the norm of the optimality condition residual,
+
+\[\|2Df(x^{(k)})^{T}f(x^{(k)})+Dg(x^{(k)})^{T}z^{(k)}\|.\]
+
+The vertical jumps in the optimality condition norm occur in steps 2 and 3 of the augmented Lagrangian algorithm, and in step 2 of the penalty algorithm, when the parameters \(\mu\) and \(z\) are updated.
+
+Figure 19.5 shows the value of the penalty parameter \(\mu\) versus the cumulative number of Levenberg-Marquardt iterations in the two algorithms.
+
+### 19.4 Nonlinear control
+
+A nonlinear dynamical system has the form of an iteration
+
+\[x_{k+1}=f(x_{k},u_{k}),\quad k=1,2,\ldots,N,\]
+
+where the \(n\)-vector \(x_{k}\) is the state, and the \(m\)-vector \(u_{k}\) is the input or control, at time period \(k\). The function \(f:\mathbf{R}^{n+m}\rightarrow\mathbf{R}^{n}\) specifies what the next state is, as a function of the current state and the current input. When \(f\) is an affine function, this reduces to a linear dynamical system.
+
+In nonlinear control, the goal is to choose 

@@ -1,0 +1,25 @@
+
+
+**Corollary**.: _Each \(m\times n\) matrix \(A\) is row-equivalent to one and only one row-reduced echelon matrix._
+
+Proof.: We know that \(A\) is row-equivalent to at least one row-reduced echelon matrix \(R\). If \(A\) is row-equivalent to another such matrix \(R^{\prime}\), then \(R\) is row-equivalent to \(R^{\prime}\); hence, \(R\) and \(R^{\prime}\) have the same row space and must be identical.
+
+**Corollary**.: _Let \(A\) and \(B\) be \(m\times n\) matrices over the field \(F\). Then \(A\) and \(B\) are row-equivalent if and only if they have the same row space._
+
+Proof.: We know that if \(A\) and \(B\) are row-equivalent, then they have the same row space. So suppose that \(A\) and \(B\) have the same row space. Now \(A\) is row-equivalent to a row-reduced echelon matrix \(R\) and \(B\) is row-equivalent to a row-reduced echelon matrix \(R^{\prime}\). Since \(A\) and \(B\) have the same row space, \(R\) and \(R^{\prime}\) have the same row space. Thus \(R=R^{\prime}\) and \(A\) is row-equivalent to \(B\).
+
+To summarize--if \(A\) and \(B\) are \(m\times n\) matrices over the field \(F\), the following statements are equivalent:
+
+1. \(A\) and \(B\) are row-equivalent.
+2. \(A\) and \(B\) have the same row space.
+3. \(B=PA\), where \(P\) is an invertible \(m\times m\) matrix.
+
+A fourth equivalent statement is that the homogeneous systems \(AX=0\) and \(BX=0\) have the same solutions; however, although we know that the row-equivalence of \(A\) and \(B\) implies that these systems have the same solutions, it seems best to leave the proof of the converse until later.
+
+### Computations Concerning Subspaces
+
+We should like now to show how elementary row operations provide a standardized method of answering certain concrete questions concerning subspaces of \(F^{n}\). We have already derived the facts we shall need. They are gathered here for the convenience of the reader. The discussion applies to any \(n\)-dimensional vector space over the field \(F\), if one selects a fixed ordered basis \(\otimes\) and describes each vector \(\alpha\) in \(V\) by the \(n\)-tuple \((x_{1},\ .\ .\ ,x_{n})\) which gives the coordinates of \(\alpha\) in the ordered basis \(\otimes\).
+
+Suppose we are given \(m\) vectors \(\alpha_{1},\ .\ .\ ,\alpha_{m}\) in \(F^{n}\). We consider the following questions.
+
+1. How does one determine if the vectors \(\alpha_{1},\ .\ .\ ,\alpha_{m}\) are linearly independent? More generally, how does one find the dimension of the subspace \(W\) spanned by these vectors?

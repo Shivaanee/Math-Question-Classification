@@ -1,0 +1,11 @@
+
+
+## Chapter 14 Least squares classification
+
+In this chapter we consider the problem of fitting a model to data where the outcome takes on values like true or false (as opposed to being numbers, as in chapter 13). We will see that least squares can be used for this problem as well.
+
+### 14.1 Classification
+
+In the data fitting problem of chapter 13, the goal is to reproduce or predict the outcome \(y\), which is a (scalar) number, based on an \(n\)-vector \(x\). In a _classification problem_, the outcome or dependent variable \(y\) takes on only a finite number of values, and for this reason is sometimes called a _label_, or in statistics, a _categorical_. In the simplest case, \(y\) has only two values, for example true or false, or spam or not spam. This is called the _two-way classification problem_, the _binary classification problem_, or the _Boolean classification problem_, since the outcome \(y\) can take on only two values. We start by considering the Boolean classification problem.
+
+We will encode \(y\) as a real number, taking \(y=+1\) to mean true and \(y=-1\) to mean false. (It is also possible to encode the outcomes using \(y=+1\) and \(y=0\), or any other pair of two different numbers.) As in real-valued data fitting, we assume that an approximate relationship of the form \(y\approx f(x)\) holds, where \(f:\mathbf{R}^{n}\rightarrow\{-1,+1\}\). (This notation means that the function \(f\) takes an \(n\)-vector argument, and gives a resulting value that is either \(+1\) or

@@ -1,0 +1,16 @@
+related to the origin of the email. The outcome is \(+1\) if the message is spam, and \(-1\) otherwise. The data used to create the classifier comes from users who have explicitly marked some messages as junk.
+* _Fraud detection._ The vector \(x\) gives a set of features associated with a credit card holder, such as her average monthly spending levels, median price of purchases over the last week, number of purchases in different categories, average balance, and so on, as well as some features associated with a particular proposed transaction. The outcome \(y\) is \(+1\) for a fraudulent transaction, and \(-1\) otherwise. The data used to create the classifier is taken from historical data, that includes (some) examples of transactions that were later verified to be fraudulent and (many) that were verified to be bona fide.
+* _Boolean document classification._ The vector \(x\) is a word count (or histogram) vector for a document, and the outcome \(y\) is \(+1\) if the document has some specific topic (say, politics) and \(-1\) otherwise. The data used to construct the classifier might come from a corpus of documents with their topics labeled.
+* _Disease detection._ The examples correspond to patients, with outcome \(y=+1\) meaning the patient has a particular disease, and \(y=-1\) meaning they do not. The vector \(x\) contains relevant medical features associated with the patient, including for example age, sex, results of tests, and specific symptoms. The data used to build the model come from hospital records or a medical study; the outcome is the associated diagnosis (presence or absence of the disease), confirmed by a doctor.
+* _Digital communications receiver._ In a modern electronic communications system, \(y\) represents one bit (traditionally represented by the values 0 and 1) that is to be sent from a transmitter to a receiver. The vector \(x\) represents \(n\) measurements of a received signal. The predictor \(\hat{y}=\hat{f}(x)\) is called the _decoded bit_. In communications, the classifier \(\hat{f}\) is called a _decoder_ or _detector_. The data used to construct the decoder comes from a _training signal_, a sequence of bits known to the receiver, that is transmitted.
+
+Prediction errors.For a given data point \(x\), \(y\), with predicted outcome \(\hat{y}=\hat{f}(x)\), there are only four possibilities:
+
+* _True positive._\(y=+1\) and \(\hat{y}=+1\).
+* _True negative._\(y=-1\) and \(\hat{y}=-1\).
+* _False positive._\(y=-1\) and \(\hat{y}=+1\).
+* _False negative._\(y=+1\) and \(\hat{y}=-1\).
+
+In the first two cases the predicted label is correct, and in the last two cases, the predicted label is an error. We refer to the third case as a _false positive_ or _type I error_, and we refer to the fourth case as a _false negative_ or _type II error_. In some applications we care equally about making the two types of errors; in others we may care more about making one type of error than another.
+
+ 

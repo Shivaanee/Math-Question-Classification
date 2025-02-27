@@ -1,0 +1,25 @@
+five currents. They are conditions of "conservation" at each node: **Flow in equals flow out at every node**:
+
+\[\begin{array}{c}-y_{1}-y_{2}\qquad=0\qquad\qquad\text{Total current to node 1 is zero}\\ A^{\text{T}}y=0\qquad\qquad y_{1}-y_{3}-y_{4}=0\qquad\qquad\qquad\text{to node 2}\\ y_{2}+y_{3}-y_{5}=0\qquad\qquad\qquad\qquad\text{to node 3}\\ y_{4}+y_{5}=0\qquad\qquad\qquad\qquad\text{to node 4}\end{array}\]
+
+The beauty of network theory is that both \(A\) and \(A^{\text{T}}\) have important roles.
+
+Solving \(A^{\text{T}}y=0\) means finding a set of currents that do not "pile up" at any node. The traffic keeps circulating, and the simplest solutions are **currents around small loops**. Our graph has two loops, and we send 1 amp of current around each loop:
+
+\[\text{\bf Loop vectors}\qquad y_{1}^{\text{T}}=\begin{bmatrix}1&-1&1&0&0\end{bmatrix} \quad\text{and}\quad y_{2}^{\text{T}}=\begin{bmatrix}0&0&1&-1&1\end{bmatrix}.\]
+
+Each loop produces a vector \(y\) in the left nullspace. The component \(+1\) or \(-1\) indicates whether the current goes with or against the arrow. The combinations of \(y_{1}\) and \(y_{2}\) fill the left nullspace, so \(y_{1}\) and \(y_{2}\) are a basis (the dimension had to be \(m-r=5-3=2\)). In fact \(y_{1}-y_{2}=(1,-1,0,1,-1)\) gives the big loop around the outside of the graph.
+
+The column space and left nullspace are closely related. The left nullspace contains \(y_{1}=(1,1,1,0,0)\), and the vectors in the column space satisfy \(b_{1}-b_{2}+b_{3}=0\). Then \(y^{\text{T}}b=0\): Vectors in the column space and left nullspace are perpendicular! That is soon to become Part Two of the "Fundamental Theorem of Linear Algebra."
+
+Row Space:The row space of \(A\) contains vectors in \(\mathbf{R}^{4}\), but not all vectors. Its dimension is the rank \(r=3\). Elimination will find three independent rows, and we can also look to the graph. The first three rows are _dependent_ (row \(1+\text{row }3=\text{row }2\), and those edges form a loop). _Rows \(1,2,4\) are independent because edges \(1,2,4\) contain no loops_.
+
+Rows 1, 2, 4 are a basis for the row space. _In each row the entries add to zero_. Every combination \((f_{1},f_{2},f_{3},f_{4})\) in the row space will have that same property:
+
+\[f\text{\bf in row space}\quad f_{1}+f_{2}+f_{3}+f_{4}=0\quad x\text{\bf in nullspace}\quad x=c(1,1,1,1)\] (2)
+
+Again this illustrates the Fundamental Theorem: The row space is perpendicular to the nullspace. _If \(f\) is in the row space and \(x\) is in the nullspace then \(f^{\text{T}}x=0\)_.
+
+For \(A^{\text{T}}\), the basic law of network theory is _Kirchhoff's Current Law_. The _total flow into every node is zero_. The numbers \(f_{1}\), \(f_{2}\), \(f_{3}\), \(f_{4}\) are current sources into the nodes. The source \(f_{1}\) must balance \(-y_{1}-y_{2}\), which is the flow leaving node 1 (along edges 1 and 2). That is the first equation in \(A^{\text{T}}y=f\). Similarly at the other three nodes--conservation of charge requires _flow in \(=\) flow out_. The beautiful thing is that \(A^{\text{T}}\)_is exactly the right matrix for the Current Law_.
+
+2SThe equations \(A^{\text{T}}y=f\) at the nodes express _Kirchhoff's Current Law_: 

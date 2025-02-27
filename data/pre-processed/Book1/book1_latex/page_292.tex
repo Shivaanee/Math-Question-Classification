@@ -1,0 +1,18 @@
+
+
+**Problems 34-44 are new applications of \(A=S\Lambda S^{-1}\).**
+
+**34.**: Suppose that \(A=S\Lambda S^{-1}\). Take determinants to prove that \(\det A=\lambda_{1}\lambda_{2}\cdots\lambda_{n}=\) product of \(\lambda\)'s. This quick proof only works when \(A\) is .
+**35.**: The trace of \(S\) times \(\Lambda S^{-1}\) equals the trace of \(\Lambda S^{-1}\) times \(S\). So the trace of a diagonalizable \(A\) equals the trace of \(\Lambda\), which is .
+**36.**: If \(A=S\Lambda S^{-1}\), diagonalize the block matrix \(B=\left[\begin{smallmatrix}A&0\\ 0&2A\end{smallmatrix}\right]\). Find its eigenvalue and eigenvector matrices.
+**37.**: Consider all \(4\) by \(4\) matrices \(A\) that are diagonalized by the same fixed eigenvector matrix \(S\). Show that the \(A\)'s form a subspace (\(cA\) and \(A_{1}+A_{2}\) have this same \(S\)). What is this subspace when \(S=I\)? What is its dimension?
+**38.**: Suppose \(A^{2}=A\). On the left side \(A\) multiplies each column of \(A\). Which of our four subspaces contains eigenvectors with \(\lambda=1\)? Which subspace contains eigenvectors with \(\lambda=0\)? From the dimensions of those subspaces, \(A\) has a full set of independent eigenvectors and can be diagonalized.
+**39.**: Suppose \(Ax=\lambda x\). If \(\lambda=0\), then \(x\) is in the nullspace. If \(\lambda\neq 0\), then \(x\) is in the column space. Those spaces have dimensions \((n-r)+r=n\). So why doesn't every square matrix have \(n\) linearly independent eigenvectors?
+**40.**: Substitute \(A=S\Lambda S^{-1}\) into the product \((A-\lambda_{1}I)(A-\lambda_{2}I)\cdots(A-\lambda_{n}I)\) and explain why this produces the _zero matrix_. We are substituting the matrix \(A\) for the number \(\lambda\) in the polynomial \(p(\lambda)=\det(A-\lambda I)\). The _Cayley-Hamilton Theorem_ says that this product is always \(p(A)=\)_zero matrix_, even if \(A\) is not diagonalizable.
+**41.**: Test the Cayley-Hamilton Theorem on Fibonacci's matrix \(A=\left[\begin{smallmatrix}1&1\\ 1&0\end{smallmatrix}\right]\). The theorem predicts that \(A^{2}-A-I=0\), since \(\det(A-\lambda I)\) is \(\lambda^{2}-\lambda-1\).
+**42.**: If \(A=\left[\begin{smallmatrix}a&b\\ c&d\end{smallmatrix}\right]\), then \(\det(A-\lambda I)\) is \((\lambda-a)(\lambda-d)\). Check the Cayley-Hamilton statement that \((A-aI)(A-dI)=\)_zero matrix_.
+**43.**: If \(A=\left[\begin{smallmatrix}1&0\\ 0&2\end{smallmatrix}\right]\) and \(AB=BA\), show that \(B=\left[\begin{smallmatrix}a&b\\ c&d\end{smallmatrix}\right]\) is also diagonal. \(B\) has the same eigen  as \(A\), but different eigen . These diagonal matrices \(B\) form a two-dimensional subspace of matrix space. \(AB-BA=0\) gives four equations for the unknowns \(\mathbf{a}\), \(\mathbf{b}\), \(\mathbf{c}\), \(\mathbf{d}\)--find the rank of the \(4\) by \(4\) matrix.
+**44.**: If \(A\) is \(5\) by \(5\). then \(AB-BA=\) zero matrix gives \(25\) equations for the \(25\) entries in \(B\). Show that the \(25\) by \(25\) matrix is singular by noticing a simple nonzero solution \(B\).
+**45.**: Find the eigenvalues and eigenvectors for both of these Markov matrices \(A\) and \(A^{\infty}\). Explain why \(A^{100}\) is close to \(A^{\infty}\):
+
+\[A=\left[\begin{matrix}.6&.2\\ .4&.8\end{matrix}\right]\qquad\text{and}\qquad A^{\infty}=\left[\begin{matrix} 1/3&1/3\\ 2/3&2/3\end{matrix}\right].\]

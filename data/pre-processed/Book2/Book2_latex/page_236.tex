@@ -1,0 +1,31 @@
+means that they are given to us when we are asked to choose \(x\). The quantity to be minimized, \(\|Ax-b\|^{2}\), is called the _objective function_ (or just objective) of the least squares problem (12.1).
+
+The problem (12.1) is sometimes called _linear_ least squares to emphasize that the residual \(r\) (whose norm squared we are to minimize) is an affine function of \(x\), and to distinguish it from the _nonlinear_ least squares problem, in which we allow the residual \(r\) to be an arbitrary function of \(x\). We will study the nonlinear least squares problem in chapter 18.
+
+Any vector \(\hat{x}\) that satisfies \(\|A\hat{x}-b\|^{2}\leq\|Ax-b\|^{2}\) for all \(x\) is a _solution_ of the least squares problem (12.1). Such a vector is called a _least squares approximate solution_ of \(Ax=b\). It is very important to understand that a least squares approximate solution \(\hat{x}\) of \(Ax=b\) need not satisfy the equations \(A\hat{x}=b\); it simply makes the norm of the residual as small as it can be. Some authors use the confusing phrase '\(\hat{x}\) solves \(Ax=b\) in the least squares sense', but we emphasize that a least squares approximate solution \(\hat{x}\) does not, in general, solve the equation \(Ax=b\).
+
+If \(\|A\hat{x}-b\|\) (which we call the _optimal residual norm_) is small, then we can say that \(\hat{x}\)_approximately_ solves \(Ax=b\). On the other hand, if there is an \(n\)-vector \(x\) that satisfies \(Ax=b\), then it is a solution of the least squares problem, since its associated residual norm is zero.
+
+Another name for the least squares problem (12.1), typically used in data fitting applications (the topic of the next chapter), is _regression_. We say that \(\hat{x}\), a solution of the least squares problem, is the result of _regressing_ the vector \(b\) onto the columns of \(A\).
+
+Column interpretation.If the columns of \(A\) are the \(m\)-vectors \(a_{1},\ldots,a_{n}\), then the least squares problem (12.1) is the problem of finding a linear combination of the columns that is closest to the \(m\)-vector \(b\); the vector \(x\) gives the coefficients:
+
+\[\|Ax-b\|^{2}=\|(x_{1}a_{1}+\cdots+x_{n}a_{n})-b\|^{2}.\]
+
+If \(\hat{x}\) is a solution of the least squares problem, then the vector
+
+\[A\hat{x}=\hat{x}_{1}a_{1}+\cdots+\hat{x}_{n}a_{n}\]
+
+is closest to the vector \(b\), among all linear combinations of the vectors \(a_{1},\ldots,a_{n}\).
+
+Row interpretation.Suppose the rows of \(A\) are the \(n\)-row-vectors \(\tilde{a}_{1}^{T},\ldots,\tilde{a}_{m}^{T}\), so the residual components are given by
+
+\[r_{i}=\tilde{a}_{i}^{T}x-b_{i},\quad i=1,\ldots,m.\]
+
+The least squares objective is then
+
+\[\|Ax-b\|^{2}=(\tilde{a}_{1}^{T}x-b_{1})^{2}+\cdots+(\tilde{a}_{m}^{T}x-b_{m}) ^{2},\]
+
+the sum of the squares of the residuals in \(m\) scalar linear equations. Minimizing this sum of squares of the residuals is a reasonable compromise if our goal is to choose \(x\) so that all of them are small.
+
+ 

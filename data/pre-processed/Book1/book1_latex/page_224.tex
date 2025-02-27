@@ -1,0 +1,25 @@
+functions of mathematics should come together in such a graceful way. Our best answer was to look at the power series for the exponential:
+
+\[e^{i\theta}=1+i\theta+\frac{(i\theta)^{2}}{2!}+\frac{(i\theta)^{3}}{3!}+\cdots.\]
+
+The real part \(1-\theta^{2}/2+\cdots\) is \(\cos\theta\). The imaginary part \(\theta-\theta^{3}/6+\cdots\) is the sine, The formula is correct, and I wish we had sent a more beautiful proof.
+
+With this formula, we can solve \(w^{n}=1\). It becomes \(e^{in\theta}=1\), so that \(n\theta\) must carry us around the unit circle and back to the start. The solution is to choose \(\theta=2\pi/n\): _The "primitive" nth root of unity is_
+
+\[w_{n}=e^{2\pi i/n}=\cos\frac{2\pi}{n}+i\sin\frac{2\pi}{n}.\] (4)
+
+Its \(n\)th power is \(e^{2\pi i}\), which equals \(1\). For \(n=8\), this root is \((1+i)/\sqrt{2}\):
+
+\[w_{4}=\cos\frac{\pi}{2}+i\sin\frac{\pi}{2}=i\qquad\text{and}\qquad w_{8}=\cos \frac{\pi}{4}+i\sin\frac{\pi}{4}=\frac{1+i}{\sqrt{2}}\]
+
+The fourth root is at \(\theta=90^{\circ}\), which is \(\frac{1}{4}(360^{\circ})\). The other fourth roots are the powers \(i^{2}=-1\), \(i^{3}=-i\), and \(i^{4}=1\). The other eighth roots are the powers \(w_{8}^{2},w_{8}^{3},\ldots,w_{8}^{8}\). The roots are equally spaced around the unit circle, at intervals of \(2\pi/n\). Note again that the square of \(w_{8}\) is \(w_{4}\), which will be essential in the Fast Fourier Transform. _The roots add up to zero_. First \(1+i-1-i=0\), and then
+
+\[\text{\bf Sum of eighth roots}\qquad 1+w_{8}+w_{8}^{2}+\cdots+w_{8}^{7}=0.\] (5)
+
+One proof is to multiply the left side by \(w_{8}\), which leaves it unchanged. (It yields \(w_{8}+w_{8}^{2}+\cdots+w_{8}^{8}\) and \(w_{8}^{8}\) equals \(1\).) The eight points each move through \(45^{\circ}\), but they remain the same eight points. Since zero is the only number that is unchanged when multiplied by \(w_{8}\), the sum must be zero. When \(n\) is even the roots cancel in pairs (like \(1+i^{2}=0\) and \(i+i^{3}=0\)). But the three cube roots of \(1\) also add to zero.
+
+### The Fourier Matrix and Its Inverse
+
+In the continuous case, the Fourier series can reproduce \(f(x)\) over a whole interval. It uses infinitely many sines and cosines (or exponentials). In the discrete case, with only \(n\) coefficients \(c_{0},\ldots,c_{n-1}\) to choose, we only ask for _equality at \(n\) points_. That gives \(n\) equations. We reproduce the four values \(y=2,4,6,8\) when \(Fc=y\):
+
+\[\begin{array}{ccccccccc}&c_{0}&+&c_{1}&+&c_{2}&+&c_{3}&=&2\\ Fc=y&c_{0}&+&ic_{1}&+&i^{2}c_{2}&+&i^{3}c_{3}&=&4\\ &c_{0}&+&i^{2}c_{1}&+&i^{4}c_{2}&+&i^{6}c_{3}&=&6\\ &c_{0}&+&i^{3}c_{1}&+&i^{6}c_{2}&+&i^{9}c_{3}&=&8.\end{array}\] ( 

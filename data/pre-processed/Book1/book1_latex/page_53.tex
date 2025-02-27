@@ -1,0 +1,25 @@
+If \(d=0\), the problem is incurable and this matrix is _singular_. There is no hope for a unique solution to \(Ax=b\). If \(d\) is _not_ zero, an exchange \(P_{13}\) of rows 1 and 3 will move \(d\) into the pivot. However the next pivot position also contains a zero. The number \(a\) is now below it (the \(e\) above it is useless). If \(a\) is not zero then another row exchange \(P_{23}\) is called for:
+
+\[P_{13}=\begin{bmatrix}0&0&1\\ 0&1&0\\ 1&0&0\end{bmatrix}\quad\text{and}\quad P_{23}=\begin{bmatrix}1&0&0\\ 0&0&1\\ 0&1&0\end{bmatrix}\quad\text{and}\quad P_{23}P_{13}A=\begin{bmatrix}d&e&f\\ 0&a&b\\ 0&0&c\end{bmatrix}\]
+
+One more point: The permutation \(P_{23}P_{13}\) will do both row exchanges at once:
+
+\[P_{13}\ \text{\bf acts first}\qquad P_{23}P_{13}=\begin{bmatrix}1&0&0\\ 0&0&1\\ 0&1&0\end{bmatrix}\begin{bmatrix}0&0&1\\ 0&1&0\\ 1&0&0\end{bmatrix}=\begin{bmatrix}0&0&1\\ 1&0&0\\ 0&1&0\end{bmatrix}=P.\]
+
+If we had known, we could have multiplied \(A\) by \(P\) in the first place. With the rows in the right order \(PA\), any nonsingular matrix is ready for elimination.
+
+### Elimination in a Nutshell: \(Pa=lu\)
+
+The main point is this: If elimination can be completed with the help of row exchanges, then we can imagine that those exchanges are done first (by \(P\)). _The matrix \(PA\) will not need row exchanges_. In other words, \(PA\) allows the standard factorization into \(L\) times \(U\). The theory of Gaussian elimination can be summarized in a few lines:
+
+**1J** In the _nonsingular_ case, there is a permutation matrix \(P\) that reorders the rows of \(A\) to avoid zeros in the pivot positions. Then \(Ax=b\) has a _unique solution_:
+
+**With the rows reordered in advance, \(PA\) can be factored into \(LU\).**
+
+In the _singular_ case, no \(P\) can produce a full set of pivots: elimination fails.
+
+In practice, we also consider a row exchange when the original pivot is _near_ zero--even if it is not exactly zero. Choosing a larger pivot reduces the roundoff error.
+
+You have to be careful with \(L\). Suppose elimination subtracts row 1 from row 2, creating \(\ell_{21}=1\). Then suppose it exchanges rows 2 and 3. If that exchange is done in advance, the multiplier will change to \(\ell_{31}=1\) in \(PA=LU\).
+
+**Example 7**.: \[A=\begin{bmatrix}1&1&1\\ 1&1&3\\ 2&5&8\end{bmatrix}\rightarrow\begin{bmatrix}1&1&1\\ 0&\mathbf{0}&2\\ 0&3&6\end{bmatrix}\rightarrow\begin{bmatrix}1&1&1\\ 0&3&6\\ 0&0&2\end{bmatrix}=U.\] (10) 

@@ -1,0 +1,27 @@
+is symmetric. This happens if and only if \(X^{t}A\,Y=Y^{t}AX\) for all column matrices \(X\) and \(Y\). Since \(X^{t}A\,Y\) is a \(1\,\times\,1\) matrix, we have \(X^{t}A\,Y=Y^{t}A^{t}X\). Thus \(f\) is symmetric if and only if \(Y^{t}A^{t}X=Y^{t}AX\) for all \(X\), \(Y\). Clearly this just means that \(A=A^{t}\). In particular, one should note that if there is an ordered basis for \(V\) in which \(f\) is represented by a diagonal matrix, then \(f\) is symmetric, for any diagonal matrix is a symmetric matrix.
+
+If \(f\) is a symmetric bilinear form, the **quadratic form associated with**\(f\) is the function \(q\) from \(V\) into \(F\) defined by
+
+\[q(\alpha)=f(\alpha,\,\alpha).\]
+
+If \(F\) is a subfield of the complex numbers, the symmetric bilinear form \(f\) is completely determined by its associated quadratic form, according to the **polarization identity**
+
+\[f(\alpha,\beta)=\tfrac{1}{4}q(\alpha+\beta)-\tfrac{1}{4}q(\alpha-\beta).\]
+
+The establishment of (10-5) is a routine computation, which we omit. If \(f\) is the bilinear form of Example 5, the dot product, the associated quadratic form is
+
+\[q(x_{1},\,\ldots,\,x_{n})=x_{1}^{2}+\,\cdots\,+x_{n}^{2}.\]
+
+In other words, \(q(\alpha)\) is the square of the length of \(\alpha\). For the bilinear form \(f_{A}(X,\,Y)=X^{t}AX\), the associated quadratic form is
+
+\[q_{A}(X)=X^{t}AX=\sum_{i,j}A_{i}x_{i}x_{j}.\]
+
+One important class of symmetric bilinear forms consists of the inner products on real vector spaces, discussed in Chapter 8. If \(V\) is a _real_ vector space, an **inner product** on \(V\) is a symmetric bilinear form \(f\) on \(V\) which satisfies
+
+\[f(\alpha,\,\alpha)>0\quad\text{if}\quad\alpha\neq 0.\]
+
+A bilinear form satisfying (10-6) is called **positive definite**. Thus, an inner product on a real vector space is a positive definite, symmetric bilinear form on that space. Note that an inner product is non-degenerate. Two vectors \(\alpha\), \(\beta\) are called **orthogonal** with respect to the inner product \(f\) if \(f(\alpha,\,\beta)=0\). The quadratic form \(q(\alpha)=f(\alpha,\,\alpha)\) takes only non-negative values, and \(q(\alpha)\) is usually thought of as the square of the length of \(\alpha\). Of course, these concepts of length and orthogonality stem from the most important example of an inner product--the dot product of Example 5.
+
+If \(f\) is any symmetric bilinear form on a vector space \(V\), it is convenient to apply some of the terminology of inner products to \(f\). It is especially convenient to say that \(\alpha\) and \(\beta\) are orthogonal with respect to \(f\) if \(f(\alpha,\,\beta)=0\). It is not advisable to think of \(f(\alpha,\,\alpha)\) as the square of the length of \(\alpha\); for example, if \(V\) is a complex vector space, we may have \(f(\alpha,\,\alpha)=\sqrt{-1}\), or on a real vector space, \(f(\alpha,\,\alpha)=-2\).
+
+We turn now to the basic theorem of this section. In reading the 

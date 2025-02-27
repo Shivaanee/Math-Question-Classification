@@ -1,0 +1,21 @@
+columns of \(A\); what is left has eigenvalues 8, 8, 0, and its Jordan form comes from the vectors \[w_{1}=\begin{bmatrix}8\\ 0\\ 0\\ 0\\ 0\end{bmatrix},\qquad w_{2}=\begin{bmatrix}0\\ 1\\ 0\\ 0\\ 1\end{bmatrix},\qquad w_{3}=\begin{bmatrix}0\\ 8\\ 0\\ 0\\ 0\end{bmatrix}.\] The \(w_{i}\) are in the column space, they complete the string for \(\lambda=8\), and they start the string for \(\lambda=0\): \[Aw_{1}=8w_{1},\qquad Aw_{2}=8w_{2}+w_{1},\qquad Aw_{3}=0w_{3}.\] (5)
+**Step 2.**: The nullspace of \(A\) contains \(e_{2}\) and \(e_{3}\), so its intersection with the column space is spanned by \(e_{2}\). Therefore \(p=1\) and, as expected, there is one string in equation (3) corresponding to \(\lambda=0\). The vector \(w_{3}\) comes at the end (as well as the beginning) of that string, and \(w_{3}=A(e_{4}-e_{1})\). Therefore \(y=e_{4}-e_{1}\).
+**Step 3.**: The example has \(n-r-p=5-3-1=1\), and \(z=e_{3}\) is in the nullspace but outside the column space. It will be this \(z\) that produces a 1 by 1 block in \(J\).
+
+If we assemble all five vectors, the full strings are
+
+\[Aw_{1}=8w_{1},\quad Aw_{2}=8w_{2}+w_{1},\quad Aw_{3}=0w_{3},\quad Ay=0y+w_{3}, \quad Az=0z.\]
+
+Comparing with equations (1) and (2), we have a perfect match--the Jordan form of our example will be exactly the \(J\) we wrote earlier. Putting the five vectors into the columns of \(M\) must give \(AM=MJ\), or \(M^{-1}AM=J\):
+
+\[M=\begin{bmatrix}8&0&0&-1&0\\ 0&1&8&0&0\\ 0&0&0&0&1\\ 0&0&0&1&0\\ 0&1&0&0&0\end{bmatrix}.\]
+
+We are sufficiently trustful of mathematics (or sufficiently lazy) not to multiply out \(M^{-1}AM\).
+
+In Filippov's construction, the only technical point is to verify the independence of the whole collection \(w_{i}\), \(y_{i}\), and \(z_{i}\). Therefore, we assume that some combination is zero:
+
+\[\sum c_{i}w_{i}+\sum d_{i}y_{i}+\sum g_{i}z_{i}=0.\] (6)
+
+Multiplying by \(A\), and using equations (4) for the \(w_{i}\) as well as \(Az_{i}=0\),
+
+\[\sum c_{i}\begin{bmatrix}\lambda_{i}w_{i}\\ \text{or}\\ \lambda_{i}w_{i}+w_{i-1}\end{bmatrix}+\sum d_{i}Ay_{i}=0.\] (7) 

@@ -1,0 +1,19 @@
+The payoff matrix \(A\) requires a little patience to compute:
+
+\begin{tabular}{l l l} \(a_{11}=0\): & \(X\) loses \(\$1\) half the time on a jack and wins on a king (\(Y\) folds). \\ \(a_{21}=1\): & Both bets \(X\) loses \(\$1\) half the time and wins \(\$3\) half the time. \\ \(a_{12}=1\): & \(X\) bets and \(Y\) folds (the bluff succeeds). \\ \(a_{11}=0\): & \(X\) wins \(\$3\) with the king and loses \(\$3\) with the jack (the bluff fails). \\  & \\ \end{tabular} The optimal strategy for \(X\) is to bluff half the time, \(x^{*}=(\frac{1}{2},\frac{1}{2},0,0)\). The underdog \(Y\) must choose \(y^{*}=(\frac{1}{2},\frac{1}{2})\). The value of the game is fifty cents to \(X\).
+
+That is a strange way to end this book, by teaching you how to play watered-down poker (blackjack pays a lot better). But I guess even poker has its place within linear algebra and its applications. I hope you have enjoyed the book.
+
+### Problem Set 8.5
+
+**1.**: How will the optimal strategies in the game that opens this section be affected if the \(\$20\) is increased to \(\$70\)? What is the value (the average win for \(X\)) of this new game?
+**2.**: With payoff matrix \(A=\left[\begin{smallmatrix}1&2\\ 3&4\end{smallmatrix}\right]\), explain the calculation by \(X\) of the maximin and by \(Y\) of the minimax. What strategies \(x^{*}\) and \(y^{*}\) are optimal?
+**3.**: If \(a_{ij}\) is the largest entry in its row and the smallest in its column, why will \(X\) always choose column \(j\) and \(Y\) always choose row \(i\) (regardless of the rest of the matrix)? Show that the preceding problem had such an entry, and then construct an \(A\) without one.
+**4.**: Compute \(Y\)'s best strategy by weighting the rows of \(A=\left[\begin{smallmatrix}3&4&1\\ 2&0&3\end{smallmatrix}\right]\) with \(y\) and \(1-y\). \(X\) will concentrate on the largest of the components \(3y+2(1-y)\), \(4y\), and \(y+3(1-y)\). Find the largest of those three (depending on \(y\)) and then find the \(y^{*}\) between \(0\) and \(1\) that makes this largest component as small as possible.
+**5.**: With the same \(A\) as in Problem 4, find the best strategy for \(X\). Show that \(X\) uses only the two columns (the first and third) that meet at the minimax point in the graph.
+**6.**: Find both optimal strategies, and the value, if
+
+\[A=\left[\begin{matrix}1&0&-1\\ -2&-1&2\end{matrix}\right].\]
+**7.**: Suppose \(A=\left[\begin{smallmatrix}a&b\\ c&d\end{smallmatrix}\right]\). What weights \(x_{1}\) and \(1-x_{1}\) will give a column of the form \([u\;\;u]^{\mathsf{T}}\), and what weights \(y_{1}\) and \(1-y_{1}\) on the two rows will give a new row \([v\;\;v]\)? Show that \(u=v\).
+
+ 

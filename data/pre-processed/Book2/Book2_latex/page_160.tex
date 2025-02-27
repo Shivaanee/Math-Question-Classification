@@ -1,0 +1,16 @@
+holds for all \(n\)-vectors \(x\), \(y\), and all scalars \(\alpha\), \(\beta\) that satisfy \(\alpha+\beta=1\). In other words, superposition holds for affine combinations of vectors. (For linear functions, superposition holds for any linear combinations of vectors.)
+
+The matrix \(A\) and the vector \(b\) in the representation of an affine function as \(f(x)=Ax+b\) are unique. These parameters can be obtained by evaluating \(f\) at the vectors \(0\), \(e_{1},\ldots,e_{n}\), where \(e_{k}\) is the \(k\)th unit vector in \({\bf R}^{n}\). We have
+
+\[A=\left[\begin{array}{cccc}f(e_{1})-f(0)&f(e_{2})-f(0)&\cdots&f(e_{n})-f(0) \end{array}\right],\qquad b=f(0).\]
+
+Just like affine scalar-valued functions, affine vector-valued functions are often called linear, even though they are linear only when the vector \(b\) is zero.
+
+### 8.2 Linear function models
+
+Many functions or relations between variables that arise in natural science, engineering, and social sciences can be _approximated_ as linear or affine functions. In these cases we refer to the linear function relating the two sets of variables as a _model_ or an _approximation_, to remind us that the relation is only an approximation, and not exact. We give a few examples here.
+
+* _Price elasticity of demand._ Consider \(n\) goods or services with prices given by the \(n\)-vector \(p\), and demands for the goods given by the \(n\)-vector \(d\). A change in prices will induce a change in demands. We let \(\delta^{\rm price}\) be the \(n\)-vector that gives the fractional change in the prices, _i.e._, \(\delta^{\rm price}_{i}=(p^{\rm new}_{i}-p_{i})/p_{i}\), where \(p^{\rm new}\) is the \(n\)-vector of new (changed) prices. We let \(\delta^{\rm dem}\) be the \(n\)-vector that gives the fractional change in the product demands, _i.e._, \(\delta^{\rm dem}_{i}=(d^{\rm new}_{i}-d_{i})/d_{i}\), where \(d^{\rm new}\) is the \(n\)-vector of new demands. A linear demand elasticity model relates these vectors as \(\delta^{\rm dem}=E^{\rm d}\delta^{\rm price}\), where \(E^{\rm d}\) is the \(n\times n\)_demand elasticity matrix_. For example, suppose \(E^{\rm d}_{11}=-0.4\) and \(E^{\rm d}_{21}=0.2\). This means that a \(1\%\) increase in the price of the first good, with other prices kept the same, will cause demand for the first good to drop by \(0.4\%\), and demand for the second good to increase by \(0.2\%\). (In this example, the second good is acting as a _partial substitute_ for the first good.)
+* _Elastic deformation._ Consider a steel structure like a bridge or the structural frame of a building. Let \(f\) be an \(n\)-vector that gives the forces applied to the structure at \(n\) specific places (and in \(n\) specific directions), sometimes called a _loading_. The structure will deform slightly due to the loading. Let \(d\) be an \(m\)-vector that gives the displacements (in specific directions) of \(m\) points in the structure, due to the load, _e.g._, the amount of sag at a specific point on a bridge. For small displacements, the relation between displacement and loading is well approximated as linear: \(d=Cf\), where \(C\) is the \(m\times n\)_compliance matrix_. The units of the entries of \(C\) are m/N.
+
+ 

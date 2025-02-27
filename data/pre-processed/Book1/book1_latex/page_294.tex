@@ -1,0 +1,31 @@
+You see the pattern: Every Fibonacci number is the sum of the two previous \(F\)'s:
+
+\[F_{k+2}=F_{k+1}+F_{k}.\] (2)
+
+That is the difference equation. It turns up in a most fantastic variety of applications, and deserves a book of its own. Leaves grow in a spiral pattern, and on the apple or oak you find five growths for every two turns around the stem. The pear tree has eight for every three turns, and the willow is 13:5. The champion seems to be a sunflower whose seeds chose an almost unbelievable ratio of \(F_{12}/F_{13}=144/233\).2
+
+Footnote 2: For these botanical applications, see D’Arcy Thompson’s book _On Growth and Form_ (Cambridge University Press, 1942) or Peter Stevens’s beautiful _Patterns in Nature_ (Little, Brown, 1974). Hundreds of other properties of the \(F_{n}\) have been published in the _Fibonacci Quarterly_. Apparently Fibonacci brought Arabic numerals into Europe, about 1200 A.D.
+
+How could we find the 1000th Fibonacci number, without starting at \(F_{0}=0\) and \(F_{1}=1\), and working all the way out to \(F_{1000}\)? The goal is to solve the difference equation \(F_{k+2}=F_{k+1}+F_{k}\). **This can be reduced to a one-step equation \(u_{k+1}=Au_{k}\). Every step multiplies \(u_{k}=(F_{k+1},F_{k})\) by a matrix \(A\)**:
+
+\[\begin{array}{l}F_{k+2}=F_{k+1}+F_{k}\\ F_{k+1}=F_{k+1}\end{array}\qquad\text{ becomes }\qquad u_{k+1}=\begin{bmatrix} \mathbf{1}&\mathbf{1}\\ \mathbf{1}&\mathbf{0}\end{bmatrix}\begin{bmatrix}F_{k+1}\\ F_{k}\end{bmatrix}=Au_{k}.\] (3)
+
+The one-step system \(u_{k+1}=Au_{k}\) is easy to solve, It starts from \(u_{0}\). After one step it produces \(u_{1}=Au_{0}\). Then \(u_{2}\) is \(Au_{1}\), which is \(A^{2}u_{0}\). _Every step brings a multiplication by \(A\)_, and after \(k\) steps there are \(k\) multiplications:
+
+\[\boxed{\begin{array}{l}\textbf{The solution to a difference equation}\ u_{k+1}=Au_{k}\textbf{ is }u_{k}=A^{k}u_{0}.\end{array}}\]
+
+The real problem is to find some quick way to compute the powers \(A^{k}\), and thereby find the 1000th Fibonacci number. The key lies in the eigenvalues and eigenvectors:
+
+**5G** If \(A\) can be diagonalized, \(A=S\Lambda S^{-1}\), then \(A^{k}\) comes from \(\Lambda^{k}\):
+
+\[u_{k}=A^{k}u_{0}=(S\Lambda S^{-1})(S\Lambda S^{-1})\cdots(S\Lambda S^{-1})u_ {0}=S\Lambda^{k}S^{-1}u_{0}.\] (4)
+
+The columns of \(S\) are the eigenvectors of \(A\). Writing \(S^{-1}u_{0}=c\), the solution becomes
+
+\[u_{k}=S\Lambda^{k}c=\begin{bmatrix}x_{1}&\cdots&x_{n}\end{bmatrix}\begin{bmatrix} \lambda_{1}^{k}&&\\ &\ddots&\\ &&\lambda_{n}^{k}\end{bmatrix}\begin{bmatrix}c_{1}\\ \vdots\\ c_{n}\end{bmatrix}=c_{1}\lambda_{1}^{k}x_{1}+\cdots+c_{n}\lambda_{n}^{k}x_{n}.\] (5)
+
+After \(k\) steps, \(u_{k}\) is a combination of the \(n\) "pure solutions" \(\lambda^{k}x\).
+
+These formulas give two different approaches to the same solution \(u_{k}=S\Lambda^{k}S^{-1}u_{0}\). The first formula recognized that \(A^{k}\) is identical with \(S\Lambda^{k}S^{-1}\), and we could stop there.
+
+ 

@@ -1,0 +1,27 @@
+
+
+### 8.2:
+
+\[\text{cost}=(c_{N}-c_{B}B^{-1}N)x_{N}+c_{B}B^{-1}b=rx_{N}+c_{B}B^{-1}b.\]
+
+If egg is the first free variable, then increasing the first component of \(x_{N}\) to \(\delta\) will increase the cost by \(r_{1}\delta\). _The real cost of egg is \(r_{1}\)_. This is the change in diet cost as the zero lower bound (nonnegativity constraint) moves upwards. We know that \(r\geq 0\), and economics tells us the same thing: The reduced cost of eggs cannot be negative or they would have entered the diet.
+
+### Interior Point Methods
+
+The simplex method moves along edges of the feasible set, eventually reaching the optimal corner \(x^{*}\). Interior point methods start _inside_ the feasible set (where the constraints are all _in_equalities). These methods hope to move more directly to \(x^{*}\) (and also find \(y^{*}\)). When they are very close to the answer, they stop.
+
+One way to stay inside is to put a barrier at the boundary. Add an extra cost in the form of a logarithm that blows up when any variable \(x\) or any slack variable \(w=Ax-b\) touches zero. The number \(\theta\) is a small parameter to be chosen:
+
+\[\text{\bf Barrier problem }P(\theta)\qquad\text{Minimize}\quad cx-\theta \left(\sum_{1}^{n}\ln x_{i}+\sum_{1}^{m}\ln w_{i}\right).\] (8)
+
+This cost is nonlinear (but linear programming is already nonlinear, from inequalities). The notation is simpler if the long vector \((x,w)\) is renamed \(x\) and \([A\ \ -I]\) is renamed \(A\). The primal constraints are now \(x\geq 0\) and \(Ax=b\). The sum of \(\ln x_{i}\) in the barrier now goes to \(m+n\).
+
+The dual constraints are \(yA\leq c\). (We don't need \(y\geq 0\) when we have \(Ax=b\) in the primal.) The slack variable is \(s=c-yA\), with \(s\geq 0\). What are the Kuhn-Tucker conditions for \(x\) and \(y\) to be the optimal \(x^{*}\) and \(y^{*}\)? Along with the constraints we require duality: \(cx^{*}=y^{*}b\).
+
+Including the barrier gives an _approximate problem_\(P(\theta)\). For its Kuhn-Tucker optimality conditions, the derivative of \(\ln x_{i}\) gives \(1/x_{i}\). If we create a diagonal matrix \(X\) from those positive numbers \(x_{i}\), and use \(e=[1\ \ \cdots\ \ 1]\) for the row vector of \(n+m\) ones, then optimality in \(P(\theta)\) is as follows:
+
+\[\text{\bf Primal (column vectors)} Ax=b\quad\text{with}\quad x\geq 0\] (9a) \[\text{\bf Dual (row vectors)} yA+\theta eX^{-1}=c\] (9b)
+
+As \(\theta\to 0\), we expect those optimal \(x\) and \(y\) to approach \(x^{*}\) and \(y^{*}\) for the original no-barrier problem, and \(\theta eX^{-1}\) will stay nonnegative. The plan is to solve equations (9a-9b) with smaller and smaller barriers, given by the size of \(\theta\).
+
+In reality, those nonlinear equations are approximately solved by Newton's method (which means they are linearized). The nonlinear term is \(s=\theta eX^{-1}\). To avoid \(1/x_{i}\)

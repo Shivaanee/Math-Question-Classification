@@ -1,0 +1,15 @@
+for asset 4. The 3rd row of \(R\) is an \(n\)-row-vector that gives the returns of all assets in the universe in period 3. An example of an asset return matrix, with a universe of \(n=4\) assets over \(T=3\) periods, is shown in table 6.1.
+* _Prices from multiple suppliers._ An \(m\times n\) matrix \(P\) gives the prices of \(n\) different goods from \(m\) different suppliers (or locations): \(P_{ij}\) is the price that supplier \(i\) charges for good \(j\). The \(j\)th column of \(P\) is the \(m\)-vector of supplier prices for good \(j\); the \(i\)th row gives the prices for all goods from supplier \(i\).
+* _Contingency table._ Suppose we have a collection of objects with two attributes, the first attribute with \(m\) possible values and the second with \(n\) possible values. An \(m\times n\) matrix \(A\) can be used to hold the counts of the numbers of objects with the different pairs of attributes: \(A_{ij}\) is the number of objects with first attribute \(i\) and second attribute \(j\). (This is the analog of a count \(n\)-vector, that records the counts of one attribute in a collection.) For example, a population of college students can be described by a \(4\times 50\) matrix, with the \(i,j\) entry the number of students in year \(i\) of their studies, from state \(j\) (with the states ordered in, say, alphabetical order). The \(i\)th row of \(A\) gives the geographic distribution of students in year \(i\) of their studies; the \(j\)th column of \(A\) is a 4-vector giving the numbers of student from state \(j\) in their first through fourth years of study.
+* _Customer purchase history._ An \(n\times N\) matrix \(P\) can be used to store a set of \(N\) customers' purchase histories of \(n\) products, items, or services, over some period. The entry \(P_{ij}\) represents the dollar value of product \(i\) that customer \(j\) purchased over the period (or as an alternative, the number or quantity of the product). The \(j\)th column of \(P\) is the purchase history vector for customer \(j\); the \(i\)th row gives the sales report for product \(i\) across the \(N\) customers.
+
+Matrix representation of a collection of vectors.Matrices are very often used as a compact way to give a set of indexed vectors of the same size. For example, if \(x_{1},\ldots,x_{N}\) are \(n\)-vectors that give the \(n\) feature values for each of \(N\) objects, we can collect them all into one \(n\times N\) matrix
+
+\[X=\left[\begin{array}{cccc}x_{1}&x_{2}&\cdots&x_{N}\end{array}\right],\]
+
+\begin{table}
+\begin{tabular}{c c c c c} \hline \hline Date & AAPL & GOOG & MMM & AMZN \\ \hline March 1, 2016 & 0.00219 & 0.00006 & \(-0.00113\) & 0.00202 \\ March 2, 2016 & 0.00744 & \(-0.00894\) & \(-0.00019\) & \(-0.00468\) \\ March 3, 2016 & 0.01488 & \(-0.00215\) & 0.00433 & \(-0.00407\) \\ \hline \hline \end{tabular}
+\end{table}
+Table 6.1: Daily returns of Apple (AAPL), Google (GOOG), 3M (MMM), and Amazon (AMZN), on March 1, 2, and 3, 2016 (based on closing prices).
+
+ 

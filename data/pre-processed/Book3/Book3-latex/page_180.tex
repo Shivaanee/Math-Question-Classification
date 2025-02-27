@@ -1,0 +1,31 @@
+See 5.6
+
+**Theorem 7**.: _Let \(K\) be a commutative ring with identity and let \(V\) be a free \(K\)-module of rank \(n\). If \(r>n\), then \(\Lambda^{r}(V)=\langle 0\rangle\). If \(1\leq r\leq n\), then \(\Lambda^{r}(V)\) is a free \(K\)-module of rank \(\binom{n}{r}\)._
+
+Proof.: Let \(\langle\beta_{1},\,.\,.\,.\,,\,\beta_{n}\rangle\) be an ordered basis for \(V\) with dual basis \(\langle f_{1},\,.\,.\,,\,f_{n}\rangle\). If \(L\) is in \(M^{r}(V)\), we have
+
+(5-37) \[L=\sum_{J}L(\beta_{ii},\,.\,.\,.\,,\,\beta_{i})\,f_{i_{1}}\,\,\hbox to 0.0pt{$ \backslash$}\,\,\cdots\,\,\hbox to 0.0pt{$\backslash$}\,f_{i},\]
+
+where the sum extends over all \(r\)-tuples \(J=(j_{1},\,.\,.\,,\,j_{r})\) of integers between \(1\) and \(n\). If \(L\) is alternating, then
+
+\[L(\beta_{ii},\,.\,.\,.\,,\,\beta_{i,r})=0\]
+
+whenever two of the subscripts \(j_{i}\) are the same. If \(r>n\), then in each \(r\)-tuple \(J\) some integer must be repeated. Thus \(\Lambda^{r}(V)=\langle 0\rangle\) if \(r>n\).
+
+Now suppose \(1\leq r\leq n\). If \(L\) is in \(\Lambda^{r}(V)\), the sum in (5-37) need be extended only over the \(r\)-tuples \(J\) for which \(j_{1},\,.\,.\,,\,j_{r}\) are distinct, because all other terms are \(0\). Each \(r\)-tuple of distinct integers between \(1\) and \(n\) is a permutation of an \(r\)-tuple \(J=(j_{1},\,.\,.\,,\,j_{r})\) such that \(j_{1}<\cdots<j_{r}\). This special type of \(r\)-tuple is called an \(r\)**-shuffle** of \(\langle 1,\,.\,.\,,\,n\rangle\). There are
+
+\[\binom{n}{r}=\frac{n!}{r!(n-r)!}\]
+
+sueh shuffles.
+
+Suppose we fix an \(r\)-shuffle \(J\). Let \(L_{J}\) be the sum of all the terms in (5-37) corresponding to permutations of the shuffle \(J\). If \(\sigma\) is a permutation of \(\langle 1,\,.\,.\,,\,r\rangle\), then
+
+\[L(\beta_{ii},\,.\,.\,.\,,\,\beta_{ii})=(\hbox{sgn }\sigma)\ L(\beta_{ii},\,.\,.\,.\,,\, \beta_{i,r}).\]
+
+Thus
+
+(5-38) \[L_{J}=L(\beta_{ii},\,.\,.\,.\,,\,\beta_{i,r})D_{J}\]
+
+where
+
+(5-39) \[D_{J}=\sum_{\sigma}\,(\hbox{sgn }\sigma)\,f_{j_{n}}\,\,\hbox to 0.0pt{$ \backslash$}\,\,\cdots\,\,\hbox to 0.0pt{$\backslash$}\,f_{j_{r}},\] \[=\pi_{r}(f_{j_{1}}\,\,\hbox to 0.0pt{$\backslash$}\,\,\cdots\,\, \hbox 

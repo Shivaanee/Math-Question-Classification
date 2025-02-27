@@ -1,0 +1,15 @@
+2. For reflections, that same basis gives \(H=\left[\begin{smallmatrix}1&0\\ 0&-1\end{smallmatrix}\right]\). The second basis vector is reflected onto its negative, to produce this second column. The matrix \(H\) is still \(2P-I\) when the same basis is used for \(H\) and \(P\).
+3. For rotations, the matrix is not changed. Those lines are still rotated through \(\theta\), and \(Q=\left[\begin{smallmatrix}c&-s\\ s&c\end{smallmatrix}\right]\) as before.
+
+The whole question of choosing the best basis is absolutely central, and we come back to it in Chapter 5. The goal is to make the matrix diagonal, as achieved for \(P\) and \(H\). To make \(Q\) diagonal requires complex vectors, since all real vectors are rotated.
+
+We mention here the effect on the matrix of a change of basis, while the linear transformation stays the same. _The matrix \(A\)_ (or \(Q\) or \(P\) or \(H\)) _is altered to \(S^{-1}AS\)_. Thus a single transformation is represented by different matrices (via different bases, accounted for by \(S\)). The theory of eigenvectors will lead to this formula \(S^{-1}AS\), and to the best basis.
+
+### Problem Set 2.6
+
+1. What matrix has the effect of rotating every vector through \(90^{\circ}\) and then projecting the result onto the \(x\)-axis? What matrix represents projection onto the \(x\)-axis followed by projection onto the \(y\)-axis?
+2. Does the product of 5 reflections and 8 rotations of the \(x\)-\(y\) plane produce a rotation or a reflection?
+3. The matrix \(A=\left[\begin{smallmatrix}2&0\\ 0&1\end{smallmatrix}\right]\) produces a _stretching_ in the \(x\)-direction. Draw the circle \(x^{2}+y^{2}=1\) and sketch around it the points \((2x,y)\) that result from multiplication by \(A\). What shape is that curve?
+4. Every straight line remains straight after a linear transformation. If \(z\) is halfway between \(x\) and \(y\), show that \(Az\) is halfway between \(Ax\) and \(Ay\).
+5. The matrix \(A=\left[\begin{smallmatrix}1&0\\ 3&1\end{smallmatrix}\right]\) yields a _shearing_ transformation, which leaves the \(y\)-axis unchanged. Sketch its effect on the \(x\)-axis, by indicating what happens to \((1,0)\) and \((2,0)\) and \((-1,0)\)--and how the whole axis is transformed.
+6. What 3 by 3 matrices represent the transformations that 1. project every vector onto the \(x\)-\(y\) plane? 2. reflect every vector through the \(x\)-\(y\) plane? 3. rotate the \(x\)-\(y\) plane through \(90^{\circ}\), leaving the \(z\)-axis alone? 4. rotate the \(x\)-\(y\) plane, then \(x\)-\(z\), then \(y\)-\(z\), through \(90^{\circ}\)? 5. carry out the same three rotations, but each one through \(180^{\circ}\)? 

@@ -1,0 +1,19 @@
+
+
+### 18.3 Levenberg-Marquardt algorithm
+
+In this section we describe a variation on the basic Gauss-Newton algorithm (as well as the Newton algorithm) that addresses the shortcomings described above. The variation comes directly from ideas we have encountered earlier in this book. It was first proposed by Kenneth Levenberg and Donald Marquardt, and is called the Levenberg-Marquardt algorithm. It is also sometimes called the Gauss-Newton algorithm, since it is a natural extension of the basic Gauss-Newton algorithm described above.
+
+Multi-objective update formulation.The main problem with the Gauss-Newton algorithm is that the minimizer of the approximation \(\|\hat{f}(x;x^{(k)})\|^{2}\) may be far from the current iterate \(x^{(k)}\), in which case the approximation \(\hat{f}(x;x^{(k)})\approx f(x)\) need not hold, which implies that \(\|\hat{f}(x;x^{(k)})\|^{2}\approx\|f(x)\|^{2}\) need not hold. In choosing \(x^{(k+1)}\), then, we have _two_ objectives: We would like \(\|\hat{f}(x;x^{(k)})\|^{2}\) small, and we would also like \(\|x-x^{(k)}\|^{2}\) small. The first objective is an approximation of what we really want to minimize; the second objective expresses the idea that we should not move so far that we cannot trust the affine approximation. This suggests that we should choose \(x^{(k+1)}\) as the minimizer of
+
+\[\|\hat{f}(x;x^{(k)})\|^{2}+\lambda^{(k)}\|x-x^{(k)}\|^{2},\] (18.11)
+
+where \(\lambda^{(k)}\) is a positive parameter. We add an iteration superscript to the parameter \(\lambda\) since it can take different values in different iterations. For \(\lambda^{(k)}\) small, we primarily minimize the first term, the squared norm of the approximation; for \(\lambda^{(k)}\) large, we choose \(x^{(k+1)}\) near \(x^{(k)}\). (For \(\lambda^{(k)}=0\), this coincides with the next iterate in the basic Gauss-Newton algorithm.) The second term in (18.11) is sometimes called a _trust penalty_ term, since it penalizes choices of \(x\) that are far from \(x^{(k)}\), where we cannot trust the affine approximation. The parameter \(\lambda^{(k)}\) is sometimes called the _trust parameter_ (although 'distrust parameter' is perhaps more accurate).
+
+Computing the minimizer of (18.11) is a multi-objective least squares or regularized least squares problem, and equivalent to minimizing
+
+\[\left\|\left[\begin{array}{c}Df(x^{(k)})\\ \sqrt{\lambda^{(k)}}I\end{array}\right]x-\left[\begin{array}{c}Df(x^{(k)})x ^{(k)}-f(x^{(k)})\\ \sqrt{\lambda^{(k)}}x^{(k)}\end{array}\right]\right\|^{2}.\]
+
+Since \(\lambda^{(k)}\) is positive, the stacked matrix in this least squares problem has linearly independent columns, even when \(Df(x^{(k)})\) does not. It follows that the solution of the least squares problem exists and is unique. From the normal equations of the least squares problem we can derive a useful expression for \(x^{(k+1)}\):
+
+\[\left(Df(x^{(k)})^{T}Df(x^{(k)})+\lambda^{(k)}I\right)x^{(k+1)}\] \[= Df(x^{(k)})^{T}\left(Df(x^{(k)})x^{(k)}-f(x^{(k)})\right)+\lambda ^{(k)}x^{(k)}\] \[= \left(Df(x^{(k)})^{T}Df(x^{(k)})+\lambda^{(k)}I\right)x^{(k)}-Df( x^{(k)})^{T}f(x^{(k)}),\]

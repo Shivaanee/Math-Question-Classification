@@ -1,0 +1,45 @@
+Inverse of matrix transpose.If \(A\) is invertible, its transpose \(A^{T}\) is also invertible and its inverse is \((A^{-1})^{T}\):
+
+\[(A^{T})^{-1}=(A^{-1})^{T}.\]
+
+Since the order of the transpose and inverse operations does not matter, this matrix is sometimes written as \(A^{-T}\).
+
+Inverse of matrix product.If \(A\) and \(B\) are invertible (hence, square) and of the same size, then \(AB\) is invertible, and
+
+\[(AB)^{-1}=B^{-1}A^{-1}.\] (11.2)
+
+The inverse of a product is the product of the inverses, in reverse order.
+
+Dual basis.Suppose that \(A\) is invertible with inverse \(B=A^{-1}\). Let \(a_{1},\ldots,a_{n}\) be the columns of \(A\), and \(b_{1}^{T},\ldots,b_{n}^{T}\) denote the _rows_ of \(B\), _i.e._, the columns of \(B^{T}\):
+
+\[A=\left[\begin{array}{ccc}a_{1}&\cdots&a_{n}\end{array}\right],\qquad B= \left[\begin{array}{c}b_{1}^{T}\\ \vdots\\ b_{n}^{T}\end{array}\right].\]
+
+We know that \(a_{1},\ldots,a_{n}\) form a basis, since the columns of \(A\) are linearly independent. The vectors \(b_{1},\ldots,b_{n}\) also form a basis, since the rows of \(B\) are linearly independent. They are called the _dual basis_ of \(a_{1},\ldots,a_{n}\). (The dual basis of \(b_{1},\ldots,b_{n}\) is \(a_{1},\ldots,a_{n}\), so they called _dual bases_.)
+
+Now suppose that \(x\) is any \(n\)-vector. It can be expressed as a linear combination of the basis vectors \(a_{1},\ldots,a_{n}\):
+
+\[x=\beta_{1}a_{1}+\cdots+\beta_{n}a_{n}.\]
+
+The dual basis gives us a simple way to find the coefficients \(\beta_{1},\ldots,\beta_{n}\).
+
+We start with \(AB=I\), and multiply by \(x\) to get
+
+\[x=ABx=\left[\begin{array}{ccc}a_{1}&\cdots&a_{n}\end{array}\right]\left[ \begin{array}{c}b_{1}^{T}\\ \vdots\\ b_{n}^{T}\end{array}\right]x=(b_{1}^{T}x)a_{1}+\cdots+(b_{n}^{T}x)a_{n}.\]
+
+This means (since the vectors \(a_{1},\ldots,a_{n}\) are linearly independent) that \(\beta_{i}=b_{i}^{T}x\). In words: The coefficients in the expansion of a vector in a basis are given by the inner products with the dual basis vectors. Using matrix notation, we can say that \(\beta=B^{T}x=(A^{-1})^{T}x\) is the vector of coefficients of \(x\) in the basis given by the columns of \(A\).
+
+As a simple numerical example, consider the basis
+
+\[a_{1}=(1,1),\qquad a_{2}=(1,-1).\]
+
+The dual basis consists of the rows of \([\begin{array}{cc}a_{1}&a_{2}\end{array}]^{-1}\), which are
+
+\[b_{1}^{T}=\left[\begin{array}{cc}1/2&1/2\end{array}\right],\qquad b_{2}^{T }=\left[\begin{array}{cc}1/2&-1/2\end{array}\right].\]
+
+To express the vector \(x=(-5,1)\) as a linear combination of \(a_{1}\) and \(a_{2}\), we have
+
+\[x=(b_{1}^{T}x)a_{1}+(b_{2}^{T}x)a_{2}=(-2)a_{1}+(-3)a_{2},\]
+
+which can be directly verified.
+
+ 

@@ -1,0 +1,7 @@
+With these definitions the penalty term in (15.5) is the sum of squared differences of intensities at adjacent pixels in a row or column:
+
+\[\|D_{\mathrm{h}}x\|^{2}+\|D_{\mathrm{v}}x\|^{2}=\sum_{i=1}^{M}\sum_{j=1}^{N-1}(X _{i,j+1}-X_{ij})^{2}+\sum_{i=1}^{M-1}\sum_{j=1}^{N}(X_{i+1,j}-X_{ij})^{2}.\]
+
+This quantity is the Dirichlet energy (see page 135), for the graph that connects each pixel to its left and right, and up and down, neighbors.
+
+ 

@@ -1,0 +1,39 @@
+This follows readily from the definition. For example,
+
+\[\eqalign{T(c_{1}\alpha_{1}\,+\,c_{2}\alpha_{2})&\,=\,c_{1}(T\alpha_{1})\,+\,T(c_{ 2}\alpha_{2})\cr&\,=\,c_{1}(T\alpha_{1})\,+\,c_{2}(T\alpha_{2}).\cr}\]
+
+**Theorem 1.**_Let_ V _be a finite-dimensional vector space over the field_ F _and let_ \(\,\{\alpha_{1},\,.\,.\,.\,,\,\alpha_{n}\}\) _be an ordered basis for_ V_. Let_ W _be a vector space over the same field_ F _and let_ \(\beta_{1},\,.\,.\,,\,\beta_{n}\) _be any vectors in_ W_. Then there is precisely one linear transformation_ T _from_ V _into_ W _such that_
+
+\[{\rm T}\alpha_{j}\,=\,\beta_{i}\qquad{\rm j}\,=\,1,\,.\,.\,.\,,\,{\rm n}.\]
+
+Proof.: To prove there is some linear transformation \(T\) with \(T\alpha_{j}\,=\,\beta_{j}\) we proceed as follows. Given \(\alpha\) in \(V\), there is a unique \(n\)-tuple \((x_{1},\,.\,.\,.\,,\,x_{n})\) such that
+
+\[\alpha\,=\,x_{1}\alpha_{1}\,+\,.\,.\,.\,+\,x_{n}\alpha_{n}.\]
+
+For this vector \(\alpha\) we define
+
+\[T\alpha\,=\,x_{1}\beta_{1}\,+\,.\,.\,.\,+\,x_{n}\beta_{n}.\]
+
+Then \(T\) is a well-defined rule for associating with each vector \(\alpha\) in \(V\) a vector \(T\alpha\) in \(W\). From the definition it is clear that \(T\alpha_{j}\,=\,\beta_{j}\) for each \(j\). To see that \(T\) is linear, let
+
+\[\beta\,=\,y_{1}\alpha_{1}\,+\,.\,.\,.\,+\,y_{n}\alpha_{n}\]
+
+be in \(V\) and let \(c\) be any scalar. Now
+
+\[c\alpha\,+\,\beta\,=\,(cx_{1}\,+\,y_{1})\alpha_{1}\,+\,.\,.\,.\,+\,(cx_{n}\,+ \,y_{n})\alpha_{n}\]
+
+and so by definition
+
+\[T(c\alpha\,+\,\beta)\,=\,(cx_{1}\,+\,y_{1})\beta_{1}\,+\,.\,.\,.\,+\,(cx_{n}\, +\,y_{n})\beta_{n}.\]
+
+On the other hand,
+
+\[\eqalign{c(T\alpha)\,+\,T\beta&\,=\,c\mathop{\Sigma}\limits_{i\,=\,1}^{n}x_{i }\beta_{i}\,+\,\mathop{\Sigma}\limits_{i\,=\,1}^{n}y_{i}\beta_{i}\cr&\,=\, \mathop{\Sigma}\limits_{i\,=\,1}^{n}(cx_{i}\,+\,y_{i})\beta_{i}\cr}\]
+
+and thus
+
+\[\eqalign{T(c\alpha\,+\,\beta)&\,=\,c(T\alpha)\,+\,T\beta.\cr}\]
+
+If \(U\) is a linear transformation from \(V\) into \(W\) with \(U\alpha_{j}\,=\,\beta_{j},\,j=1,\,.\,.\,.\,,\,n\), then for the vector \(\alpha\,=\,\mathop{\Sigma}\limits_{i\,=\,1}^{n}x_{i}\alpha_{i}\) we have
+
+\[\eqalign{U\alpha&\,=\,U\left(\mathop{\Sigma}\limits_{i\,=\,1}^{n}x_{i}\alpha_{ i}\right)\cr&\,=\,\mathop{\Sigma}\limits_{i\,=\,1}^{n}x_{i}(U\alpha_{i})\cr&\,=\, \mathop{\Sigma}\limits_{i\,=\,1}^{n}x_{i}\beta_{i}\cr}\] 

@@ -1,0 +1,29 @@
+short position plus our initial amount to be invested into asset 3. We do not invest in asset 2 at all.
+
+The _leverage_\(L\) of the portfolio is given by
+
+\[L=|w_{1}|+\cdots+|w_{n}|,\]
+
+the sum of the absolute values of the weights. If all entries of \(w\) are nonnegative (which is a called a _long-only portfolio_), we have \(L=1\); if some entries are negative, then \(L>1\). If a portfolio has a leverage of 5, it means that for every $1 of portfolio value, we have $3 of total long holdings, and $2 of total short holdings. (Other definitions of leverage are used, for example, \((L-1)/2\).)
+
+Multi-period investing with allocation weights.The investments are held for \(T\) periods of, say, one day each. (The periods could just as well be hours, weeks, or months). We describe the investment returns by the \(T\times n\) matrix \(R\), where \(R_{tj}\) is the fractional return of asset \(j\) in period \(t\). Thus \(R_{61}=0.02\) means that asset 1 gained 2% in period 6, and \(R_{82}=-0.03\) means that asset 2 lost 3%, over period 8. The \(j\)th column of \(R\) is the return time series for asset \(j\); the \(t\)th row of \(R\) gives the returns of all assets in period \(t\). It is often assumed that one of the assets is cash, which has a constant (positive) return \(\mu^{\rm rf}\), where the superscript stands for _risk-free_. If the risk-free asset is asset \(n\), then the last column of \(R\) is \(\mu^{\rm rf}\mathbf{1}\).
+
+Suppose we invest a total (positive) amount \(V_{t}\) at the beginning of period \(t\), so we invest \(V_{t}w_{j}\) in asset \(j\). At the end of period \(t\), the dollar value of asset \(j\) is \(V_{t}w_{j}(1+R_{tj})\), and the dollar value of the whole portfolio is
+
+\[V_{t+1}=\sum_{j=1}^{n}V_{t}w_{j}(1+R_{tj})=V_{t}(1+\tilde{r}_{t}^{T}w),\]
+
+where \(\tilde{r}_{t}^{T}\) is the \(t\)th row of \(R\). We assume \(V_{t+1}\) is positive; if the total portfolio value becomes negative we say that the portfolio has _gone bust_ and stop trading.
+
+The total (fractional) return of the portfolio over period \(t\), _i.e._, its fractional increase in value, is
+
+\[\frac{V_{t+1}-V_{t}}{V_{t}}=\frac{V_{t}(1+\tilde{r}_{t}^{T}w)-V_{t}}{V_{t}}= \tilde{r}_{t}^{T}w.\]
+
+Note that we invest the total portfolio value in each period according to the weights \(w\). This entails buying and selling assets so that the dollar value fractions are once again given by \(w\). This is called _re-balancing_ the portfolio.
+
+The portfolio return in each of the \(T\) periods can be expressed compactly using matrix-vector notation as
+
+\[r=Rw,\]
+
+where \(r\) is the \(T\)-vector of portfolio returns in the \(T\) periods, _i.e._, the time series of portfolio returns. (Note that \(r\) is a \(T\)-vector, which represents the time series of total portfolio return, whereas \(\tilde{r}_{t}\) is an \(n\)-vector, which gives the returns of the \(n\) assets in period \(t\).) If asset \(n\) is risk-free, and we choose the allocation \(w=e_{n}\), then \(r=Re_{n}=\mu^{\rm rf}\mathbf{1}\), _i.e._, we obtain a constant return in each period of \(\mu^{\rm rf}\).
+
+ 

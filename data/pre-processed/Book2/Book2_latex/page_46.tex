@@ -1,0 +1,32 @@
+a common notational hint that it is an approximation of the function \(f\). (The approximation is named after the mathematician Brook Taylor.)
+
+The first-order Taylor approximation \(\hat{f}(x)\) is a very good approximation of \(f(x)\) when all \(x_{i}\) are near the associated \(z_{i}\). Sometimes \(\hat{f}\) is written with a second vector argument, as \(\hat{f}(x;z)\), to show the point \(z\) at which the approximation is developed. The first term in the Taylor approximation is a constant; the other terms can be interpreted as the contributions to the (approximate) change in the function value (from \(f(z)\)) due to the changes in the components of \(x\) (from \(z\)).
+
+Evidently \(\hat{f}\) is an affine function of \(x\). (It is sometimes called the _linear approximation_ of \(f\) near \(z\), even though it is in general affine, and not linear.) It can be written compactly using inner product notation as
+
+\[\hat{f}(x)=f(z)+\nabla f(z)^{T}(x-z),\] (2.5)
+
+where \(\nabla f(z)\) is an \(n\)-vector, the _gradient of \(f\)_ (at the point \(z\)),
+
+\[\nabla f(z)=\left[\begin{array}{c}\frac{\partial f}{\partial x_{1}}(z)\\ \vdots\\ \frac{\partial f}{\partial x_{n}}(z)\end{array}\right].\] (2.6)
+
+The first term in the Taylor approximation (2.5) is the constant \(f(z)\), the value of the function when \(x=z\). The second term is the inner product of the gradient of \(f\) at \(z\) and the _deviation_ or _perturbation_ of \(x\) from \(z\), _i.e._, \(x-z\).
+
+We can express the first-order Taylor approximation as a linear function plus a constant,
+
+\[\hat{f}(x)=\nabla f(z)^{T}x+(f(z)-\nabla f(z)^{T}z),\]
+
+but the form (2.5) is perhaps easier to interpret.
+
+The first-order Taylor approximation gives us an organized way to construct an affine approximation of a function \(f:\mathbf{R}^{n}\to\mathbf{R}\), near a given point \(z\), when there is a formula or equation that describes \(f\), and it is differentiable. A simple example, for \(n=1\), is shown in figure 2.3. Over the full \(x\)-axis scale shown, the Taylor approximation \(\hat{f}\) does not give a good approximation of the function \(f\). But for \(x\) near \(z\), the Taylor approximation is very good.
+
+Example.Consider the function \(f:\mathbf{R}^{2}\to\mathbf{R}\) given by \(f(x)=x_{1}+\exp(x_{2}-x_{1})\), which is not linear or affine. To find the Taylor approximation \(\hat{f}\) near the point \(z=(1,2)\), we take partial derivatives to obtain
+
+\[\nabla f(z)=\left[\begin{array}{c}1-\exp(z_{2}-z_{1})\\ \exp(z_{2}-z_{1})\end{array}\right],\]
+
+which evaluates to \((-1.7183,2.7183)\) at \(z=(1,2)\). The Taylor approximation at \(z=(1,2)\) is then
+
+\[\hat{f}(x) = 3.7183+(-1.7183,2.7183)^{T}(x-(1,2))\] \[= 3.7183-1.7183(x_{1}-1)+2.7183(x_{2}-2).\]
+
+Table 2.2 shows \(f(x)\) and \(\hat{f}(x)\), and the approximation error \(|\hat{f}(x)-f(x)|\), for some values of \(x\) relatively near \(z\). We can see that \(\hat{f
+

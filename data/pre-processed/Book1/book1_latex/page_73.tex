@@ -1,0 +1,30 @@
+
+
+**44.**: If \(B\) has the columns of \(A\) in reverse order, solve \((A-B)x=0\) to show that \(A-B\) is not invertible. An example will lead you to \(x\).
+**45.**: Find and check the inverses (assuming they exist) of these block matrices:
+
+\[\begin{bmatrix}I&0\\ C&I\end{bmatrix}\qquad\begin{bmatrix}A&0\\ C&D\end{bmatrix}\qquad\begin{bmatrix}0&I\\ I&D\end{bmatrix}.\]
+**46.**: Use \(\mathsf{inv}(\mathsf{S})\) to invert MATLAB's 4 by 4 symmetric matrix \(\mathsf{S}=\mathsf{pascal}(\mathsf{4})\). Create Pascal's lower triangular \(\mathsf{A}=\mathsf{abs}(\mathsf{pascal}(\mathsf{4},\mathsf{1}))\) and test \(\mathsf{inv}(\mathsf{S})=\mathsf{inv}(\mathsf{A}^{\mathsf{\mathsf{\mathsf{ \mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{\mathsf{ \mathsf{ \mathsf{   }}}}}}}}}}}}}) *\mathsf{inv}(\mathsf{A})\).
+**47.**: If \(\mathsf{A}=\mathsf{ones}(\mathsf{4},\mathsf{4})\) and \(\mathsf{b}=\mathsf{rand}(\mathsf{4},\mathsf{1})\), how does MATLAB tell you that \(Ax=b\) has no solution? If \(\mathsf{b}=\mathsf{ones}(\mathsf{4},\mathsf{1})\), which solution to \(Ax=b\) is found by \(A\backslash b\)?
+**48.**: \(M^{-1}\) shows the change in \(A^{-1}\) (useful to know) when a matrix is subtracted from \(A\). Check part 3 by carefully multiplying \(MM^{-1}\) to get \(I\):
+
+\[\begin{array}{llll}\mathbf{1.}&M=I-uv^{\mathrm{T}}&\text{and}&M^{-1}=I+uv^{ \mathrm{T}}/(1-v^{\mathrm{T}}u).\\ \mathbf{2.}&M=A-uv^{\mathrm{T}}&\text{and}&M^{-1}=A^{-1}+A^{-1}uv^{\mathrm{T}} A^{-1}/(1-v^{\mathrm{T}}A^{-1}u).\\ \mathbf{3.}&M=I-UV&\text{and}&M^{-1}=I_{n}+U(I_{m}-VU)^{-1}V.\\ \mathbf{4.}&M=A-UW^{-1}V&\text{and}&M^{-1}=A^{-1}+A^{-1}U(W-VA^{-1}U)^{-1}VA^{ -1}.\end{array}\]
+
+The four identities come from the 1, 1 block when inverting these matrices:
+
+\[\begin{bmatrix}I&u\\ v^{\mathrm{T}}&1\end{bmatrix}\qquad\begin{bmatrix}A&u\\ v^{\mathrm{T}}&1\end{bmatrix}\qquad\begin{bmatrix}I_{n}&U\\ V&I_{m}\end{bmatrix}\qquad\begin{bmatrix}A&U\\ V&W\end{bmatrix}.\]
+
+**Problems 49-55 are about the rules for transpose matrices.**
+**49.**: Find \(A^{\mathrm{T}}\) and \(A^{-1}\) and \((A^{-1})^{\mathrm{T}}\) and \((A^{\mathrm{T}})^{-1}\) for
+
+\[A=\begin{bmatrix}1&0\\ 9&3\end{bmatrix}\qquad\text{and also}\quad A=\begin{bmatrix}1&c\\ c&0\end{bmatrix}.\]
+**50.**: Verify that \((AB)^{\mathrm{T}}\) equals \(B^{\mathrm{T}}A^{\mathrm{T}}\) but those are different from \(A^{\mathrm{T}}B^{\mathrm{T}}\):
+
+\[A=\begin{bmatrix}1&0\\ 2&1\end{bmatrix}\qquad B=\begin{bmatrix}1&3\\ 0&1\end{bmatrix}\qquad AB=\begin{bmatrix}1&3\\ 2&7\end{bmatrix}.\]
+
+In case \(AB=BA\) (not generally true!), how do you prove that \(B^{\mathrm{T}}A^{\mathrm{T}}=A^{\mathrm{T}}B^{\mathrm{T}}\)?
+**51.**:
+1. The matrix \(\big{(}(AB)^{-1}\big{)}^{\mathrm{T}}\) comes from \((A^{-1})^{\mathrm{T}}\) and \((B^{-1})^{\mathrm{T}}\). _In what order_?
+2. If \(U\) is upper triangular then \((U^{-1})^{\mathrm{T}}\) is triangular.
+**52.**: Show that \(A^{2}=0\) is possible but \(A^{\mathrm{T}}A=0\) is not possible (unless \(A=\) zero matrix).
+

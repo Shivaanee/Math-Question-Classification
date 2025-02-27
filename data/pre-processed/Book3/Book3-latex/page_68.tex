@@ -1,0 +1,35 @@
+2. Given \(\beta\) in \(F^{n}\), how does one determine whether \(\beta\) is a linear combination of \(\alpha_{1}\), \(\ldots\), \(\alpha_{m}\), i.e., whether \(\beta\) is in the subspace \(W\)?
+
+3. How can one give an explicit description of the subspace \(W\)?
+
+The third question is a little vague, since it does not specify what is meant by an 'explicit description'; however, we shall clear up this point by giving the sort of description we have in mind. With this description, questions (1) and (2) can be answered immediately.
+
+Let \(A\) be the \(m\times n\) matrix with row vectors \(\alpha_{i}\):
+
+\[\alpha_{i}=(A_{i1},\ldots,A_{in}).\]
+
+Perform a sequence of elementary row operations, starting with \(A\) and terminating with a row-reduced echelon matrix \(R\). We have previously described how to do this. At this point, the dimension of \(W\) (the row space of \(A\)) is apparent, since this dimension is simply the number of non-zero row vectors of \(R\). If \(\rho_{1}\), \(\ldots\), \(\rho_{r}\) are the non-zero row vectors of \(R\), then \(\emptyset=\{\rho_{1},\ldots,\rho_{r}\}\) is a basis for \(W\). If the first non-zero coordinate of \(\rho_{i}\) is the \(k_{i}\)th one, then we have for \(i\leq r\)
+
+(a) \(R(i,j)=0\), if \(j<k_{i}\)
+
+(b) \(R(i,k_{i})=\delta_{ij}\)
+
+(c) \(k_{1}<\cdots<k_{r}\).
+
+The subspace \(W\) consists of all vectors
+
+\[\beta = c_{1}\rho_{1}+\cdots+c_{r}\rho_{r}\] \[= \sum_{i=1}^{r}\,c_{i}(R_{i1},\ldots,R_{in}).\]
+
+The coordinates \(b_{1}\), \(\ldots\), \(b_{n}\) of such a vector \(\beta\) are then
+
+(2-23) \[b_{j}=\sum_{i=1}^{r}\,c_{i}R_{ij}.\]
+
+In particular, \(b_{k_{i}}=c_{j}\), and so if \(\beta=(b_{1},\ldots,b_{n})\) is a linear combination of the \(\rho_{i}\), it must be the particular linear combination
+
+(2-24) \[\beta=\sum_{i=1}^{r}\,b_{k_{i}}\rho_{i}.\]
+
+The conditions on \(\beta\) that (2-24) should hold are
+
+(2-25) \[b_{j}=\sum_{i=1}^{r}\,b_{k}R_{ij}\qquad j=1,\ldots,n.\]
+
+Now (2-25) is the explicit description of the subspace \(W\) spanned by \(\alpha_{1}\), \(\ldots\), \(\alpha_{m}\) that is, the subspace consists of all vectors \(\beta\) in \(F^{n}\) whose coordinates satisfy (2-25). What kind of description is (2-25)? In the first place it describes \(W\) as all solutions \(\beta=(b_{1},\ldots,b_{n})\) of the system of homogeneous linear equations (2-25). This system of equations is of a very special nature, because it expresses \((n-r)\) of the coordinates as 

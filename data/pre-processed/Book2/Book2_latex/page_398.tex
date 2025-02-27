@@ -1,0 +1,33 @@
+We can also observe that
+
+\[\|\hat{f}(x^{(k+1)};x^{(k)})\|^{2}\leq\|\hat{f}(x^{(k)};x^{(k)})\|^{2}=\|f(x^{(k) })\|^{2}\] (18.7)
+
+holds, since \(x^{(k+1)}\) minimizes \(\|\hat{f}(x;x^{(k)})\|^{2}\), and \(\hat{f}(x^{(k)};x^{(k)})=f(x^{(k)})\). The norm of the _residual of the approximation_ goes down in each iteration. This is _not_ the same as
+
+\[\|f(x^{(k+1)})\|^{2}\leq\|f(x^{(k)})\|^{2},\] (18.8)
+
+_i.e._, the norm of the _residual_ goes down in each iteration, which is what we would like.
+
+Shortcomings of the basic Gauss-Newton algorithm.We will see in examples that the Gauss-Newton algorithm can work well, in the sense that the iterates \(x^{(k)}\) converge very quickly to a point with small residual. But the Gauss-Newton algorithm has two related serious shortcomings.
+
+The first is that it can fail, by producing a sequence of points with the norm of the residual \(\|f(x^{(k)})\|\) increasing to large values, as opposed to decreasing to a small value, which is what we want. (In this case the algorithm is said to _diverge_.) The mechanism behind this failure is related to the difference between (18.7) and (18.8). The approximation
+
+\[\|f(x)\|^{2}\approx\|\hat{f}(x;x^{(k)})\|^{2}\]
+
+is guaranteed to hold only when \(x\) is near \(x^{(k)}\). So when \(x^{(k+1)}\) is not near \(x^{(k)}\), \(\|f(x^{(k+1)})\|^{2}\) and \(\|\hat{f}(x^{(k+1)};x^{(k)})\|^{2}\) can be very different. In particular, the (true) residual at \(x^{(k+1)}\) can be _larger_ than the residual at \(x^{(k)}\).
+
+The second serious shortcoming of the basic Gauss-Newton algorithm is the assumption that the columns of the derivative matrix \(Df(x^{(k)})\) are linearly independent. In some applications, this assumption never holds; in others, it can fail to hold at some iterate \(x^{(k)}\), in which case the Gauss-Newton algorithm stops, since \(x^{(k+1)}\) is not defined.
+
+We will see that a simple modification of the Gauss-Newton algorithm, described below in SS18.3, addresses both of these shortcomings.
+
+#### Newton algorithm
+
+For the special case \(m=n\), the Gauss-Newton algorithm reduces to another famous algorithm for solving a set of \(n\) nonlinear equations in \(n\) variables, called the Newton algorithm. (The algorithm is sometimes called the Newton-Raphson algorithm, since Newton developed the method only for the special case \(n=1\), and Joseph Raphson later extended it to the case \(n>1\).)
+
+When \(m=n\), the matrix \(Df(x^{(k)})\) is square, so the basic Gauss-Newton update (18.6) can be simplified to
+
+\[x^{(k+1)} = x^{(k)}-(Df(x^{(k)}))^{-1}(Df(x^{(k)})^{T})^{-1}Df(x^{(k)})^{T} f(x^{(k)})\] \[= x^{(k)}-(Df(x^{(k)}))^{-1}f(x^{(k)}).\]
+
+This iteration gives the Newton algorithm.
+
+ 

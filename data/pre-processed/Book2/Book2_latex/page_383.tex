@@ -1,0 +1,9 @@
+\(x_{1},\ldots,x_{T}\). State estimation is widely used in many application areas, including all guidance and navigation systems, such as the Global Positioning System (GPS).
+
+Since we do not know the process or measurement noises, we cannot exactly deduce the state sequence. Instead we will guess or estimate the state sequence \(x_{1},\ldots,x_{T}\) and process noise sequence \(w_{1},\ldots,w_{T-1}\), subject to the requirement that they satisfy the dynamic system model (17.10). When we guess the state sequence, we implicitly guess that the measurement noise is \(v_{t}=y_{t}-C_{t}x_{t}\). We make one fundamental assumption: The process and measurement noises are both small, or at least, not too large.
+
+Our primary objective is the sum of squares of the norms of the measurement residuals,
+
+\[J_{\text{meas}}=\|v_{1}\|^{2}+\cdots+\|v_{T}\|^{2}=\|C_{1}x_{1}-y_{1}\|^{2}+ \cdots+\|C_{T}x_{T}-y_{T}\|^{2}.\]
+
+If this quantity is small, it means that the proposed state sequence guess is consistent with our measurements. Note that the quantities 

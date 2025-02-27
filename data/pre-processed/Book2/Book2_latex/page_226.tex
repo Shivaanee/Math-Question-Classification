@@ -1,0 +1,25 @@
+Similarly, if \(A\) is right-invertible, the QR factorization \(A^{T}=QR\) of its transpose exists. We have \(AA^{T}=(QR)^{T}(QR)=R^{T}Q^{T}QR=R^{T}R\) and
+
+\[A^{\dagger}=A^{T}(AA^{T})^{-1}=QR(R^{T}R)^{-1}=QRR^{-1}R^{-T}=QR^{-T}.\]
+
+We can compute it using the method described above, using the formula
+
+\[(A^{T})^{\dagger}=(A^{\dagger})^{T}.\]
+
+Solving over- and under-determined systems of linear equations.The pseudo-inverse gives us a method for solving over-determined and under-determined systems of linear equations, provided the columns of the coefficient matrix are linearly independent (in the over-determined case), or the rows are linearly independent (in the under-determined case). If the columns of \(A\) are linearly independent, and the over-determined equations \(Ax=b\) have a solution, then \(x=A^{\dagger}b\) is it. If the rows of \(A\) are linearly independent, the under-determined equations \(Ax=b\) have a solution for any vector \(b\), and \(x=A^{\dagger}b\) is a solution.
+
+Numerical example.We illustrate these ideas with a simple numerical example, using the \(3\times 2\) matrix \(A\) used in earlier examples on pages 199 and 201,
+
+\[A=\left[\begin{array}{cc}-3&-4\\ 4&6\\ 1&1\end{array}\right].\]
+
+This matrix has linearly independent columns, and QR factorization with (to 4 digits)
+
+\[Q=\left[\begin{array}{cc}-0.5883&0.4576\\ 0.7845&0.5230\\ 0.1961&-0.7191\end{array}\right],\qquad R=\left[\begin{array}{cc}5.0990&7.25 63\\ 0&0.5883\end{array}\right].\]
+
+It has pseudo-inverse (to 4 digits)
+
+\[A^{\dagger}=R^{-1}Q^{T}=\left[\begin{array}{cc}-1.2222&-1.1111&1.7778\\ 0.7778&0.8889&-1.2222\end{array}\right].\]
+
+We can use the pseudo-inverse to check if the over-determined systems of equations \(Ax=b\), with \(b=(1,-2,0)\), has a solution, and to find a solution if it does. We compute \(x=A^{\dagger}(1,-2,0)=(1,-1)\) and check whether \(Ax=b\) holds. It does, so we have found the unique solution of \(Ax=b\).
+
+ 

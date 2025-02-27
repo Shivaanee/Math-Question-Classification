@@ -1,0 +1,33 @@
+only if \(g(T)\alpha\) is in \(W\); in other words, \(S(\alpha;W)=S(\beta;W)\). Thus the polynomial \(f\) is also the \(T\)-conductor of \(\alpha\) into \(W\). But \(f(T)\alpha=0\). That tells us that \(g(T)\alpha\) is in \(W\) if and only if \(g(T)\alpha=0\), i.e., the subspaces \(Z(\alpha;T)\) and \(W\) are independent (7-3) and \(f\) is the \(T\)-annihilator of \(\alpha\).
+
+**Theorem 3** (Cyclic Decomposition Theorem): _Let \(T\) be a linear operator on a finite-dimensional vector space \(V\) and let \(W_{0}\) be a proper \(T\)-admissible subspace of \(V\). There exist non-zero vectors \(\alpha_{1}\), \(\ldots\), \(\alpha_{r}\) in \(V\) with respective \(T\)-annihilators \(p_{l}\), \(\ldots\), \(p_{r}\) such that_
+
+1. \(V=W_{0}\bigoplus Z(\alpha_{1};T)\bigoplus\cdots\bigoplus Z(\alpha_{r};T)\)_;_
+2. \(p_{k}\) _divides_ \(p_{k-l}\), \(k=2\), \(\ldots\), \(r\)_._
+
+_Furthermore, the integer \(r\) and the annihilators \(p_{l}\), \(\ldots\), \(p_{r}\) are uniquely determined by (i), (ii), and the fact that no \(\alpha_{k}\) is \(0\)._
+
+The proof is rather long; hence, we shall divide it into four steps. For the first reading it may seem easier to take \(W_{0}=\langle 0\rangle\), although it does not produce any substantial simplification. Throughout the proof, we shall abbreviate \(f(T)\beta\) to \(f\beta\).
+
+_Step 1. There exist non-zero vectors \(\beta_{1}\), \(\ldots\), \(\beta_{r}\) in \(V\) such that_
+
+1. \(V=W_{0}+Z(\beta_{1};T)+\ldots+Z(\beta_{r};T)\)_;_
+2. _if_ \(1\leq k\leq r\) _and_
+
+\[W_{k}=W_{0}+Z(\beta_{1};T)+\ldots+Z(\beta_{k};T)\]
+
+_then the conductor \(p_{k}=s(\beta_{k};W_{k-l})\) has maximum degree among all \(T\)-conductors into the subspace \(W_{k-l}\), i.e., for every \(k\)_
+
+\[deg\ p_{k}=max_{\alpha\text{ in }V}deg\ s(\alpha;W_{k-l}).\]
+
+This step depends only upon the fact that \(W_{0}\) is an invariant subspace. If \(W\) is a proper \(T\)-invariant subspace, then
+
+\[0<max_{\alpha}deg\ s(\alpha;W)\leq\dim\ V\]
+
+and we can choose a vector \(\beta\) so that \(deg\ s(\beta;W)\) attains that maximum. The subspace \(W+Z(\beta;T)\) is then \(T\)-invariant and has dimension larger than \(\dim\ W\). Apply this process to \(W=W_{0}\) to obtain \(\beta_{1}\). If \(W_{1}=W_{0}+Z(\beta_{1};T)\) is still proper, then apply the process to \(W_{1}\) to obtain \(\beta_{1}\). Continue in that manner. Since \(\dim\ W_{k}>\dim\ W_{k-l}\), we must reach \(W_{r}=V\) in not more than \(\dim\ V\) steps.
+
+_Step 2. Let \(\beta_{1}\), \(\ldots\), \(\beta_{r}\) be non-zero vectors which satisfy conditions \((a)\) and \((b)\) of Step 1. Fix \(k\), \(1\leq k\leq r\). Let \(\beta\) be any vector in \(V\) and let \(f=s(\beta;W_{k-l})\). If_
+
+\[f\beta=\beta_{0}+\sum_{1\leq i<k}g_{i}\beta_{i},\qquad\beta_{i}\,in\,W_{i}\]
+
+_then \(f\) divides each polynomial \(g_{i}\) and \(\beta_{0}=f\gamma_{0}\), where \(\gamma_{0}\) is in \(W_{0}\)._ 

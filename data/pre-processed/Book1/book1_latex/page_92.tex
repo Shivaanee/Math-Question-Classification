@@ -1,0 +1,35 @@
+vector \((1,1,-1)\) and automatically contains any multiple \((c,c,-c)\):
+
+\[\textbf{Nullspace is a line}\qquad\begin{bmatrix}1&0&1\\ 5&4&9\\ 2&4&6\end{bmatrix}\begin{bmatrix}c&c&-c\end{bmatrix}=\begin{bmatrix}0\\ 0\\ 0\end{bmatrix}.\]
+
+The nullspace of \(B\) is the line of all points \(x=c\), \(y=c\), \(z=-c\). (The line goes through the origin, as any subspace must.) We want to be able, for any system \(Ax=b\), to find \(C(A)\) and \(N(A)\): all attainable right-hand sides \(b\) and all solutions to \(Ax=0\).
+
+The vectors \(b\) are in the column space and the vectors \(x\) are in the nullspace. We shall compute the dimensions of those subspaces and a convenient set of vectors to generate them. We hope to end up by understanding all _four_ of the subspaces that are intimately related to each other and to \(A\)--the column space of \(A\), the nullspace of \(A\), and their two perpendicular spaces.
+
+Problem Set 2.1
+1. Construct a subset of the $x-y$ plane $\mathbf{R}^2$ that is
+(a) closed under vector addition and subtraction, but not scalar multiplication.
+(b) closed under scalar multiplication but not under vector addition.
+Hint: Starting with $u$ and $v$, add and subtract for (a). Try $c u$ and $c v$ for (b).
+2. Which of the following subsets of $\mathbf{R}^3$ are actually subspaces?
+(a) The plane of vectors $\left(b_1, b_2, b_3\right)$ with first component $b_1=0$.
+(b) The plane of vectors $b$ with $b_1=1$.
+(c) The vectors $b$ with $b_2 b_3=0$ (this is the union of two subspaces, the plane $b_2=0$ and the plane $b_3=0$ ).
+(d) All combinations of two given vectors $(1,1,0)$ and $(2,0,1)$.
+(e) The plane of vectors $\left(b_1, b_2, b_3\right)$ that satisfy $b_3-b_2+3 b_1=0$.
+3. Describe the column space and the nullspace of the matrices
+$$
+A=\left[\begin{array}{cc}
+1 & -1 \\
+0 & 0
+\end{array}\right] \quad \text { and } B=\left[\begin{array}{lll}
+0 & 0 & 3 \\
+1 & 2 & 3
+\end{array}\right] \text { and } C=\left[\begin{array}{lll}
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right] \text {. }
+$$
+4. What is the smallest subspace of 3 by 3 matrices that contains all symmetric matrices and all lower triangular matrices? What is the largest subspace that is contained in both of those subspaces?
+5. Addition and scalar multiplication are required to satisfy these eight rules:
+ 

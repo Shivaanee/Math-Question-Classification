@@ -1,0 +1,17 @@
+The matrix \(A\) is the direct sum
+
+\[A\,=\,\begin{bmatrix}A_{1}&0&\cdots&0\\ 0&A_{2}&\cdots&0\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&A_{k}\end{bmatrix}\] (7-27)
+
+of matrices \(A_{1},\ldots,A_{k}\). Each \(A_{i}\) is of the form
+
+\[A_{i}=\begin{bmatrix}J_{2}^{i0}&0&\cdots&0\\ 0&J_{2}^{(i)}&\cdots&0\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&J_{n_{i}}^{(0)}\end{bmatrix}\]
+
+where each \(J_{2}^{i0}\) is an elementary Jordan matrix with characteristic value \(c_{i}\). Also, within each \(A_{i}\), the sizes of the matrices \(J_{2}^{i0}\) decrease as \(j\) increases. An \(n\times n\) matrix \(A\) which satisfies all the conditions described so far in this paragraph (for some distinct scalars \(c_{1},\ldots,c_{k}\)) will be said to be in **Jordan form.**
+
+We have just pointed out that if \(T\) is a linear operator for which the characteristic polynomial factors completely over the scalar field, then there is an ordered basis for \(V\) in which \(T\) is represented by a matrix which is in Jordan form. We should like to show now that this matrix is something uniquely associated with \(T\), up to the order in which the characteristic values of \(T\) are written down. In other words, if two matrices are in Jordan form and they are similar, then they can differ only in that the order of the scalars \(c_{i}\) is different.
+
+The uniqueness we see as follows. Suppose there is some ordered basis for \(V\) in which \(T\) is represented by the Jordan matrix \(A\) described in the previous paragraph. If \(A_{i}\) is a \(d_{i}\times d_{i}\) matrix, then \(d_{i}\) is clearly the multiplicity of \(c_{i}\) as a root of the characteristic polynomial for \(A\), or for \(T\). In other words, the characteristic polynomial for \(T\) is
+
+\[f=(x-c_{1})^{d_{1}}\cdots(x-c_{k})^{d_{k}}.\]
+
+This shows that \(c_{1}\), \(\ldots,c_{k}\) and \(d_{1}\), \(\ldots,d_{k}\) are unique, up to the order in which we write 

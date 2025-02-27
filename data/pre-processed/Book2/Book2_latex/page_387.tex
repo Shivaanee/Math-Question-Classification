@@ -1,0 +1,13 @@
+Example.Continuing the previous example, we randomly remove 20 of the 100 measurement points. We solve the same problem (17.11) for a range of values of \(\lambda\), but with \(J_{\text{meas}}\) defined as
+
+\[J_{\text{meas}}=\sum_{t\in\mathcal{T}}\|Cx_{t}-y_{t}\|^{2},\]
+
+_i.e._, we only sum the measurement errors over the measurements we have. For each value of \(\lambda\) we compute the RMS train and test errors
+
+\[E_{\text{train}}=\frac{1}{\sqrt{80p}}\left(\sum_{t\in\mathcal{T}}\|C\hat{x}_{t }-y_{t}\|^{2}\right)^{1/2},\qquad E_{\text{test}}=\frac{1}{\sqrt{20p}}\left( \sum_{t\notin\mathcal{T}}\|C\hat{x}_{t}-y_{t}\|^{2}\right)^{1/2}.\]
+
+The training error (squared and scaled) appears directly in our minimization problem. The test error, however, is a good test of our estimation method, since it compares predictions of positions (in this example) with measurements of position that were not used to form the estimates. The errors are shown in figure 17.9, as functions of the parameter \(\lambda\). We can clearly see that for \(\lambda<100\) or so, we are over-fit, since the test RMS error substantially exceeds the train RMS error. We can also see that \(\lambda\) around \(10^{3}\) is a good choice.
+
+Figure 17.9: Training and test errors for the state estimation example.
+
+ 

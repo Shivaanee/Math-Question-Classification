@@ -1,0 +1,17 @@
+It should be pointed out that Theorem 15 says nothing about the existence of characteristic values or characteristic vectors.
+
+**Theorem 16**: _On a finite-dimensional inner product space of positive dimension, every self-adjoint operator has a (non-zero) characteristic vector._
+
+Let \(V\) be an inner product space of dimension \(n\), where \(n>0\), and let \(T\) be a self-adjoint operator on \(V\). Choose an orthonormal basis \(\otimes\) for \(V\) and let \(A=[T]_{0}\). Since \(T=T^{*}\), we have \(A=A^{*}\). Now let \(W\) be the space of \(n\times 1\) matrices over \(C\), with inner product \(\langle X|Y\rangle=Y^{*}X\). Then \(U(X)=AX\) defines a self-adjoint linear operator \(U\) on \(W\). The characteristic polynomial, \(\det\,(xI-A)\), is a polynomial of degree \(n\) over the complex numbers; every polynomial over \(C\) of positive degree has a root. Thus, there is a complex number \(c\) such that \(\det\,(cI-A)=0\). This means that \(A-cI\) is singular, or that there exists a non-zero \(X\) such that \(AX=cX\). Since the operator \(U\) (multiplication by \(A\)) is self-adjoint, it follows from Theorem 15 that \(c\) is real. If \(V\) is a real vector space, we may choose \(X\) to have real entries. For then \(A\) and \(A-cI\) have real entries, and since \(A-cI\) is singular, the system \((A-cI)X=0\) has a non-zero real solution \(X\). It follows that there is a non-zero vector \(\alpha\) in \(V\) such that \(T\alpha=ca\).
+
+There are several comments we should make about the proof.
+
+1. The proof of the existence of a non-zero \(X\) such that \(AX=cX\) had nothing to do with the fact that \(A\) was Hermitian (self-adjoint). It shows that any linear operator on a finite-dimensional complex vector space has a characteristic vector. In the case of a real inner product space, the self-adjointness of \(A\) is used very heavily, to tell us that each characteristic value of \(A\) is real and hence that we can find a suitable \(X\) with real entries.
+2. The argument shows that the characteristic polynomial of a self-adjoint matrix has real coefficients, in spite of the fact that the matrix may not have real entries.
+3. The assumption that \(V\) is finite-dimensional is necessary for the theorem; a self-adjoint operator on an infinite-dimensional inner product space need not have a characteristic value.
+
+**Example 29**: _Let \(V\) be the vector space of continuous complex-valued (or real-valued) continuous functions on the unit interval, \(0\leq t\leq 1\), with the inner product_
+
+\[(f|g)\,=\,\int_{0}^{1}f(t)\overline{g(t)}\;dt.\]
+
+_The operator 'multiplication by \(t\),' \((Tf)(t)=df(t)\), is self-adjoint. Let us suppose that \(Tf=cf\). Then_ 

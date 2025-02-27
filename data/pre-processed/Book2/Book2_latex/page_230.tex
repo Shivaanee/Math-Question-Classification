@@ -1,0 +1,24 @@
+
+
+**11.17**: _A matrix identity._ Suppose \(A\) is a square matrix that satisfies \(A^{k}=0\) for some integer \(k\). (Such a matrix is called _nilpotent_.) A student guesses that \((I-A)^{-1}=I+A+\cdots+A^{k-1}\), based on the infinite series \(1/(1-a)=1+a+a^{2}+\cdots\), which holds for numbers \(a\) that satisfy \(|a|<1\).
+
+Is the student right or wrong? If right, show that her assertion holds with no further assumptions about \(A\). If she is wrong, give a counterexample, _i.e._, a matrix \(A\) that satisfies \(A^{k}=0\), but \(I+A+\cdots+A^{k-1}\) is not the inverse of \(I-A\).
+**11.18**: _Tall-wide product._ Suppose \(A\) is an \(n\times p\) matrix and \(B\) is a \(p\times n\) matrix, so \(C=AB\) makes sense. Explain why \(C\) cannot be invertible if \(A\) is tall and \(B\) is wide, _i.e._, if \(p<n\). _Hint._ First argue that the columns of \(B\) must be linearly dependent.
+**11.19**: _Control restricted to one time period._ A linear dynamical system has the form \(x_{t+1}=Ax_{t}+u_{t}\), where the \(n\)-vector \(x_{t}\) is the state and \(u_{t}\) is the input at time \(t\). Our goal is to choose the input sequence \(u_{1},\ldots,u_{N-1}\) so as to achieve \(x_{N}=x^{\rm des}\), where \(x^{\rm des}\) is a given \(n\)-vector, and \(N\) is given. The input sequence must satisfy \(u_{t}=0\) unless \(t=K\), where \(K<N\) is given. In other words, the input can only act at time \(t=K\). Give a formula for \(u_{K}\) that achieves this goal. Your formula can involve \(A\), \(N\), \(K\), \(x_{1}\), and \(x^{\rm des}\). You can assume that \(A\) is invertible. _Hint._ First derive an expression for \(x_{K}\), then use the dynamics equation to find \(x_{K+1}\). From \(x_{K+1}\) you can find \(x_{N}\).
+**11.20**: _Immigration._ The population dynamics of a country is given by \(x_{t+1}=Ax_{t}+u\), \(t=1,\ldots,T-1\), where the 100-vector \(x_{t}\) gives the population age distribution in year \(t\), and \(u\) gives the immigration age distribution (with negative entries meaning emigration), which we assume is constant (_i.e._, does not vary with \(t\)). You are given \(A\), \(x_{1}\), and \(x^{\rm des}\), a 100-vector that represents a desired population distribution in year \(T\). We seek a constant level of immigration \(u\) that achieves \(x_{T}=x^{\rm des}\).
+
+Give a matrix formula for \(u\). If your formula only makes sense when some conditions hold (for example invertibility of one or more matrices), say so.
+**11.21**: _Quadrature weights._ Consider a quadrature problem (see exercise 8.12) with \(n=4\), with points \(t=(-0.6,-0.2,0.2,0.6)\). We require that the quadrature rule be exact for all polynomials of degree up to \(d=3\).
+
+Set this up as a square system of linear equations in the weight vector. Numerically solve this system to get the weights. Compute the true value and the quadrature estimate,
+
+\[\alpha=\int_{-1}^{1}f(x)\;dx,\qquad\hat{\alpha}=w_{1}f(-0.6)+w_{2}f(-0.2)+w_{ 3}f(0.2)+w_{4}f(0.6),\]
+
+for the specific function \(f(x)=e^{x}\).
+**11.22**: _Properties of pseudo-inverses._ For an \(m\times n\) matrix \(A\) and its pseudo-inverse \(A^{\dagger}\), show that \(A=AA^{\dagger}A\) and \(A^{\dagger}=A^{\dagger}AA^{\dagger}\) in each of the following cases.
+
+1. \(A\) is tall with linearly independent columns.
+2. \(A\) is wide with linearly independent rows.
+3. \(A\) is square and invertible.
+**11.23**: _Product of pseudo-inverses._ Suppose \(A\) and \(D\) are right-invertible matrices and the product \(AD\) exists. We have seen that if \(B\) is a right inverse of \(A\) and \(E\) is a right inverse of \(D\), then \(EB\) is a right inverse of \(AD\). Now suppose \(B\) is the pseudo-inverse of \(A\) and \(E\) is the pseudo-inverse of \(D\). Is \(EB\) the pseudo-inverse of \(AD\)? Prove that this is always true or give an example for which it is false.
+**11.24**: _Simultaneous left inverse._ The two matrices

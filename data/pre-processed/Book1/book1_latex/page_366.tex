@@ -1,0 +1,27 @@
+Each of the following tests is a necessary and sufficient condition for a symmetric matrix \(A\) to be _positive semidefinite_:
+
+1. \(x^{\mathrm{T}}Ax\geq 0\) for all vectors \(x\) (this defines positive semidefinite).
+2. All the eigenvalues of \(A\) satisfy \(\lambda_{i}\geq 0\).
+3. No principal submatrices have negative determinants.
+4. No pivots are negative.
+5. There is a matrix \(R\), possibly with dependent columns, such that \(A=R^{\mathrm{T}}R\).
+
+The diagonalization \(A=Q\Lambda Q^{\mathrm{T}}\) leads to \(x^{\mathrm{T}}Ax=x^{\mathrm{T}}Q\Lambda Q^{\mathrm{T}}x=y^{\mathrm{T}}\Lambda y\). If \(A\) has rank \(r\), there are \(r\) nonzero \(\lambda\)'s and \(r\) perfect squares in \(y^{\mathrm{T}}\Lambda y=\lambda_{1}y_{1}^{2}+\cdots+\lambda_{r}y_{r}^{2}\).
+
+_Note._ The novelty is that condition III\({}^{\prime}\) applies to all the principal submatrices, not only those in the upper left-hand corner. Otherwise, we could not distinguish between two matrices whose upper left determinants were all zero:
+
+\[\begin{bmatrix}0&0\\ 0&1\end{bmatrix}\text{ is positive semidefinite, and }\begin{bmatrix}0&0\\ 0&-1\end{bmatrix}\text{ is negative semidefinite.}\]
+
+A row exchange comes with the same column exchange to maintain symmetry.
+
+**Example 2**.: \[A=\begin{bmatrix}2&-1&-1\\ -1&2&-1\\ -1&-1&2\end{bmatrix}\quad\text{ is positive {semi}definite, by all five tests:}\]
+
+1. \(x^{\mathrm{T}}Ax=(x_{1}-x_{2})^{2}+(x_{1}-x_{3})^{2}+(x_{2}-x_{3})^{2}\geq 0\) (zero if \(x_{1}=x_{2}=x_{3}\)).
+2. The eigenvalues are \(\lambda_{1}=0\), \(\lambda_{2}=\lambda_{3}=3\) (a zero eigenvalue).
+3. \(\det A=0\) and smaller determinants are positive.
+4. \(A=\begin{bmatrix}2&-1&-1\\ -1&2&-1\\ -1&-1&2\end{bmatrix}\to\begin{bmatrix}2&0&0\\ 0&\frac{3}{2}&-\frac{3}{2}\\ 0&-\frac{3}{2}&\frac{3}{2}\end{bmatrix}\to\begin{bmatrix}2&0&0\\ 0&\frac{3}{2}&0\\ 0&0&\mathbf{0}\end{bmatrix}\quad\text{(missing pivot).}\)
+5. \(A=R^{\mathrm{T}}R\) with dependent columns in \(R\): \[\begin{bmatrix}2&-1&-1\\ -1&2&-1\\ -1&-1&2\end{bmatrix}=\begin{bmatrix}1&-1&0\\ 0&1&-1\\ -1&0&1\end{bmatrix}\begin{bmatrix}1&0&-1\\ -1&1&0\\ 0&-1&1\end{bmatrix}\quad(1,1,1)\text{ in the nullspace.}\]
+
+_Remark_. The conditions for semidefiniteness could also be deduced from the origin conditions I-V for definiteness by the following trick: Add a small multiple of the identity giving a positive definite matrix \(A+\epsilon I\). Then let \(\epsilon\) approach zero. Since the determinants and eigenvalues depend continuously on \(\epsilon\), they will be positive until the very last moment. At \(\epsilon=0\) they must still be nonnegative.
+
+ 

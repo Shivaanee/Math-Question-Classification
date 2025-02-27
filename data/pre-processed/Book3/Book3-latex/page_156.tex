@@ -1,0 +1,31 @@
+Since \(\alpha_{k}=\alpha_{k+1}\),
+
+\[A_{kj}=A_{(k+1)j}\quad\text{and}\quad A\,(k|j)=A\,(k+1|j).\]
+
+Clearly then \(E_{j}(A)=0\).
+
+Now suppose \(D\) is a determinant function. If \(I^{(n)}\) is the \(n\bigtimes n\) identity matrix, then \(I^{(n)}(j|j)\) is the \((n-1)\bigtimes(n-1)\) identity matrix \(I^{(n-1)}\). Since \(I^{(n)}_{(j)}=\delta_{ij}\), it follows from (5-4) that
+
+\[E_{j}(I^{(n)})=D(I^{(n-1)}).\]
+
+Now \(D(I^{(n-1)})=1\), so that \(E_{j}(I^{(n)})=1\) and \(E_{j}\) is a determinant function.
+
+**Corollary**.: _Let \(K\) be a commutative ring with identity and let \(n\) be a positive integer. There exists at least one determinant function on \(K^{n\times n}\)._
+
+Proof.: We have shown the existence of a determinant function on \(1\bigtimes 1\) matrices over \(K\), and even on \(2\bigtimes 2\) matrices over \(K\). Theorem 1 tells us explicitly how to construct a determinant function on \(n\bigtimes n\) matrices, given such a function on \((n-1)\bigtimes(n-1)\) matrices. The corollary follows by induction.
+
+**Example 5**.: If \(B\) is a \(2\bigtimes 2\) matrix over \(K\), we let
+
+\[|B|=B_{11}B_{22}-B_{12}B_{21}.\]
+
+Then \(|B|=D(B)\), where \(D\) is the determinant function on \(2\bigtimes 2\) matrices. We showed that this function on \(K^{2\times 2}\) is unique. Let
+
+\[A=\begin{bmatrix}A_{11}&A_{12}&A_{13}\\ A_{21}&A_{22}&A_{23}\\ A_{31}&A_{32}&A_{33}\end{bmatrix}\]
+
+be a \(3\bigtimes 3\) matrix over \(K\). If we define \(E_{1}\), \(E_{2}\), \(E_{3}\) as in (5-4), then
+
+\[E_{1}(A)=A_{11}\begin{bmatrix}A_{22}&A_{23}\\ A_{22}&A_{32}\end{bmatrix}-A_{21}\begin{bmatrix}A_{12}&A_{13}\\ A_{32}&A_{33}\end{bmatrix}+A_{31}\begin{bmatrix}A_{12}&A_{13}\\ A_{42}&A_{23}\end{bmatrix}\] (5-6) \[E_{2}(A)=-A_{12}\begin{bmatrix}A_{21}&A_{23}\\ A_{11}&A_{23}\end{bmatrix}+A_{22}\begin{bmatrix}A_{11}&A_{13}\\ A_{31}&A_{33}\end{bmatrix}-A_{32}\begin{bmatrix}A_{11}&A_{13}\\ A_{21}&A_{23}\end{bmatrix}\] (5-7) \[E_{3}(A)=A_{13}\begin{bmatrix}A_{21}&A_{22}\\ A_{31}&A_{32}\end{bmatrix}-A_{22}\begin{bmatrix}A_{11}&A_{12}\\ A_{31}&A_{32}\end{bmatrix}+A_{33}\begin{bmatrix}A_{11}&A_{12}\\ A_{21}&A_{22}\end{bmatrix}.\] (5-8)
+
+It follows from Theorem 1 that \(E_{1}\), \(E_{2}\), and \(E_{3}\) are determinant functions. Actually, as we shall show later, \(E_{1}=E_{2}=E_{3}\) but this is not yet apparent even in this simple case. It could, however, be verified directly, by expanding each of the above expressions. Instead of doing this we give some specific examples.
+
+1. Let \(K=R\,[x]\) and 

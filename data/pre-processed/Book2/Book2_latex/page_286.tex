@@ -1,0 +1,9 @@
+The RMS fitting error is 68.3, a bit better than the simple regression fit, which achieves RMS fitting error of 74.8. Figure 13.15 shows a scatter plot of predicted and actual prices.
+
+To validate the model, we use 5-fold cross-validation, using the same folds as in table 13.1 and figure 13.12. The results are shown in table 13.5 and figure 13.16. The training and test set errors are similar, so our model is not over-fit. We also see that the test set errors are a bit better than those obtained by our simple regression model; the RMS cross-validation errors are 69.29 and 75.41, respectively. We conclude that our more complex model, that uses feature engineering, gives a modest (around 8%) improvement in prediction ability over the simple regression model based on only house area and number of bedrooms. (With more data, more features, and more feature engineering, a much more accurate model of house price can be developed.)
+
+The table also shows that the model coefficients are reasonably stable across the different folds, giving us more confidence in the model. Another interesting phenomenon we observe is that the test error for fold 5 is a bit _lower_ on the test set than on the training set. This occasionally happens, as a consequence of how the original data were split into folds.
+
+Figure 13.15: Scatter plot of actual and predicted prices for a model with eight parameters.
+
+ 

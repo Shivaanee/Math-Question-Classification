@@ -1,0 +1,22 @@
+
+
+**21.**: Removing zero rows of \(U\) leaves \(A=\underline{LU}\), where the \(r\) columns or \(\underline{L}\) span the column space of \(A\) and the \(r\) rows of \(\underline{U}\) span the row space. Then \(A^{+}\) has the explicit formula \(\underline{U}^{\mathrm{T}}(\underline{U}\ \underline{U}^{\mathrm{T}})^{-1}( \underline{L}^{\mathrm{T}}\underline{L})^{-1}\underline{L}^{\mathrm{T}}\).
+
+Why is \(A^{+}b\) in the row space with \(\underline{U}^{\mathrm{T}}\) at the front? Why does \(A^{\mathrm{T}}AA^{+}b=A^{\mathrm{T}}b\), so that \(x^{+}=A^{+}b\) satisfies the normal equation as it should?
+**22.**: Explain why \(AA^{+}\) and \(A^{+}A\) are projection matrices (and therefore symmetric). What fundamental subspaces do they project onto?
+
+### 6.4 Minimum Principles
+
+In this section we escape for the first time from linear equations. The unknown \(x\) will not be given as the solution to \(Ax=b\) or \(Ax=\lambda x\). Instead, the vector \(x\) will be determined by a minimum principle.
+
+It is astonishing how many natural laws can be expressed as minimum principles. Just the fact that heavy liquids sink to the bottom is a consequence of minimizing their potential energy. And when you sit on a chair or lie on a bed, the springs adjust themselves so that the energy is minimized. A straw in a glass of water looks bent because light reaches your eye as quickly as possible. Certainly there are more highbrow examples: The fundamental principle of structural engineering is the minimization of total energy.1
+
+Footnote 1: I am convinced that plants and people also develop in accordance with minimum principles. Perhaps civilization is based on a law of least action. There must be new laws (and minimum principles) to be found in the social sciences and life sciences.
+
+We have to say immediately that these "energies" are nothing but _positive definite quadratic functions_. And the derivative of a quadratic is linear. We get back to the familiar linear equations, when we set the first derivatives to zero. Our first goal in this section is _to find the minimum principle that is equivalent to \(Ax=b\), and the minimization equivalent to \(Ax=\lambda x\)_. We will be doing in finite dimensions exactly what the theory of optimization does in a continuous problem, where "first derivatives \(=0\)" gives a differential equation. In every problem, we are free to solve the linear equation or minimize the quadratic.
+
+The first step is straightforward: We want to find the "parabola" \(P(x)\) whose minimum occurs when \(Ax=b\). If \(A\) is just a scalar, that is easy to do:
+
+\[\text{The graph of}\quad P(x)=\frac{1}{2}Ax^{2}-bx\quad\text{has zero slope when}\quad\frac{dP}{dx}=Ax-b=0.\]
+
+This point \(x=A^{-1}b\) will be a minimum if \(A\) is positive. Then the parabola \(P(x)\) opens upward (Figure 6.4). In more dimensions this parabola turns into a parabolic bowl (a paraboloid). To assure a minimum of \(P(x)\), not a maximum or a saddle point, \(A\) must be positive definite!

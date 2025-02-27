@@ -1,0 +1,23 @@
+Note that all vectors are column vectors. Even the rows are transposed, and the row space of \(A\) is the _column_ space of \(A^{\mathrm{T}}\), Our problem will be to connect the four spaces for \(U\) (after elimination) to the four spaces for \(A\):
+
+\[\begin{array}{c}\mbox{\bf Basic}\\ \mbox{\bf example}\end{array}\qquad U=\begin{bmatrix}1&3&3&2\\ 0&0&3&3\\ 0&0&0&0\end{bmatrix}\quad\mbox{\rm came from}\quad A=\begin{bmatrix}1&3&3&2 \\ 2&6&9&7\\ -1&-3&3&4\end{bmatrix}.\]
+
+For novelty, we take the four subspaces in a more interesting order.
+
+## 3 The row space of \(A\)
+
+For an echelon matrix like \(U\), the row space is clear. It contains all combinations of the rows, as every row space does--but here the third row contributes nothing. The first two rows are a basis for the row space. A similar rule applies to every echelon matrix \(U\) or \(R\), with \(r\) pivots and \(r\) nonzero rows: _The nonzero rows are a basis, and the row space has dimension \(r\)_. That makes it easy to deal with the original matrix \(A\).
+
+The row space of \(A\) has the same dimension \(r\) as the row space of \(U\), and it has the same bases, because _the row spaces of \(A\) and \(U\) (and \(R\)) are the same_.
+
+The reason is that each elementary operation leaves the row space unchanged. The rows in \(U\) are combinations of the original rows in \(A\). Therefore the row space of \(U\) contains nothing new. At the same time, because every step can be reversed, nothing is lost; the rows of \(A\) can be recovered from \(U\). It is true that \(A\) and \(U\) have different rows, but the _combinations_ of the rows are identical: _same space_!
+
+Note that we did not start with the \(m\) rows of \(A\), which span the row space, and discard \(m-r\) of them to end up with a basis. According to 2L, we could have done so. But it might be hard to decide which rows to keep and which to discard, so it was easier just to take the nonzero rows of \(U\).
+
+## 2 The nullspace of \(A\)
+
+Elimination simplifies a system of linear equations without changing the solutions. The system \(Ax=0\) is reduced to \(Ux=0\), and this process is reversible. _The nullspace of \(A\) is the same as the nullspace of \(U\) and \(R\)_. Only \(r\) of the equations \(Ax=0\) are independent. Choosing the \(n-r\) "special solutions" to \(Ax=0\) provides a definite basis for the nullspace:
+
+The nullspace \(N(A)\) has dimension \(n-r\). The "special solutions" are a basis--each free variable is given the value 1, while the other free variables are 0. Then \(Ax=0\) or \(Ux=0\) or \(Rx=0\) gives the pivot variables by back-substitution.
+
+This is exactly the way we have been solving \(Ux=0\). The basic example above has pivots in columns 1 and 3. Therefore its free variables are the second and fourth \(v\) and \(y\) 

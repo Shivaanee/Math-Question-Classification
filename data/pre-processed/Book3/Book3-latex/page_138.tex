@@ -1,0 +1,35 @@
+Hence \(r=0\) if and only if \(f(c)=0\).
+
+**Definition**.: _Let F be a field. An element c in F is said to be a_ **root** _or a_ **zero** _of a given polynomial f over F if \(f(c)=0\)._
+
+**Corollary 2**.: _A polynomial f of degree n over a field F has at most n roots in F._
+
+Proof.: The result is obviously true for polynomials of degree 0 and degree 1. We assume it to be true for polynomials of degree \(n-1\). If \(a\) is a root of \(f,f=(x-a)q\) where \(q\) has degree \(n-1\). Since \(f(b)=0\) if and only if \(a=b\) or \(q(b)=0\), it follows by our inductive assumption that \(f\) has at most \(n\) roots.
+
+The reader should observe that the main step in the proof of Theorem 3 follows immediately from this corollary.
+
+The formal derivatives of a polynomial are useful in discussing multiple roots. The **derivative** of the polynomial
+
+\[f=c_{4}+c_{1}x+\cdots+c_{n}x^{n}\]
+
+is the polynomial
+
+\[f^{\prime}=c_{1}+2c_{2}x+\cdots+nc_{n}x^{n-1}.\]
+
+We also use the notation \(Df=f^{\prime}\). Differentiation is linear, that is, \(D\) is a linear operator on \(F[x]\). We have the higher order formal derivatives \(f^{\prime\prime}=D^{2}f,f^{(3)}=D^{3}f\), and so on.
+
+**Theorem 5** (Taylor's Formula).: _Let F be a field of characteristic zer\(\bullet\), c an element of F, and n a positive integer. If f is a polynomial over f with deg f\(\leq\) n, then_
+
+\[f=\sum\limits_{k=0}^{n}\frac{(D^{k}f)}{k!}(c)(x-c)^{k}.\]
+
+Proof.: Taylor's formula is a consequence of the binomial theorem and the linearity of the operators \(D\), \(D^{2}\), \(\ldots\), \(D^{n}\). The binomial theorem is easily proved by induction and asserts that
+
+\[(a+b)^{m}=\sum\limits_{k=0}^{m}\binom{m}{k}\;a^{m-k}\,b^{k}\]
+
+where
+
+\[\binom{m}{k}=\frac{m!}{k!(m-k)!}=\frac{m(m-1)\,\cdots\,(m-k+1)}{1\,\cdot\,2\, \cdots\,k}\]
+
+is the familiar binomial coefficient giving the number of combinations of \(m\) objects taken \(k\) at a time. By the binomial theorem
+
+\[x^{m} = [c+(x-c)]^{m}\] \[= \sum\limits_{k=0}^{m}\binom{m}{k}\;c^{m-k}(x-c)^{k}\] \[= c^{m}+mc^{m-1}(x-c)\,+\,\cdots\,+\,(x-c)^{m}\] 

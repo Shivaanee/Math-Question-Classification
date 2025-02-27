@@ -1,0 +1,16 @@
+5. Choose \(b=(0,6,-6)\), which has \(b_{3}+b_{2}-5b_{1}=0\). Elimination takes \(Ax=b\) to \(Ux=c=(0,6,0)\). Back-substitute with free variables \(=0\): \[\text{\bf Particular solution to }Ax_{p}=(0,6,-6)\qquad x_{p}=\begin{bmatrix}-9\\ 0\\ 3\\ 0\end{bmatrix}\begin{array}{l}\text{free}\\ \text{free}\\ \text{free}\end{array}\] The complete solution to \(Ax=(0,6,-6)\) is (this \(x_{p}\)) \(+\) (all \(x_{n}\)).
+6. In the reduced \(R\), the third column changes from \((3,2,0)\) to \((0,1,0)\). The right-hand side \(c=(0,6,0)\) becomes \(d=(-9,3,0)\). Then \(-9\) and \(3\) go into \(x_{p}\): \[\begin{bmatrix}U&c\end{bmatrix}=\begin{bmatrix}1&2&3&5&0\\ 0&0&2&2&6\\ 0&0&0&0&0\end{bmatrix}\longrightarrow\begin{bmatrix}R&d\end{bmatrix}=\begin{bmatrix} \mathbf{1}&2&0&2&-\mathbf{9}\\ 0&0&\mathbf{1}&1&\mathbf{3}\\ 0&0&0&0&0\end{bmatrix}.\]
+
+**That final matrix \([R\;\;d]\) is \(\mathsf{rref}([A\;\;b])=\mathsf{rref}([U\;\;c])\). The numbers \(2\) and \(0\) and \(2\) and \(1\) in the free columns of \(R\) have opposite sign in the special solutions (the nullspace matrix \(N\)). Everything is revealed by \(Rx=d\).**
+
+**Problem Set 2.2**
+
+**1.** Construct a system with more unknowns than equations, but no solution. Change the right-hand side to zero and find all solutions \(x_{n}\).
+**2.** Reduce \(A\) and \(B\) to echelon form, to find their ranks. Which variables are free?
+
+\[A=\begin{bmatrix}1&2&0&1\\ 0&1&1&0\\ 1&2&0&1\end{bmatrix}\qquad B=\begin{bmatrix}1&2&3\\ 4&5&6\\ 7&8&9\end{bmatrix}.\]
+
+Find the special solutions to \(Ax=0\) and \(Bx=0\). Find all solutions.
+**3.** Find the echelon form \(U\), the free variables, and the special solutions: \[A=\begin{bmatrix}0&1&0&3\\ 0&2&0&6\end{bmatrix},\qquad b=\begin{bmatrix}b_{1}\\ b_{2}\end{bmatrix}.\] \(Ax=b\) is consistent (has a solution) when \(b\) satisfies \(b_{2}=\). Find the complete solution in the same form as equation (4).
+
+ 

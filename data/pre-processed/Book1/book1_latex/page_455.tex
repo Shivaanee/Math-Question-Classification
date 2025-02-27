@@ -1,0 +1,30 @@
+\(-1\) column for every edge:
+
+\[\begin{array}{ccccccccc}\textbf{ Incidence}&A=\begin{bmatrix}1&1&&&&&&&-1\\ -1&1&1&&&&\\ &-1&&1&1&&&\\ &&-1&&-1&&1&\\ &&&-1&&-1&&1&\\ &&&&-1&&-1&&1&\\ &&&&-1&&-1&&1\\ &&&&&&&-1&-1&1\end{bmatrix}&\textbf{node 1}\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ &&&&\\ \end{array}\]
+
+\[\textbf{edge}\]
+
+\[\textbf{Maximal Flow}\]
+
+\[\textbf{Maximize}\]
+
+\[x_{61}\]
+
+**subject to** \[Ax=0\]
+**and** \[0\leq x_{ij}\leq c_{ij}\]
+
+A flow of 2 can go on the path 1-2-4-6-1. A flow of 3 can go along 1-3-4-6-1. An additional flow of 1 can take the lowest path 1-3-5-6-1. The total is 6, and _no more is possible_. How do you prove that the maximal flow is 6 and not 7?
+
+Trial and error is convincing, but mathematics is conclusive: The key is to find a _cut_ in the network, across which all capacities are filled. That cut separates nodes 5 and 6 from the others. The edges that go forward across the cut have total capacity \(2+3+1=6\)--and no more can get across! Weak duality says that every cut gives a bound to the total flow, and full duality says that the cut of smallest capacity (_the minimal cut_) is filled by the maximal flow.
+
+### 8K _Max flow-min cut theorem_
+
+The maximal flow in a network equals the total capacity across the minimal cut.
+
+A "cut" splits the nodes into two groups \(S\) and \(T\) (source in \(S\) and sink in \(T\)). Its capacity is the sum of the capacities of all edges crossing the cut (from \(S\) to \(T\)). Several cuts might have the same capacity. Certainly the total flow can never be greater than the total capacity across the minimal cut. The problem, here and in all of duality, is to show that equality is achieved by the right flow and the right cut.
+
+Proof that max flow \(=\) min cut.: Suppose a flow is maximal. Some nodes might still be reached from the source by additional flow, without exceeding any capacities. Those nodes go with the source into the set \(S\). The sink must lie in the remaining set \(T\), or it could have received more flow! Every edge across the cut must he filled, or extra flow could have gone further forward to a node in \(T\). Thus the maximal flow does fill this cut to capacity. and equality has been achieved. 
+
+This suggests a way to construct the maximal flow: Check whether any path has unused capacity. If so, add flow along that "augmenting path." Then compute the remaining capacities and decide whether the sink is cut off from the source, or additional flow is possible. If you label each node in \(S\) by the previous node that flow could come from, you can backtrack to find the path for extra flow.
+
+ 

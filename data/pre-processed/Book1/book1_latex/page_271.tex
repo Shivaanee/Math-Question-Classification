@@ -1,0 +1,33 @@
+This is the basic statement of the problem. Note that it is a first-order equation--no higher derivatives appear--and it is _linear_ in the unknowns, It also has _constant coefficients_; the matrix \(A\) is independent of time.
+
+How do we find \(u(t)\)? If there were only one unknown instead of two, that question would be easy to answer. We would have a scalar instead of a vector equation:
+
+\[\text{{Single equation}}\qquad\frac{du}{dt}=au\quad\text{with}\quad u=u(0)\; \text{ at }\;t=0.\] (3)
+
+The solution to this equation is the one thing you need to know:
+
+\[\text{{Pure exponential}}\qquad u(t)=e^{at}u(0).\] (4)
+
+At the initial time \(t=0\), \(u\) equals \(u(0)\) because \(e^{0}=1\). The derivative of \(e^{at}\) has the required factor \(a\), so that \(du/dt=au\). Thus the initial condition and the equation are both satisfied.
+
+Notice the behavior of \(u\) for large times. The equation is unstable if \(a>0\), neutrally stable if \(a=0\), or stable if \(a<0\); the factor \(e^{at}\) approaches infinity, remains bounded, or goes to zero. If \(a\) were a complex number, \(a=\alpha+i\beta\), then the same tests would be applied to the real part \(\alpha\). The complex part produces oscillations \(e^{i\beta t}=\cos\beta t+i\sin\beta t\). Decay or growth is governed by the factor \(e^{\alpha t}\).
+
+So much for a single equation. We shall take a direct approach to systems, and look for solutions with the _same exponential dependence on \(t\)_ just found in the scalar case:
+
+\[\begin{split} v(t)&=e^{\lambda t}y\\ w(t)&=e^{\lambda t}z\end{split}\] (5)
+
+or in vector notation
+
+\[u(t)=e^{\lambda t}x.\] (6)
+
+This is the whole key to differential equations \(du/dt=Au\): _Look for pure exponential solutions_. Substituting \(v=e^{\lambda t}y\) and \(w=e^{\lambda t}z\) into the equation, we find
+
+\[\begin{split}\lambda e^{\lambda t}y&=4e^{\lambda t }y-5e^{\lambda t}z\\ \lambda e^{\lambda t}z&=2e^{\lambda t}y-3e^{\lambda t }z.\end{split}\]
+
+The factor \(e^{\lambda t}\) is common to every term, and can be removed. This cancellation is the reason for assuming the same exponent \(\lambda\) for both unknowns; it leaves
+
+\[\begin{split}\text{{Eigenvalue problem}}\qquad\begin{split} 4y-5z&=\lambda y\\ 2y-3z&=\lambda z.\end{split}\] (7)
+
+That is the eigenvalue equation. In matrix form it is \(Ax=\lambda x\). You can see it again if we use \(u=e^{\lambda t}x\)--a number \(e^{\lambda t}\) that grows or decays times a fixed vector \(x\). _Substituting into \(du/dt=Au\) gives \(\lambda e^{\lambda t}x=Ae^{\lambda t}x\). The cancellation of \(e^{\lambda t}\) produces_
+
+\[\text{{Eigenvalue equation}}\qquad Ax=\lambda x.\] (8) 

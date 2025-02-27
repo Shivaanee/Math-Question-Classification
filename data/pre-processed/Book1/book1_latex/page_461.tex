@@ -1,0 +1,19 @@
+12. If Figure 8.5 shows lengths instead of capacities, find the shortest path from \(s\) to \(t\), and a minimal spanning tree.
+13. Apply algorithms 1 and 2 to find a shortest spanning tree for the network of Problem 2.
+14. (a) Why does the greedy algorithm work for the spanning tree problem? 2. Show by example that the greedy algorithm could fail to find the shortest path from \(s\) to \(t\), by starting with the shortest edge.
+15. If \(A\) is the 5 by 5 matrix with is just above and just below the main diagonal, find 1. a set of rows with 1s in too few columns. 2. a set of columns with is in too few rows. 3. a \(p\) by \(q\) submatrix of zeros with \(p+q>5\). 4. four lines that cover all the 1s.
+16. The maximal flow problem has slack variables \(w_{ij}=c_{ij}-x_{ij}\) for the difference between capacities and flows. State the problem of Figure 8.5 as a linear program.
+
+### 8.5 Game Theory
+
+The best way to explain a _two-person zero-sum game_ is to give an example. It has two players \(X\) and \(Y\), and the rules are the same for every turn:
+
+\(X\) holds up one hand or two, and so does \(Y\). If they make the same decision, \(Y\) wins $10. If they make opposite decisions, \(X\) wins $10 for one hand and $20 for two:
+
+\[\begin{array}{c}\mbox{\bf Payoff matrix}\\ \mbox{(payments to $X$)}\end{array}\qquad A=\left[\begin{array}{ccc}&-10&20\\ &10&-10\end{array}\right]\begin{array}{c}\mbox{one hand by $Y$}\\ \mbox{two hands by $Y$}\end{array}\]
+
+\[\begin{array}{c}\mbox{one hand}&\mbox{two hands}\\ &\mbox{by $X$}\end{array}\qquad\mbox{by $X$}\]
+
+If \(X\) does the same thing every time, \(Y\) will copy him and win. Similarly \(Y\) cannot stick to a single strategy, or \(X\) will do the opposite. Both players must use a _mixed strategy_, and the choice at every turn must be independent of the previous turns. If there is some historical pattern, the opponent can take advantage of it. Even the strategy "stay with the same choice until you lose" is obviously fatal. After enough plays, your opponent would know exactly what to expect.
+
+In a mixed strategy, \(X\) can put up one hand with frequency \(x_{1}\) and both hands with frequency \(x_{2}=1-x_{1}\). At every turn this decision is random. Similarly \(Y\) can pick 

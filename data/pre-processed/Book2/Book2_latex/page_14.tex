@@ -1,0 +1,27 @@
+The numbers or values of the elements in a vector are called _scalars_. We will focus on the case that arises in most applications, where the scalars are real numbers. In this case we refer to vectors as _real vectors_. (Occasionally other types of scalars arise, for example, complex numbers, in which case we refer to the vector as a _complex vector_.) The set of all real numbers is written as \(\mathbf{R}\), and the set of all real \(n\)-vectors is denoted \(\mathbf{R}^{n}\), so \(a\in\mathbf{R}^{n}\) is another way to say that \(a\) is an \(n\)-vector with real entries. Here we use set notation: \(a\in\mathbf{R}^{n}\) means that \(a\) is an element of the set \(\mathbf{R}^{n}\); see appendix A.
+
+Block or stacked vectors.It is sometimes useful to define vectors by _concatenating_ or _stacking_ two or more vectors, as in
+
+\[a=\left[\begin{array}{c}b\\ c\\ d\end{array}\right],\]
+
+where \(a\), \(b\), \(c\), and \(d\) are vectors. If \(b\) is an \(m\)-vector, \(c\) is an \(n\)-vector, and \(d\) is a \(p\)-vector, this defines the \((m+n+p)\)-vector
+
+\[a=(b_{1},b_{2},\dots,b_{m},c_{1},c_{2},\dots,c_{n},d_{1},d_{2},\dots,d_{p}).\]
+
+The stacked vector \(a\) is also written as \(a=(b,c,d)\).
+
+Stacked vectors can include scalars (numbers). For example if \(a\) is a 3-vector, \((1,a)\) is the 4-vector \((1,a_{1},a_{2},a_{3})\).
+
+Subvectors.In the equation above, we say that \(b\), \(c\), and \(d\) are _subvectors_ or _slices_ of \(a\), with sizes \(m\), \(n\), and \(p\), respectively. _Colon notation_ is used to denote subvectors. If \(a\) is a vector, then \(a_{r:s}\) is the vector of size \(s-r+1\), with entries \(a_{r},\dots,a_{s}\):
+
+\[a_{r:s}=(a_{r},\dots,a_{s}).\]
+
+The subscript \(r\!:\!s\) is called the _index range_. Thus, in our example above, we have
+
+\[b=a_{1:m},\qquad c=a_{(m+1):(m+n)},\qquad d=a_{(m+n+1):(m+n+p)}.\]
+
+As a more concrete example, if \(z\) is the 4-vector \((1,-1,2,0)\), the slice \(z_{2:3}\) is \(z_{2:3}=(-1,2)\). Colon notation is not completely standard, but it is growing in popularity.
+
+Notational conventions.Some authors try to use notation that helps the reader distinguish between vectors and scalars (numbers). For example, Greek letters (\(\alpha\), \(\beta\), ...) might be used for numbers, and lower-case letters (\(a\), \(x\), \(f\), ...) for vectors. Other notational conventions include vectors given in bold font (\(\mathbf{g}\)), or vectors written with arrows above them (\(\vec{a}\)). These notational conventions are not standardized, so you should be prepared to figure out what things are (_i.e._, scalars or vectors) despite the author's notational scheme (if any exists).
+
+ 

@@ -1,0 +1,23 @@
+
+
+## Chapter 6 Matrices
+
+In this chapter we introduce matrices and some basic operations on them. We give some applications in which they arise.
+
+### 6.1 Matrices
+
+A _matrix_ is a rectangular array of numbers written between rectangular brackets, as in
+
+\[\left[\begin{array}{cccc}0&1&-2.3&0.1\\ 1.3&4&-0.1&0\\ 4.1&-1&0&1.7\end{array}\right].\]
+
+It is also common to use large parentheses instead of rectangular brackets, as in
+
+\[\left(\begin{array}{cccc}0&1&-2.3&0.1\\ 1.3&4&-0.1&0\\ 4.1&-1&0&1.7\end{array}\right).\]
+
+An important attribute of a matrix is its _size_ or _dimensions_, _i.e._, the numbers of rows and columns. The matrix above has 3 rows and 4 columns, so its size is \(3\times 4\). A matrix of size \(m\times n\) is called an \(m\times n\) matrix.
+
+The _elements_ (or _entries_ or _coefficients_) of a matrix are the values in the array. The \(i,j\) element is the value in the \(i\)th row and \(j\)th column, denoted by double subscripts: the \(i,j\) element of a matrix \(A\) is denoted \(A_{ij}\) (or \(A_{i,j}\), when \(i\) or \(j\) is more than one digit or character). The positive integers \(i\) and \(j\) are called the (row and column) _indices_. If \(A\) is an \(m\times n\) matrix, then the row index \(i\) runs from 1 to \(m\) and the column index \(j\) runs from 1 to \(n\). Row indices go from top to bottom, so row 1 is the top row and row \(m\) is the bottom row. Column indices go from left to right, so column 1 is the left column and column \(n\) is the right column.
+
+If the matrix above is \(B\), then we have \(B_{13}=-2.3\), \(B_{32}=-1\). The row index of the bottom left element (which has value 4.1) is 3; its column index is 1.
+
+Two matrices are equal if they have the same size, and the corresponding entries are all equal. As with vectors, we normally deal with matrices with entries that

@@ -1,0 +1,10 @@
+
+
+**5.7**: _Running Gram-Schmidt algorithm twice._ We run the Gram-Schmidt algorithm once on a given set of vectors \(a_{1},\ldots,a_{k}\) (we assume this is successful), which gives the vectors \(q_{1},\ldots,q_{k}\). Then we run the Gram-Schmidt algorithm on the vectors \(q_{1},\ldots,q_{k}\), which produces the vectors \(z_{1},\ldots,z_{k}\). What can you say about \(z_{1},\ldots,z_{k}\)?
+**5.8**: _Early termination of Gram-Schmidt algorithm._ When the Gram-Schmidt algorithm is run on a particular list of 10 15-vectors, it terminates in iteration 5 (since \(\tilde{q}_{5}=0\)). Which of the following must be true?
+
+1. \(a_{2},a_{3},a_{4}\) are linearly independent.
+2. \(a_{1},a_{2},a_{5}\) are linearly dependent.
+3. \(a_{1},a_{2},a_{3},a_{4},a_{5}\) are linearly dependent.
+4. \(a_{4}\) is nonzero.
+**5.9**: _A particular computer can carry out the Gram-Schmidt algorithm on a list of \(k=1000\)\(n\)-vectors, with \(n=10000\), in around 2 seconds. About how long would you expect it to take to carry out the Gram-Schmidt algorithm with \(\tilde{k}=500\)\(\tilde{n}\)-vectors, with \(\tilde{n}=1000\)?_

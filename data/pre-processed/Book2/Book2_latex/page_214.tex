@@ -1,0 +1,10 @@
+
+
+**Examples.**
+
+* The identity matrix \(I\) is invertible, with inverse \(I^{-1}=I\), since \(II=I\).
+* A diagonal matrix \(A\) is invertible if and only if its diagonal entries are nonzero. The inverse of an \(n\times n\) diagonal matrix \(A\) with nonzero diagonal entries is \[A^{-1}=\left[\begin{array}{cccc}1/A_{11}&0&\cdots&0\\ 0&1/A_{22}&\cdots&0\\ \vdots&\vdots&\ddots&\vdots\\ 0&0&\cdots&1/A_{nn}\end{array}\right],\] since \[AA^{-1}=\left[\begin{array}{cccc}A_{11}/A_{11}&0&\cdots&0\\ 0&A_{22}/A_{22}&\cdots&0\\ \vdots&\vdots&\ddots&\vdots\\ 0&0&\cdots&A_{nn}/A_{nn}\end{array}\right]=I.\] In compact notation, we have \[\mathbf{diag}(A_{11},\ldots,A_{nn})^{-1}=\mathbf{diag}(A_{11}^{-1},\ldots,A_{ nn}^{-1}).\] Note that the inverse on the left-hand side of this equation is the matrix inverse, while the inverses appearing on the right-hand side are scalar inverses.
+* As a non-obvious example, the matrix \[A=\left[\begin{array}{cccc}1&-2&3\\ 0&2&2\\ -3&-4&-4\end{array}\right]\] is invertible, with inverse \[A^{-1}=\frac{1}{30}\left[\begin{array}{cccc}0&-20&-10\\ -6&5&-2\\ 6&10&2\end{array}\right].\] This can be verified by checking that \(AA^{-1}=I\) (or that \(A^{-1}A=I\), since either of these implies the other).
+* \(2\times 2\) _matrices._ A \(2\times 2\) matrix \(A\) is invertible if and only if \(A_{11}A_{22}\neq A_{12}A_{21}\), with inverse \[A^{-1}=\left[\begin{array}{cccc}A_{11}&A_{12}\\ A_{21}&A_{22}\end{array}\right]^{-1}=\frac{1}{A_{11}A_{22}-A_{12}A_{21}}\left[ \begin{array}{cccc}A_{22}&-A_{12}\\ -A_{21}&A_{11}\end{array}\right].\] (There are similar formulas for the inverse of a matrix of any size, but they grow very quickly in complexity and so are not very useful in most applications.)
+* _Orthogonal matrix._ If \(A\) is square with orthonormal columns, we have \(A^{T}A=I\), so \(A\) is invertible with inverse \(A^{-1}=A^{T}\).
+

@@ -1,0 +1,36 @@
+
+
+**Direct verification of least squares solution.** In this section we directly show that \(\hat{x}=(A^{T}A)^{-1}A^{T}b\) is the solution of the least squares problem (12.1), without relying on calculus. We will show that for any \(x\neq\hat{x}\), we have
+
+\[\|A\hat{x}-b\|^{2}<\|Ax-b\|^{2},\]
+
+establishing that \(\hat{x}\) is the unique vector that minimizes \(\|Ax-b\|^{2}\).
+
+We start by writing
+
+\[\|Ax-b\|^{2} = \|(Ax-A\hat{x})+(A\hat{x}-b)\|^{2}\] (12.7) \[= \|Ax-A\hat{x}\|^{2}+\|A\hat{x}-b\|^{2}+2(Ax-A\hat{x})^{T}(A\hat{ x}-b),\]
+
+where we use the identity
+
+\[\|u+v\|^{2}=(u+v)^{T}(u+v)=\|u\|^{2}+\|v\|^{2}+2u^{T}v.\]
+
+The third term in (12.7) is zero:
+
+\[(Ax-A\hat{x})^{T}(A\hat{x}-b) = (x-\hat{x})^{T}A^{T}(A\hat{x}-b)\] \[= (x-\hat{x})^{T}(A^{T}A\hat{x}-A^{T}b)\] \[= (x-\hat{x})^{T}0\] \[= 0,\]
+
+where we use \((A^{T}A)\hat{x}=A^{T}b\) (the normal equations) in the third line. With this simplification, (12.7) reduces to
+
+\[\|Ax-b\|^{2}=\|A(x-\hat{x})\|^{2}+\|A\hat{x}-b\|^{2}.\]
+
+The first term on the right-hand side is nonnegative and therefore
+
+\[\|Ax-b\|^{2}\geq\|A\hat{x}-b\|^{2}.\]
+
+This shows that \(\hat{x}\) minimizes \(\|Ax-b\|^{2}\); we now show that it is the unique minimizer. Suppose equality holds above, that is, \(\|Ax-b\|^{2}=\|A\hat{x}-b\|^{2}\). Then we have \(\|A(x-\hat{x})\|^{2}=0\), which implies \(A(x-\hat{x})=0\). Since \(A\) has linearly independent columns, we conclude that \(x-\hat{x}=0\), _i.e._, \(x=\hat{x}\). So the only \(x\) with \(\|Ax-b\|^{2}=\|A\hat{x}-b\|^{2}\) is \(x=\hat{x}\); for all \(x\neq\hat{x}\), we have \(\|Ax-b\|^{2}>\|A\hat{x}-b\|^{2}\).
+
+**Row form.** The formula for the least squares approximate solution can be expressed in a useful form in terms of the rows \(\tilde{a}_{i}^{T}\) of the matrix \(A\).
+
+\[\hat{x}=(A^{T}A)^{-1}A^{T}b=\left(\sum_{i=1}^{m}\tilde{a}_{i}\tilde{a}_{i}^{T} \right)^{-1}\left(\sum_{i=1}^{m}b_{i}\tilde{a}_{i}\right).\] (12.8)
+
+In this formula we express the \(n\times n\) Gram matrix \(A^{T}A\) as a sum of \(m\) outer products, and the \(n\)-vector \(A^{T}b\) as a sum of \(m\)\(n\)-vectors.
+

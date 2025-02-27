@@ -1,0 +1,23 @@
+where \(f:{\bf R}^{n}\to{\bf R}^{m}\). The partial derivative with respect to \(x_{j}\), at \(z\), is
+
+\[\frac{\partial h}{\partial x_{j}}(z)=2f_{1}(z)\frac{\partial f_{1}}{\partial x_ {j}}(z)+\cdots+2f_{m}(z)\frac{\partial f_{m}}{\partial x_{j}}(z).\]
+
+Arranging these to form the row vector \(Dh(z)\), we see we can write this using matrix multiplication as
+
+\[Dh(z)=2f(z)^{T}Df(z).\]
+
+The gradient of \(h\) is the transpose of this expression,
+
+\[\nabla h(z)=2Df(z)^{T}f(z).\] (C.1)
+
+(Note the analogy to the formula for the scalar-valued function of a scalar variable \(h(x)=f(x)^{2}\), which is \(h^{\prime}(z)=2f^{\prime}(z)f(z)\).)
+
+Many of the formulas for derivatives in the scalar case also hold for the vector case, with scalar multiplication replaced with matrix multiplication (provided the order of the terms is correct). As an example, consider the composition function \(f(x)=g(h(x))\), where \(h:{\bf R}^{n}\to{\bf R}^{k}\) and \(g:{\bf R}^{k}\to{\bf R}^{m}\). The Jacobian or derivative matrix of \(f\) at \(z\) is given by
+
+\[Df(z)=Dg(h(z))Dh(z).\]
+
+(This is matrix multiplication; compare it to composition formula for scalar-valued functions of scalars given above.) This chain rule is described on page 184.
+
+### Optimization
+
+Derivative condition for minimization.Suppose \(h\) is a scalar-valued function of a scalar argument. If \(\hat{x}\) minimizes \(h(x)\), we must have \(h^{\prime}(\hat{x})=0\). This fact is easily understood: If \(h^{\prime}(\hat{x})\neq 0\), then by taking a point \(\tilde{x}\) slightly less than \(\hat{x}\) (if \(h^{\prime}(\hat{x})>0\)) or slightly more than \(\hat{x}\) (if \(h^{\prime}(\hat{x})<0\)), we would obtain \(h(\tilde{x})<h(\hat{x})\) 

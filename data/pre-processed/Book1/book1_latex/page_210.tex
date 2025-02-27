@@ -1,0 +1,25 @@
+The overall projection matrix is
+
+\[P=q_{1}q_{1}^{\mathrm{T}}+q_{2}q_{2}^{\mathrm{T}}=\begin{bmatrix}1&0&0\\ 0&1&0\\ 0&0&0\end{bmatrix},\quad\text{and}\quad P\begin{bmatrix}x\\ y\\ z\end{bmatrix}=\begin{bmatrix}x\\ y\\ 0\end{bmatrix}.\]
+
+_Projection onto a plane \(=\) sum of projections onto orthonormal \(q_{1}\) and \(q_{2}\)._
+
+**Example 4**.: When the measurement times average to zero, fitting a straight line leads to orthogonal columns. Take \(t_{1}=-3\), \(t_{2}=0\), and \(t_{3}=3\). Then the attempt to fit \(y=C+Dt\) leads to three equations in two unknowns:
+
+\[\begin{array}{ccccc}C&+&Dt_{1}&=&y_{1}\\ C&+&Dt_{2}&=&y_{2}\\ C&+&Dt_{3}&=&y_{3}\end{array},\qquad\text{or}\qquad\begin{bmatrix}1&-3\\ 1&0\\ 1&3\end{bmatrix}\begin{bmatrix}C\\ D\end{bmatrix}=\begin{bmatrix}y_{1}\\ y_{2}\\ y_{3}\end{bmatrix}.\]
+
+_The columns \((1,1,1)\) and \((-3,0,3)\) are orthogonal._ We can project \(y\) separately onto each column, and the best coefficients \(\widehat{C}\) and \(\widehat{D}\) can be found separately:
+
+\[\widehat{C}=\frac{\begin{bmatrix}1&1&1\end{bmatrix}\begin{bmatrix}y_{1}&y_{2} &y_{3}\end{bmatrix}^{\mathrm{T}}}{1^{2}+1^{2}+1^{2}},\qquad\widehat{D}=\frac{ \begin{bmatrix}-3&0&3\end{bmatrix}\begin{bmatrix}y_{1}&y_{2}&y_{3}\end{bmatrix} ^{\mathrm{T}}}{(-3)^{2}+0^{2}+3^{2}}.\]
+
+Notice that \(\widehat{C}=(y_{1}+y_{2}+y_{3})/3\) is the _mean_ of the data. \(\widehat{C}\) gives the best fit by a horizontal line, whereas \(\widehat{D}t\) is the best fit by a straight line through the origin. _The columns are orthogonal, so the sum of these two separate pieces is the best fit by any straight line whatsoever_. The columns are not unit vectors, so \(\widehat{C}\) and \(\widehat{D}\) have the length squared in the denominator.
+
+Orthogonal columns are so much better that it is worth changing to that case. if the average of the observation times is not zero--it is \(\bar{t}=(t_{1}+\cdots+t_{m})/m\)--then the time origin can be shifted by \(\bar{t}\). Instead of \(y=C+Dt\) we work with \(y=c+d(t-\bar{t})\). The best line is the same! As in the example, we find
+
+\[\begin{array}{c}\widehat{c}=\frac{\begin{bmatrix}1&\cdots&1 \end{bmatrix}\begin{bmatrix}y_{1}&\cdots&y_{m}\end{bmatrix}^{\mathrm{T}}}{1^{2 }+1^{2}+\cdots+1^{2}}=\frac{y_{1}+\cdots+y_{m}}{m}\\ \widehat{d}=\frac{\begin{bmatrix}(t_{1}-\bar{t})&\cdots&(t_{m}-\bar{t}) \end{bmatrix}\begin{bmatrix}y_{1}&\cdots&y_{m}\end{bmatrix}^{\mathrm{T}}}{(t_{ 1}-\bar{t})^{2}+\cdots+(t_{m}-\bar{t})^{2}}=\frac{\sum(t_{i}-\bar{t})y_{i}}{ \sum(t_{i}-\bar{t})^{2}}.\end{array}\] (8)
+
+The best \(\widehat{c}\) is the mean, and we also get a convenient formula for \(\widehat{d}\). The earlier \(A^{\mathrm{T}}A\) had the off-diagonal entries \(\sum t_{i}\), and shifting the time by \(\bar{t}\) made these entries zero. This shift is an example of the Gram-Schmidt process, _which orthogonalizes the situation in advance_.
+
+Orthogonal matrices are crucial to numerical linear algebra, because they introduce no instability. While lengths stay the same, roundoff is under control. Orthogonalizing vectors has become an essential technique. Probably it comes second only to elimination. And it leads to a factorization \(A=QR\) that is nearly as famous as \(A=LU\).
+
+ 

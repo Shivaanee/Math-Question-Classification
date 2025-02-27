@@ -1,0 +1,25 @@
+
+
+### 1.4 Inner product
+
+The (standard) _inner product_ (also called _dot product_) of two \(n\)-vectors is defined as the scalar
+
+\[a^{T}b=a_{1}b_{1}+a_{2}b_{2}+\cdots+a_{n}b_{n},\]
+
+the sum of the products of corresponding entries. (The origin of the superscript 'T' in the inner product notation \(a^{T}b\) will be explained in chapter 6.) Some other notations for the inner product (that we will not use in this book) are \(\langle a,b\rangle\), \(\langle a|b\rangle\), \((a,b)\), and \(a\cdot b\). (In the notation used in this book, \((a,b)\) denotes a stacked vector of length \(2n\).) As you might guess, there is also a vector _outer product_, which we will encounter later, in SS10.1. As a specific example of the inner product, we have
+
+\[\left[\begin{array}{c}-1\\ 2\\ 2\end{array}\right]^{T}\left[\begin{array}{c}1\\ 0\\ -3\end{array}\right]=(-1)(1)+(2)(0)+(2)(-3)=-7.\]
+
+When \(n=1\), the inner product reduces to the usual product of two numbers.
+
+Properties.The inner product satisfies some simple properties that are easily verified from the definition. If \(a\), \(b\), and \(c\) are vectors of the same size, and \(\gamma\) is a scalar, we have the following.
+
+* _Commutativity_. \(a^{T}b=b^{T}a\). The order of the two vector arguments in the inner product does not matter.
+* _Associativity with scalar multiplication_. \((\gamma a)^{T}b=\gamma(a^{T}b)\), so we can write both as \(\gamma a^{T}b\).
+* _Distributivity with vector addition_. \((a+b)^{T}c=a^{T}c+b^{T}c\). The inner product can be distributed across vector addition.
+
+These can be combined to obtain other identities, such as \(a^{T}(\gamma b)=\gamma(a^{T}b)\), or \(a^{T}(b+\gamma c)=a^{T}b+\gamma a^{T}c\). As another useful example, we have, for any vectors \(a,b,c,d\) of the same size,
+
+\[(a+b)^{T}(c+d)=a^{T}c+a^{T}d+b^{T}c+b^{T}d.\]
+
+Figure 1.12: The affine combination \((1

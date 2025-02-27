@@ -1,0 +1,26 @@
+We have
+
+\[AB=\left[\begin{array}{cc}-6&11\\ -3&-3\end{array}\right],\qquad BA=\left[\begin{array}{cc}-9&-3\\ 17&0\end{array}\right].\]
+
+Two matrices \(A\) and \(B\) that satisfy \(AB=BA\) are said to _commute_. (Note that for \(AB=BA\) to make sense, \(A\) and \(B\) must both be square.)
+
+Properties of matrix multiplication.The following properties hold and are easy to verify from the definition of matrix multiplication. We assume that \(A\), \(B\), and \(C\) are matrices for which all the operations below are valid, and that \(\gamma\) is a scalar.
+
+* _Associativity:_\((AB)C=A(BC)\). Therefore we can write the product simply as \(ABC\).
+* _Associativity with scalar multiplication:_\(\gamma(AB)=(\gamma A)B\), where \(\gamma\) is a scalar, and \(A\) and \(B\) are matrices (that can be multiplied). This is also equal to \(A(\gamma B)\). (Note that the products \(\gamma A\) and \(\gamma B\) are defined as scalar-matrix products, but in general, unless \(A\) and \(B\) have one row, not as matrix-matrix products.)
+* _Distributivity with addition._ Matrix multiplication distributes across matrix addition: \(A(B+C)=AB+AC\) and \((A+B)C=AC+BC\). On the right-hand sides of these equations we use the higher precedence of matrix multiplication over addition, so, for example, \(AC+BC\) is interpreted as \((AC)+(BC)\).
+* _Transpose of product._ The transpose of a product is the product of the transposes, but in the _opposite_ order: \((AB)^{T}=B^{T}A^{T}\).
+
+From these properties we can derive others. For example, if \(A\), \(B\), \(C\), and \(D\) are square matrices of the same size, we have the identity
+
+\[(A+B)(C+D)=AC+AD+BC+BD.\]
+
+This is the same as the usual formula for expanding a product of sums of scalars; but with matrices, we must be careful to preserve the order of the products.
+
+Inner product and matrix-vector products.As an exercise on matrix-vector products and inner products, one can verify that if \(A\) is \(m\times n\), \(x\) is an \(n\)-vector, and \(y\) is an \(m\)-vector, then
+
+\[y^{T}(Ax)=(y^{T}A)x=(A^{T}y)^{T}x,\]
+
+_i.e._, the inner product of \(y\) and \(Ax\) is equal to the inner product of \(x\) and \(A^{T}y\). (Note that when \(m\neq n\), these inner products involve vectors with different dimensions.)
+
+Products of block matrices.Suppose \(A\) is a block matrix with \(m\times p\) block entries \(A_{ij}\), and \(B\) is a block matrix with \(p\times n\) block entries \(B_{ij}\), and for each \(k=1,\ldots,p\), the matrix product \(A_{ik}B_{kj}\) makes sense, _i.e._, the number of columns of \(A_{ik}\) equals the number of rows of \(B_{kj}\). (In this case we say that the block matrices _conform_ or 

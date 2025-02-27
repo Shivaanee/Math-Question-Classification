@@ -1,0 +1,31 @@
+What is remarkable is that the same condition number appears in equation (9), when the matrix itself is perturbed: If \(Ax=b\) and \((A+\delta A)(x+\delta x)=b\), then by subtraction
+
+\[A\delta x+\delta A(x+\delta x)=0,\qquad\mbox{or}\qquad\delta x=-A^{-1}(\delta A )(x+\delta x).\]
+
+Multiplying by \(\delta A\) amplifies a vector by no more than \(\|\delta A\|\), and multiplying by \(A^{-1}\) amplifies by no more than \(\|A^{-1}\|\). Then \(\|\delta x\|<\|A^{-1}\|\|\delta A\|\|x+\delta x\|\), which is
+
+\[\frac{\|\delta x\|}{\|x+\delta x\|}\leq\|A^{-1}\|\|\delta A\|=c\frac{\|\delta A \|}{\|A\|}.\] (10)
+
+These inequalities mean that roundoff error comes from two sources. One is the _natural sensitivity_ of the problem, measured by \(c\). The other is the actual error \(\delta b\) or \(\delta A\). This was the basis of Wilkinson's error analysis. Since elimination actually produces approximate factors \(L^{\prime}\) and \(U^{\prime}\), it solves the equation with the wrong matrix \(A+\delta A=L^{\prime}U^{\prime}\) instead of the right matrix \(A=LU\). He proved that partial pivoting controls \(\delta A\)--so _the burden of the roundoff error is carried by the condition number \(c\)_.
+
+### A Formula for the Norm
+
+The norm of \(A\) measures the largest amount by which any vector (eigenvector or not) is amplified by matrix multiplication: \(\|A\|=\max(\|Ax\|/\|x\|)\). The norm of the identity matrix is 1. To compute the norm, square both sides to reach the symmetric \(A^{\rm T}A\):
+
+\[\|A\|^{2}=\max\frac{\|Ax\|^{2}}{\|x\|^{2}}=\max\frac{x^{\rm T}A^{\rm T}Ax}{x^{ \rm T}x}.\] (11)
+
+**7D**: \(\|A\|\) is the square root of the largest eigenvalue of \(A^{\rm T}A\): \(\|A\|^{2}=\lambda_{\max}(A^{\rm T}A)\).
+
+The vector that \(A\) amplifies the most is the corresponding eigenvector of \(A^{\rm T}A\):
+
+\[\frac{x^{\rm T}A^{\rm T}Ax}{x^{\rm T}x}=\frac{x^{\rm T}(\lambda_{\max}x)}{x^{ \rm T}x}=\lambda_{\max}(A^{\rm T}A)=\|A\|^{2}.\] (12)
+
+Figure 7.1 shows an unsymmetric matrix with eigenvalues \(\lambda_{1}=\lambda_{2}=1\) and norm \(\|A\|=1.618\). In this case \(A^{-1}\) has the same norm. The farthest and closest points \(Ax\) on the ellipse come from eigenvectors \(x\) of \(A^{\rm T}A\), not of \(A\).
+
+_Note_ **1.** The norm and condition number are not actually computed in practice, only estimated, There is not time to solve an eigenvalue problem for \(\lambda_{\max}(A^{\rm T}A)\).
+
+_Note_ **2.** In the least-squares equation \(A^{\rm T}Ax=A^{\rm T}b\), the condition number \(c(A^{\rm T}A)\) is the _square_ of \(c(A)\). Forming \(A^{\rm T}A\) can turn a healthy problem into a sick one. It may be necessary to orthogonalize \(A\) by Gram-Schmidt, instead of computing with \(A^{\rm T}A\).
+
+_Note_ **3.** The _singular values_ of \(A\) in the SVD are _the square roots of the eigenvalues of \(A^{\rm T}A\)_. By equation (12), another formula for the norm is \(\|A\|=\sigma_{\max}\). The orthogonal \(U\) and \(V\) leave lengths unchanged in \(\|Ax\|=\|U\Sigma V^{\rm T}x\|\). So the largest \(\|Ax\|/\|x\|\) comes from the largest \(\sigma\) in the diagonal matrix \(\Sigma\).
+
+ 

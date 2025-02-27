@@ -1,0 +1,19 @@
+standing successes of numerical analysis. It is clearly defined, its importance is obvious, but until recently no one knew how to solve it. Dozens of algorithms have been suggested, and everything depends on the size and the properties of \(A\) (and on the number of eigenvalues that are wanted). You can ask LAPACK for an eigenvalue subroutine, without knowing its contents, but it is better to know. We have chosen two or three ideas that have superseded almost all of their predecessors: _the QR algorithm_, the family of "_power methods_," and the preprocessing of a symmetric matrix to make it _tridiagonal_.
+
+The first two methods are iterative, and the last is direct. It does its job in a finite number of steps, but it does not end up with the eigenvalues themselves. This produces a much simpler matrix to use in the iterative steps.
+
+## 3 The Condition Number of a Matrix
+
+Section 7.2 attempts to measure the "sensitivity" of a problem: If \(A\) and \(b\) are slightly changed, how great is the effect on \(x=A^{-1}b\)? Before starting on that question, we need a way to measure \(A\) and the change \(\Delta A\). The length of a vector is already defined, and now we need the _norm of a matrix_. Then the _condition number_, and the sensitivity of \(A\) will follow from multiplying the norms of \(A\) and \(A^{-1}\). _The matrices in this chapter are square_.
+
+### Matrix Norm and Condition Number
+
+An error and a blunder are very different things. An error is a small mistake, probably unavoidable even by a perfect mathematician or a perfect computer. A blunder is much more serious, and larger by at least an order of magnitude. When the computer rounds oft a number after 16 bits, that is an error, But when a problem is so excruciatingly sensitive that this roundoff error completely changes the solution, then almost certainly someone has committed a blunder. Our goal in this section is to analyze the effect of errors, so that blunders can be avoided.
+
+We are actually continuing a discussion that began in Chapter 1 with
+
+\[A=\begin{bmatrix}1&1\\ 1&1.0001\end{bmatrix}\qquad\text{and}\qquad B=\begin{bmatrix}0.0001&1\\ 1&1\end{bmatrix}.\]
+
+We claimed that \(B\) is well-conditioned, and not particularly sensitive to roundoff--except that if Gaussian elimination is applied in a stupid way, the matrix becomes completely vulnerable. It is a blunder to accept .0001 as the first pivot, and we must insist on a larger and safer choice by exchanging the rows of \(B\). When "partial pivoting" is built into the elimination algorithm, the computer automatically looks for the _largest pivot_. Then the natural resistance to roundoff error is no longer compromised.
+
+How do we measure this natural resistance, and decide whether a matrix is well-conditioned or ill-conditioned? If there is a small change in \(b\) or in \(A\), how large a change does that produce in the solution \(x\)? 

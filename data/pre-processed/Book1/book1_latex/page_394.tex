@@ -1,0 +1,23 @@
+
+
+**16.**: (Recommended) From the zero submatrix decide the signs of the \(n\) eigenvalues:
+
+\[A=\begin{bmatrix}0&\cdot&0&1\\ \cdot&\cdot&0&2\\ 0&0&0&\cdot\\ 1&2&\cdot&n\end{bmatrix}.\]
+**17.**: (Constrained minimum) Suppose the unconstrained minimum \(x=A^{-1}b\) happens to satisfy the constraint \(Cx=d\). Verify that equation (5) correctly gives \(P_{C/\min}=P_{\min}\); the correction term is zero.
+
+### The Finite Element Method
+
+There were two main ideas in the preceding section on minimum principles:
+
+1. Solving \(Ax=b\) is equivalent to minimizing \(P(x)=\frac{1}{2}x^{\mathrm{T}}Ax-x^{\mathrm{T}}b\).
+2. Solving \(Ax=\lambda_{1}x\) is equivalent to minimizing \(R(x)=x^{\mathrm{T}}Ax/x^{\mathrm{T}}x\).
+
+Now we try to explain how these ideas can be applied.
+
+The story is a long one, because these principles have been known for more than a century. In engineering problems like plate bending, or physics problems like the ground state (eigenfunction) of an atom, minimization was used to get a rough approximation to the true solution. The approximations _had_ to be rough; the computers were human. The principles (i) and (ii) were there, but they could not be implemented.
+
+Obviously the computer was going to bring about a revolution. It was the method of finite differences that jumped ahead, because it is easy to "discretize" a differential equation. Already in Section 1.7, derivatives were replaced by differences. The physical region is covered by a mesh, and \(u^{\prime\prime}=f(x)\) became \(u_{j+1}-2u_{j}+u_{j-1}=h^{2}f_{j}\). The 1950s brought new ways to solve systems \(Au=f\) that are very large and very sparse--algorithms and hardware are both much faster now.
+
+What we did not fully recognize was that even finite differences become incredibly complicated for real engineering problems, like the stresses on an airplane. _The real difficulty is not to solve the equations, but to set them up_. For an irregular region we piece the mesh together from triangles or quadrilaterals or tetrahedra. Then we need a systematic way to approximate the underlying physical laws. The computer has to help not only in the solution of \(Au=f\) and \(Ax=\lambda x\), but in its formulation.
+
+You can guess what happened. The old methods came back, with a new idea and a new name. The new name is the _finite element method_. The new tides uses more of the power of the computer--in constructing a discrete approximation, solving it, and displaying the results--than any other technique in scientific computation2. If the basic

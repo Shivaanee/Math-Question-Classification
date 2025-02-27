@@ -1,0 +1,29 @@
+For the angle \(\beta\), the sine is \(b_{2}/\|b\|\) and the cosine is \(b_{1}/\|b\|\) . The cosine of \(\theta=\beta-\alpha\) comes from an identity that no one could forget:
+
+\[\text{{Cosine formula}}\qquad\cos\theta=\cos\beta\cos\alpha+\sin\beta\sin \alpha=\frac{a_{1}b_{1}+a_{2}b_{2}}{\|a\|\|b\|}.\] (1)
+
+The numerator in this formula is exactly the inner product of \(a\) and \(b\). It gives the relationship between \(a^{\mathrm{T}}b\) and \(\cos\theta\):
+
+3GThe cosine of the angle between any nonzero vectors \(a\) and \(b\) is
+
+\[\text{{Cosine of}}\;\theta\qquad\cos\theta=\frac{a^{\mathrm{T}}b}{\|a\|\|b\|}.\] (2)
+
+This formula is dimensionally correct; if we double the length of \(b\), then both numerator and denominator are doubled, and the cosine is unchanged. Reversing the sign of \(b\), on the other hand, reverses the sign of \(\cos\theta\)--and changes the angle by \(180^{\circ}\).
+
+There is another law of trigonometry that leads directly to the same result. It is not so unforgettable as the formula in equation (1), but it relates the lengths of the sides of any triangle:
+
+\[\text{{Law of Cosines}}\qquad\|b-a\|^{2}=\|b\|^{2}+\|a\|^{2}-2\|b\|\|a\|\cos\theta.\] (3)
+
+When \(\theta\) is a right angle, we are back to Pythagoras: \(\|b-a\|^{2}=\|b\|^{2}+\|a\|^{2}\). For any angle \(\theta\), the expression \(\|b-a\|^{2}\) is \((b-a)^{\mathrm{T}}(b-a)\), and equation (3) becomes
+
+\[b^{\mathrm{T}}b-2a^{\mathrm{T}}b+a^{\mathrm{T}}a=b^{\mathrm{T}}b+a^{\mathrm{T }}a-2\|b\|\|a\|\cos\theta.\]
+
+Canceling \(b^{\mathrm{T}}b\) and \(a^{\mathrm{T}}a\) on both sides of this equation, you recognize formula (2) for the cosine: \(a^{\mathrm{T}}b=\|a\|\|b\|\cos\theta\). In fact, this proves the cosine formula in \(n\) dimensions, since we only have to worry about the plane triangle \(Oab\).
+
+### Projection onto a Line
+
+Now we want to find the projection point \(p\). This point must be some multiple \(p=\widehat{xa}\) of the given vector \(a\)--every point on the line is a multiple of \(a\). The problem is to compute
+
+Figure 3.6: The cosine of the angle \(\theta=\beta-\alpha\) using inner products.
+
+ 
