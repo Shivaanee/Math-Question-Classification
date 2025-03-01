@@ -19,3 +19,7 @@ The data is pre-processed to remove any unwanted characters, numbers, and specia
 
 ## Model
 The BERT models fine-tuning is done in the "Finetuning.ipynb" notebook. Here, BERT models: BERT, MathBERT, and BERT-Tiny are fine-tuned on our dataset. The attention maps of the models before finetuning are also visualized in this notebook. The models are fine-tuned using the Hugging Face Transformers library. 
+
+---
+
+## For more details, check out this [presentation][(https://www.canva.com/design/DAGgQnMn_1M/e_bIbQ1eKcsS5iedKhfmow/view?utm_content=DAGgQnMn_1M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7284341ff2).
